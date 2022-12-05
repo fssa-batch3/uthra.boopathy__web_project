@@ -1,0 +1,298 @@
+*{
+    margin: 0px;
+}
+body{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+header{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: #D3D3D3;
+    height: 100px;
+}
+
+header div ul{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    list-style: none;
+    margin-left: 450px;
+}
+
+header div ul li{
+    padding-top: 30px;
+    padding-left: 20px;
+}
+
+header div ul li a{
+     text-decoration: none;
+     color: black;
+}
+
+h1{
+    font-size: 50px;
+    padding-left: 60px;
+    position: relative;
+    top: 20px;
+}
+
+.logo{
+    margin-top: 15px;
+    margin-left: 50px;
+    border-radius: 50px;
+}
+
+.login{
+    position: relative;
+    top: 5px;
+}
+
+.left{
+    width: 50%;
+    position: relative;
+    top: 100px;
+    left: 200px;
+}
+
+.image img{
+    border-radius: 10px;
+}
+
+.sub-images{
+    position: relative;
+    top: 60px;
+    display: inline-block;
+    padding: 7px;
+}
+
+.sub-images:hover{
+   transform: translateY(-5px);
+   transition: 0.2s;
+   box-shadow: 5px 10px 18px  #888888;
+}
+
+.sub-images img{
+    border-radius: 5px;
+}
+
+.right{
+    height: 600px;
+    width: 500px;
+    position: relative;
+    left: 750px;
+    bottom: 445px;
+}
+
+h2{
+    font-size: 30px;
+
+}
+
+h3{
+    font-size: 25px;
+    color: red;
+    position: relative;
+    top: 20px;
+}
+
+h4{
+    font-size: 20px;
+    color: green;
+    position: relative;
+    top: 30px;
+}
+
+p{
+    font-size: 20px;
+    position: relative;
+    top: 40px;
+    left: 20px;
+}
+
+s{
+    color: gray;
+}
+
+b{
+    color: green;
+}
+
+strong{
+    font-size: 20px;
+    position: relative;
+    top: 60px;
+}
+
+.para{
+    position: relative;
+    top: 40px;
+}
+
+.star{
+    position: relative;
+    top: 50px;
+}
+
+.stars{
+    font-size: 20px;
+}
+
+.si{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.add{
+    height: 50px;
+    width: 200px;
+    border: 2px solid darkorange;
+    background-color: darkorange;
+    border-radius: 5px;
+    color: white;
+    position: relative;
+    top: 130px;
+    left: 20px;
+    font-size: 20px;
+}
+
+.add a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+.buy{
+    height: 50px;
+    width: 200px;
+    border: 2px solid darkorange;
+    background-color: darkorange;
+    border-radius: 5px;
+    color: white;
+    position: relative;
+    top: 130px;
+    left: 50px;
+}
+
+.buy a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+.wish{
+    height: 50px;
+    width: 200px;
+    border: 2px solid red;
+    background-color: red;
+    border-radius: 5px;
+    color: white;
+    position: relative;
+    top: 150px;
+    left: 130px;
+}
+
+.wish a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+.details{
+    position: relative;
+    top: 60px;
+}
+
+.thumbnail{
+    position: relative;
+    left: 20px;
+    top: 10px;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.similar h2{
+    position: relative;
+    left: 30px;
+}
+
+.products{
+    border: 2px solid gray;
+    border-radius: 5px;
+    height: 450px;
+    width: 350px;
+}
+
+.products img{
+    position: relative;
+    left: 60px;
+    top: 40px;
+    border-radius: 10px;
+}
+
+.title{
+    position: relative;
+    left: 40px;
+}
+
+h5{
+    font-size: 20px;
+    position: relative;
+    top: 90px;
+    left: 5px;
+}
+
+.products p{
+    position: relative;
+    top: 100px;
+    left: 70px;
+}
+
+.comment{
+    position: relative;
+    top: 200px;
+    left: 20px;
+}
+
+input{
+    position: relative;
+    top: 10px;
+    border-radius: 3px;
+    border: 1px solid gray;
+    height: 50px;
+    width: 300px;
+}
+
+.comm{
+    position: relative;
+    top: 220px;
+    left: 20px;
+}
+
+.comm input{
+    position: relative;
+    top: 10px;
+    border-radius: 3px;
+    border: 1px solid gray;
+    height: 50px;
+    width: 300px;
+}
+
+.commen{
+    position: relative;
+    top: 240px;
+    left: 20px;
+}
+
+.commen input{
+    position: relative;
+    top: 10px;
+    border-radius: 3px;
+    border: 1px solid gray;
+    height: 50px;
+    width: 300px;
+}

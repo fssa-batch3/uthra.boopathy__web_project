@@ -1,0 +1,86 @@
+<html>
+    <head> 
+        <title> Profile Page </title>
+        <link rel="stylesheet" href="../../assets/css/style-profilepage.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+
+    </head>
+    
+    <body>
+        <header>
+            <a href="../homepage/frontpage.html"> <img class="logo" src="../../assets/images/logo.png" alt="logo" height="70px" width="70px"/> </a>
+            <h1> THARA'S WORLD </h1>
+              <div>
+                 <ul>
+                    <li> <a href="#"><i class="fa fa-shopping-cart" style="font-size:24px;color: black;" ></i></a></li>
+                    <li> <a href="#"><i class="fa fa-heart-o" style="font-size: 24px;color: black;"></i></a></li> 
+                    <li><a href="#"><i class="fa fa-shopping-bag" style="font-size:22px;color: black"></i></a></li>
+                    <li><a href="#"><i class="fa fa-bell" style="font-size:24px;color: black"></i></a></li>
+                    <li><a href="#"><i class="fa fa-user-circle-o" style="font-size:24px;color: black;"></i></a></li>
+                    <li> <a href="../homepage/loginpage.html"><span class="login"> LOG IN </span> </a></li>
+                  </ul>
+              </div>
+        </header>
+
+        <section class="signup-container">
+            
+                <h1> PROFILE</h1>
+
+                <div class="avatar">
+                    <img src="../../assets/images/avatar.jpg" height="180px" width="180px"/>
+                </div>
+               
+                <div class="name">
+                <label> Name: </label>
+		        <input type="name" placeholder="Firstname" required="true" />
+		        <input type="name" placeholder="Lastname" required="true" />
+		        </div>
+
+                <div class="age">
+                    <label> Age:</label>
+                    <input type="age" required="true"/>
+                </div>
+
+                <div class="gender">
+                    <label> Gender:</label>
+                    <div class="male">
+                    <label> Male </label> <input type="radio" name="Male_Female_Others" />
+                    <label> Female </label> <input type="radio" name="Male_Female_Others" />
+                    <label> Others </label> <input type="radio" name="Male_Female_Others" />
+                </div>
+                </div>
+
+                <div class="add">
+                    <label> Residential address: </label>
+                    <input  type="text" /><br>
+                    <input class="c1" type="text"/> <br>
+                    <input class="c1" type="text" placeholder="Pincode"/>
+                </div>
+                
+                    
+                <div class="no">
+                    <label> Contact number: </label>
+                    <input type="number" required="true" placeholder="9876543210" />
+                </div>
+
+                <div class="mail">
+                    <label> E-Mail Id: </label>
+                    <input type="mail" required="true" placeholder="ghds4729@gmail.com" />
+                </div>
+
+                <div class="des">
+                        <label> Your Designation:</label>
+                        <div class="buyer">
+                        <label> Buyer </label> <input type="radio" name="Buyer_Seller_Both" />
+                        <label> Seller </label> <input type="radio" name="Buyer_Seller_Both" />
+                        <label> Both </label> <input type="radio" name="Buyer_Seller_Both" />  
+                    </div>
+                </div>
+                
+                <div >
+                        <button class="btn-1"> Save </button>
+                        <button class="btn-2"> <a href="../homepage/frontpage.html"> Cancel </a> </button>
+                </div>        
+       
+            </section>

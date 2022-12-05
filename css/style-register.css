@@ -1,0 +1,130 @@
+*{
+    margin: 0px;
+}
+
+/* body{ 
+    background-image: url('../../assets/images/bg-img.jpg');
+    background-repeat: no-repeat;
+    background-size: 15x    00px;
+ */
+
+header{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: #D3D3D3;
+    height: 100px;
+}
+
+header div ul{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    list-style: none;
+    margin-left: 450px;
+}
+
+header div ul li{
+    padding-top: 30px;
+    padding-left: 20px;
+}
+
+
+.login{
+    position: relative;
+    top: 5px;
+}
+
+.logo{
+    margin-top: 15px;
+    margin-left: 100px;
+    border-radius: 50px;
+}
+
+h1{
+    font-size: 40px;
+    padding-top: 30px;
+    padding-left: 70px;
+}
+
+.register{
+    margin-left: 550px;
+    margin-top:150px;
+    border-radius: 15px;
+    border: 3px solid #fff;
+    background-color: #fff;
+    height:530px;
+    width:520px;
+    box-shadow: 5px 13px 20px #909090;
+}
+
+h2{
+    padding-top: 80px;
+    padding-left: 40px;
+}
+
+.register div{
+    padding-top: 30px;
+    padding-left: 70px;
+}
+
+button{
+    margin-top: 50px;
+    margin-left: 200px;
+    color: white;
+    border: 0px;
+    background-color: #A8A8A8;
+    border-radius: 7px;
+    height: 35px;
+    width: 130px;
+    position: relative;
+    right: 10px;
+    top: 5px;
+}
+
+button a{
+    color: white;
+    text-decoration: none;
+}
+
+input[type="name"]{
+    border: 1px solid gray;
+    border-radius: 7px;
+    height: 30px;
+    width: 200px;
+    position: relative;
+    left: 107px;
+}
+
+label{
+    font-size: 20px;
+}
+
+input[type="text"]{
+    border: 1px solid gray;
+    border-radius: 7px;
+    height: 30px;
+    width: 200px;
+    position: relative;
+    left: 40px;
+}
+
+input[type="password"]{
+    border: 1px solid gray;
+    border-radius: 7px;
+    height: 30px;
+    width: 200px;
+    font-size: 20px;
+    position: relative;
+    left: 23px;
+}
+
+.confirm input[type="password"]{
+    border: 1px solid gray;
+    border-radius: 7px;
+    height: 30px;
+    width: 200px;
+    font-size: 20px;
+    position: relative;
+    left: 10px;
+}

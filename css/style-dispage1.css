@@ -1,0 +1,281 @@
+*{
+    margin: 0px;
+}
+
+header{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: #D3D3D3;
+    height: 100px;
+}
+
+header div ul{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    list-style: none;
+    margin-left: 450px;
+}
+
+header div ul li{
+    padding-top: 40px;
+    padding-left: 20px;
+}
+
+header div ul li a{
+     text-decoration: none;
+     color: black;
+}
+
+h1{
+    font-size: 50px;
+    padding-left: 60px;
+    position: relative;
+    top: 20px;
+}
+
+.logo{
+    margin-top: 15px;
+    margin-left: 50px;
+    border-radius: 50px;
+}
+
+.login{
+    position: relative;
+    top: 5px;
+}
+
+.sub-heading{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: #F5F5F5;
+}
+
+.sub-heading a{
+     text-decoration: none;
+     padding-left: 60px;
+     padding-top: 40px;
+     color: black;
+     font-size: 19px;
+}
+
+.icon{
+    display: flex;
+    position: relative;
+    bottom: 30px;
+    padding-top: 60px;
+    padding-left: 180px;
+}
+
+input[type=text]{
+    height: 38px;
+    width: 300px;
+    padding: 5px 35px;
+    border-radius: 7px;
+    border: 1px solid gray;
+}
+.search{
+    color: gray;
+    position: relative;
+    top:10px ;
+    left:22px ;
+}
+.sub{
+    display: flex;
+    font-weight: bold;
+}    
+
+.thumbnail{
+    position: relative;
+    top: 80px;
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+}
+
+h3{
+    color: maroon;
+}
+
+.percent{
+    color: green;
+}
+
+.products{
+    border: 2px solid white;
+    border-radius: 5px;
+    height: 300px;
+    width: 300px;
+}
+
+.products:hover{
+    transform: translateY(-5);
+    transition: 0.2s;
+    box-shadow: 2px 3px 15px lightpink;
+}
+
+.products img{
+    position: relative;
+    left: 80px;
+    top: 40px;
+    border-radius: 10px;
+}
+
+.chudi{
+    border: 2px solid white;
+    border-radius: 5px;
+    height: 300px;
+    width: 300px;
+}
+
+.chudi:hover{
+    transform: translateY(-5);
+    transition: 0.2s;
+    box-shadow: 2px 3px 15px lightpink;
+}
+
+
+.chudi img{
+    position: relative;
+    left: 80px;
+    top: 10px;
+    border-radius: 10px;
+}
+
+.chudi h3{
+    position: relative;
+    top: 20px;
+}
+
+.chudi p{
+    position: relative;
+    top: 25px;
+}
+
+
+.h{
+    position: relative;
+    left: 5px;
+    top: 70px;
+}
+
+h3{
+    position: relative;
+    left: 50px;
+    top: 60px;
+}
+
+.ha{
+    position: relative;
+    left: 50px;
+    top: 80px;
+}
+
+.hs{
+    position: relative;
+    left: 50px;
+    top: 80px;
+}
+
+
+.ch{
+    position: relative;
+    left: 60px;
+    top: 80px;
+}
+
+.cho{
+    position: relative;
+    left: 80px;
+    top: 90px;
+}
+
+.pa{
+    position: relative;
+    left: 70px;
+    top: 60px;
+}
+
+p{
+    position: relative;
+    left: 50px;
+    top: 100px;
+    color: black;
+    font-size: 20px;
+    word-spacing: 5px;
+}
+
+s{
+    color: darkgrey;
+}
+
+.chaitra{
+    border: 2px solid white;
+    border-radius: 5px;
+    height: 300px;
+    width: 300px;
+}
+
+.chaitra:hover{
+    transform: translateY(-5);
+    transition: 0.2s;
+    box-shadow: 2px 3px 15px lightpink;
+}
+
+
+.chaitra img{
+    border-radius: 10px;
+    position: relative;
+    left: 80px;
+    top: 40px;
+}
+
+.sandal{
+    border: 2px solid white;
+    border-radius: 5px;
+    height: 300px;
+    width: 300px;
+}
+
+.sandal:hover{
+    transform: translateY(-5);
+    transition: 0.2s;
+    box-shadow: 2px 3px 15px lightpink;
+}
+
+
+.sandal img{
+    border-radius: 10px;
+    position: relative;
+    left: 50px;
+    top: 60px;
+}
+
+.sandal h3{
+    position: relative;
+    top: 100px;
+}
+
+.sandal p{
+    position: relative;
+    top: 110px;
+}
+
+.title{
+    position: relative;
+    left: 20px;
+    top: -10px;
+}
+
+h2{
+    position: relative;
+    top: 35px;
+    left: 60px;
+}
+
+.p{
+    position: relative;
+    top: 70px;
+}

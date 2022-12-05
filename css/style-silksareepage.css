@@ -1,0 +1,151 @@
+*{
+    margin: 0px;
+}
+
+header{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: #D3D3D3;
+    height: 100px;
+}
+
+header div ul{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    list-style: none;
+    margin-left: 450px;
+}
+
+header div ul li{
+    padding-top: 30px;
+    padding-left: 20px;
+}
+
+header div ul li a{
+     text-decoration: none;
+     color: black;
+}
+
+h1{
+    font-size: 50px;
+    padding-left: 60px;
+    position: relative;
+    top: 20px;
+}
+
+.logo{
+    margin-top: 15px;
+    margin-left: 50px;
+    border-radius: 50px;
+}
+
+.login{
+    position: relative;
+    top: 5px;
+}
+
+.thumbnail{
+    position: relative;
+    left: 20px;
+    top: 30px;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+h3, p{
+    color: maroon;
+}
+
+.products{
+    border: 2px solid gray;
+    border-radius: 5px;
+    height: 450px;
+    width: 350px;
+}
+
+.products img{
+    position: relative;
+    left: 60px;
+    top: 40px;
+    border-radius: 10px;
+}
+
+h3{
+    position: relative;
+    left: 15px;
+    top: 80px;
+}
+
+p{
+    position: relative;
+    left: 90px;
+    top: 90px;
+    color: black;
+    font-size: 20px;
+    word-spacing: 5px;
+}
+
+s{
+    color: darkgrey;
+}
+
+.chaitra{
+    border: 2px solid gray;
+    border-radius: 5px;
+    height: 450px;
+    width: 350px;
+}
+
+.chaitra img{
+    border-radius: 10px;
+    position: relative;
+    left: 80px;
+    top: 40px;
+}
+
+.title{
+    position: relative;
+    left: 40px;
+}
+
+.subheading{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: 100px;
+    width: 1470px;
+    background-color: #F5F5F5;
+}
+
+h2{
+    position: relative;
+    top: 35px;
+    left: 60px;
+}
+
+.clr{
+    position: relative;
+    top: 38px;
+    left: 90px;
+    font-size: 20px;
+}
+
+.mrp{
+    position: relative;
+    top: 38px;
+    left: 140px;
+    font-size: 20px;
+}
+
+select{
+    height: 25px;
+    width: 100px;
+    position: relative;
+    left: 5px;
+    bottom: 1px;
+    border-radius: 3px;
+}
