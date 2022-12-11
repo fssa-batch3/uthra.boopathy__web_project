@@ -2,11 +2,15 @@
     margin: 0px;
 }
 
+body{
+    background-color: rgb(252, 252, 252);
+}
+
 header{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    background-color: rgb(246, 199, 138);
+    background-color: 	purple;
     height: 100px;
     position: sticky;
     top: 0px;
@@ -18,30 +22,26 @@ header div ul{
     flex-wrap: wrap;
     flex-direction: row;
     list-style: none;
-    margin-left: 450px;
+    margin-left: 550px;
 }
 
 header div ul li{
-    padding-top: 30px;
-    padding-left: 20px;
+    padding-top: 40px;
+    padding-left: 30px;
 }
 
 header div ul li a{
      text-decoration: none;
      color: black;
 }
-.header i{
-    padding: 0px 10px 0px 10px;
-    margin: 0px 0px 0px 20px;
-}
 
 h1{
     font-size: 50px;
+    font-weight: normal;
     padding-left: 60px;
     position: relative;
     top: 20px;
-    font-family: Parisienne;
-    color: rgb(237, 69, 120);
+    color: white;
 }
 
 .logo{
@@ -51,31 +51,36 @@ h1{
 }
 
 .login{
-    position: relative;
-    top: 5px;
+    font-size: 20px;
+    color: white;
 }
 
 .sub-heading{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    background-color: azure;
-    position: sticky;
-    top: 100px;
-    z-index: 10;
+    border-bottom: 1px solid lightgray;
 }
 
 .sub-heading a{
      text-decoration: none;
      padding-left: 60px;
-     padding-top: 50px;
-     color: ;
+     padding-top: 40px;
+     color: black;
      font-size: 19px;
 }
 
+strong{
+    font-size: 23px;
+}
+
 section{
-    margin-top: 100px;
-    margin-left: 30px;
+    margin-top: 50px;
+    margin-left: 35px;
+}
+
+.collections img:hover{
+    transform: scale(1.1);
 }
 
 .dis img:hover{
@@ -106,12 +111,17 @@ section{
     display: flex;
     position: relative;
     bottom: 20px;
-    padding-top: 60px;
+    padding-top: 50px;
     padding-left: 180px;
 }
 
 .icons{
     display: flex;    
+}
+
+.icons a{
+    text-decoration: none;
+    color: black;
 }
 
 input[type=text]{
@@ -130,16 +140,12 @@ input[type=text]{
 .sub{
     display: flex;
     position: relative;
-    bottom: 10px;
+    bottom: 5px;
     font-weight: bold;
 }  
 
-.sub a{
-    color: ;
-}
-
 .discounts img{
-    margin-top: -30px;
+    margin-top: 30px;
      padding: 70px;
 } 
 
@@ -154,6 +160,12 @@ input[type=text]{
     padding: 70px;
 }
 
+.counts img{
+    margin-top: 30px;
+     padding: 45px;
+} 
+
+
 .dress{
     position: relative;
     top: 5px;
@@ -163,7 +175,7 @@ input[type=text]{
     border-bottom: 1px solid pink;
     width: 450px;
     position: relative;
-    top: 50px;
+    top: 90px;
     left: 50px;
 }
 
@@ -172,7 +184,7 @@ input[type=text]{
     width: 450px;
     position: relative;
     left: 1000px;
-    top: 10px;
+    top: 50px;
 }
 
 
@@ -180,27 +192,19 @@ h2{
     color: darkmagenta;
     font-size: 35px;
     position: relative;
-    top: 30px;
+    top: 70px;
     display: inline-block;
     left: 540px;
     word-spacing: 15px;
 }
 
-.dis{
-    position: relative;
-    top: 30px;
-}
+.dis img{
+    margin-top: 100px;
+     padding: 20px;
+} 
 
-.cos{
-    position: relative;
-    bottom: 70px;
-    left: 60px;
-}
-
-.je{
-    position: relative;
-    bottom: 80px;
-    left: 120px;
+.dis1{
+    margin-bottom: 20px;
 }
 
 .counts{
@@ -208,31 +212,20 @@ h2{
     top: 70px;
 }
 
-.co{
-    position: relative;
-    left: 80px;
-}
 
-.sa{
-    position: relative;
-    left: 200px;
-}
 
 footer{
-    background-color: lightgray;
-    height: 200px;
-    display: flex;
-    align-content: space-evenly;
-    justify-content: space-evenly;
-    position: relative;
-    top: 130px;
+    background-color: purple;
+    height: 230px;
+    margin-top: 150px;
 }
 
 .about{
     position: relative;
-    top: 10px;
+    top: 30px;
     left: 20px;
     padding-top: 10px;
+    color: white;
 }
 
 .us{
@@ -243,17 +236,40 @@ footer{
     word-spacing: 5px;
 }
 
+.us a{
+    text-decoration: none;
+    color: white;
+}
+
 h4{
     font-size: 25px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+}
+
+.top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 .contact{
     font-size: 20px;
     position: relative;
     top: 50px; 
+    color: white;
+}
+
+.copy{
+    color: white;
+    font-size: 23px;
+    position: relative;
+    top: 70px;
+    right: 200px;
 }
 
 .con{
+    font-size: 23px;
     position: relative;
     top: 10px;
     right: 5px;
@@ -263,7 +279,7 @@ h4{
     border-right: 2px solid gray;
     height: 150px;
     position: relative;
-    top: 20px;
+    top: 45px;
     right: 40px;
 }
 
@@ -280,10 +296,8 @@ h4{
     padding: 10px;
     border: 1px solid gray;
     border-radius: 60px;
-}
-
-.insta:hover{
-    color: palevioletred;
+    background-image: linear-gradient(315deg, #7110d2, #de46a9);
+    color: white;
 }
 
 .fb{
@@ -292,12 +306,9 @@ h4{
     border-radius: 100px;
     position: relative;
     left: 10px;
+    background-color: #3b5998;
+    color: white;
 }
-
-.fb:hover{
-    color: rgb(16, 16, 135);
-}
-
 
 .wa{
     padding: 10px;
@@ -305,13 +316,9 @@ h4{
     border-radius: 70px;
     position: relative;
     left: 30px;
+    background-color: #25d366;
+    color: white;
 }
-
-
-.wa:hover{
-    color: green;
-}
-
 
 .twiter{
     padding: 10px;
@@ -319,9 +326,37 @@ h4{
     border-radius: 50px;
     position: relative;
     left: 20px;
+    background-color: #00acee;
+    color: white;
 }
 
+.collections img{
+    border-radius: 150px;
+    padding: 40px;
+}
 
-.twiter:hover{
-    color: skyblue;
+.icons div{
+    position: relative;
+}
+
+.div{
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 70px;
+    display: inline-flex;
+    bottom: 20px;
+}
+
+.divs{
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 90px;
+    bottom: 20px;
+}
+
+.divss{
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 100px;
+    bottom: 20px;
 }

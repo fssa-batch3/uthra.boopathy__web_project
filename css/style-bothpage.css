@@ -6,7 +6,7 @@ header{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    background-color: #D3D3D3;
+    background-color: purple;
     height: 100px;
     position: sticky;
     top: 0px;
@@ -33,9 +33,11 @@ header div ul li a{
 
 h1{
     font-size: 50px;
+    font-weight: normal;
     padding-left: 60px;
     position: relative;
-    top: 20px;
+    top: 20px ;
+    color: white;
 }
 
 .logo{
@@ -45,8 +47,8 @@ h1{
 }
 
 .login{
-    position: relative;
-    top: 5px;
+    color: white;
+    font-size: 20px;
 }
 
 .sub-heading{

@@ -6,7 +6,7 @@ header{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    background-color: #D3D3D3;
+    background-color: purple;
     height: 100px;
 }
 
@@ -15,12 +15,12 @@ header div ul{
     flex-wrap: wrap;
     flex-direction: row;
     list-style: none;
-    margin-left: 450px;
+    margin-left: 550px;
 }
 
 header div ul li{
-    padding-top: 30px;
-    padding-left: 20px;
+    padding-top: 40px;
+    padding-left: 30px;
 }
 
 header div ul li a{
@@ -30,9 +30,10 @@ header div ul li a{
 
 h1{
     font-size: 50px;
+    font-weight: normal;
     padding-left: 60px;
-    position: relative;
-    top: 20px;
+    padding-top: 20px;
+    color: white;
 }
 
 .logo{
@@ -42,8 +43,8 @@ h1{
 }
 
 .login{
-    position: relative;
-    top: 5px;
+    font-size: 20px;
+    color: white;
 }
 
 .thumbnail{
@@ -60,22 +61,16 @@ h3, p{
 }
 
 .products{
-    border: 2px solid rgb(247, 202, 208);
-    border-radius: 15px;
+    border: 1px solid #f8f8f8;
     height: 400px;
     width: 280px;
-}
-
-.products:hover{
-    transform: -10;
-    transition: 0.2s;
-    box-shadow: 3px 2px 15px lightpink;
-    border-radius: 20px;
+    background-color: #f8f8f8;
+    position: relative;
 }
 
 .products img{
     position: relative;
-    left: 60px;
+    left: 50px;
     top: 40px;
     border-radius: 10px;
 }
@@ -100,24 +95,18 @@ s{
 }
 
 .chaitra{
-    border: 2px solid rgb(247, 202, 208);
-    border-radius: 15px;
+    border: 1px solid #f8f8f8;
+    background-color: #f8f8f8;
     height: 400px;
     width: 280px;
+    position: relative;
 }
 
 .chaitra img{
-    border-radius: 10px;
+    border-radius: 8px;
     position: relative;
     left: 60px;
     top: 40px;
-}
-
-.chaitra:hover{
-    transform: -10;
-    transition: 0.2s;
-    box-shadow: 3px 2px 15px lightpink;
-    border-radius: 20px;
 }
 
 .subheading{
@@ -137,4 +126,18 @@ s{
 
 .stars{
     font-size: 20px;
+}
+
+.del{
+    position: absolute;
+    left: 245px;
+    top: 10px;
+}
+
+.chaitra a{
+    text-decoration: none;
+}
+
+.products a{
+    text-decoration: none;
 }

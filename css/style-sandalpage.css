@@ -6,7 +6,8 @@ header{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    background-color: #D3D3D3;
+    background-color: purple;
+    height: 100px;
 }
 
 header div ul{
@@ -14,12 +15,12 @@ header div ul{
     flex-wrap: wrap;
     flex-direction: row;
     list-style: none;
-    margin-left: 450px;
+    margin-left: 550px;
 }
 
 header div ul li{
-    padding-top: 30px;
-    padding-left: 20px;
+    padding-top: 40px;
+    padding-left: 30px;
 }
 
 header div ul li a{
@@ -30,17 +31,20 @@ header div ul li a{
 h1{
     font-size: 50px;
     padding-left: 60px;
+    padding-top: 20px;
+    color: white;
+    font-weight: normal;
 }
 
 .logo{
-    margin-top: 25px;
+    margin-top: 15px;
     margin-left: 50px;
     border-radius: 50px;
 }
 
 .login{
-    position: relative;
-    top: 5px;
+    font-size: 20px;
+    color: white;
 }
 
 
@@ -95,10 +99,33 @@ input[type=text]{
     display: flex;
     justify-content: space-around;
     padding: 20px;
+    margin-top: 50px;
+}
+
+p{
+    font-weight: bold;
+    font-size: 20px;
+    margin: 40px 0px 30px 40px;
+}
+img{
+    border-radius: 15px;
+}
+
+.pictures a{
+    text-decoration: none;
+    color: black;
+}
+
+.pictures:hover{
+    transition: 0.5s;
+    transform: scale(1.2);
+}
+
+.office{
     margin-top: 20px;
 }
 
-.pictures img{
+/* .pictures img{
     position: relative;
     left: 15px;
     top: 25px;

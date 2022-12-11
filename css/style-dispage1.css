@@ -6,7 +6,7 @@ header{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    background-color: #D3D3D3;
+    background-color: purple;
     height: 100px;
 }
 
@@ -15,12 +15,12 @@ header div ul{
     flex-wrap: wrap;
     flex-direction: row;
     list-style: none;
-    margin-left: 450px;
+    margin-left: 550px;
 }
 
 header div ul li{
     padding-top: 40px;
-    padding-left: 20px;
+    padding-left: 30px;
 }
 
 header div ul li a{
@@ -30,9 +30,10 @@ header div ul li a{
 
 h1{
     font-size: 50px;
+    font-weight: normal;
     padding-left: 60px;
-    position: relative;
-    top: 20px;
+    padding-top: 20px;
+    color: white;
 }
 
 .logo{
@@ -42,8 +43,8 @@ h1{
 }
 
 .login{
-    position: relative;
-    top: 5px;
+    color: white;
+    font-size: 20px;
 }
 
 .sub-heading{
@@ -85,197 +86,78 @@ input[type=text]{
 .sub{
     display: flex;
     font-weight: bold;
-}    
+}   
 
 .thumbnail{
-    position: relative;
-    top: 80px;
     display: flex;
-    justify-content: space-around;
-    padding: 50px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 60px 0px 30px 30px;
+}
+
+img{
+    border-radius: 5px;
+    margin-left: 50px;
+    margin-top: 15px;
 }
 
 h3{
-    color: maroon;
+    font-size: 22px;
+    font-weight: normal;
+    margin-top: 20px;
+    margin-left: 30px;
+    width: 250px;
+}
+
+p{
+    color: black;
+    font-size: 20px;
+    word-spacing: 5px;
+    margin-top: 10px;
+    margin-left: 30px; 
+}
+
+s{
+    color: gray;
 }
 
 .percent{
     color: green;
 }
 
-.products{
-    border: 2px solid white;
-    border-radius: 5px;
-    height: 300px;
-    width: 300px;
-}
-
 .products:hover{
-    transform: translateY(-5);
-    transition: 0.2s;
-    box-shadow: 2px 3px 15px lightpink;
-}
-
-.products img{
-    position: relative;
-    left: 80px;
-    top: 40px;
-    border-radius: 10px;
-}
-
-.chudi{
-    border: 2px solid white;
-    border-radius: 5px;
-    height: 300px;
-    width: 300px;
-}
-
-.chudi:hover{
-    transform: translateY(-5);
-    transition: 0.2s;
-    box-shadow: 2px 3px 15px lightpink;
-}
-
-
-.chudi img{
-    position: relative;
-    left: 80px;
-    top: 10px;
-    border-radius: 10px;
-}
-
-.chudi h3{
-    position: relative;
-    top: 20px;
-}
-
-.chudi p{
-    position: relative;
-    top: 25px;
-}
-
-
-.h{
-    position: relative;
-    left: 5px;
-    top: 70px;
-}
-
-h3{
-    position: relative;
-    left: 50px;
-    top: 60px;
-}
-
-.ha{
-    position: relative;
-    left: 50px;
-    top: 80px;
-}
-
-.hs{
-    position: relative;
-    left: 50px;
-    top: 80px;
-}
-
-
-.ch{
-    position: relative;
-    left: 60px;
-    top: 80px;
-}
-
-.cho{
-    position: relative;
-    left: 80px;
-    top: 90px;
-}
-
-.pa{
-    position: relative;
-    left: 70px;
-    top: 60px;
-}
-
-p{
-    position: relative;
-    left: 50px;
-    top: 100px;
-    color: black;
-    font-size: 20px;
-    word-spacing: 5px;
-}
-
-s{
-    color: darkgrey;
-}
-
-.chaitra{
-    border: 2px solid white;
-    border-radius: 5px;
-    height: 300px;
-    width: 300px;
+    transform: scale(1.1);
 }
 
 .chaitra:hover{
-    transform: translateY(-5);
-    transition: 0.2s;
-    box-shadow: 2px 3px 15px lightpink;
+    transform: scale(1.1);
 }
 
+.products{
+    border: 1px solid #f8f8f8;
+    background-color: #f8f8f8;
+}
 
-.chaitra img{
-    border-radius: 10px;
-    position: relative;
-    left: 80px;
-    top: 40px;
+.chaitra{
+    border: 1px solid #f8f8f8;
+    background-color: #f8f8f8;
+}
+
+.chudi:hover{
+    transform: scale(1.1);
 }
 
 .sandal{
-    border: 2px solid white;
-    border-radius: 5px;
-    height: 300px;
-    width: 300px;
+    border: 1px solid #f8f8f8;
+    background-color: #f8f8f8;
 }
 
 .sandal:hover{
-    transform: translateY(-5);
-    transition: 0.2s;
-    box-shadow: 2px 3px 15px lightpink;
+    transform: scale(1.1);
 }
 
-
-.sandal img{
-    border-radius: 10px;
-    position: relative;
-    left: 50px;
-    top: 60px;
-}
-
-.sandal h3{
-    position: relative;
-    top: 100px;
-}
-
-.sandal p{
-    position: relative;
-    top: 110px;
-}
-
-.title{
-    position: relative;
-    left: 20px;
-    top: -10px;
-}
-
-h2{
-    position: relative;
-    top: 35px;
-    left: 60px;
-}
-
-.p{
-    position: relative;
-    top: 70px;
+.chudi{
+    border: 1px solid #f8f8f8;
+    background-color: #f8f8f8;
 }

@@ -6,7 +6,8 @@ header{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    background-color: #D3D3D3;
+    background-color: purple;
+    height: 100px;
 }
 
 header div ul{
@@ -18,8 +19,8 @@ header div ul{
 }
 
 header div ul li{
-    padding-top: 30px;
-    padding-left: 20px;
+    padding-top: 40px;
+    padding-left: 30px;
 }
 
 header div ul li a{
@@ -32,6 +33,7 @@ h1{
     padding-left: 60px;
     position: relative;
     top: 20px;
+    color: white;
 }
 
 .logo{
@@ -43,8 +45,8 @@ h1{
 }
 
 .login{
-    position: relative;
-    top: 5px;
+    font-size: 20px;
+    color: white;
 }
 
 section{
@@ -59,7 +61,7 @@ section{
     border-radius: 10px;
     height: 800px;
     width: 800px;
-    box-shadow: 10px 25px 30px #888888;
+    box-shadow: 2px 4px 8px 2px rgba(6, 6, 6, 0.2), 3px 6px 20px 3px rgba(0, 0, 0, 0.19);
 }
 
 .avatar{

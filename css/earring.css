@@ -87,17 +87,20 @@ select{
 
 img{
     border-radius: 5px;
-    margin-left: 25px;
+    margin-left: 15px;
     margin-top: 15px;
+}
+
+.img{
+    margin-left: 35px;
 }
 
 h3{
     font-size: 22px;
     font-weight: normal;
     margin-top: 20px;
-    margin-left: 30px;
+    margin-left: 33px;
     width: 250px;
-    color: rgb(74, 3, 74);
 }
 
 p{
@@ -114,10 +117,6 @@ s{
 
 .percent{
     color: green;
-}
-
-a{
-    text-decoration: none;
 }
 
 .products:hover{

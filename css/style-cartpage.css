@@ -1,13 +1,12 @@
 *{
     margin: 0px;
-    padding: 0;
 }
 
 header{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    background-color: #D3D3D3;
+    background-color: purple;
     height: 100px;
 }
 
@@ -16,12 +15,12 @@ header div ul{
     flex-wrap: wrap;
     flex-direction: row;
     list-style: none;
-    margin-left: 450px;
+    margin-left: 550px;
 }
 
 header div ul li{
-    padding-top: 30px;
-    padding-left: 20px;
+    padding-top: 40px;
+    padding-left: 30px;
 }
 
 header div ul li a{
@@ -31,9 +30,10 @@ header div ul li a{
 
 h1{
     font-size: 50px;
+    font-weight: normal;
     padding-left: 60px;
-    position: relative;
-    top: 20px;
+    padding-top: 20px;
+    color: white;
 }
 
 .logo{
@@ -43,8 +43,8 @@ h1{
 }
 
 .login{
-    position: relative;
-    top: 5px;
+    font-size: 20px;
+    color: white;
 }
 
 .container{
@@ -58,7 +58,7 @@ h1{
     justify-content: space-around;
     align-items: center;
     margin-top: 100px;   
-    margin-left: 150px;
+    margin-left: 180px;
 }
 
 .details {
@@ -143,7 +143,7 @@ s{
     justify-content: space-around;
     align-items: center;
     margin-top: 100px;   
-    margin-left: 150px;
+    margin-left: 180px;
 }
 
 .container1 img{
@@ -161,7 +161,7 @@ s{
     justify-content: space-around;
     align-items: center;
     margin-top: 100px;   
-    margin-left: 150px;
+    margin-left: 180px;
 }
 
 .container2 img{
@@ -179,7 +179,7 @@ s{
     justify-content: space-around;
     align-items: center;
     margin-top: 100px;   
-    margin-left: 150px;
+    margin-left: 180px;
 }
 
 .container3 img{
