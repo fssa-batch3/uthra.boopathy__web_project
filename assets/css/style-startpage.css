@@ -1,0 +1,106 @@
+*{
+    margin: 0px;
+}
+
+body{
+    background-color: #ebc6c6;
+}
+
+.login{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 50px 150px 0px 100px;
+}
+
+.login img{
+    border-radius: 80px;
+    position: relative;
+    bottom: 10px;
+    left: 40px;
+}
+
+.login button{
+    position: relative;
+    bottom: 60px;
+    height: 35px;
+    width: 120px;
+}
+
+.login a{
+    font-size: 20px;
+}
+
+.nav ul li a {
+    padding: 15px;
+    text-decoration: none;
+}
+
+.nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    list-style: none;
+    margin-top: 20px;
+}
+
+.page{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: -40px;
+}
+
+.left img{
+    transform: scaleX(-1);
+}
+
+.right{
+    height: 450px;
+    width: 650px;
+    margin-top: 180px;
+    margin-left: 130px;
+}
+h3{
+    color: purple;
+    font-weight: normal;
+    font-size: 45px;
+}
+
+p{
+    font-size: 22px;
+    margin-top: 60px;
+    color: rgba(49, 2, 49, 0.849);
+}
+
+button a{
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+}
+
+h4{
+    font-size: 18px;
+    color: white;
+    font-weight: normal;
+}
+
+span{
+    color:purple;
+    font-size:25px;
+    font-weight: 500;
+}
+
+.left{
+    margin-left: 60px;
+}
+
+button{
+    height: 45px;
+    width: 180px;
+    border-radius: 7px;
+    border: none;
+    background-color:purple;
+    margin: 80px 40px 0px 0px;
+    padding: 5px;
+}

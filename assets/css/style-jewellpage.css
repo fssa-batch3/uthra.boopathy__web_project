@@ -1,0 +1,222 @@
+*{
+    margin: 0px;
+}
+
+header{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: purple;
+    height: 100px;
+}
+
+header div ul{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    list-style: none;
+    margin-left: 450px;
+}
+
+header div ul li{
+    padding-top: 30px;
+    padding-left: 20px;
+}
+
+header div ul li a{
+     text-decoration: none;
+     color: black;
+}
+
+h1{
+    font-size: 50px;
+    padding-left: 60px;
+    position: relative;
+    top: 20px;
+    color: white;
+}
+
+.logo{
+    margin-top: 25px;
+    margin-left: 50px;
+    border-radius: 50px;
+    position: relative;
+    bottom: 10px;
+}
+
+.login{
+    color: white;
+    font-size: 20px;
+}
+
+
+.sub-heading{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: #F5F5F5;
+}
+
+.sub-heading a{
+     text-decoration: none;
+     padding-left: 50px;
+     padding-top: 50px;
+     color: black;
+     font-size: 20px;
+}
+
+.icon{
+    display: flex;
+    position: relative;
+    bottom: 20px;
+    padding-top: 60px;
+    padding-left: 180px;
+}
+
+.icons{
+    display: flex;    
+}
+
+input[type=text]{
+    height: 38px;
+    width: 300px;
+    padding: 5px 35px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+.search{
+    color: gray;
+    position: relative;
+    top:10px ;
+    left:22px ;
+}
+.sub{
+    display: flex;
+    position: relative;
+    bottom: 10px;
+    font-weight: bold;
+}
+
+.thumbnail{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    margin-top: 90px;
+}
+
+.thumb{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    margin-top: 90px;
+    margin-left: 70px;
+}
+
+.ear{
+    font-weight: bold;
+    font-size: 20px;
+    margin: 60px 0px 0px 70px;
+}
+
+p{
+    font-weight: bold;
+    font-size: 20px;
+    margin: 40px 0px 30px 40px;
+}
+img{
+    border-radius: 15px;
+}
+
+.pictures a{
+    text-decoration: none;
+    color: black;
+}
+
+.pictures:hover{
+    transition: 0.5s;
+    transform: scale(1.2);
+    
+}
+
+/* 
+.thumbnail{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.pictures img{
+    position: relative;
+    left: 35px;
+    top: 25px;
+}
+.pictures{
+    border: 2px solid white;
+    border-radius: 5px;
+    width: 250px;
+    height: 250px;
+}
+
+.pictures:hover{
+    transform: -10;
+    transition: 0.2s;
+    box-shadow: 3px 2px 15px lightpink;
+    border-radius: 20px;
+}
+
+img{
+    border-radius: 7px;
+}
+
+.pictures a{
+    text-decoration: none;
+    color: black;
+}
+
+.necklace{
+    position: relative;
+    left: 5px;
+}
+
+.choker{
+    position: relative;
+    left: 5px;
+}
+
+.chain{
+    position: relative;
+    left: 20px;
+}
+
+.wear{
+    position: relative;
+    left: 15px;
+}
+
+.pracelet{
+    position: relative;
+    left: 30px;
+}
+
+.anklet{
+    position: relative;
+    left: 15px;
+}
+
+.set{
+    position: relative;
+    left: 20px;
+}
+
+.nets{
+    position: relative;
+    left: 10px;
+}
+
+p{
+    font-weight: bold;
+    position: relative;
+    left: 80px;
+    top: 40px;
+}

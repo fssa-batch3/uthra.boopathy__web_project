@@ -1,0 +1,163 @@
+*{
+    margin: 0px;
+}
+
+header{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: purple;
+    height: 100px;
+}
+
+header div ul{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    list-style: none;
+    margin-left: 550px;
+}
+
+header div ul li{
+    padding-top: 40px;
+    padding-left: 30px;
+}
+
+header div ul li a{
+     text-decoration: none;
+     color: black;
+}
+
+h1{
+    font-size: 50px;
+    font-weight: normal;
+    padding-left: 60px;
+    padding-top: 20px;
+    color: white;
+}
+
+.logo{
+    margin-top: 15px;
+    margin-left: 50px;
+    border-radius: 50px;
+}
+
+.login{
+    color: white;
+    font-size: 20px;
+}
+
+.sub-heading{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: #F5F5F5;
+}
+
+.sub-heading a{
+     text-decoration: none;
+     padding-left: 60px;
+     padding-top: 40px;
+     color: black;
+     font-size: 19px;
+}
+
+.icon{
+    display: flex;
+    position: relative;
+    bottom: 30px;
+    padding-top: 60px;
+    padding-left: 180px;
+}
+
+input[type=text]{
+    height: 38px;
+    width: 300px;
+    padding: 5px 35px;
+    border-radius: 7px;
+    border: 1px solid gray;
+}
+.search{
+    color: gray;
+    position: relative;
+    top:10px ;
+    left:22px ;
+}
+.sub{
+    display: flex;
+    font-weight: bold;
+}   
+
+.thumbnail{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 60px 0px 30px 30px;
+}
+
+img{
+    border-radius: 5px;
+    margin-left: 50px;
+    margin-top: 15px;
+}
+
+h3{
+    font-size: 22px;
+    font-weight: normal;
+    margin-top: 20px;
+    margin-left: 30px;
+    width: 250px;
+}
+
+p{
+    color: black;
+    font-size: 20px;
+    word-spacing: 5px;
+    margin-top: 10px;
+    margin-left: 30px; 
+}
+
+s{
+    color: gray;
+}
+
+.percent{
+    color: green;
+}
+
+.products:hover{
+    transform: scale(1.1);
+}
+
+.chaitra:hover{
+    transform: scale(1.1);
+}
+
+.products{
+    border: 1px solid #f8f8f8;
+    background-color: #f8f8f8;
+}
+
+.chaitra{
+    border: 1px solid #f8f8f8;
+    background-color: #f8f8f8;
+}
+
+.chudi:hover{
+    transform: scale(1.1);
+}
+
+.sandal{
+    border: 1px solid #f8f8f8;
+    background-color: #f8f8f8;
+}
+
+.sandal:hover{
+    transform: scale(1.1);
+}
+
+.chudi{
+    border: 1px solid #f8f8f8;
+    background-color: #f8f8f8;
+}

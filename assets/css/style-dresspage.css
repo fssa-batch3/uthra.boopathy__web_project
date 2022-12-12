@@ -1,0 +1,149 @@
+*{
+    margin: 0px;
+}
+
+header{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: purple;
+    height: 100px;
+}
+
+header div ul{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    list-style: none;
+    margin-left: 550px;
+}
+
+header div ul li{
+    padding-top: 40px;
+    padding-left: 25px;
+}
+
+h1{
+    font-size: 50px;
+    padding-left: 60px;
+    position: relative;
+    top: 20px;
+    color: white;
+    font-weight: normal;
+}
+
+.logo{
+    margin-top: 25px;
+    margin-left: 60px;
+    border-radius: 50px;
+    position: relative;
+    bottom: 10px;
+}
+
+.login{
+    font-size: 20px;
+    color: white;
+}
+
+.sub-heading{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: #F5F5F5;
+}
+
+.sub-heading a{
+     text-decoration: none;
+     padding-left: 50px;
+     padding-top: 40px;
+     color: black;
+     font-size: 20px;
+}
+
+.icon{
+    display: flex;
+    position: relative;
+    bottom: 20px;
+    padding-top: 60px;
+    padding-left: 180px;
+}
+
+.icons{
+    display: flex;    
+}
+
+input[type=text]{
+    height: 38px;
+    width: 300px;
+    padding: 5px 35px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+.search{
+    color: gray;
+    position: relative;
+    top:10px ;
+    left:22px ;
+}
+.sub{
+    display: flex;
+    position: relative;
+    font-weight: bold;
+}
+
+.sub a{
+    color: black;
+}
+
+ .thumbnail{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    margin-top: 90px;
+}
+
+p{
+    font-weight: bold;
+    margin: 40px 0px 30px 90px;
+}
+img{
+    border-radius: 15px;
+}
+
+.pictures a{
+    text-decoration: none;
+    color: black;
+}
+
+.thumb{ 
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.thumb p{
+    font-weight: bold;
+    margin: 40px 0px 0px 90px;
+}
+
+.wear{
+    position: relative;
+    right: 40px;
+}
+
+.party{
+    position: relative;
+    bottom: 15px;
+}
+
+.western{
+    position: relative;
+    bottom: 20px;
+}
+
+.pictures:hover{
+    transition: 0.5s;
+    transform: scale(1.1);
+    
+}
