@@ -1,0 +1,109 @@
+*{
+    margin: 0px;
+}
+
+header{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: purple;
+    height: 100px;
+}
+
+header div ul{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    list-style: none;
+    margin-left: 550px;
+}
+
+header div ul li{
+    padding-top: 40px;
+    padding-left: 30px;
+}
+
+header div ul li a{
+     text-decoration: none;
+     color: white;
+     font-size: 22px;
+}
+
+h1{
+    font-size: 50px;
+    font-weight: normal;
+    padding-left: 60px;
+    padding-top: 20px;
+    color: white;
+}
+
+.logo{
+    margin-top: 15px;
+    margin-left: 50px;
+    border-radius: 50px;
+}
+
+.login{
+   font-size: 20px;
+   color: white;
+}
+
+h2{
+    font-size: 30px;
+    margin: 80px 0px 0px 200px;
+}
+
+.box{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 100px 100px 20px 100px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    height: 590px;
+}
+
+.photo{
+    height: 200px;
+    width: 200px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin: 100px 0px 0px 100px;
+}
+
+.photo img{
+    position: relative;
+    top: 55px;
+    left:65px;
+}
+
+.details{
+    font-size: 25px;
+    margin: 50px 0px 0px 90px;
+}
+
+input{
+    width: 500px;
+    border-bottom: 1px solid gray;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin-bottom: 20px;
+}
+
+button{
+    height: 35px;
+    width: 100px;
+    border: 2px solid purple;
+    border-radius: 5px;
+    background-color: purple;
+    color: white;
+    font-size: 20px;
+    margin-left: 700px;
+    margin-top: 20px;
+}
+
+button a{
+    text-decoration: none;
+    color: white;
+}
