@@ -89,6 +89,7 @@ input{
     border-left: none;
     border-right: none;
     margin-bottom: 20px;
+    outline: none;
 }
 
 button{

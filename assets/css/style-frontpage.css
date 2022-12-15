@@ -10,7 +10,7 @@ header{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    background-color: 	#ebc6c6;
+    background-color: 	purple;
     height: 100px;
     position: sticky;
     top: 0px;
@@ -41,7 +41,7 @@ h1{
     padding-left: 60px;
     position: relative;
     top: 20px;
-    color: purple;
+    color: white;
 }
 
 .logo{
@@ -52,7 +52,7 @@ h1{
 
 .login{
     font-size: 20px;
-    color: black;
+    color: white;
 }
 
 .sub-heading{
@@ -125,11 +125,12 @@ section{
 }
 
 input[type=text]{
-    height: 38px;
+    height: 30px;
     width: 200px;
     padding: 5px 35px;
     border-radius: 8px;
     border: 1px solid gray;
+    outline: none;
 }
 
 input:hover{

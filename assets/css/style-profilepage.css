@@ -78,6 +78,7 @@ input[type="text"]{
     position: relative;
     top: 8px;
     left: 20px;
+    outline: none;
 }
 
 
@@ -141,6 +142,7 @@ input[type="mail"]{
     font-size: 15px;
     position: relative;
     left: 98px;
+    outline: none;
 }
 
 input[type="date"]{
@@ -150,6 +152,7 @@ input[type="date"]{
     padding-left: 25px;
     position: relative;
     left: 70px;
+    outline: none;
 }
 
 input[type="name"]{
@@ -159,6 +162,7 @@ input[type="name"]{
     padding-left: 25px;
     position: relative;
     left: 125px;
+    outline: none;
 }
 
 input[type="number"]{
@@ -168,6 +172,7 @@ input[type="number"]{
     font-size: 15px;
     position: relative;
     left: 47px;
+    outline: none;
 }
 
 input[type="age"]{
@@ -177,6 +182,7 @@ input[type="age"]{
     font-size: 15px;
     position: relative;
     left: 140px;
+    outline: none;
 }
 
 .c1{
@@ -209,9 +215,9 @@ margin-left: 165px;
     top: 220px;
     align-content: space-between;
     border-radius: 5px;
-    border: 1px solid plum;
-    color: white;
-    background-color: plum;
+    border: 1px solid gray;
+    color: black;
+    background-color: gray;
     height: 35px;
     width: 100px;
 }

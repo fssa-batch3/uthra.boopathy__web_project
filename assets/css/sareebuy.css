@@ -178,6 +178,7 @@ input[type="name"]{
     padding-left: 25px;
     position: relative;
     left: 120px;
+    outline: none;
 }
 
 input[type="text"]{
@@ -189,6 +190,7 @@ input[type="text"]{
     padding-left: 25px;
     position: relative;
     left: 100px;
+    outline: none;
 }
 
 input[type="no"]{
@@ -200,6 +202,7 @@ input[type="no"]{
     padding-left: 25px;
     position: relative;
     left: 45px;
+    outline: none;
 }
 
 .on{

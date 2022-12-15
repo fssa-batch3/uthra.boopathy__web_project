@@ -184,6 +184,7 @@ input[type="name"]{
     padding-left: 25px;
     position: relative;
     left: 120px;
+    outline: none;
 }
 
 input[type="text"]{
@@ -195,6 +196,7 @@ input[type="text"]{
     padding-left: 25px;
     position: relative;
     left: 100px;
+    outline: none;
 }
 
 input[type="no"]{
@@ -206,6 +208,7 @@ input[type="no"]{
     padding-left: 25px;
     position: relative;
     left: 45px;
+    outline: none;
 }
 
 input[type="number"]{
@@ -217,6 +220,7 @@ input[type="number"]{
     padding-left: 5px;
     position: relative;
     left: 96px;
+    outline: none;
 }
 
 .on{
@@ -230,8 +234,8 @@ input[type="number"]{
 .place{
     height: 50px;
     width: 200px;
-    border: 2px solid darkorange;
-    background-color: darkorange;
+    border: 2px solid purple;
+    background-color: purple;
     border-radius: 5px;
     color: white;
     position: relative;

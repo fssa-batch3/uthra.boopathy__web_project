@@ -144,9 +144,9 @@ input[type="number"]{
     top: 250px;
     align-content: space-between;
     border-radius: 5px;
-    border: 1px solid plum;
-    color: white;
-    background-color: plum;
+    border: 1px solid gray;
+    color: black;
+    background-color: gray;
 }
 
 .btn1 a{
