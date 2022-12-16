@@ -224,3 +224,103 @@ input[type="no"]{
     top: 200px;
     left: 170px;
 }
+
+.contact{
+    font-size: 20px;
+    margin: 70px 0px;
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.contact div{
+    margin: 15px 0;
+    font-size: 23px;
+    color: white;
+}
+
+.con{
+    font-size: 23px;
+    position: relative;
+    top: 10px;
+    right: 5px;
+}
+
+.line{
+    border-right: 2px solid gray;
+    height: 190px;
+    position: relative;
+    top: 45px;
+    right: 40px;
+}
+
+.socials{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.socials div{
+    margin: 0 10px;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    padding: 10px;
+    justify-content: center;
+    border: 0;
+}
+
+.insta{
+    background-image: linear-gradient(315deg, #7110d2, #de46a9);
+    color: white;
+}
+
+.fb{
+    background-color: #3b5998;
+    color: white;
+}
+
+.wa{
+    background-color: #25d366;
+    color: white;
+}
+
+.twiter{
+    background-color: #00acee;
+    color: white;
+}
+
+.collections img{
+    border-radius: 150px;
+    padding: 40px;
+}
+
+.icons div{
+    position: relative;
+}
+
+.div{
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 70px;
+    display: inline-flex;
+    bottom: 20px;
+}
+
+.divs{
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 90px;
+    bottom: 20px;
+}
+
+.divss{
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 100px;
+    bottom: 20px;
+}
