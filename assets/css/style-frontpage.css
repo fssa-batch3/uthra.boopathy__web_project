@@ -219,18 +219,14 @@ h2{
     top: 70px;
 }
 
-
-
 footer{
     background-color: purple;
-    height: 230px;
+    height: 290px;
     margin-top: 150px;
 }
 
 .about{
-    position: relative;
-    top: 30px;
-    left: 20px;
+    margin: 60px 70px;
     padding-top: 10px;
     color: white;
 }
@@ -262,17 +258,16 @@ h4{
 
 .contact{
     font-size: 20px;
-    position: relative;
-    top: 50px; 
+    margin: 70px 0px;
     color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
-
-.copy{
-    color: white;
+.contact div{
+    margin: 15px 0;
     font-size: 23px;
-    position: relative;
-    top: 70px;
-    right: 200px;
+    color: white;
 }
 
 .con{
@@ -284,7 +279,7 @@ h4{
 
 .line{
     border-right: 2px solid gray;
-    height: 150px;
+    height: 190px;
     position: relative;
     top: 45px;
     right: 40px;
@@ -295,44 +290,37 @@ h4{
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-evenly;
-    position: relative;
-    top: 20px;
+}
+
+.socials div{
+    margin: 0 10px;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    padding: 10px;
+    justify-content: center;
+    border: 0;
 }
 
 .insta{
-    padding: 10px;
-    border: 1px solid gray;
-    border-radius: 60px;
     background-image: linear-gradient(315deg, #7110d2, #de46a9);
     color: white;
 }
 
 .fb{
-    padding: 10px;
-    border: 1px solid gray;
-    border-radius: 100px;
-    position: relative;
-    left: 10px;
     background-color: #3b5998;
     color: white;
 }
 
 .wa{
-    padding: 10px;
-    border: 1px solid gray;
-    border-radius: 70px;
-    position: relative;
-    left: 30px;
     background-color: #25d366;
     color: white;
 }
 
 .twiter{
-    padding: 10px;
-    border: 1px solid gray;
-    border-radius: 50px;
-    position: relative;
-    left: 20px;
     background-color: #00acee;
     color: white;
 }

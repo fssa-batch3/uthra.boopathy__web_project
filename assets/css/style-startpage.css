@@ -22,7 +22,7 @@ body{
 
 .login button{
     position: relative;
-    bottom: 60px;
+    bottom: 65px;
     height: 35px;
     width: 120px;
 }
@@ -32,8 +32,9 @@ body{
 }
 
 .nav ul li a {
-    padding: 15px;
+    padding: 20px;
     text-decoration: none;
+    color: purple;
 }
 
 .nav ul {
