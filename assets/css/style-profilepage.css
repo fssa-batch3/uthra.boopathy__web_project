@@ -15,7 +15,7 @@ header div ul{
     flex-wrap: wrap;
     flex-direction: row;
     list-style: none;
-    margin-left: 450px;
+    margin-left: 550px;
 }
 
 header div ul li{
@@ -30,6 +30,7 @@ header div ul li a{
 
 h1{
     font-size: 50px;
+    font-weight: normal;
     padding-left: 60px;
     position: relative;
     top: 20px;
@@ -59,9 +60,15 @@ section{
     margin-bottom: 200px;
     border: 1px solid gray;
     border-radius: 10px;
-    height: 800px;
+    height: 850px;
     width: 800px;
     box-shadow: 2px 4px 8px 2px rgba(6, 6, 6, 0.2), 3px 6px 20px 3px rgba(0, 0, 0, 0.19);
+}
+
+section h1{
+    color: black;
+    font-weight: bold;
+    font-size: 55px;
 }
 
 .avatar{
@@ -185,8 +192,19 @@ input[type="age"]{
     outline: none;
 }
 
+textarea{
+    height: 30px;
+    width: 200px;
+    padding-left: 25px;
+    font-size: 15px;
+    position: relative;
+    left: 20px;
+    top: 15px;
+    outline: none;
+}
+
 .c1{
-margin-left: 165px;   
+    margin-left: 165px;   
 }
 
 .male{
@@ -208,6 +226,12 @@ margin-left: 165px;
     height: 35px;
     width: 100px;
 }
+
+.btn-1 a{
+    text-decoration: none;
+    color: white;
+}
+
 .btn-2{
     font-size: 18px;
     position: relative;
@@ -216,7 +240,6 @@ margin-left: 165px;
     align-content: space-between;
     border-radius: 5px;
     border: 1px solid gray;
-    color: black;
     background-color: gray;
     height: 35px;
     width: 100px;

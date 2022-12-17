@@ -216,13 +216,56 @@ input[type="no"]{
 .place{
     height: 50px;
     width: 200px;
-    border: 2px solid darkorange;
-    background-color: darkorange;
+    border: 2px solid purple;
+    background-color: purple;
     border-radius: 5px;
     color: white;
     position: relative;
     top: 200px;
     left: 170px;
+}
+
+footer{
+    background-color: purple;
+    height: 310px;
+    margin-top: -300px;
+}
+
+.about{
+    margin: 60px 70px;
+    padding-top: 10px;
+    color: white;
+}
+
+.us{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    font-size: 20px;
+    word-spacing: 5px;
+}
+
+.us a{
+    text-decoration: none;
+    color: white;
+}
+
+.us p{
+   font-size: 20px;
+   font-weight: normal;
+   margin: 0;
+}
+
+h4{
+    font-size: 25px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+}
+
+.top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 .contact{
@@ -239,6 +282,13 @@ input[type="no"]{
     color: white;
 }
 
+.contact div p{
+    font-size: 20px;
+   font-weight: normal;
+   margin: 0;
+   color: white;
+}
+
 .con{
     font-size: 23px;
     position: relative;
@@ -249,9 +299,7 @@ input[type="no"]{
 .line{
     border-right: 2px solid gray;
     height: 190px;
-    position: relative;
-    top: 45px;
-    right: 40px;
+    margin: 60px;
 }
 
 .socials{

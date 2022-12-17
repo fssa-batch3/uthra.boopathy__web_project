@@ -80,8 +80,9 @@ h1{
 }
 
 .right{
-    margin-left: 150px;
+    margin-left: 50px;
 }
+
 
 h2{
     font-size: 30px;
@@ -273,6 +274,50 @@ h5{
     color: green;
 }
 
+footer{
+    background-color: purple;
+    height: 310px;
+    margin-top: 150px;
+}
+
+.about{
+    margin: 60px 70px;
+    padding-top: 10px;
+    color: white;
+}
+
+.us{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    font-size: 20px;
+    word-spacing: 5px;
+}
+
+.us a{
+    text-decoration: none;
+    color: white;
+}
+
+.us p{
+   font-size: 20px;
+   font-weight: normal;
+   margin: 0;
+}
+
+.about h4{
+    font-size: 25px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+    color: white;
+}
+
+.top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
 .contact{
     font-size: 20px;
     margin: 70px 0px;
@@ -287,6 +332,13 @@ h5{
     color: white;
 }
 
+.contact div p{
+    font-size: 20px;
+   font-weight: normal;
+   margin: 0;
+   color: white;
+}
+
 .con{
     font-size: 23px;
     position: relative;
@@ -297,9 +349,7 @@ h5{
 .line{
     border-right: 2px solid gray;
     height: 190px;
-    position: relative;
-    top: 45px;
-    right: 40px;
+    margin: 70px;
 }
 
 .socials{
@@ -372,4 +422,3 @@ h5{
     margin-left: 100px;
     bottom: 20px;
 }
-

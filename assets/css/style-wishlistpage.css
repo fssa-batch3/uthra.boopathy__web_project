@@ -56,8 +56,11 @@ h1{
     margin-top: 20px;
 }
 
-h3, p{
+h3{
     color: maroon;
+    margin-top: 60px;
+    font-size: 23px;
+    font-weight: normal;
 }
 
 .products{
@@ -75,19 +78,11 @@ h3, p{
     border-radius: 10px;
 }
 
-h3{
-    position: relative;
-    top: 80px;
-    left: 15px;
-}
-
 p{
-    position: relative;
-    left: 40px;
-    top: 90px;
     color: black;
-    font-size: 20px;
+    font-size: 22px;
     word-spacing: 5px;
+    margin-top: 5px;
 }
 
 s{
@@ -119,9 +114,7 @@ s{
 }
 
 .star{
-    position: relative;
-    top: 100px;
-    left: 20px;
+    margin-top: 5px;
 }
 
 .stars{
@@ -134,10 +127,164 @@ s{
     top: 10px;
 }
 
+.percent{
+    color: green;
+}
+
 .chaitra a{
     text-decoration: none;
 }
 
 .products a{
     text-decoration: none;
+}
+
+footer{
+    background-color: purple;
+    height: 290px;
+    margin-top: 150px;
+}
+
+.about{
+    margin: 60px 70px;
+    padding-top: 10px;
+    color: white;
+}
+
+.about h4{
+    font-size: 30px;
+    font-weight: normal;
+    color: white;
+}
+
+.us{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    font-size: 20px;
+    word-spacing: 5px;
+    margin-top: 10px;
+}
+
+.us a{
+    text-decoration: none;
+    color: white;
+}
+
+.us p{
+   font-size: 20px;
+   font-weight: normal;
+   margin: 0;
+   color: white;
+}
+
+.top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.contact{
+    font-size: 20px;
+    margin: 70px 0px;
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.contact div{
+    margin: 15px 0;
+    font-size: 23px;
+    color: white;
+}
+
+.contact div p{
+    font-size: 20px;
+   font-weight: normal;
+   margin: 0;
+   color: white;
+}
+
+.con{
+    font-size: 23px;
+    position: relative;
+    top: 10px;
+    right: 5px;
+}
+
+.line{
+    border-right: 2px solid gray;
+    height: 190px;
+    margin: 60px;
+}
+
+.socials{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.socials div{
+    margin: 0 10px;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    padding: 10px;
+    justify-content: center;
+    border: 0;
+}
+
+.insta{
+    background-image: linear-gradient(315deg, #7110d2, #de46a9);
+    color: white;
+}
+
+.fb{
+    background-color: #3b5998;
+    color: white;
+}
+
+.wa{
+    background-color: #25d366;
+    color: white;
+}
+
+.twiter{
+    background-color: #00acee;
+    color: white;
+}
+
+.collections img{
+    border-radius: 150px;
+    padding: 40px;
+}
+
+.icons div{
+    position: relative;
+}
+
+.div{
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 70px;
+    display: inline-flex;
+    bottom: 20px;
+}
+
+.divs{
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 90px;
+    bottom: 20px;
+}
+
+.divss{
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 100px;
+    bottom: 20px;
 }
