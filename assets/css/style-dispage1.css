@@ -1,5 +1,6 @@
 *{
     margin: 0px;
+    font-family: 'Kreon', serif;
 }
 
 header{
@@ -165,7 +166,7 @@ s{
 
 footer{
     background-color: purple;
-    height: 290px;
+    height: 320px;
     margin-top: 150px;
 }
 
@@ -188,10 +189,11 @@ footer{
     color: white;
 }
 
-h4{
+.about h4{
     font-size: 25px;
-    padding-top: 5px;
-    padding-bottom: 15px;
+    font-weight: normal;
+    color: white;
+    margin-left: 30px;
 }
 
 .top{
@@ -208,6 +210,7 @@ h4{
     align-items: center;
     flex-direction: column;
 }
+
 .contact div{
     margin: 15px 0;
     font-size: 23px;
@@ -221,12 +224,15 @@ h4{
     right: 5px;
 }
 
+.contact p{
+    font-size: 22px;
+    color: white;
+}
+
 .line{
     border-right: 2px solid gray;
-    height: 190px;
-    position: relative;
-    top: 45px;
-    right: 40px;
+    height: 200px;
+    margin-top: 70px;
 }
 
 .socials{

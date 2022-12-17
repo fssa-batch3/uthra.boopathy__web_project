@@ -1,5 +1,6 @@
 *{
     margin: 0px;
+    font-family: 'Kreon', serif;
 }
 
 header{
@@ -138,7 +139,7 @@ input[type=text]{
 
 footer{
     background-color: purple;
-    height: 290px;
+    height: 310px;
     margin-top: 150px;
 }
 

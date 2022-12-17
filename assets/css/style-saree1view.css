@@ -1,8 +1,6 @@
 *{
     margin: 0px;
-}
-body{
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Kreon', serif;
 }
 
 header{
@@ -80,7 +78,7 @@ h1{
 }
 
 .right{
-    margin-left: 50px;
+    margin-left: 40px;
 }
 
 
