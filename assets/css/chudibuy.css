@@ -254,10 +254,8 @@ footer{
    margin: 0;
 }
 
-h4{
+.about h4{
     font-size: 25px;
-    padding-top: 5px;
-    padding-bottom: 15px;
     color: white;
 }
 
