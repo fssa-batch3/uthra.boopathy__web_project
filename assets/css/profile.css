@@ -56,7 +56,7 @@ section{
     flex-wrap: wrap;
     flex-direction: column;
     align-content: center;
-    margin: 150px 0 200px 350px;
+    margin: 150px 0 200px 370px;
     border: 1px solid gray;
     border-radius: 10px;
     height: 950px;
@@ -68,12 +68,12 @@ section h1{
     color: black;
     font-weight: bold;
     font-size: 55px;
-    margin: 20px 0 0 50px;
+    margin: 20px 0 0 130px;
 }
 
 section img{
     border-radius: 50%;
-    margin: 80px 0 0 140px;
+    margin: 80px 0 0 150px;
 }
 
 .add{
@@ -87,7 +87,7 @@ section img{
     flex-wrap: wrap;
     flex-direction: row;
     font-size: 23px;
-    margin: 50px 0 0 50px;
+    margin: 50px 0 0 100px;
 }
 
 .details{
