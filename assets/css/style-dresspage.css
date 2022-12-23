@@ -41,9 +41,10 @@ h1{
     bottom: 10px;
 }
 
-.login{
+.login a{
     font-size: 20px;
     color: white;
+    text-decoration: none;
 }
 
 .sub-heading{
