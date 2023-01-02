@@ -1,5 +1,6 @@
 *{
-    margin: 0px;
+    margin: 0;
+    padding: 0;
     font-family: 'Kreon', serif;
 }
 
@@ -15,6 +16,8 @@ body{
 }
 
 .login img{
+    width: 80px;
+    height: 80px;
     border-radius: 80px;
     position: relative;
     bottom: 10px;
@@ -29,7 +32,7 @@ body{
 }
 
 .login a{
-    font-size: 20px;
+    font-size: 23px;
 }
 
 .nav ul li a {
@@ -51,18 +54,21 @@ body{
     flex-wrap: wrap;
     flex-direction: row;
     margin-top: -40px;
+    width: 100%;
 }
 
 .left img{
+    height: 900px;
     transform: scaleX(-1);
+    width: 90%;
 }
 
 .right{
     height: 450px;
-    width: 650px;
-    margin-top: 180px;
-    margin-left: 130px;
+    margin-top: 260px;
+    width: 50%;
 }
+
 h3{
     color: purple;
     font-weight: normal;
@@ -94,15 +100,93 @@ span{
 }
 
 .left{
-    margin-left: 60px;
+    width: 50%;
 }
 
 button{
     height: 45px;
     width: 180px;
-    border-radius: 7px;
+    border-radius: 5px;
     border: none;
     background-color:purple;
     margin: 80px 40px 0px 0px;
     padding: 5px;
+}
+
+/* 
+
+@media screen and (max-width: 1181px)
+{
+    .login{
+       margin-top: 50px;
+       margin-right: -60px;
+       margin-left: -10px;
+    }
+
+    .login img{
+        height: 50px;
+        width: 50px;
+        margin-top: 10px;
+    }
+
+    
+    .login button{
+        height: 28px;
+        width: 60px;
+    }
+
+    .login a{
+        font-size: 16px;
+    }
+
+    .nav ul li a {
+        padding: 7px;
+        text-decoration: none;
+        color: purple;
+    }
+    
+    .nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        list-style: none;
+    }
+    
+    .page{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .left img{
+        height: 550px;
+        width: 320px;
+        transform: scaleX(-1);
+        margin-left: -80px;
+    }
+    
+    h3{
+        margin-top: -500px;
+        margin-left: 190px;
+        color: purple;
+        font-weight: normal;
+        font-size: 33px;
+    }
+    
+    p{
+        margin-top: 200px;
+        font-size: 25px;
+        color: rgba(49, 2, 49, 0.849);
+    }
+
+    .right button{
+        height: 40px;
+        width: 150px;
+        border-radius: 7px;
+        border: none;
+        background-color:purple;
+        margin: 50px 40px 0px 80px;
+        padding: 5px;
+    }
+
 }
