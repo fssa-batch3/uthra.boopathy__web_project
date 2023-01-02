@@ -1,0 +1,19 @@
+{
+  "name": "tharas_world",
+  "version": "1.0.0",
+  "description": "main.js",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fssa-batch3/uthra.boopathy__web_project.git"
+  },
+  "author": "uthra121",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fssa-batch3/uthra.boopathy__web_project/issues"
+  },
+  "homepage": "https://github.com/fssa-batch3/uthra.boopathy__web_project#readme"
+}
