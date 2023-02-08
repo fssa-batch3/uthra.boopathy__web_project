@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Register Page </title>
     <link rel="stylesheet" href="../../assets/css/style-register.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />        <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kreon:wght@300;400;500;600;700&family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -16,45 +16,126 @@
     <header>
         <img class="logo" src="../../assets/images/logo.png" alt="logo" height="70px" width="70px"/>
         <h1> Thara's World </h1>
-          <div>
-             <ul>
-                <li> <a href="../orders/cartpage.html"><i class="fa fa-shopping-cart" style="font-size:24px;color: white;" ></i></a></li>
-                <li> <a href="../orders/wishlistpage.html"><i class="fa fa-heart-o" style="font-size: 24px;color: white;"></i></a></li> 
-                <li><a href="../orders/myorderspage.html"><i class="fa fa-shopping-bag" style="font-size:22px;color: white"></i></a></li>
-                <li><a href="#"><i class="fa fa-bell" style="font-size:24px;color: white"></i></a></li>
-                <li><a href="profilepage.html"><i class="fa fa-user-circle-o" style="font-size:24px;color: white;"></i></a></li>
-                <li> <a href="loginpage.html"><span class="login"> Login </span> </a></li>
-              </ul>
-          </div>
+        <div class="nav">
+            <ul>
+               <li> <a href="../orders/cartpage.html"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a></li>
+               <li> <a href="../orders/wishlistpage.html"><i class="fa-sharp fa-solid fa-heart"></i></a></li> 
+               <li><a href="../orders/myorderspage.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
+               <li><a href="#"><i class="fa-solid fa-bell"></i></i></a></li>
+               <li><a href="profilepage.html"><i class="fa-solid fa-circle-user"></i></a></li>
+               <li> <a href="../homepage/loginpage.html"><span class="login"> Login </span> </a></li>
+             </ul>
+         </div>
+
+         <div class="menu">
+           
+           <i class="fa-solid fa-bars"></i>               
+            <div class="menu-list">
+               
+                   <a href="../orders/cartpage.html"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                   <a href="../orders/wishlistpage.html"><i class="fa-sharp fa-solid fa-heart"></i></a>
+                   <a href="../orders/myorderspage.html"><i class="fa-solid fa-bag-shopping"></i></a>
+                   <a href="#"><i class="fa-solid fa-bell"></i></i></a>
+                   <a href="profilepage.html"><i class="fa-solid fa-circle-user"></i></a>
+                   <a href="loginpage.html"><span class="login"> Login </span> </a>
+           
+            </div>
+        </div>
     </header>
     
     <section>
+        <form role="form" onsubmit="store()">
         <div class="register">
-            <h2> SIGN IN: </h2>
+            <h2> SIGN UP : </h2>
                  <div>
                      <label> Name: </label>
-                     <input type="name"/>
+                     <input type="name" id="uname" required="true"/>
                 </div>
 
                 <div>
                     <label> Phone number: </label>
-                    <input type="text" placeholder="+919876543201"/>
+                    <input type="tel" id="uPhonenumber" placeholder="+91" required="true"/>
                 </div>
 
                 <div>
                     <label> Create Password: </label>
-                    <input type="password" />
+                    <input type="password" id="uPassword" required="true"/>
                 </div>
 
                 <div class="confirm">
                     <label> Confirm Password: </label>
-                    <input type="password">
-                </div>
+                    <input type="password" id="confirm_password" required="true"/>
+                </div> 
                
-                <button> <a href="../homepage/loginpage.html">SUBMIT</a> </button> 
+                <button type="submit" onclick="store()"> SUBMIT </button> 
             
         </div>
+    </form>
     
     </section> 
-</body>
+
+    <script> 
+        
+    //   function submit(){  
+        
+    //     const name = document.getElementById("name").value  
+    //     const phonenumber = document.getElementById("phonenumber").value  
+    //     const password = document.getElementById("password").value  
+    //     const confirm_password = document.getElementById("confirm_password").value  
+
+    //     console.log(name)
+    //     console.log(phonenumber)
+    //     console.log(password)
+    //     console.log(confirm_password) 
+
+    //     localStorage.setItem("user_name",name)
+    //     localStorage.setItem("user_number",phonenumber)
+    //     localStorage.setItem("user_password",password)
+    //     localStorage.setItem("user_confirm",confirm_password)
+
+    //     window.location.href = "../homepage/loginpage.html"
+
+    //   }  
+
+
+
+
+
+        // storing input from register-form
+
+
+            function store() {
+                let usrName = document.getElementById('uname').value;
+                let usrPw = document.getElementById('uPassword').value;
+                let usrPhoneNumber = document.getElementById('uPhonenumber').value;
+
+
+                // localStorage.setItem('usrName', uname.value);
+                // localStorage.setItem('usrPw', uPassword.value);
+                // localStorage.setItem('usrPhoneNumber' , uPhonenumber.value);
+
+
+                let stored_users = JSON.parse(localStorage.getItem('users'));
+
+
+                         if(stored_users) {
+
+                                stored_users.push({name: usrName, password: usrPw, phonenumber: usrPhoneNumber});
+
+                                localStorage.setItem('users', JSON.stringify(stored_users));
+
+                     }
+                   else {
+                         localStorage.setItem('users', JSON.stringify([{name: usrName, password: usrPw, phonenumber: usrPhoneNumber}]));
+                   }
+
+                    window.location.href = "../homepage/loginpage.html";
+
+            }
+
+
+
+    </script>
+
+    </body>
 </html>

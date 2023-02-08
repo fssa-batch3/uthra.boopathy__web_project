@@ -26,7 +26,8 @@ header div ul li{
 
 header div ul li a{
      text-decoration: none;
-     color: black;
+     color: white;
+     font-size: 20px;
 }
 
 h1{
@@ -40,7 +41,9 @@ h1{
 .logo{
     margin-top: 15px;
     margin-left: 50px;
-    border-radius: 50px;
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
 }
 
 .login{
@@ -85,6 +88,7 @@ input[type=text]{
     top:10px ;
     left:22px ;
 }
+
 .sub{
     display: flex;
     font-weight: bold;
@@ -132,34 +136,7 @@ s{
     transform: scale(1.1);
 }
 
-.chaitra:hover{
-    transform: scale(1.1);
-}
-
 .products{
-    border: 1px solid #f8f8f8;
-    background-color: #f8f8f8;
-}
-
-.chaitra{
-    border: 1px solid #f8f8f8;
-    background-color: #f8f8f8;
-}
-
-.chudi:hover{
-    transform: scale(1.1);
-}
-
-.sandal{
-    border: 1px solid #f8f8f8;
-    background-color: #f8f8f8;
-}
-
-.sandal:hover{
-    transform: scale(1.1);
-}
-
-.chudi{
     border: 1px solid #f8f8f8;
     background-color: #f8f8f8;
 }
@@ -305,3 +282,201 @@ footer{
     margin-left: 100px;
     bottom: 20px;
 }
+
+.menu{
+    display: none;
+}
+
+@media only screen and (max-width: 800px)
+{   
+
+    header{
+        height: 8vh;
+        width: 100vw;
+    }
+
+    .logo{
+        width: 40px;
+        height: 40px;
+        margin-left: 10px;
+    }
+
+    h1{
+        font-size: 25px;
+        margin-left: -50px;
+    }
+
+    .nav{
+        display: none;
+    }
+
+    .menu{
+        display: block;
+        font-size: 26px;
+        color: white;
+        margin-top: 20px;
+        margin-left: 120px;
+    }
+
+    .menu-list a{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        color: white;
+        padding: 5px;
+        text-decoration: none;
+    }
+
+    .menu:hover .menu-list{
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: center;
+        margin-top: -38px;
+        margin-left: -250px;
+    }
+
+    .menu-list{
+        display: none;
+        color: white;
+        position: absolute;
+    }
+
+    .sub-heading{
+        height: 8vh;
+    }
+
+    strong{
+        font-size: 15px;
+    }
+
+    .sub-heading a{
+        text-decoration: none;
+        padding-left: 20px;
+        padding-top: 30px;
+        color: black;
+        font-size: 16px;
+    }
+
+    .icon{
+        display: flex;
+        margin-top: -53px;
+        padding-left: 230px;
+    }
+    
+    input[type=text]{
+        height: 19px;
+        width: 130px;
+        padding: 2px 10px;
+        border-radius: 5px;
+        border: 1px solid gray;
+        outline: none;
+        font-size: 16px;
+    }
+
+    .search{
+        color: gray;
+        position: relative;
+        top: 3px;
+        left: 150px;
+    }
+
+    .icons{
+        display: none;
+    }
+
+    .thumbnail{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin: 30px 0px 30px 30px;
+    }
+
+   .products{
+        margin-top: 40px;
+        border: 1px solid #f8f8f8;
+        background-color: #f8f8f8;
+    }
+    
+
+    footer{
+        height: 30vh;
+        margin-top: 100px;
+    }
+    
+    .about{
+        margin: 10px 0px;
+        color: white;
+    }
+    
+    .us{
+        width: 100%;
+        font-size: 16px;
+    }
+    
+    .us a{
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+    }
+    
+    .about h4{
+        font-size: 20px;
+        font-weight: normal;
+        color: white;
+    }
+    
+     
+    .contact{
+        font-size: 20px;
+        margin: 50px 0px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+    }
+    .contact div{
+        font-size: 20px;
+        color: white;
+    }
+    
+    .con{
+        font-size: 22px;
+        position: relative;
+        left: 40px;
+        top: -20px;
+    }
+    
+    .line{
+        border-right: 2px solid gray;
+        height: 200px;
+        position: relative;
+        top: -30px;
+        left: 20px;
+    }
+    
+    .socials{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    
+    .socials div{
+        margin: 10px 5px;
+        height: 20px;
+        width: 20px;
+        display: flex;
+        align-items: center;
+        border-radius: 50%;
+        padding: 10px;
+        justify-content: center;
+        border: 0;
+    }
+    
+    .contact div p{
+        margin-top: 0px;
+        font-size: 18px;
+    } 
+   
+}    

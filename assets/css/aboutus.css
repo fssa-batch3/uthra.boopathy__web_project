@@ -201,33 +201,190 @@ h4{
     color: white;
 }
 
-.collections img{
-    border-radius: 150px;
-    padding: 40px;
+.menu{
+    display: none;
 }
 
-.icons div{
-    position: relative;
-}
+@media only screen and (max-width: 360px)
 
-.div{
-    font-size: 25px;
-    font-weight: bold;
-    margin-left: 70px;
-    display: inline-flex;
-    bottom: 20px;
-}
+{
 
-.divs{
-    font-size: 25px;
-    font-weight: bold;
-    margin-left: 90px;
-    bottom: 20px;
-}
+    header{
+        height: 10vh;
+        width: 100vw;
+     }
 
-.divss{
-    font-size: 25px;
-    font-weight: bold;
-    margin-left: 100px;
-    bottom: 20px;
-}
+     .logo{
+        height: 40px;
+        width: 40px;
+        margin-left: 10px;
+     }
+
+     h1{
+        font-size: 30px;
+        margin-top: -2px;
+        margin-left: -50px;
+     }
+
+     .nav{
+        display: none;
+    }
+
+    .menu{
+        display: block;
+        font-size: 26px;
+        color: white;
+        margin-top: 20px;
+        margin-left: 90px;
+        position: relative;
+    }
+
+    .menu-list a{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        font-size: 17px;
+        color: white;
+        padding: 1px;
+        text-decoration: none;
+    }
+
+    .menu:hover .menu-list{
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: center;
+        margin-top: -38px;
+        margin-left: -320px;
+    }
+
+    .menu-list{
+        display: none;
+        color: white;
+        position: absolute;
+    }
+
+    section{
+        margin: 60px 20px 50px 20px;
+    }
+    
+    h2{
+        font-size: 25px;
+        margin: 20px 0px 20px 0px;
+    }
+    
+    strong{
+        font-size: 16px;
+    }
+    
+    .photo{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        margin-top: 20px;
+    }
+    
+    .photo p{
+        font-size: 18px;
+        margin: 50px 0px 0px 10px;
+    }
+    
+    .name{
+        margin: 10px 0px 0px 50px;
+    }
+    
+    footer{
+        background-color: purple;
+        height: 30vh;
+        margin-top: 150px;
+    }
+    
+    .about{
+        margin: 10px 30px;
+        padding-top: 10px;
+        color: white;
+    }
+    
+    .us{
+        font-size: 16px;
+        width: 100px;
+    }
+    
+    .us a{
+        text-decoration: none;
+        color: white;
+    }
+      
+    .us p{
+       font-size: 16px;
+       font-weight: normal;
+       margin: 0;
+    }
+    
+    h4{
+        font-size: 20px;
+        padding-top: 5px;
+        padding-bottom: 15px;
+    }
+    
+    .top{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    
+    .contact{
+        font-size: 18px;
+        margin: 30px 0px;
+        color: white;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .contact div{
+        margin: 15px 0;
+        font-size: 18px;
+        color: white;
+    }
+    
+    .contact div p{
+        font-size: 18px;
+       font-weight: normal;
+       margin: 0;
+       color: white;
+    }
+    
+    .con{
+        font-size: 20px;
+        position: relative;
+        top: 10px;
+        right: 5px;
+    }
+    
+    .line{
+        border-right: 2px solid gray;
+        height: 180px;
+        margin: 20px 2px;
+    }
+    
+    .socials{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    
+    .socials div{
+        margin: 0 10px;
+        height: 20px;
+        width: 20px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        border-radius: 50%;
+        padding: 10px;
+        justify-content: center;
+        border: 0;
+    }
+
+}    

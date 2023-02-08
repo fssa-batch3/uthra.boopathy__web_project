@@ -34,15 +34,15 @@
 
     <div class="detail">
 
-    <div class="left">
+    <!-- <div class="left">
         <div class="image">
             <img src="../../../../assets/images/silk12.jpg" alt="photo" height="460px" width="400px" />
         </div>
-        <div class="sub-images"> <img src="../../../../assets/images/silk12-1.jpg" alt="photo" height="80px" width="80px"/>  </div>
+        <div class="sub-images"> <img  src="../../../../assets/images/silk12-1.jpg" alt="photo" height="80px" width="80px"/>  </div>
         <div class="sub-images"> <img  src="../../../../assets/images/silk12-2.jpg" alt="photo" height="80px" width="80px"/> </div>
         <div class="sub-images"> <img  src="../../../../assets/images/silk12-3.jpg" alt="photo" height="80px" width="80px"/> </div>
         <div class="sub-images"> <img  src="../../../../assets/images/silk12-4.jpg" alt="photo" height="80px" width="80px"/> </div>
-    </div>
+    </div> -->
 
     <div class="right">
         <h3> Jacquard Material Self Designed Saree</h3>
@@ -154,6 +154,106 @@
      </div>
 
      </footer>
+
+     <script>
+
+
+
+
+let product_details = [
+            {
+                "image" : [{ "source" : "../../../../assets/images/silk12.jpg",
+                            "alt" : "photo",
+                            },
+                            { "source" : "../../../../assets/images/silk12-1.jpg",
+                            "alt" : "photo",
+                           },
+                            { "source" : "../../../../assets/images/silk12-2.jpg",
+                            "alt" : "photo",
+                            },
+                            { "source" : "../../../../assets/images/silk12-3.jpg",
+                            "alt" : "photo",
+                            }
+
+                            ],    
+
+                "name" : "Jacquard Material Self Designed Saree",
+
+                "text" : "Special offer",
+
+                "price" : { "currency" : "₹",
+                            "actual" : 2999,
+                            "discount" : { "type" : "%",
+                                           "value" : 79 }
+                           },
+
+                "offer" : "Available offers",
+
+                "para_line1" : "*Special PriceGet extra 30% off (price inclusive of cashback/coupon)T&C",
+
+                "para_line2" : "*Bank Offer5% Cashback on Thara's World Axis Bank CardT&C",
+
+                "para_line3" : "*Partner OfferSign up for Thara's World Pay Later and get Flipkart Gift Card worth up to ₹500*",
+
+                "color" : "Availlable colours: Black, Blue, Pink, Red, Maroon, Green, Rose....."
+                
+                
+            }
+        ]
+
+
+
+       // <div class = "left"> </div>
+
+       div_left = document.createElement("div");
+       div_left.setAttribute("class","left");
+       console.log(div_left);
+
+
+       // <div class = "image"> </div>
+
+       div_image = document.createElement("div");
+       div_image.setAttribute("class","image");
+       div_left.append(div_image);
+       console.log(div_image);
+
+
+       //  <img> 
+
+
+       img_big = document.createElement("img");
+       img_big.setAttribute("src", "../../../../assets/images/silk12.jpg");
+       img_big.setAttribute("alt","photo");
+       img_big.setAttribute("height", "460px");
+       img_big.setAttribute("width", "400px");
+       div_image.append(img_big);
+       console.log(img_big);
+
+
+
+       for (let i=0; i<4; i++){
+
+
+       img_small = document.createElement("img");
+       img_small.setAttribute("source", product_details["image"][i]["source"]);
+       img_small.setAttribute("class","sub-images")
+       img_small.setAttribute("alt", "photo");
+       img_small.setAttribute("height", "80px");
+       img_small.setAttribute("width", "80px");
+       img_big.append(img_small);
+       console.log(img_small);
+
+       }
+
+
+
+       document.querySelector("div.detail").append(div_left);
+
+
+
+
+
+     </script>
 
 </body>
 </html>

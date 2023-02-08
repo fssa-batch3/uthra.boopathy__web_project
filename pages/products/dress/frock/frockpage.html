@@ -13,20 +13,36 @@
 </head>
     
     <body>
-        <header>
+      <header>
          <a href="../../../homepage/frontpage.html"> <img class="logo" src="../../../../assets/images/logo.png" alt="logo" height="70px" width="70px"/> </a>
          <h1> Thara's World </h1>
-              <div>
-                 <ul>
-                    <li> <a href="../../../orders/cartpage.html"><i class="fa fa-shopping-cart" style="font-size:24px;color: #fff;" ></i></a></li>
-                    <li> <a href="../../../orders/wishlistpage.html"><i class="fa fa-heart-o" style="font-size: 24px;color: #fff;"></i></a></li> 
-                    <li><a href="../../../orders/myorderspage.html"><i class="fa fa-shopping-bag" style="font-size:22px;color: #fff"></i></a></li>
-                    <li><a href="#"><i class="fa fa-bell" style="font-size:24px;color: #fff"></i></a></li>
-                    <li><a href="../../../homepage/profilepage.html"><i class="fa fa-user-circle-o" style="font-size:24px;color: #fff;"></i></a></li>
-                    <li> <a href="../../../homepage/loginpage.html"><span class="login"> Login </span> </a></li>
-                  </ul>
+           <div class="nav">
+              <ul>
+                 <li> <a href="../orders/cartpage.html"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a></li>
+                 <li> <a href="../orders/wishlistpage.html"><i class="fa-sharp fa-solid fa-heart"></i></a></li> 
+                 <li><a href="../orders/myorderspage.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
+                 <li><a href="#"><i class="fa-solid fa-bell"></i></i></a></li>
+                 <li><a href="profilepage.html"><i class="fa-solid fa-circle-user"></i></a></li>
+                 <li> <a href="../homepage/loginpage.html"><span class="login"> Login </span> </a></li>
+               </ul>
+           </div>
+
+           <div class="menu">
+             
+             <i class="fa-solid fa-bars"></i>               
+              <div class="menu-list">
+                 
+                     <a href="../orders/cartpage.html"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                     <a href="../orders/wishlistpage.html"><i class="fa-sharp fa-solid fa-heart"></i></a>
+                     <a href="../orders/myorderspage.html"><i class="fa-solid fa-bag-shopping"></i></a>
+                     <a href="#"><i class="fa-solid fa-bell"></i></i></a>
+                     <a href="profilepage.html"><i class="fa-solid fa-circle-user"></i></a>
+                     <a href="loginpage.html"><span class="login"> Login </span> </a>
+             
               </div>
-        </header>
+          </div>
+
+     </header>
 
         <section class="subheading">
               <h2> FILTER: </h2>
@@ -64,7 +80,7 @@
         <section>
            <div class="thumbnail">
                
-            <div class="products">
+            <!-- <div class="products">
               <a href="../frock/frock1view.html"> <span class="img"> <img src="../../../../assets/images/frock2.jpg" alt="photo" height="260px" width="200px"/> </span> </a>
               <h3> Stitched Anarkali Gown </h3>
               <p> ₹749 <s>₹4,000</s> <span class="percent"> 81% off </span> </p> 
@@ -148,7 +164,7 @@
             <img src="../../../../assets/images/frock11.jpg" alt="photo" height="260px" width="230px"/> 
             <h3> Stitched Anarkali Gown  </h3>
               <p> ₹789 <s>₹1,888</s> <span class="percent"> 58% off </span> </p>
-           </div>
+           </div> -->
          </div>         
           
         </section>
@@ -181,6 +197,194 @@
       </div>
 
       </footer>
+
+      <script>
+
+         let div_products;
+         let link;
+         let img_picture;
+         let h3_title;
+         let p_text;
+         let span_percent;
+
+      let product_list = [
+
+         { "image" : {"src" : "../../../../assets/images/frock2.jpg",
+                         "height" : "260px",
+                         "width" : "230px" },
+           "name" : "Stitched Anarkali Gown",
+           "price" : "₹749 ",
+           "discount" : "₹4,000",
+           "percent" : " 81% off",
+         },
+       
+         {
+            "image" : {"src" : "../../../../assets/images/frock1.jpg",
+                         "height" : "260px",
+                         "width" : "230px" },
+           "name" : "Stitched Anarkali Gown",
+           "price" : " ₹899 ",
+           "discount" : "₹3,999",
+           "percent" : " 77% off" 
+         },
+
+         {
+            "image" : {"src" : "../../../../assets/images/frock5.jpg",
+                         "height" : "260px",
+                         "width" : "230px" },
+           "name" : "Stitched Anarkali Gown",
+           "price" : " ₹799 ",
+           "discount" : "₹3,999",
+           "percent" : " 80% off"
+         },
+
+         {
+            "image" : {"src" : "../../../../assets/images/frock8.jpg",
+                         "height" : "260px",
+                         "width" : "230px" },
+           "name" : "Stitched Anarkali Gown",
+           "price" : " ₹745 ",
+           "discount" : "₹1,888",
+           "percent" : " 60% off"
+         },
+
+         {
+            "image" : {"src" : "../../../../assets/images/frock4.jpg",
+                         "height" : "260px",
+                         "width" : "230px" },
+           "name" : "Stitched Anarkali Gown",
+           "price" : " ₹799 ",
+           "discount" : "₹3,999",
+           "percent" : " 80% off"
+         },
+
+         {
+            "image" : {"src" : "../../../../assets/images/frock6.jpg",
+                         "height" : "260px",
+                         "width" : "230px" },
+           "name" : "Stitched Anarkali Gown",
+           "price" : " ₹806 ",
+           "discount" : "₹1,949",
+           "percent" : " 58% off"
+         },
+
+         {
+            "image" : {"src" : "../../../../assets/images/frock7.jpg",
+                         "height" : "260px",
+                         "width" : "230px" },
+           "name" : "Stitched Anarkali Gown",
+           "price" : " ₹899 ",
+           "discount" : "₹1,999",
+           "percent" : " 55% off"
+         },
+
+         {
+            "image" : {"src" : "../../../../assets/images/frock12.jpg",
+                         "height" : "260px",
+                         "width" : "230px" },
+           "name" : "Stitched Anarkali Gown",
+           "price" : " ₹789 ",
+           "discount" : "₹1,888",
+           "percent" : " 58% off"
+         },
+
+         {
+            "image" : {"src" : "../../../../assets/images/frock3.jpg",
+                         "height" : "260px",
+                         "width" : "230px" },
+           "name" : "Stitched Anarkali Gown",
+           "price" : " ₹799 ",
+           "discount" : "₹3,999",
+           "percent" : " 80% off"
+         },
+
+         {
+            "image" : {"src" : "../../../../assets/images/frock9.jpg",
+                         "height" : "260px",
+                         "width" : "230px" },
+           "name" : "Stitched Anarkali Gown",
+           "price" : " ₹806 ",
+           "discount" : "₹1,949",
+           "percent" : " 58% off"
+         },
+
+         {
+            "image" : {"src" : "../../../../assets/images/frock10.jpg",
+                         "height" : "260px",
+                         "width" : "230px" },
+           "name" : "Stitched Anarkali Gown",
+           "price" : " ₹899 ",
+           "discount" : "₹1,999",
+           "percent" : " 55% off"
+         },
+
+         {
+            "image" : {"src" : "../../../../assets/images/frock11.jpg",
+                         "height" : "260px",
+                         "width" : "230px" },
+           "name" : "Stitched Anarkali Gown",
+           "price" : " ₹789 ",
+           "discount" : "₹1,888",
+           "percent" : " 58% off"
+         }
+
+      ]
+
+
+   for ( let i = 0; i < 12; i++){
+  
+          //   <div class = "products"> </div>  //
+
+         div_products = document.createElement("div");
+         div_products.setAttribute("class","products");
+         console.log(div_products);
+
+       
+
+         // <img> </img> //
+
+         img_picture = document.createElement("img");
+         img_picture.setAttribute("src",product_list[i].image.src);
+         img_picture.setAttribute("alt","photo");
+         img_picture.setAttribute("height",product_list[i].image.height);
+         img_picture.setAttribute("width",product_list[i].image.width);
+         div_products.append(img_picture);
+         console.log(img_picture);
+
+         // <h3> </h3>
+
+         h3_title = document.createElement("h3");
+         h3_title.innerHTML = "Stitched Anarkali Gown"
+         div_products.append(h3_title);
+         console.log(h3_title);
+
+         // <p> </p> //
+
+         p_text = document.createElement("p");
+         p_text.innerHTML = product_list[i].price;
+         h3_title.append(p_text);
+         console.log(p_text);
+
+         // <s> </s> //
+
+         s_cost = document.createElement("s");
+         s_cost.innerHTML = product_list[i].discount;
+         p_text.append(s_cost);
+         console.log(s_cost);
+
+         //  <span class = "percent"> </span>
+
+         span_percent = document.createElement("span");
+         span_percent.setAttribute("class","percent");
+         span_percent.innerHTML = product_list[i].percent;
+         p_text.append(span_percent)
+         console.log(span_percent);
+
+         document.querySelector("div.thumbnail").append(div_products);
+      }     
+
+   </script>
+
 
     </body>
     

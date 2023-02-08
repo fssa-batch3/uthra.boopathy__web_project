@@ -1,11 +1,11 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Kreon', serif;
 }
 
 body{
     background-color: #ebc6c6;
+    font-family: 'Kreon', serif;
 }
 
 .login{
@@ -41,12 +41,12 @@ body{
     color: purple;
 }
 
-.nav ul {
+.nav ul{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
     list-style: none;
-    margin-top: 20px;
+    margin-left: 100px;   
+    margin-top: 15px;
 }
 
 .page{
@@ -58,14 +58,14 @@ body{
 }
 
 .left img{
-    height: 900px;
+    height: 750px;
     transform: scaleX(-1);
     width: 90%;
 }
 
 .right{
     height: 450px;
-    margin-top: 260px;
+    margin-top: 200px;
     width: 50%;
 }
 
@@ -113,80 +113,89 @@ button{
     padding: 5px;
 }
 
-/* 
+.menu{
+    display: none;
+}
 
-@media screen and (max-width: 1181px)
+
+ 
+@media only screen and (max-width: 420px)
 {
-    .login{
-       margin-top: 50px;
-       margin-right: -60px;
-       margin-left: -10px;
+
+    .login .nav{
+        display: none;
     }
 
-    .login img{
-        height: 50px;
-        width: 50px;
-        margin-top: 10px;
-    }
-
-    
-    .login button{
-        height: 28px;
-        width: 60px;
-    }
-
-    .login a{
-        font-size: 16px;
-    }
-
-    .nav ul li a {
-        padding: 7px;
-        text-decoration: none;
-        color: purple;
-    }
-    
-    .nav ul {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        list-style: none;
-    }
-    
-    .page{
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-    }
-
-    .left img{
-        height: 550px;
-        width: 320px;
-        transform: scaleX(-1);
-        margin-left: -80px;
-    }
-    
-    h3{
-        margin-top: -500px;
-        margin-left: 190px;
-        color: purple;
-        font-weight: normal;
-        font-size: 33px;
-    }
-    
-    p{
-        margin-top: 200px;
-        font-size: 25px;
+    .menu{
+        display: block;
+        margin-left: 220px;
+        font-size: 30px;
+        position: relative;
         color: rgba(49, 2, 49, 0.849);
     }
 
-    .right button{
-        height: 40px;
+    .login img{
+        height: 60px;
+        width: 60px;
+        margin-left: -120px;
+    }
+
+    .login button {
+        display: none;
+    }
+
+    .left img{
+        width: 180%;
+        height: 90%;
+        margin-top: 10vh;
+        margin-left: 3vh;
+    }
+
+    .page{
+        display: block;        
+    }
+
+    .right{
+        margin: 10% 3%;
+        height: auto;
+        width: auto;
+     }
+
+     .right {
+        margin-top: 8%;
+        margin-left: 4vh;
+     }
+
+     .get{
+        height: 35px;
         width: 150px;
-        border-radius: 7px;
-        border: none;
-        background-color:purple;
-        margin: 50px 40px 0px 80px;
-        padding: 5px;
+        margin-top: 5vh;
+        margin-left: 10vh;
+     }
+
+     .menu-list{
+        width: 150px;
+        z-index: 111;
+        height: auto;
+        color: rgba(49, 2, 49, 0.849);
+        position: absolute;
+        top: 38px;
+        left: -7px;
+        display: none;
+     }
+
+     .menu-list ul li {
+        list-style: none;
+        background-color: purple;
+     }
+
+     .menu-list ul li a {
+        text-decoration: none;
+        color: white;
+     }
+
+    .menu:hover .menu-list{
+        display: block;
     }
 
 }

@@ -76,17 +76,20 @@ select{
     height: 25px;
     width: 100px;
     border-radius: 3px;
+    outline: none;
 }    
 
 .thumbnail{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(4, 290px);
+    grid-column-gap: 20px;
+    grid-row-gap: 50px;
     justify-content: space-evenly;
     margin: 60px 0px 30px 30px;
 }
 
 img{
+    object-fit: contain;
     border-radius: 5px;
     margin-left: 25px;
     margin-top: 15px;
@@ -124,16 +127,7 @@ s{
     transform: scale(1.1);
 }
 
-.chaitra:hover{
-    transform: scale(1.1);
-}
-
 .products{
-    border: 1px solid #f8f8f8;
-    background-color: #f8f8f8;
-}
-
-.chaitra{
     border: 1px solid #f8f8f8;
     background-color: #f8f8f8;
 }

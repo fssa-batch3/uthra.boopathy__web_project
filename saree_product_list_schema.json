@@ -1,0 +1,15 @@
+
+schema:
+
+product_list_schema{
+        "image" : {  "source" : "string",
+                     "alt" : "string",
+                  },
+        "name" : "string",
+        "price" : { "currency" : "string",
+                    "actualValue" : number,
+                    "discount" : { 
+                    "type" : "string",
+                    "value" :  number}
+     }
+}
