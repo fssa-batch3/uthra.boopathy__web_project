@@ -5,7 +5,7 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title> Main page </title>
+   <title> Saree page </title>
    <link rel="stylesheet" href="../../../../assets/css/style-silksareepage.css" />
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -440,6 +440,8 @@
 
       for (let i = 0; i < 12; i++) {
 
+
+
          //   <div class = "products"> </div>  //
 
          div_products = document.createElement("div");
@@ -447,14 +449,23 @@
          console.log(div_products);
 
 
+         // <a> </a>
+
+            a_link = document.createElement("a");
+            a_link.setAttribute("href",product_list[i]["link"]);
+            div_products.append(a_link);
+       
+
+
+
          // <img> </img> //
 
          img_picture = document.createElement("img");
          img_picture.setAttribute("src", product_list[i]["image"]["source"]);
-         img_picture.setAttribute("alt", "photo");
+         img_picture.setAttribute("alt", "photo" ,product_list[i]["alt"]);
          img_picture.setAttribute("height", "260px");
          img_picture.setAttribute("width", "230px");
-         div_products.append(img_picture);
+         a_link.append(img_picture);
          console.log(img_picture);
 
 
@@ -462,7 +473,7 @@
 
          h3_title = document.createElement("h3");
          h3_title.innerHTML = product_list[i]["name"];
-         div_products.append(h3_title);
+         a_link.append(h3_title);
          console.log(h3_title);
 
 

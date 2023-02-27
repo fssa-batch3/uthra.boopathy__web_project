@@ -44,6 +44,8 @@
         </header>
 
         <section>
+
+            <form role="form" onsubmit="update_details(event)" >
             
                 <h1> PROFILE</h1>
 
@@ -53,21 +55,21 @@
                
                 <div class="name">
                 <label> Name: </label>
-		        <input type="name" required="true" id="name" />
+		        <input type="text"  id="uname"  />
 		        </div>
 
                 <div class="age">
                     <label> Age:</label>
-                    <input type="number" required="true" id="age"/>
+                    <input type="number" id="age" min="1"/>
                 </div>
 
                 <div class="gender">
                     <label> Gender:</label>
-                    <div class="male">
-                    <label> Male </label> <input type="radio"  name="Male_Female_Others" />
-                    <label> Female </label> <input type="radio"  name="Male_Female_Others" />
-                    <label> Others </label> <input type="radio"  name="Male_Female_Others" />
-                </div>
+                    <select id="gender">
+                        <option> Male </option>
+                        <option> Female </option>
+                        <option> Others </option>
+                    </select>
                 </div>
 
                 <div class="add">
@@ -77,27 +79,29 @@
                 
                 <div class="no">
                     <label> Contact number: </label>
-                    <input type="number" required="true" placeholder="+91" id="phonenumber"  />
+                    <input type="number"  placeholder="+91" id="phonenumber"  />
                 </div>
 
                 <div class="mail">
                     <label> E-Mail Id: </label>
-                    <input type="email" required="true" id="email" placeholder="ghds4729@gmail.com" />
+                    <input type="email"  id="email" placeholder="ghds4729@gmail.com" />
                 </div>
 
                 <div class="des">
                         <label> Your Designation:</label>
-                        <div class="buyer">
-                        <label> Buyer </label> <input type="radio" name="Buyer_Seller_Both" />
-                        <label> Seller </label> <input type="radio" name="Buyer_Seller_Both" />
-                        <label> Both </label> <input type="radio" name="Buyer_Seller_Both" />  
-                    </div>
+                        <select id="des">
+                            <option> Buyer </option>
+                            <option> Seller </option>
+                            <option> Both </option>
+                        </select>
                 </div>
                 
                 <div >
-                        <button class="btn-1" type="submit" onclick="submit()">  Save  </button>
-                        <!-- <button class="btn-2" type="submit" onclick="submit()"> <a href="../homepage/sellerpage.html"> Cancel </a> </button> -->
-                </div>        <a href=></a>
+                        <button class="btn-1" type="submit" onclick="(event)">  Save  </button>
+                        <button class="btn-2" type="submit">  Cancel     </button>
+                </div>        
+
+            </form>
        
             </section>
 
@@ -106,32 +110,105 @@
 
    
 
-                function submit(){
+                // function submit(){
 
-                  const name = document.getElementById("name").value
-                  const age = document.getElementById("age").value
-                  const address = document.getElementById("address").value
-                  const phonenumber = document.getElementById("phonenumber").value
-                  const email = document.getElementById("email").value
+                //   const name = document.getElementById("name").value
+                //   const age = document.getElementById("age").value
+                //   const address = document.getElementById("address").value
+                //   const phonenumber = document.getElementById("phonenumber").value
+                //   const email = document.getElementById("email").value
 
-                  console.log(name)
-                  console.log(age)
-                  console.log(address)
-                  console.log(phonenumber)
-                  console.log(email) 
+                //   console.log(name)
+                //   console.log(age)
+                //   console.log(address)
+                //   console.log(phonenumber)
+                //   console.log(email) 
 
-                  localStorage.setItem("user_name",name)
-                  localStorage.setItem("user_age",age)
-                  localStorage.setItem("user_address",address)
-                  localStorage.setItem("user_phonenumber",phonenumber)
-                  localStorage.setItem("user_email",email)
+                //   localStorage.setItem("user_name",name)
+                //   localStorage.setItem("user_age",age)
+                //   localStorage.setItem("user_address",address)
+                //   localStorage.setItem("user_phonenumber",phonenumber)
+                //   localStorage.setItem("user_email",email)
 
                 
-                  window.location.href = "../homepage/profile.html"
+                //   window.location.href = "../homepage/profile.html"
 
 
                  
-                }  
+                // }  
+
+
+
+                // let uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
+                // let user_cred = JSON.parse(localStorage.getItem("user_cred"));
+                // function profile_data(e){
+                //     return e.phonenumber == uniqueID;
+                // }
+                // person_data = user_cred.find(profile_data);
+                // document.getElementById("name").value= person_data["name"];
+                // document.getElementById("phonenumber").value = person_data["phonenumber"];
+
+
+
+                
+            //     let user_object = JSON.parse(localStorage.getItem("user_object"));
+
+            //     let unique_id = JSON.parse(localStorage.getItem("unique_id"));
+
+
+                
+            //     function findUser(e) {
+
+            //     return e.phonenumber  == unique_id ;
+                    
+
+            //     }
+
+            //    let person_data = user_object.find (findUser);
+
+               
+            //     document.getElementById("name").value = person_data["userName"];
+            //     document.getElementById("phonenumber").value = person_data["userPhonenumber"];
+            //     // document.getElementById("address").innerText = person_data["address"];
+            //     // document.getElementById("age").innerHTML = person_data["age"];
+            //     // document.getElementById("email").innerText = person_data["email"];
+            //     // document.getElementById("gender").innerHTML = person_data["gender"];
+            //     // document.getElementById("des").innerHTML = person_data["des"];
+
+                
+
+
+            let uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
+                let user_cred = JSON.parse(localStorage.getItem("user_cred"));
+            function profile_data(e){
+                return e.phonenumber == uniqueID;
+            }
+            person_data = user_cred.find(profile_data);
+            document.getElementById("uname").value= person_data["uname"];
+            document.getElementById("email").value = person_data["email"];
+            document.getElementById("phonenumber").value = person_data["phonenumber"];
+            document.getElementById("age").value = person_data["age"];
+            document.getElementById("address").value =person_data["address"];
+            document.getElementById("des").value = person_data["des"];
+            document.getElementById("gender").value = person_data["gender"];
+
+
+            function update_details(e) {
+            e.preventDefault();
+            let address = document.getElementById("address").value
+            let des = document.getElementById("des").value
+            let email = document.getElementById("email").value
+            let gender = document.getElementById("gender").value
+            let age = document.getElementById("age").value
+            person_data["address"] = address;
+            person_data["des"] = des;
+            person_data["email"] = email;
+            person_data["gender"] = gender;
+            person_data["age"] = age;
+            localStorage.setItem('user_cred', JSON.stringify(user_cred));
+            //console.log(user_list);
+            window.location.href = "./profile.html";
+        }
 
             </script>
 

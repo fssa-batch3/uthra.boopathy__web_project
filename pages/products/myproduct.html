@@ -4,44 +4,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Main page </title>
-        <link rel="stylesheet" href="../../assets/css/myproduct.css"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title> My products page </title>
+    <link rel="stylesheet" href="../../assets/css/myproduct.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kreon:wght@300;400;500;600;700&family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-</head>  
+    </head>
     
     <body>
         <header>
-         <a href="../homepage/frontpage.html"> <img class="logo" src="../../assets/images/logo.png" alt="logo" height="70px" width="70px"/> </a>
-         <h1> Thara's World </h1>
-              <div>
-                 <ul>
-                    <li> <a href="../orders/cartpage.html"><i class="fa fa-shopping-cart" style="font-size:24px;color: #fff;" ></i></a></li>
-                    <li> <a href="../orders/wishlistpage.html"><i class="fa fa-heart-o" style="font-size: 24px;color: #fff;"></i></a></li> 
-                    <li><a href="../orders/myorderspage.html"><i class="fa fa-shopping-bag" style="font-size:22px;color: #fff"></i></a></li>
-                    <li><a href="#"><i class="fa fa-bell" style="font-size:24px;color: #fff"></i></a></li>
-                    <li><a href="../homepage/profilepage.html"><i class="fa fa-user-circle-o" style="font-size:24px;color: #fff;"></i></a></li>
-                    <li> <a href="../homepage/loginpage.html"><span class="login"> Login </span> </a></li>
-                  </ul>
-              </div>
+            <a href="../homepage/frontpage.html"> <img class="logo" src="../../assets/images/logo.png" alt="logo" height="70px" width="70px"/> </a>
+            <h1> Thara's World </h1>
+            <div class="nav">
+                <ul>
+                   <li> <a href="../orders/cartpage.html"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a></li>
+                   <li> <a href="../orders/wishlistpage.html"><i class="fa-sharp fa-solid fa-heart"></i></a></li> 
+                   <li><a href="../orders/myorderspage.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
+                   <li><a href="#"><i class="fa-solid fa-bell"></i></i></a></li>
+                   <li><a href="profilepage.html"><i class="fa-solid fa-circle-user"></i></a></li>
+                   <li> <a href="../homepage/loginpage.html"><span class="login"> Login </span> </a></li>
+                 </ul>
+             </div>
+
+             <div class="menu">
+               
+               <i class="fa-solid fa-bars"></i>               
+                <div class="menu-list">
+                   
+                       <a href="../orders/cartpage.html"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                       <a href="../orders/wishlistpage.html"><i class="fa-sharp fa-solid fa-heart"></i></a>
+                       <a href="../orders/myorderspage.html"><i class="fa-solid fa-bag-shopping"></i></a>
+                       <a href="#"><i class="fa-solid fa-bell"></i></i></a>
+                       <a href="profilepage.html"><i class="fa-solid fa-circle-user"></i></a>
+                       <a href="loginpage.html"><span class="login"> Login </span> </a>
+               
+                </div>
+            </div>
         </header>
 
         <section>
 
-            <button class="add"> <a href="../products/addproduct.html"> Add Products </a> </button>
+            <!-- <button class="add"> <a href="../products/addproduct.html"> Add Products </a> </button> -->
 
-             <div class="box">
+              <!-- <div class="box"> -->
 
-                 <div class="photo">
+                <!-- <div class="photo"> 
                     <img src="../../assets/images/silk12.jpg" alt="photo" width="300px"/>
                  </div>
 
                  <div class="right">
-                    <h3> Jacquard Material Self Designeed Saree</h3>
+                    <h3 id="name"> Jacquard Material Self Designed Saree </h3>
                     <h4> Special price </h4>
-                    <p> ₹629 <s>₹2,999 </s> <b>79% off</b> </p>
+                    <div class="price">
+                    <p id="original_price" > ₹629 </p>  <p> <s id="discount_price">₹2,999 </s> </p>  <p> <b id="discount_percent">79% off</b> </p>
+                    </div>
             
                     <div class="star">
                         <span class="stars"> REVIEW: </span>
@@ -51,20 +68,377 @@
                         <i class="fa fa-star" style="font-size: 24px;color: gold"></i>
                         <i class="fa fa-star" style="font-size: 24px;color: gold"></i>
                     </div>
-            
-                    <strong> Available Offers </strong>
-                    <div class="para">
-                        <p> *Special PriceGet extra 30% off (price inclusive of cashback/coupon)T&C</p><br>
-            
-                        <p> *Bank Offer5% Cashback on Thara's World Axis Bank CardT&C</p><br>
-            
-                        <p>*Partner OfferSign up for Thara's World Pay Later and get Thara's World Gift Card worth up to ₹500* </p>
-                    </div>
+        
 
-                    <button class="edit"> <a href="../products/editproduct.html"> Edit </a> </button>
+                        <strong>  Product details:  </strong>
+                        <div class="para" id="product_detail" >
+                        <p> *Material Details: <br>
+                         *Saree type: Silk cotton <br>
+                         *Saree length: 5 metres  <br>
+                         *Blouse length: 1 metres</p>
+                         <div>
+
+                        <strong> Additional offers: </strong>
+                        <div class="para"  >
+                            <p id="add_info"> *Special PriceGet extra 30% off (price inclusive of cashback/coupon)T&C <br>
+                
+                            *Bank Offer5% Cashback on Thara's World Axis Bank CardT&C <br>
+                   
+                            *Partner OfferSign up for Thara's World Pay Later and get Thara's World Gift Card worth up to ₹500 </p> 
+                        </div>  
+
+                     <button class="edit" type="submit"> <a href="../products/editproduct.html"> Edit </a> </button>
+                    <button type="submit" onclick="del_pdt()" > Delete </button> -->
+
                     
              </div>
 
         </section>
+
+        <script>
+
+
+
+            let add_products = JSON.parse(localStorage.getItem('add_products'));
+            let unique_id = JSON.parse(localStorage.getItem('unique_id'));
+            console.log(add_products);
+
+
+            let button_add;
+            let a_add;
+ 
+
+            // <button class = "add" > </add>
+                
+                button_add = document.createElement("button");
+            button_add.setAttribute("class", "add");
+            document.querySelector("section").prepend(button_add);
+            
+            // <a > </a>
+
+            a_add = document.createElement("a");
+            a_add.setAttribute("href", "../products/addproduct.html");
+            a_add.innerText = "Add products";
+            button_add.append(a_add);
+
+
+
+            for ( let k=0; k < add_products.length; k++){
+
+            let div_box;
+            let div_photo;
+            let img;
+            let div_right;
+            let h3_title;
+            let h4_sub;
+            let div_price;
+            let p_org;
+            let p_dis;
+            let s;
+            let p_percent;
+            let b;
+            let div_star;
+            let span;
+            let i;
+            let strong_pdt;
+            let div_pdt;
+            let p_pdt;
+            let br_pdt;
+            let strong_add;
+            let div_add;
+            let p_add;
+            let br_add;
+            let button_edit;
+            let a;
+            let button_del;
+           
+
+            // <div class = "box" > </div>
+
+            div_box = document.createElement("div");
+            div_box.setAttribute("class", "box");
+            console.log(div_box);
+
+
+            // < div class = "photo" > </div>
+
+            div_photo = document.createElement("div");
+            div_photo.setAttribute("class", "photo");
+            div_box.append(div_photo)
+            console.log(div_photo);
+
+            // <img/>
+            
+            img = document.createElement("img");
+            img.setAttribute("src", "../../assets/images/silk12.jpg");
+            img.setAttribute("alt", "photo");
+            img.setAttribute("width", "300px");
+            div_photo.append(img);
+
+            // < div class = "right" > </div>
+
+            div_right = document.createElement("div");
+            div_right.setAttribute("class", "right");
+            div_box.append(div_right);
+            console.log(div_right);
+
+            // < h3 id = "name"> </h3>
+
+            h3_title = document.createElement("h3");
+            h3_title.setAttribute("id", "name");
+            h3_title.innerText = "Jacquard Material Self Designed Saree";
+            div_right.append(h3_title);
+
+            // h4> </h4>
+
+            h4_sub =  document.createElement("h4");
+            h4_sub.innerText = "Special price:";
+            div_right.append(h4_sub);
+
+            // <div class = "price" > </div>
+
+            div_price = document.createElement("div");
+            div_price.setAttribute("class", "price");
+            div_right.append(div_price);
+
+           // < p id = "original_price" > </p>
+
+           p_org = document.createElement("p");
+           p_org.setAttribute("id", "original_price");
+           p_org.innerText = "₹" + 629;
+           div_price.append(p_org);
+
+            // <p> </p>
+
+            p_dis = document.createElement("p");
+            div_price.append(p_dis);
+
+            // <s> </s>
+
+            s = document.createElement("s");
+            s.setAttribute("id", "discount_price");
+            s.innerText = "₹" + 2999;
+            p_dis.append(s);
+
+            // <p> </p>
+
+            p_percent = document.createElement("p");
+            div_price.append(p_percent);
+
+            // < b > </b>
+
+            b = document.createElement("b");
+            b.setAttribute("id", "discount_percent");
+            b.innerText = 79 + "%" + "off";
+            p_percent.append(b);
+
+            // <div class = "star"> </div>
+
+            div_star = document.createElement("div");
+            div_star.setAttribute("class", "star");
+            div_right.append(div_star);
+
+
+            // <span> </span>
+
+            span = document.createElement("span");
+            span.setAttribute("class", "stars");
+            span.innerText = "Reviews:";
+            div_star.append(span);
+
+
+        for (j=0; j<5; j++) {
+
+            // <i> </i>
+
+            i = document.createElement("i");
+            i.setAttribute("class", "fa fa-star");
+            i.setAttribute("style", "font-size: 24px;color: gold");
+            div_star.append(i)
+
+        }            
+
+            // < strong> </strong>
+
+            strong_pdt = document.createElement("strong");
+            strong_pdt.innerText = "Product details:"
+            div_right.append(strong_pdt);
+
+            // <div class = "para"> </div>
+
+            div_pdt = document.createElement("div");
+            div_pdt.setAttribute("class", "para");
+            div_pdt.setAttribute("id", "product_detail");
+            div_right.append(div_pdt);
+
+            // <p> </p> 
+
+            p_pdt = document.createElement("p");
+            p_pdt.innerText = "Material details:"
+            div_pdt.append(p_pdt);
+
+            // <br>
+
+            br_pdt = document.createElement("br");
+            p_pdt.append(br_pdt);
+
+            // <p> </p> 
+
+            p_pdt = document.createElement("p");
+            p_pdt.innerText = " *Saree type: Silk cotton"
+            div_pdt.append(p_pdt);
+
+            // <br>
+
+            br_pdt = document.createElement("br");
+            p_pdt.append(br_pdt);
+
+            // <p> </p> 
+
+            p_pdt = document.createElement("p");
+            p_pdt.innerText = " *Saree length: 5 metres "
+            div_pdt.append(p_pdt);
+
+            // <br>
+
+            br_pdt = document.createElement("br");
+            p_pdt.append(br_pdt);
+
+            
+            // <p> </p> 
+
+            p_pdt = document.createElement("p");
+            p_pdt.innerText = " *Blouse length: 1 metres "
+            div_pdt.append(p_pdt);
+
+            // < strong> </strong>
+
+            strong_add = document.createElement("strong");
+            strong_add.innerText = "Additional offers"
+            div_right.append(strong_add);
+
+            // <div class = "para"> </div>
+
+            div_add = document.createElement("div");
+            div_add.setAttribute("class", "para");
+            div_right.append(div_add);
+
+            // <p> </p> 
+
+            p_add = document.createElement("p");
+            p_add.setAttribute("id", "add_info")
+            p_add.innerText = " *Special PriceGet extra 30% off (price inclusive of cashback/coupon)T&C";
+            div_add.append(p_add);
+
+            // <br>
+
+            br_add = document.createElement("br");
+            p_add.append(br_add);
+
+            // <p> </p> 
+
+            p_add = document.createElement("p");
+            p_add.innerText = " *Bank Offer5% Cashback on Thara's World Axis Bank CardT&C";
+            div_add.append(p_add);
+
+            // <br>
+
+            br_add = document.createElement("br");
+            p_add.append(br_add);
+
+            // <p> </p> 
+
+            p_add = document.createElement("p");
+            p_add.innerText = " *Partner OfferSign up for Thara's World Pay Later and get Thara's World Gift Card worth up to ₹500 ";
+            div_add.append(p_add);
+
+            // <button class = "edit"> </button>
+
+            button_edit  = document.createElement("button");
+            button_edit.setAttribute("class", "edit");
+            button_edit.setAttribute("type", "submit");
+            div_right.append(button_edit);
+
+
+            // <a> </a>
+
+            a = document.createElement("a");
+            a.setAttribute("href", "../products/editproduct.html");
+            a.innerText = "Edit";
+            button_edit.append(a);
+
+            // <button> </button>
+
+            button_del = document.createElement("button");
+            button_del.setAttribute("type", "submit");
+            button_del.setAttribute("onclick", "del_pdt()");
+            button_del.innerText = "Delete";
+            div_right.append(button_del);
+
+
+
+            document.querySelector("section").append(div_box);
+            // document.querySelector("div.box").append(div_photo);
+            // document.querySelector("div.box").append(div_right);
+        
+
+
+            // products shown
+
+
+
+            function product_data(e){
+                return e.product_id == unique_id;
+            }
+            product_datas = add_products.find(product_data);
+
+            document.getElementById("name").innerHTML = product_datas["name"];
+            document.getElementById("original_price").innerText = product_datas["original_price"];
+            document.getElementById("discount_price").innerText = product_datas["discount_price"];
+            document.getElementById("discount_percent").innerText = product_datas["discount_percent"];
+            document.getElementById("product_detail").innerText = product_datas["product_detail"];
+            document.getElementById("add_info").innerHTML = product_datas["add_info"];
+
+
+      // delete account function
+     
+     
+        function del_pdt(){
+               
+            if(confirm("Are you sure to delete this product?")){
+               
+                //get value from local storage
+                let unique_id = JSON.parse(localStorage.getItem("unique_id"));
+                let add_products = JSON.parse(localStorage.getItem("add_products"));
+                
+                function product_data(e){
+                    return e.product_id == unique_id;
+                }
+               
+                product_datas = add_products.find(product_data);
+                // find the index of person_data from userData
+                // let result = user_cred.indexOf(person_data);
+
+                // // deleting the indexof person data
+                // user_cred.splice(resu= 1);
+               
+                const indexOfUser = add_products.indexOf(product_datas);
+
+                add_products.splice(indexOfUser, 1);
+               
+                localStorage.setItem("add_products", JSON.stringify(add_products));
+
+                window.location.href = "../homepage/frontpage.html";
+                
+            }
+        
+        }
+
+
+    }
+
+        </script>
+    
     </body>
+
 </html>

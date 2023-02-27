@@ -61,36 +61,61 @@ h2{
     margin: 100px 100px 20px 100px;
     border: 1px solid gray;
     border-radius: 5px;
-    height: 590px;
+    height: 1100px;
+    box-shadow: 2px 4px 8px 2px rgba(6, 6, 6, 0.2), 3px 6px 20px 3px rgba(0, 0, 0, 0.19);
 }
 
-.photo{
-    height: 200px;
-    width: 200px;
+div.photo{
+    height: 280px;
+    width: 280px;
     border: 1px solid gray;
-    border-radius: 5px;
+    border-radius: 3px;
     margin: 100px 0px 0px 100px;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.photo img{
-    position: relative;
-    top: 55px;
-    left:65px;
+label.camera {
+    float: right;
+    margin-top: 15.3rem;
+    margin-right: 0.5rem;
+    padding: 3px;
+    border: 1.5px solid purple;
+    border-radius: 8rem;
 }
+
 
 .details{
     font-size: 25px;
-    margin: 50px 0px 0px 90px;
+    margin: 50px 0px 0px 120px;
 }
 
-input{
+input[type="text"]{
     width: 500px;
     border-bottom: 1px solid gray;
     border-top: none;
     border-left: none;
     border-right: none;
+    margin-top: 20px;
     margin-bottom: 20px;
     outline: none;
+}
+
+input[type="number"]{
+    width: 200px;
+    border-bottom: 1px solid gray;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    outline: none;
+}
+
+input[type="file"]{
+    border: none;
+    margin-left: 60px;
+    opacity: 0;
 }
 
 textarea{
@@ -105,6 +130,16 @@ textarea{
     margin-top: 20px;
 }
 
+select{
+    height: 30px;
+    width: 130px;
+    outline: none;
+}
+
+.type{
+    margin-top: 30px;
+}
+
 button{
     height: 35px;
     width: 100px;
@@ -113,7 +148,7 @@ button{
     background-color: purple;
     color: white;
     font-size: 20px;
-    margin-left: 700px;
+    margin-left: 500px;
     margin-top: 30px;
 }
 
@@ -237,35 +272,4 @@ h4{
 .twiter{
     background-color: #00acee;
     color: white;
-}
-
-.collections img{
-    border-radius: 150px;
-    padding: 40px;
-}
-
-.icons div{
-    position: relative;
-}
-
-.div{
-    font-size: 25px;
-    font-weight: bold;
-    margin-left: 70px;
-    display: inline-flex;
-    bottom: 20px;
-}
-
-.divs{
-    font-size: 25px;
-    font-weight: bold;
-    margin-left: 90px;
-    bottom: 20px;
-}
-
-.divss{
-    font-size: 25px;
-    font-weight: bold;
-    margin-left: 100px;
-    bottom: 20px;
 }

@@ -25,9 +25,9 @@ header div ul li{
 }
 
 header div ul li a{
+    font-size: 25px;
     text-decoration: none;
     color: white;
-    font-size: 20px;
 }
 
 h1{
@@ -57,10 +57,12 @@ section{
     flex-wrap: wrap;
     flex-direction: column;
     align-content: center;
-    margin: 150px 0 200px 370px;
+    margin-top: 150px;
+    margin-left: 350px;
+    margin-bottom: 200px;
     border: 1px solid gray;
     border-radius: 10px;
-    height: 950px;
+    height: 850px;
     width: 800px;
     box-shadow: 2px 4px 8px 2px rgba(6, 6, 6, 0.2), 3px 6px 20px 3px rgba(0, 0, 0, 0.19);
 }
@@ -69,85 +71,175 @@ section h1{
     color: black;
     font-weight: bold;
     font-size: 55px;
-    margin: 20px 0 0 130px;
+    margin-left: 50px;
 }
 
 section img{
-    border-radius: 48%;
-    margin: 80px 0 0 150px;
-    object-fit: unset;
+    position: relative;
+    left: 110px;
+    top: 30px;
 }
 
-.detail{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    font-size: 23px;
-    margin: 50px 0 0 50px;
+.btn-2 a{
+    text-decoration: none;
+    color: white;
 }
 
 .name{
-    padding-left: 130px;
+    font-weight: 200px;
+    font-size: 20px;
+    position: relative;
+    top: 60px;
 }
 
 .age{
-    padding-left: 150px;
+    font-weight: 200px;
+    font-size: 20px;
+    position: relative;
+    top: 145px;
 }
 
-.female{
-    padding-left: 120px;
+.gender{
+    font-weight: 200px;
+    font-size: 20px;
+    position: relative;
+    top: 45px;
 }
 
-.phno{
-    padding-left: 35px;
+.add{
+    font-weight: 200px;
+    font-size: 20px;
+    position: relative;
+    top: 120px;
+}
+
+.des{
+    font-weight: 200px;
+    font-size: 20px;
+    position: relative;
+    top: 180px;
+}
+
+.no{
+    font-weight: 200px;
+    font-size: 20px;
+    position: relative;
+    top: 150px;
 }
 
 .mail{
-    padding-left: 100px;
-}
-
-.buyer{
-    padding-left: 30px;
-}
-
-.add1{
-     padding-left: 10px;
-}
-
-.add2{
-    padding-left: 200px;
-}
-
-.add3{
-    padding-left: 200px;
-}
-
-
-
-button a{
-    color: white;
-    text-decoration: none;
-}
-
-.btn-1{
-    height: 35px;
-    width: 100px;
-    background-color: purple;
-    border: none;
-    border-radius: 5px;
+    font-weight: 200px;
     font-size: 20px;
-    margin: 50px 0 0 300px;
+    position: relative;
+    top: 165px;
 }
 
-.btn-2{
-    height: 35px;
-    width: 100px;
-    background-color: gray;
+input[type="email"]{
     border: none;
-    border-radius: 5px;  
+    height: 30px;
+    width: 225px;
+    font-size: 20px;
+    position: relative;
+    left: 98px;
+    outline: none;
+}
+
+input[type="text"]{
+    height: 30px;
+    width: 200px;
+    border: none;
+    font-size: 20px;
+    padding-left: 25px;
+    position: relative;
+    left: 125px;
+}
+
+input[type="number"]{
+    height: 30px;
+    width: 200px;
+    border: none;
+    padding-left: 25px;
+    font-size: 20px;
+    position: relative;
+    left: 47px;
+    outline: none;
+}
+
+input[id="age"]{
+    height: 30px;
+    width: 200px;
+    padding-left: 25px;
+    font-size: 20px;
+    border: none;
+    position: relative;
+    left: 140px;
+    outline: none;
+}
+
+textarea{
+    height: 30px;
+    width: 200px;
+    padding-left: 25px;
     font-size: 20px;
     position: relative;
     left: 20px;
+    border: none;
+    top: 15px;
+    outline: none;
+}
+
+.c1{
+    margin-left: 165px;   
+}
+
+#gender{
+    border: none;
+    position: relative;
+    left: 110px;
+}
+
+select{
+    height: 37px;
+    width: 235px;
+    font-size: 20px;
+}
+
+.btn-1{
+    font-size: 18px;
+    position: relative;
+    left: 280px;
+    top: 220px;
+    align-content: space-between;
+    border-radius: 5px;
+    border: 1px solid purple;
+    color: white;
+    background-color: purple;
+    height: 35px;
+    width: 100px;
+}
+
+.btn-1 a{
+    text-decoration: none;
+    color: white;
+}
+
+.btn-2{
+    font-size: 18px;
+    position: relative;
+    left: 320px;
+    top: 220px;
+    align-content: space-between;
+    border-radius: 5px;
+    border: 1px solid gray;
+    background-color: gray;
+    height: 35px;
+    width: 100px;
+}
+
+#des{
+    border: none;
+    position: relative;
+    left: 35px;
 }
 
 .menu{
@@ -159,7 +251,7 @@ button a{
 {
 
     header{
-        height: 8vh;
+        height: 10vh;
         width: 100vw;
      }
 
@@ -230,9 +322,9 @@ button a{
     section h1{
         color: black;
         font-weight: bold;
-        font-size: 40px;
-        align-items: center;
-        
+        font-size: 30px;
+        margin-left: 40px;
+        margin-top: 20px;
     }
     
     section img{
@@ -248,22 +340,71 @@ button a{
         color: white;
     }
     
+    .name{
+        font-weight: 200;
+        font-size: 18px;
+        position: relative;
+        top: 65px;
+    }
     
+    .age{
+        font-weight: 200;
+        font-size: 18px;
+        position: relative;
+        top: 148px;
+    }
+    
+    .gender{
+        font-weight: 200;
+        font-size: 18px;
+        position: relative;
+        top: 70px;
+    }
+    
+    .add{
+        font-weight: 200;
+        font-size: 18px;
+        position: relative;
+        top: 135px;
+    }
+    
+    .des{
+        font-weight: 200;
+        font-size: 18px;
+        position: relative;
+        top: 210px;
+    }
+    
+    .no{
+        font-weight: 200;
+        font-size: 18px;
+        position: relative;
+        top: 170px;
+    }
+    
+    .mail{
+        font-weight: 200;
+        font-size: 18px;
+        position: relative;
+        top: 195px;
+    }
     
     input[type="email"]{
         height: 20px;
         width: 155px;
         font-size: 15px;
-       
+        position: relative;
+        left: 70px;
         outline: none;
     }
     
-    input[type="name"]{
+    input[type="text"]{
         height: 20px;
         width: 130px;
         font-size: 15px;
         padding-left: 25px;
-        
+        position: relative;
+        left: 95px;
         outline: none;
     }
     
@@ -282,7 +423,8 @@ button a{
         width: 130px;
         padding-left: 25px;
         font-size: 15px;
-       
+        position: relative;
+        left: 112px;
         outline: none;
     }
     
@@ -291,18 +433,28 @@ button a{
         width: 130px;
         padding-left: 25px;
         font-size: 15px;
-      
+        position: relative;
+        left: 3px;
+        top: 15px;
         outline: none;
     }
 
-    .male{
+    select{
+        height: 28px;
+        width: 160px;
+    }
+
+    #gender{
         display: inline-block;
-        
+        position: relative;
+        left: 85px;
     }
     
     .btn-1{
         font-size: 18px;
-       
+        position: relative;
+        left: 100px;
+        top: 250px;
         align-content: space-between;
         border-radius: 3px;
         border: 1px solid purple;
@@ -319,7 +471,9 @@ button a{
     
     .btn-2{
         font-size: 18px;
-        
+        position: relative;
+        left: 120px;
+        top: 250px;
         align-content: space-between;
         border-radius: 3px;
         border: 1px solid gray;
@@ -328,9 +482,10 @@ button a{
         width: 80px;
     }
     
-    .buyer{
+    #des{
         display: inline-block;
-       
+        position: relative;
+        left: 15px;
     }
 
     

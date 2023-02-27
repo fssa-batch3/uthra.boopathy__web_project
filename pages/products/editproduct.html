@@ -33,6 +33,8 @@
 
             <h2> EDIT </h2>
 
+            <form role="form" onsubmit="update_details(event)"></form>
+
             <div class="box">
 
                 <div class="photo">
@@ -41,29 +43,38 @@
 
                 <div class="detail">
 
-                     <div>
-                        <label>  Name of the product:  </label>
-                        <input type="text" value="Jacquard Material Self Designeed Saree">
-                     </div>
+                    <div>  
+                        <label> Name of the product: </label> <br>
+                        <input type="text" id="name" required value="Jacquard Material Self Designed Saree" />
+                    </div>
+
+                    <div>  
+                        <label> Original price: </label> <br>
+                        <input type="number" id="original_price" required value= 629 min="1" />
+                    </div>
 
                      <div>
-                        <label>  Price of the product:  </label>
-                        <input type="number" value="629">
-                     </div>
+                        <label> Discount price: </label> <br>
+                        <input type="number" id="discount_price" value=2999 min="1" /> 
+                    </div>
 
-                     <div>
-                        <label>  Product details:  </label>
-                        <input type="text" value="Material Details: *Saree type: Silk cotton *Saree length: 5 metres *Blouse length: 1 metres">
-                     </div>
+                    <div>
+                        <label> Discount percentage:</label> <br>
+                        <input type="number" id="discount_percent" value=79 min="1" />
+                    </div> 
 
-                     <div>
-                        <label>  Additional details:  </label>
-                        <input type="text" value="*Special PriceGet extra 30% off (price inclusive of cashback/coupon)T&C 
-            
-                                                  *Bank Offer5% Cashback on Thara's World Axis Bank CardT&C 
+                    <div class="add">  
+                        <label> Product details: </label> <br>
+                        <textarea id="product_detail" required ></textarea>
+                    </div>
 
-                                                  *Partner OfferSign up for Thara's World Pay Later and get Thara's World Gift Card worth up to ₹500*">
-                     </div>
+                    <div class="add">  
+                        <label> Additional information: </label> <br>
+                        <textarea id="add_info" >  *Special PriceGet extra 30% off (price inclusive of cashback/coupon)T&C
+  *Bank Offer5% Cashback on Thara's World Axis Bank CardT&C
+  *Partner OfferSign up for Thara's World Pay Later and get Flipkart Gift Card worth up to ₹500*
+                        </textarea>
+                    </div>
 
                      <button> <a href="../products/myproduct.html"> Save </a> </button>
 
@@ -73,6 +84,45 @@
             </div>
 
         </section>
+
+        <script>
+
+
+            let add_products = JSON.parse(localStorage.getItem('add_products'));
+            let unique_id = JSON.parse(localStorage.getItem('unique_id'));
+            console.log(add_products);
+
+            function product_data(e){
+                return e.product_id == unique_id;
+            }
+            product_datas = add_products.find(product_data);
+
+            document.getElementById("name").innerHTML = product_datas["name"];
+            document.getElementById("original_price").innerText = product_datas["original_price"];
+            document.getElementById("discount_price").innerText = product_datas["discount_price"];
+            document.getElementById("discount_percent").innerText = product_datas["discount_percent"];
+            document.getElementById("product_detail").innerText = product_datas["product_detail"];
+            document.getElementById("add_info").innerText = product_datas["add_info"];
+
+
+            function update_details(e) {
+            e.preventDefault();
+
+            let product_detail = document.getElementById("product_detail").value
+            let add_info= document.getElementById("add_info").value
+           
+
+            product_datas["product_detail"] = product_detail;
+            product_datas["add_info"] = add_info;
+           
+           
+            localStorage.setItem('add_products', JSON.stringify(add_products));
+           
+            window.location.href = "../products/myproduct.html";
+        }
+       
+       
+       </script>
 
     </body>
 

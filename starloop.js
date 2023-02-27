@@ -387,15 +387,160 @@
 
 
 
-let n = 5;
-let m = 5;
-for ( let j=1; j<=m; j++ ){
-     let str = ""
-     for (i=1; i<=n; i++){
-       if ( i>=j){
-      str += "*" + ".";
-        }  
-}
-console.log(str);
-}
+// let n = 5;
+// let m = 5;
+// for ( let j=1; j<=m; j++ ){
+//      let str = ""
+//      for (i=1; i<=n; i++){
+//        if ( i<=j){
+//       str += "*" + ".";
+//         }  
+// }
+// console.log(str);
+// }
 
+
+
+// let a = [2, 0, 5, 7, 2, 8];
+// let x = 2;
+// let output_str = "";
+// let FOUND = false;
+// // let count = 0;
+
+// for (let i = 0; i < a.length; i++){
+//   if ( x == a[i]){
+//         FOUND = true;
+//           //  count = count++;
+        
+//   }
+
+//   if (FOUND){
+//     output_str = x + " is found  " + " times in an array";
+//   }
+//   else {
+//     output_str = x + "  is not found in an array";
+//   } 
+// }
+// console.log(output_str);
+
+
+
+// let array_student_obj 
+//  = [{name:"Nanda",
+// 	 age:19,
+// 	 salary: 10000, 
+// 	 marks:{
+// 			maths:80, 
+// 			physics: 78, 
+// 			chemistry:90
+// 		}
+// 	 },
+// 	 {name:"Deepika",
+// 	 age:18,
+// 	 salary: 10000, 
+// 	 marks:{
+// 			maths:95, 
+// 			physics: 95, 
+// 			chemistry:89
+// 		}
+// 	 },
+// 	 {name:"Boopalan",
+// 	 age:21,
+// 	 salary: 10000, 
+// 	 marks:{
+// 			maths:76, 
+// 			physics: 81, 
+// 			chemistry:76
+// 		}
+// 	 },{name:"Karthi",
+// 	 age:22,
+// 	 salary: 10000, 
+// 	 marks:{
+// 			maths:67, 
+// 			physics: 51, 
+// 			chemistry:39
+// 		}
+// 	 }];
+
+//    let age = array_student_obj[0].age;
+//    let output = "";
+
+//    for ( i=1; i<array_student_obj.length; i++){
+//     if (age > array_student_obj[i].age){
+//       output = array_student_obj[i].age;
+//       output = array_student_obj[i].name;
+//       output = array_student_obj[i].marks.chemistry;
+//       output = array_student_obj[i].salary;
+
+//     }
+//    }
+//    console.log(output);
+
+
+// print the number except the x value;
+
+// let n = 10;
+// let x = 4;
+// let output = "";
+
+// for ( let i = 1; i <= n; i++){
+// 	if ( x !== i) {	
+// 		output += i + " "; 
+// 	}
+// }
+// console.log(output);
+
+
+// print sum of the even numbers;
+
+// let a = [ 4, 3, 17, 10, 11, 12];
+// let output = 0;
+// for (i=0; i<a.length; i++){
+// 	if ( a[i] % 2 == 0) {
+//         output += a[i];
+// 	}
+// }
+// console.log(output);
+
+
+// print the area of rectangle;
+
+// let l = 10;
+// let b = 50;
+// let Area_of_the_rectangle = l*b;
+// console.log(Area_of_the_rectangle);
+
+
+// check whether a is equal to b or not;
+
+// let a = 10;
+// let b = 20;
+// let output = "";
+// if (a==b){
+//     output = "a is equal to b. "
+// }
+// else{
+//     output = "a is not equal to b. "
+// }
+// console.log(output);
+
+
+// Given an array of length n and k (k < n) find the maximum sum of k consecutive numbers.
+
+// let a = [4 ,5, 10, 11, 1];
+// let k = 3;
+// let output = 0;
+// for (let i=0; i < a.length; i++){
+//         for (j=0; j<k; j++){
+//             if (a.length == k){
+//                 output += a[j];
+//             }
+//         }
+// }
+// console.log(output);
+
+
+let a = [48, 1, 4, 7];
+ a[1] = a[0];
+ a[1]
+ console.log(a);

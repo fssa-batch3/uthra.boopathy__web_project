@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Main page </title>
+    <title> Add product page </title>
         <link rel="stylesheet" href="../../assets/css/addproduct.css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,42 +30,190 @@
 
         <section>
 
+            <form role="form" onsubmit="add_product(event)" >
+
             <h2> ADD PRODUCTS </h2>
 
             <div class="box"> 
                 
-                <div class="photo"> 
-                    <img src="../../assets/images/plus-solid.svg" alt="photo" width="70px">
+                <div class="photo" id="imgBox"> 
+                    <div class="camera">                    
+                    <input type="file" accept="image/*" name="image" id="image" style = "display: none" onchange="loadFile(event)">
+                    <label for="image" class="camera"><i class="fa fa-camera" style="color: #000;"></i></label>
+                </div>
+  
+                    <!-- <input type="file" id="image"/> -->
                 </div>
 
                 <div class="details">
 
+                    <div>
+                        <label> Product ID: </label> <br>
+                        <input type="text" id="product_id" required >
+                    </div>
+
                     <div>  
                         <label> Name of the product: </label> <br>
-                        <input type="text"/>
+                        <input type="text" id="name" required />
                     </div>
 
                     <div>  
-                        <label> Price of the product: </label> <br>
-                        <input type="number"/>
+                        <label> Original price: </label> <br>
+                        <label>₹</label>
+                        <input type="number" id="original_price" pattern="[0-9]{0,}" required />
                     </div>
 
-                    <div>  
+                     <div>
+                        <label> Discount price: </label> <br>
+                        <label>₹</label>
+                        <input type="number" id="discount_price" /> 
+                    </div>
+
+                    <div>
+                        <label> Discount percentage:</label> <br>
+                        <input type="number" id="discount_percent" />
+                        <label> % </label>
+                    </div> 
+
+                    <div>
+                        <label> Category: </label>
+                        <select id="category" required>
+                            <option selected="selected" onclick="category_selection()" > Select category </option>
+                        </select>
+
+                        <label> Type: </label>
+                        <select id="type" required>
+                            <option selected="selected"> Select category </option>
+                        </select>
+
+                    </div>
+
+                    <div class="add">  
                         <label> Product details: </label> <br>
-                        <textarea></textarea>
+                        <textarea id="product_detail" required ></textarea>
                     </div>
 
                     <div class="add">  
                         <label> Additional information: </label> <br>
-                        <textarea></textarea>
+                        <textarea id="add_info" ></textarea>
                     </div>
 
-                     <button> <a href="../products/myproduct.html"> Upload </a> </button>
+                    <div class="type">
+                        <label> Type </label>
+                        <select id="unique_type">
+                            <option> Select category </option>
+                        </select>
+<!-- 
+                        <label> Available quantity: </label>
+                        <input type="number" id="qty" min="1" required> -->
+                    </div>
+
+                    <button type="submit"> Upload </button> 
+
+                     <!-- <button> <a href="../products/myproduct.html"> Upload </a> </button> -->
 
                 </div>
 
             </div>
 
+        </form>
+
         </section>
+
+        <script>
+       
+       
+        let imgBox = document.getElementById("imgBox");
+        let loadFile = function(event){
+        imgBox.style.backgroundImage = "url(" + URL.createObjectURL(event.target.files[0])+")";
+        }
+
+
+
+        function add_product(e) {
+
+            e.preventDefault();
+
+            let product_id = document.getElementById("product_id").value;
+            let image = document.getElementById("image").value;
+            let name = document.getElementById("name").value;
+            let original_price = document.getElementById("original_price").value;
+            let discount_price = document.getElementById("discount_price").value;
+            let discount_percent = document.getElementById("discount_percent").value;
+            let product_detail = document.getElementById("product_detail").value;
+            let category = document.getElementById("category").value;
+            let type = document.getElementById("type").value;
+            let add_info = document.getElementById("add_info").value;
+            product_uuid = uuidv4();
+
+            let add_products = JSON.parse(localStorage.getItem('add_products')) || [];
+
+        
+
+
+            // function category_selection(){
+
+            //         let product_category = {
+            //             "Dress": {
+            //                 "Saree": [],
+            //                 "Chudi": [],
+            //                 "Jeans": []    
+            //             },
+            //             "Jewell": {
+            //                 "Earring": [],
+            //                 "Chain": []
+            //             }
+            //             }
+            //             window.onload = function() {
+            //             let categorySel = document.getElementById("category");
+            //             let typeSel = document.getElementById("type");
+            //             for (let x in product_category) {
+            //                 categorySel.options[categorySel.options.length] = new Option(x, x);
+            //             }
+            //             categorySel.onchange = function() {
+            //                 //empty Chapters- and Topics- dropdowns
+            //                 typeSel.length = 1;
+            //                 //display correct values
+            //                 for (let y in product_category[this.value]) {
+            //                 typeSel.options[typeSel.options.length] = new Option(y, y);
+            //                 }
+            //             }
+                    
+            //         }
+
+            // }
+
+
+            add_products.push({
+                product_id: product_id,
+                image: image,
+                name: name, 
+                original_price:  original_price,
+                discount_price: discount_price,
+                discount_percent: discount_percent,
+                product_detail: product_detail,
+                add_info: add_info,
+                category: category,
+                type: type, 
+                product_uuid: product_uuid
+            });
+
+            localStorage.setItem('add_products', JSON.stringify(add_products));
+
+            localStorage.setItem('unique_id', JSON.stringify(product_id));
+
+            alert("Product uploaded successfully");
+
+
+            window.location.href = "../products/myproduct.html";
+            
+            
+        }
+
+
+        </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+
     </body>
 </html>

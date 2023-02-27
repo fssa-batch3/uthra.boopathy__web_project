@@ -44,71 +44,133 @@
         </header>
 
         <section>
+
+            <form role="form" >
             
                 <h1> PROFILE</h1>
 
-                <div>
-                    <img src="../../assets/images/leganga2.jpg" alt="photo" height="180px" width="200px"/>
+                <div class="avatar">
+                    <img src="../../assets/images/avatar.jpg" alt="photo" height="180px" width="180px"/>
                 </div>
                
-            <div class="detail">
+                <div class="name">
+                <label> Name: </label>
+		        <input type="text"  id="uname" disabled="true" />
+		        </div>
 
-                <div>
-                     Name:  <span class="name" id="name" ></span> <br> <br>
+                <div class="age">
+                    <label> Age:</label>
+                    <input type="number"  id="age" disabled="true" />
+                </div>
 
-		              Age:<span class="age" id="age" >   </span> <br> <br>
+                <div class="gender">
+                    <label> Gender:</label>
+                    <select id="gender" disabled="true" >
+                        <option> Male </option>
+                        <option> Female </option>
+                        <option> Others </option>
+                    </select>
+                </div>
 
-                     Gender: <span class="female" >  </span> <br> <br>
+                <div class="add">
+                    <label> Residential address: </label>
+                    <textarea id="address" disabled="true">  </textarea>
+                </div>
+                
+                <div class="no">
+                    <label> Contact number: </label>
+                    <input type="number"  id="phonenumber" disabled="true" />
+                </div>
 
+                <div class="mail">
+                    <label> E-Mail Id: </label>
+                    <input type="email"  id="email"  disabled="true" />
+                </div>
 
-                     Residential address: <span class="add1" id="address" >  <br>
-                                          <span class="add2" id="address" >  <br>
-                                          <span class="add3" id="address" >   </span> <br> <br>
-
-                     Contact number: <span class="phno" id="phonenumber" >   </span> <br> <br>
-
-                     E-Mail Id:  <span class="mail" id="email" >   </span> <br> <br>
- 
-                     Your Designation: <span class="buyer" >   </span> <br> 
-
-
-                </div>    
-
-            </div>
-
-            
+                <div class="des">
+                        <label> Your Designation:</label>
+                        <select id="des" disabled="true" >
+                            <option> Buyer </option>
+                            <option> Seller </option>
+                            <option> Both </option>
+                        </select>
+                </div>
                 
                 <div >
-                        <button class="btn-1" type="submit" onclick="submit()"> <a href="../homepage/profilepage.html"> Edit </a> </button>
-                        <button class="btn-2"> <a href="../homepage/frontpage.html"> Cancel </a> </button>
+                        <button class="btn-1" type="submit"> <a href="./profilepage.html">  Edit </a> </button>
+                
+                        <button class="btn-2" type="button" onclick="deleteAcc()"> Delete </button>
                 </div>        
+
+            </form>
        
-        </section>
+            </section>
 
             <script>
 
 
-                const user_name = localStorage.getItem("user_name");
-                const user_age = localStorage.getItem("user_age");
-                const user_gender = localStorage.getItem("user_gender");
-                const user_phonenumber = localStorage.getItem("user_phonenumber");
-                const user_email = localStorage.getItem("user_email");
-                const user_des = localStorage.getItem("user_des");
+                // const user_name = localStorage.getItem("user_name");
+                // const user_age = localStorage.getItem("user_age");
+                // const user_gender = localStorage.getItem("user_gender");
+                // const user_phonenumber = localStorage.getItem("user_phonenumber");
+                // const user_email = localStorage.getItem("user_email");
+                // const user_des = localStorage.getItem("user_des");
 
-                console.log(name);
-                console.log(age);
-                console.log(gender);
-                console.log(phonenumber);
-                console.log(email);
-                console.log(designation);
+                // console.log(name);
+                // console.log(age);
+                // console.log(gender);
+                // console.log(phonenumber);
+                // console.log(email);
+                // console.log(designation);
 
-                document.getElementById("name").innerText = user_name
-                document.getElementById("age").innerText = user_age
-                document.getElementById("gender").innerText = user_gender
-                document.getElementById("phonenumber").innerText = user_phonenumber
-                document.getElementById("email").innerText = user_email
-                document.getElementById("designation").innerText = user_des
+                // document.getElementById("name").innerText = user_name
+                // document.getElementById("age").innerText = user_age
+                // document.getElementById("gender").innerText = user_gender
+                // document.getElementById("phonenumber").innerText = user_phonenumber
+                // document.getElementById("email").innerText = user_email
+                // document.getElementById("designation").innerText = user_des
 
+
+                
+            let uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
+            let user_cred = JSON.parse(localStorage.getItem("user_cred"));
+            function profile_data(e){
+                return e.phonenumber == uniqueID;
+            }
+            person_data = user_cred.find(profile_data);
+            document.getElementById("uname").value = person_data["uname"];
+            document.getElementById("email").value = person_data["email"];
+            document.getElementById("phonenumber").value = person_data["phonenumber"];
+            document.getElementById("age").value = person_data["age"];
+            document.getElementById("address").value = person_data["address"];
+            document.getElementById("des").value = person_data["des"];
+            document.getElementById("gender").value = person_data["gender"];
+            
+
+
+            // delete account function
+        function deleteAcc(){
+            if(confirm("Are you sure to delete this account ?")){
+            //get value from local storage
+            let uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
+            let user_cred = JSON.parse(localStorage.getItem("user_cred"));
+            function profile_data(e){
+                return e.phonenumber == uniqueID;
+            }
+            person_data = user_cred.find(profile_data);
+            // find the index of person_data from userData
+            // let result = user_cred.indexOf(person_data);
+
+            // // deleting the indexof person data
+            // user_cred.splice(resu= 1);
+            const indexOfUser = user_cred.indexOf(person_data);
+
+            user_cred.splice(indexOfUser, 1);
+            localStorage.setItem("user_cred", JSON.stringify(user_cred));
+
+            window.location.href = "./frontpage.html";
+        }
+    }
 
             </script>
 

@@ -82,12 +82,12 @@ section img{
 
 input[type="text"]{
     height: 30px;
-    width: 200px;
+    width: 230px;
     border: 1px solid gray;
     border-radius: 3px;
     position: relative;
     top: 8px;
-    left: 20px;
+    left: 120px;
     outline: none;
 }
 
@@ -108,7 +108,7 @@ input[type="text"]{
     font-weight: 200;
     font-size: 20px;
     position: relative;
-    top: 128px;
+    top: 145px;
 }
 
 .gender{
@@ -149,35 +149,17 @@ input[type="text"]{
 input[type="email"]{
     height: 30px;
     width: 225px;
+    border: 1px solid gray;
     font-size: 15px;
     position: relative;
     left: 98px;
     outline: none;
 }
 
-input[type="date"]{
-    height: 30px;
-    width: 200px;
-    font-size: 15px;
-    padding-left: 25px;
-    position: relative;
-    left: 70px;
-    outline: none;
-}
-
-input[type="name"]{
-    height: 30px;
-    width: 200px;
-    font-size: 15px;
-    padding-left: 25px;
-    position: relative;
-    left: 125px;
-    outline: none;
-}
-
 input[type="number"]{
     height: 30px;
     width: 200px;
+    border: 1px solid gray;
     padding-left: 25px;
     font-size: 15px;
     position: relative;
@@ -188,6 +170,7 @@ input[type="number"]{
 input[id="age"]{
     height: 30px;
     width: 200px;
+    border: 1px solid gray;
     padding-left: 25px;
     font-size: 15px;
     position: relative;
@@ -198,6 +181,7 @@ input[id="age"]{
 textarea{
     height: 30px;
     width: 200px;
+    border: 1px solid gray;
     padding-left: 25px;
     font-size: 15px;
     position: relative;
@@ -210,10 +194,15 @@ textarea{
     margin-left: 165px;   
 }
 
-.male{
+#gender{
     display: inline-block;
     position: relative;
-    left: 115px;
+    left: 110px;
+}
+
+select{
+    height: 37px;
+    width: 235px;
 }
 
 .btn-1{
@@ -248,7 +237,7 @@ textarea{
     width: 100px;
 }
 
-.buyer{
+#des{
     display: inline-block;
     position: relative;
     left: 35px;
@@ -363,7 +352,7 @@ textarea{
         font-weight: 200;
         font-size: 18px;
         position: relative;
-        top: 138px;
+        top: 148px;
     }
     
     .gender{
@@ -404,25 +393,17 @@ textarea{
     input[type="email"]{
         height: 20px;
         width: 155px;
+        border: 1px solid gray;
         font-size: 15px;
         position: relative;
         left: 70px;
         outline: none;
     }
     
-    input[type="name"]{
-        height: 20px;
-        width: 130px;
-        font-size: 15px;
-        padding-left: 25px;
-        position: relative;
-        left: 95px;
-        outline: none;
-    }
-    
     input[type="number"]{
         height: 20px;
         width: 128px;
+        border: 1px solid gray; 
         padding-left: 25px;
         font-size: 15px;
         position: relative;
@@ -439,6 +420,16 @@ textarea{
         left: 112px;
         outline: none;
     }
+
+    input[type="text"]{
+        height: 22px;
+        width: 132px;
+        font-size: 15px;
+        padding-left: 25px;
+        position: relative;
+        left: 95px;
+        outline: none;
+    }
     
     textarea{
         height: 20px;
@@ -451,10 +442,15 @@ textarea{
         outline: none;
     }
 
-    .male{
+    select{
+        height: 28px;
+        width: 160px;
+    }
+
+    #gender{
         display: inline-block;
         position: relative;
-        left: 55px;
+        left: 85px;
     }
     
     .btn-1{
@@ -489,10 +485,10 @@ textarea{
         width: 80px;
     }
     
-    .buyer{
+    #des{
         display: inline-block;
         position: relative;
-        left: 5px;
+        left: 15px;
     }
 
     
