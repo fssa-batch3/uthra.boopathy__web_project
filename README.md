@@ -9,8 +9,7 @@ USER CRUD:
 
     1. Register 
     2. Login 
-    3. Profile
-    4. Edit profile
+    3. Profile Edit / Delete
 
 PRODUCT CRUD:
 
