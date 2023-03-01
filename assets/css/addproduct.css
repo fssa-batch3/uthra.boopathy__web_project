@@ -116,6 +116,7 @@ input[type="file"]{
     border: none;
     margin-left: 60px;
     opacity: 0;
+    object-fit: contain;
 }
 
 textarea{

@@ -540,7 +540,289 @@
 // console.log(output);
 
 
-let a = [48, 1, 4, 7];
- a[1] = a[0];
- a[1]
- console.log(a);
+let x = [48, 1, 4, 7];
+let min = x[0];
+for(i=0;i<x.length;i++){
+    if(min<x[i]){
+       min=x[i]
+    }
+}
+console.log(x);
+
+
+
+
+
+
+ 
+        
+
+
+        //     // let product = 
+
+
+        //     for ( let k=0; k < add_products.length; k++){
+
+        //     let div_box;
+        //     let div_photo;
+        //     let img;
+        //     let div_right;
+        //     let h3_title;
+        //     let h4_sub;
+        //     let div_price;
+        //     let p_org;
+        //     let p_dis;
+        //     let s;
+        //     let p_percent;
+        //     let b;
+        //     let div_star;
+        //     let span;
+        //     let i;
+        //     let strong_pdt;
+        //     let div_pdt;
+        //     let p_pdt;
+        //     let br_pdt;
+        //     let strong_add;
+        //     let div_add;
+        //     let p_add;
+        //     let br_add;
+        //     let button_edit;
+        //     let a;
+        //     let button_del;
+           
+
+        //     // <div class = "box" > </div>
+
+        //     div_box = document.createElement("div");
+        //     div_box.setAttribute("class", "box");
+        //     console.log(div_box);
+
+
+        //     // < div class = "photo" > </div>
+
+        //     div_photo = document.createElement("div");
+        //     div_photo.setAttribute("class", "photo");
+        //     div_box.append(div_photo)
+        //     console.log(div_photo);
+
+        //     // <img/>
+            
+        //     img = document.createElement("img");
+        //     img.setAttribute("src", "../../assets/images/silk12.jpg");
+        //     img.setAttribute("alt", "photo");
+        //     img.setAttribute("width", "300px");
+        //     div_photo.append(img);
+
+        //     // < div class = "right" > </div>
+
+        //     div_right = document.createElement("div");
+        //     div_right.setAttribute("class", "right");
+        //     div_box.append(div_right);
+        //     console.log(div_right);
+
+        //     // < h3 id = "name"> </h3>
+
+        //     h3_title = document.createElement("h3");
+        //     h3_title.setAttribute("id", "name");
+        //     h3_title.innerText = "Jacquard Material Self Designed Saree";
+        //     div_right.append(h3_title);
+
+        //     // h4> </h4>
+
+        //     h4_sub =  document.createElement("h4");
+        //     h4_sub.innerText = "Special price:";
+        //     div_right.append(h4_sub);
+
+        //     // <div class = "price" > </div>
+
+        //     div_price = document.createElement("div");
+        //     div_price.setAttribute("class", "price");
+        //     div_right.append(div_price);
+
+        //    // < p id = "original_price" > </p>
+
+        //    p_org = document.createElement("p");
+        //    p_org.setAttribute("id", "original_price");
+        //    p_org.innerText = "₹" + 629;
+        //    div_price.append(p_org);
+
+        //     // <p> </p>
+
+        //     p_dis = document.createElement("p");
+        //     div_price.append(p_dis);
+
+        //     // <s> </s>
+
+        //     s = document.createElement("s");
+        //     s.setAttribute("id", "discount_price");
+        //     s.innerText = "₹" + 2999;
+        //     p_dis.append(s);
+
+        //     // <p> </p>
+
+        //     p_percent = document.createElement("p");
+        //     div_price.append(p_percent);
+
+        //     // < b > </b>
+
+        //     b = document.createElement("b");
+        //     b.setAttribute("id", "discount_percent");
+        //     b.innerText = 79 + "%" + "off";
+        //     p_percent.append(b);
+
+        //     // <div class = "star"> </div>
+
+        //     div_star = document.createElement("div");
+        //     div_star.setAttribute("class", "star");
+        //     div_right.append(div_star);
+
+
+        //     // <span> </span>
+
+        //     span = document.createElement("span");
+        //     span.setAttribute("class", "stars");
+        //     span.innerText = "Reviews:";
+        //     div_star.append(span);
+
+
+        // for (j=0; j<5; j++) {
+
+        //     // <i> </i>
+
+        //     i = document.createElement("i");
+        //     i.setAttribute("class", "fa fa-star");
+        //     i.setAttribute("style", "font-size: 24px;color: gold");
+        //     div_star.append(i)
+
+        // }            
+
+        //     // < strong> </strong>
+
+        //     strong_pdt = document.createElement("strong");
+        //     strong_pdt.innerText = "Product details:"
+        //     div_right.append(strong_pdt);
+
+        //     // <div class = "para"> </div>
+
+        //     div_pdt = document.createElement("div");
+        //     div_pdt.setAttribute("class", "para");
+        //     div_pdt.setAttribute("id", "product_detail");
+        //     div_right.append(div_pdt);
+
+        //     // // <p> </p> 
+
+        //     // p_pdt = document.createElement("p");
+        //     // p_pdt.innerText = "Material details:"
+        //     // div_pdt.append(p_pdt);
+
+        //     // // <br>
+
+        //     // br_pdt = document.createElement("br");
+        //     // p_pdt.append(br_pdt);
+
+        //     // // <p> </p> 
+
+        //     // p_pdt = document.createElement("p");
+        //     // p_pdt.innerText = " *Saree type: Silk cotton"
+        //     // div_pdt.append(p_pdt);
+
+        //     // // <br>
+
+        //     // br_pdt = document.createElement("br");
+        //     // p_pdt.append(br_pdt);
+
+        //     // // <p> </p> 
+
+        //     // p_pdt = document.createElement("p");
+        //     // p_pdt.innerText = " *Saree length: 5 metres "
+        //     // div_pdt.append(p_pdt);
+
+        //     // // <br>
+
+        //     // br_pdt = document.createElement("br");
+        //     // p_pdt.append(br_pdt);
+
+            
+        //     // // <p> </p> 
+
+        //     // p_pdt = document.createElement("p");
+        //     // p_pdt.innerText = " *Blouse length: 1 metres "
+        //     // div_pdt.append(p_pdt);
+
+        //     // < strong> </strong>
+
+        //     strong_add = document.createElement("strong");
+        //     strong_add.innerText = "Additional offers"
+        //     div_right.append(strong_add);
+
+        //     // <div class = "para"> </div>
+
+        //     div_add = document.createElement("div");
+        //     div_add.setAttribute("class", "paras");
+        //     div_add.setAttribute("id", "add_info");
+        //     div_right.append(div_add);
+
+        //     // // <p> </p> 
+
+        //     // p_add = document.createElement("p");
+        //     // p_add.innerText = " *Special PriceGet extra 30% off (price inclusive of cashback/coupon)T&C";
+        //     // div_add.append(p_add);
+
+        //     // <br>
+
+        //     // br_add = document.createElement("br");
+        //     // p_add.append(br_add);
+
+        //     // // <p> </p> 
+
+        //     // p_add = document.createElement("p");
+        //     // p_add.innerText = " *Bank Offer5% Cashback on Thara's World Axis Bank CardT&C";
+        //     // div_add.append(p_add);
+
+        //     // // <br>
+
+        //     // br_add = document.createElement("br");
+        //     // p_add.append(br_add);
+
+        //     // // <p> </p> 
+
+        //     // p_add = document.createElement("p");
+        //     // p_add.innerText = " *Partner OfferSign up for Thara's World Pay Later and get Thara's World Gift Card worth up to ₹500 ";
+        //     // div_add.append(p_add);
+
+        //     // <button class = "edit"> </button>
+
+        //     button_edit  = document.createElement("button");
+        //     button_edit.setAttribute("class", "edit");
+        //     button_edit.setAttribute("type", "submit");
+        //     div_right.append(button_edit);
+
+
+        //     // <a> </a>
+
+        //     a = document.createElement("a");
+        //     a.setAttribute("href", "../products/editproduct.html");
+        //     a.innerText = "Edit";
+        //     button_edit.append(a);
+
+        //     // <button> </button>
+
+        //     button_del = document.createElement("button");
+        //     button_del.setAttribute("type", "submit");
+        //     button_del.setAttribute("onclick", "del_pdt()");
+        //     button_del.innerText = "Delete";
+        //     div_right.append(button_del);
+
+
+
+        //     document.querySelector("section").append(div_box);
+
+
+       //  let a = 5;
+       //  let b = 3;
+       //  let c;
+       //  c = a;
+       //  a = b;
+       //  b = a;
+       //  console.log(a);
+       //  console.log(b);

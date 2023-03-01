@@ -38,7 +38,7 @@
                 
                 <div class="photo" id="imgBox"> 
                     <div class="camera">                    
-                    <input type="file" accept="image/*" name="image" id="image" style = "display: none" onchange="loadFile(event)">
+                    <input type="file" accept="image/*" name="image" id="image" style = "display: none" />
                     <label for="image" class="camera"><i class="fa fa-camera" style="color: #000;"></i></label>
                 </div>
   
@@ -46,11 +46,6 @@
                 </div>
 
                 <div class="details">
-
-                    <div>
-                        <label> Product ID: </label> <br>
-                        <input type="text" id="product_id" required >
-                    </div>
 
                     <div>  
                         <label> Name of the product: </label> <br>
@@ -66,7 +61,7 @@
                      <div>
                         <label> Discount price: </label> <br>
                         <label>₹</label>
-                        <input type="number" id="discount_price" /> 
+                        <input type="number" id="discount_price" pattern="[0-9]{0,}" /> 
                     </div>
 
                     <div>
@@ -78,7 +73,7 @@
                     <div>
                         <label> Category: </label>
                         <select id="category" required>
-                            <option selected="selected" onclick="category_selection()" > Select category </option>
+                            <option selected="selected" > Select category </option>
                         </select>
 
                         <label> Type: </label>
@@ -93,7 +88,7 @@
                         <textarea id="product_detail" required ></textarea>
                     </div>
 
-                    <div class="add">  
+                    <div class="add_info">  
                         <label> Additional information: </label> <br>
                         <textarea id="add_info" ></textarea>
                     </div>
@@ -123,10 +118,10 @@
         <script>
        
        
-        let imgBox = document.getElementById("imgBox");
-        let loadFile = function(event){
-        imgBox.style.backgroundImage = "url(" + URL.createObjectURL(event.target.files[0])+")";
-        }
+        // let imgBox = document.getElementById("imgBox");
+        // let loadFile = function(event){
+        //     imgBox.style.backgroundImage = "url(" + URL.createObjectURL(event.target.files[0])+")";
+        // }
 
 
 
@@ -134,7 +129,6 @@
 
             e.preventDefault();
 
-            let product_id = document.getElementById("product_id").value;
             let image = document.getElementById("image").value;
             let name = document.getElementById("name").value;
             let original_price = document.getElementById("original_price").value;
@@ -144,48 +138,12 @@
             let category = document.getElementById("category").value;
             let type = document.getElementById("type").value;
             let add_info = document.getElementById("add_info").value;
-            product_uuid = uuidv4();
+            let product_uuid = uuidv4();
 
             let add_products = JSON.parse(localStorage.getItem('add_products')) || [];
 
-        
-
-
-            // function category_selection(){
-
-            //         let product_category = {
-            //             "Dress": {
-            //                 "Saree": [],
-            //                 "Chudi": [],
-            //                 "Jeans": []    
-            //             },
-            //             "Jewell": {
-            //                 "Earring": [],
-            //                 "Chain": []
-            //             }
-            //             }
-            //             window.onload = function() {
-            //             let categorySel = document.getElementById("category");
-            //             let typeSel = document.getElementById("type");
-            //             for (let x in product_category) {
-            //                 categorySel.options[categorySel.options.length] = new Option(x, x);
-            //             }
-            //             categorySel.onchange = function() {
-            //                 //empty Chapters- and Topics- dropdowns
-            //                 typeSel.length = 1;
-            //                 //display correct values
-            //                 for (let y in product_category[this.value]) {
-            //                 typeSel.options[typeSel.options.length] = new Option(y, y);
-            //                 }
-            //             }
-                    
-            //         }
-
-            // }
-
-
-            add_products.push({
-                product_id: product_id,
+                
+                add_products.push({
                 image: image,
                 name: name, 
                 original_price:  original_price,
@@ -197,18 +155,26 @@
                 type: type, 
                 product_uuid: product_uuid
             });
-
             localStorage.setItem('add_products', JSON.stringify(add_products));
+                console.log(localStorage.getItem('add_products'));
+                // localStorage.setItem('unique_id', JSON.stringify(product_uuid));
+                alert('Product uploaded successfully');
+                location.href = "../products/myproduct.html";
+                
 
-            localStorage.setItem('unique_id', JSON.stringify(product_id));
+            }
 
-            alert("Product uploaded successfully");
+            
 
 
-            window.location.href = "../products/myproduct.html";
+            // localStorage.setItem('unique_id', JSON.stringify(product_id));
+
+            // alert("Product uploaded successfully");
+
+
+            // window.location.href = "../products/myproduct.html";
             
             
-        }
 
 
         </script>

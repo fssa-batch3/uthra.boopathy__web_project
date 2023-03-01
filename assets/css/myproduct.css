@@ -1,20 +1,25 @@
 *{
-    margin: 0px;
+    margin: 0;
     font-family: 'Kreon', serif;
+}
+
+body{
+    background-color: rgb(252, 252, 252);
 }
 
 header{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    background-color: purple;
+    background-color: 	purple;
     height: 100px;
+    position: sticky;
+    top: 0px;
+    z-index: 10;
 }
 
 header div ul{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
     list-style: none;
     margin-left: 550px;
 }
@@ -24,27 +29,26 @@ header div ul li{
     padding-left: 30px;
 }
 
-header div ul li a{
-    font-size: 25px;
-    text-decoration: none;
-    color: white;
+.nav a{
+     text-decoration: none;
+     color: white;
+     font-size: 20px;
 }
 
 h1{
     font-size: 50px;
     font-weight: normal;
     padding-left: 60px;
-    position: relative;
-    top: 20px;
+    padding-top: 20px;
     color: white;
 }
 
 .logo{
-    margin-top: 25px;
+    height: 70px;
+    width: 70px;
+    margin-top: 15px;
     margin-left: 50px;
     border-radius: 50px;
-    position: relative;
-    bottom: 10px;
 }
 
 .login{
@@ -105,7 +109,7 @@ h4{
 p{
     font-size: 22px;  
     position: relative;
-    top: 17px;  
+    top: 25px;  
 }
 
 s{
@@ -121,13 +125,21 @@ b{
 strong{
     font-size: 25px;
     position: relative;
-    top: 50px;
-    
+    top: 40px;   
+}
+
+strong p{
+    height: 20rem;
 }
 
 .para{
-    position: relative;
-    top: 40px;
+    margin-top: 2rem;
+    width: 40rem;
+}
+
+.paras{
+    margin-top: 2rem;
+    width: 60rem;
 }
 
 .stars{
@@ -152,7 +164,7 @@ button{
     border-radius: 5px;
     color: white;
     position: relative;
-    top: 100px;
+    top: 50px;
     left: 600px;
     font-size: 20px;
 }

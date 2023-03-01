@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-               <title> Main page </title>
+               <title> Product Edit page </title>
         <link rel="stylesheet" href="../../assets/css/editproduct.css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,7 +33,7 @@
 
             <h2> EDIT </h2>
 
-            <form role="form" onsubmit="update_details(event)"></form>
+            <form role="form" onsubmit="update_details(event)">
 
             <div class="box">
 
@@ -45,22 +45,22 @@
 
                     <div>  
                         <label> Name of the product: </label> <br>
-                        <input type="text" id="name" required value="Jacquard Material Self Designed Saree" />
+                        <input type="text" id="name" required  />
                     </div>
 
                     <div>  
                         <label> Original price: </label> <br>
-                        <input type="number" id="original_price" required value= 629 min="1" />
+                        <input type="number" id="original_price" required  min="1" />
                     </div>
 
                      <div>
                         <label> Discount price: </label> <br>
-                        <input type="number" id="discount_price" value=2999 min="1" /> 
+                        <input type="number" id="discount_price"  min="1" /> 
                     </div>
 
                     <div>
                         <label> Discount percentage:</label> <br>
-                        <input type="number" id="discount_percent" value=79 min="1" />
+                        <input type="number" id="discount_percent"  min="1" />
                     </div> 
 
                     <div class="add">  
@@ -71,17 +71,19 @@
                     <div class="add">  
                         <label> Additional information: </label> <br>
                         <textarea id="add_info" >  *Special PriceGet extra 30% off (price inclusive of cashback/coupon)T&C
-  *Bank Offer5% Cashback on Thara's World Axis Bank CardT&C
-  *Partner OfferSign up for Thara's World Pay Later and get Flipkart Gift Card worth up to ₹500*
+                        *Bank Offer5% Cashback on Thara's World Axis Bank CardT&C
+                        *Partner OfferSign up for Thara's World Pay Later and get Flipkart Gift Card worth up to ₹500*
                         </textarea>
                     </div>
 
-                     <button> <a href="../products/myproduct.html"> Save </a> </button>
+                     <button>  Save  </button>
 
 
                 </div>
 
             </div>
+
+        </form>
 
         </section>
 
@@ -97,10 +99,11 @@
             }
             product_datas = add_products.find(product_data);
 
-            document.getElementById("name").innerHTML = product_datas["name"];
-            document.getElementById("original_price").innerText = product_datas["original_price"];
-            document.getElementById("discount_price").innerText = product_datas["discount_price"];
-            document.getElementById("discount_percent").innerText = product_datas["discount_percent"];
+            console.log(product_data)
+            document.getElementById("name").value = product_datas["name"];
+            document.getElementById("original_price").value = product_datas["original_price"];
+            document.getElementById("discount_price").value = product_datas["discount_price"];
+            document.getElementById("discount_percent").value = product_datas["discount_percent"];
             document.getElementById("product_detail").innerText = product_datas["product_detail"];
             document.getElementById("add_info").innerText = product_datas["add_info"];
 
@@ -108,10 +111,18 @@
             function update_details(e) {
             e.preventDefault();
 
-            let product_detail = document.getElementById("product_detail").value
-            let add_info= document.getElementById("add_info").value
+            let name = document.getElementById("name").value;
+            let original_price = document.getElementById("original_price").value;
+            let discount_price = document.getElementById("discount_price").value;
+            let discount_percent = document.getElementById("discount_percent").value;
+            let product_detail = document.getElementById("product_detail").value;
+            let add_info= document.getElementById("add_info").value;
            
 
+            product_datas["name"] = name;
+            product_datas["original_price"] = original_price;
+            product_datas["discount_price"] = discount_price;
+            product_datas["discount_percent"] = discount_percent;
             product_datas["product_detail"] = product_detail;
             product_datas["add_info"] = add_info;
            

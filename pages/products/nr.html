@@ -183,8 +183,28 @@
                 </div>
             </div>
      
-            </footer>
+   </footer>
 
-        </body>
+
+      <script>
+
+            let add_products = JSON.parse(localStorage.getItem('add_products'));
+            let unique_id = JSON.parse(localStorage.getItem('unique_id'));
+            console.log(add_products);
+
+            function product_data(e){
+                return e.product_id == unique_id;
+            }
+            product_datas = add_products.find(product_data);
+
+            document.getElementById("name").innerHTML = product_datas["name"];
+            document.getElementById("original_price").innerText = product_datas["original_price"];
+            document.getElementById("discount_price").innerText = product_datas["discount_price"];
+            document.getElementById("discount_percent").innerText = product_datas["discount_percent"];
+
+      </script>
+
+
+   </body>
         
 </html>       

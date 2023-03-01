@@ -224,7 +224,7 @@
 
             "image": {
                       "source": "../../../../assets/images/silk12.jpg",
-                      "alt": "photo"
+                      "alt": name + "image"
                      },
             "name": "Jacquard Material Silk...",
             "price": {
@@ -462,7 +462,7 @@
 
          img_picture = document.createElement("img");
          img_picture.setAttribute("src", product_list[i]["image"]["source"]);
-         img_picture.setAttribute("alt", "photo" ,product_list[i]["alt"]);
+         img_picture.setAttribute("alt", product_list[i]["alt"]);
          img_picture.setAttribute("height", "260px");
          img_picture.setAttribute("width", "230px");
          a_link.append(img_picture);

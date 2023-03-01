@@ -9,10 +9,14 @@ USER CRUD:
 
     1. Register 
     2. Login 
-    3. Profile Edit / Delete
+    3. Read Profile
+    4. Profile Edit / Delete
 
 PRODUCT CRUD:
 
-    1. Upload products
-    2. Edit products
-    3. Delete products
+    1. Create product
+    2. Read product
+    3. Product detail page
+    4. Update product
+    5. Delete product
+
