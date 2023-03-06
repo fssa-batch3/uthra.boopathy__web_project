@@ -10,16 +10,15 @@ body{
 header{
     display: flex;
     flex-wrap: wrap;
-    background-color: 	purple;
+    flex-direction: row;
+    background-color: purple;
     height: 100px;
-    position: sticky;
-    top: 0px;
-    z-index: 10;
 }
 
 header div ul{
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
     list-style: none;
     margin-left: 550px;
 }
@@ -29,10 +28,10 @@ header div ul li{
     padding-left: 30px;
 }
 
-.nav a{
+header div ul li a{
      text-decoration: none;
      color: white;
-     font-size: 20px;
+     font-size: 22px;
 }
 
 h1{
@@ -165,13 +164,18 @@ button{
     color: white;
     position: relative;
     top: 50px;
-    left: 600px;
+    left: 500px;
     font-size: 20px;
 }
 
 .edit{
     position: relative;
-    left: 500px;
+    left: 400px;
+}
+
+.del{
+    position: relative;
+    left: 450px;
 }
 
 .add{

@@ -99,13 +99,14 @@ input[type=text]{
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-evenly;
-    margin: 60px 0px 30px 30px;
+    margin: 30px 0px 0px 10px;
 }
 
 img{
     border-radius: 5px;
     margin-left: 50px;
     margin-top: 15px;
+    object-fit: unset;
 }
 
 h3{
@@ -137,6 +138,7 @@ s{
 }
 
 .products{
+    margin: 50px 20px 20px 30px;
     border: 1px solid #f8f8f8;
     background-color: #f8f8f8;
 }

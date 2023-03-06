@@ -34,7 +34,7 @@
 
     <div class="detail">
 
-    <div class="left">
+    <!-- <div class="left">
         <div class="image">
             <img src="../../../../assets/images/silk1.jpg" alt="photo" height="460px" width="400px" />
         </div>
@@ -62,18 +62,18 @@
             <p> *Bank Offer5% Cashback on Thara's World Axis Bank CardT&C</p><br>
 
             <p>*Partner OfferSign up for Thara's World Pay Later and get Thara's World Gift Card worth up to ₹500* </p>
-        </div>
+        </div> -->
 
-        <p class="color"> Availlable colours: Black, Blue, Pink, Red, Maroon, Green, Rose..... </p>
+        <!-- <p class="color"> Availlable colours: Black, Blue, Pink, Red, Maroon, Green, Rose..... </p> -->
 
-        <button class="add"> <a href="../../../orders/cartpage.html"> <i class="fa fa-shopping-cart"
+        <!-- <button class="add"> <a href="../../../orders/cartpage.html"> <i class="fa fa-shopping-cart"
                     style="font-size:24px;color: white;"></i> Add to cart </a> </button>
         <button class="buy"> <a href="../../../orders/sareebuy/saree2buy.html"> <i class="fa fa-shopping-bag"
                     style="font-size:22px;color: white"></i> Buy Now </a> </button>
         <button class="wish"> <a href="../../../orders/wishlistpage.html"> <i class="fa fa-heart"
-                    style="font-size: 24px;color: white;"></i> Wishlist </a> </button>
+                    style="font-size: 24px;color: white;"></i> Wishlist </a> </button> -->
 
-        <div class="comment">
+        <!-- <div class="comment">
             <label> COMMENTS: </label>
             <input />
         </div>
@@ -82,13 +82,13 @@
         </div>
         <div class="commen">
             <input />
-        </div>
+        </div> -->
 
     </div>
 
 </div>
 
-    <section>
+    <!-- <section>
 
         <div class="similar">
 
@@ -122,7 +122,7 @@
 
         </div>
 
-    </section>
+    </section> -->
 
     <footer>
         <div class="top">
@@ -151,6 +151,205 @@
      </div>
 
      </footer>
+
+
+
+<script>
+
+
+    let add_product = JSON.parse(localStorage.getItem("add_products"));
+
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const product_id = urlParams.get('product_id');
+
+    let unique_id = add_product.find (e => e.product_uuid == product_id);
+
+    console.log(unique_id);
+
+
+
+
+    let div_left;
+    let div_image;
+    let img;
+    let div_right;
+    let h3;
+    let h4;
+    let div_price;
+    let p_org;
+    let p_dis;
+    let s;
+    let p_percent;
+    let b;
+    let div_star;
+    let span;
+    let i;
+    let strong_pdt;
+    let div_pdt;
+    let p_pdt;
+    let strong_add;
+    let div_add;
+    let p_add;
+
+
+    // for (let k = 0; k < add_product.length; k++ ) {
+
+    // <div class = "left" > </div>
+
+    div_left = document.createElement("div");
+    div_left.setAttribute("class", "left");
+   
+
+    // <div class = "image" > </div>
+
+    div_image = document.createElement("div");
+    div_image.setAttribute("class", "image");
+    div_left.append(div_image);
+
+    // <img />
+
+    img = document.createElement("img");
+    img.setAttribute("src", unique_id["image"]);
+    img.setAttribute("alt", unique_id["name"] + "photo");
+    img.setAttribute("height", "460px");
+    img.setAttribute("width", "400px");
+    div_image.append(img);
+
+    // <div class = "right" > </div>
+
+    div_right = document.createElement("div");
+    div_right.setAttribute("class", "right");
+
+    // <h3> </h3>
+
+    h3 = document.createElement("h3");
+    h3.setAttribute("id", "name")
+    h3.innerText = unique_id["name"];
+    div_right.append(h3);
+
+    // <h4> </h4>
+
+    h4 = document.createElement("h4");
+    h4.innerText = "Special price";
+    h3.append(h4);
+
+   // <div class = "price" > </div>
+
+    div_price = document.createElement("div");
+    div_price.setAttribute("class", "price");
+    div_right.append(div_price);
+
+    // < p id = "original_price" > </p>
+
+    p_org = document.createElement("p");
+    p_org.setAttribute("id", "original_price");
+    p_org.innerText = "₹" + unique_id["discount_price"];
+    div_price.append(p_org);
+
+    // <p> </p>
+
+    p_dis = document.createElement("p");
+    div_price.append(p_dis);
+
+    // <s> </s>
+
+    s = document.createElement("s");
+    s.setAttribute("id", "discount_price");
+    s.innerText = "₹" + unique_id["original_price"];
+    p_dis.append(s);
+
+    // <p> </p>
+
+    p_percent = document.createElement("p");
+    div_price.append(p_percent);
+
+    // < b > </b>
+
+    b = document.createElement("b");
+    b.setAttribute("id", "discount_percent");
+    b.innerText = unique_id["discount_percent"] + "%" + "off";
+    p_percent.append(b);
+
+    // <div class = "star"> </div>
+
+    div_star = document.createElement("div");
+    div_star.setAttribute("class", "star");
+    div_right.append(div_star);
+
+
+    // <span> </span>
+
+    span = document.createElement("span");
+    span.setAttribute("class", "stars");
+    span.innerText = "Reviews:";
+    div_star.append(span);
+
+
+    for (j=0; j<5; j++) {
+
+        // <i> </i>
+
+        i = document.createElement("i");
+        i.setAttribute("class", "fa fa-star");
+        i.setAttribute("style", "font-size: 24px;color: gold");
+        div_star.append(i)
+
+    }            
+
+    // < strong> </strong>
+
+    strong_pdt = document.createElement("strong");
+    strong_pdt.innerText = "Product details:"
+    div_right.append(strong_pdt);
+
+    // <div class = "para"> </div>
+
+    div_pdt = document.createElement("div");
+    div_pdt.setAttribute("class", "para");
+    div_right.append(div_pdt);
+
+    // <p> </p> 
+
+    p_pdt = document.createElement("p");
+    p_pdt.setAttribute("id", "product_detail");
+    p_pdt.innerText = unique_id["product_detail"];
+    div_pdt.append(p_pdt);
+
+    // < strong> </strong>
+
+    strong_add = document.createElement("strong");
+    strong_add.setAttribute("class", "paras");
+    strong_add.innerText = "Additional offers";
+    div_right.append(strong_add);
+
+    // <div class = "para"> </div>
+
+    div_add = document.createElement("div");
+    div_add.setAttribute("class", "paras");
+    div_right.append(div_add);
+
+
+    // <p> </p> 
+
+    p_add = document.createElement("p");
+    p_add.setAttribute("id", "add_info");
+    p_add.innerText = unique_id["add_info"];
+    div_add.append(p_add);
+
+
+    document.querySelector("div.detail").append(div_left);
+    document.querySelector("div.detail").append(div_right);  
+
+    
+
+
+    // }
+
+
+</script>
+
+
 
 </body>
 </html>

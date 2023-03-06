@@ -71,7 +71,7 @@
             <section>
                 <div class="thumbnail">
                     
-                 <div class="products">
+                 <!-- <div class="products">
                    <a href="../products/saree2view.html"> <img src="../../assets/images/silk1.jpg" alt="photo" height="200px" width="180px"/> </a>
                    <h3 class="h"> <span class="title"> Printed Banarasi Jacquard Saree </span> </h3>
                    <p class="hs"> ₹749 <s>₹4,000</s> <span class="percent"> 81% off </span> </p>
@@ -95,14 +95,14 @@
                   <img src="../../assets/images/choker.jpg" alt="photo" height="200px" width="180px"/>
                   <h3> Self Designed choker </h3>
                   <p> ₹2,799 <s>₹4,999</s> <span class="percent"> 70% off </span> </p>
-               </div>
+               </div>  -->
               </div>
      
               <div class="thumbnail">
                     
                  
      
-                <div class="products">
+              <!--  <div class="products">
                  <img src="../../assets/images/earing11.jpg" alt="photo" height="200px" width="180px"/> 
                  <h3 class="cho">  Sliver Plated Stud  </h3>
                    <p> ₹206 <s>₹649</s> <span class="percent"> 58% off </span> </p>
@@ -124,12 +124,12 @@
                   <img src="../../assets/images/frock2.jpg" alt="photo" height="200px" width="180px"/> 
                    <h3 class="pa"> Party wear Long Frock </h3>  
                     <p class="p"> ₹2,749 <s>₹4,999</s> <span class="percent"> 81% off </span> </p>
-                 </div>
+                 </div>  -->
               </div>         
                
               <div class="thumbnail">
                     
-                 <div class="products">
+                <!-- <div class="products">
                    <img src="../../assets/images/set1.jpg" alt="photo" height="200px" width="180px"/>
                    <h3>  Bridal Jewellset for Bride </h3>
                    <p class="p">  ₹599 <s>₹1,999</s> <span class="percent"> 60% off </span> </p>
@@ -151,7 +151,9 @@
                      <img src="../../assets/images/frock12.jpg" alt="photo" height="200px" width="180px"/> 
                       <h3 class="pa"> Party wear Long Frock </h3>  
                        <p class="p"> ₹2,749 <s>₹4,999</s> <span class="percent"> 81% off </span> </p>
-                    </div>
+                    </div> -->
+
+                    <a href="../products/dress/saree/saree1view.html"></a>
                 
               </div>  
              </section>
@@ -188,19 +190,192 @@
 
       <script>
 
-            let add_products = JSON.parse(localStorage.getItem('add_products'));
-            let unique_id = JSON.parse(localStorage.getItem('unique_id'));
-            console.log(add_products);
 
-            function product_data(e){
-                return e.product_id == unique_id;
-            }
-            product_datas = add_products.find(product_data);
 
-            document.getElementById("name").innerHTML = product_datas["name"];
-            document.getElementById("original_price").innerText = product_datas["original_price"];
-            document.getElementById("discount_price").innerText = product_datas["discount_price"];
-            document.getElementById("discount_percent").innerText = product_datas["discount_percent"];
+
+
+
+      //    let div_products;
+      //    let img_picture;
+      //    let h3_title;
+      //    let p_text;
+      //    let span_percent;
+
+
+      //    for (let k = 0; k < add_product.length; k++){
+
+
+      //    //   <div class = "products"> </div>  //
+
+      //    div_products = document.createElement("div");
+      //    div_products.setAttribute("class", "products");
+      //    console.log(div_products);
+
+
+      //    // <img> </img> //
+
+      //    img_picture = document.createElement("img");
+      //    img_picture.setAttribute("src", add_product[k]["image"]);
+      //    img_picture.setAttribute("alt", add_product[k]["alt"]);
+      //    img_picture.setAttribute("height", "260px");
+      //    img_picture.setAttribute("width", "230px");
+      //    a_link.append(img_picture);
+      //    console.log(img_picture);
+
+
+      //    // <h3> </h3>
+
+      //    h3_title = document.createElement("h3");
+      //    h3_title.innerHTML = add_product[k]["name"];
+      //    a_link.append(h3_title);
+      //    console.log(h3_title);
+
+
+      //    // currentValue
+
+
+      //    let actualValue = add_product[k]["original_value"];
+      //    let discount = add_product[k]["discount_price"];
+      //    let discountType = add_product[k]["discount_percent"];
+      //    let currentValue;
+
+
+
+      //    if (discountType === "%") {
+      //       currentValue = actualValue - actualValue * discount / 100 ;
+      //       currentValue = Math.round(currentValue);
+      //    }
+      //    else {
+      //       currentValue = actualValue - discount;
+      //    } 
+      //    console.log(currentValue);
+      
+
+      //    // <p> </p> //
+
+      //    p_text = document.createElement("p");
+      //    p_text.innerHTML = product_list[i]["price"]["currency"] + currentValue + "  " ;
+      //    h3_title.append(p_text);
+      //    console.log(p_text);
+
+      //    // <s> </s> //
+
+      //    s_cost = document.createElement("s");
+      //    s_cost.innerHTML = product_list[i]["price"]["currency"] + product_list[i]["price"]["actualValue"];
+      //    p_text.append(s_cost);
+      //    console.log(s_cost);
+
+      //    //  <span class = "percent"> </span>
+
+      //    span_percent = document.createElement("span");
+      //    span_percent.setAttribute("class", "percent");
+      //    span_percent.innerHTML = " " + product_list[i]["price"]["discount"]["value"] + product_list[i]["price"]["discount"]["type"] + " " + "off";
+      //    p_text.append(span_percent)
+      //    console.log(span_percent);
+
+      //    document.querySelector("div.thumbnail").append(div_products);
+      // }
+
+
+
+      let add_product = JSON.parse(localStorage.getItem("add_products"));
+
+      let product_id = JSON.parse(localStorage.getItem("uuid"));
+
+
+         let div_products;
+         let img;
+         let h3_title;
+         let p_org;
+         let s;
+         let span;
+         let b;
+
+
+
+         for (let k = 0; k < add_product.length; k++){
+
+
+            // <div class = products >
+
+            div_products  = document.createElement("div");
+            div_products.setAttribute("class", "products");
+            div_products.setAttribute("data-id", add_product[k]["product_uuid"]);
+            console.log(div_products);
+
+            // <a> </a>
+
+            // a_link = document.createElement("a");
+            // a_link.setAttribute("href", "../products/dress/saree/saree2view.html");
+            // div_products.append(a_link)
+
+            // <img>
+            
+            img = document.createElement("img");
+            img.setAttribute("src", add_product[k]["image"]);
+            img.setAttribute("alt", "photo");
+            img.setAttribute("height", "200px");
+            img.setAttribute("width", "180px");
+            div_products.append(img);
+
+            // <h3> </h3>
+
+            h3_title = document.createElement("h3");
+            h3_title.setAttribute("id", "name")
+            h3_title.innerText = add_product[k]["name"];
+            div_products.append(h3_title);
+
+            // <p> </p>
+
+            p_org = document.createElement("p");
+            p_org.setAttribute("id", "original_price");
+            p_org.innerText = "₹" + add_product[k]["discount_price"] + "   ";
+            h3_title.append(p_org);
+
+            // <p> </p>
+
+            // p_dis = document.createElement("p");
+            // h3_title.append(p_dis);
+
+            // <s> </s>
+
+            s = document.createElement("s");
+            s.setAttribute("id", "discount_price");
+            s.innerText = "  " + "₹" + add_product[k]["original_price"];
+            p_org.append(s);
+            
+            // <p> </p>
+
+            // p_percent = document.createElement("p");
+            // h3_title.append(p_percent);
+
+
+            // <span> </span>
+
+            span = document.createElement("span");
+            span.setAttribute("class", "percent");
+            span.innerText = "   " + add_product[k]["discount_percent"] + "%" + "off";
+            p_org.append(span);
+
+
+            document.querySelector("div.thumbnail").append(div_products);
+
+         }
+        
+         
+         let product_details = document.querySelectorAll("div.products")
+                            product_details.forEach(function(find){
+                                find.addEventListener("click", function(){
+                                    let product_description = this.dataset.id;
+                                    localStorage.setItem("productDetail",JSON.stringify(product_description))
+                                    window.location.href = `../products/dress/saree/saree2view.html?product_id=${product_description}`;
+                                    console.log(product_details)
+                                    }
+                                )
+                                }   
+                            )
+
+
 
       </script>
 

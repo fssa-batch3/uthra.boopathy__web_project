@@ -6,12 +6,11 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title> My products page </title>
-   <link rel="stylesheet" href="../../../../assets/css/myproduct.css" />
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="../../assets/css/myproduct.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />        <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link
-      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kreon:wght@300;400;500;600;700&family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kreon:wght@300;400;500;600;700&family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet">
 </head>
 
@@ -103,7 +102,8 @@
 
 
             
-            let add_product = JSON.parse(localStorage.getItem('add_products'));
+            let add_product = JSON.parse(localStorage.getItem("add_products"));
+            // let uuid = JSON.parse(localStorage.getItem("product_uuid"));
             console.log(add_product);
 
             
@@ -139,7 +139,7 @@
 
             div_box = document.createElement("div");
             div_box.setAttribute("class", "box");
-            console.log(div_box);
+            // console.log(div_box);
 
 
             // < div class = "photo" > </div>
@@ -147,14 +147,15 @@
             div_photo = document.createElement("div");
             div_photo.setAttribute("class", "photo");
             div_box.append(div_photo)
-            console.log(div_photo);
+            // console.log(div_photo);
 
             // <img/>
             
             img = document.createElement("img");
             img.setAttribute("src", add_product[k]["image"]);
             img.setAttribute("alt", "photo");
-            img.setAttribute("width", "300px");
+            img.setAttribute("height", "300px");
+            img.setAttribute("width", "280px");
             div_photo.append(img);
 
             // < div class = "right" > </div>
@@ -187,7 +188,7 @@
 
            p_org = document.createElement("p");
            p_org.setAttribute("id", "original_price");
-           p_org.innerText = "₹" + add_product[k]["original_price"];
+           p_org.innerText = "₹" + add_product[k]["discount_price"];
            div_price.append(p_org);
 
             // <p> </p>
@@ -199,7 +200,7 @@
 
             s = document.createElement("s");
             s.setAttribute("id", "discount_price");
-            s.innerText = "₹" + add_product[k]["discount_price"];
+            s.innerText = "₹" + add_product[k]["original_price"];
             p_dis.append(s);
 
             // <p> </p>
@@ -284,58 +285,80 @@
 
             button_edit  = document.createElement("button");
             button_edit.setAttribute("class", "edit");
+            button_edit.setAttribute("data-id", add_product[k]["product_uuid"]);
             button_edit.setAttribute("type", "submit");
+            button_edit.innerText = "Edit";
             div_right.append(button_edit);
+            console.log(button_edit);
 
 
             // <a> </a>
 
-            a = document.createElement("a");
-            a.setAttribute("href", "../products/editproduct.html");
-            a.innerText = "Edit";
-            button_edit.append(a);
+            // a = document.createElement("a");
+            // a.setAttribute("href", "../products/editproduct.html");
+            // a.innerText = "Edit";
+            // button_edit.append(a);
 
             // <button> </button>
 
             button_del = document.createElement("button");
             button_del.setAttribute("type", "submit");
+            button_del.setAttribute("class", "del");
             button_del.setAttribute("onclick", "del_pdt()");
             button_del.innerText = "Delete";
             div_right.append(button_del);
 
+            button_remove = document.createElement("button");
+            button_remove.setAttribute("type", "submit");
+            button_remove.setAttribute("onclick", "remove_pdt()");
+            button_remove.innerText = "Remove";
+            div_right.append(button_remove);
 
 
-            document.querySelector("section").append(div_box);
-
-
+            document.querySelector("section").append(div_box);            
 
          }
 
-            
-            
-    //         document.getElementById("name").innerText = add_products["name"];
-    //         document.getElementById("original_price").innerText = add_products["original_price"];
-    //         document.getElementById("discount_price").innerText = add_products["discount_price"];
-    //         document.getElementById("discount_percent").innerText = add_products["discount_percent"];
-    //         document.getElementById("product_detail").innerText = add_products["product_detail"];
-    //         document.getElementById("add_info").innerHTML = add_products["add_info"];            
 
+                        let product_details = document.querySelectorAll("button.edit")
+                            product_details.forEach(function(find){
+                                find.addEventListener("click", function(){
+                                    let product_description = this.dataset.id;
+                                    localStorage.setItem("productDetail",JSON.stringify(product_description))
+                                    window.location.href = `../products/editproduct.html?product_id=${product_description}`;
+                                    console.log(product_details)
+                                    }
+                                )
+                                }   
+                            )
 
-            // delete account function
-        function del_pdt(){
-            if(confirm("Are you sure to delete this product ?")){
+            
+            // document.getElementById("name").innerText = add_product[k]["name"];
+            // document.getElementById("original_price").innerText = add_product[k]["original_price"];
+            // document.getElementById("discount_price").innerText = add_product[k]["discount_price"];
+            // document.getElementById("discount_percent").innerText = add_product[k]["discount_percent"];
+            // document.getElementById("product_detail").innerText = add_product[k]["product_detail"];
+            // document.getElementById("add_info").innerHTML = add_product[k]["add_info"];
+            
+
+            // delete product function
+        
+            function del_pdt(){
+            
+                if(confirm("Are you sure to delete this product ?")){
            
-            let add_products = JSON.parse(localStorage.getItem("add_products"));
-           
-            const indexOfUser = add_products.indexOf(add_products);
+                    let add_products = JSON.parse(localStorage.getItem("add_products"));
+                
+                    const indexOfUser = add_products.indexOf(add_products);
 
-            add_products.splice(indexOfUser, 1);
-            
-            localStorage.setItem("add_products", JSON.stringify(add_products));
+                    add_products.splice(indexOfUser, 1);
+                    
+                    localStorage.setItem("add_products", JSON.stringify(add_products));
 
-            window.location.href = "./frontpage.html";
+                    window.location.href = "../homepage/frontpage.html";
+                }
+    
         }
-    }
 
 
     // let add_product = [

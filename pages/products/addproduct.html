@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Add product page </title>
         <link rel="stylesheet" href="../../assets/css/addproduct.css"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />        <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kreon:wght@300;400;500;600;700&family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -14,18 +14,34 @@
     
     <body>
         <header>
-         <a href="../homepage/frontpage.html"> <img class="logo" src="../../assets/images/logo.png" alt="logo" height="70px" width="70px"/> </a>
-         <h1> Thara's World </h1>
-              <div>
+            <a href="../homepage/frontpage.html"> <img class="logo" src="../../assets/images/logo.png" alt="logo" />  </a>
+            <h1> Thara's World </h1>
+              <div class="nav">
                  <ul>
-                    <li> <a href="../orders/cartpage.html"><i class="fa fa-shopping-cart" style="font-size:24px;color: #fff;" ></i></a></li>
-                    <li> <a href="../orders/wishlistpage.html"><i class="fa fa-heart-o" style="font-size: 24px;color: #fff;"></i></a></li> 
-                    <li><a href="../orders/myorderspage.html"><i class="fa fa-shopping-bag" style="font-size:22px;color: #fff"></i></a></li>
-                    <li><a href="#"><i class="fa fa-bell" style="font-size:24px;color: #fff"></i></a></li>
-                    <li><a href="../homepage/profilepage.html"><i class="fa fa-user-circle-o" style="font-size:24px;color: #fff;"></i></a></li>
-                    <li> <a href="../homepage/loginpage.html"><span class="login"> Login </span> </a></li>
+                    <li> <a href="../orders/cartpage.html"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a></li>
+                    <li> <a href="../orders/wishlistpage.html"><i class="fa-sharp fa-solid fa-heart"></i></a></li> 
+                    <li><a href="../orders/myorderspage.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
+                    <li><a href="#"><i class="fa-solid fa-bell"></i></i></a></li>
+                    <li><a href="profilepage.html"><i class="fa-solid fa-circle-user"></i></a></li>
+                    <li> <a href="loginpage.html"><span class="login"> Login </span> </a></li>
                   </ul>
               </div>
+   
+              <div class="menu">
+                
+                <i class="fa-solid fa-bars"></i>               
+                 <div class="menu-list">
+                    
+                        <a href="../orders/cartpage.html"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                        <a href="../orders/wishlistpage.html"><i class="fa-sharp fa-solid fa-heart"></i></a>
+                        <a href="../orders/myorderspage.html"><i class="fa-solid fa-bag-shopping"></i></a>
+                        <a href="#"><i class="fa-solid fa-bell"></i></i></a>
+                        <a href="../homepage/profilepage.html"><i class="fa-solid fa-circle-user"></i></a>
+                        <a href="../homepage/loginpage.html"><span class="login"> Login </span> </a>
+                
+                 </div>
+             </div>
+   
         </header>
 
         <section>
@@ -38,14 +54,20 @@
                 
                 <div class="photo" id="imgBox"> 
                     <div class="camera">                    
-                    <input type="file" accept="image/*" name="image" id="image" style = "display: none" />
-                    <label for="image" class="camera"><i class="fa fa-camera" style="color: #000;"></i></label>
-                </div>
+                       <!-- <input type="file" accept="image/*" name="image" id="image" style = "display: none" /> -->
+                       <label for="image" class="camera"><i class="fa fa-camera" style="color: #000;"></i></label>
+                    </div>
   
                     <!-- <input type="file" id="image"/> -->
+
                 </div>
 
                 <div class="details">
+
+                    <div>
+                        <label> Image url: </label>  <br>
+                        <input type="url" id="image" required />
+                    </div>
 
                     <div>  
                         <label> Name of the product: </label> <br>
@@ -53,13 +75,13 @@
                     </div>
 
                     <div>  
-                        <label> Original price: </label> <br>
+                        <label> Actual price: </label> <br>
                         <label>₹</label>
                         <input type="number" id="original_price" pattern="[0-9]{0,}" required />
                     </div>
 
                      <div>
-                        <label> Discount price: </label> <br>
+                        <label> Current price: </label> <br>
                         <label>₹</label>
                         <input type="number" id="discount_price" pattern="[0-9]{0,}" /> 
                     </div>
@@ -72,16 +94,21 @@
 
                     <div>
                         <label> Category: </label>
-                        <select id="category" required>
-                            <option selected="selected" > Select category </option>
+                        <select id="category" required  >
+                            <option selected="selected"  > Select category </option>
+                            <option value="dress"> Dress </option>
+                            <option value="jewell"> Jewell </option>
+                            <option value="cosmetics"> Cosmetics </option>
+                            <option value="sandal"> Sandals </option>
                         </select>
 
                         <label> Type: </label>
-                        <select id="type" required>
+                        <select id="type" required  >
                             <option selected="selected"> Select category </option>
                         </select>
 
-                    </div>
+                    </div> 
+
 
                     <div class="add">  
                         <label> Product details: </label> <br>
@@ -135,8 +162,6 @@
             let discount_price = document.getElementById("discount_price").value;
             let discount_percent = document.getElementById("discount_percent").value;
             let product_detail = document.getElementById("product_detail").value;
-            let category = document.getElementById("category").value;
-            let type = document.getElementById("type").value;
             let add_info = document.getElementById("add_info").value;
             let product_uuid = uuidv4();
 
@@ -151,14 +176,16 @@
                 discount_percent: discount_percent,
                 product_detail: product_detail,
                 add_info: add_info,
-                category: category,
-                type: type, 
                 product_uuid: product_uuid
             });
+           
             localStorage.setItem('add_products', JSON.stringify(add_products));
                 console.log(localStorage.getItem('add_products'));
-                // localStorage.setItem('unique_id', JSON.stringify(product_uuid));
+               
+                localStorage.setItem('uuid', JSON.stringify(product_uuid));
+               
                 alert('Product uploaded successfully');
+               
                 location.href = "../products/myproduct.html";
                 
 
@@ -176,8 +203,8 @@
             
             
 
-
         </script>
+
 
         <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
 
