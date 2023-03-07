@@ -170,12 +170,22 @@ button{
 
 .edit{
     position: relative;
-    left: 400px;
+    left: 300px;
 }
 
 .del{
     position: relative;
-    left: 450px;
+    left: 350px;
+}
+
+.remove {
+    position: relative;
+    left: 400px;
+}
+
+.adding{
+    position: relative;
+    left: 400px;
 }
 
 .add{

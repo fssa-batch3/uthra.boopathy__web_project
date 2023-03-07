@@ -278,7 +278,7 @@
 
 
 
-      let add_product = JSON.parse(localStorage.getItem("add_products"));
+      let add_product = (JSON.parse(localStorage.getItem("add_products"))).filter(e => e.status == true);
 
       let product_id = JSON.parse(localStorage.getItem("uuid"));
 
@@ -364,18 +364,17 @@
         
          
          let product_details = document.querySelectorAll("div.products")
-                            product_details.forEach(function(find){
-                                find.addEventListener("click", function(){
-                                    let product_description = this.dataset.id;
-                                    localStorage.setItem("productDetail",JSON.stringify(product_description))
-                                    window.location.href = `../products/dress/saree/saree2view.html?product_id=${product_description}`;
-                                    console.log(product_details)
-                                    }
-                                )
-                                }   
-                            )
-
-
+            product_details.forEach(function(find){
+                  find.addEventListener("click", function(){
+                        let product_description = this.dataset.id;
+                           localStorage.setItem("productDetail",JSON.stringify(product_description))
+                              window.location.href = `../products/dress/saree/saree2view.html?product_id=${product_description}`;
+                              console.log(product_details)
+                        }
+                  )
+            }   
+         )
+                            
 
       </script>
 

@@ -291,14 +291,7 @@
             div_right.append(button_edit);
             console.log(button_edit);
 
-
-            // <a> </a>
-
-            // a = document.createElement("a");
-            // a.setAttribute("href", "../products/editproduct.html");
-            // a.innerText = "Edit";
-            // button_edit.append(a);
-
+           
             // <button> </button>
 
             button_del = document.createElement("button");
@@ -308,11 +301,31 @@
             button_del.innerText = "Delete";
             div_right.append(button_del);
 
+           
             button_remove = document.createElement("button");
             button_remove.setAttribute("type", "submit");
+            button_remove.setAttribute("class", "remove");
             button_remove.setAttribute("onclick", "remove_pdt()");
             button_remove.innerText = "Remove";
             div_right.append(button_remove);
+            
+
+
+            add_remove = document.createElement("button");
+            add_remove.setAttribute("type", "submit");
+            add_remove.innerText="Add";
+            add_remove.setAttribute("class", "adding");
+            add_remove.setAttribute("style", "display:none;"); 
+            add_remove.setAttribute("onclick", "add_pdt()");   
+            div_right.append(add_remove);
+
+
+            // button_remove = document.createElement("button");
+            // button_remove.setAttribute("type", "submit");
+            // // button_remove.setAttribute("id", "toggle");
+            // button_remove.setAttribute("onclick", "add_pdt()");
+            // button_remove.innerText = "Add";
+            // div_right.append(button_remove);
 
 
             document.querySelector("section").append(div_box);            
@@ -361,29 +374,69 @@
         }
 
 
-    // let add_product = [
-    //             {
-    //                 "image": {
-    //                     "source": "../../assets/images/silk12.jpg",
-    //                     "alt": add_products[k]["name"] + "image",
-    //                     "width": "300px"
-    //                 },
-    //                 "name": add_products[k]["name"],
-    //                 "price":{
-    //                      "currency": "₹",
-    //                      "actualValue": add_products[k]["original_price"],
-    //                      "discount": {
-    //                                      "type": "%",
-    //                                      "value": add_products[k]["discount_percent"]
-    //                                  }
-    //                 }
-    //             }
-    //         ]
+        function remove_pdt () {
+
+            if ( confirm ( "Are you sure to remove this product ?" ) ) {
+
+                // gor getting the particular id
+
+                let product_id = JSON.parse(localStorage.getItem("productDetail"))
+                // console.log(product_id);
+
+                // getting the product datas from the local storage
+
+                let all_products = JSON.parse(localStorage.getItem("add_products"));
+
+                // finding the particular data
+
+                let add_product = all_products.find(e => e.product_uuid == product_id);
+
+                // console.log(add_product);
+
+                // set the status as false
+                
+                add_product["status"] = false;
+
+                // stringify the datas which are all get
+
+                localStorage.setItem("add_products", JSON.stringify(all_products));
+
+            }
+
+            let removeBtn = document.querySelector("button.remove");
+            
+            removeBtn.setAttribute("style","display:none");
+            
+            document.querySelector("button.adding").setAttribute("style", "display:inline")
+
+        }
+
+
+        function add_pdt () {
+            
+            if ( confirm ( "Are you sure to add this product?" ) ) {
+
+                let product_id = JSON.parse(localStorage.getItem("productDetail"))
+
+                let all_products = JSON.parse(localStorage.getItem("add_products"));
+
+                let add_product = all_products.find(e => e.product_uuid == product_id);
+
+                add_product["status"] = true;
+
+                localStorage.setItem("add_products", JSON.stringify(all_products));
+
+
+            }
+        
+        }
 
 
 
-    </script>
 
-</body>
+
+        </script>
+
+    </body>
 
 </html>

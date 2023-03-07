@@ -96,15 +96,45 @@
                         <label> Category: </label>
                         <select id="category" required  >
                             <option selected="selected"  > Select category </option>
-                            <option value="dress"> Dress </option>
+                            <!-- <option value="dress"> Dress </option>
                             <option value="jewell"> Jewell </option>
                             <option value="cosmetics"> Cosmetics </option>
-                            <option value="sandal"> Sandals </option>
+                            <option value="sandal"> Sandals </option> -->
                         </select>
 
                         <label> Type: </label>
                         <select id="type" required  >
                             <option selected="selected"> Select category </option>
+                            <!-- <option value="1"> Saree </option>
+                            <option value="1"> Chudi </option>
+                            <option value="1"> Frock </option>
+                            <option value="1"> Jeans </option>
+                            <option value="1"> Party wear </option>
+                            <option value="1"> Traditional wear </option>
+                            <option value="1"> Crop top </option>
+                            <option value="1"> Leganga </option>
+                            <option value="2"> Earring </option>
+                            <option value="2"> Chain </option>
+                            <option value="2"> Bracelet </option>
+                            <option value="2"> Jewell set </option>
+                            <option value="2"> Ring </option>
+                            <option value="2"> Nosepins </option>
+                            <option value="2"> Choker </option>
+                            <option value="2"> Necklace </option>
+                            <option value="3"> Eye products </option>
+                            <option value="3"> Shades </option>
+                            <option value="3"> Nailpolish </option>
+                            <option value="3"> Face creams </option>
+                            <option value="3"> Facialkit </option>
+                            <option value="3"> Lipstick </option>
+                            <option value="3"> Brush </option>
+                            <option value="3"> Makeupkit </option>
+                            <option value="4"> Flats </option>
+                            <option value="4"> Heels </option>
+                            <option value="4"> Office wear </option>
+                            <option value="4"> Party wear </option>
+                            <option value="4"> Cut shoe </option>
+                            <option value="4"> Sports shoe </option> -->
                         </select>
 
                     </div> 
@@ -161,11 +191,16 @@
             let original_price = document.getElementById("original_price").value;
             let discount_price = document.getElementById("discount_price").value;
             let discount_percent = document.getElementById("discount_percent").value;
+            let category = document.getElementById("category").value;
+            let type = document.getElementById("type").value;
             let product_detail = document.getElementById("product_detail").value;
             let add_info = document.getElementById("add_info").value;
             let product_uuid = uuidv4();
 
             let add_products = JSON.parse(localStorage.getItem('add_products')) || [];
+
+
+
 
                 
                 add_products.push({
@@ -174,9 +209,13 @@
                 original_price:  original_price,
                 discount_price: discount_price,
                 discount_percent: discount_percent,
+                category: category,
+                type: type,
                 product_detail: product_detail,
                 add_info: add_info,
-                product_uuid: product_uuid
+                product_uuid: product_uuid,
+                status : true
+
             });
            
             localStorage.setItem('add_products', JSON.stringify(add_products));
@@ -204,6 +243,59 @@
             
 
         </script>
+
+
+        <script>
+
+
+
+            let categorySel = {
+                   
+                Dress: ["Saree", "Chudi", "Frock", "Leganga", "Party wear", "Traditional wear", "Crop top", "Jeans"],
+                
+                Jewell: ["Earring", "Choker", "Jewell set", "Nosepins", "Necklace", "Ring", "Chain", "Bracelet"],
+                
+                Cosmetics: ["Eye products", "Shades", "Lipstick", "Nailpolish", "Face cream", "Facialkit", "Makeupkit", "Brush"],
+                
+                Sandal: ["Flats", "Heels", "Cutshoe", "Sports shoe", "Office wear", "Party wear"]
+                
+            }
+                
+                window.onload = function () {
+                
+                    let category = document.getElementById("category");
+                
+                    let type = document.getElementById("type");
+                
+                    for (let types  in categorySel) {
+                        
+                        category.options[category.options.length] = new Option(types, types);
+                   
+                    }
+                    
+                    category.onchange = function () {
+                    
+                        type.length = 1; // remove all options bar first
+                    
+                        if (this.selectedIndex < 1) return; // done  
+                    
+                        let ft = categorySel[this.value];
+                    
+                        for (let fields in categorySel[this.value]) {
+                    
+                            type.options[type.options.length] = new Option(ft[fields], fields);
+                    
+                        }
+                    
+                    }
+                    
+                    category.onchange();
+                
+                }
+
+        </script>
+
+
 
 
         <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
