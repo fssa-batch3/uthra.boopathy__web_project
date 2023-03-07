@@ -12,7 +12,8 @@ USER CRUD:
     1. Register 
     2. Login 
     3. Read Profile
-    4. Profile Edit / Delete
+    4. Edit profile 
+    5. Delete profile
 
 PRODUCT CRUD:
 
