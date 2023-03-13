@@ -465,6 +465,7 @@ select{
         background-color: purple;
         height: 25px;
         width: 80px;
+        cursor: pointer;
     }
     
     .btn-1 a{
@@ -483,6 +484,7 @@ select{
         background-color: gray;
         height: 25px;
         width: 80px;
+        cursor: pointer;
     }
     
     #des{
