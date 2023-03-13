@@ -289,7 +289,6 @@
             button_edit.setAttribute("type", "submit");
             button_edit.innerText = "Edit";
             div_right.append(button_edit);
-            console.log(button_edit);
 
            
             // <button> </button>
@@ -300,24 +299,26 @@
             button_del.setAttribute("onclick", "del_pdt()");
             button_del.innerText = "Delete";
             div_right.append(button_del);
+            console.log(button_del);
 
            
             button_remove = document.createElement("button");
             button_remove.setAttribute("type", "submit");
             button_remove.setAttribute("class", "remove");
+            // button_remove.setAttribute("data-del", add_product[k]["product_uuid"]);
             button_remove.setAttribute("onclick", "remove_pdt()");
             button_remove.innerText = "Remove";
             div_right.append(button_remove);
             
 
 
-            add_remove = document.createElement("button");
-            add_remove.setAttribute("type", "submit");
-            add_remove.innerText="Add";
-            add_remove.setAttribute("class", "adding");
-            add_remove.setAttribute("style", "display:none;"); 
-            add_remove.setAttribute("onclick", "add_pdt()");   
-            div_right.append(add_remove);
+            // add_remove = document.createElement("button");
+            // add_remove.setAttribute("type", "submit");
+            // add_remove.innerText="Add";
+            // add_remove.setAttribute("class", "adding");
+            // // add_remove.setAttribute("style", "display:none;"); 
+            // add_remove.setAttribute("onclick", "add_pdt()");   
+            // div_right.append(add_remove);
 
 
             // button_remove = document.createElement("button");
@@ -364,72 +365,107 @@
                 
                     const indexOfUser = add_products.indexOf(add_products);
 
-                    add_products.splice(indexOfUser, 1);
+                    add_products.removeI(indexOfUser, 1);
                     
                     localStorage.setItem("add_products", JSON.stringify(add_products));
 
                     window.location.href = "../homepage/frontpage.html";
                 }
     
-        }
+            }
 
 
         function remove_pdt () {
 
-            if ( confirm ( "Are you sure to remove this product ?" ) ) {
+            
+            if (confirm("Are you sure to remove this ?")) {
 
-                // gor getting the particular id
+                let product_id = JSON.parse(localStorage.getItem("uuid"));
+                console.log(product_id);
 
-                let product_id = JSON.parse(localStorage.getItem("productDetail"))
-                // console.log(product_id);
+                // let all_products = JSON.parse(localStorage.getItem("add_products"));
 
-                // getting the product datas from the local storage
-
-                let all_products = JSON.parse(localStorage.getItem("add_products"));
-
-                // finding the particular data
-
-                let add_product = all_products.find(e => e.product_uuid == product_id);
+                // let add_product = all_products.find(e => e.product_uuid = product_id);
 
                 // console.log(add_product);
 
-                // set the status as false
+                // let indexOf = all_products.indexOf(add_product, 1);
+
+                // console.log(indexOf);
+
+                // add_product["status"] = false;
+
+                // console.log(add_product);
+
+
+            } 
+
+        }
+
+
+        // function remove_pdt () {
+
+
+            
+
+        //     if ( confirm ( "Are you sure to remove this product ?" ) ) {
+
+        //         // gor getting the particular id
+
+        //         let product_id = JSON.parse(localStorage.getItem("product_id"));
+        //         // console.log(product_id);
+
+        //         // getting the product datas from the local storage
+
+        //         let all_products = JSON.parse(localStorage.getItem("add_products"));
+
+        //         // finding the particular data
+
+        //         let add_product = all_products.find(e => e.product_uuid == product_id);
+
+        //         // console.log(add_product);
+
+        //         let  indexOf=all_products.indexOf(add_product)
+
+        //         console.log(indexOf)
+
+        //         // set the status as false
                 
-                add_product["status"] = false;
+        //         indexOf["status"] = "false";
 
-                // stringify the datas which are all get
+        //         // stringify the datas which are all get
 
-                localStorage.setItem("add_products", JSON.stringify(all_products));
+                
 
-            }
+        //     }
 
-            let removeBtn = document.querySelector("button.remove");
+        //     // let removeBtn = document.querySelector("button.remove");
             
-            removeBtn.setAttribute("style","display:none");
+        //     // removeBtn.setAttribute("style","display:none");
             
-            document.querySelector("button.adding").setAttribute("style", "display:inline")
+        //     // document.querySelector("button.adding").setAttribute("style", "display:inline")
 
-        }
+        // }
 
 
-        function add_pdt () {
+        // function add_pdt () {
             
-            if ( confirm ( "Are you sure to add this product?" ) ) {
+        //     if ( confirm ( "Are you sure to add this product?" ) ) {
 
-                let product_id = JSON.parse(localStorage.getItem("productDetail"))
+        //         let product_id = JSON.parse(localStorage.getItem("productDetail"))
 
-                let all_products = JSON.parse(localStorage.getItem("add_products"));
+        //         let all_products = JSON.parse(localStorage.getItem("add_products"));
 
-                let add_product = all_products.find(e => e.product_uuid == product_id);
+        //         let add_product = all_products.find(e => e.product_uuid == product_id);
 
-                add_product["status"] = true;
+        //         add_product["status"] = true;
 
-                localStorage.setItem("add_products", JSON.stringify(all_products));
+        //         localStorage.setItem("add_products", JSON.stringify(all_products));
 
 
-            }
+        //     }
         
-        }
+        // }
 
 
 

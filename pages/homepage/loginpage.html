@@ -208,7 +208,7 @@
             let phonenumber = document.getElementById('phonenumber').value,
             password = document.getElementById('password').value;
             uname = document.getElementById('uname').value;
-            let user_cred = JSON.parse(localStorage.getItem('user_cred')) || [];
+            let user_cred = JSON.parse(localStorage.getItem('user_cred'));
             let exist = user_cred.length &&
             JSON.parse(localStorage.getItem('user_cred')).some(data => data.phonenumber.toLowerCase() == phonenumber.toLowerCase()
             && data.password == password);
