@@ -175,6 +175,8 @@
            </div> -->
       </div>
 
+      <a href="../saree/saree1view.html"></a>
+
 
 </section>
 
@@ -210,317 +212,403 @@
 
    <script>
 
-      let div_products;
-      let a_link;
-      let img_picture;
-      let h3_title;
-      let p_text;
-      let span_percent;
+      // let div_products;
+      // let a_link;
+      // let img_picture;
+      // let h3_title;
+      // let p_text;
+      // let span_percent;
 
-      let product_list = [
+      // let product_list = [
 
-         {
-            "link" :  "../saree/saree1view.html",         
+      //    {
+      //       "link" :  "../saree/saree1view.html",         
 
-            "image": {
-                      "source": "../../../../assets/images/silk12.jpg",
-                      "alt": name + "image"
-                     },
-            "name": "Jacquard Material Silk...",
-            "price": {
-                         "currency": "₹",
-                         "actualValue": 4000,
-                         "discount": {
-                                         "type": "%",
-                                         "value": 80
-                                     },
-                      },
+      //       "image": {
+      //                 "source": "../../../../assets/images/silk12.jpg",
+      //                 "alt": name + "image"
+      //                },
+      //       "name": "Jacquard Material Silk...",
+      //       "price": {
+      //                    "currency": "₹",
+      //                    "actualValue": 4000,
+      //                    "discount": {
+      //                                    "type": "%",
+      //                                    "value": 80
+      //                                },
+      //                 },
 
-         },
+      //    },
 
-         {
-            "image": {
-               "source": "../../../../assets/images/silk1.jpg",
-               "alt": "photo"
-            },
-            "name": "Jacquard Material Self....",
-            "price": {
-               "currency": "₹",
-               "actualValue": 3999,
-               "discount": {
-                  "type": "%",
-                  "value": 77
-               },
-            },
-            "link" :  "../saree/saree2view.html",         
+      //    {
+      //       "image": {
+      //          "source": "../../../../assets/images/silk1.jpg",
+      //          "alt": "photo"
+      //       },
+      //       "name": "Jacquard Material Self....",
+      //       "price": {
+      //          "currency": "₹",
+      //          "actualValue": 3999,
+      //          "discount": {
+      //             "type": "%",
+      //             "value": 77
+      //          },
+      //       },
+      //       "link" :  "../saree/saree2view.html",         
 
-         },
+      //    },
 
-         {
-            "image": {
-               "source": "../../../../assets/images/silk5.jpg",
-               "alt": "photo"
-            },
-            "name": "Jacquard Material Silk...",
-            "price": {
-               "currency": "₹",
-               "actualValue": 3999,
-               "discount": {
-                  "type": "%",
-                  "value": 80
-               },
-            },
-            "link" :  "../saree/saree3view.html",         
+      //    {
+      //       "image": {
+      //          "source": "../../../../assets/images/silk5.jpg",
+      //          "alt": "photo"
+      //       },
+      //       "name": "Jacquard Material Silk...",
+      //       "price": {
+      //          "currency": "₹",
+      //          "actualValue": 3999,
+      //          "discount": {
+      //             "type": "%",
+      //             "value": 80
+      //          },
+      //       },
+      //       "link" :  "../saree/saree3view.html",         
 
-         },
+      //    },
 
-         {
-            "image": {
-               "source": "../../../../assets/images/silk8.jpg",
-               "alt": "photo"
-            },
-            "name": "Jacquard Material Self....",
-            "price": {
-               "currency": "₹",
-               "actualValue": 1888,
-               "discount": {
-                  "type": "%",
-                  "value": 60
-               },
-            },
-            "link" :  "../saree/saree4view.html",         
+      //    {
+      //       "image": {
+      //          "source": "../../../../assets/images/silk8.jpg",
+      //          "alt": "photo"
+      //       },
+      //       "name": "Jacquard Material Self....",
+      //       "price": {
+      //          "currency": "₹",
+      //          "actualValue": 1888,
+      //          "discount": {
+      //             "type": "%",
+      //             "value": 60
+      //          },
+      //       },
+      //       "link" :  "../saree/saree4view.html",         
 
-         },
+      //    },
 
-         {
-            "image": {
-               "source": "../../../../assets/images/silk4.jpg",
-               "alt": "photo"
-            },
-            "name": "Jacquard Material Silk...",
-            "price": {
-               "currency": "₹",
-               "actualValue": 3999,
-               "discount": {
-                  "type": "%",
-                  "value": 80
-               },
-            },
-            "link" :  "../saree/saree5view.html",         
+      //    {
+      //       "image": {
+      //          "source": "../../../../assets/images/silk4.jpg",
+      //          "alt": "photo"
+      //       },
+      //       "name": "Jacquard Material Silk...",
+      //       "price": {
+      //          "currency": "₹",
+      //          "actualValue": 3999,
+      //          "discount": {
+      //             "type": "%",
+      //             "value": 80
+      //          },
+      //       },
+      //       "link" :  "../saree/saree5view.html",         
 
-         },
+      //    },
 
-         {
-            "image": {
-               "source": "../../../../assets/images/silk6.jpg",
-               "alt": "photo"
-            },
-            "name": "Jacquard Material Self.....",
-            "price": {
-               "currency": "₹",
-               "actualValue": 1949,
-               "discount": {
-                  "type": "%",
-                  "value": 58
-               },
-            },
-            "link" :  "../saree/saree6view.html",         
+      //    {
+      //       "image": {
+      //          "source": "../../../../assets/images/silk6.jpg",
+      //          "alt": "photo"
+      //       },
+      //       "name": "Jacquard Material Self.....",
+      //       "price": {
+      //          "currency": "₹",
+      //          "actualValue": 1949,
+      //          "discount": {
+      //             "type": "%",
+      //             "value": 58
+      //          },
+      //       },
+      //       "link" :  "../saree/saree6view.html",         
 
-         },
+      //    },
 
-         {
-            "image": {
-               "source": "../../../../assets/images/silk7.jpg",
-               "alt": "photo"
-            },
-            "name": "Jacquard Material Silk...",
-            "price": {
-               "currency": "₹",
-               "actualValue": 1999,
-               "discount": {
-                  "type": "%",
-                  "value": 55
-               },
-            },
-            "link" :  "../saree/saree7view.html",         
+      //    {
+      //       "image": {
+      //          "source": "../../../../assets/images/silk7.jpg",
+      //          "alt": "photo"
+      //       },
+      //       "name": "Jacquard Material Silk...",
+      //       "price": {
+      //          "currency": "₹",
+      //          "actualValue": 1999,
+      //          "discount": {
+      //             "type": "%",
+      //             "value": 55
+      //          },
+      //       },
+      //       "link" :  "../saree/saree7view.html",         
 
-         },
+      //    },
 
-         {
-            "image": {
-               "source": "../../../../assets/images/silk2.jpg",
-               "alt": "photo"
-            },
-            "name": "Jacquard Material Self....",
-            "price": {
-               "currency": "₹",
-               "actualValue": 1888,
-               "discount": {
-                  "type": "%",
-                  "value": 58
-               },
-            },
-            "link" :  "../saree/saree8view.html",         
+      //    {
+      //       "image": {
+      //          "source": "../../../../assets/images/silk2.jpg",
+      //          "alt": "photo"
+      //       },
+      //       "name": "Jacquard Material Self....",
+      //       "price": {
+      //          "currency": "₹",
+      //          "actualValue": 1888,
+      //          "discount": {
+      //             "type": "%",
+      //             "value": 58
+      //          },
+      //       },
+      //       "link" :  "../saree/saree8view.html",         
 
-         },
+      //    },
 
-         {
-            "image": {
-               "source": "../../../../assets/images/silksaree.jpg",
-               "alt": "photo"
-            },
-            "name": "Jacquard Material Silk...",
-            "price": {
-               "currency": "₹",
-               "actualValue": 3999,
-               "discount": {
-                  "type": "%",
-                  "value": 80
-               },
-            },
-            "link" :  "../saree/saree9view.html",         
+      //    {
+      //       "image": {
+      //          "source": "../../../../assets/images/silksaree.jpg",
+      //          "alt": "photo"
+      //       },
+      //       "name": "Jacquard Material Silk...",
+      //       "price": {
+      //          "currency": "₹",
+      //          "actualValue": 3999,
+      //          "discount": {
+      //             "type": "%",
+      //             "value": 80
+      //          },
+      //       },
+      //       "link" :  "../saree/saree9view.html",         
 
-         },
+      //    },
 
-         {
-            "image": {
-               "source": "../../../../assets/images/silk9.jpg",
-               "alt": "photo"
-            },
-            "name": "Jacquard Material Self....",
-            "price": {
-               "currency": "₹",
-               "actualValue": 1949,
-               "discount": {
-                  "type": "%",
-                  "value": 58
-               },
-            },
-            "link" :  "../saree/saree10view.html",         
+      //    {
+      //       "image": {
+      //          "source": "../../../../assets/images/silk9.jpg",
+      //          "alt": "photo"
+      //       },
+      //       "name": "Jacquard Material Self....",
+      //       "price": {
+      //          "currency": "₹",
+      //          "actualValue": 1949,
+      //          "discount": {
+      //             "type": "%",
+      //             "value": 58
+      //          },
+      //       },
+      //       "link" :  "../saree/saree10view.html",         
 
-         },
+      //    },
 
-         {
-            "image": {
-               "source": "../../../../assets/images/silk10.jpg",
-               "alt": "photo"
-            },
-            "name": "Jacquard Material Silk...",
-            "price": {
-                        "currency": "₹",
-                        "actualValue": 1999,
-                        "discount": {
-                           "type": "%",
-                           "value": 55
-                        },
-                     },
-            "link" :  "../saree/saree11view.html",         
+      //    {
+      //       "image": {
+      //          "source": "../../../../assets/images/silk10.jpg",
+      //          "alt": "photo"
+      //       },
+      //       "name": "Jacquard Material Silk...",
+      //       "price": {
+      //                   "currency": "₹",
+      //                   "actualValue": 1999,
+      //                   "discount": {
+      //                      "type": "%",
+      //                      "value": 55
+      //                   },
+      //                },
+      //       "link" :  "../saree/saree11view.html",         
 
-         },
+      //    },
 
-         {
-            "image": {
-                       "source": "../../../../assets/images/silk11.jpg",
-                       "alt": "photo"
-                     },
-            "name": "Jacquard Material Self...",
-            "price": {
-                       "currency": "₹",
-                       "actualValue": 1888,
-                       "discount": {
-                                      "type": "%",
-                                      "value": 58
-                                   },
-                     },
-            "link" :  "../saree/saree12view.html",         
+      //    {
+      //       "image": {
+      //                  "source": "../../../../assets/images/silk11.jpg",
+      //                  "alt": "photo"
+      //                },
+      //       "name": "Jacquard Material Self...",
+      //       "price": {
+      //                  "currency": "₹",
+      //                  "actualValue": 1888,
+      //                  "discount": {
+      //                                 "type": "%",
+      //                                 "value": 58
+      //                              },
+      //                },
+      //       "link" :  "../saree/saree12view.html",         
 
-         }
+      //    }
 
-      ]
+      // ]
 
-      for (let i = 0; i < 12; i++) {
-
-
-
-         //   <div class = "products"> </div>  //
-
-         div_products = document.createElement("div");
-         div_products.setAttribute("class", "products");
-         console.log(div_products);
+      // for (let i = 0; i < 12; i++) {
 
 
-         // <a> </a>
 
-            a_link = document.createElement("a");
-            a_link.setAttribute("href",product_list[i]["link"]);
-            div_products.append(a_link);
+      //    //   <div class = "products"> </div>  //
+
+      //    div_products = document.createElement("div");
+      //    div_products.setAttribute("class", "products");
+      //    console.log(div_products);
+
+
+      //    // <a> </a>
+
+      //       a_link = document.createElement("a");
+      //       a_link.setAttribute("href",product_list[i]["link"]);
+      //       div_products.append(a_link);
        
 
 
 
-         // <img> </img> //
+      //    // <img> </img> //
 
-         img_picture = document.createElement("img");
-         img_picture.setAttribute("src", product_list[i]["image"]["source"]);
-         img_picture.setAttribute("alt", product_list[i]["alt"]);
-         img_picture.setAttribute("height", "260px");
-         img_picture.setAttribute("width", "230px");
-         a_link.append(img_picture);
-         console.log(img_picture);
-
-
-         // <h3> </h3>
-
-         h3_title = document.createElement("h3");
-         h3_title.innerHTML = product_list[i]["name"];
-         a_link.append(h3_title);
-         console.log(h3_title);
+      //    img_picture = document.createElement("img");
+      //    img_picture.setAttribute("src", product_list[i]["image"]["source"]);
+      //    img_picture.setAttribute("alt", product_list[i]["alt"]);
+      //    img_picture.setAttribute("height", "260px");
+      //    img_picture.setAttribute("width", "230px");
+      //    a_link.append(img_picture);
+      //    console.log(img_picture);
 
 
-         // currentValue
+      //    // <h3> </h3>
+
+      //    h3_title = document.createElement("h3");
+      //    h3_title.innerHTML = product_list[i]["name"];
+      //    a_link.append(h3_title);
+      //    console.log(h3_title);
 
 
-         let actualValue = product_list[i]["price"]["actualValue"];
-         let discount = product_list[i]["price"]["discount"]["value"];
-         let discountType = product_list[i]["price"]["discount"]["type"];
-         let currentValue;
+      //    // currentValue
+
+
+      //    let actualValue = product_list[i]["price"]["actualValue"];
+      //    let discount = product_list[i]["price"]["discount"]["value"];
+      //    let discountType = product_list[i]["price"]["discount"]["type"];
+      //    let currentValue;
 
 
 
-         if (discountType === "%") {
-            currentValue = actualValue - actualValue * discount / 100 ;
-            currentValue = Math.round(currentValue);
-         }
-         else {
-            currentValue = actualValue - discount;
-         } 
-         console.log(currentValue);
+      //    if (discountType === "%") {
+      //       currentValue = actualValue - actualValue * discount / 100 ;
+      //       currentValue = Math.round(currentValue);
+      //    }
+      //    else {
+      //       currentValue = actualValue - discount;
+      //    } 
+      //    console.log(currentValue);
       
 
-         // <p> </p> //
+      //    // <p> </p> //
 
-         p_text = document.createElement("p");
-         p_text.innerHTML = product_list[i]["price"]["currency"] + currentValue + "  " ;
-         h3_title.append(p_text);
-         console.log(p_text);
+      //    p_text = document.createElement("p");
+      //    p_text.innerHTML = product_list[i]["price"]["currency"] + currentValue + "  " ;
+      //    h3_title.append(p_text);
+      //    console.log(p_text);
 
-         // <s> </s> //
+      //    // <s> </s> //
 
-         s_cost = document.createElement("s");
-         s_cost.innerHTML = product_list[i]["price"]["currency"] + product_list[i]["price"]["actualValue"];
-         p_text.append(s_cost);
-         console.log(s_cost);
+      //    s_cost = document.createElement("s");
+      //    s_cost.innerHTML = product_list[i]["price"]["currency"] + product_list[i]["price"]["actualValue"];
+      //    p_text.append(s_cost);
+      //    console.log(s_cost);
 
-         //  <span class = "percent"> </span>
+      //    //  <span class = "percent"> </span>
 
-         span_percent = document.createElement("span");
-         span_percent.setAttribute("class", "percent");
-         span_percent.innerHTML = " " + product_list[i]["price"]["discount"]["value"] + product_list[i]["price"]["discount"]["type"] + " " + "off";
-         p_text.append(span_percent)
-         console.log(span_percent);
+      //    span_percent = document.createElement("span");
+      //    span_percent.setAttribute("class", "percent");
+      //    span_percent.innerHTML = " " + product_list[i]["price"]["discount"]["value"] + product_list[i]["price"]["discount"]["type"] + " " + "off";
+      //    p_text.append(span_percent)
+      //    console.log(span_percent);
 
-         document.querySelector("div.thumbnail").append(div_products);
-      }
+      //    document.querySelector("div.thumbnail").append(div_products);
+      // }
+
+
+
+      let add_product = (JSON.parse(localStorage.getItem("add_products"))).filter(e => e.status == true && e.category == "Dress" && e.type == 0);
+         console.log(add_product);
+
+      let div_products;
+         let img;
+         let h3_title;
+         let p_org;
+         let s;
+         let span;
+         let b;
+
+
+
+         for (let k = 0; k < add_product.length; k++){
+
+
+            // <div class = products >
+
+            div_products  = document.createElement("div");
+            div_products.setAttribute("class", "products");
+            div_products.setAttribute("data-id", add_product[k]["product_uuid"]);
+            console.log(div_products);
+
+            // <img>
+
+            img = document.createElement("img");
+            img.setAttribute("src", add_product[k]["image"]);
+            img.setAttribute("alt", "photo");
+            img.setAttribute("height", "200px");
+            img.setAttribute("width", "180px");
+            div_products.append(img);
+
+            // <h3> </h3>
+
+            h3_title = document.createElement("h3");
+            h3_title.setAttribute("id", "name")
+            h3_title.innerText = add_product[k]["name"];
+            div_products.append(h3_title);
+
+            // <p> </p>
+
+            p_org = document.createElement("p");
+            p_org.setAttribute("id", "original_price");
+            p_org.innerText = "₹" + add_product[k]["discount_price"] + "   ";
+            h3_title.append(p_org);
+
+            // <p> </p>
+
+            // p_dis = document.createElement("p");
+            // h3_title.append(p_dis);
+
+            // <s> </s>
+
+            s = document.createElement("s");
+            s.setAttribute("id", "discount_price");
+            s.innerText = "  " + "₹" + add_product[k]["original_price"];
+            p_org.append(s);
+
+            // <span> </span>
+
+            span = document.createElement("span");
+            span.setAttribute("class", "percent");
+            span.innerText = "   " + add_product[k]["discount_percent"] + "%" + "off";
+            p_org.append(span);
+
+
+            document.querySelector("div.thumbnail").append(div_products);
+
+         }
+        
+         let product_details = document.querySelectorAll("div.products")
+            product_details.forEach(function(find){
+                  find.addEventListener("click", function(){
+                        let product_description = this.dataset.id;
+                           localStorage.setItem("productDetail",JSON.stringify(product_description))
+                              window.location.href = `../saree/saree1view.html?product_id=${product_description}`;
+                              console.log(product_details)
+                        }
+                  )
+            }   
+         )
+                       
+      
 
    </script>
 

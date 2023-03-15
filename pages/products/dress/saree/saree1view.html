@@ -69,14 +69,14 @@
 
         <p class="color"> Availlable colours: Black, Blue, Pink, Red, Maroon, Green, Rose..... </p> -->
 
-        <button class="add"> <a href="../../../orders/cartpage.html"> <i class="fa fa-shopping-cart"
+        <!-- <button class="add"> <a href="../../../orders/cartpage.html"> <i class="fa fa-shopping-cart"
                     style="font-size:24px;color: white;"></i> Add to cart </a> </button>
         <button class="buy"> <a href="../../../orders/sareebuy/saree1buy.html"> <i class="fa fa-shopping-bag"
                     style="font-size:22px;color: white"></i> Buy Now </a> </button>
         <button class="wish"> <a href="../../../orders/wishlistpage.html"> <i class="fa fa-heart"
-                    style="font-size: 24px;color: white;"></i> Wishlist </a> </button>
+                    style="font-size: 24px;color: white;"></i> Wishlist </a> </button> -->
 
-        <div class="comment">
+        <!-- <div class="comment">
             <label> COMMENTS: </label>
             <input />
         </div>
@@ -85,15 +85,15 @@
         </div>
         <div class="commen">
             <input />
-        </div>
+        </div> -->
 
-    </div>
+    </div> 
 
-</div>
+ </div>
 
-    <section>
+     <section>
 
-        <div class="similar">
+        <!-- <div class="similar">
 
             <h2> SIMILAR PRODUCTS </h2>
             <div class="thumbnail">
@@ -123,9 +123,9 @@
                 </div>
             </div>
 
-        </div>
+        </div> -->
 
-    </section>
+    <!-- </section> -->
 
     <footer>
         <div class="top">
@@ -160,169 +160,505 @@
 
 
 
-let product_details = [
-            {
-                "image" : [{ "source" : "../../../../assets/images/silk12.jpg",
-                            "alt" : "photo",
-                            },
-                            { "source" : "../../../../assets/images/silk12-1.jpg",
-                            "alt" : "photo",
-                           },
-                            { "source" : "../../../../assets/images/silk12-2.jpg",
-                            "alt" : "photo",
-                            },
-                            { "source" : "../../../../assets/images/silk12-3.jpg",
-                            "alt" : "photo",
-                            }
+// let product_details = [
+//             {
+//                 "image" : [{ "source" : "../../../../assets/images/silk12.jpg",
+//                             "alt" : "photo",
+//                             },
+//                             { "source" : "../../../../assets/images/silk12-1.jpg",
+//                             "alt" : "photo",
+//                            },
+//                             { "source" : "../../../../assets/images/silk12-2.jpg",
+//                             "alt" : "photo",
+//                             },
+//                             { "source" : "../../../../assets/images/silk12-3.jpg",
+//                             "alt" : "photo",
+//                             }
 
-                            ],    
+//                             ],    
 
-                "name" : "Jacquard Material Self Designed Saree",
+//                 "name" : "Jacquard Material Self Designed Saree",
 
-                "text" : "Special offer",
+//                 "text" : "Special offer",
 
-                "price" : { "currency" : "₹",
-                            "actual" : 2999,
-                            "discount" : { "type" : "%",
-                                           "value" : 79 }
-                           },
+//                 "price" : { "currency" : "₹",
+//                             "actual" : 2999,
+//                             "discount" : { "type" : "%",
+//                                            "value" : 79 }
+//                            },
 
-                "offer" : "Available offers",
+//                 "offer" : "Available offers",
 
-                "para_line1" : "*Special PriceGet extra 30% off (price inclusive of cashback/coupon)T&C",
+//                 "para_line1" : "*Special PriceGet extra 30% off (price inclusive of cashback/coupon)T&C",
 
-                "para_line2" : "*Bank Offer5% Cashback on Thara's World Axis Bank CardT&C",
+//                 "para_line2" : "*Bank Offer5% Cashback on Thara's World Axis Bank CardT&C",
 
-                "para_line3" : "*Partner OfferSign up for Thara's World Pay Later and get Flipkart Gift Card worth up to ₹500*",
+//                 "para_line3" : "*Partner OfferSign up for Thara's World Pay Later and get Flipkart Gift Card worth up to ₹500*",
 
-                "color" : "Availlable colours: Black, Blue, Pink, Red, Maroon, Green, Rose....."
+//                 "color" : "Availlable colours: Black, Blue, Pink, Red, Maroon, Green, Rose....."
                 
                 
-            }
-        ]
+//             }
+//         ]
 
 
 
-    for (let i=0; i<1; i++){
+//     for (let i=0; i<1; i++){
 
 
-       // <div class = "left"> </div>
+//        // <div class = "left"> </div>
 
-       div_left = document.createElement("div");
-       div_left.setAttribute("class","left");
-       console.log(div_left);
-
-
-       // <div class = "image"> </div>
-
-       div_image = document.createElement("div");
-       div_image.setAttribute("class","image");
-       div_left.append(div_image);
-       console.log(div_image);
+//        div_left = document.createElement("div");
+//        div_left.setAttribute("class","left");
+//        console.log(div_left);
 
 
-       //  <img> 
+//        // <div class = "image"> </div>
+
+//        div_image = document.createElement("div");
+//        div_image.setAttribute("class","image");
+//        div_left.append(div_image);
+//        console.log(div_image);
 
 
-       img_big = document.createElement("img");
-       img_big.setAttribute("src", "../../../../assets/images/silk12.jpg");
-       img_big.setAttribute("alt","photo");
-       img_big.setAttribute("height", "460px");
-       img_big.setAttribute("width", "400px");
-       div_image.append(img_big);
-       console.log(img_big);
+//        //  <img> 
+
+
+//        img_big = document.createElement("img");
+//        img_big.setAttribute("src", "../../../../assets/images/silk12.jpg");
+//        img_big.setAttribute("alt","photo");
+//        img_big.setAttribute("height", "460px");
+//        img_big.setAttribute("width", "400px");
+//        div_image.append(img_big);
+//        console.log(img_big);
 
 
 
-       for (let i=0; i<4; i++){
+//        for (let i=0; i<4; i++){
 
 
-           // <div class = sub-images> </div>
+//            // <div class = sub-images> </div>
 
-       div_sub_images = document.createElement("div");
-       div_sub_images.setAttribute("class","sub-images");
-       div_left.append(div_sub_images);
-       console.log(div_sub_images);
+//        div_sub_images = document.createElement("div");
+//        div_sub_images.setAttribute("class","sub-images");
+//        div_left.append(div_sub_images);
+//        console.log(div_sub_images);
 
 
-       img_small = document.createElement("img");
-       img_small.setAttribute("src", "../../../../assets/images/silk12.jpg");
-       img_small.setAttribute("alt", "photo");
-       img_small.setAttribute("height", "80px");
-       img_small.setAttribute("width", "80px");
-       div_sub_images.append(img_small);
-       console.log(img_small);
+//        img_small = document.createElement("img");
+//        img_small.setAttribute("src", "../../../../assets/images/silk12.jpg");
+//        img_small.setAttribute("alt", "photo");
+//        img_small.setAttribute("height", "80px");
+//        img_small.setAttribute("width", "80px");
+//        div_sub_images.append(img_small);
+//        console.log(img_small);
 
-       }
+//        }
 
    
-       // <div class = "right" > </div>
+//        // <div class = "right" > </div>
 
-       div_right = document.createElement("div");
-       div_right.setAttribute("class","right");
-       console.log(div_right);
-
-
-        // <h3> </h3>
-
-        h3_title = document.createElement("h3");
-        h3_title.innerHTML = product_list[i]["name"];
-        div_right.append(h3_title);
-        console.log(h3_title);
+//        div_right = document.createElement("div");
+//        div_right.setAttribute("class","right");
+//        console.log(div_right);
 
 
+//         // <h3> </h3>
 
-         // currentValue
-
-
-         let actualValue = product_list[i]["price"]["actualValue"];
-         let discount = product_list[i]["price"]["discount"]["value"];
-         let discountType = product_list[i]["price"]["discount"]["type"];
-         let currentValue;
+//         h3_title = document.createElement("h3");
+//         h3_title.innerHTML = product_list[i]["name"];
+//         div_right.append(h3_title);
+//         console.log(h3_title);
 
 
 
-         if (discountType === "%") {
-            currentValue = actualValue - actualValue * discount / 100 ;
-            currentValue = Math.round(currentValue);
-         }
-         else {
-            currentValue = actualValue - discount;
-         } 
-         console.log(currentValue);
+//          // currentValue
+
+
+//          let actualValue = product_list[i]["price"]["actualValue"];
+//          let discount = product_list[i]["price"]["discount"]["value"];
+//          let discountType = product_list[i]["price"]["discount"]["type"];
+//          let currentValue;
 
 
 
-        // <p> </p> //
-
-        p_text = document.createElement("p");
-        p_text.innerHTML = product_list[i]["price"]["currency"] + currentValue + "  " ;
-        h3_title.append(p_text);
-        console.log(p_text);
-
-        // <s> </s> //
-
-        s_cost = document.createElement("s");
-        s_cost.innerHTML = product_list[i]["price"]["currency"] + product_list[i]["price"]["actualValue"];
-        p_text.append(s_cost);
-        console.log(s_cost);
-
-         //  <span class = "percent"> </span>
-
-        span_percent = document.createElement("span");
-        span_percent.setAttribute("class", "percent");
-        span_percent.innerHTML = " " + product_list[i]["price"]["discount"]["value"] + product_list[i]["price"]["discount"]["type"] + " " + "off";
-        p_text.append(span_percent)
-        console.log(span_percent);
+//          if (discountType === "%") {
+//             currentValue = actualValue - actualValue * discount / 100 ;
+//             currentValue = Math.round(currentValue);
+//          }
+//          else {
+//             currentValue = actualValue - discount;
+//          } 
+//          console.log(currentValue);
 
 
 
-       document.querySelector("div.detail").append(div_left);
+//         // <p> </p> //
+
+//         p_text = document.createElement("p");
+//         p_text.innerHTML = product_list[i]["price"]["currency"] + currentValue + "  " ;
+//         h3_title.append(p_text);
+//         console.log(p_text);
+
+//         // <s> </s> //
+
+//         s_cost = document.createElement("s");
+//         s_cost.innerHTML = product_list[i]["price"]["currency"] + product_list[i]["price"]["actualValue"];
+//         p_text.append(s_cost);
+//         console.log(s_cost);
+
+//          //  <span class = "percent"> </span>
+
+//         span_percent = document.createElement("span");
+//         span_percent.setAttribute("class", "percent");
+//         span_percent.innerHTML = " " + product_list[i]["price"]["discount"]["value"] + product_list[i]["price"]["discount"]["type"] + " " + "off";
+//         p_text.append(span_percent)
+//         console.log(span_percent);
+
+
+
+//        document.querySelector("div.detail").append(div_left);
     
     
-    }
+//     }
 
 
+
+let add_product = JSON.parse(localStorage.getItem("add_products"));
+
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const product_id = urlParams.get('product_id');
+
+let unique_id = add_product.find (e => e.product_uuid == product_id);
+
+console.log(unique_id);
+
+
+
+
+let div_left;
+let div_image;
+let img;
+let div_right;
+let h3;
+let h4;
+let div_price;
+let p_org;
+let p_dis;
+let s;
+let p_percent;
+let b;
+let div_star;
+let span;
+let i;
+let strong_pdt;
+let div_pdt;
+let p_pdt;
+let strong_add;
+let div_add;
+let p_add;
+
+
+// for (let k = 0; k < add_product.length; k++ ) {
+
+// <div class = "left" > </div>
+
+div_left = document.createElement("div");
+div_left.setAttribute("class", "left");
+
+
+// <div class = "image" > </div>
+
+div_image = document.createElement("div");
+div_image.setAttribute("class", "image");
+div_left.append(div_image);
+
+// <img />
+
+img = document.createElement("img");
+img.setAttribute("src", unique_id["image"]);
+img.setAttribute("alt", unique_id["name"] + "image");
+img.setAttribute("height", "460px");
+img.setAttribute("width", "400px");
+div_image.append(img);
+
+// <div class = "right" > </div>
+
+div_right = document.createElement("div");
+div_right.setAttribute("class", "right");
+
+// <h3> </h3>
+
+h3 = document.createElement("h3");
+h3.setAttribute("id", "name")
+h3.innerText = unique_id["name"];
+div_right.append(h3);
+
+// <h4> </h4>
+
+h4 = document.createElement("h4");
+h4.innerText = "Special price";
+div_right.append(h4);
+
+// <div class = "price" > </div>
+
+div_price = document.createElement("div");
+div_price.setAttribute("class", "price");
+div_right.append(div_price);
+
+// < p id = "original_price" > </p>
+
+p_org = document.createElement("p");
+p_org.setAttribute("id", "original_price");
+p_org.innerText = "₹" + unique_id["discount_price"] + "  ";
+div_price.append(p_org);
+
+// <p> </p>
+
+p_dis = document.createElement("p");
+div_price.append(p_dis);
+
+// <s> </s>
+
+s = document.createElement("s");
+s.setAttribute("id", "discount_price");
+s.innerText = "₹" + unique_id["original_price"];
+p_dis.append(s);
+
+// <p> </p>
+
+p_percent = document.createElement("p");
+div_price.append(p_percent);
+
+// < b > </b>
+
+b = document.createElement("b");
+b.setAttribute("id", "discount_percent");
+b.innerText = unique_id["discount_percent"] + "%" + "off";
+p_percent.append(b);
+
+// <div class = "star"> </div>
+
+div_star = document.createElement("div");
+div_star.setAttribute("class", "star");
+div_right.append(div_star);
+
+
+// <span> </span>
+
+span = document.createElement("span");
+span.setAttribute("class", "stars");
+span.innerText = "Reviews:";
+div_star.append(span);
+
+
+for (j=0; j<5; j++) {
+
+    // <i> </i>
+
+    i = document.createElement("i");
+    i.setAttribute("class", "fa fa-star");
+    i.setAttribute("style", "font-size: 24px;color: gold");
+    div_star.append(i)
+
+}            
+
+// < strong> </strong>
+
+strong_pdt = document.createElement("strong");
+strong_pdt.innerText = "Product details:"
+div_right.append(strong_pdt);
+
+// <div class = "para"> </div>
+
+div_pdt = document.createElement("div");
+div_pdt.setAttribute("class", "para");
+div_right.append(div_pdt);
+
+// <p> </p> 
+
+p_pdt = document.createElement("p");
+p_pdt.setAttribute("id", "product_detail");
+p_pdt.innerText = unique_id["product_detail"];
+div_pdt.append(p_pdt);
+
+// < strong> </strong>
+
+strong_add = document.createElement("strong");
+strong_add.setAttribute("class", "paras");
+strong_add.innerText = "Additional offers";
+div_right.append(strong_add);
+
+// <div class = "para"> </div>
+
+div_add = document.createElement("div");
+div_add.setAttribute("class", "paras");
+div_right.append(div_add);
+
+
+// <p> </p> 
+
+p_add = document.createElement("p");
+p_add.setAttribute("id", "add_info");
+p_add.innerText = unique_id["add_info"];
+div_add.append(p_add);
+
+
+// <button class="add">
+    
+button_add = document.createElement("button");
+button_add.setAttribute("class", "add");
+button_add.setAttribute("data-add", unique_id["product_uuid"]);
+button_add.innerText = "Add to cart";
+div_right.append(button_add);
+
+// <i> == cart
+
+i_cart = document.createElement("i");
+i_cart.setAttribute("class", "fa fa-shopping-cart");
+i_cart.setAttribute("style", "font-size:24px;color: white;");
+button_add.append(i_cart);
+
+// <button class="buy">
+    
+button_buy = document.createElement("button");
+button_buy.setAttribute("class", "buy");
+button_buy.innerText = "Buy Now";
+div_right.append(button_buy);
+
+// <i> == cart
+
+i_buy = document.createElement("i");
+i_buy.setAttribute("class", "fa fa-shopping-bag");
+i_buy.setAttribute("style", "font-size:24px;color: white;");
+button_buy.append(i_buy);
+
+
+// <button class="wish">
+    
+button_wish = document.createElement("button");
+button_wish.setAttribute("class", "wish");
+button_wish.innerText = "Wishlist";
+div_right.append(button_wish);
+
+// <i> == cart
+
+i_wish = document.createElement("i");
+i_wish.setAttribute("class", "fa fa-heart");
+i_wish.setAttribute("style", "font-size:24px;color: white;");
+button_wish.append(i_wish);
+
+
+document.querySelector("div.detail").append(div_left);
+document.querySelector("div.detail").append(div_right); 
+
+
+let cart_products = document.querySelector("button.add");
+
+cart_products.addEventListener("click", function () {
+
+    // let product_id = this.dataset.add;
+
+    // localStorage.setItem("products_id", JSON.stringify("product_id"));
+
+    let id = JSON.parse(localStorage.getItem("productDetail"));
+
+    let all_products = JSON.parse(localStorage.getItem("add_products"));
+
+    let products = all_products.find(e => e.product_uuid == id);
+
+    // let indexOf = all_products.indexOf(products);
+
+     products = localStorage.getItem("add_products", JSON.stringify(products)) || [];
+
+    // localStorage.setItem("products", JSON.stringify(products));
+
+    console.log(products);
+
+} )
+
+
+
+        //   SIMILAR PRODUCTS 
+
+
+        // <section> 
+
+            section = document.createElement("section");
+            console.log(section);
+    
+          // <div class = "similar">
+
+            div_similar = document.createElement("div");
+            div_similar.setAttribute("class", "similar");
+            section.append(div_similar);
+           // <h2>
+            
+            h2 = document.createElement("h2");
+            h2.innerHTML = "Similar Products";
+            div_similar.append(h2);
+
+            // <div class = "thumbnail">
+
+             div_thumb = document.createElement("div");
+             div_thumb.setAttribute("class", "thumbnail");
+             h2.append(div_thumb);   
+
+             for (let i = 0; i < add_product.length; i++) {
+
+         // <div class = products >
+
+            div_products  = document.createElement("div");
+            div_products.setAttribute("class", "products");
+            div_products.setAttribute("data-id", add_product[i]["product_uuid"]);
+            div_thumb.append(div_products);
+
+            // <img>
+
+            img = document.createElement("img");
+            img.setAttribute("src", add_product[i]["image"]);
+            img.setAttribute("alt", "photo");
+            img.setAttribute("height", "200px");
+            img.setAttribute("width", "180px");
+            div_products.append(img);
+
+            // <h3> </h3>
+
+            h4_title = document.createElement("h3");
+            h4_title.setAttribute("id", "name")
+            h4_title.innerText = add_product[i]["name"];
+            div_products.append(h4_title);
+
+            // <p> </p>
+
+            p_org = document.createElement("p");
+            p_org.setAttribute("id", "original_price");
+            p_org.innerText = "₹" + add_product[i]["discount_price"] + "   ";
+            div_products.append(p_org);
+
+            // <p> </p>
+
+            // p_dis = document.createElement("p");
+            // h3_title.append(p_dis);
+
+            // <s> </s>
+
+            s = document.createElement("s");
+            s.setAttribute("id", "discount_price");
+            s.innerText = "  " + "₹" + add_product[i]["original_price"];
+            p_org.append(s);
+
+            // <span> </span>
+
+            span = document.createElement("span");
+            span.setAttribute("class", "percent");
+            span.innerText = "   " + add_product[i]["discount_percent"] + "%" + "off";
+            p_org.append(span);
+
+}
+
+document.querySelector("div.detail").append(section);
 
 
 

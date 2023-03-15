@@ -166,13 +166,14 @@ strong{
     top: 130px;
     left: 40px;
     font-size: 20px;
+    cursor: pointer;
 }
 
-.add a{
+/* .add a{
     text-decoration: none;
     color: white;
     font-size: 20px;
-}
+} */
 
 .buy{
     height: 50px;
@@ -184,13 +185,15 @@ strong{
     position: relative;
     top: 130px;
     left: 120px;
+    cursor: pointer;
+    font-size: 20px;
 }
-
+/* 
 .buy a{
     text-decoration: none;
     color: white;
     font-size: 20px;
-}
+} */
 
 .wish{
     height: 50px;
@@ -202,13 +205,15 @@ strong{
     position: relative;
     top: 230px;
     right: 230px;
+    cursor: pointer;
+    font-size: 20px;
 }
 
-.wish a{
+/* .wish a{
     text-decoration: none;
     color: white;
     font-size: 20px;
-}
+} */
 
 .comment{
     margin-top: 270px;

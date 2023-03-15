@@ -166,6 +166,7 @@ button{
     top: 50px;
     left: 500px;
     font-size: 20px;
+    cursor: pointer;
 }
 
 .edit{
@@ -199,6 +200,7 @@ button{
     top: 50px;
     left: 1200px;
     font-size: 20px;
+    cursor: pointer;
 }
 
 button a{

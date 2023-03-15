@@ -211,186 +211,273 @@
 
       <script>
 
-         let div_products;
-         let img_picture;
-         let h3_title;
-         let p_text;
-         let span_percent;
+   //       let div_products;
+   //       let img_picture;
+   //       let h3_title;
+   //       let p_text;
+   //       let span_percent;
 
-      let product_list = [
+   //    let product_list = [
 
-         { "image" : {"src" : "../../../../assets/images/leganga2.jpg",
-                         "height" : "260px",
-                         "width" : "230px" },
-           "name" : "Jacquard Material Self Designed Leganga",
-           "price" : "₹749 ",
-           "discount" : "₹4,000",
-           "percent" : " 81% off",
-         },
+   //       { "image" : {"src" : "../../../../assets/images/leganga2.jpg",
+   //                       "height" : "260px",
+   //                       "width" : "230px" },
+   //         "name" : "Jacquard Material Self Designed Leganga",
+   //         "price" : "₹749 ",
+   //         "discount" : "₹4,000",
+   //         "percent" : " 81% off",
+   //       },
        
-         {
-            "image" : {"src" : "../../../../assets/images/leganga1.jpg",
-                         "height" : "260px",
-                         "width" : "230px" },
-           "name" : "Jacquard Material Self Designed Leganga",
-           "price" : " ₹899 ",
-           "discount" : "₹3,999",
-           "percent" : " 77% off" 
-         },
+   //       {
+   //          "image" : {"src" : "../../../../assets/images/leganga1.jpg",
+   //                       "height" : "260px",
+   //                       "width" : "230px" },
+   //         "name" : "Jacquard Material Self Designed Leganga",
+   //         "price" : " ₹899 ",
+   //         "discount" : "₹3,999",
+   //         "percent" : " 77% off" 
+   //       },
 
-         {
-            "image" : {"src" : "../../../../assets/images/leganga5.jpg",
-                         "height" : "260px",
-                         "width" : "230px" },
-           "name" : "Jacquard Material Self Designed Leganga",
-           "price" : " ₹799 ",
-           "discount" : "₹3,999",
-           "percent" : " 80% off"
-         },
+   //       {
+   //          "image" : {"src" : "../../../../assets/images/leganga5.jpg",
+   //                       "height" : "260px",
+   //                       "width" : "230px" },
+   //         "name" : "Jacquard Material Self Designed Leganga",
+   //         "price" : " ₹799 ",
+   //         "discount" : "₹3,999",
+   //         "percent" : " 80% off"
+   //       },
 
-         {
-            "image" : {"src" : "../../../../assets/images/leganga8.jpg",
-                         "height" : "260px",
-                         "width" : "230px" },
-           "name" : "Jacquard Material Self Designed Leganga",
-           "price" : " ₹745 ",
-           "discount" : "₹1,888",
-           "percent" : " 60% off"
-         },
+   //       {
+   //          "image" : {"src" : "../../../../assets/images/leganga8.jpg",
+   //                       "height" : "260px",
+   //                       "width" : "230px" },
+   //         "name" : "Jacquard Material Self Designed Leganga",
+   //         "price" : " ₹745 ",
+   //         "discount" : "₹1,888",
+   //         "percent" : " 60% off"
+   //       },
 
-         {
-            "image" : {"src" : "../../../../assets/images/leganga4.jpg",
-                         "height" : "260px",
-                         "width" : "230px" },
-           "name" : "Jacquard Material Self Designed Leganga",
-           "price" : " ₹799 ",
-           "discount" : "₹3,999",
-           "percent" : " 80% off"
-         },
+   //       {
+   //          "image" : {"src" : "../../../../assets/images/leganga4.jpg",
+   //                       "height" : "260px",
+   //                       "width" : "230px" },
+   //         "name" : "Jacquard Material Self Designed Leganga",
+   //         "price" : " ₹799 ",
+   //         "discount" : "₹3,999",
+   //         "percent" : " 80% off"
+   //       },
 
-         {
-            "image" : {"src" : "../../../../assets/images/leganga6.jpg",
-                         "height" : "260px",
-                         "width" : "230px" },
-           "name" : "Jacquard Material Self Designed Leganga",
-           "price" : " ₹806 ",
-           "discount" : "₹1,949",
-           "percent" : " 58% off"
-         },
+   //       {
+   //          "image" : {"src" : "../../../../assets/images/leganga6.jpg",
+   //                       "height" : "260px",
+   //                       "width" : "230px" },
+   //         "name" : "Jacquard Material Self Designed Leganga",
+   //         "price" : " ₹806 ",
+   //         "discount" : "₹1,949",
+   //         "percent" : " 58% off"
+   //       },
 
-         {
-            "image" : {"src" : "../../../../assets/images/leganga7.jpg",
-                         "height" : "260px",
-                         "width" : "230px" },
-           "name" : "Jacquard Material Self Designed Leganga",
-           "price" : " ₹899 ",
-           "discount" : "₹1,999",
-           "percent" : " 55% off"
-         },
+   //       {
+   //          "image" : {"src" : "../../../../assets/images/leganga7.jpg",
+   //                       "height" : "260px",
+   //                       "width" : "230px" },
+   //         "name" : "Jacquard Material Self Designed Leganga",
+   //         "price" : " ₹899 ",
+   //         "discount" : "₹1,999",
+   //         "percent" : " 55% off"
+   //       },
 
-         {
-            "image" : {"src" : "../../../../assets/images/leganga12.jpg",
-                         "height" : "260px",
-                         "width" : "230px" },
-           "name" : "Jacquard Material Self Designed Leganga",
-           "price" : " ₹789 ",
-           "discount" : "₹1,888",
-           "percent" : " 58% off"
-         },
+   //       {
+   //          "image" : {"src" : "../../../../assets/images/leganga12.jpg",
+   //                       "height" : "260px",
+   //                       "width" : "230px" },
+   //         "name" : "Jacquard Material Self Designed Leganga",
+   //         "price" : " ₹789 ",
+   //         "discount" : "₹1,888",
+   //         "percent" : " 58% off"
+   //       },
 
-         {
-            "image" : {"src" : "../../../../assets/images/leganga3.jpg",
-                         "height" : "260px",
-                         "width" : "230px" },
-           "name" : "Jacquard Material Self Designed Leganga",
-           "price" : " ₹799 ",
-           "discount" : "₹3,999",
-           "percent" : " 80% off"
-         },
+   //       {
+   //          "image" : {"src" : "../../../../assets/images/leganga3.jpg",
+   //                       "height" : "260px",
+   //                       "width" : "230px" },
+   //         "name" : "Jacquard Material Self Designed Leganga",
+   //         "price" : " ₹799 ",
+   //         "discount" : "₹3,999",
+   //         "percent" : " 80% off"
+   //       },
 
-         {
-            "image" : {"src" : "../../../../assets/images/leganga9.jpg",
-                         "height" : "260px",
-                         "width" : "230px" },
-           "name" : "Jacquard Material Self Designed Leganga",
-           "price" : " ₹806 ",
-           "discount" : "₹1,949",
-           "percent" : " 58% off"
-         },
+   //       {
+   //          "image" : {"src" : "../../../../assets/images/leganga9.jpg",
+   //                       "height" : "260px",
+   //                       "width" : "230px" },
+   //         "name" : "Jacquard Material Self Designed Leganga",
+   //         "price" : " ₹806 ",
+   //         "discount" : "₹1,949",
+   //         "percent" : " 58% off"
+   //       },
 
-         {
-            "image" : {"src" : "../../../../assets/images/leganga.jpg",
-                         "height" : "260px",
-                         "width" : "230px" },
-           "name" : "Jacquard Material Self Designed Leganga",
-           "price" : " ₹899 ",
-           "discount" : "₹1,999",
-           "percent" : " 55% off"
-         },
+   //       {
+   //          "image" : {"src" : "../../../../assets/images/leganga.jpg",
+   //                       "height" : "260px",
+   //                       "width" : "230px" },
+   //         "name" : "Jacquard Material Self Designed Leganga",
+   //         "price" : " ₹899 ",
+   //         "discount" : "₹1,999",
+   //         "percent" : " 55% off"
+   //       },
 
-         {
-            "image" : {"src" : "../../../../assets/images/leganga11.jpg",
-                         "height" : "260px",
-                         "width" : "230px" },
-           "name" : "Jacquard Material Self Designed Leganga",
-           "price" : " ₹789 ",
-           "discount" : "₹1,888",
-           "percent" : " 58% off"
-         }
+   //       {
+   //          "image" : {"src" : "../../../../assets/images/leganga11.jpg",
+   //                       "height" : "260px",
+   //                       "width" : "230px" },
+   //         "name" : "Jacquard Material Self Designed Leganga",
+   //         "price" : " ₹789 ",
+   //         "discount" : "₹1,888",
+   //         "percent" : " 58% off"
+   //       }
 
-      ]
+   //    ]
 
-   for ( let i = 0; i < 12; i++){
+   // for ( let i = 0; i < 12; i++){
   
-          //   <div class = "products"> </div>  //
+   //        //   <div class = "products"> </div>  //
 
-         div_products = document.createElement("div");
-         div_products.setAttribute("class","products");
+   //       div_products = document.createElement("div");
+   //       div_products.setAttribute("class","products");
+   //       console.log(div_products);
+
+       
+
+   //       // <img> </img> //
+
+   //       img_picture = document.createElement("img");
+   //       img_picture.setAttribute("src",product_list[i].image.src);
+   //       img_picture.setAttribute("alt","photo");
+   //       img_picture.setAttribute("height",product_list[i].image.height);
+   //       img_picture.setAttribute("width",product_list[i].image.width);
+   //       div_products.append(img_picture);
+   //       console.log(img_picture);
+
+   //       // <h3> </h3>
+
+   //       h3_title = document.createElement("h3");
+   //       h3_title.innerHTML = "Jacquard Material Self Designed Leganga"
+   //       div_products.append(h3_title);
+   //       console.log(h3_title);
+
+   //       // <p> </p> //
+
+   //       p_text = document.createElement("p");
+   //       p_text.innerHTML = product_list[i].price;
+   //       h3_title.append(p_text);
+   //       console.log(p_text);
+
+   //       // <s> </s> //
+
+   //       s_cost = document.createElement("s");
+   //       s_cost.innerHTML = product_list[i].discount;
+   //       p_text.append(s_cost);
+   //       console.log(s_cost);
+
+   //       //  <span class = "percent"> </span>
+
+   //       span_percent = document.createElement("span");
+   //       span_percent.setAttribute("class","percent");
+   //       span_percent.innerHTML = product_list[i].percent;
+   //       p_text.append(span_percent)
+   //       console.log(span_percent);
+
+   //       document.querySelector("div.thumbnail").append(div_products);
+   //    }     
+
+
+   let add_product = (JSON.parse(localStorage.getItem("add_products"))).filter(e => e.status == true && e.category == "Dress" && e.type == 3);
+
+
+let div_products;
+      let img;
+      let h3_title;
+      let p_org;
+      let s;
+      let span;
+      let b;
+
+
+
+      for (let k = 0; k < add_product.length; k++){
+
+
+         // <div class = products >
+
+         div_products  = document.createElement("div");
+         div_products.setAttribute("class", "products");
+         div_products.setAttribute("data-id", add_product[k]["product_uuid"]);
          console.log(div_products);
 
-       
+         // <img>
 
-         // <img> </img> //
-
-         img_picture = document.createElement("img");
-         img_picture.setAttribute("src",product_list[i].image.src);
-         img_picture.setAttribute("alt","photo");
-         img_picture.setAttribute("height",product_list[i].image.height);
-         img_picture.setAttribute("width",product_list[i].image.width);
-         div_products.append(img_picture);
-         console.log(img_picture);
+         img = document.createElement("img");
+         img.setAttribute("src", add_product[k]["image"]);
+         img.setAttribute("alt", "photo");
+         img.setAttribute("height", "200px");
+         img.setAttribute("width", "180px");
+         div_products.append(img);
 
          // <h3> </h3>
 
          h3_title = document.createElement("h3");
-         h3_title.innerHTML = "Jacquard Material Self Designed Leganga"
+         h3_title.setAttribute("id", "name")
+         h3_title.innerText = add_product[k]["name"];
          div_products.append(h3_title);
-         console.log(h3_title);
 
-         // <p> </p> //
+         // <p> </p>
 
-         p_text = document.createElement("p");
-         p_text.innerHTML = product_list[i].price;
-         h3_title.append(p_text);
-         console.log(p_text);
+         p_org = document.createElement("p");
+         p_org.setAttribute("id", "original_price");
+         p_org.innerText = "₹" + add_product[k]["discount_price"] + "   ";
+         h3_title.append(p_org);
 
-         // <s> </s> //
+         // <p> </p>
 
-         s_cost = document.createElement("s");
-         s_cost.innerHTML = product_list[i].discount;
-         p_text.append(s_cost);
-         console.log(s_cost);
+         // p_dis = document.createElement("p");
+         // h3_title.append(p_dis);
 
-         //  <span class = "percent"> </span>
+         // <s> </s>
 
-         span_percent = document.createElement("span");
-         span_percent.setAttribute("class","percent");
-         span_percent.innerHTML = product_list[i].percent;
-         p_text.append(span_percent)
-         console.log(span_percent);
+         s = document.createElement("s");
+         s.setAttribute("id", "discount_price");
+         s.innerText = "  " + "₹" + add_product[k]["original_price"];
+         p_org.append(s);
+
+         // <span> </span>
+
+         span = document.createElement("span");
+         span.setAttribute("class", "percent");
+         span.innerText = "   " + add_product[k]["discount_percent"] + "%" + "off";
+         p_org.append(span);
+
 
          document.querySelector("div.thumbnail").append(div_products);
-      }     
+
+      }
+     
+      let product_details = document.querySelectorAll("div.products")
+         product_details.forEach(function(find){
+               find.addEventListener("click", function(){
+                     let product_description = this.dataset.id;
+                        localStorage.setItem("productDetail",JSON.stringify(product_description))
+                           window.location.href = `../saree/saree1view.html?product_id=${product_description}`;
+                           console.log(product_details)
+                     }
+               )
+         }   
+      )
+
+
+
+
 
    </script>
 

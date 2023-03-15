@@ -149,28 +149,37 @@
 
 
             // delete account function
-        function deleteAcc(){
-            if(confirm("Are you sure to delete this account ?")){
-            //get value from local storage
-            let uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
-            let user_cred = JSON.parse(localStorage.getItem("user_cred"));
-            function profile_data(e){
-                return e.phonenumber == uniqueID;
+        
+            function deleteAcc(){
+           
+                if(confirm("Are you sure to delete this account ?")){
+            
+                    //get value from local storage
+            
+                    let uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
+           
+                    let user_cred = JSON.parse(localStorage.getItem("user_cred"));
+           
+                    function profile_data(e){
+               
+                        return e.phonenumber == uniqueID;
+           
+                    }
+           
+                    person_data = user_cred.find(profile_data);
+                       
+                    const indexOfUser = user_cred.indexOf(person_data);
+
+           
+                    user_cred.splice(indexOfUser, 1);
+           
+                    localStorage.setItem("user_cred", JSON.stringify(user_cred));
+
+                    window.location.href = "./frontpage.html";
+
+                }
+
             }
-            person_data = user_cred.find(profile_data);
-            // find the index of person_data from userData
-            // let result = user_cred.indexOf(person_data);
-
-            // // deleting the indexof person data
-            // user_cred.splice(resu= 1);
-            const indexOfUser = user_cred.indexOf(person_data);
-
-            user_cred.splice(indexOfUser, 1);
-            localStorage.setItem("user_cred", JSON.stringify(user_cred));
-
-            window.location.href = "./frontpage.html";
-        }
-    }
 
             </script>
 
