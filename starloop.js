@@ -387,17 +387,17 @@
 
 
 
-// let n = 5;
-// let m = 5;
-// for ( let j=1; j<=m; j++ ){
-//      let str = ""
-//      for (i=1; i<=n; i++){
-//        if ( i<=j){
-//       str += "*" + ".";
-//         }  
-// }
-// console.log(str);
-// }
+let n = 5;
+let m = 5;
+for ( let j=1 ; j<=m; j++){
+     let str = ""
+     for (i=1; i<=n; i++){
+       if (i=j){
+      str += "*" + ".";
+        }  
+}
+console.log(str);
+}
 
 
 
@@ -405,12 +405,12 @@
 // let x = 2;
 // let output_str = "";
 // let FOUND = false;
-// // let count = 0;
+// let count = 0;
 
 // for (let i = 0; i < a.length; i++){
 //   if ( x == a[i]){
 //         FOUND = true;
-//           //  count = count++;
+//            count = count++;
         
 //   }
 
@@ -540,12 +540,12 @@
 // console.log(output);
 
 
-let x = [48, 1, 4, 7];
-let out = 0;
-for (let i = 0; i < x.length; i++) {
-    out += x[i];
-}
-console.log(out); 
+// let x = [48, 1, 4, 7];
+// let out = 0;
+// for (let i = 0; i < x.length; i++) {
+//     out += x[i];
+// }
+// console.log(out); 
 
 
 //  let a = 5;

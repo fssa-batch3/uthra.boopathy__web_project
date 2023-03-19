@@ -90,15 +90,15 @@
     </div> 
 
  </div>
-
+<!-- 
      <section>
 
-        <!-- <div class="similar">
+        <div class="similar">
 
             <h2> SIMILAR PRODUCTS </h2>
             <div class="thumbnail">
 
-                <div class="products">
+                 <div class="products">
                    <a href="../../../products/saree5view.html"> <img src="../../../../assets/images/silk4.jpg" alt="photo" height="260px" width="230px" /> </a>
                     <h5> Embellished Kanjivaram Pure SilkSaree </h5>
                     <p> ₹799 <s>₹3,999</s> <span class="percent"> 80% off </span> </p>
@@ -121,11 +121,11 @@
                     <h5> <span class="title">Jacquard Material Self Design </span> </h5>
                     <p> ₹899 <s>₹1,999</s> <span class="percent"> 55% off </span> </p>
                 </div>
-            </div>
+            </div>  
 
-        </div> -->
+        </div> 
 
-    <!-- </section> -->
+    </section> -->
 
     <footer>
         <div class="top">
@@ -326,9 +326,19 @@
 
 let add_product = JSON.parse(localStorage.getItem("add_products"));
 
+// to set the location to the variable queryString
+
 const queryString = window.location.search;
+
+// to get the location
+
 const urlParams = new URLSearchParams(queryString);
+
+// to show the name as what we have to show
+
 const product_id = urlParams.get('product_id');
+
+// checking from the array and getting the particular id
 
 let unique_id = add_product.find (e => e.product_uuid == product_id);
 
@@ -554,111 +564,38 @@ document.querySelector("div.detail").append(div_left);
 document.querySelector("div.detail").append(div_right); 
 
 
-let cart_products = document.querySelector("button.add");
 
-cart_products.addEventListener("click", function () {
+let cart_product = document.querySelectorAll("button.add")
 
-    // let product_id = this.dataset.add;
-
-    // localStorage.setItem("products_id", JSON.stringify("product_id"));
-
+cart_product.forEach(function(find){
+    
+    find.addEventListener("click", function(){
+    
     let id = JSON.parse(localStorage.getItem("productDetail"));
 
     let all_products = JSON.parse(localStorage.getItem("add_products"));
 
+    console.log(all_products);
+
     let products = all_products.find(e => e.product_uuid == id);
 
-    // let indexOf = all_products.indexOf(products);
+    products = JSON.parse(localStorage.getItem("all_products")) || [];
 
-     products = localStorage.getItem("add_products", JSON.stringify(products)) || [];
+    console.log(localStorage.getItem("all_products"));
 
-    // localStorage.setItem("products", JSON.stringify(products));
+    localStorage.setItem("product", JSON.stringify(products));
 
     console.log(products);
 
-} )
 
-
-
-        //   SIMILAR PRODUCTS 
-
-
-        // <section> 
-
-            section = document.createElement("section");
-            console.log(section);
+        window.location.href = "../../../orders/cartpage.html";
     
-          // <div class = "similar">
+})
 
-            div_similar = document.createElement("div");
-            div_similar.setAttribute("class", "similar");
-            section.append(div_similar);
-           // <h2>
-            
-            h2 = document.createElement("h2");
-            h2.innerHTML = "Similar Products";
-            div_similar.append(h2);
+});
 
-            // <div class = "thumbnail">
+    
 
-             div_thumb = document.createElement("div");
-             div_thumb.setAttribute("class", "thumbnail");
-             h2.append(div_thumb);   
-
-             for (let i = 0; i < add_product.length; i++) {
-
-         // <div class = products >
-
-            div_products  = document.createElement("div");
-            div_products.setAttribute("class", "products");
-            div_products.setAttribute("data-id", add_product[i]["product_uuid"]);
-            div_thumb.append(div_products);
-
-            // <img>
-
-            img = document.createElement("img");
-            img.setAttribute("src", add_product[i]["image"]);
-            img.setAttribute("alt", "photo");
-            img.setAttribute("height", "200px");
-            img.setAttribute("width", "180px");
-            div_products.append(img);
-
-            // <h3> </h3>
-
-            h4_title = document.createElement("h3");
-            h4_title.setAttribute("id", "name")
-            h4_title.innerText = add_product[i]["name"];
-            div_products.append(h4_title);
-
-            // <p> </p>
-
-            p_org = document.createElement("p");
-            p_org.setAttribute("id", "original_price");
-            p_org.innerText = "₹" + add_product[i]["discount_price"] + "   ";
-            div_products.append(p_org);
-
-            // <p> </p>
-
-            // p_dis = document.createElement("p");
-            // h3_title.append(p_dis);
-
-            // <s> </s>
-
-            s = document.createElement("s");
-            s.setAttribute("id", "discount_price");
-            s.innerText = "  " + "₹" + add_product[i]["original_price"];
-            p_org.append(s);
-
-            // <span> </span>
-
-            span = document.createElement("span");
-            span.setAttribute("class", "percent");
-            span.innerText = "   " + add_product[i]["discount_percent"] + "%" + "off";
-            p_org.append(span);
-
-}
-
-document.querySelector("div.detail").append(section);
 
 
 
