@@ -100,6 +100,9 @@
                         <button class="btn-1" type="submit"> <a href="./profilepage.html">  Edit </a> </button>
                 
                         <button class="btn-2" type="button" onclick="deleteAcc()"> Delete </button>
+
+                        <button class="btn-3" type="button" onclick="back()">  Back </button>
+
                 </div>        
 
             </form>
@@ -145,6 +148,33 @@
             document.getElementById("address").value = person_data["address"];
             document.getElementById("des").value = person_data["des"];
             document.getElementById("gender").value = person_data["gender"];
+
+
+        function back () {
+
+            // let uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
+            // let user_cred = JSON.parse(localStorage.getItem("user_cred"));
+            // function profile_data(e){
+            //     return e.phonenumber == uniqueID;
+            // }
+            // person_data = user_cred.find(profile_data);
+            // document.getElementById("uname").value = person_data["uname"];
+            // document.getElementById("email").value = person_data["email"];
+            // document.getElementById("phonenumber").value = person_data["phonenumber"];
+            // document.getElementById("age").value = person_data["age"];
+            // document.getElementById("address").value = person_data["address"];
+            // document.getElementById("des").value = person_data["des"];
+            // document.getElementById("gender").value = person_data["gender"];
+
+            if (person_data["des"] == "Seller") {
+                window.location.href = "../homepage/sellerpage.html";
+            }
+            else{
+                window.location.href = "../homepage/frontpage.html";
+            }
+        }
+
+        console.log(function back(){});
             
 
 

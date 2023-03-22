@@ -238,6 +238,8 @@
               confirm_password = document.getElementById("confirm_password").value;
               password = document.getElementById("password").value;
              uname = document.getElementById("uname").value;
+             address = "";
+             email = "";
              user_uuid = uuidv4();
             let user_cred = JSON.parse(localStorage.getItem('user_cred')) || [];
 
@@ -248,7 +250,7 @@
             if(!exist){
 
               if(password == confirm_password){
-                user_cred.push({uname,phonenumber,confirm_password,password,user_uuid});
+                user_cred.push({uname,phonenumber,confirm_password,password,user_uuid,address,email});
                 localStorage.setItem('user_cred',JSON.stringify(user_cred));
                 console.log(localStorage.getItem('user_cred'));
                 document.querySelector("form").reset();

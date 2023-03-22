@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Main page </title>
         <link rel="stylesheet" href="../../../../assets/css/style-saree1view.css"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />        <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kreon:wght@300;400;500;600;700&family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -14,21 +14,33 @@
 
 <body>
     <header>
-        <a href="../../../homepage/frontpage.html"> <img class="logo" src="../../../../assets/images/logo.png" alt="logo" height="70px" width="70px" /> </a>
+        <a href="../../../homepage/frontpage.html">
+        <img class="logo" src="../../../../assets/images/logo.png" alt="logo" height="70px" width="70px"/> </a>
         <h1> Thara's World </h1>
-        <div>
+        <div class="nav">
             <ul>
-                <li> <a href="../../../orders/cartpage.html"><i class="fa fa-shopping-cart"
-                            style="font-size:24px;color: #fff;"></i></a></li>
-                <li> <a href="../../../orders/wishlistpage.html"><i class="fa fa-heart-o"
-                            style="font-size: 24px;color: #fff;"></i></a></li>
-                <li><a href="../../../orders/myorderspage.html"><i class="fa fa-shopping-bag"
-                            style="font-size:22px;color: #fff"></i></a></li>
-                <li><a href="#"><i class="fa fa-bell" style="font-size:24px;color: #fff"></i></a></li>
-                <li><a href="../../../homepage/profilepage.html"><i class="fa fa-user-circle-o"
-                            style="font-size:24px;color: #fff;"></i></a></li>
-                <li> <a href="../../../homepage/loginpage.html"><span class="login"> Login </span> </a></li>
-            </ul>
+               <li> <a href="../../../orders/cartpage.html"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a></li>
+               <li> <a href="../../../orders/wishlistpage.html"><i class="fa-sharp fa-solid fa-heart"></i></a></li> 
+               <li><a href="../../../orders/myorderspage.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
+               <li><a href="#"><i class="fa-solid fa-bell"></i></i></a></li>
+               <li><a href="../../../homepage/profile.html"><i class="fa-solid fa-circle-user"></i></a></li>
+               <li> <a href="../../..//homepage/loginpage.html"><span class="login"> Login </span> </a></li>
+             </ul>  
+         </div>
+
+         <div class="menu">
+           
+           <i class="fa-solid fa-bars"></i>               
+            <div class="menu-list">
+               
+                   <a href="../../../orders/cartpage.html"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                   <a href="../../../orders/wishlistpage.html"><i class="fa-sharp fa-solid fa-heart"></i></a>
+                   <a href="../../../orders/myorderspage.html"><i class="fa-solid fa-bag-shopping"></i></a>
+                   <a href="#"><i class="fa-solid fa-bell"></i></i></a>
+                   <a href="../../../homepage/profile.html"><i class="fa-solid fa-circle-user"></i></a>
+                   <a href="../../../homepage/loginpage.html"><span class="login"> Login </span> </a>
+           
+            </div>
         </div>
     </header>
 
@@ -520,7 +532,7 @@ div_add.append(p_add);
 button_add = document.createElement("button");
 button_add.setAttribute("class", "add");
 button_add.setAttribute("data-add", unique_id["product_uuid"]);
-button_add.innerText = "Add to cart";
+button_add.innerText = "ADD TO CART";
 div_right.append(button_add);
 
 // <i> == cart
@@ -534,7 +546,7 @@ button_add.append(i_cart);
     
 button_buy = document.createElement("button");
 button_buy.setAttribute("class", "buy");
-button_buy.innerText = "Buy Now";
+button_buy.innerText = "BUY NOW";
 div_right.append(button_buy);
 
 // <i> == cart
@@ -549,7 +561,7 @@ button_buy.append(i_buy);
     
 button_wish = document.createElement("button");
 button_wish.setAttribute("class", "wish");
-button_wish.innerText = "Wishlist";
+button_wish.innerText = "WISHLIST";
 div_right.append(button_wish);
 
 // <i> == cart
@@ -563,15 +575,23 @@ button_wish.append(i_wish);
 document.querySelector("div.detail").append(div_left);
 document.querySelector("div.detail").append(div_right); 
 
+// ADD TO CART function 
 
+// let user_id = JSON.parse(localStorage.getItem("uniqueID"));
 
-let cart_product = document.querySelectorAll("button.add")
+// let users = JSON.parse(localStorage.getItem("user_crud"));
 
-cart_product.forEach(function(find){
-    
-    find.addEventListener("click", function(){
-    
-    let id = JSON.parse(localStorage.getItem("productDetail"));
+// let exist = users.find(e => e.user_uuid == user_id);
+
+let cart_products = document.querySelector("button.add");
+
+cart_products.addEventListener("click", function () {
+
+    // if (exist) {
+
+        let id = JSON.parse(localStorage.getItem("productDetail"));
+
+    console.log(id);
 
     let all_products = JSON.parse(localStorage.getItem("add_products"));
 
@@ -579,22 +599,67 @@ cart_product.forEach(function(find){
 
     let products = all_products.find(e => e.product_uuid == id);
 
-    products = JSON.parse(localStorage.getItem("all_products")) || [];
+    let add_to_cart = JSON.parse(localStorage.getItem("cart"))||[];
 
-    console.log(localStorage.getItem("all_products"));
+    let exist = add_to_cart.find(e => e.product_uuid == id);
 
-    localStorage.setItem("product", JSON.stringify(products));
-
-    console.log(products);
-
-
-        window.location.href = "../../../orders/cartpage.html";
+    if(exist){
+       
+        alert("This product has already been added");
     
+    }
+
+    else {
+       
+        add_to_cart.push(products);
+       
+        localStorage.setItem("cart", JSON.stringify(add_to_cart));
+       
+        window.location.href = "../../../orders/cartpage.html";
+    }
+
+    // console.log(products);
+
+    // }
+
+    // else {
+
+    //     alert("You are not sign Up!");
+
+    // }
+    
+
 })
 
-});
 
-    
+// WISHLIST function 
+
+
+let wish_products = document.querySelector("button.wish");
+
+wish_products.addEventListener("click", function () {
+
+    let id = JSON.parse(localStorage.getItem("productDetail"));
+
+    console.log(id);
+
+    let all_products = JSON.parse(localStorage.getItem("add_products"));
+
+    console.log(all_products);
+
+    let products = all_products.find(e => e.product_uuid == id)
+
+    let wishlist = JSON.parse(localStorage.getItem("wish"))||[];
+
+    // console.log(products);
+
+    wishlist.push(products)
+
+    localStorage.setItem("wish", JSON.stringify(wishlist));
+
+    window.location.href = "../../../orders/wishlistpage.html";
+
+})
 
 
 

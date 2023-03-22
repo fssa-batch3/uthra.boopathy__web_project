@@ -14,39 +14,38 @@
     
     <body>
       <header>
-        <img class="logo" src="../../assets/images/logo.png" alt="logo" />
+        <img class="logo" src="../../assets/images/logo.png" alt="logo" height="70px" width="70px"/>
         <h1> Thara's World </h1>
-          <div class="nav">
-             <ul>
-                <li> <a href="../orders/cartpage.html"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a></li>
-                <li> <a href="../orders/wishlistpage.html"><i class="fa-sharp fa-solid fa-heart"></i></a></li> 
-                <li><a href="../orders/myorderspage.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
-                <li><a href="#"><i class="fa-solid fa-bell"></i></i></a></li>
-                <li><a href="profilepage.html"><i class="fa-solid fa-circle-user"></i></a></li>
-                <li> <a href="loginpage.html"><span class="login"> Login </span> </a></li>
-              </ul>
-          </div>
-
-          <div class="menu">
-            
-            <i class="fa-solid fa-bars"></i>               
-             <div class="menu-list">
-                
-                    <a href="../orders/cartpage.html"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
-                    <a href="../orders/wishlistpage.html"><i class="fa-sharp fa-solid fa-heart"></i></a>
-                    <a href="../orders/myorderspage.html"><i class="fa-solid fa-bag-shopping"></i></a>
-                    <a href="#"><i class="fa-solid fa-bell"></i></i></a>
-                    <a href="../homepage/profilepage.html"><i class="fa-solid fa-circle-user"></i></a>
-                    <a href="../homepage/loginpage.html"><span class="login"> Login </span> </a>
-            
-             </div>
+        <div class="nav">
+            <ul>
+               <li> <a href="../orders/cartpage.html"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a></li>
+               <li> <a href="../orders/wishlistpage.html"><i class="fa-sharp fa-solid fa-heart"></i></a></li> 
+               <li><a href="../orders/myorderspage.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
+               <li><a href="#"><i class="fa-solid fa-bell"></i></i></a></li>
+               <li><a href="profilepage.html"><i class="fa-solid fa-circle-user"></i></a></li>
+               <li> <a href="../homepage/loginpage.html"><span class="login"> Login </span> </a></li>
+             </ul>
          </div>
 
+         <div class="menu">
+           
+           <i class="fa-solid fa-bars"></i>               
+            <div class="menu-list">
+               
+                   <a href="../orders/cartpage.html"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+                   <a href="../orders/wishlistpage.html"><i class="fa-sharp fa-solid fa-heart"></i></a>
+                   <a href="../orders/myorderspage.html"><i class="fa-solid fa-bag-shopping"></i></a>
+                   <a href="#"><i class="fa-solid fa-bell"></i></i></a>
+                   <a href="profilepage.html"><i class="fa-solid fa-circle-user"></i></a>
+                   <a href="loginpage.html"><span class="login"> Login </span> </a>
+           
+            </div>
+        </div>
     </header>
 
         <section>
 
-              <!-- <div class="container">
+               <!-- <div class="container">
 
                    <img src="../../assets/images/silk12.jpg" alt="photo" height="110px" width="110px"/>
                   <div class="details">
@@ -69,9 +68,27 @@
                        
                    <button> <a href="../orders/cart-buynowpage.html"> Buy Now </a> </button>
 
-              </div>
+              </div> -->
 
-              <div class="container1">
+
+               <!-- <div class = "total">
+
+                <div>
+                <p> SUB TOTAL : </p>   
+                <p> DELIVER CHARGE: </p>  
+                <p> <strong> TOTAL AMOUNT : </strong>
+              </div>
+              <div>
+                <p id = "sub_total"> RS. 1000 </p>
+                 <p> FREE </p>
+                 <p id = "sub_total"> RS. 1000 </p>
+              </div>  -->
+              <!-- <div>
+                 </p>  <p id = "sub_total"> </p>
+              </div> -->
+
+
+             <!-- <div class="container1">
 
                    <img src="../../assets/images/jewellset.jpg" alt="photo" height="110px" width="110px"/>
                    <div class="details">
@@ -132,7 +149,7 @@
             </div>
             <button> <a href="../orders/cart-buynowpage.html"> Buy Now </a> </button>
 
-       </div> -->
+       </div> -->  
 
 
         </section>
@@ -169,27 +186,27 @@
 <script>
 
 
-let cart_products = JSON.parse(localStorage.getItem("product"));
-console.log(cart_products);
+let cart = JSON.parse(localStorage.getItem("cart"));
+console.log(cart);
 
 
-for ( let k = 0; k < cart_products.length; k++) {
+for ( let k = 0; k < cart.length; k++) {
 
             // <div class = products >
 
             div_container  = document.createElement("div");
             div_container.setAttribute("class", "container");
-            div_container.setAttribute("data-id", cart_products[k]["product_uuid"]);
+            div_container.setAttribute("data-id", cart[k]["product_uuid"]);
             console.log(div_container);
 
             // <img>
             
             img = document.createElement("img");
-            img.setAttribute("src", cart_products[k]["image"]);
+            img.setAttribute("src", cart[k]["image"]);
             img.setAttribute("alt", "photo");
             img.setAttribute("height", "200px");
             img.setAttribute("width", "180px");
-            div_products.append(img);
+            div_container.append(img);
 
             // <div class="details"></div>
 
@@ -201,45 +218,234 @@ for ( let k = 0; k < cart_products.length; k++) {
 
             h3_title = document.createElement("h3");
             h3_title.setAttribute("id", "name")
-            h3_title.innerText = cart_products[k]["name"];
-            div_container.append(h3_title);
+            h3_title.innerText = cart[k]["name"];
+            div_details.append(h3_title);
+
+            // <div> </div>
+
+            div = document.createElement("div");
+            h3_title.append(div);
 
             // <p> </p>
 
             p_org = document.createElement("p");
             p_org.setAttribute("id", "original_price");
-            p_org.innerText = "₹" + cart_products[k]["discount_price"] + "   ";
-            h3_title.append(p_org);
-
-            // <p> </p>
-
-            // p_dis = document.createElement("p");
-            // h3_title.append(p_dis);
+            p_org.innerText = "₹" + cart[k]["discount_price"] + "   ";
+            div.append(p_org);
 
             // <s> </s>
 
             s = document.createElement("s");
             s.setAttribute("id", "discount_price");
-            s.innerText = "  " + "₹" + cart_products[k]["original_price"];
-            p_org.append(s);
-            
-            // <p> </p>
-
-            // p_percent = document.createElement("p");
-            // h3_title.append(p_percent);
-
+            s.innerText = "  " + "₹" + cart[k]["original_price"];
+            div.append(s);
 
             // <span> </span>
 
             span = document.createElement("span");
             span.setAttribute("class", "percent");
-            span.innerText = "   " + cart_products[k]["discount_percent"] + "%" + "off";
-            p_org.append(span);
+            span.innerText = "   " + cart[k]["discount_percent"] + "%" + "off";
+            div.append(span);
+
+            
+            // let quantity = cart.find(e => e.product_uuid == cart[k]["product_uuid"]);
+            // console.log(quantity);
+            
+
+            // < div class = "quantity" > </div>
+
+            div_quantity = document.createElement("div");
+            div.append(div_quantity);
+
+            // <p> </p>
+
+            p_qty = document.createElement("p");
+            // p_qty.setAttribute("class", "quantities");
+            p_qty.innerText = "Quantity  ";
+            div.append(p_qty);
+
+            // <input>
+
+            input = document.createElement("input");
+            input.setAttribute("class", "quantity");
+            input.setAttribute("type", "number");
+            input.setAttribute("value", "1");
+            input.setAttribute("min", "1");
+            input.setAttribute("data-remove", cart[k]["product_uuid"]);
+            input.setAttribute("data-qty", cart[k]["product_quantity"]);
+            // input.setAttribute("value", quantity["product_quantity"]);
+            p_qty.append(input);
+
+            // < button class = "remove" > </button>
+
+            button_remove = document.createElement("button");
+            button_remove.setAttribute("class", "remove");
+            button_remove.setAttribute("data-remove", cart[k]["product_uuid"]);
+            button_remove.setAttribute("type", "submit");
+            button_remove.innerText = "REMOVE";
+            div_container.append(button_remove);
 
 
-            document.querySelector("section").append(div_container);         
+            document.querySelector("section").append(div_container);   
 
 }
+
+            // <div class = "total" > </div>
+
+            div_total = document.createElement("div");
+            div_total.setAttribute("class", "total");
+            console.log(div_total);
+
+            // <div></div>
+
+            div_price = document.createElement("div");
+            div_total.append(div_price);
+
+            // <p>
+             
+            p_sub = document.createElement("p");
+            p_sub.innerText = "SUB TOTAL:";
+            div_price.append(p_sub);
+
+            // <p>
+
+            p_del = document.createElement("p");
+            p_del.innerText = "DELIVERY CHARGE:";
+            p_sub.append(p_del);
+
+            // <p> 
+
+            p_t_a = document.createElement("p");
+            p_t_a.innerText = "TOTAL AMOUNT:";
+            p_del.append(p_t_a);
+
+            //  <div> <div>
+              
+            div_amt = document.createElement("div");
+            div_total.append(div_amt);
+            console.log(div_amt);
+            
+            // <p>
+
+            p_amt = document.createElement("p");
+            p_amt.setAttribute("id", "discount_price");
+            p_amt.innerText = "₹" + " " + cart["discount_price"];  
+            div_amt.append(p_amt);
+
+            // <p>
+
+            p_free = document.createElement("p");
+            p_free.innerText = "FREE";
+            p_amt.append(p_free);
+
+            // <p>
+
+            p_amt = document.createElement("p");
+            p_amt.setAttribute("id", "discount_price");
+            p_amt.innerText = "₹" + " " + cart[discount_price];  
+            p_free.append(p_amt);
+
+            // <div>
+
+            div_btn = document.createElement("div");
+            div_total.append(div_btn);  
+
+            // < button class = "buy" > </button>
+
+            button_buy = document.createElement("button");
+            button_buy.setAttribute("class", "buy");
+            button_buy.innerText = "BUY NOW";
+            div_btn.append(button_buy);
+
+            document.querySelector("section").append(div_total);   
+            
+            
+
+        //     let pdt_qty = document.querySelectorAll(".quantity");
+        
+        //     pdt_qty.forEach(function (find) {
+            
+        //       find.addEventListener('click', function () {
+        //         let parent = this.closest(".cart-list");
+        //         let cart_quantity = parent.querySelector(".quantity").value
+        //         let cart_product = JSON.parse(localStorage.getItem("cart"));
+
+        //         // let items = parent.querySelector(".btn").getAttribute("data-id");
+        //         // let cart_items = cart_product.filter(product => items === product.product_uuid);
+        //         // if (cart_items) {
+        //         //     cart_items[0].product_quantity = cart_quantity;
+        //         //     localStorage.setItem("cart_list", JSON.stringify(cart_product));
+        //         // }
+        //         // window.location.reload();
+        //     });
+        // });
+
+
+
+        let product_quantity = document.querySelectorAll("input.quantity");
+
+        product_quantity.forEach(function(add){
+          add.addEventListener("click", function () {
+              let productId = this.dataset.remove;
+              localStorage.setItem("products_id", JSON.stringify(productId));
+              console.log(productId);
+              let productid = JSON.parse(localStorage.getItem("products_id"));
+              console.log(productid);
+              let all_products = JSON.parse(localStorage.getItem("cart"));
+              console.log(all_products);
+              let pdts = all_products.find(e => e.product_uuid == productid)
+              console.log(pdts); 
+              let indexOfProduct = all_products.indexOf(pdts);
+              console.log(indexOfProduct); 
+
+              localStorage.setItem("cart", JSON.stringify(all_products));
+          })
+        })
+
+
+
+
+ let products = document.querySelectorAll("button.remove")
+            
+          
+               products.forEach(function(check){
+            
+                check.addEventListener("click", function (){
+            
+                    let product_id = this.dataset.remove;
+            
+                    localStorage.setItem("products_id", JSON.stringify(product_id));
+            
+                    console.log(product_id);
+            
+                    if (confirm("Are you sure to remove this product?")){
+            
+                        let id = JSON.parse(localStorage.getItem("products_id"));
+            
+                        let all_products = JSON.parse(localStorage.getItem("cart"));
+            
+                        console.log(all_products);
+            
+                        let pdts = all_products.find(e => e.product_uuid == id)
+            
+                        console.log(pdts);
+            
+                        let indexOfProduct = all_products.indexOf(pdts);
+            
+                        all_products.splice(indexOfProduct, 1);
+            
+                        console.log(indexOfProduct); 
+            
+                        localStorage.setItem("cart", JSON.stringify(all_products));
+            
+                    }
+
+                    window.location.reload();
+            
+                });
+            
+            });
+
 
 
 </script>

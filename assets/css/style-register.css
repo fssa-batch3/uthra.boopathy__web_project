@@ -30,6 +30,10 @@ header div ul li a{
      font-size: 20px;
 }
 
+.menu{
+    display: none;
+}
+
 h1{
     font-size: 50px;
     font-weight: normal;
@@ -49,6 +53,9 @@ h1{
    color: white;
 }
 
+.menu{
+    display: none;
+}
 
 .register{
     margin-left: 550px;
@@ -135,10 +142,6 @@ input[type="password"]{
     position: relative;
     left: 10px;
     outline: none;
-}
-
-.menu{
-    display: none;
 }
 
 

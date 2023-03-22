@@ -26,7 +26,12 @@ header div ul li{
 
 header div ul li a{
      text-decoration: none;
-     color: black;
+     color: white;
+     font-size: 20px;
+}
+
+.menu{
+    display: none;
 }
 
 h1{
@@ -44,11 +49,79 @@ h1{
 }
 
 .login{
-    font-size: 20px;
-    color: white;
+   font-size: 20px;
+   color: white;
+}
+
+.menu{
+    display: none;
 }
 
 .thumbnail{
+    display: grid;
+    grid-template-columns: repeat(4, 280px);
+    justify-content: space-evenly;
+    grid-column-gap: 20px;
+    grid-row-gap: 30px;
+    margin: 40px 0px 0px 0px;
+}
+
+img{
+    object-fit: unset;
+    border-radius: 5px;
+    margin-left: 50px;
+    margin-top: 15px;
+}
+
+h3{
+    font-size: 22px;
+    font-weight: normal;
+    margin-top: 20px;
+    margin-left: 30px;
+    width: 250px;
+    color: rgb(74, 3, 74);
+}
+
+p{
+    color: black;
+    font-size: 20px;
+    word-spacing: 5px;
+    margin-top: 10px;
+    margin-left: 20px; 
+}
+
+s{
+    color: gray;
+}
+
+.percent{
+    color: green;
+}
+
+a{
+    text-decoration: none;
+}
+
+.products:hover{
+    transform: scale(1.08);
+}
+
+.products{
+    border: 1px solid #f8f8f8;
+    background-color: #f8f8f8;
+    margin: 10px 0px 10px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.del{
+    margin-top: 10px;
+    margin-left: 15rem;
+    cursor: pointer;
+}
+
+
+/* .thumbnail{
     position: relative;
     top: 30px;
     display: flex;
@@ -122,11 +195,7 @@ s{
     font-size: 20px;
 }
 
-.del{
-    position: absolute;
-    left: 245px;
-    top: 10px;
-}
+
 
 .percent{
     color: green;
@@ -138,7 +207,7 @@ s{
 
 .products a{
     text-decoration: none;
-}
+} */
 
 footer{
     background-color: purple;

@@ -83,7 +83,7 @@
                      <div>
                         <label> Current price: </label> <br>
                         <label>₹</label>
-                        <!-- <input type="number" id="discount_price" pattern="[0-9]{0,}" />  -->
+                        <input type="number" pattern="[0-9]{0,}" /> 
                     </div>
 
                     <div>
@@ -193,8 +193,8 @@
                 product_detail: product_detail,
                 add_info: add_info,
                 product_uuid: product_uuid,
-                status : true
-
+                status : true,
+                product_quantity:1
             });
            
             localStorage.setItem('add_products', JSON.stringify(add_products));

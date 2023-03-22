@@ -67,20 +67,26 @@ h1{
 
 .details {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
     height: 15vh;
-
     
 }
 
 .details div {
     width: 200px;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+}
+
+input {
+    height: 15px;
+    width: 40px;
 }
 
 .star {
@@ -98,19 +104,35 @@ h1{
     padding: 10px;
 }
 
-button{
-    height: 50px;
-    width: 200px;
+.remove{
+    height: 40px;
+    width: 140px;
     background-color: purple;
     border: 0px;
     border-radius: 5px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
 }    
+
+.buy {
+    height: 40px;
+    width: 140px;
+    background-color: purple;
+    border: 0px;
+    border-radius: 5px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+}
 
 button a {
     color: white;
     font-size: 20px;
     text-decoration: none;
 }
+
+
 
 h3{
     font-size: 28px;
@@ -121,7 +143,7 @@ h3{
 p{
     font-size: 23px;
     font-weight: bold;
-    
+    color: black;
 }
 
 s{
@@ -136,13 +158,12 @@ s{
     
 }
 
-.container1{
-    border: 1px;
-    border-radius: 8px;
-    background-color: whitesmoke;
+.total {
     width: 75%;
     height: 30vh;
     display: flex;
+    border-radius: 8px;
+    background-color: whitesmoke;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
@@ -150,44 +171,13 @@ s{
     margin-left: 180px;
 }
 
-.container1 img{
-    border-radius: 4px; 
+.total div  {
+   padding-left: 2rem;
 }
 
-.container2{
-    border: 1px;
-    border-radius: 8px;
-    background-color: whitesmoke;
-    width: 75%;
-    height: 30vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 100px;   
-    margin-left: 180px;
-}
-
-.container2 img{
-    border-radius: 4px; 
-}
-
-.container3{
-    border: 1px;
-    border-radius: 8px;
-    background-color: whitesmoke;
-    width: 75%;
-    height: 30vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 100px;   
-    margin-left: 180px;
-}
-
-.container3 img{
-    border-radius: 4px; 
+.total div p {
+    padding-top: 2rem;
+    align-content: flex-end;
 }
 
 footer{
@@ -305,37 +295,6 @@ h4{
 .twiter{
     background-color: #00acee;
     color: white;
-}
-
-.collections img{
-    border-radius: 150px;
-    padding: 40px;
-}
-
-.icons div{
-    position: relative;
-}
-
-.div{
-    font-size: 25px;
-    font-weight: bold;
-    margin-left: 70px;
-    display: inline-flex;
-    bottom: 20px;
-}
-
-.divs{
-    font-size: 25px;
-    font-weight: bold;
-    margin-left: 90px;
-    bottom: 20px;
-}
-
-.divss{
-    font-size: 25px;
-    font-weight: bold;
-    margin-left: 100px;
-    bottom: 20px;
 }
 
 .menu{
