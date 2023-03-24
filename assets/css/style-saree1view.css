@@ -43,6 +43,8 @@ h1{
 }
 
 .logo{
+    height: 70px;
+    width: 70px;
     margin-top: 15px;
     margin-left: 50px;
     border-radius: 50px;

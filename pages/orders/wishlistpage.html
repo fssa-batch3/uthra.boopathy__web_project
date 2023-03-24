@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Main page </title>
+    <title> Wishlist page </title>
     <link rel="stylesheet" href="../../assets/css/style-wishlistpage.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />        <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,8 +13,8 @@
     </head>
     
     <body>
-      <header>
-        <a href="../../../homepage/frontpage.html">
+      <header id="userLogin">
+        <!-- <a href="../../../homepage/frontpage.html">
         <img class="logo" src="../../../../assets/images/logo.png" alt="logo" height="70px" width="70px"/> </a>
         <h1> Thara's World </h1>
         <div class="nav">
@@ -41,7 +41,7 @@
                    <a href="../../../homepage/loginpage.html"><span class="login"> Login </span> </a>
            
             </div>
-        </div>
+        </div> -->
     </header>
 
         <section>
@@ -172,9 +172,11 @@
 
        </footer>    
 
+       <script src="../../assets/js/header.js"></script>
 
        <script>
 
+        header();
 
         let wishlist = JSON.parse(localStorage.getItem("wish"));
         console.log(wishlist);

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Main page </title>
+    <title> Add to cart page </title>
     <link rel="stylesheet" href="../../assets/css/style-cartpage.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />        <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,8 +13,8 @@
   </head>
     
     <body>
-      <header>
-        <img class="logo" src="../../assets/images/logo.png" alt="logo" height="70px" width="70px"/>
+      <header id="userLogin">
+        <!-- <img class="logo" src="../../assets/images/logo.png" alt="logo" height="70px" width="70px"/>
         <h1> Thara's World </h1>
         <div class="nav">
             <ul>
@@ -40,7 +40,7 @@
                    <a href="loginpage.html"><span class="login"> Login </span> </a>
            
             </div>
-        </div>
+        </div> -->
     </header>
 
         <section>
@@ -183,26 +183,34 @@
 
        </footer>    
 
+
+       <script src="../../assets/js/header.js"> </script>
+
+       <script>
+          header ();
+
+       </script>
+
+
 <script>
 
-
-let cart = JSON.parse(localStorage.getItem("cart"));
+let add_to_cart = JSON.parse(localStorage.getItem("cart"));
 console.log(cart);
 
 
-for ( let k = 0; k < cart.length; k++) {
+for ( let k = 0; k < add_to_cart.length; k++) {
 
             // <div class = products >
 
             div_container  = document.createElement("div");
             div_container.setAttribute("class", "container");
-            div_container.setAttribute("data-id", cart[k]["product_uuid"]);
+            div_container.setAttribute("data-id", add_to_cart[k]["product_uuid"]);
             console.log(div_container);
 
             // <img>
             
             img = document.createElement("img");
-            img.setAttribute("src", cart[k]["image"]);
+            img.setAttribute("src", add_to_cart[k]["image"]);
             img.setAttribute("alt", "photo");
             img.setAttribute("height", "200px");
             img.setAttribute("width", "180px");
@@ -218,7 +226,7 @@ for ( let k = 0; k < cart.length; k++) {
 
             h3_title = document.createElement("h3");
             h3_title.setAttribute("id", "name")
-            h3_title.innerText = cart[k]["name"];
+            h3_title.innerText = add_to_cart[k]["name"];
             div_details.append(h3_title);
 
             // <div> </div>
@@ -230,21 +238,21 @@ for ( let k = 0; k < cart.length; k++) {
 
             p_org = document.createElement("p");
             p_org.setAttribute("id", "original_price");
-            p_org.innerText = "₹" + cart[k]["discount_price"] + "   ";
+            p_org.innerText = "₹" + add_to_cart[k]["discount_price"] + "   ";
             div.append(p_org);
 
             // <s> </s>
 
             s = document.createElement("s");
             s.setAttribute("id", "discount_price");
-            s.innerText = "  " + "₹" + cart[k]["original_price"];
+            s.innerText = "  " + "₹" + add_to_cart[k]["original_price"];
             div.append(s);
 
             // <span> </span>
 
             span = document.createElement("span");
             span.setAttribute("class", "percent");
-            span.innerText = "   " + cart[k]["discount_percent"] + "%" + "off";
+            span.innerText = "   " + add_to_cart[k]["discount_percent"] + "%" + "off";
             div.append(span);
 
             
@@ -271,8 +279,8 @@ for ( let k = 0; k < cart.length; k++) {
             input.setAttribute("type", "number");
             input.setAttribute("value", "1");
             input.setAttribute("min", "1");
-            input.setAttribute("data-remove", cart[k]["product_uuid"]);
-            input.setAttribute("data-qty", cart[k]["product_quantity"]);
+            input.setAttribute("data-remove", add_to_cart[k]["product_uuid"]);
+            input.setAttribute("data-qty", add_to_cart[k]["product_quantity"]);
             // input.setAttribute("value", quantity["product_quantity"]);
             p_qty.append(input);
 
@@ -280,7 +288,7 @@ for ( let k = 0; k < cart.length; k++) {
 
             button_remove = document.createElement("button");
             button_remove.setAttribute("class", "remove");
-            button_remove.setAttribute("data-remove", cart[k]["product_uuid"]);
+            button_remove.setAttribute("data-remove", add_to_cart[k]["product_uuid"]);
             button_remove.setAttribute("type", "submit");
             button_remove.innerText = "REMOVE";
             div_container.append(button_remove);
@@ -329,7 +337,7 @@ for ( let k = 0; k < cart.length; k++) {
 
             p_amt = document.createElement("p");
             p_amt.setAttribute("id", "discount_price");
-            p_amt.innerText = "₹" + " " + cart["discount_price"];  
+            p_amt.innerText = "₹" + " " + add_to_cart["discount_price"];  
             div_amt.append(p_amt);
 
             // <p>
@@ -342,7 +350,7 @@ for ( let k = 0; k < cart.length; k++) {
 
             p_amt = document.createElement("p");
             p_amt.setAttribute("id", "discount_price");
-            p_amt.innerText = "₹" + " " + cart[discount_price];  
+            p_amt.innerText = "₹" + " " + add_to_cart[discount_price];  
             p_free.append(p_amt);
 
             // <div>
@@ -382,23 +390,46 @@ for ( let k = 0; k < cart.length; k++) {
 
 
 
+        let users = JSON.parse(localStorage.getItem("user_cred"));
+        console.log(users);
+        let userID = JSON.parse(localStorage.getItem("uniqueID"));
+        console.log(userID);
+        let check_user = users.find(e => e.user_uuid == userID);
+        console.log(check_user);
+
+
+
         let product_quantity = document.querySelectorAll("input.quantity");
 
         product_quantity.forEach(function(add){
+         
           add.addEventListener("click", function () {
-              let productId = this.dataset.remove;
-              localStorage.setItem("products_id", JSON.stringify(productId));
-              console.log(productId);
-              let productid = JSON.parse(localStorage.getItem("products_id"));
-              console.log(productid);
-              let all_products = JSON.parse(localStorage.getItem("cart"));
-              console.log(all_products);
-              let pdts = all_products.find(e => e.product_uuid == productid)
-              console.log(pdts); 
-              let indexOfProduct = all_products.indexOf(pdts);
-              console.log(indexOfProduct); 
+         
+            let productId = this.dataset.remove;
+         
+            localStorage.setItem("products_id", JSON.stringify(productId));
+         
+            console.log(productId);
+         
+            let productid = JSON.parse(localStorage.getItem("products_id"));
+         
+            console.log(productid);
+         
+            let all_products = JSON.parse(localStorage.getItem("cart"));
+         
+            console.log(all_products);
+         
+            let pdts = all_products.find(e => e.product_uuid == productid)
+         
+            console.log(pdts); 
+         
+            let indexOfProduct = all_products.indexOf(pdts);
+         
+            console.log(indexOfProduct); 
 
-              localStorage.setItem("cart", JSON.stringify(all_products));
+                
+
+            localStorage.setItem("cart", JSON.stringify(all_products));
           })
         })
 
@@ -449,6 +480,7 @@ for ( let k = 0; k < cart.length; k++) {
 
 
 </script>
+
 
     </body>
 </html>   
