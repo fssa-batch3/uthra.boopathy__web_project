@@ -54,6 +54,7 @@ h1{
 .login{
     font-size: 25px;
     color: white;
+    cursor: pointer;
 }
 
 .sub-heading{

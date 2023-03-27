@@ -1,6 +1,6 @@
 let origin = window.location.origin;
 let logo_path = origin + "/pages/homepage/frontpage.html";
-let logo = origin + "/assets/images/logo.png";
+let logo =  origin + "/assets/images/logo.png";
 let cart = origin + "/pages/orders/cartpage.html";
 let wishlist = origin + "/pages/orders/wishlistpage.html";
 let orders = origin + "/pages/orders/myorderspage.html";
@@ -50,7 +50,7 @@ let after_login =
         <li><a href= "${orders}"><i class="fa-solid fa-bag-shopping"></i></a></li>
         <li><a href="#"><i class="fa-solid fa-bell"></i></i></a></li>
         <li><a href= "${profile}"><i class="fa-solid fa-circle-user"></i></a></li>
-        <li> <span class="login"> Log out </span> </li>
+        <li> <span class="login" onclick= "logout()"> Log out </span> </li>
       </ul>
   </div>
 
@@ -64,7 +64,7 @@ let after_login =
             <a href= "${orders}"><i class="fa-solid fa-bag-shopping"></i></a>
             <a href="#"><i class="fa-solid fa-bell"></i></i></a>
             <a href= "${profile}"><i class="fa-solid fa-circle-user"></i></a>
-            <span class="login"> Log out </span> 
+            <span class="login" onclick = "logout()"> Log out </span> 
     
      </div>
  </div>
@@ -93,6 +93,6 @@ function logout() {
 
     alert (confirm("Are you sure to log out?"));
 
-    window.location.href = "${login}";
+    userlogin.innerHTML = before_login;
 
 }
