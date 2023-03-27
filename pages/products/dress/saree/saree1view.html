@@ -656,13 +656,30 @@ wish_products.addEventListener("click", function () {
 
     let wishlist = JSON.parse(localStorage.getItem("wish"))||[];
 
+    let exist = wishlist.find(e => e.product_uuid == id);
+
+    if (exist) {
+       
+        alert("This product has already been added");
+    
+    }
+
+    else {
+       
+        wishlist.push(products)
+       
+        localStorage.setItem("wish", JSON.stringify(wishlist));
+       
+        window.location.href = "../../../orders/wishlistpage.html";
+    }
+
     // console.log(products);
 
-    wishlist.push(products)
+    // wishlist.push(products)
 
-    localStorage.setItem("wish", JSON.stringify(wishlist));
+    // localStorage.setItem("wish", JSON.stringify(wishlist));
 
-    window.location.href = "../../../orders/wishlistpage.html";
+    // window.location.href = "../../../orders/wishlistpage.html";
 
 })
 

@@ -72,18 +72,27 @@ let after_login =
 `;
 
 
-function header() {
+      function header() {
+
+            let userId = JSON.parse(localStorage.getItem("uniqueID"));
+            let userlogin = document.getElementById("userLogin");
+
+            if (!userId) {
+            userlogin.innerHTML = before_login;
+            }
+            else {
+            userlogin.innerHTML = after_login;
+            }
 
 
-let userId = JSON.parse(localStorage.getItem("uniqueID"));
-let userlogin = document.getElementById("userLogin");
-
-if (!userId) {
-userlogin.innerHTML = before_login;
-}
-else {
-userlogin.innerHTML = after_login;
-}
+      }
 
 
-}
+      
+      function logout() {
+
+        confirm("Are you sure to log out?");
+        localStorage.removeItem("uniqueID");
+        window.location.href = origin + "/pages/homepage/frontpage.html";
+
+    }

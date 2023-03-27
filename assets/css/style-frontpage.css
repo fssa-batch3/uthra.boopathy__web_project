@@ -107,13 +107,6 @@ section{
     margin-left: 35px;
 }
 
-.icons{
-    overflow-x: scroll;
-}
-
-.icons::-webkit-scrollbar{
-    width: 0px;
-}
 .icons img{
     width: 200px;
     height: 200px;

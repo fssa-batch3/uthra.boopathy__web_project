@@ -172,16 +172,17 @@
 
        </footer>    
 
-       <script src="../../assets/js/header.js"></script>
+       <script src="../../assets/js/header.js"> </script>
 
        <script>
 
         header();
 
-        let wishlist = JSON.parse(localStorage.getItem("wish"));
+
+        let wishlist_products = JSON.parse(localStorage.getItem("wish"));
         console.log(wishlist);
 
-        for (let j = 0; j < wishlist.length; j++) {
+        for (let j = 0; j < wishlist_products.length; j++) {
 
            // <div class = products >
 
@@ -194,7 +195,7 @@
 
             span_del = document.createElement("span");
             span_del.setAttribute("class", "del");
-            span_del.setAttribute("data-del", wishlist[j]["product_uuid"]);
+            span_del.setAttribute("data-del", wishlist_products[j]["product_uuid"]);
             div_products.append(span_del);
             
             // <i> </i>
@@ -207,7 +208,7 @@
             // <img>
 
             img = document.createElement("img");
-            img.setAttribute("src", wishlist[j]["image"]);
+            img.setAttribute("src", wishlist_products[j]["image"]);
             img.setAttribute("alt", "photo");
             img.setAttribute("height", "200px");
             img.setAttribute("width", "180px");
@@ -217,14 +218,14 @@
 
             h3_title = document.createElement("h3");
             h3_title.setAttribute("id", "name")
-            h3_title.innerText = wishlist[j]["name"];
+            h3_title.innerText = wishlist_products[j]["name"];
             div_products.append(h3_title);
 
             // <p> </p>
 
             p_org = document.createElement("p");
             p_org.setAttribute("id", "original_price");
-            p_org.innerText = "₹" + wishlist[j]["discount_price"] + "   ";
+            p_org.innerText = "₹" + wishlist_products[j]["discount_price"] + "   ";
             h3_title.append(p_org);
 
             // <p> </p>
@@ -236,14 +237,14 @@
 
             s = document.createElement("s");
             s.setAttribute("id", "discount_price");
-            s.innerText = "  " + "₹" + wishlist[j]["original_price"];
+            s.innerText = "  " + "₹" + wishlist_products[j]["original_price"];
             p_org.append(s);
 
             // <span> </span>
 
             span = document.createElement("span");
             span.setAttribute("class", "percent");
-            span.innerText = "   " + wishlist[j]["discount_percent"] + "%" + "off";
+            span.innerText = "   " + wishlist_products[j]["discount_percent"] + "%" + "off";
             p_org.append(span);
 
 

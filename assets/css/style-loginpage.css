@@ -154,12 +154,12 @@ input[type="password"]{
     font-weight: bold;
     font-size: 22px;
     position: relative;
-    top: 110px;
+    top: 160px;
 }
 
 p{
     font-size: 20px;
-    margin: 160px 0px 0px 50px;
+    margin: 200px 0px 0px 50px;
 }
 
 .menu{

@@ -3,11 +3,15 @@
     font-family: 'Kreon', serif;
 }
 
+
+body{
+    background-color: rgb(252, 252, 252);
+}
+
 header{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    background-color: purple;
+    background-color: 	purple;
     height: 100px;
     position: sticky;
     top: 0px;
@@ -17,7 +21,6 @@ header{
 header div ul{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
     list-style: none;
     margin-left: 550px;
 }
@@ -27,47 +30,58 @@ header div ul li{
     padding-left: 30px;
 }
 
-header div ul li a{
+.nav a{
      text-decoration: none;
-     color: black;
+     color: white;
+     font-size: 24px;
 }
 
 h1{
     font-size: 50px;
     font-weight: normal;
     padding-left: 60px;
-    position: relative;
-    top: 20px;
+    padding-top: 20px;
     color: white;
 }
 
 .logo{
+    height: 70px;
+    width: 70px;
     margin-top: 15px;
     margin-left: 50px;
     border-radius: 50px;
 }
 
 .login{
-   font-size: 20px;
-   color: white;
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+}
+
+.menu {
+    display: none;
 }
 
 .sub-heading{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    background-color: #F5F5F5;
-    position: sticky;
-    top: 100px;
-    z-index: 10;
+    border-bottom: 1px solid lightgray;
 }
 
 .sub-heading a{
      text-decoration: none;
-     padding-left: 23px;
-     padding-top: 40px;
+     padding-left: 60px;
+     padding-top: 35px;
      color: black;
-     font-size: 19px;
+     font-size: 28px;
+     height: 7vh;
+}
+
+.icon{
+    display: flex;
+    padding-top: 30px;
+    padding-left: 180px;
 }
 
 .dis img:hover{
@@ -94,17 +108,21 @@ h1{
     box-shadow: 5px 10px 18px #888888;
 }
 
-.icon{
+/* .icon{
     display: flex;
     position: relative;
     bottom: 20px;
     padding-top: 50px;
     padding-left: 150px;
-}
+} */
 
 .icons{
-    display: flex;
-    padding-left: 30px;    
+    display: flex;    
+}
+
+.icons a{
+    text-decoration: none;
+    color: black;
 }
 
 input[type=text]{

@@ -26,7 +26,12 @@ header div ul li{
 
 header div ul li a{
      text-decoration: none;
-     color: black;
+     color: white;
+     font-size: 20px;
+}
+
+.menu{
+    display: none;
 }
 
 h1{
@@ -38,14 +43,20 @@ h1{
 }
 
 .logo{
+    height: 70px;
+    width: 70px;
     margin-top: 15px;
     margin-left: 50px;
-    border-radius: 50%;
+    border-radius: 50px;
 }
 
 .login{
    font-size: 20px;
    color: white;
+}
+
+.menu {
+    display: none;
 }
 
 .subheading{
