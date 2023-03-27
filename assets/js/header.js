@@ -93,8 +93,6 @@ function logout() {
 
     alert (confirm("Are you sure to log out?"));
 
-    let userId = JSON.parse(localStorage.getItem("uniqueID"));
-    localStorage.removeItem(userId);
-    window.location.reload;
+    window.location.href = "${login}";
 
 }
