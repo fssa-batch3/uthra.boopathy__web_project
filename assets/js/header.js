@@ -87,12 +87,3 @@ userlogin.innerHTML = after_login;
 
 
 }
-
-
-function logout() {
-
-    alert (confirm("Are you sure to log out?"));
-
-    userlogin.innerHTML = before_login;
-
-}
