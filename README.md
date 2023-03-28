@@ -6,11 +6,65 @@ Userflow:https://drive.google.com/drive/folders/1VSMISK-UdXLBs0pF3YSYDmA8vEh6huD
 
 wireframe:https://drive.google.com/drive/folders/0AOQAOSASrnQ0Uk9PVA
 
+Sonar cloud :
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=fssa-batch3_uthra.boopathy__web_project&metric=bugs)](https://sonarcloud.io/summary/new_code?id=fssa-batch3_uthra.boopathy__web_project)
 
 E-COMMERCE
 
+
+FEATURES :
+
 BUYER:
+
+ACCOUNT CREATING :  ( COMPLETED )
+
+* Sign-up
+* Sign-in
+* View profile
+* Edit profile
+* Sign-out
+
+PRODUCTS :  ( COMPLETED )
+
+* View product list
+* View product detail
+
+CART :  ( COMPLETED )
+
+* Add product
+* View cart products
+* Remove product
+
+WISHLIST :  ( COMPLETED )
+
+* Add product
+* Remove product
+
+
+SELLER :
+
+ACCOUNT CREATING :  ( COMPLETED )
+
+* Sign-up
+* Sign-in
+* View profile
+* Edit profile
+* Sign-out
+
+PRODUCTS :  ( COMPLETED )
+
+* Upload product
+* View product list
+* View product detail
+* Edit product detail
+* Remove product from product list
+* Add product to the product list
+* Delete product
+
+
+USER STORY :
+
+BUYER :
 
 CREATE AN ACCOUNT :  ( COMPLETED )
 
@@ -73,20 +127,6 @@ VIEW PRODUCT/ITEM DETAIL :  ( COMPLETED )
         3. Select a product/item to view its details.
     * Expected result:
         * The user can view the details of the selected product/item. 
-
-BUY A PRODUCT/ITEM :  ( NOT YET STARTED )
-
-* Scenario 1: Successfully purchase a product/item
-    * Steps :
-        1. Login as a buyer.
-        2. Navigate to the product listing page.
-        3. Select a product/item to view its details.
-        4. Click the "Buy Now" button.
-        5. Confirm the shipping address and payment method.
-        6. Click the "Place Order" button.
-    * Expected result:
-        * An order confirmation message is sent to the user's phone number.
-        * The product/item's stock is reduced by the purchased quantity.
 
 ADD PRODUCT/ITEM TO THE CART :  ( COMPLETED )
 
@@ -255,25 +295,3 @@ ADD PRODUCT TO THE USER SIDE :  ( COMPLETED )
         3. Click "Add" button to add the selected product to the user side.
     * Expected result :
         * The selected product is added to the user side.
-
-VIEW LIST OF ORDERS :  ( NOT YET STARTED )
-
-* Scenario 1: Successfully view list of orders
-    * Steps:
-        1. Login as a seller.
-        2. Navigate to the orders page.
-        3. View the list of orders.
-    * Expected result:
-        * The seller can view the list of orders.
-
-
-VIEW ORDER DETAILS :  ( NOT YET STARTED )
-
-* Scenario 1: Successfully view order details
-    * Steps:
-        1. Login as a seller.
-        2. Navigate to the orders page.
-        3. Select an order to view.
-        4. Click the "View Order" button.
-    * Expected Result:
-        * The seller can view the details of the selected order.
