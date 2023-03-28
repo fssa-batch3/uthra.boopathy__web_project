@@ -6,7 +6,7 @@ Userflow:https://drive.google.com/drive/folders/1VSMISK-UdXLBs0pF3YSYDmA8vEh6huD
 
 wireframe:https://drive.google.com/drive/folders/0AOQAOSASrnQ0Uk9PVA
 
-
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=fssa-batch3_uthra.boopathy__web_project&metric=bugs)](https://sonarcloud.io/summary/new_code?id=fssa-batch3_uthra.boopathy__web_project)
 
 E-COMMERCE
 
