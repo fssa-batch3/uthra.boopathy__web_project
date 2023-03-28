@@ -1,8 +1,6 @@
-if ( localStorage.getItem("add_products") ) {
-    return;
-}
 
-else {
+let products = localStorage.getItem("add_products") ;
+if(!products) {
 
     localStorage.setItem("add_products", JSON.stringify(
         [
