@@ -5,6 +5,7 @@ let cart = origin + "/pages/orders/cartpage.html";
 let wishlist = origin + "/pages/orders/wishlistpage.html";
 let orders = origin + "/pages/orders/myorderspage.html";
 let profile = origin + "/pages/homepage/profile.html";
+let sign_up = origin + "/pages/homepage/registerpage.html";
 let login = origin + "/pages/homepage/loginpage.html";
 
 let before_login = 
@@ -12,12 +13,8 @@ let before_login =
 <a href= "${logo_path}"> <img class="logo" src= "${logo}" alt="logo" /> </a>
 <h1> Thara's World </h1>
   <div class="nav">
-     <ul>
-        <li> <a href= "${cart}"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a></li>
-        <li> <a href= "${wishlist}"><i class="fa-sharp fa-solid fa-heart"></i></a></li> 
-        <li><a href= "${orders}"><i class="fa-solid fa-bag-shopping"></i></a></li>
-        <li><a href="#"><i class="fa-solid fa-bell"></i></i></a></li>
-        <li><a href= "${profile}"><i class="fa-solid fa-circle-user"></i></a></li>
+     <ul> 
+        <li><a href = "${sign_up}"><span class="login"> Sign up </span> </a> </li>
         <li> <a href= "${login}"><span class="login"> Login </span> </a></li>
       </ul>
   </div>
@@ -26,12 +23,7 @@ let before_login =
     
     <i class="fa-solid fa-bars"></i>               
      <div class="menu-list">
-        
-            <a href= "${cart}"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
-            <a href= "${wishlist}"><i class="fa-sharp fa-solid fa-heart"></i></a>
-            <a href= "${orders}"><i class="fa-solid fa-bag-shopping"></i></a>
-            <a href="#"><i class="fa-solid fa-bell"></i></i></a>
-            <a href= "${profile}"><i class="fa-solid fa-circle-user"></i></a>
+            <a href = "${sign_up}"><span class="login"> Sign up </span> </a>
             <a href= "${login}"><span class="login"> Login </span> </a>
     
      </div>

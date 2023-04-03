@@ -245,7 +245,7 @@ for ( let k = 0; k < add_to_cart.length; k++) {
 
             s = document.createElement("s");
             s.setAttribute("id", "discount_price");
-            s.innerText = "  " + "₹" + add_to_cart[k]["original_price"];
+            s.innerText = "  " + "₹" + add_to_cart[k]["product_quantity"] * add_to_cart[k]["original_price"];
             div.append(s);
 
             // <span> </span>
@@ -394,7 +394,7 @@ for ( let k = 0; k < add_to_cart.length; k++) {
         console.log(users);
         let userID = JSON.parse(localStorage.getItem("uniqueID"));
         console.log(userID);
-        let check_user = users.find(e => e.user_uuid == userID);
+        let check_user = users.find(e => e.user_uuid === userID);
         console.log(check_user);
 
 
@@ -419,7 +419,7 @@ for ( let k = 0; k < add_to_cart.length; k++) {
          
             console.log(all_products);
          
-            let pdts = all_products.find(e => e.product_uuid == productid)
+            let pdts = all_products.find(e => e.product_uuid === productid)
          
             console.log(pdts); 
          
@@ -427,9 +427,13 @@ for ( let k = 0; k < add_to_cart.length; k++) {
          
             console.log(indexOfProduct); 
 
+            
                 
 
             localStorage.setItem("cart", JSON.stringify(all_products));
+
+            window.location.reload();
+
           })
         })
 

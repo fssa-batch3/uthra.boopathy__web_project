@@ -49,6 +49,7 @@ h1{
 .login{
    font-size: 20px;
    color: white;
+   cursor: pointer;
 }
 
 .menu {
