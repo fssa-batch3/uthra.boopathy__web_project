@@ -115,28 +115,6 @@
 
                 header();
 
-                // const user_name = localStorage.getItem("user_name");
-                // const user_age = localStorage.getItem("user_age");
-                // const user_gender = localStorage.getItem("user_gender");
-                // const user_phonenumber = localStorage.getItem("user_phonenumber");
-                // const user_email = localStorage.getItem("user_email");
-                // const user_des = localStorage.getItem("user_des");
-
-                // console.log(name);
-                // console.log(age);
-                // console.log(gender);
-                // console.log(phonenumber);
-                // console.log(email);
-                // console.log(designation);
-
-                // document.getElementById("name").innerText = user_name
-                // document.getElementById("age").innerText = user_age
-                // document.getElementById("gender").innerText = user_gender
-                // document.getElementById("phonenumber").innerText = user_phonenumber
-                // document.getElementById("email").innerText = user_email
-                // document.getElementById("designation").innerText = user_des
-
-
                 
             let uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
             let user_cred = JSON.parse(localStorage.getItem("user_cred"));
@@ -155,19 +133,6 @@
 
         function back () {
 
-            // let uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
-            // let user_cred = JSON.parse(localStorage.getItem("user_cred"));
-            // function profile_data(e){
-            //     return e.phonenumber == uniqueID;
-            // }
-            // person_data = user_cred.find(profile_data);
-            // document.getElementById("uname").value = person_data["uname"];
-            // document.getElementById("email").value = person_data["email"];
-            // document.getElementById("phonenumber").value = person_data["phonenumber"];
-            // document.getElementById("age").value = person_data["age"];
-            // document.getElementById("address").value = person_data["address"];
-            // document.getElementById("des").value = person_data["des"];
-            // document.getElementById("gender").value = person_data["gender"];
 
             if (person_data["des"] == "Seller") {
                 window.location.href = "../homepage/sellerpage.html";
@@ -177,7 +142,7 @@
             }
         }
 
-        console.log(function back(){});
+        // console.log(function back(){});
             
 
 

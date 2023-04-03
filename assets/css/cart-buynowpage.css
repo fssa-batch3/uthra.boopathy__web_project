@@ -169,7 +169,7 @@ strong{
     top: 155px;
 }
 
-.c1{
+/* .c1{
     position: relative;
     margin-left: 85px;
 }
@@ -177,7 +177,7 @@ strong{
 .c2{
     position: relative;
     margin-left: 85px;
-}
+} */
 
 input[type="name"]{
     height: 25px;
@@ -185,15 +185,25 @@ input[type="name"]{
     font-size: 15px;
     border: 1px solid gray;
     border-radius: 3px;
-    padding-left: 25px;
     position: relative;
     left: 120px;
     outline: none;
 }
 
-input[type="text"]{
-    height: 25px;
+select{
+    height: 30px;
     width: 200px;
+    font-size: 15px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    position: relative;
+    left: 95px;
+    outline: none;
+}
+
+textarea{
+    height: 30px;
+    width: 180px;
     font-size: 15px;
     border: 1px solid gray;
     border-radius: 3px;
@@ -205,13 +215,13 @@ input[type="text"]{
 
 input[type="no"]{
     height: 25px;
-    width: 200px;
+    width: 180px;
     font-size: 15px;
     border: 1px solid gray;
     border-radius: 3px;
     padding-left: 25px;
     position: relative;
-    left: 45px;
+    left: 40px;
     outline: none;
 }
 
@@ -227,14 +237,6 @@ input[type="number"]{
     outline: none;
 }
 
-.on{
-    font-size: 20px;
-    position: relative;
-    left: 185px;
-    bottom: 22px;
-
-}
-
 .place{
     height: 50px;
     width: 200px;
@@ -242,9 +244,8 @@ input[type="number"]{
     background-color: purple;
     border-radius: 5px;
     color: white;
-    position: relative;
-    top: 200px;
-    left: 170px;
+    margin-top: 250px;
+    margin-left: 90px;
 }
 
 footer{
@@ -363,33 +364,6 @@ footer{
     color: white;
 }
 
-.collections img{
-    border-radius: 150px;
-    padding: 40px;
-}
-
-.icons div{
-    position: relative;
-}
-
-.div{
-    font-size: 25px;
-    font-weight: bold;
-    margin-left: 70px;
-    display: inline-flex;
-    bottom: 20px;
-}
-
-.divs{
-    font-size: 25px;
-    font-weight: bold;
-    margin-left: 90px;
-    bottom: 20px;
-}
-
-.divss{
-    font-size: 25px;
-    font-weight: bold;
-    margin-left: 100px;
-    bottom: 20px;
+.menu {
+    display: none;
 }

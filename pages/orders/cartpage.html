@@ -278,10 +278,10 @@ for ( let k = 0; k < add_to_cart.length; k++) {
             input.setAttribute("class", "quantity");
             input.setAttribute("type", "number");
             input.setAttribute("value", "1");
+            input.setAttribute("id", "product_quantity")
             input.setAttribute("min", "1");
             input.setAttribute("data-remove", add_to_cart[k]["product_uuid"]);
             input.setAttribute("data-qty", add_to_cart[k]["product_quantity"]);
-            // input.setAttribute("value", quantity["product_quantity"]);
             p_qty.append(input);
 
             // < button class = "remove" > </button>
@@ -390,13 +390,6 @@ for ( let k = 0; k < add_to_cart.length; k++) {
 
 
 
-        let users = JSON.parse(localStorage.getItem("user_cred"));
-        console.log(users);
-        let userID = JSON.parse(localStorage.getItem("uniqueID"));
-        console.log(userID);
-        let check_user = users.find(e => e.user_uuid === userID);
-        console.log(check_user);
-
 
 
         let product_quantity = document.querySelectorAll("input.quantity");
@@ -427,12 +420,11 @@ for ( let k = 0; k < add_to_cart.length; k++) {
          
             console.log(indexOfProduct); 
 
-            
-                
+            document.getElementById("product_quantity").value = pdts["product_quantity"];
 
             localStorage.setItem("cart", JSON.stringify(all_products));
 
-            window.location.reload();
+            // window.location.reload();
 
           })
         })

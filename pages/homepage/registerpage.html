@@ -13,8 +13,8 @@
 
 </head>
 <body>
-    <header>
-        <img class="logo" src="../../assets/images/logo.png" alt="logo" height="70px" width="70px"/>
+    <header id="userLogin">
+        <!-- <img class="logo" src="../../assets/images/logo.png" alt="logo" height="70px" width="70px"/>
         <h1> Thara's World </h1>
         <div class="nav">
             <ul>
@@ -40,7 +40,7 @@
                    <a href="loginpage.html"><span class="login"> Login </span> </a>
            
             </div>
-        </div>
+        </div> -->
     </header>
     
     <section>
@@ -61,6 +61,7 @@
                 <div>
                     <label> Create Password: </label>
                     <input type="password" id="password" required="true" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
+                    <p> (Pattern: Include uppercase, lowercase, number and special characters) </p>
                 </div>
 
                 <div class="confirm">
@@ -75,160 +76,13 @@
     
     </section> 
 
+    <script src="../../assets/js/header.js"> </script>
+
+    <script>
+        header();
+    </script>
+
     <script> 
-        
-
-        // storing input from register-form
-
-
-            // function store() {
-            //     let usrName = document.getElementById('uname').value;
-            //     let usrPw = document.getElementById('uPassword').value;
-            //     let usrPhoneNumber = document.getElementById('uPhonenumber').value;
-
-
-            //     localStorage.setItem('usrName', uname.value);
-            //     localStorage.setItem('usrPw', uPassword.value);
-            //     localStorage.setItem('usrPhoneNumber' , uPhonenumber.value);
-
-
-            //     let stored_users = JSON.parse(localStorage.getItem('users'));
-
-
-            //         if(stored_users) {
-
-            //              stored_users.push({name: usrName, password: usrPw, phonenumber: usrPhoneNumber});
-
-            //              localStorage.setItem('users', JSON.stringify(stored_users));
-            //          }
-            //        else {
-            //              localStorage.setItem('users', JSON.stringify([{name: usrName, password: usrPw, phonenumber: usrPhoneNumber}]));
-            //        }
-
-            //        window.location.href = "../homepage/loginpage.html";
-
-
-            // }
-
-
-            // Storing data in registerpage
-
-        //     function store() {
-
-        //     let usrname = document.getElementById('uname').value;
-        //     let usrphone = document.getElementById('uPhonenumber').value;
-        //     let usrpw = document.getElementById('uPassword').value;
-        //     let usrcpw = document.getElementById('cpwd').value; 
-
-        //     console.log(uname);
-        //     console.log(uPassword);
-        //     console.log(cpwd);
-        //     console.log(uPhonenumber);
-
-
-        //     localStorage.setItem('usrname', uname.value);
-        //     localStorage.setItem('usrpw', uPassword.value);
-        //     localStorage.setItem('usrcpw', cpwd.value);
-        //     localStorage.setItem('usrphone', uPhonenumber.value);
-
-
-        //     let pwd_expression = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-{6,10}])/;
-		//     let letters = /^[A-Za-z]+$/;
-        //     let number = /^[0-9{1,13}]/;
-		//     // let email = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-
-
-        //     let stored_users = JSON.parse(localStorage.getItem('stored_users'));
-
-
-        //     if (stored_users) {
-        //         for (let u = 0; u < stored_users.length; u++){
-        //                if (uPhonenumber == stored_users.uPhonenumber) {
-        //                    alert('Invalid Phonenumber');
-
-        //                }
-        //            } 
-        //         stored_users.push ( { name: usrname, phonenumber: usrphone, password: usrpw } );
-        //         localStorage.setItem('stored_users', JSON.stringify(stored_users));
-        //     }
-
-        //     else {
-        //         localStorage.setItem('stored_users', JSON.stringify([{name: usrname, phonenumber: usrphone, password: usrpw}]));
-
-        //         if (usrname==''){
-        //         alert('Please enter your name');
-        //     }
-        //     else if(!letters.test(usrname)){
-        //         alert('Name starts with an alphabet letter');
-        //     }
-        //     else if(!number.test(usrphone)){
-        //         alert('Invalid Phonenumber');
-        //     }
-        //     else if(usrpw=='')
-        //     {
-        //         alert('Please enter Password');
-        //     }
-        //     else if(usrcpw=='')
-        //     {
-        //         alert('Enter Confirm Password');
-        //     }
-        //     else if(!pwd_expression.test(usrpw))
-        //     {
-        //         alert ('Upper case, Lower case, Special character and Numeric letter are required in Password filed');
-        //     }
-        //     else if(usrpw != usrcpw)
-        //     {
-        //         alert ('Password not Matched');
-        //     }
-        //     else{
-        //         alert('Your account has been created');
-        //         window.location.href = "../homepage/loginpage.html";
-
-        //     }
-
-        //     }
-
-           
-
-            
-
-        // }
-
-
-
-        // const signUp = e => {
-        //     let phonenumber = document.getElementById("phonenumber").value;
-        //         cpwd = document.getElementById("cpwd").value;
-        //       password = document.getElementById("password").value;
-        //      name = document.getElementById("name").value;
-        //     let user_cred = JSON.parse(localStorage.getItem('user_cred')) || [];
-        //     let exist = user_cred.length &&
-        //         JSON.parse(localStorage.getItem('user_cred')).some(data =>
-        //             data.phonenumber == phonenumberx
-        //         );
-        //     if(!exist){
-        //       if(password == cpwd){
-        //         user_cred.push({name,phonenumber,cpwd,password});
-        //         localStorage.setItem('user_cred',JSON.stringify(user_cred));
-        //         console.log(localStorage.getItem('user_cred'));
-        //         document.querySelector('form').reset();
-        //         document.getElementById('phonenumber').focus();
-        //         alert('Account created successfully');
-        //         location.href = "../homepage/loginpage.html";
-        //     }
-        //       else{
-        //         alert("Confirm password does not match")
-        //       }
-        //     }
-        //     else {
-        //         alert('Sorry the User already exists! \n Try with a new Email.');
-        //         document.querySelector('form').reset();
-        //     }
-        //     e.preventDefault();
-        //   }
-
-
-
 
 
         function signUp(e) {

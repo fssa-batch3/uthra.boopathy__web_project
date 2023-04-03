@@ -40,11 +40,11 @@ h1{
 }
 
 .logo{
-    margin-top: 25px;
+    margin-top: 15px;
     margin-left: 50px;
     border-radius: 50px;
-    position: relative;
-    bottom: 10px;
+    /* position: relative;
+    bottom: 10px; */
     height: 70px;
     width: 70px;
 }
@@ -52,6 +52,7 @@ h1{
 .login{
     font-size: 20px;
     color: white;
+    cursor: pointer;
 }
 
 section{
@@ -84,7 +85,7 @@ section img{
 
 input[type="text"]{
     height: 30px;
-    width: 230px;
+    width: 220px;
     border: 1px solid gray;
     border-radius: 3px;
     position: relative;
@@ -150,7 +151,7 @@ input[type="text"]{
 
 input[type="email"]{
     height: 30px;
-    width: 225px;
+    width: 219px;
     border: 1px solid gray;
     font-size: 15px;
     position: relative;
@@ -160,9 +161,9 @@ input[type="email"]{
 
 input[type="number"]{
     height: 30px;
-    width: 200px;
+    width: 218px;
     border: 1px solid gray;
-    padding-left: 25px;
+    /* padding-left: 25px; */
     font-size: 15px;
     position: relative;
     left: 47px;
@@ -171,9 +172,9 @@ input[type="number"]{
 
 input[id="age"]{
     height: 30px;
-    width: 200px;
+    width: 218px;
     border: 1px solid gray;
-    padding-left: 25px;
+    /* padding-left: 25px; */
     font-size: 15px;
     position: relative;
     left: 140px;
@@ -182,9 +183,9 @@ input[id="age"]{
 
 textarea{
     height: 30px;
-    width: 200px;
+    width: 218px;
     border: 1px solid gray;
-    padding-left: 25px;
+    /* padding-left: 25px; */
     font-size: 15px;
     position: relative;
     left: 20px;
@@ -204,7 +205,7 @@ textarea{
 
 select{
     height: 37px;
-    width: 235px;
+    width: 225px;
 }
 
 .btn-1{
