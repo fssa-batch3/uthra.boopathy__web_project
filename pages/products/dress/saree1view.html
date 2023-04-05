@@ -156,10 +156,10 @@
          <div class="contact">  
                
                <div class="socials"> <span class="con"> Contact us </span>
-                 <div class="insta"> <i class="fa fa-instagram" style="font-size:23px"></i> </div>
-                 <div class="fb"> <i class="fa fa-facebook-f" style="font-size:23px"></i> </div>
-                 <div class="twiter"> <i class="fa fa-twitter" style="font-size:23px"></i> </div>
-                 <div class="wa"> <i class="fa fa-whatsapp" style="font-size:23px"></i> </div>
+                 <div class="insta"> <i class="fa-brands fa-instagram" style="font-size:23px"></i> </div>
+                 <div class="fb"> <i class="fa-brands fa-facebook-f" style="font-size:23px"></i> </div>
+                 <div class="twiter"> <i class="fa-brands fa-twitter" style="font-size:23px"></i> </div>
+                 <div class="wa"> <i class="fa-brands fa-whatsapp" style="font-size:23px"></i> </div>
                </div>    
                <div><p>Copy rights @ 2022</p></div>
          </div>
@@ -386,8 +386,6 @@ let strong_add;
 let div_add;
 let p_add;
 
-
-// for (let k = 0; k < add_product.length; k++ ) {
 
 // <div class = "left" > </div>
 
@@ -690,7 +688,7 @@ wish_products.addEventListener("click", function () {
        
         localStorage.setItem("wish", JSON.stringify(wishlist));
        
-        window.location.href = "../../orders/wishlist.html";
+        window.location.href = "../../orders/wishlistpage.html";
     }
     }
     else {
@@ -705,16 +703,23 @@ wish_products.addEventListener("click", function () {
 
 // BUY NOW
 
+
+let buy_now = document.querySelector("button.buy");
+
+    buy_now.addEventListener("click", function () {
+
     let user_id = JSON.parse(localStorage.getItem("uniqueID"));
     
     let users = JSON.parse(localStorage.getItem("user_cred"));
+
+    let productDetail = JSON.parse(localStorage.getItem("productDetail"));
 
     let checking = users.find(e => e.phonenumber === user_id);
 
 
     if (checking) {
 
-        window.location.href = "../../orders/cart-buynowpage.html";
+        window.location.href = `../../orders/cart-buynowpage.html?product_id=${productDetail}`;
 
     }
 
@@ -724,7 +729,7 @@ wish_products.addEventListener("click", function () {
     
     }
 
-
+})
 
 
      </script>
