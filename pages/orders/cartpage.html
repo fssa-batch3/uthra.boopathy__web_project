@@ -195,22 +195,26 @@
 <script>
 
 let add_to_cart = JSON.parse(localStorage.getItem("cart"));
-console.log(cart);
+// console.log(cart);
+
+let unique_id = JSON.parse(localStorage.getItem("uniqueID"));
+
+let check_pdt = add_to_cart.filter(e => e.buyer_id === unique_id);
+// console.log(check_pdt); 
 
 
-for ( let k = 0; k < add_to_cart.length; k++) {
+for ( let k = 0; k < check_pdt.length; k++) {
 
             // <div class = products >
 
             div_container  = document.createElement("div");
             div_container.setAttribute("class", "container");
-            div_container.setAttribute("data-id", add_to_cart[k]["product_uuid"]);
             console.log(div_container);
 
             // <img>
             
             img = document.createElement("img");
-            img.setAttribute("src", add_to_cart[k]["image"]);
+            img.setAttribute("src", check_pdt[k]["image"]);
             img.setAttribute("alt", "photo");
             img.setAttribute("height", "200px");
             img.setAttribute("width", "180px");
@@ -226,7 +230,7 @@ for ( let k = 0; k < add_to_cart.length; k++) {
 
             h3_title = document.createElement("h3");
             h3_title.setAttribute("id", "name")
-            h3_title.innerText = add_to_cart[k]["name"];
+            h3_title.innerText = check_pdt[k]["name"];
             div_details.append(h3_title);
 
             // <div> </div>
@@ -234,25 +238,26 @@ for ( let k = 0; k < add_to_cart.length; k++) {
             div = document.createElement("div");
             h3_title.append(div);
 
-            // <p> </p>
+
+            // <p> </p>           
 
             p_org = document.createElement("p");
             p_org.setAttribute("id", "original_price");
-            p_org.innerText = "₹" + add_to_cart[k]["discount_price"] + "   ";
+            p_org.innerText = "₹" +  check_pdt[k]["product_quantity"] * check_pdt[k]["discount_price"] + "   ";
             div.append(p_org);
 
             // <s> </s>
 
             s = document.createElement("s");
             s.setAttribute("id", "discount_price");
-            s.innerText = "  " + "₹" + add_to_cart[k]["product_quantity"] * add_to_cart[k]["original_price"];
+            s.innerText = "  " + "₹" + check_pdt[k]["original_price"];
             div.append(s);
 
             // <span> </span>
 
             span = document.createElement("span");
             span.setAttribute("class", "percent");
-            span.innerText = "   " + add_to_cart[k]["discount_percent"] + "%" + "off";
+            span.innerText = "   " + check_pdt[k]["discount_percent"] + "%" + "off";
             div.append(span);
 
             
@@ -277,18 +282,17 @@ for ( let k = 0; k < add_to_cart.length; k++) {
             input = document.createElement("input");
             input.setAttribute("class", "quantity");
             input.setAttribute("type", "number");
-            input.setAttribute("value", "1");
+            input.setAttribute("value", check_pdt[k]["product_quantity"]);
             input.setAttribute("id", "product_quantity")
             input.setAttribute("min", "1");
-            input.setAttribute("data-remove", add_to_cart[k]["product_uuid"]);
-            input.setAttribute("data-qty", add_to_cart[k]["product_quantity"]);
+            input.setAttribute("data-remove", check_pdt[k]["product_id"]);
             p_qty.append(input);
 
             // < button class = "remove" > </button>
 
             button_remove = document.createElement("button");
             button_remove.setAttribute("class", "remove");
-            button_remove.setAttribute("data-remove", add_to_cart[k]["product_uuid"]);
+            button_remove.setAttribute("data-remove", check_pdt[k]["product_id"]);
             button_remove.setAttribute("type", "submit");
             button_remove.innerText = "REMOVE";
             div_container.append(button_remove);
@@ -298,107 +302,99 @@ for ( let k = 0; k < add_to_cart.length; k++) {
 
 }
 
-            // // <div class = "total" > </div>
+  // let sum = check_pdt;
 
-            // div_total = document.createElement("div");
-            // div_total.setAttribute("class", "total");
-            // console.log(div_total);
+  let total = 0;
+  
+  for (let l=0; l<check_pdt.length; l++){
 
-            // // <div></div>
+    total += check_pdt[l]["discount_price"] * check_pdt[l]["product_quantity"];
 
-            // div_price = document.createElement("div");
-            // div_total.append(div_price);
+  }
 
-            // // <p>
+  console.log(total);
+
+
+            // <div class = "total" > </div>
+
+            div_total = document.createElement("div");
+            div_total.setAttribute("class", "total");
+            console.log(div_total);
+
+            // <div></div>
+
+            div_price = document.createElement("div");
+            div_total.append(div_price);
+
+            // <p>
              
-            // p_sub = document.createElement("p");
-            // p_sub.innerText = "SUB TOTAL:";
-            // div_price.append(p_sub);
+            p_sub = document.createElement("p");
+            p_sub.innerText = "SUB TOTAL:";
+            div_price.append(p_sub);
 
-            // // <p>
+            // <p>
 
-            // p_del = document.createElement("p");
-            // p_del.innerText = "DELIVERY CHARGE:";
-            // p_sub.append(p_del);
+            p_del = document.createElement("p");
+            p_del.innerText = "DELIVERY CHARGE:";
+            p_sub.append(p_del);
 
-            // // <p> 
+            // <p> 
 
-            // p_t_a = document.createElement("p");
-            // p_t_a.innerText = "TOTAL AMOUNT:";
-            // p_del.append(p_t_a);
+            p_t_a = document.createElement("p");
+            p_t_a.innerText = "TOTAL AMOUNT:";
+            p_del.append(p_t_a);
 
-            // //  <div> <div>
+            //  <div> <div>
               
-            // div_amt = document.createElement("div");
-            // div_total.append(div_amt);
-            // console.log(div_amt);
+            div_amt = document.createElement("div");
+            div_total.append(div_amt);
+            console.log(div_amt);
             
-            // // <p>
+            // <p>
 
-            // p_amt = document.createElement("p");
+            p_amt = document.createElement("p");
             // p_amt.setAttribute("id", "discount_price");
-            // p_amt.innerText = "₹" + " " + add_to_cart["discount_price"];  
-            // div_amt.append(p_amt);
+            p_amt.innerText = "₹" + " " + total;  
+            div_amt.append(p_amt);
 
-            // // <p>
+            // <p>
 
-            // p_free = document.createElement("p");
-            // p_free.innerText = "FREE";
-            // p_amt.append(p_free);
+            p_free = document.createElement("p");
+            p_free.innerText = "FREE";
+            p_amt.append(p_free);
 
-            // // <p>
+            // <p>
 
-            // p_amt = document.createElement("p");
-            // p_amt.setAttribute("id", "discount_price");
-            // p_amt.innerText = "₹" + " " + add_to_cart[discount_price];  
-            // p_free.append(p_amt);
+            p_amt = document.createElement("p");
+            p_amt.setAttribute("class", "total_amt");
+            p_amt.innerText = "₹" + " " + total;  
+            p_free.append(p_amt);
 
-            // // <div>
+            // <div>
 
-            // div_btn = document.createElement("div");
-            // div_total.append(div_btn);  
+            div_btn = document.createElement("div");
+            div_total.append(div_btn);  
 
-            // // < button class = "buy" > </button>
+            // < button class = "buy" > </button>
 
-            // button_buy = document.createElement("button");
-            // button_buy.setAttribute("class", "buy");
-            // button_buy.innerText = "BUY NOW";
-            // div_btn.append(button_buy);
+            button_buy = document.createElement("button");
+            button_buy.setAttribute("class", "buy");
+            button_buy.innerText = "BUY NOW";
+            div_btn.append(button_buy);
 
-            // document.querySelector("section").append(div_total);   
+            document.querySelector("section").append(div_total);   
             
             
 
-        //     let pdt_qty = document.querySelectorAll(".quantity");
-        
-        //     pdt_qty.forEach(function (find) {
-            
-        //       find.addEventListener('click', function () {
-        //         let parent = this.closest(".cart-list");
-        //         let cart_quantity = parent.querySelector(".quantity").value
-        //         let cart_product = JSON.parse(localStorage.getItem("cart"));
-
-        //         // let items = parent.querySelector(".btn").getAttribute("data-id");
-        //         // let cart_items = cart_product.filter(product => items === product.product_uuid);
-        //         // if (cart_items) {
-        //         //     cart_items[0].product_quantity = cart_quantity;
-        //         //     localStorage.setItem("cart_list", JSON.stringify(cart_product));
-        //         // }
-        //         // window.location.reload();
-        //     });
-        // });
 
 
-
-
-
-        let product_quantity = document.querySelectorAll("input.quantity");
+        let product_quantity = document.querySelectorAll(".quantity");
 
         product_quantity.forEach(function(add){
          
-          add.addEventListener("click", function () {
-         
-            let productId = this.dataset.remove;
+          add.addEventListener("change", function(calcus){
+
+           let productId = this.dataset.remove;
          
             localStorage.setItem("products_id", JSON.stringify(productId));
          
@@ -406,72 +402,91 @@ for ( let k = 0; k < add_to_cart.length; k++) {
          
             let productid = JSON.parse(localStorage.getItem("products_id"));
          
-            console.log(productid);
+            // console.log(productid);
          
             let all_products = JSON.parse(localStorage.getItem("cart"));
          
-            console.log(all_products);
+            // console.log(all_products);
          
-            let pdts = all_products.find(e => e.product_uuid === productid)
+            let pdts = all_products.find(e => e.product_id === productid)
          
-            console.log(pdts); 
-         
-            let indexOfProduct = all_products.indexOf(pdts);
-         
-            console.log(indexOfProduct); 
+            // console.log(pdts); 
+    
+            // let ogPrice = pdts[document.getElementById("original_price").value]
+            let ogPrice = pdts["discount_price"]
+            console.log(ogPrice)
 
-            document.getElementById("product_quantity").value = pdts["product_quantity"];
+            let parent = this.closest(".container")
+            
+            console.log(parent)
+
+            let qauntity = parent.querySelector(".quantity").value
+   
+            // let qauntity= document.getElementById("product_quantity").value
+            console.log(qauntity);
+
+            const cartPrice = ogPrice * qauntity
+            // console.log(cartPrice)
+    
+            ogPrice = cartPrice
+            console.log(ogPrice);
+
+            pdts["product_quantity"] = qauntity;
+
 
             localStorage.setItem("cart", JSON.stringify(all_products));
 
-            // window.location.reload();
-
-          })
+            location.reload();
+    
+            })
         })
 
 
 
+            // function remove_pdt () {
 
- let products = document.querySelectorAll("button.remove")
-            
-          
-               products.forEach(function(check){
-            
-                check.addEventListener("click", function (){
-            
-                    let product_id = this.dataset.remove;
-            
-                    localStorage.setItem("products_id", JSON.stringify(product_id));
-            
-                    console.log(product_id);
-            
-                    if (confirm("Are you sure to remove this product?")){
-            
-                        let id = JSON.parse(localStorage.getItem("products_id"));
-            
-                        let all_products = JSON.parse(localStorage.getItem("cart"));
-            
-                        console.log(all_products);
-            
-                        let pdts = all_products.find(e => e.product_uuid == id)
-            
-                        console.log(pdts);
-            
-                        let indexOfProduct = all_products.indexOf(pdts);
-            
-                        all_products.splice(indexOfProduct, 1);
-            
-                        console.log(indexOfProduct); 
-            
-                        localStorage.setItem("cart", JSON.stringify(all_products));
-            
-                    }
+              let products = document.querySelectorAll("button.remove")
+                      
+            products.forEach(function(check){
+         
+             check.addEventListener("click", function (){
+         
+                 let product_id = this.dataset.remove;
+         
+                 localStorage.setItem("products_id", JSON.stringify(product_id));
+         
+                 console.log(product_id);
+         
+                 if (confirm("Are you sure to remove this product?")){
+         
+                     let id = JSON.parse(localStorage.getItem("products_id"));
+         
+                     let all_products = JSON.parse(localStorage.getItem("cart"));
+         
+                     console.log(all_products);
+         
+                     let pdts = all_products.find(e => e.product_id == id)
+         
+                     console.log(pdts);
+         
+                     let indexOfProduct = all_products.indexOf(pdts);
+         
+                     all_products.splice(indexOfProduct, 1);
+         
+                     console.log(indexOfProduct); 
+         
+                     localStorage.setItem("cart", JSON.stringify(all_products));
+         
+                 }
 
-                    window.location.reload();
-            
-                });
-            
-            });
+                 window.location.reload();
+         
+             });
+         
+         })
+
+
+            // }
 
 
 

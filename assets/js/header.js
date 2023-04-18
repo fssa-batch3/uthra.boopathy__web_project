@@ -83,8 +83,8 @@ let after_login =
       
       function logout() {
 
-        confirm("Are you sure to log out?");
+        if(confirm("Are you sure to log out?")){
         localStorage.removeItem("uniqueID");
         window.location.href = origin + "/pages/homepage/frontpage.html";
-
+      }
     }

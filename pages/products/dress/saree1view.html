@@ -619,20 +619,34 @@ cart_products.addEventListener("click", function () {
     console.log(all_products);
 
     let products = all_products.find(e => e.product_uuid == id);
+    console.log(products);
 
     let add_to_cart = JSON.parse(localStorage.getItem("cart"))||[];
 
-    let exist = add_to_cart.find(e => e.product_uuid == id);
+    // let exist = add_to_cart.find(e => e.product_uuid == id);
+    // console.log(exist);
 
-    if(exist){
+
+
+    // if(exist){
        
-        alert("This product has already been added");
+    //     alert("This product has already been added");
     
-    }
+    // }
 
-    else {
+    // else {
        
-        add_to_cart.push(products);
+        add_to_cart.push({"image" : products["image"],
+                          "name" : products["name"],
+                          "original_price" : products["original_price"],
+                          "discount_percent" : products["discount_percent"],
+                          "discount_price" : products["discount_price"],
+                          "product_quantity" : 1,   
+                          "seller_id" : products["user_id"], 
+                          "buyer_id" : unique_id,
+                          "product_id" : products["product_uuid"]});
+
+
        
         localStorage.setItem("cart", JSON.stringify(add_to_cart));
        
@@ -640,7 +654,7 @@ cart_products.addEventListener("click", function () {
     }
     }
 
-}
+// }
 
 );
 

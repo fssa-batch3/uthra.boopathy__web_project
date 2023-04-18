@@ -21,33 +21,41 @@ header div ul{
 
 header div ul li{
     padding-top: 40px;
-    padding-left: 20px;
+    padding-left: 30px;
 }
 
 header div ul li a{
      text-decoration: none;
-     color: black;
+     color: white;
+     font-size: 24px;
+}
+
+.menu{
+    display: none;
 }
 
 h1{
     font-size: 50px;
     font-weight: normal;
     padding-left: 60px;
-    position: relative;
-    top: 20px;
+    padding-top: 20px;
     color: white;
 }
 
 .logo{
+    height: 70px;
+    width: 70px;
     margin-top: 15px;
     margin-left: 50px;
     border-radius: 50px;
 }
 
 .login{
-    color: white;
-    font-size: 20px;
+   font-size: 25px;
+   color: white;
+   cursor: pointer;
 }
+
 
 .container{
     background-color: #F8F8F8;

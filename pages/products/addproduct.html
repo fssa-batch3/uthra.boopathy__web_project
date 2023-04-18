@@ -71,7 +71,7 @@
 
                     <div>  
                         <label> Name of the product: </label> <br>
-                        <input type="text" id="name" required />
+                        <input type="text" id="name" pattern="[a-zA-Z]+" required />
                     </div>
 
                     <div>  
@@ -83,12 +83,12 @@
                      <div>
                         <label> Current price: </label> <br>
                         <label>₹</label>
-                        <input type="number" pattern="[0-9]{0,}" /> 
+                        <input type="number" pattern="[0-9]{0,}" disabled /> 
                     </div>
 
                     <div>
                         <label> Discount percentage:</label> <br>
-                        <input type="number" id="discount_percent" />
+                        <input type="number" id="discount_percent" pattern="[0-9]{2}" required />
                         <label> % </label>
                     </div> 
 
@@ -123,9 +123,7 @@
                         <select id="unique_type">
                             <option> Select category </option>
                         </select>
-<!-- 
-                        <label> Available quantity: </label>
-                        <input type="number" id="qty" min="1" required> -->
+
                     </div>
 
                     <button type="submit"> Upload </button> 
@@ -181,7 +179,7 @@
 
             let add_products = JSON.parse(localStorage.getItem('add_products')) || [];
 
-
+            let user_id = JSON.parse(localStorage.getItem('uniqueID'));
 
 
                 
@@ -197,7 +195,7 @@
                 add_info: add_info,
                 product_uuid: product_uuid,
                 status : true,
-                product_quantity:1
+                user_id: user_id
             });
            
             localStorage.setItem('add_products', JSON.stringify(add_products));
@@ -211,16 +209,6 @@
                 
 
             }
-
-            
-
-
-            // localStorage.setItem('unique_id', JSON.stringify(product_id));
-
-            // alert("Product uploaded successfully");
-
-
-            // window.location.href = "../products/myproduct.html";
             
             
 
@@ -269,7 +257,7 @@ header();
                             type.options[type.options.length] = new Option(ft[fields], fields);
                     
                         }
-                    
+                    2
                     }
                     
                     category.onchange();

@@ -27,7 +27,7 @@ header div ul li{
 header div ul li a{
      text-decoration: none;
      color: white;
-     font-size: 22px;
+     font-size: 24px;
 }
 
 h1{
@@ -47,7 +47,7 @@ h1{
 }
 
 .login{
-   font-size: 20px;
+   font-size: 25px;
    color: white;
    cursor: pointer;
 }
@@ -76,7 +76,7 @@ h2{
     box-shadow: 2px 4px 8px 2px rgba(6, 6, 6, 0.2), 3px 6px 20px 3px rgba(0, 0, 0, 0.19);
 }
 
-div.photo{
+/* div.photo{
     height: 280px;
     width: 280px;
     border: 1px solid gray;
@@ -84,7 +84,7 @@ div.photo{
     margin: 100px 0px 0px 100px;
     background-repeat: no-repeat;
     background-size: cover;
-}
+} */
 
 label.camera {
     float: right;

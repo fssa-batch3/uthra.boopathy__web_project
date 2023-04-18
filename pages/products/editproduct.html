@@ -49,13 +49,13 @@
 
             <h2> EDIT </h2>
 
-            <form role="form" >
+            <form role="form" id="form" >
 
-            <div class="box">
+            <div class="box" >
 
-                <div class="photo">
-                    <!-- <img src="../../assets/images/silk12.jpg" alt="photo" width="300px"> -->
-                    <label for="image" class="camera"><i class="fa fa-camera" style="color: #000;"></i></label>
+                <div class="photo" >
+                    <!-- <img src="../../assets/images/silk12.jpg" id="images" alt="photo" width="300px"> -->
+                    <!-- <label for="image" class="camera"><i class="fa fa-camera" style="color: #000;"></i></label> -->
 
                 </div>
 
@@ -68,7 +68,7 @@
 
                     <div>  
                         <label> Name of the product: </label> <br>
-                        <input type="text" id="name" required  />
+                        <input type="text" id="name" pattern="[a-zA-Z]+" required  />
                     </div>
 
                     <div>  
@@ -78,12 +78,12 @@
 
                      <div>
                         <label> Current price: </label> <br>
-                        <label>  </label>  <input type="number" id="discount_price"  min="1" /> 
+                        <label>  </label>  <input type="number" id="discount_price"  min="1" disabled /> 
                     </div>
 
                     <div>
                         <label> Discount percentage:</label> <br>
-                        <input type="number" id="discount_percent"  min="1" /> <label> % </label>
+                        <input type="number" id="discount_percent"  min="1" required /> <label> % </label>
                     </div> 
 
                     <div class="add">  
@@ -99,7 +99,7 @@
                         </textarea>
                     </div>
 
-                     <button type="button" class="save">  Save  </button>
+                     <button type="submit" class="save">  Save  </button>
 
 
                 </div>
@@ -137,9 +137,9 @@
             document.getElementById("add_info").innerHTML = product_data["add_info"];
            
            
-            let updates = document.querySelector("button.save");
+            let updates = document.querySelector("form#form");
            
-            updates.addEventListener("click", update_product);
+            updates.addEventListener("submit", update_product);
            
             function update_product() {
                 
@@ -158,10 +158,18 @@
                 let image = document.getElementById("image").value
                 let name = document.getElementById("name").value
                 let original_price = document.getElementById("original_price").value
-                let discount_price = document.getElementById("discount_price").value
+                // let discount_price = document.getElementById("discount_price").value
                 let discount_percent = document.getElementById("discount_percent").value
                 let product_detail = document.getElementById("product_detail").value
                 let add_info = document.getElementById("add_info").value
+
+            if (discount_percent == discount_percent) {
+                discount_price = original_price - original_price * discount_percent / 100 ;
+                discount_price = Math.round(discount_price);
+            }
+            else {
+                discount_price = original_price - discount_percent;
+            }
                
                 product_data["image"] = image;
                 product_data["name"] = name;
@@ -180,7 +188,6 @@
             }
        
        </script>
-
     </body>
 
 </html>

@@ -25,7 +25,7 @@ header div ul li{
 }
 
 header div ul li a{
-    font-size: 20px;
+    font-size: 24px;
      text-decoration: none;
      color: white;
 }
@@ -49,14 +49,14 @@ h1{
 
 .login{
     color: white;
-    font-size: 20px;
+    font-size: 25px;
     cursor: pointer;
 }
 
 .left{
     width: 50%;
     position: relative;
-    top: 130px;
+    top: 200px;
     left: 200px;
 }
 
@@ -86,8 +86,8 @@ h1{
     height: 600px;
     width: 500px;
     position: relative;
-    left: 750px;
-    bottom: 380px;
+    left: 800px;
+    bottom: 300px;
 }
 
 h2{
@@ -118,6 +118,7 @@ h4{
     font-size: 22px;
     position: relative;
     top: 30px;
+    left: 5px;
 }
 
 s{
@@ -129,6 +130,7 @@ s{
 b{
     color: green;
     position: relative;
+    left: 5px;
 }
 
 strong{
@@ -249,7 +251,6 @@ input[type="number"]{
 footer{
     background-color: purple;
     height: 290px;
-    margin-top: 150px;
 }
 
 .about{
@@ -280,6 +281,7 @@ footer{
 .about h4{
     font-size: 25px;
     color: white;
+    margin-bottom: 30px;
 }
 
 .top{

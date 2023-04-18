@@ -92,7 +92,7 @@
             </div>
             </div> -->
           </div>
- 
+
           <!-- <div class="thumbnail"> -->
                 
              <!-- <div class="products">
@@ -188,7 +188,7 @@
 
             div_products  = document.createElement("div");
             div_products.setAttribute("class", "products");
-            // div_products.setAttribute("data-id", wishlist[i]["product_uuid"]);
+            div_products.setAttribute("data-id", wishlist_products[j]["product_uuid"]);
             console.log(div_products);
 
             // <span class = "del" > </div>
@@ -248,6 +248,8 @@
             p_org.append(span);
 
 
+
+
             document.querySelector("div.thumbnail").append(div_products);
 
          }
@@ -294,7 +296,21 @@
             
             });
 
-      
+
+            // path product detail page
+
+
+            let product_details = document.querySelectorAll("div.products")
+            product_details.forEach(function(find){
+                  find.addEventListener("click", function(){
+                        let product_description = this.dataset.id;
+                           localStorage.setItem("productDetail",JSON.stringify(product_description))
+                              window.location.href = `../products/dress/saree1view.html?product_id=${product_description}`;
+                              console.log(product_details)
+                        }
+                  )
+            }   
+         )
 
 
        </script>

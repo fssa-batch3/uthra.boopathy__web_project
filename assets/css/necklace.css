@@ -26,7 +26,8 @@ header div ul li{
 
 header div ul li a{
      text-decoration: none;
-     color: black;
+     color: white;
+     font-size: 24px;
 }
 
 h1{
@@ -46,7 +47,7 @@ h1{
 }
 
 .login{
-   font-size: 20px;
+   font-size: 25px;
    color: white;
    cursor: pointer;
 }

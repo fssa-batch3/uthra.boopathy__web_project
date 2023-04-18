@@ -55,12 +55,12 @@
 
                 <div>
                     <label> Phone number: </label>
-                    <input type="tel" id="phonenumber" placeholder="+91" required="true" pattern="[0-9]+" />
+                    <input type="tel" id="phonenumber" placeholder="+91" required="true" pattern="[0-9]{10}" title="Enter 10 numbers only" />
                 </div>
 
                 <div>
                     <label> Create Password: </label>
-                    <input type="password" id="password" required="true" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
+                    <input type="password" id="password" required="true" pattern="(?=.*\d)(?=.*[*!@#$%^&])(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Include uppercase, lowercase, number and special characters" />
                     <p> (Pattern: Include uppercase, lowercase, number and special characters) </p>
                 </div>
 

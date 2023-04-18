@@ -5,16 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Main page </title>
-        <link rel="stylesheet" href="../../../../assets/css/necklace.css"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../../../assets/css/style-silksareepage.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />        <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kreon:wght@300;400;500;600;700&family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>  
     
     <body>
-        <header>
-         <a href="../../../homepage/frontpage.html"> <img class="logo" src="../../../../assets/images/logo.png" alt="logo" height="70px" width="70px"/> </a>
+        <header id="userLogin">
+         <!-- <a href="../../../homepage/frontpage.html"> <img class="logo" src="../../../../assets/images/logo.png" alt="logo" height="70px" width="70px"/> </a>
          <h1> Thara's World </h1>
               <div>
                  <ul>
@@ -25,7 +25,7 @@
                     <li><a href="../../../homepage/profilepage.html"><i class="fa fa-user-circle-o" style="font-size:24px;color: #fff;"></i></a></li>
                     <li> <a href="../../../homepage/loginpage.html"><span class="login"> Login </span> </a></li>
                   </ul>
-              </div>
+              </div> -->
         </header>
 
         <section class="subheading">
@@ -64,7 +64,7 @@
         <section>
            <div class="thumbnail">
                
-            <div class="products">
+            <!-- <div class="products">
               <a href="bracelet1view.html"> <img src="../../../../assets/images/brace2.jpg" alt="photo" height="260px" width="230px"/>  </a>
               <h3> Stainless Steel Silver Bracelet </h3>
               <p> ₹749 <s>₹4,000</s> <span class="percent"> 81% off </span> </p> 
@@ -142,7 +142,7 @@
             <img src="../../../../assets/images/brace12.jpg" alt="photo" height="260px" width="240px"/> 
             <h3> Stainless Steel Silver Bracelet </h3>
               <p> ₹789 <s>₹1,888</s> <span class="percent"> 58% off </span> </p>
-           </div>
+           </div> -->
          </div>         
           
         </section>
@@ -174,6 +174,98 @@
       </div>
 
       </footer>    
+
+      <script src="../../../assets/js/header.js"> </script>
+
+      <script>
+
+      header();
+
+
+      let add_product = (JSON.parse(localStorage.getItem("add_products"))).filter(e => e.status == true && e.category == "Jewell" && e.type == 7);
+   
+   
+   let div_products;
+         let img;
+         let h3_title;
+         let p_org;
+         let s;
+         let span;
+         let b;
+   
+   
+   
+         for (let k = 0; k < add_product.length; k++){
+   
+   
+            // <div class = products >
+   
+            div_products  = document.createElement("div");
+            div_products.setAttribute("class", "products");
+            div_products.setAttribute("data-id", add_product[k]["product_uuid"]);
+            console.log(div_products);
+   
+            // <img>
+   
+            img = document.createElement("img");
+            img.setAttribute("src", add_product[k]["image"]);
+            img.setAttribute("alt", "photo");
+            img.setAttribute("height", "200px");
+            img.setAttribute("width", "180px");
+            div_products.append(img);
+   
+            // <h3> </h3>
+   
+            h3_title = document.createElement("h3");
+            h3_title.setAttribute("id", "name")
+            h3_title.innerText = add_product[k]["name"];
+            div_products.append(h3_title);
+   
+            // <p> </p>
+   
+            p_org = document.createElement("p");
+            p_org.setAttribute("id", "original_price");
+            p_org.innerText = "₹" + add_product[k]["discount_price"] + "   ";
+            h3_title.append(p_org);
+   
+            // <p> </p>
+   
+            // p_dis = document.createElement("p");
+            // h3_title.append(p_dis);
+   
+            // <s> </s>
+   
+            s = document.createElement("s");
+            s.setAttribute("id", "discount_price");
+            s.innerText = "  " + "₹" + add_product[k]["original_price"];
+            p_org.append(s);
+   
+            // <span> </span>
+   
+            span = document.createElement("span");
+            span.setAttribute("class", "percent");
+            span.innerText = "   " + add_product[k]["discount_percent"] + "%" + "off";
+            p_org.append(span);
+   
+   
+            document.querySelector("div.thumbnail").append(div_products);
+   
+         }
+        
+         let product_details = document.querySelectorAll("div.products")
+            product_details.forEach(function(find){
+                  find.addEventListener("click", function(){
+                        let product_description = this.dataset.id;
+                           localStorage.setItem("productDetail",JSON.stringify(product_description))
+                              window.location.href = `../dress/saree1view.html?product_id=${product_description}`;
+                              console.log(product_details)
+                        }
+                  )
+            }   
+         )
+      
+   
+      </script>
 
     </body>
     

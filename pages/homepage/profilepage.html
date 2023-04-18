@@ -129,11 +129,13 @@
 
             function update_details(e) {
             e.preventDefault();
+            let uname = document.getElementById("uname").value
             let address = document.getElementById("address").value
             let des = document.getElementById("des").value
             let email = document.getElementById("email").value
             let gender = document.getElementById("gender").value
             let age = document.getElementById("age").value
+            person_data["uname"] = uname;
             person_data["address"] = address;
             person_data["des"] = des;
             person_data["email"] = email;
