@@ -56,6 +56,14 @@ h1{
    cursor: pointer;
 }
 
+.arrow {
+    margin: 2rem;
+    font-size: 30px;
+}
+
+.arrow a {
+    color: black;
+}
 
 .container{
     background-color: #F8F8F8;

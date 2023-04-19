@@ -80,7 +80,17 @@ select{
     height: 25px;
     width: 100px;
     border-radius: 3px;
-}    
+}   
+
+.arrow {
+    font-size: 30px;
+    margin: 2rem;
+}
+
+.arrow a {
+    color: black;
+}
+
 
 .thumbnail{
     display: flex;

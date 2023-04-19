@@ -55,12 +55,21 @@ h1{
     cursor: pointer;
 }
 
+.arrow {
+    margin: 2rem;
+    font-size: 30px;
+}
+
+.arrow a {
+    color: black;
+}
+
 section{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     align-content: center;
-    margin-top: 150px;
+    margin-top: 100px;
     margin-left: 350px;
     margin-bottom: 200px;
     border: 1px solid gray;

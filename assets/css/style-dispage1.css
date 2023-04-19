@@ -95,6 +95,15 @@ input[type=text]{
     font-weight: bold;
 }   
 
+.arrow {
+    margin: 2rem;
+    font-size: 30px;
+}
+
+.arrow a {
+    color: black;
+}
+
 .thumbnail{
     display: flex;
     flex-wrap: wrap;

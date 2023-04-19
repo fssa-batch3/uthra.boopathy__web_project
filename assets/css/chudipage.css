@@ -87,6 +87,15 @@ select{
     outline: none;
 }    
 
+.arrow {
+    margin: 2rem;
+    font-size: 30px;
+}
+
+.arrow a {
+    color: black;
+}
+
 .thumbnail{
     display: grid;
     grid-template-columns: repeat(4, 290px);

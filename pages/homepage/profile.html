@@ -43,6 +43,8 @@
             </div> -->
         </header>
 
+        <div class="arrows"></div>
+
         <section>
 
             <form role="form" >
@@ -115,6 +117,9 @@
 
                 header();
 
+
+  
+
                 
             let uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
             let user_cred = JSON.parse(localStorage.getItem("user_cred"));
@@ -143,6 +148,61 @@
         }
 
         // console.log(function back(){});
+
+
+
+        if (person_data["des"] == "Seller") {
+
+// <div class = "arrow" > </div>
+
+div_arrow = document.createElement("div");
+div_arrow.setAttribute("class", "arrow");
+// console.log(div_arrow);
+
+// <a> link </a>
+
+a_arrow = document.createElement("a");
+a_arrow.setAttribute("href", "../homepage/sellerpage.html");
+div_arrow.append(a_arrow);
+// console.log(a_arrow);
+
+
+// < i >  arrow </i>
+
+i_arrow = document.createElement("i");
+i_arrow.setAttribute("class", "fa-solid fa-arrow-left");
+a_arrow.append(i_arrow);
+
+
+document.querySelector("div.arrows").append(div_arrow);
+
+}
+else{
+
+// <div class = "arrow" > </div>
+
+div_arrow = document.createElement("div");
+div_arrow.setAttribute("class", "arrow");
+// console.log(div_arrow);
+
+// <a> link </a>
+
+a_arrow = document.createElement("a");
+a_arrow.setAttribute("href", "../homepage/frontpage.html");
+div_arrow.append(a_arrow);
+// console.log(a_arrow);
+
+
+// < i >  arrow </i>
+
+i_arrow = document.createElement("i");
+i_arrow.setAttribute("class", "fa-solid fa-arrow-left");
+a_arrow.append(i_arrow);
+
+
+document.querySelector("div.arrows").append(div_arrow);
+
+}
             
 
 

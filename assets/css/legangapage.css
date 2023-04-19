@@ -89,7 +89,16 @@ select{
     width: 100px;
     border-radius: 3px;
     outline: none;
-}    
+}
+
+.arrow {
+    margin: 2rem;
+    font-size: 30px;
+}
+
+.arrow a {
+    color: black;
+}
 
 .thumbnail{
     display: grid;

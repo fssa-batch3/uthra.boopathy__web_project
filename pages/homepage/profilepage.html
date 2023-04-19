@@ -43,6 +43,8 @@
             </div> -->
         </header>
 
+        <div class="arrows"></div>
+
         <section>
 
             <form role="form" onsubmit="update_details(event)" >
@@ -110,6 +112,31 @@
             <script>
 
                 header();
+
+
+                    // <div class = "arrow" > </div>
+
+      div_arrow = document.createElement("div");
+      div_arrow.setAttribute("class", "arrow");
+      // console.log(div_arrow);
+
+      // <a> link </a>
+
+      a_arrow = document.createElement("a");
+      a_arrow.setAttribute("href", "../homepage/profile.html");
+      div_arrow.append(a_arrow);
+      // console.log(a_arrow);
+
+
+      // < i >  arrow </i>
+
+      i_arrow = document.createElement("i");
+      i_arrow.setAttribute("class", "fa-solid fa-arrow-left");
+      a_arrow.append(i_arrow);
+
+
+      document.querySelector("div.arrows").append(div_arrow);
+
 
 
             let uniqueID = JSON.parse(localStorage.getItem("uniqueID"));

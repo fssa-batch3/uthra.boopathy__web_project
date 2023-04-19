@@ -46,6 +46,8 @@
 
     </header>
 
+     <div class="arrows"></div>
+
     <section>
 
         <button class="add"> <a href="../products/addproduct.html"> Add Products </a> </button> 
@@ -103,6 +105,30 @@
     <script>
 
         header ();
+
+        // <div class = "arrow" > </div>
+
+div_arrow = document.createElement("div");
+div_arrow.setAttribute("class", "arrow");
+// console.log(div_arrow);
+
+// <a> link </a>
+
+a_arrow = document.createElement("a");
+a_arrow.setAttribute("href", "../homepage/sellerpage.html");
+div_arrow.append(a_arrow);
+// console.log(a_arrow);
+
+
+// < i >  arrow </i>
+
+i_arrow = document.createElement("i");
+i_arrow.setAttribute("class", "fa-solid fa-arrow-left");
+a_arrow.append(i_arrow);
+
+
+document.querySelector("div.arrows").append(div_arrow);
+
             
             let add_product = JSON.parse(localStorage.getItem("add_products"));
             // let uuid = JSON.parse(localStorage.getItem("product_uuid"));
@@ -421,6 +447,8 @@ remove_pdt.forEach(function (remove) {
 
     if (all_products[indexOfProduct]["status"] === true) {
 
+      alert("This product is successfully removed")  
+
       all_products[indexOfProduct]["status"] = false;
 
       localStorage.setItem("add_products", JSON.stringify(all_products));
@@ -457,6 +485,8 @@ add_pdt.forEach(function (add) {
 
     if (all_products[indexOfProduct]["status"] === false) {
 
+      alert("This product is successfully added")
+
       all_products[indexOfProduct]["status"] = true;
 
       localStorage.setItem("add_products", JSON.stringify(all_products));
@@ -469,100 +499,6 @@ add_pdt.forEach(function (add) {
 
   });
 });
-
-
-
-           
-           
-            //     let products = document.querySelectorAll("button.remove")
-            
-          
-            //    products.forEach(function(check){
-            
-            //     check.addEventListener("click", function (){
-            
-            //         let product_id = this.dataset.remove;
-            
-            //         localStorage.setItem("products_id", JSON.stringify(product_id));
-            
-            //         console.log(product_id);
-
-            //         let all_products = JSON.parse(localStorage.getItem("add_products"));
-
-            //         if (confirm("Are you sure to remove this product?")){
-            
-            //             let id = JSON.parse(localStorage.getItem("products_id"));
-            
-            //             let all_products = JSON.parse(localStorage.getItem("add_products"));
-            
-            //             console.log(all_products);
-            
-            //             let pdts = all_products.find(e => e.product_uuid == id)
-            
-            //             console.log(pdts);
-            
-            //             let indexOfProduct = all_products.indexOf(pdts);
-            
-            //             all_products[indexOfProduct]["status"] = false;
-            
-            //             console.log(indexOfProduct); 
-            
-            //             localStorage.setItem("add_products", JSON.stringify(all_products));
-            
-            //         }
-            
-            //     });
-            
-            // });
-
-            
-            // let product = document.querySelectorAll("button.adding")
-           
-            // product.forEach(function(check){
-                
-            //     check.addEventListener("click", function (){
-                    
-            //         let product_id = this.dataset.add;
-                     
-            //         localStorage.setItem("products_id", JSON.stringify(product_id));
-                     
-            //         console.log(product_id);
-                    
-            //         let all_products = JSON.parse(localStorage.getItem("add_products"));
-
-            //         let check_pdt = all_products.find(e => e.status === true)
-
-            //         if (check_pdt) {
-
-            //         alert("This product is already added to the page.");
-
-            //         }
-                     
-            //         else {if (confirm("Are you sure to add this product?")){
-                        
-            //             let id = JSON.parse(localStorage.getItem("products_id"));
-                        
-            //             let all_products = JSON.parse(localStorage.getItem("add_products"));
-                       
-            //             console.log(all_products);
-                        
-            //             let pdts = all_products.find(e => e.product_uuid == id)
-                       
-            //             console.log(pdts);
-                        
-            //             let indexOfProduct = all_products.indexOf(pdts);
-                        
-            //             all_products[indexOfProduct]["status"] = true;
-                        
-            //             console.log(indexOfProduct); 
-                        
-            //             localStorage.setItem("add_products", JSON.stringify(all_products));
-                     
-            //         }}
-               
-            //     });
-           
-            // });
 
        
 

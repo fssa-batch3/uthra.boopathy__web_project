@@ -44,6 +44,8 @@
              </div> -->
    
         </header>
+
+        <div class="arrows"></div>
     
         <section>
 
@@ -116,6 +118,31 @@
 
             header();
 
+// <div class = "arrow" > </div>
+
+div_arrow = document.createElement("div");
+div_arrow.setAttribute("class", "arrow");
+// console.log(div_arrow);
+
+// <a> link </a>
+
+a_arrow = document.createElement("a");
+a_arrow.setAttribute("href", "../products/myproduct.html");
+div_arrow.append(a_arrow);
+// console.log(a_arrow);
+
+
+// < i >  arrow </i>
+
+i_arrow = document.createElement("i");
+i_arrow.setAttribute("class", "fa-solid fa-arrow-left");
+a_arrow.append(i_arrow);
+
+
+document.querySelector("div.arrows").append(div_arrow);
+
+
+
             let uuid = JSON.parse(localStorage.getItem("productDetail"));
             console.log(uuid);
 
@@ -142,12 +169,13 @@
             updates.addEventListener("submit", update_product);
            
             function update_product() {
-                
+                event.preventDefault();
                 let uuid = JSON.parse(localStorage.getItem("productDetail"));
                 
                 let add_product = JSON.parse(localStorage.getItem("add_products"));
                 
                 function find_data(e) {
+
                     return e.product_uuid == uuid;
                 }
            
@@ -183,7 +211,7 @@
                 
                 alert("Product updated successfully");
                
-                window.location.href = "../products/myproduct.html";
+                location.href = "../products/myproduct.html";
                 
             }
        

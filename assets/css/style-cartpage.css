@@ -53,6 +53,15 @@ h1{
     cursor: pointer;
 }
 
+.arrow {
+    margin: 2rem;
+    font-size: 30px;
+}
+
+.arrow a {
+    color: black;
+}
+
 .container{
     border: 1px;
     border-radius: 8px;

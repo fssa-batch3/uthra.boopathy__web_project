@@ -60,16 +60,26 @@ h1{
     display: none;
 }
 
+.arrow {
+    font-size: 30px;
+    margin: 2rem;
+}
+
+.arrow a {
+    color: black;
+}
+
+
 h2{
     font-size: 40px;
-    margin: 80px 0 0 200px;
+    margin: 20px 0 0 200px;
 }
 
 .box{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    margin: 100px 100px 20px 100px;
+    margin: 70px 100px 20px 100px;
     border: 1px solid gray;
     border-radius: 5px;
     height: 1000px;

@@ -112,6 +112,15 @@ input[type=text]{
     color: black;
 }
 
+.arrow {
+    font-size: 30px;
+    margin: 2rem;
+}
+
+.arrow a {
+    color: black;
+}
+
  .thumbnail{
     display: grid;
     grid-template-columns: repeat(4, 280px);

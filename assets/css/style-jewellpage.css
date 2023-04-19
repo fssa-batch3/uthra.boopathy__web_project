@@ -109,6 +109,16 @@ input[type=text]{
     font-weight: bold;
 }
 
+.arrow {
+    font-size: 30px;
+    margin: 2rem;
+}
+
+.arrow a {
+    color: black;
+}
+
+
 .thumbnail{
     display: flex;
     justify-content: space-around;

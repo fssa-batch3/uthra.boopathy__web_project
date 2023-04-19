@@ -84,7 +84,26 @@ let after_login =
       function logout() {
 
         if(confirm("Are you sure to log out?")){
-        localStorage.removeItem("uniqueID");
-        window.location.href = origin + "/pages/homepage/frontpage.html";
+
+          // let wishlist = JSON.parse(localStorage.getItem("wish"));
+
+          // let unique_id = JSON.parse(localStorage.getItem("uniqueID"));
+          // console.log(unique_id);
+
+          // let check = wishlist.find(e => e.buyer_id === unique_id);
+          // console.log(check);
+
+          // let index = wishlist.indexOf(check);
+          // console.log(index);
+
+          // let remove_pdts = wishlist.splice(index, 1);
+          // console.log(remove_pdts);
+
+          // localStorage.setItem("wish", JSON.stringify(wishlist));
+        
+          localStorage.removeItem("uniqueID");
+        
+          window.location.href = origin + "/pages/homepage/frontpage.html";
+
       }
     }

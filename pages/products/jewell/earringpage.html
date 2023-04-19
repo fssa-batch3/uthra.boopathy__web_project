@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Main page </title>
+    <title> Earring page </title>
         <link rel="stylesheet" href="../../../assets/css/style-silksareepage.css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />        <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,6 +60,8 @@
             </div>
 
         </section>
+
+        <div class="arrows"> </div>
 
         <section>
            <div class="thumbnail">
@@ -164,11 +166,11 @@
 
           <div class="contact">  
                 
-                <div class="socials"> <span class="con"> Contact us </span>
-                  <div class="insta"> <i class="fa fa-instagram" style="font-size:23px"></i> </div>
-                  <div class="fb"> <i class="fa fa-facebook-f" style="font-size:23px"></i> </div>
-                  <div class="twiter"> <i class="fa fa-twitter" style="font-size:23px"></i> </div>
-                  <div class="wa"> <i class="fa fa-whatsapp" style="font-size:23px"></i> </div>
+            <div class="socials"> <span class="con"> Contact us </span>
+               <div class="insta"> <i class="fa-brands fa-instagram" style="font-size:23px"></i> </div>
+               <div class="fb"> <i class="fa-brands fa-facebook-f" style="font-size:23px"></i> </div>
+               <div class="twiter"> <i class="fa-brands fa-twitter" style="font-size:23px"></i> </div>
+               <div class="wa"> <i class="fa-brands fa-whatsapp" style="font-size:23px"></i> </div>
                 </div>    
                 <div><p>Copy rights @ 2022</p></div>
           </div>
@@ -195,7 +197,28 @@
          let span;
          let b;
    
-   
+                  // <div class = "arrow" > </div>
+
+                  div_arrow = document.createElement("div");
+div_arrow.setAttribute("class", "arrow");
+// console.log(div_arrow);
+
+// <a> link </a>
+
+a_arrow = document.createElement("a");
+a_arrow.setAttribute("href", "../jewell/jewellpage.html");
+div_arrow.append(a_arrow);
+// console.log(a_arrow);
+
+
+// < i >  arrow </i>
+
+i_arrow = document.createElement("i");
+i_arrow.setAttribute("class", "fa-solid fa-arrow-left");
+a_arrow.append(i_arrow);
+
+
+document.querySelector("div.arrows").append(div_arrow);
    
          for (let k = 0; k < add_product.length; k++){
    

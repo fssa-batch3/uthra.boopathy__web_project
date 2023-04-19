@@ -56,6 +56,15 @@ h1{
    cursor: pointer;
 }
 
+.arrow {
+    margin: 2rem;
+    font-size: 30px;
+}
+
+.arrow a {
+    color: black;
+}
+
 .image img{
     border-radius: 10px;
 }
@@ -81,7 +90,7 @@ h1{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    margin-top: 100px;
+    margin-top: 70px;
     margin-left: 130px;
 }
 
