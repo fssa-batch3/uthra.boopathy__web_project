@@ -120,9 +120,9 @@
                 return e.phonenumber == uniqueID;
             }
             person_data = user_cred.find(profile_data);
-            document.getElementById("uname").value = person_data["uname"];
-            document.getElementById("phonenumber").value = person_data["phonenumber"];
-            document.getElementById("address").value = person_data["address"];
+            let uname = document.getElementById("uname").value = person_data["uname"];
+            let phonenumber = document.getElementById("phonenumber").value = person_data["phonenumber"];
+            let address = document.getElementById("address").value = person_data["address"];
 
             let product = JSON.parse(localStorage.getItem("add_products"));
 
@@ -144,6 +144,16 @@
             palce_order.addEventListener("click", function () {
 
                 alert("Your order is booked");
+
+                person_data["uname"] = uname;
+                person_data["phonenumber"] = phonenumber;
+                person_data["address"] = address;
+
+                let my_orders = JSON.parse(localStorage.getItem("my_orders")) || [];
+
+                my_orders.push({person_data, product_datas});
+
+                localStorage.setItem("my_orders", JSON.stringify(my_orders));
 
                 window.location.href = "../homepage/frontpage.html";
 
