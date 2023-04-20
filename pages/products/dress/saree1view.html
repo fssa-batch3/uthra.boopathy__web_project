@@ -641,10 +641,11 @@ cart_products.addEventListener("click", function () {
 
     let add_to_cart = JSON.parse(localStorage.getItem("cart"))||[];
 
-    let exist = add_to_cart.find(e => e.product_uuid == id);
-    console.log(exist);
+    // let exist = add_to_cart.find(e => e.product_uuid == id);
+    // console.log(exist);
 
-
+        let exist = add_to_cart.length && 
+            JSON.parse(localStorage.getItem("cart")).some(data => data.product_id === id && data.buyer_id === unique_id); 
 
     if(exist){
        
@@ -713,7 +714,8 @@ wish_products.addEventListener("click", function () {
 
     let wishlist = JSON.parse(localStorage.getItem("wish"))||[];
 
-    let exist = wishlist.find(e => e.product_uuid == id);
+    let exist = add_to_cart.length && 
+            JSON.parse(localStorage.getItem("cart")).some(data => data.product_id === id && data.buyer_id === unique_id); 
 
     if (exist) {
        
