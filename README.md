@@ -33,11 +33,13 @@ CART :  ( COMPLETED )
 
 * Add product
 * View cart products
+* Update product 
 * Remove product
 
 WISHLIST :  ( COMPLETED )
 
 * Add product
+* View product detail
 * Remove product
 
 
@@ -76,7 +78,7 @@ CREATE AN ACCOUNT :  ( COMPLETED )
     * Expected result :
         * The user is redirected to the login page.
 
-CREATE AN ACCOUNT :  ( COMPLETED )
+LOGIN AS BUYER :  ( COMPLETED )
     
 * Scenario 1: Successfully logged in to your account
     * steps :
@@ -88,13 +90,14 @@ CREATE AN ACCOUNT :  ( COMPLETED )
 
 VIEW PROFILE :  ( COMPLETED ) 
 
-* Scenario 1: Create a profile
+* Scenario 1: View profile
     * steps :
         1. Login as a user.
         2. Navigate to the profile page.
         3. View the user details such as name and phone number.
+        4. Click the "Back" button.
     * Expected result :
-        * The user can view their profile details.
+        * The user can see their details and navigate to the homepage.
 
 EDIT PROFILE :  ( COMPLETED )
 
@@ -103,10 +106,11 @@ EDIT PROFILE :  ( COMPLETED )
         1. Login as a user.
         2. Navigate to the profile page.
         3. Click edit button.
+        4. Navigate to the profile edit page.
         4. Update the user details.
         5. Click "Save" button to save the details.
     * Expected result :
-        * The details of the user has been updated.
+        * The details of the user has been updated and navigated to profile page.
 
 VIEW PRODUCTS/ITEMS :  ( COMPLETED )
 
@@ -150,6 +154,17 @@ VIEW PRODUCTS/ITEMS IN THE CART :  ( COMPLETED )
     * Expected result:
         * The user can view the list of items in the cart.
 
+UPDATE CART PRODUCTS/ITEMS IN THE CART : ( COMPLETEED )
+
+* Scenario 1: Successfully update the quantity of the products/items in the cart
+    * Steps :
+        1. Login as a buyer.
+        2. Navigate to the cart page.
+        3. View the list of items in the cart.
+        4. Update the quatity if the product/item.
+    * Expected result:
+         * The user can view the updated product details such as quantity and price. 
+
 REMOVE PRODUCTS/ITEMS FROM THE CART :  ( COMPLETED )
 
 * Scenario 1: Successfully remove item from cart
@@ -172,6 +187,16 @@ ADD PRODUCT/ITEM TO THE WISHLIST :  ( COMPLETED )
     * Expected result :
         * The user is redirected to the wishlist page.
         * The product/item is added to the wishlist.
+        
+VIEW PRODUCT/ITEM DETAIL : ( COMPLETED )
+
+* Scenario 1: Successfully view the product/item detail
+     * Steps :
+        1. Login as a buyer.
+        2. Navigate to the wishlist page.
+        3. Select the product/item to view its details.
+    * Expected result :
+        * The user is redirected to the product detail page.
 
 REMOVE PRODUCT/ITEM FROM THE WISHLIST :  ( COMPLETD )
 
@@ -197,7 +222,7 @@ CREATE AN ACCOUNT :  ( COMPLETD )
     * Expected result :
         * The user is redirected to the login page.
 
-CREATE AN ACCOUNT :  ( COMPLETD )
+LOGIN AS A SELLER :  ( COMPLETD )
     
 * Scenario 1: Successfully logged in to your account
     * steps :
@@ -211,11 +236,13 @@ VIEW PROFILE :  ( COMPLETD )
 
 * Scenario 1: Create a profile
     * steps :
-        1. Login as a user.
+        1. Login as a buyer.
         2. Navigate to the profile page.
         3. View the user details such as name and phone number.
+        4. Click the "Back" button to go to the homepage.
     * Expected result :
         * The user can view their profile.
+        * The user can be redirected to their respective pages.
 
 EDIT PROFILE :  ( COMPLETD )
 
@@ -239,7 +266,7 @@ UPLOAD NEW PRODUCT TO SELL :  ( COMPLETD )
         4. Enter the required product/item details such as name, price, description, and stock information.
         5. Click the "Upload" button to upload the new product.
     * Expected result :
-        * The new product is created and added to the seller's list of products.
+        * The new product is created and added to the seller's list of products and added to the user page.
 
 VIEW THE LIST OF PRODUCTS :  ( COMPLETD )
 
@@ -251,7 +278,7 @@ VIEW THE LIST OF PRODUCTS :  ( COMPLETD )
     * Expected result :
         * The seller can view the list of products.
 
-EDIT THE PRODUCT DETAILS :  ( COMPLETD )
+UPDATE THE PRODUCT DETAILS :  ( COMPLETD )
 
 * Scenario 1: Successfully edit the product details
     * Steps :
