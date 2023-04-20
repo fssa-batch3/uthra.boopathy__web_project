@@ -97,7 +97,7 @@ VIEW PROFILE :  ( COMPLETED )
         3. View the user details such as name and phone number.
         4. Click the "Back" button.
     * Expected result :
-        * The user can navigate to the homepage.
+        * The user can see their details and navigate to the homepage.
 
 EDIT PROFILE :  ( COMPLETED )
 
@@ -236,11 +236,13 @@ VIEW PROFILE :  ( COMPLETD )
 
 * Scenario 1: Create a profile
     * steps :
-        1. Login as a user.
+        1. Login as a buyer.
         2. Navigate to the profile page.
         3. View the user details such as name and phone number.
+        4. Click the "Back" button to go to the homepage.
     * Expected result :
         * The user can view their profile.
+        * The user can be redirected to their respective pages.
 
 EDIT PROFILE :  ( COMPLETD )
 
@@ -264,7 +266,7 @@ UPLOAD NEW PRODUCT TO SELL :  ( COMPLETD )
         4. Enter the required product/item details such as name, price, description, and stock information.
         5. Click the "Upload" button to upload the new product.
     * Expected result :
-        * The new product is created and added to the seller's list of products.
+        * The new product is created and added to the seller's list of products and added to the user page.
 
 VIEW THE LIST OF PRODUCTS :  ( COMPLETD )
 
