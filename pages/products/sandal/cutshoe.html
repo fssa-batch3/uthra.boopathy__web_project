@@ -189,6 +189,119 @@
 
 
 
+      let add_product = (JSON.parse(localStorage.getItem("add_products"))).filter(e => e.status == true && e.category == "Sandal" && e.type == 2);
+
+
+let div_products;
+      let img;
+      let h3_title;
+      let p_org;
+      let s;
+      let span;
+      let b;
+
+
+      // <div class = "arrow" > </div>
+
+div_arrow = document.createElement("div");
+div_arrow.setAttribute("class", "arrow");
+// console.log(div_arrow);
+
+// <a> link </a>
+
+a_arrow = document.createElement("a");
+a_arrow.setAttribute("href", "../dress/dresspage.html");
+div_arrow.append(a_arrow);
+// console.log(a_arrow);
+
+
+// < i >  arrow </i>
+
+i_arrow = document.createElement("i");
+i_arrow.setAttribute("class", "fa-solid fa-arrow-left");
+a_arrow.append(i_arrow);
+
+
+document.querySelector("div.arrows").append(div_arrow);
+
+
+
+      for (let k = 0; k < add_product.length; k++){
+
+
+         // <div class = products >
+
+         div_products  = document.createElement("div");
+         div_products.setAttribute("class", "products");
+         div_products.setAttribute("data-id", add_product[k]["product_uuid"]);
+         console.log(div_products);
+
+         // <img>
+
+         img = document.createElement("img");
+         img.setAttribute("src", add_product[k]["image"]);
+         img.setAttribute("alt", "photo");
+         img.setAttribute("height", "200px");
+         img.setAttribute("width", "180px");
+         div_products.append(img);
+
+         // <h3> </h3>
+
+         h3_title = document.createElement("h3");
+         h3_title.setAttribute("id", "name")
+         h3_title.innerText = add_product[k]["name"];
+         div_products.append(h3_title);
+
+         // <p> </p>
+
+         p_org = document.createElement("p");
+         p_org.setAttribute("id", "original_price");
+         p_org.innerText = "₹" + add_product[k]["discount_price"] + "   ";
+         h3_title.append(p_org);
+
+         // <p> </p>
+
+         // p_dis = document.createElement("p");
+         // h3_title.append(p_dis);
+
+         // <s> </s>
+
+         s = document.createElement("s");
+         s.setAttribute("id", "discount_price");
+         s.innerText = "  " + "₹" + add_product[k]["original_price"];
+         p_org.append(s);
+
+         // <span> </span>
+
+         span = document.createElement("span");
+         span.setAttribute("class", "percent");
+         span.innerText = "   " + add_product[k]["discount_percent"] + "%" + "off";
+         p_org.append(span);
+
+
+         document.querySelector("div.thumbnail").append(div_products);
+
+      }
+
+     
+      let product_details = document.querySelectorAll("div.products")
+         product_details.forEach(function(find){
+               find.addEventListener("click", function(){
+                     let product_description = this.dataset.id;
+                        localStorage.setItem("productDetail",JSON.stringify(product_description))
+                           window.location.href = `../dress/saree1view.html?product_id=${product_description}`;
+                           console.log(product_details)
+                     }
+               )
+         }   
+      )
+
+
+
+
+
+
+
        </script>
 
 

@@ -118,15 +118,15 @@ input[type="text"]{
     font-weight: 200;
     font-size: 20px;
     position: relative;
-    top: 145px;
+    top: 100px;
 }
 
-.gender{
+/* .gender{
     font-weight: 200;
     font-size: 20px;
     position: relative;
     top: 55px;
-}
+} */
 
 .add{
     font-weight: 200;

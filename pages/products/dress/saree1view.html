@@ -616,7 +616,8 @@ cart_products.addEventListener("click", function () {
     let user_data = JSON.parse(localStorage.getItem("user_cred"));
     console.log(user_data);
 
-    let users = user_data.find(e => e.phonenumber === unique_id);
+    let users = user_data.length &&
+                JSON.parse(localStorage.getItem("user_cred")).some(data => data.phonenumber === unique_id);
     console.log(users);
 
     if (!users) {

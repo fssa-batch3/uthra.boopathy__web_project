@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <header id="userLogin" >
+    <header id="userLogin" > 
         <!-- <a href="../homepage/frontpage.html"> <img class="logo" src="../../assets/images/logo.png" alt="logo" /> </a>
         <h1> Thara's World </h1>
           <div class="nav">
@@ -50,7 +50,7 @@
 
     <section>
 
-        <button class="add"> <a href="../products/addproduct.html"> Add Products </a> </button> 
+        <button class="add" type="submit"> Add Products  </button> 
 
                <!-- <div class="box"> 
 
@@ -356,6 +356,8 @@ document.querySelector("div.arrows").append(div_arrow);
 
          }
 
+         
+          // Edit function
 
         let product_details = document.querySelectorAll("button.edit")
         
@@ -447,6 +449,8 @@ remove_pdt.forEach(function (remove) {
 
     if (all_products[indexOfProduct]["status"] === true) {
 
+      // document.getElementsByClassName(".remove").style.display = "inline";
+
       alert("This product is successfully removed")  
 
       all_products[indexOfProduct]["status"] = false;
@@ -456,6 +460,8 @@ remove_pdt.forEach(function (remove) {
     } else {
 
       alert("You have not added the product yet");
+      
+      // document.getElementsByClassName(".remove").style.display = "none";
 
     }
 
@@ -485,6 +491,8 @@ add_pdt.forEach(function (add) {
 
     if (all_products[indexOfProduct]["status"] === false) {
 
+      // document.getElementsByClassName("button.adding").style.display = "none";
+
       alert("This product is successfully added")
 
       all_products[indexOfProduct]["status"] = true;
@@ -492,6 +500,8 @@ add_pdt.forEach(function (add) {
       localStorage.setItem("add_products", JSON.stringify(all_products));
 
     } else {
+
+      // document.getElementsByClassName("button.adding").style.display = "inline";
 
       alert("You have already added the product");
 

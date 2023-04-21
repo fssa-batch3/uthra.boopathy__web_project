@@ -65,14 +65,14 @@
                     <input type="number"  id="age" disabled="true" />
                 </div>
 
-                <div class="gender">
+                <!-- <div class="gender">
                     <label> Gender:</label>
                     <select id="gender" disabled="true" >
                         <option> Male </option>
                         <option> Female </option>
                         <option> Others </option>
                     </select>
-                </div>
+                </div> -->
 
                 <div class="add">
                     <label> Residential address: </label>
@@ -99,7 +99,7 @@
                 </div>
                 
                 <div >
-                    <a href="./profilepage.html">  <button class="btn-1" type="submit">   Edit  </button>  </a>
+                     <button class="btn-1" type="button" onclick="edit()">   Edit  </button>  
                 
                         <!-- <button class="btn-2" type="button" onclick="deleteAcc()"> Delete </button> -->
 
@@ -133,7 +133,13 @@
             document.getElementById("age").value = person_data["age"];
             document.getElementById("address").value = person_data["address"];
             document.getElementById("des").value = person_data["des"];
-            document.getElementById("gender").value = person_data["gender"];
+
+
+            function edit() {
+
+                window.location.href = "../homepage/profilepage.html";
+
+            }
 
 
         function back () {
