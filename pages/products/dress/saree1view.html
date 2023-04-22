@@ -694,7 +694,7 @@ wish_products.addEventListener("click", function () {
 
     let user_data = JSON.parse(localStorage.getItem("user_cred"));
 
-    let check = user_data.find(e => e.phonenumber === user_id);
+    let check = user_data.find(e => e.phonenumber === user_id );
 
     if (!check) { 
 
@@ -715,8 +715,8 @@ wish_products.addEventListener("click", function () {
 
     let wishlist = JSON.parse(localStorage.getItem("wish"))||[];
 
-    let exist = add_to_cart.length && 
-            JSON.parse(localStorage.getItem("cart")).some(data => data.product_id === id && data.buyer_id === unique_id); 
+    let exist = wishlist.length && 
+            JSON.parse(localStorage.getItem("wish")).some(data => data.product_id === id && data.buyer_id === user_id); 
 
     if (exist) {
        

@@ -434,7 +434,7 @@ for ( let k = 0; k < check_pdt.length; k++) {
          
             // console.log(all_products);
          
-            let pdts = all_products.find(e => e.product_id === productid)
+            let pdts = all_products.find(e => e.product_id === productid && e.buyer_id === unique_id)
          
             // console.log(pdts); 
     
@@ -491,7 +491,7 @@ for ( let k = 0; k < check_pdt.length; k++) {
          
                      console.log(all_products);
          
-                     let pdts = all_products.find(e => e.product_id == id)
+                     let pdts = all_products.find(e => e.product_id == id && e.buyer_id === unique_id);
          
                      console.log(pdts);
          

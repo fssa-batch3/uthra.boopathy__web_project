@@ -64,9 +64,9 @@
         <div class="arrows"></div>
 
         <section>
-           <!-- <div class="thumbnail">
+            <div class="thumbnail">
                
-            <div class="products">
+           <!-- <div class="products">
               <a href="flat1view.html"> <img src="../../../../assets/images/flat1.jpg" alt="photo" height="230px" width="230px"/> 
               <h3> Flat Slippers for women </h3>
               <p> ₹749 <s>₹4,000</s> <span class="percent"> 81% off </span> </p> </a>
@@ -159,30 +159,6 @@
        <script>
 
          header ();
-
-
-      // <div class = "arrow" > </div>
-
-      div_arrow = document.createElement("div");
-      div_arrow.setAttribute("class", "arrow");
-      // console.log(div_arrow);
-
-      // <a> link </a>
-
-      a_arrow = document.createElement("a");
-      a_arrow.setAttribute("href", "../sandal/sandalpage.html");
-      div_arrow.append(a_arrow);
-      // console.log(a_arrow);
-
-
-      // < i >  arrow </i>
-
-      i_arrow = document.createElement("i");
-      i_arrow.setAttribute("class", "fa-solid fa-arrow-left");
-      a_arrow.append(i_arrow);
-
-
-      document.querySelector("div.arrows").append(div_arrow);
 
 
       let add_product = (JSON.parse(localStorage.getItem("add_products"))).filter(e => e.status == true && e.category == "Sandal" && e.type == 0);

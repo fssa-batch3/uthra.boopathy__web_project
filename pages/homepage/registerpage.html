@@ -50,7 +50,7 @@
             <h2> SIGN UP : </h2>
                  <div>
                      <label> Name: </label>
-                     <input type="name" id="uname" required="true" pattern="[A-Za-z]+" />
+                     <input type="name" id="uname" required="true" />
                 </div>
 
                 <div>
@@ -93,9 +93,10 @@
             let phonenumber = document.getElementById("phonenumber").value;
               confirm_password = document.getElementById("confirm_password").value;
               password = document.getElementById("password").value;
-             uname = document.getElementById("uname").value;
+             uname = document.getElementById("uname").value.trim().split(/\s+/g).join(' ');
              address = "";
              email = "";
+             age = "";
              user_uuid = uuidv4();
             let user_cred = JSON.parse(localStorage.getItem('user_cred')) || [];
 

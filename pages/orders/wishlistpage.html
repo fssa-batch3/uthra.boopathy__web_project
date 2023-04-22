@@ -298,12 +298,14 @@ document.querySelector("div.arrows").append(div_arrow);
                     if (confirm("Are you sure to remove this product?")){
             
                         let id = JSON.parse(localStorage.getItem("products_id"));
+
+                        let user_id = JSON.parse(localStorage.getItem("uniqueID"));
             
                         let all_products = JSON.parse(localStorage.getItem("wish"));
             
                         console.log(all_products);
             
-                        let pdts = all_products.find(e => e.product_uuid == id)
+                        let pdts = all_products.find(e => e.product_uuid == id && e.buyer_id === user_id);
             
                         console.log(pdts);
             

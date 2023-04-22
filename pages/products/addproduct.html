@@ -156,7 +156,7 @@
             e.preventDefault();
 
             let image = document.getElementById("image").value;
-            let name = document.getElementById("name").value;
+            let name = document.getElementById("name").value.trim().split(/\s+/g).join(' ');
             let original_price = document.getElementById("original_price").value;
             // let discount_price = discount_price.value;  // document.getElementById("discount_price").value;
             let discount_percent = document.getElementById("discount_percent").value;
