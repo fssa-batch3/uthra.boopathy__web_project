@@ -215,8 +215,8 @@ select{
 .btn-1{
     font-size: 18px;
     position: relative;
-    left: 280px;
-    top: 220px;
+    left: 180px;
+    top: 225px;
     align-content: space-between;
     border-radius: 5px;
     border: 1px solid purple;
@@ -236,7 +236,7 @@ select{
     font-size: 18px;
     position: relative;
     left: 320px;
-    top: 220px;
+    top: 190px;
     align-content: space-between;
     border-radius: 5px;
     border: 1px solid gray;
@@ -244,6 +244,11 @@ select{
     height: 35px;
     width: 100px;
     cursor: pointer;
+}
+
+.btn-2:hover {
+    background-color: purple;
+    color: white;
 }
 
 #des{

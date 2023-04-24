@@ -127,99 +127,12 @@ a{
 }
 
 .del{
-    margin-top: 10px;
-    margin-left: 15rem;
+    padding: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
     cursor: pointer;
 }
-
-
-/* .thumbnail{
-    position: relative;
-    top: 30px;
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-    margin-top: 20px;
-}
-
-h3{
-    color: maroon;
-    margin-top: 60px;
-    font-size: 23px;
-    font-weight: normal;
-}
-
-.products{
-    border: 1px solid #f8f8f8;
-    height: 400px;
-    width: 280px;
-    background-color: #f8f8f8;
-    position: relative;
-}
-
-.products img{
-    position: relative;
-    left: 50px;
-    top: 40px;
-    border-radius: 10px;
-}
-
-p{
-    color: black;
-    font-size: 22px;
-    word-spacing: 5px;
-    margin-top: 5px;
-}
-
-s{
-    color: darkgrey;
-}
-
-.chaitra{
-    border: 1px solid #f8f8f8;
-    background-color: #f8f8f8;
-    height: 400px;
-    width: 280px;
-    position: relative;
-}
-
-.chaitra img{
-    border-radius: 8px;
-    position: relative;
-    left: 60px;
-    top: 40px;
-}
-
-.subheading{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    height: 100px;
-    width: 1470px;
-    background-color: #F5F5F5;
-}
-
-.star{
-    margin-top: 5px;
-}
-
-.stars{
-    font-size: 20px;
-}
-
-
-
-.percent{
-    color: green;
-}
-
-.chaitra a{
-    text-decoration: none;
-}
-
-.products a{
-    text-decoration: none;
-} */
 
 footer{
     background-color: purple;

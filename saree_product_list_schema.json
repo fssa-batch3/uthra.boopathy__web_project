@@ -7,9 +7,137 @@ product_list_schema{
                   },
         "name" : "string",
         "price" : { "currency" : "string",
-                    "actualValue" : number,
+                    "actualValue" : "number",
                     "discount" : { 
                     "type" : "string",
-                    "value" :  number}
+                    "value" :  "number"}
      }
 }
+
+
+// EXAMPLE JSON CREATION FOR PRODUCT LIST 
+
+
+
+      // let product_list = [
+
+      //    { "image" : {"src" : "../../../../assets/images/chudi2.jpg",
+      //                    "height" : "260px",
+      //                    "width" : "230px" },
+      //      "name" : "Semi-Stiched Anarkali Long Chudi",
+      //      "price" : "₹3,749 ",
+      //      "discount" : "₹4,000",
+      //      "percent" : " 81% off",
+      //    },
+       
+      //    {
+      //       "image" : {"src" : "../../../../assets/images/chudi1.jpg",
+      //                    "height" : "260px",
+      //                    "width" : "230px" },
+      //      "name" : "Semi-Stiched Anarkali Long Chudi",
+      //      "price" : " ₹4,899 ",
+      //      "discount" : "₹3,999",
+      //      "percent" : " 77% off" 
+      //    },
+
+      //    {
+      //       "image" : {"src" : "../../../../assets/images/chudi5,jpg.webp",
+      //                    "height" : "260px",
+      //                    "width" : "230px" },
+      //      "name" : "Semi-Stiched Anarkali Long Chudi",
+      //      "price" : "  ₹2,799 ",
+      //      "discount" : "₹3,999",
+      //      "percent" : " 80% off"
+      //    },
+
+      //    {
+      //       "image" : {"src" : "../../../../assets/images/chudi8.jpg",
+      //                    "height" : "260px",
+      //                    "width" : "230px" },
+      //      "name" : "Semi-Stiched Anarkali Long Chudi",
+      //      "price" : " ₹745 ",
+      //      "discount" : "₹1,888",
+      //      "percent" : " 60% off"
+      //    },
+
+      //    {
+      //       "image" : {"src" : "../../../../assets/images/chudi4.jpg",
+      //                    "height" : "260px",
+      //                    "width" : "230px" },
+      //      "name" : "Semi-Stiched Anarkali Long Chudi",
+      //      "price" : "  ₹1,799 ",
+      //      "discount" : "₹3,999",
+      //      "percent" : " 80% off"
+      //    },
+
+      //    {
+      //       "image" : {"src" : "../../../../assets/images/chudi6.jpg",
+      //                    "height" : "260px",
+      //                    "width" : "230px" },
+      //      "name" : "Semi-Stiched Anarkali Long Chudi",
+      //      "price" : " ₹2,806 ",
+      //      "discount" : "₹1,949",
+      //      "percent" : " 58% off"
+      //    },
+
+      //    {
+      //       "image" : {"src" : "../../../../assets/images/chudi7.jpg",
+      //                    "height" : "260px",
+      //                    "width" : "230px" },
+      //      "name" : "Semi-Stiched Anarkali Long Chudi",
+      //      "price" : " ₹899 ",
+      //      "discount" : "₹1,999",
+      //      "percent" : " 55% off"
+      //    },
+
+      //    {
+      //       "image" : {"src" : "../../../../assets/images/chudi12.jpg",
+      //                    "height" : "260px",
+      //                    "width" : "230px" },
+      //      "name" : "Semi-Stiched Anarkali Long Chudi",
+      //      "price" : " ₹1,789 ",
+      //      "discount" : "₹1,888",
+      //      "percent" : " 58% off"
+      //    },
+
+      //    {
+      //       "image" : {"src" : "../../../../assets/images/chudi3.jpg",
+      //                    "height" : "260px",
+      //                    "width" : "230px" },
+      //      "name" : "Semi-Stiched Anarkali Long Chudi",
+      //      "price" : " ₹2,799 ",
+      //      "discount" : "₹3,999",
+      //      "percent" : " 80% off"
+      //    },
+
+      //    {
+      //       "image" : {"src" : "../../../../assets/images/chudi9.jpg",
+      //                    "height" : "260px",
+      //                    "width" : "230px" },
+      //      "name" : "Semi-Stiched Anarkali Long Chudi",
+      //      "price" : " ₹806 ",
+      //      "discount" : "₹1,949",
+      //      "percent" : " 58% off"
+      //    },
+
+      //    {
+      //       "image" : {"src" : "../../../../assets/images/chudi10.jpg",
+      //                    "height" : "260px",
+      //                    "width" : "230px" },
+      //      "name" : "Semi-Stiched Anarkali Long Chudi",
+      //      "price" : " ₹899 ",
+      //      "discount" : "₹1,999",
+      //      "percent" : " 55% off"
+      //    },
+
+      //    {
+      //       "image" : {"src" : "../../../../assets/images/chudi11.jpg",
+      //                    "height" : "260px",
+      //                    "width" : "230px" },
+      //      "name" : "Semi-Stiched Anarkali Long Chudi",
+      //      "price" : " ₹789 ",
+      //      "discount" : "₹1,888",
+      //      "percent" : " 58% off"
+      //    }
+
+      // ] 

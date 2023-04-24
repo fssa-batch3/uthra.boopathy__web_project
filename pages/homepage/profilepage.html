@@ -14,33 +14,7 @@
     
     <body>
         <header id="userLogin">
-            <!-- <a href="../homepage/frontpage.html"> <img class="logo" src="../../assets/images/logo.png" alt="logo" height="70px" width="70px"/> </a>
-            <h1> Thara's World </h1>
-            <div class="nav">
-                <ul>
-                   <li> <a href="../orders/cartpage.html"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a></li>
-                   <li> <a href="../orders/wishlistpage.html"><i class="fa-sharp fa-solid fa-heart"></i></a></li> 
-                   <li><a href="../orders/myorderspage.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
-                   <li><a href="#"><i class="fa-solid fa-bell"></i></i></a></li>
-                   <li><a href="profilepage.html"><i class="fa-solid fa-circle-user"></i></a></li>
-                   <li> <a href="../homepage/loginpage.html"><span class="login"> Login </span> </a></li>
-                 </ul>
-             </div>
-
-             <div class="menu">
-               
-               <i class="fa-solid fa-bars"></i>               
-                <div class="menu-list">
-                   
-                       <a href="../orders/cartpage.html"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
-                       <a href="../orders/wishlistpage.html"><i class="fa-sharp fa-solid fa-heart"></i></a>
-                       <a href="../orders/myorderspage.html"><i class="fa-solid fa-bag-shopping"></i></a>
-                       <a href="#"><i class="fa-solid fa-bell"></i></i></a>
-                       <a href="profilepage.html"><i class="fa-solid fa-circle-user"></i></a>
-                       <a href="loginpage.html"><span class="login"> Login </span> </a>
-               
-                </div>
-            </div> -->
+            
         </header>
 
         <div class="arrows"></div>
@@ -62,7 +36,7 @@
 
                 <div class="age">
                     <label> Age:</label>
-                    <input type="tel" id="age" pattern="[0-9]+{.1}" minlength="2" maxlength="2" />
+                    <input type="tel" id="age" pattern="[0-9]{.1}" minlength="2" maxlength="2" />
                 </div>
 
                 <div class="add">
@@ -77,7 +51,7 @@
 
                 <div class="mail">
                     <label> E-Mail Id: </label>
-                    <input type="email"  id="email" placeholder="ghds4729@gmail.com" />
+                    <input type="email"  id="email" placeholder="ghds4729@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{3,}$" />
                 </div>
 
                 <div class="des">
@@ -94,7 +68,7 @@
 
             </form>
 
-            <button class="btn-2" type="submit">  Cancel     </button>
+            <a href="../homepage/profile.html"> <button class="btn-2" type="submit">  Cancel </button>  </a>
        
             </section>
 
@@ -136,6 +110,7 @@
                 return e.phonenumber == uniqueID;
             }
             person_data = user_cred.find(profile_data);
+            console.log(person_data);
             document.getElementById("uname").value= person_data["uname"];
             document.getElementById("email").value = person_data["email"];
             document.getElementById("phonenumber").value = person_data["phonenumber"];
