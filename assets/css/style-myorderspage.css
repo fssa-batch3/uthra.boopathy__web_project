@@ -68,81 +68,87 @@ h1{
 .container{
     background-color: #F8F8F8;
     border-radius: 5px;
-    position: relative;
-    top: 110px;
-    margin-left:260px;
-    width: 65%;
-    padding: 10px;
+    width: 80%;
+    height: 45vh;
+    margin-left: 160px;
 }
 
-.container img{
-    border-radius: 4px;
-    position: relative;
-    top: 80px;
-    right: 50px;
-}
-
-.stars{
-    font-size: 22px;
-}
-
-.details{
-    position: relative;
-    left: 250px;
-    bottom: 50px;
-}
-
-h3{
-    font-size: 28px;
-    color: maroon;
-}
-
-p{
-    font-size: 23px;
+span{
+    font-size: 20px;
     font-weight: bold;
-    position: relative;
-    top: 10px;
 }
 
-s{
-    color: darkgrey;
-    font-size: 22px;
-    position: relative;
-    left: 70px;
-    bottom: 15px;
+span i {
+    margin-top: 1rem;
+    margin-left: 2rem;
 }
 
-.percent{
-    color: green;
-    font-size: 22px;
-    position: relative;
-    left: 100px;
-    bottom: 15px;
+.images p {
+    font-size: 25px;
+}
+
+.details {
+    display: flex;
+    margin-left:20rem;
+    margin-top: 2rem;
+    font-size: 25px;
+    width: 500px;
+    justify-content: space-evenly;
 }
 
 .deliver{
-    background-color: white;
-    border-radius: 5px;
-    height: 150px;
-    width: 600px;
-    position: relative;
-    top: 40px;
-    right: 10px;
-    font-size: 20px;
+    display: flex;
+    align-content: space-evenly;
+    margin-left: 17rem;
 }
 
 .detail{
-    position: relative;
-    top: 10px;
-    left: 30px;
+    background-color: white;
+    border-radius: 5px;
+    height: 150px;
+    width: 350px;
+    font-size: 17px;
+    margin-top: 50px;
+    margin-left: -40px;
+    padding-top: 20px;
+    padding-left: 20px;
+} 
+
+.owner_details {
+    background-color: white;
+    border-radius: 5px;
+    height: 150px;
+    width: 350px;
+    font-size: 17px;
+    margin-top: 50px;
+    margin-left: -40px;
+    padding-top: 20px;
+    padding-left: 20px;
 }
 
-.de{
-    position: relative;
-    bottom: 80px;
-    left: 60px;
-    font-size: 20px;
-    font-weight: bold;
+#name {
+    font-size: 25px;
+    color: maroon;
+}
+
+.price {
+    display: flex;
+}
+
+#original_price {
+    color: darkgrey;
+    font-size: 22px;
+    margin-left: 1rem;
+}
+
+#discount_price{
+    font-size: 22px;
+}
+
+.percent {
+    font-size: 22px;
+    color: green;
+    margin-left: 1rem;
 }
 
 footer{
@@ -260,35 +266,4 @@ h4{
 .twiter{
     background-color: #00acee;
     color: white;
-}
-
-.collections img{
-    border-radius: 150px;
-    padding: 40px;
-}
-
-.icons div{
-    position: relative;
-}
-
-.div{
-    font-size: 25px;
-    font-weight: bold;
-    margin-left: 70px;
-    display: inline-flex;
-    bottom: 20px;
-}
-
-.divs{
-    font-size: 25px;
-    font-weight: bold;
-    margin-left: 90px;
-    bottom: 20px;
-}
-
-.divss{
-    font-size: 25px;
-    font-weight: bold;
-    margin-left: 100px;
-    bottom: 20px;
-}
+} 

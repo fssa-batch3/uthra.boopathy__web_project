@@ -111,13 +111,6 @@ section img{
     top: 95px;
 }
 
-/* .gender{
-    font-weight: 200px;
-    font-size: 20px;
-    position: relative;
-    top: 45px;
-} */
-
 .add{
     font-weight: 200px;
     font-size: 20px;
@@ -198,6 +191,7 @@ textarea{
     border: none;
     top: 15px;
     outline: none;
+    resize: none;
 }
 
 .c1{

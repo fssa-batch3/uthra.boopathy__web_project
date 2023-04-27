@@ -121,13 +121,6 @@ input[type="text"]{
     top: 100px;
 }
 
-/* .gender{
-    font-weight: 200;
-    font-size: 20px;
-    position: relative;
-    top: 55px;
-} */
-
 .add{
     font-weight: 200;
     font-size: 20px;
@@ -195,6 +188,7 @@ textarea{
     left: 20px;
     top: 15px;
     outline: none;
+    resize: none;
 }
 
 .c1{

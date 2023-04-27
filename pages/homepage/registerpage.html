@@ -72,6 +72,19 @@
              address = "";
              email = "";
              user_uuid = uuidv4();
+
+             function validate() {
+        // let val = document.getElementById('user_address').value;
+        // let name = document.getElementById('uname').value;
+
+        if (/^\s*$/g.test(uname)) {
+            alert('Please, write your name properly');
+            uname=reset();
+        }
+    }
+
+    validate();
+
             let user_cred = JSON.parse(localStorage.getItem('user_cred')) || [];
 
             let exist = user_cred.length &&
@@ -81,7 +94,7 @@
             if(!exist){
 
               if(password == confirm_password){
-                user_cred.push({uname,phonenumber,confirm_password,password,user_uuid,address,email});
+                user_cred.push({uname,phonenumber,confirm_password,password,user_uuid,address,email,age});
                 localStorage.setItem('user_cred',JSON.stringify(user_cred));
                 console.log(localStorage.getItem('user_cred'));
                 document.querySelector("form").reset();
@@ -99,6 +112,8 @@
             }
       
           }
+
+
 
     </script>
 

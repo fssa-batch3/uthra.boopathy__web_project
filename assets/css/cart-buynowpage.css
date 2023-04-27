@@ -56,7 +56,7 @@ h1{
 .left{
     width: 50%;
     position: relative;
-    top: 200px;
+    top: 170px;
     left: 200px;
 }
 
@@ -87,7 +87,7 @@ h1{
     width: 500px;
     position: relative;
     left: 800px;
-    bottom: 300px;
+    bottom: 350px;
 }
 
 h2{
@@ -147,36 +147,29 @@ strong{
 .add{
     font-size: 22px;
     position: relative;
-    top: 115px;
+    top: 110px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .no{
     font-size: 22px;
     position: relative;
-    top: 135px;
+    top:30px;
 }
 
 .cash{
     font-size: 22px;
     position: relative;
-    top: 180px;
+    top: 80px;
 }
 
 .quantity{
     font-size: 22px;
     position: relative;
-    top: 155px;
+    top: 60px;
 }
-
-/* .c1{
-    position: relative;
-    margin-left: 85px;
-}
-
-.c2{
-    position: relative;
-    margin-left: 85px;
-} */
 
 input[type="name"]{
     height: 25px;
@@ -201,24 +194,45 @@ select{
 }
 
 textarea{
-    height: 30px;
-    width: 180px;
+    height: 35px;
+    width: 200px;
     font-size: 15px;
     border: 1px solid gray;
     border-radius: 3px;
-    /* padding-left: 25px; */
     position: relative;
-    left: 100px;
+    top: -25px;
+    left: 183px;
     outline: none;
 }
 
-input[type="no"]{
-    height: 25px;
-    width: 180px;
+#pincode {
+    height: 30px;
+    width: 200px;
     font-size: 15px;
     border: 1px solid gray;
     border-radius: 3px;
-    /* padding-left: 25px; */
+    margin-top: 6rem;
+    margin-left: 5.4rem; 
+    outline: none;
+}
+
+#state {
+    height: 30px;
+    width: 200px;
+    font-size: 15px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    margin-top: 0.5rem;
+    margin-left: 11.5rem; 
+    outline: none;
+}
+
+input[type="tel"]{
+    height: 30px;
+    width: 200px;
+    font-size: 15px;
+    border: 1px solid gray;
+    border-radius: 3px;
     position: relative;
     left: 40px;
     outline: none;
@@ -230,7 +244,6 @@ input[type="number"]{
     font-size: 15px;
     border: 1px solid gray;
     border-radius: 3px;
-    padding-left: 5px;
     position: relative;
     left: 96px;
     outline: none;
@@ -243,7 +256,7 @@ input[type="number"]{
     background-color: purple;
     border-radius: 5px;
     color: white;
-    margin-top: 250px;
+    margin-top: 130px;
     margin-left: 90px;
     cursor: pointer;
 }

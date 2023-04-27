@@ -137,7 +137,7 @@ for ( let k = 0; k < check_pdt.length; k++) {
 
             p_org = document.createElement("p");
             p_org.setAttribute("id", "original_price");
-            p_org.innerText = "₹" +  check_pdt[k]["product_quantity"] * check_pdt[k]["discount_price"] + "   ";
+            p_org.innerText = "₹" + check_pdt[k]["discount_price"] + "   ";
             div.append(p_org);
 
             // <s> </s>
@@ -186,6 +186,14 @@ for ( let k = 0; k < check_pdt.length; k++) {
             button_remove.setAttribute("type", "submit");
             button_remove.innerText = "REMOVE";
             div_container.append(button_remove);
+
+            button_wish = document.createElement("button");
+            button_wish.setAttribute("class", "wish");
+            button_wish.setAttribute("data-remove", check_pdt[k]["product_id"]);
+            button_wish.setAttribute("type", "submit");
+            button_wish.setAttribute("onclick", "move_to_wishlist()")
+            button_wish.innerText = "WISHLIST";
+            div_container.append(button_wish);
 
 
             document.querySelector("section").append(div_container);   
@@ -376,8 +384,61 @@ for ( let k = 0; k < check_pdt.length; k++) {
          })
 
 
-            // }
 
+            // MOVE TO WISHLIST
+
+            function move_to_wishlist() {
+
+         let product = document.querySelectorAll("button.wish")
+
+
+         product.forEach(function(check){
+
+         check.addEventListener("click", function (){
+
+         let product_id = this.dataset.remove;
+
+         localStorage.setItem("products_id", JSON.stringify(product_id));
+
+         console.log(product_id);
+
+         if (confirm("Are you sure to move this product to wishlist?")){
+
+         let id = JSON.parse(localStorage.getItem("products_id"));
+
+         let user_id = JSON.parse(localStorage.getItem("uniqueID"));
+
+         let all_products = JSON.parse(localStorage.getItem("cart"));
+
+         console.log(all_products);
+
+         let pdts = all_products.find(e => e.product_id == id && e.buyer_id === user_id);
+
+         console.log(pdts);
+
+         let indexOfProduct = all_products.indexOf(pdts);
+
+         all_products.splice(indexOfProduct, 1);
+
+         console.log(indexOfProduct); 
+
+         let wish_products = JSON.parse(localStorage.getItem("wish")) || [];
+
+         wish_products.push(pdts);
+
+         localStorage.setItem("wish", JSON.stringify(wish_products));
+
+         localStorage.setItem("cart", JSON.stringify(all_products));
+
+     }
+
+     window.location.reload();
+
+ });
+
+});
+
+}
 
 
 </script>

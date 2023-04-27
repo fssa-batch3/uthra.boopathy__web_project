@@ -25,11 +25,27 @@
             <span class="de">
             <i class="fa fa-check-circle" style="font-size:28px;color: green;"></i>
                    DELIVERED </span>
-                 <img src="../../assets/images/silk12.jpg" alt="photo" width="110px"/>
-                 <div class="details">
-                    <h3 id="name"> <span class="title"> Printed Banarasi Jacquard Saree </span> </h3>
-                    <p id="discount_price"> ₹749 </p> <s id="original_price" >₹4,000</s> <span class="percent" id="discount_percent"> 81% off </span>
                    
+                   <!-- <div class="images"> -->
+
+
+                   <!-- <div class="img">
+                     <img src="../../assets/images/silk12.jpg" alt="photo" height="250px" width="250px" />
+                   </div>
+                   <div class="info">
+                     <h3 id="name"> Printed Banarasi Jacquard Saree </h3>
+                     <p class="price"> <span id="discount_price"> ₹749 </span> <s id="original_price" >₹4,000</s> <span class="percent" id="discount_percent"> 81% off </span> </p>
+                   </div> -->
+                 
+               <div class="details">   
+
+                    <p class="qty">  Quantity : 1  </p>  
+
+                    <p> <span class="pdt" style="text-decoration: underline; color: purple;font-size: 25px;"> Products </span> : 1 </p>  
+
+                  </div>
+
+<!--                    
                        <div class="star">
                               <span class="stars"> REVIEW: </span>
                                 <i class="fa fa-star" style="font-size: 24px;color: gold"></i>
@@ -37,7 +53,7 @@
                                 <i class="fa fa-star" style="font-size: 24px;color: gold"></i>
                                 <i class="fa fa-star" style="font-size: 24px;color: gold"></i>
                                 <i class="fa fa-star-o" style="font-size: 24px;color: gold"></i>
-                        </div>
+                        </div> -->
 
                         <div class="deliver">
                            <div class="detail"> 
@@ -46,12 +62,21 @@
                             Delivered to Ms. Uthra <br>
                             Delivery status: Delivered on 28.11.2022 <br>
                             Delivery address: 21 A, North cross street, Tirunelveli, <br>
-                            <span class="pin"> 627401 </span>
+                             627401 
                            </div> 
+
+                           <div class = owner_details>
+                              
+                              <strong> Ordered from : </strong> <br>
+                              Delivered to Ms. Uthra <br>
+                              Delivery status: Delivered on 28.11.2022 <br>
+                              Delivery address: 21 A, North cross street, Tirunelveli, <br>
+
+                           </div>
+
                         </div>
 
                     </div>
-           </div>
 
         </section>
 
@@ -113,6 +138,172 @@ a_arrow.append(i_arrow);
 
 
 document.querySelector("div.arrows").append(div_arrow);
+
+
+
+// let user_id = JSON.parse(localStorage.getItem("uniqueID"));
+
+// let ordered_prodducts = JSON.parse(localStorage.getItem("my_orders"));
+
+// let orders = orders.filter(e => e.buyer_id === user_id);
+
+// for (let j=0; j<orders.length; j++) {
+
+//    // <div class = "container" > </div>
+   
+//    div_container = document.createElement("div");
+//    div_container.setAttribute("class", "container");
+
+//    // <span class = "de" > </span>
+
+//    span_de = document.createElement("span");
+//    span_de.setAttribute("class", "de");
+//    span_de.innerText = "DELIVERD";
+//    div_container.append(span_de);
+
+//    // <i>
+
+//    i_sym = document.createElement("i");
+//    i_sym.setAttribute("class", "fa fa-check-circle");
+//    i_sym.setAttribute("style", "font-size:28px;color: green;");
+//    span_de.append(i_sym);
+
+//    div_images = document.createElement("div");
+//    div_images.setAttribute("class", "images");
+//    div_container.append(div_images);
+
+//    // <div class = "img">
+
+//    div_img = document.createElement("div");
+//    div_img.setAttribute("class", "img");
+//    div_images.append(div_img);
+
+
+//    // <img >
+
+//    img = document.createElement("img");
+//    img.setAttribute("src", orders[j]["image"]);
+//    img.setAttribute("alt", orders[j]["name"] + "image");
+//    img.setAttribute("width", "180px");
+//    img.setAttribute("height", "200px");
+//    div_img.append(img);
+
+//    // <div class="info">
+
+//    div_info = document.createElement("div");
+//    div_info.setAttribute("class", "info");
+//    div_images.append(div_info);
+
+//    // <h3>
+
+//    h3 = document.createElement("h3");
+//    h3.setAttribute("id", "name");
+//    h3.innerText = orders[j]["name"]
+//    div_info.append(h3);
+
+//    // <p class="price">
+
+//    p_price = document.createElement("p");
+//    p_price.setAttribute("class", "price");
+//    div_info.append(p_price);
+
+//    // <span id="dis_price">
+
+//    span_dis = document.createElement("span");
+//    span_dis.setAttribute("id", "discount_price");
+//    span_dis.innerText = orders[j]["discount_price"];
+//    p_price.append(span_dis);
+
+//    // <s>
+
+//    s = document.createElement("s");
+//    s.setAttribute("id", "original_price");
+//    s.innerText = orders[j]["original_price"];
+//    p_price.append(s);
+
+//    // <span class = "percent">
+
+//    span_per = document.createElement("span");
+//    span_per.setAttribute("class", "percent");
+//    span_per.setAttribute("id", "discount_percent");
+//    span_per.innerText = orders[j]["discount_percent"];
+//    p_price.append(span_per);
+
+//    // <div class = "details" > </div>
+   
+//    div_details = document.createElement("div");
+//    div_details.setAttribute("class", "details");
+//    div_container.append(div_details);
+
+//    // <p cls ="qty">
+
+//    p_qty = document.createElement("p");
+//    p_qty.setAttribute("class", "qty");
+//    p_qty.innerText = "Quantity : " + orders[j]["product_quantity"];
+//    div_details.append(p_qty);
+
+//    // <p class="pdt">
+
+//    p_pdt = document.createElement("p");
+//    p_pdt.setAttribute("class", "pdt");
+//    p_pdt.innerText = "Products : 1";
+//    div.append(p_pdt);
+
+//    //<div class = "deliver" >
+
+//    div_deliver = document.createElement("div");
+//    div_deliver.setAttribute("class", "deliver");
+//    div_container.append(div_deliver);
+
+//    // <div class ="detail">
+
+//    div_detail = document.createElement("div");
+//    div_detail.setAttribute("class", "detail");
+//    div_deliver.append(div_detail);
+
+//    // <strong>
+
+//    strong = document.createElement("strong");
+//    strong.innerText = "DELIVERED DETAILS";
+//    div_detail.append(strong);
+
+//    // <p1>
+
+//    p_1 = document.createElement("p");
+//    p_1.innerText = "Delivered to : " + orders[j]["uname"];
+//    strong.append(p_1);
+   
+//    // p_2
+
+//    p_2 = document.createElement("p");
+//    p_2.innerText = "Ordered on : " + orders[j]["booked_date"];
+//    p_1.append(p_2);
+
+//    // p_3
+
+//    p_3 = document.createElement("p");
+//    p_3.innerText = "Address : " + orders[j]["address"];
+//    p_2.append(p_3);
+
+//    // <div class = "owner_details">
+
+//    div_owner = document.createElement("div");
+//    div_owner.setAttribute("class", "owner_details");
+//    div_deliver.append(div_owner);
+
+//    // strong
+
+//    strong_own = document.createElement("strong");
+//    strong_own.innerText = "ORDERED FROM :";
+//    div_owner.append(strong_own);
+
+//    // p_4
+
+//    p_4 = document.createElement("p");
+//    p_4.innerText = ""
+
+
+// }
 
 
 

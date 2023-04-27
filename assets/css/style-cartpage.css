@@ -85,7 +85,7 @@ h1{
     align-items: center;
     justify-content: space-evenly;
     height: 15vh;
-    
+    width: 25rem;
 }
 
 .details div {
@@ -118,15 +118,26 @@ input {
 }
 
 .remove{
-    height: 40px;
-    width: 140px;
+    height: 35px;
+    width: 120px;
     background-color: purple;
     border: 0px;
     border-radius: 5px;
     font-size: 18px;
     color: white;
     cursor: pointer;
-}    
+}   
+
+.wish {
+    height: 35px;
+    width: 120px;
+    background-color: purple;
+    border: 0px;
+    border-radius: 5px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+}
 
 .buy {
     height: 40px;
@@ -191,14 +202,6 @@ s{
 .total div p {
     padding-top: 2rem;
     align-content: flex-end;
-}
-
-.total_amt {
-    /* border-top: 1px solid gray; */
-    border-bottom: 1px solid gray;
-    width: 150px;
-    margin-bottom: 2rem;
-    /* padding-bottom: 1.2rem; */
 }
 
 footer{
