@@ -1,272 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Add product page </title>
-    <link rel="stylesheet" href="../../assets/css/addproduct.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kreon:wght@300;400;500;600;700&family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Add product page </title>
+        <link rel="stylesheet" href="../../assets/css/addproduct.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+            integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+            crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kreon:wght@300;400;500;600;700&family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet">
+    </head>
 
-<body>
-    <header id="userLogin">
+    <body>
+        <header id="userLogin">
 
-    </header>
+        </header>
 
-    <section>
+        <section>
 
-        <div class="arrows"> </div>
+            <div class="arrows"> </div>
 
-        <form role="form" onsubmit="add_product(event)">
+            <form role="form" onsubmit="add_product(event)">
 
-            <h2> ADD PRODUCTS </h2>
+                <h2> ADD PRODUCTS </h2>
 
-            <div class="box">
+                <div class="box">
 
-                <div class="photo" id="imgBox">
-                    <div class="camera">
-                        <!-- <input type="file" accept="image/*" name="image" id="image" style = "display: none" /> -->
-                        <label for="image" class="camera"><i class="fa fa-camera" style="color: #000;"></i></label>
+                    <div class="photo" id="imgBox">
+                        <div class="camera">
+                            <!-- <input type="file" accept="image/*" name="image" id="image" style = "display: none" /> -->
+                            <label for="image" class="camera">
+                                <i class="fa fa-camera" style="color: #000;"></i>
+                            </label>
+                        </div>
+
                     </div>
 
+                    <div class="details">
+
+                        <div>
+                            <label> Image url: </label>
+                            <br>
+                            <input type="url" id="image" required>
+                        </div>
+
+                        <div>
+                            <label> Name of the product: </label>
+                            <br>
+                            <input type="text" id="name" required>
+                        </div>
+
+                        <div>
+                            <label> Actual price: </label>
+                            <br>
+                            <label>₹</label>
+                            <input type="number" id="original_price" pattern="[0-9]{0,}" required>
+                        </div>
+
+                        <div>
+                            <label> Current price: </label>
+                            <br>
+                            <label>₹</label>
+                            <input type="number" pattern="[0-9]{0,}">
+                        </div>
+
+                        <div>
+                            <label> Discount percentage:</label>
+                            <br>
+                            <input type="number" id="discount_percent" pattern="[0-9]{2}" required>
+                            <label> % </label>
+                        </div>
+
+                        <div>
+                            <label> Category: </label>
+                            <select id="category" required>
+                                <option selected="selected"> Select category </option>
+                            </select>
+
+                            <label> Type: </label>
+                            <select id="type" required>
+                                <option selected="selected"> Select category </option>
+                            </select>
+
+                        </div>
+
+                        <div class="add">
+                            <label> Product details: </label>
+                            <br>
+                            <textarea id="product_detail" required> </textarea>
+                        </div>
+
+                        <div class="add_info">
+                            <label> Additional information: </label>
+                            <br>
+                            <textarea id="add_info">*Special PriceGet extra 30% off (price inclusive of cashback/coupon)T&C 
+                                *Bank Offer5% Cashback on Thara's World Axis Bank CardT&C                  
+                                *Partner OfferSign up for Thara's World Pay Later and get Thara's World Gift Card worth up to ₹500 </textarea>
+                        </div>
+
+                        <button type="submit"> Upload </button>
+
+                        <!-- <button> <a href="../products/myproduct.html"> Upload </a> </button> -->
+
+                    </div>
 
                 </div>
 
-                <div class="details">
+            </form>
 
-                    <div>
-                        <label> Image url: </label> <br>
-                        <input type="url" id="image" required />
-                    </div>
+        </section>
 
-                    <div>
-                        <label> Name of the product: </label> <br>
-                        <input type="text" id="name" required />
-                    </div>
+        <script src="../../assets/js/header.js"></script>
 
-                    <div>
-                        <label> Actual price: </label> <br>
-                        <label>₹</label>
-                        <input type="number" id="original_price" pattern="[0-9]{0,}" required />
-                    </div>
+        <script>// <div class = "arrow" > </div>
 
-                    <div>
-                        <label> Current price: </label> <br>
-                        <label>₹</label>
-                        <input type="number" pattern="[0-9]{0,}" />
-                    </div>
-
-                    <div>
-                        <label> Discount percentage:</label> <br>
-                        <input type="number" id="discount_percent" pattern="[0-9]{2}" required />
-                        <label> % </label>
-                    </div>
-
-                    <div>
-                        <label> Category: </label>
-                        <select id="category" required>
-                            <option selected="selected"> Select category </option>
-                        </select>
-
-                        <label> Type: </label>
-                        <select id="type" required>
-                            <option selected="selected"> Select category </option>
-                        </select>
-
-                    </div>
-
-
-                    <div class="add">
-                        <label> Product details: </label> <br>
-                        <textarea id="product_detail" required> </textarea>
-                    </div>
-
-                    <div class="add_info">
-                        <label> Additional information: </label> <br>
-                        <textarea id="add_info">*Special PriceGet extra 30% off (price inclusive of cashback/coupon)T&C 
-*Bank Offer5% Cashback on Thara's World Axis Bank CardT&C                  
-*Partner OfferSign up for Thara's World Pay Later and get Thara's World Gift Card worth up to ₹500 </textarea>
-                    </div>
-
-
-                    <button type="submit"> Upload </button>
-
-                    <!-- <button> <a href="../products/myproduct.html"> Upload </a> </button> -->
-
-                </div>
-
-            </div>
-
-        </form>
-
-    </section>
-
-    <script src="../../assets/js/header.js"></script>
-
-    <script>
-
-
-
-        // <div class = "arrow" > </div>
-
-        div_arrow = document.createElement("div");
+        const div_arrow = document.createElement("div");
         div_arrow.setAttribute("class", "arrow");
         // console.log(div_arrow);
 
         // <a> link </a>
 
-        a_arrow = document.createElement("a");
+        const a_arrow = document.createElement("a");
         a_arrow.setAttribute("href", "../products/myproduct.html");
         div_arrow.append(a_arrow);
         // console.log(a_arrow);
 
-
         // < i >  arrow </i>
 
-        i_arrow = document.createElement("i");
+        const i_arrow = document.createElement("i");
         i_arrow.setAttribute("class", "fa-solid fa-arrow-left");
         a_arrow.append(i_arrow);
 
-
         document.querySelector("div.arrows").append(div_arrow);
 
-
-
         function add_product(e) {
+  e.preventDefault();
 
-            e.preventDefault();
+          const image = document.getElementById("image").value;
+          let name = document
+    .getElementById("name")
+    .value.trim()
+    .split(/\s+/g)
+    .join(" ");
+          const original_price = document.getElementById("original_price").value;
+          let discount_price;
+          const discount_percent = document.getElementById("discount_percent").value;
+          const category = document.getElementById("category").value;
+          const type = document.getElementById("type").value;
+          const product_detail = document.getElementById("product_detail").value;
+          const add_info = document.getElementById("add_info").value;
+          const product_uuid = uuidv4();
 
-            let image = document.getElementById("image").value;
-            let name = document.getElementById("name").value.trim().split(/\s+/g).join(' ');
-            let original_price = document.getElementById("original_price").value;
-            // let discount_price = discount_price.value;  // document.getElementById("discount_price").value;
-            let discount_percent = document.getElementById("discount_percent").value;
-            let category = document.getElementById("category").value;
-            let type = document.getElementById("type").value;
-            let product_detail = document.getElementById("product_detail").value;
-            let add_info = document.getElementById("add_info").value;
-            let product_uuid = uuidv4();
+  if (discount_percent === discount_percent) {
+            discount_price = original_price - (original_price * discount_percent) / 100;
+            discount_price = Math.round(discount_price);
+          } else {
+            discount_price = original_price - discount_percent;
+          }
 
-
-            if (discount_percent == discount_percent) {
-                discount_price = original_price - original_price * discount_percent / 100;
-                discount_price = Math.round(discount_price);
-            }
-            else {
-                discount_price = original_price - discount_percent;
-            }
-
-            function validate() {
-        if (/^\s*$/g.test(name)) {
-            alert('Write the product name properly');
-            name =reset();
-        }
+          function validate() {
+            if (/^\s*$/g.test(name)) {
+              alert("Write the product name properly");
+              name = reset();
     }
+          }
 
+  const add_products = JSON.parse(localStorage.getItem("add_products")) || [];
 
-            let add_products = JSON.parse(localStorage.getItem('add_products')) || [];
+          const user_id = JSON.parse(localStorage.getItem("uniqueID"));
 
-            let user_id = JSON.parse(localStorage.getItem('uniqueID'));
+  add_products.push({
+            image,
+            name,
+            original_price,
+            discount_price,
+            discount_percent,
+            category,
+            type,
+            product_detail,
+            add_info,
+            product_uuid,
+            status: true,
+            user_id,
+          });
 
+          localStorage.setItem("add_products", JSON.stringify(add_products));
+          console.log(localStorage.getItem("add_products"));
 
+          localStorage.setItem("uuid", JSON.stringify(product_uuid));
 
-            add_products.push({
-                image: image,
-                name: name,
-                original_price: original_price,
-                discount_price: discount_price,
-                discount_percent: discount_percent,
-                category: category,
-                type: type,
-                product_detail: product_detail,
-                add_info: add_info,
-                product_uuid: product_uuid,
-                status: true,
-                user_id: user_id
-            });
+          alert("Product uploaded successfully");
 
-            localStorage.setItem('add_products', JSON.stringify(add_products));
-            console.log(localStorage.getItem('add_products'));
-
-            localStorage.setItem('uuid', JSON.stringify(product_uuid));
-
-            alert('Product uploaded successfully');
-
-            location.href = "../products/myproduct.html";
-
-
+          window.location.href = "../products/myproduct.html";
         }
-
-
-
     </script>
 
+        <script>
+        const categorySel = {
+  Dress: [
+    "Saree",
+    "Chudi",
+    "Frock",
+    "Leganga",
+    "Party wear",
+    "Traditional wear",
+    "Crop top",
+    "Jeans",
+  ],
 
-    <script>
+  Jewell: [
+    "Earring",
+    "Choker",
+    "Jewell set",
+    "Nosepins",
+    "Necklace",
+    "Ring",
+    "Chain",
+    "Bracelet",
+  ],
 
-        header();
+  Cosmetics: [
+    "Eye products",
+    "Shades",
+    "Lipstick",
+    "Nailpolish",
+    "Face cream",
+    "Facialkit",
+    "Makeupkit",
+    "Brush",
+  ],
 
-
-        let categorySel = {
-
-            Dress: ["Saree", "Chudi", "Frock", "Leganga", "Party wear", "Traditional wear", "Crop top", "Jeans"],
-
-            Jewell: ["Earring", "Choker", "Jewell set", "Nosepins", "Necklace", "Ring", "Chain", "Bracelet"],
-
-            Cosmetics: ["Eye products", "Shades", "Lipstick", "Nailpolish", "Face cream", "Facialkit", "Makeupkit", "Brush"],
-
-            Sandal: ["Flats", "Heels", "Cutshoe", "Sports shoe", "Office wear", "Party wear"]
-
-        }
+  Sandal: [
+    "Flats",
+    "Heels",
+    "Cutshoe",
+    "Sports shoe",
+    "Office wear",
+    "Party wear",
+  ],
+};
 
         // to get the values only (for eg : saree, frock, leganga)
-        // Object.values(categorySel) 
+        // Object.values(categorySel)
 
         // to get the key value only (for eg : dress, cosmetics, sandal)
         // Object.keys(categorySelectors) //   [  key1, key2, key3 ]
 
         // to get both keys and values (for eg : )
 
+        window.onload = function categories() {
+  const category = document.getElementById("category");
 
-        window.onload = function () {
+          const type = document.getElementById("type");
 
-            let category = document.getElementById("category");
+          for (const types in categorySel) {
+            console.log(types);
+            category.options[category.options.length] = new Option(types, types);
+          }
 
-            let type = document.getElementById("type");
-
-            for (let types in categorySel) {
-                console.log(types)
-                category.options[category.options.length] = new Option(types, types);
+          category.onchange = () => {
+            type.length = 1; // remove all options bar first
+            if (this.selectedIndex < 1) return; // done
+            const ft = categorySel[this.value];
+            for (const fields in categorySel[this.value]) {
+              type.options[type.options.length] = new Option(ft[fields], fields);
             }
-
-            category.onchange = function () {
-                type.length = 1; // remove all options bar first
-                if (this.selectedIndex < 1) return; // done  
-                let ft = categorySel[this.value];
-                for (let fields in categorySel[this.value]) {
-                    type.options[type.options.length] = new Option(ft[fields], fields);
-                }
-            }
-            category.onchange();
-        }
-
+          };
+          category.onchange();
+        };
     </script>
 
+        <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
 
-
-
-    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
-
-</body>
+    </body>
 
 </html>

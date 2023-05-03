@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Buy now page </title>
-    <link rel="stylesheet" href="../../assets/css/cart-buynowpage.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />        <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kreon:wght@300;400;500;600;700&family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Buy now page </title>
+        <link rel="stylesheet" href="../../assets/css/cart-buynowpage.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kreon:wght@300;400;500;600;700&family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     </head>
     
     <body>
@@ -18,163 +19,197 @@
         </header>
 
         <div class="left">
-            <div class="image" >
-                <img id="image" alt="photo" height="460px" width="400px"/> 
+            <div class="image">
+                <img id="image" alt="photo" height="460px" width="400px"> 
             </div>
             
             <!-- <div class="sub-images"> <img src="../../assets/images/silk12-1.jpg" id="image" alt="photo" height="80px" width="80px"/>  </div>
-            <div class="sub-images"> <img src="../../assets/images/silk12-2.jpg" id="image" alt="photo" height="80px" width="80px"/>  </div>
-            <div class="sub-images"> <img src="../../assets/images/silk12-3.jpg" id="image" alt="photo" height="80px" width="80px"/>  </div>
-            <div class="sub-images"> <img src="../../assets/images/silk12-4.jpg" id="image" alt="photo" height="80px" width="80px"/>  </div> -->
+                <div class="sub-images"> <img src="../../assets/images/silk12-2.jpg" id="image" alt="photo" height="80px" width="80px"/>  </div>
+                <div class="sub-images"> <img src="../../assets/images/silk12-3.jpg" id="image" alt="photo" height="80px" width="80px"/>  </div>
+                <div class="sub-images"> <img src="../../assets/images/silk12-4.jpg" id="image" alt="photo" height="80px" width="80px"/>  </div> -->
            
         </div>    
 
-            <div class="right">
-                   <h3 id="name"> Jacquard Material Self Designeed Saree </h3>
-                   <h4> Special price </h4>
-                   <p> ₹ <strong id="discount_price">  629 </strong> ₹<s id="original_price">₹2,999 </s> <b id="discount_percent">79 </b> % off </p>
+        <div class="right">
+            <h3 id="name"> Jacquard Material Self Designeed Saree </h3>
+            <h4> Special price </h4>
+            <p>
+                ₹ <strong id="discount_price">  629 </strong>
+                ₹<s id="original_price">₹2,999 </s>
+                <b id="discount_percent">79 </b> % off 
+            </p>
             
-                <h2 class="per"> PERSONAL DETAILS </h2>
+            <h2 class="per"> PERSONAL DETAILS </h2>
 
-                <div class="name">
-                    <label> Name: </label>
-                    <input type="name" id="uname" required="true" />
-                </div>
-
-                <div class="add">
-                    <label> Address: </label>
-                    <textarea id="address" required = "true" > </textarea>
-                </div>
-                <input type="number" id="pincode" placeholder="Pincode" pattern="[0-9].{6}" required />
-                <input type="text" id="state" placeholder="State" required />
-
-                
-
-                <div class="no">
-                    <label> Phone number: </label>
-                    <input type="tel" id="phonenumber" required = "true" placeholder="+91"/>
-                </div>
-
-                <div class="quantity">
-                    <label> Quantity: </label>
-                    <input type="number" id="product_quantity" required = "true" placeholder="1" value="1" min="1"/>
-                </div>
-
-                <div class="cash">
-                    <label> Payment: </label>
-                    <select id="payment"> 
-                        <option value="select"> Select option </option>
-                        <option value="online"> Online </option>
-                        <option value="cash_on_delivery"> Cash on delivery </option>
-                        <option value="upi"> UPI </option>
-                        <option value="net_banking"> Net banking </option>
-                    </select>
-                </div>
-
-                <button class="place"> PLACE ORDER </button> 
-
+            <div class="name">
+                <label> Name: </label>
+                <input type="name" id="uname" required="true">
             </div>
 
-            <footer>
-                <div class="top">
+            <div class="add">
+                <label> Address: </label>
+                <textarea id="address" required = "true"> </textarea>
+            </div>
+            <input type="number" id="pincode" placeholder="Pincode" pattern="[0-9].{6}" required>
+            <input type="text" id="state" placeholder="State" required>
+
+            <div class="no">
+                <label> Phone number: </label>
+                <input type="tel" id="phonenumber" required = "true" placeholder="+91">
+            </div>
+
+            <div class="quantity">
+                <label> Quantity: </label>
+                <input type="number" id="product_quantity" required = "true" placeholder="1" value="1" min="1">
+            </div>
+
+            <div class="cash">
+                <label> Payment: </label>
+                <select id="payment"> 
+                    <option value="select"> Select option </option>
+                    <option value="online"> Online </option>
+                    <option value="cash_on_delivery"> Cash on delivery </option>
+                    <option value="upi"> UPI </option>
+                    <option value="net_banking"> Net banking </option>
+                </select>
+            </div>
+
+            <button class="place"> PLACE ORDER </button> 
+
+        </div>
+
+        <footer>
+            <div class="top">
                 <div class="about">
-                 <h4> About: </h4>
-                 <div class="us">
-                    <p> <a href="../homepage/aboutus.html"> About us </p> </a>
-                     <p> <a href="../homepage/frontpage.html"> Available Products </p> </a>
-                    <p> <a href="../homepage/termsofuse.html"> Terms of use </p> </a> 
-                    <p> <a href="../homepage/return.html"> Return policy </p> </a>
+                    <h4> About: </h4>
+                    <div class="us">
+                        <p>
+                            <a href="../homepage/aboutus.html"> About us </a>
+                        </p>
+                        <p>
+                            <a href="../homepage/frontpage.html"> Available Products </a>
+                        </p> 
+                        <p>
+                            <a href="../homepage/termsofuse.html"> Terms of use </a> 
+                        </p> 
+                        <p>
+                            <a href="../homepage/return.html"> Return policy </a>
+                        </p>
                  </div>
                 </div>
      
-                <div class="line"></div>
+                                        <div class="line"></div>
      
-                 <div class="contact">  
+                                        <div class="contact">  
                        
-                       <div class="socials"> <span class="con"> Contact us </span>
-                         <div class="insta"> <i class="fa-brands fa-instagram" style="font-size:23px"></i> </div>
-                         <div class="fb"> <i class="fa-brands fa-facebook-f" style="font-size:23px"></i> </div>
-                         <div class="twiter"> <i class="fa-brands fa-twitter" style="font-size:23px"></i> </div>
-                         <div class="wa"> <i class="fa-brands fa-whatsapp" style="font-size:23px"></i> </div>
-                       </div>    
-                       <div><p>Copy rights @ 2022</p></div>
-                 </div>
+                                            <div class="socials">
+                                                <span class="con"> Contact us </span>
+                                                <div class="insta">
+                                                    <i class="fa-brands fa-instagram" style="font-size:23px"></i> 
+                                                </div>
+                                                <div class="fb">
+                                                    <i class="fa-brands fa-facebook-f" style="font-size:23px"></i> 
+                                                </div>
+                                                <div class="twiter">
+                                                    <i class="fa-brands fa-twitter" style="font-size:23px"></i> 
+                                                </div>
+                                                <div class="wa">
+                                                    <i class="fa-brands fa-whatsapp" style="font-size:23px"></i> 
+                                                </div>
+                                            </div>    
+                                            <div>
+                                                <p>Copy rights @ 2022</p>
+                                            </div>
+                                        </div>
              </div>
      
              </footer>    
 
-             <script src="../../assets/js/header.js"> </script>
+    <script src="../../assets/js/header.js"> </script>
 
-             <script>
-                header();
+    <script>
+const uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
+const user_cred = JSON.parse(localStorage.getItem("user_cred"));
 
+function profile_data(e) {
+  return e.phonenumber === uniqueID;
+}
+const person_data = user_cred.find(profile_data);
+const uname = (document.getElementById("uname").value = person_data.uname);
+const phonenumber = (document.getElementById("phonenumber").value =
+  person_data.phonenumber);
+const address = (document.getElementById("address").value =
+  person_data.address);
 
-            let uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
-            let user_cred = JSON.parse(localStorage.getItem("user_cred"));
+const product = JSON.parse(localStorage.getItem("add_products"));
+const product_id = JSON.parse(localStorage.getItem("productDetail"));
 
-            function profile_data(e){
-                return e.phonenumber == uniqueID;
-            }
-            person_data = user_cred.find(profile_data);
-            let uname = document.getElementById("uname").value = person_data["uname"];
-            let phonenumber = document.getElementById("phonenumber").value = person_data["phonenumber"];
-            let address = document.getElementById("address").value = person_data["address"];
+function product_data(e) {
+  return e.product_uuid === product_id;
+}
 
-            let product = JSON.parse(localStorage.getItem("add_products"));
+const product_datas = product.find(product_data);
+console.log(product_datas);
 
-            let product_id = JSON.parse(localStorage.getItem("productDetail"));
+document.getElementById("image").setAttribute("src", product_datas.image);
+document.getElementById("name").innerText = product_datas.name;
+document.getElementById("original_price").innerText =
+  product_datas.original_price;
+document.getElementById("discount_price").innerText =
+  product_datas.discount_price;
+document.getElementById("discount_percent").innerText =
+  product_datas.discount_percent;
+document.getElementById("product_quantity").innerText =
+  product_datas.product_quantity;
 
-            function product_data(e){
-                return e.product_uuid === product_id;
-            }
-            product_datas = product.find(product_data);
-            document.getElementById("image").setAttribute("src", product_datas["image"]) ;
-            document.getElementById("name").innerText = product_datas["name"];
-            document.getElementById("original_price").innerText = product_datas["original_price"];
-            document.getElementById("discount_price").innerText = product_datas["discount_price"];
-            document.getElementById("discount_percent").innerText = product_datas["discount_percent"]; 
-            document.getElementById("product_quantity").innerText = product_datas["product_quantity"];
+const palce_order = document.querySelector("button.place");
+palce_order.addEventListener("click", () => {
+  alert("Your order is booked");
 
+  const uname = document.getElementById("uname").value;
+  const phonenumber = document.getElementById("phonenumber").value;
+  const address = document.getElementById("address").value;
+  const payment = document.getElementById("payment").value;
+  const quantity = document.getElementById("product_quantity").value;
+  const pincode = document.getElementById("pincode").value;
+  const state = document.getElementById("state").value;
+  const { product_id } = product_datas;
+  const order_id = uuidv4();
+  const date = new Date();
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  const order_on = `${day}.${month}.${year}`;
 
-            let palce_order = document.querySelector("button.place");
-            palce_order.addEventListener("click", function () {
+  const my_orders = JSON.parse(localStorage.getItem("my_orders")) || [];
 
-                alert("Your order is booked");
+  my_orders.push({
+    name,
+    address,
+    pincode,
+    state,
+    phonenumber,
+    product_name: product_datas.name,
+    discount_price: product_datas.discount_price,
+    quantity,
+    payment_method: payment,
+    buyer_id: uniqueID,
+    seller_id: product_datas.user_id,
+    product_id: product_datas.product_id,
+    order_id,
+    order_date: order_on,
+  });
 
-                let uname = document.getElementById("uname").value 
-                let phonenumber = document.getElementById("phonenumber").value 
-                let address = document.getElementById("address").value 
-                let payment = document.getElementById("payment").value
-                let quantity = document.getElementById("product_quantity").value
-                let pincode = document.getElementById("pincode").value
-                let state = document.getElementById("state").value
+  localStorage.setItem("my_orders", JSON.stringify(my_orders));
 
+  console.log(my_orders);
 
-                let my_orders = JSON.parse(localStorage.getItem("my_orders")) || [];
-
-                my_orders.push({name : uname,
-                                address : address,
-                                pincode : pincode,
-                                state : state,
-                                phonenumber : phonenumber,
-                                product_name : product_datas["name"],
-                                discount_price : product_datas["discount_price"],
-                                quantity  : quantity,
-                                payment_method : payment,
-                                buyer_id : uniqueID,
-                                seller_id : product_datas["user_id"],
-            });
-
-                localStorage.setItem("my_orders", JSON.stringify(my_orders));
-
-                console.log(my_orders);
-
-                window.location.href = "../homepage/frontpage.html";
-
-            });
-
-
+  window.location.href = "../orders/myorderspage.html";
+});
             </script>
 
+    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+
     </body>
+
 </html>

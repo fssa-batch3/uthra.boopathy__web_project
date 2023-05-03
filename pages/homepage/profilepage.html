@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Profile page </title>
-    <link rel="stylesheet" href="../../assets/css/style-profilepage.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />        <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Profile page </title>
+        <link rel="stylesheet" href="../../assets/css/style-profilepage.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kreon:wght@300;400;500;600;700&family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     </head>
@@ -21,22 +22,22 @@
 
         <section>
 
-            <form role="form" onsubmit="update_details()" >
+            <form role="form" onsubmit="update_details()">
             
                 <h1> PROFILE</h1>
 
                 <div class="avatar">
-                    <img src="../../assets/images/avatar.jpg" alt="photo" height="180px" width="180px"/>
+                    <img src="../../assets/images/avatar.jpg" alt="photo" height="180px" width="180px">
                 </div>
                
                 <div class="name">
-                <label> Name: </label>
-		        <input type="text"  id="uname"  />
-		        </div>
+                    <label> Name: </label>
+                    <input type="text" id="uname">
+                </div>
 
                 <div class="age">
                     <label> Age:</label>
-                    <input type="tel" id="age" pattern="[1-9]{1}" minlength="2" maxlength="3" />
+                    <input type="tel" id="age" min="1" minlength="2" maxlength="3">
                 </div>
 
                 <div class="add">
@@ -46,119 +47,93 @@
                 
                 <div class="no">
                     <label> Contact number: </label>
-                    <input type="number"  placeholder="+91" id="phonenumber" disabled />
+                    <input type="number" placeholder="+91" id="phonenumber" disabled>
                 </div>
 
                 <div class="mail">
                     <label> E-Mail Id: </label>
-                    <input type="email"  id="email" placeholder="ghds4729@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{3,}$" />
+                    <input type="email" id="email" placeholder="ghds4729@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{3,}$">
                 </div>
 
                 <div class="des">
-                        <label> Your Designation:</label>
-                        <select id="des">
-                            <option> Buyer </option>
-                            <option> Seller </option>
-                        </select>
+                    <label> Your Designation:</label>
+                    <select id="des">
+                        <option> Buyer </option>
+                        <option> Seller </option>
+                    </select>
                 </div>
                 
                 <div >
-                        <button class="btn-1" type="submit" >  Save  </button>
+                    <button class="btn-1" type="submit">  Save  </button>
                 </div>        
 
             </form>
 
-            <a href="../homepage/profile.html"> <button class="btn-2" type="submit">  Cancel </button>  </a>
+            <a href="../homepage/profile.html">
+                <button class="btn-2" type="submit">  Cancel </button>  
+            </a>
        
-            </section>
+        </section>
 
-            <script src="../../assets/js/header.js"> </script>
+        <script src="../../assets/js/header.js"> </script>
 
-            <script>
+        <script>
+// <div class = "arrow" > </div>
 
-                header();
+const div_arrow = document.createElement("div");
+div_arrow.setAttribute("class", "arrow");
+// console.log(div_arrow);
 
+// <a> link </a>
 
-                    // <div class = "arrow" > </div>
+const a_arrow = document.createElement("a");
+a_arrow.setAttribute("href", "../homepage/profile.html");
+div_arrow.append(a_arrow);
+// console.log(a_arrow);
 
-      div_arrow = document.createElement("div");
-      div_arrow.setAttribute("class", "arrow");
-      // console.log(div_arrow);
+// < i >  arrow </i>
 
-      // <a> link </a>
+const i_arrow = document.createElement("i");
+i_arrow.setAttribute("class", "fa-solid fa-arrow-left");
+a_arrow.append(i_arrow);
 
-      a_arrow = document.createElement("a");
-      a_arrow.setAttribute("href", "../homepage/profile.html");
-      div_arrow.append(a_arrow);
-      // console.log(a_arrow);
+document.querySelector("div.arrows").append(div_arrow);
 
+const uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
+const user_cred = JSON.parse(localStorage.getItem("user_cred"));
+function profile_data(e) {
+  return e.phonenumber === uniqueID;
+}
+const person_data = user_cred.find(profile_data);
+console.log(person_data);
+document.getElementById("uname").value = person_data.uname;
+document.getElementById("email").value = person_data.email;
+document.getElementById("phonenumber").value = person_data.phonenumber;
+document.getElementById("age").value = person_data.age;
+document.getElementById("address").value = person_data.address;
+document.getElementById("des").value = person_data.des;
 
-      // < i >  arrow </i>
+function update_details() {
+  event.preventDefault();
+  const uname = document
+    .getElementById("uname")
+    .value.trim()
+    .split(/\s+/g)
+    .join(" ");
+  const address = document.getElementById("address").value;
+  const des = document.getElementById("des").value;
+  const email = document.getElementById("email").value;
+  const age = document.getElementById("age").value;
 
-      i_arrow = document.createElement("i");
-      i_arrow.setAttribute("class", "fa-solid fa-arrow-left");
-      a_arrow.append(i_arrow);
-
-
-      document.querySelector("div.arrows").append(div_arrow);
-
-
-
-            let uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
-                let user_cred = JSON.parse(localStorage.getItem("user_cred"));
-            function profile_data(e){
-                return e.phonenumber == uniqueID;
-            }
-            person_data = user_cred.find(profile_data);
-            console.log(person_data);
-            document.getElementById("uname").value= person_data["uname"];
-            document.getElementById("email").value = person_data["email"];
-            document.getElementById("phonenumber").value = person_data["phonenumber"];
-            document.getElementById("age").value = person_data["age"];
-            document.getElementById("address").value =person_data["address"];
-            document.getElementById("des").value = person_data["des"];
-
-
-            function update_details() {
-            event.preventDefault();
-            let uname = document.getElementById("uname").value.trim().split(/\s+/g).join(' ')
-            let address = document.getElementById("address").value
-            let des = document.getElementById("des").value
-            let email = document.getElementById("email").value
-           let age = document.getElementById("age").value
-            
-            person_data["uname"] = uname;
-            person_data["address"] = address;
-            person_data["des"] = des;
-            person_data["email"] = email;
-            person_data["age"] = age;
-            localStorage.setItem('user_cred', JSON.stringify(user_cred));
-            //console.log(user_list);
-            window.location.href = "./profile.html";
-        }
-
-        // let shop_details = document.querySelector("#des")
-
-        // shop_details.addEventListener("change", function () {
-
-        //     if (person_data["des"] === "Seller") {
-
-        //         // <div >
-
-        //         div_shop = document.createElement("div");
-        //         div_shop.setAttribute("class", "shop");
-
-        //         // input
-
-        //          textarea = document.createElement("textarea");
-                 
-
-
-        //     }
-
-        // })
-
-            </script>
+  person_data.uname = uname;
+  person_data.address = address;
+  person_data.des = des;
+  person_data.email = email;
+  person_data.age = age;
+  localStorage.setItem("user_cred", JSON.stringify(user_cred));
+  window.location.href = "./profile.html";
+}
+    </script>
 
     </body>
 </html>

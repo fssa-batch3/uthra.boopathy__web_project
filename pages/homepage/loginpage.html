@@ -1,84 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Login page </title>
-    <link rel="stylesheet" href="../../assets/css/style-loginpage.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />        <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kreon:wght@300;400;500;600;700&family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    </head>
-    
-    <body>
-        <header id="userLogin">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Login page </title>
+  <link rel="stylesheet" href="../../assets/css/style-loginpage.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kreon:wght@300;400;500;600;700&family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+</head>
 
-        </header>
+<body>
+  <header id="userLogin">
 
-        <section>
-        <form role="form"  onsubmit="signIn(event)">
-                <h2> Login</h2>
+  </header>
 
+  <section>
+    <form role="form" id="signIn">
+      <h2> Login</h2>
 
-                <div class="no">
-                    <label> Contact number: </label>
-                    <input type="number" required="true" placeholder="+91" id="phonenumber" pattern="[6-9]{1}[0-9]{9}"  /> <br>
-                </div> 
-               
+      <div class="no">
+        <label> Contact number: </label>
+        <input type="number" required="true" placeholder="+91" id="phonenumber" pattern="[6-9]{1}[0-9]{9}">
+        <br>
+      </div>
 
-                <div class="password">
-                    <label> Password: </label>
-                    <input type="password" placeholder="*******" id="password" required="true" />
-                </div>
-                    
+      <div class="password">
+        <label> Password: </label>
+        <input type="password" placeholder="*******" id="password" required="true">
+      </div>
 
-                <p> Create new account <a href="../homepage/registerpage.html"> Sign up </a> </p>
-                
-                <div>
-                        <button class="btn" type="submit">  Submit  </button>
-                        <!-- <button class="btn1" type="submit" onclick="submit()">  Cancel </button> -->
-                </div>      
-                
-            </form>
-                
-        </section>
+      <p>
+        Create new account <a href="../homepage/registerpage.html"> Sign up </a>
+      </p>
 
+      <div>
+        <button class="btn" type="submit"> Submit </button>
+        <!-- <button class="btn1" type="submit" onclick="submit()">  Cancel </button> -->
+      </div>
 
-        <script src="../../assets/js/header.js"> </script>
+    </form>
 
+  </section>
 
-            <script>
+  <script src="../../assets/js/header.js"> </script>
 
+  <script>
+function loginHandler(e) {
+  e.preventDefault();
+  const phonenumber = document.getElementById("phonenumber").value;
+  const password = document.getElementById("password").value;
+  const user_cred = JSON.parse(localStorage.getItem("user_cred")) || [];
+  const exist =
+    user_cred.length &&
+    user_cred.some(
+      (data) => data.phonenumber === phonenumber && data.password === password
+    );
+  if (!exist) {
+    alert("Incorrect login credentials");
+  } else {
+    localStorage.setItem("uniqueID", JSON.stringify(phonenumber));
+    window.location.href = "../homepage/profile.html";
+  }
+}
+document.addEventListener("DOMContentLoaded", () => {
+  const login = document.getElementById("signIn");
+  if (login) {
+    login.addEventListener("submit", loginHandler);
+  }
+});
+  </script>
 
-            header();
-
-
-
-        function signIn(e) {
-            e.preventDefault();
-            let phonenumber = document.getElementById('phonenumber').value,
-            password = document.getElementById('password').value;
-            let user_cred = JSON.parse(localStorage.getItem('user_cred'));
-            let exist = user_cred.length &&
-            JSON.parse(localStorage.getItem('user_cred')).some(data => data.phonenumber.toLowerCase() == phonenumber.toLowerCase()
-            && data.password == password);
-            if(!exist){
-                alert("Incorrect User Credentials");
-                document.querySelector('form').reset();
-            }
-            else{
-                localStorage.setItem('uniqueID',JSON.stringify(phonenumber));
-                alert("Your Login is Successful");
-                location.href = "../homepage/profile.html";
-            }
-        }
-
-
-
-        </script>
-
-    </body>
+</body>
 
 </html>

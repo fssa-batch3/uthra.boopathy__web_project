@@ -1,69 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Product detail page </title>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Product detail page </title>
         <link rel="stylesheet" href="../../../assets/css/style-saree1view.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kreon:wght@300;400;500;600;700&family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-</head>
+    </head>
 
-<body>
-    <header id="userLogin">
+    <body>
+        <header id="userLogin">
 
-    </header>
+        </header>
 
-    <div class="arrows"> </div>
+        <div class="arrows"> </div>
 
-    <div class="detail">
-    </div>
+        <div class="detail">
+        </div>
 
     </section> 
 
-    <footer>
-        <div class="top">
-        <div class="about">
-         <h4> About: </h4>
-         <div class="us">
-            <p> <a href="../../../homepage/aboutus.html"> About us </p> </a>
-             <p> <a href="../../../homepage/frontpage.html"> Available Products </p> </a>
-            <p> <a href="../../../homepage/termsofuse.html"> Terms of use </p> </a> 
-            <p> <a href="../../../homepage/return.html"> Return policy </p> </a>
+        <footer>
+            <div class="top">
+                <div class="about">
+                    <h4> About: </h4>
+                    <div class="us">
+                        <p>
+                            <a href="../../../homepage/aboutus.html"> About us </a>
+                          </p>
+                            <p>
+                                <a href="../../../homepage/frontpage.html"> Available Products </a>
+                              </p> 
+                                <p>
+                                    <a href="../../../homepage/termsofuse.html"> Terms of use </a> 
+                                  </p>
+                                    <p>
+                                        <a href="../../../homepage/return.html"> Return policy </a>
+                                      </p>
          </div>
         </div>
 
-        <div class="line"></div>
+                                        <div class="line"></div>
 
-         <div class="contact">  
+                                        <div class="contact">  
                
-               <div class="socials"> <span class="con"> Contact us </span>
-                 <div class="insta"> <i class="fa-brands fa-instagram" style="font-size:23px"></i> </div>
-                 <div class="fb"> <i class="fa-brands fa-facebook-f" style="font-size:23px"></i> </div>
-                 <div class="twiter"> <i class="fa-brands fa-twitter" style="font-size:23px"></i> </div>
-                 <div class="wa"> <i class="fa-brands fa-whatsapp" style="font-size:23px"></i> </div>
-               </div>    
-               <div><p>Copy rights @ 2022</p></div>
-         </div>
+                                            <div class="socials">
+                                                <span class="con"> Contact us </span>
+                                                <div class="insta">
+                                                    <i class="fa-brands fa-instagram" style="font-size:23px"></i> 
+                                                </div>
+                                                <div class="fb">
+                                                    <i class="fa-brands fa-facebook-f" style="font-size:23px"></i> 
+                                                </div>
+                                                <div class="twiter">
+                                                    <i class="fa-brands fa-twitter" style="font-size:23px"></i> 
+                                                </div>
+                                                <div class="wa">
+                                                    <i class="fa-brands fa-whatsapp" style="font-size:23px"></i> 
+                                                </div>
+                                            </div>    
+                                            <div>
+                                                <p>Copy rights @ 2022</p>
+                                            </div>
+                                        </div>
      </div>
 
     </footer>
 
-     <script src="../../../../assets/js/header.js"></script>
+    <script src="../../../../assets/js/header.js"></script>
 
-
-     <script>
-
-
-
-header ();
-
-
-
-let add_product = JSON.parse(localStorage.getItem("add_products"));
+    <script>
+const add_product = JSON.parse(localStorage.getItem("add_products"));
 
 // to set the location to the variable queryString
 
@@ -75,426 +87,356 @@ const urlParams = new URLSearchParams(queryString);
 
 // to show the name as what we have to show
 
-const product_id = urlParams.get('product_id');
+const product_id = urlParams.get("product_id");
 
 // checking from the array and getting the particular id
 
-let unique_id = add_product.find (e => e.product_uuid == product_id);
+const unique_id = add_product.find((e) => e.product_uuid === product_id);
 
 console.log(unique_id);
 
-
-
-
-let div_left;
-let div_image;
-let img;
-let div_right;
-let h3;
-let h4;
-let div_price;
-let p_org;
-let p_dis;
-let s;
-let p_percent;
-let b;
-let div_star;
-let span;
-let i;
-let strong_pdt;
-let div_pdt;
-let p_pdt;
-let strong_add;
-let div_add;
-let p_add;
-
-
 // <div class = "arrow" > </div>
 
-div_arrow = document.createElement("div");
+const div_arrow = document.createElement("div");
 div_arrow.setAttribute("class", "arrow");
 // console.log(div_arrow);
 
 // <a> link </a>
 
-a_arrow = document.createElement("a");
+const a_arrow = document.createElement("a");
 a_arrow.setAttribute("href", "../../homepage/frontpage.html");
 div_arrow.append(a_arrow);
 // console.log(a_arrow);
 
-
 // < i >  arrow </i>
 
-i_arrow = document.createElement("i");
+const i_arrow = document.createElement("i");
 i_arrow.setAttribute("class", "fa-solid fa-arrow-left");
 a_arrow.append(i_arrow);
 
-
 // <div class = "left" > </div>
 
-div_left = document.createElement("div");
+const div_left = document.createElement("div");
 div_left.setAttribute("class", "left");
-
 
 // <div class = "image" > </div>
 
-div_image = document.createElement("div");
+const div_image = document.createElement("div");
 div_image.setAttribute("class", "image");
 div_left.append(div_image);
 
 // <img />
 
-img = document.createElement("img");
-img.setAttribute("src", unique_id["image"]);
-img.setAttribute("alt", unique_id["name"] + "image");
+const img = document.createElement("img");
+img.setAttribute("src", unique_id.image);
+img.setAttribute("alt", `${unique_id.name}image`);
 img.setAttribute("height", "460px");
 img.setAttribute("width", "400px");
 div_image.append(img);
 
 // <div class = "right" > </div>
 
-div_right = document.createElement("div");
+const div_right = document.createElement("div");
 div_right.setAttribute("class", "right");
 
 // <h3> </h3>
 
-h3 = document.createElement("h3");
-h3.setAttribute("id", "name")
-h3.innerText = unique_id["name"];
+const h3 = document.createElement("h3");
+h3.setAttribute("id", "name");
+h3.innerText = unique_id.name;
 div_right.append(h3);
 
 // <h4> </h4>
 
-h4 = document.createElement("h4");
+const h4 = document.createElement("h4");
 h4.innerText = "Special price";
 div_right.append(h4);
 
 // <div class = "price" > </div>
 
-div_price = document.createElement("div");
+const div_price = document.createElement("div");
 div_price.setAttribute("class", "price");
 div_right.append(div_price);
 
 // < p id = "original_price" > </p>
 
-p_org = document.createElement("p");
+const p_org = document.createElement("p");
 p_org.setAttribute("id", "original_price");
-p_org.innerText = "₹" + unique_id["discount_price"] + "  ";
+p_org.innerText = `₹${unique_id.discount_price}  `;
 div_price.append(p_org);
 
 // <p> </p>
 
-p_dis = document.createElement("p");
+const p_dis = document.createElement("p");
 div_price.append(p_dis);
 
 // <s> </s>
 
-s = document.createElement("s");
+const s = document.createElement("s");
 s.setAttribute("id", "discount_price");
-s.innerText = "₹" + unique_id["original_price"];
+s.innerText = `₹${unique_id.original_price}`;
 p_dis.append(s);
 
 // <p> </p>
 
-p_percent = document.createElement("p");
+const p_percent = document.createElement("p");
 div_price.append(p_percent);
 
 // < b > </b>
 
-b = document.createElement("b");
+const b = document.createElement("b");
 b.setAttribute("id", "discount_percent");
-b.innerText = unique_id["discount_percent"] + "%" + "off";
+b.innerText = `${unique_id.discount_percent}% off`;
 p_percent.append(b);
 
 // <div class = "star"> </div>
 
-div_star = document.createElement("div");
+const div_star = document.createElement("div");
 div_star.setAttribute("class", "star");
 div_right.append(div_star);
 
-
 // <span> </span>
 
-span = document.createElement("span");
+const span = document.createElement("span");
 span.setAttribute("class", "stars");
 span.innerText = "Reviews:";
 div_star.append(span);
 
+for (let j = 0; j < 5; j++) {
+  // <i> </i>
 
-for (j=0; j<5; j++) {
-
-    // <i> </i>
-
-    i = document.createElement("i");
-    i.setAttribute("class", "fa fa-star");
-    i.setAttribute("style", "font-size: 24px;color: gold");
-    div_star.append(i)
-
-}            
+  const i = document.createElement("i");
+  i.setAttribute("class", "fa fa-star");
+  i.setAttribute("style", "font-size: 24px;color: gold");
+  div_star.append(i);
+}
 
 // < strong> </strong>
 
-strong_pdt = document.createElement("strong");
-strong_pdt.innerText = "Product details:"
+const strong_pdt = document.createElement("strong");
+strong_pdt.innerText = "Product details:";
 div_right.append(strong_pdt);
 
 // <div class = "para"> </div>
 
-div_pdt = document.createElement("div");
+const div_pdt = document.createElement("div");
 div_pdt.setAttribute("class", "para");
 div_right.append(div_pdt);
 
-// <p> </p> 
+// <p> </p>
 
-p_pdt = document.createElement("p");
+const p_pdt = document.createElement("p");
 p_pdt.setAttribute("id", "product_detail");
-p_pdt.innerText = unique_id["product_detail"];
+p_pdt.innerText = unique_id.product_detail;
 div_pdt.append(p_pdt);
 
 // < strong> </strong>
 
-strong_add = document.createElement("strong");
+const strong_add = document.createElement("strong");
 strong_add.setAttribute("class", "paras");
 strong_add.innerText = "Additional offers";
 div_right.append(strong_add);
 
 // <div class = "para"> </div>
 
-div_add = document.createElement("div");
+const div_add = document.createElement("div");
 div_add.setAttribute("class", "paras");
 div_right.append(div_add);
 
+// <p> </p>
 
-// <p> </p> 
-
-p_add = document.createElement("p");
+const p_add = document.createElement("p");
 p_add.setAttribute("id", "add_info");
-p_add.innerText = unique_id["add_info"];
+p_add.innerText = unique_id.add_info;
 div_add.append(p_add);
 
-
 // <button class="add">
-    
-button_add = document.createElement("button");
+
+const button_add = document.createElement("button");
 button_add.setAttribute("class", "add");
-button_add.setAttribute("data-add", unique_id["product_uuid"]);
+button_add.setAttribute("data-add", unique_id.product_uuid);
 button_add.innerText = "ADD TO CART";
 div_right.append(button_add);
 
 // <i> == cart
 
-i_cart = document.createElement("i");
+const i_cart = document.createElement("i");
 i_cart.setAttribute("class", "fa fa-shopping-cart");
 i_cart.setAttribute("style", "font-size:24px;color: white;");
 button_add.append(i_cart);
 
 // <button class="buy">
-    
-button_buy = document.createElement("button");
+
+const button_buy = document.createElement("button");
 button_buy.setAttribute("class", "buy");
 button_buy.innerText = "BUY NOW";
 div_right.append(button_buy);
 
-
 // <i> == cart
 
-i_buy = document.createElement("i");
+const i_buy = document.createElement("i");
 i_buy.setAttribute("class", "fa fa-shopping-bag");
 i_buy.setAttribute("style", "font-size:24px;color: white;");
 button_buy.append(i_buy);
 
-
 // <button class="wish">
-    
-button_wish = document.createElement("button");
+
+const button_wish = document.createElement("button");
 button_wish.setAttribute("class", "wish");
 button_wish.innerText = "WISHLIST";
 div_right.append(button_wish);
 
 // <i> == cart
 
-i_wish = document.createElement("i");
+const i_wish = document.createElement("i");
 i_wish.setAttribute("class", "fa fa-heart");
 i_wish.setAttribute("style", "font-size:24px;color: white;");
 button_wish.append(i_wish);
 
 document.querySelector("div.arrows").append(div_arrow);
 document.querySelector("div.detail").append(div_left);
-document.querySelector("div.detail").append(div_right); 
+document.querySelector("div.detail").append(div_right);
 
+// ADD TO CART function
 
-// ADD TO CART function 
+const cart_products = document.querySelector("button.add");
 
+cart_products.addEventListener("click", () => {
+  const unique_id = JSON.parse(localStorage.getItem("uniqueID"));
+  console.log(unique_id);
 
-let cart_products = document.querySelector("button.add");
+  const user_data = JSON.parse(localStorage.getItem("user_cred"));
+  console.log(user_data);
 
-cart_products.addEventListener("click", function () {
+  const users =
+    user_data.length &&
+    JSON.parse(localStorage.getItem("user_cred")).some(
+      (data) => data.phonenumber === unique_id
+    );
+  // console.log(users);
 
-    let unique_id = JSON.parse(localStorage.getItem("uniqueID"));
-    console.log(unique_id);
-
-    let user_data = JSON.parse(localStorage.getItem("user_cred"));
-    console.log(user_data);
-
-    let users = user_data.length &&
-                JSON.parse(localStorage.getItem("user_cred")).some(data => data.phonenumber === unique_id);
-    // console.log(users);
-
-    if (!users) {
-
-        alert("You are not logged in. Please login to continue");
-
-    }
-
-    else {
-
-
-    let id = JSON.parse(localStorage.getItem("productDetail"));
+  if (!users) {
+    alert("You are not logged in. Please login to continue");
+  } else {
+    const id = JSON.parse(localStorage.getItem("productDetail"));
 
     console.log(id);
 
-    let all_products = JSON.parse(localStorage.getItem("add_products"));
+    const all_products = JSON.parse(localStorage.getItem("add_products"));
 
     console.log(all_products);
 
-    let products = all_products.find(e => e.product_uuid == id);
+    const products = all_products.find((e) => e.product_uuid === id);
     console.log(products);
 
-    let add_to_cart = JSON.parse(localStorage.getItem("cart"))||[];
+    const add_to_cart = JSON.parse(localStorage.getItem("cart")) || [];
+    console.log(add_to_cart);
 
-        let exist = add_to_cart.length && 
-            JSON.parse(localStorage.getItem("cart")).some(data => data.product_id === id && data.buyer_id === unique_id); 
-        // console.log(exist);
+    const exist =
+      add_to_cart.length &&
+      JSON.parse(localStorage.getItem("cart")).some(
+        (data) => data.product_id === id && data.buyer_id === unique_id
+      );
+    // console.log(exist);
 
-    if(exist){
-       
-        alert("This product has already been added");
-    
+    if (exist) {
+      alert("This product has already been added");
+    } else {
+      alert("This product is added to your cart.");
+
+      add_to_cart.push({
+        name: products.name,
+        image: products.image,
+        discount_price: products.discount_price,
+        original_price: products.original_price,
+        discount_percent: products.discount_percent,
+        product_quantity: 1,
+        seller_id: products.user_id,
+        buyer_id: unique_id,
+        product_id: products.product_uuid,
+      });
+
+      localStorage.setItem("cart", JSON.stringify(add_to_cart));
+
+      window.location.href = "../../orders/cartpage.html";
     }
+  }
+});
 
-    else {
+// WISHLIST function
 
-        alert("This product is added to your cart.")
-       
-        add_to_cart.push({"name" : products["name"],
-                          "image" : products["image"],
-                          "discount_price" : products["discount_price"],
-                          "original_price" : products["original_price"],
-                          "discount_percent" : products["discount_percent"],
-                          "seller_id" : products["user_id"], 
-                          "buyer_id" : unique_id,
-                          "product_id" : products["product_uuid"]});
+const wish_products = document.querySelector("button.wish");
 
+wish_products.addEventListener("click", () => {
+  const user_id = JSON.parse(localStorage.getItem("uniqueID"));
 
-       
-        localStorage.setItem("cart", JSON.stringify(add_to_cart));
-       
-        window.location.href = "../../orders/cartpage.html";
-    }
-    }
+  const user_data = JSON.parse(localStorage.getItem("user_cred"));
 
-}
+  const check = user_data.find((e) => e.phonenumber === user_id);
 
-);
-
-
-
-
-// WISHLIST function 
-
-
-let wish_products = document.querySelector("button.wish");
-
-wish_products.addEventListener("click", function () {
-
-    let user_id = JSON.parse(localStorage.getItem("uniqueID"));
-
-    let user_data = JSON.parse(localStorage.getItem("user_cred"));
-
-    let check = user_data.find(e => e.phonenumber === user_id );
-
-    if (!check) { 
-
-        alert ("You are not logged in.");
-
-    }
-    
-    else {
-    let id = JSON.parse(localStorage.getItem("productDetail"));
+  if (!check) {
+    alert("You are not logged in.");
+  } else {
+    const id = JSON.parse(localStorage.getItem("productDetail"));
 
     console.log(id);
 
-    let all_products = JSON.parse(localStorage.getItem("add_products"));
+    const all_products = JSON.parse(localStorage.getItem("add_products"));
 
     console.log(all_products);
 
-    let products = all_products.find(e => e.product_uuid == id)
+    const products = all_products.find((e) => e.product_uuid === id);
 
-    let wishlist = JSON.parse(localStorage.getItem("wish"))||[];
+    const wishlist = JSON.parse(localStorage.getItem("wish")) || [];
 
-    let exist = wishlist.length && 
-            JSON.parse(localStorage.getItem("wish")).some(data => data.product_id === id && data.buyer_id === user_id); 
+    const exist =
+      wishlist.length &&
+      JSON.parse(localStorage.getItem("wish")).some(
+        (data) => data.product_id === id && data.buyer_id === user_id
+      );
 
     if (exist) {
-       
-        alert("This product has already been added");
-    
+      alert("This product has already been added");
+    } else {
+      alert("This product is added to your wishlist.");
+
+      wishlist.push({
+        name: products.name,
+        image: products.image,
+        discount_price: products.discount_price,
+        original_price: products.original_price,
+        discount_percent: products.discount_percent,
+        seller_id: products.user_id,
+        buyer_id: user_id,
+        product_id: products.product_uuid,
+      });
+
+      localStorage.setItem("wish", JSON.stringify(wishlist));
+
+      window.location.href = "../../orders/wishlistpage.html";
     }
-
-    else {
-
-        alert("This product is added to your wishlist.");
-       
-        wishlist.push({"name" : products["name"],
-                        "image" : products["image"],
-                        "discount_price" : products["discount_price"],
-                        "original_price" : products["original_price"],
-                        "discount_percent" : products["discount_percent"],
-                        "seller_id" : products["user_id"], 
-                        "buyer_id" : user_id,
-                        "product_id" : products["product_uuid"]});
-       
-        localStorage.setItem("wish", JSON.stringify(wishlist));
-       
-        window.location.href = "../../orders/wishlistpage.html";
-    }
-    }
-
-})
-
-
+  }
+});
 
 // BUY NOW
 
+const buy_now = document.querySelector("button.buy");
 
-let buy_now = document.querySelector("button.buy");
+buy_now.addEventListener("click", () => {
+  const user_id = JSON.parse(localStorage.getItem("uniqueID"));
 
-    buy_now.addEventListener("click", function () {
+  const users = JSON.parse(localStorage.getItem("user_cred"));
 
-    let user_id = JSON.parse(localStorage.getItem("uniqueID"));
-    
-    let users = JSON.parse(localStorage.getItem("user_cred"));
+  const productDetail = JSON.parse(localStorage.getItem("productDetail"));
 
-    let productDetail = JSON.parse(localStorage.getItem("productDetail"));
+  const checking = users.find((e) => e.phonenumber === user_id);
 
-    let checking = users.find(e => e.phonenumber === user_id);
-
-
-    if (checking) {
-
-        window.location.href = `../../orders/cart-buynowpage.html?product_id=${productDetail}`;
-
-    }
-
-    else {
-
-        alert("You are not logged in");
-    
-    }
-
-})
-
-
+  if (checking) {
+    window.location.href = `../../orders/cart-buynowpage.html?product_id=${productDetail}`;
+  } else {
+    alert("You are not logged in");
+  }
+});
      </script>
 
 </body>

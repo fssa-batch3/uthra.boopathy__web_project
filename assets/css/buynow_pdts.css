@@ -30,10 +30,6 @@ header div ul li a{
      font-size: 24px;
 }
 
-.menu{
-    display: none;
-}
-
 h1{
     font-size: 50px;
     font-weight: normal;
@@ -43,11 +39,11 @@ h1{
 }
 
 .logo{
-    height: 70px;
-    width: 70px;
     margin-top: 15px;
     margin-left: 50px;
     border-radius: 50px;
+    height: 70px;
+    width: 70px;
 }
 
 .login{
@@ -56,113 +52,62 @@ h1{
    cursor: pointer;
 }
 
-.arrow {
-    margin: 2rem;
-    font-size: 30px;
+section{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    margin-top: 100px;
+    margin-left: 350px;
+    margin-bottom: 200px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    height: 750px;
+    width: 800px;
+    box-shadow: 2px 4px 8px 2px rgba(6, 6, 6, 0.2), 3px 6px 20px 3px rgba(0, 0, 0, 0.19);
 }
 
-.arrow a {
+section h2{
     color: black;
-}
-
-.container{
-    background-color: #F8F8F8;
-    border-radius: 5px;
-    width: 80%;
-    height: 45vh;
-    margin-left: 160px;
-    margin-top: 10rem;
-}
-
-span{
-    font-size: 20px;
     font-weight: bold;
+    font-size: 50px;
+    margin-top: 2rem;
+    margin-left: 13rem;
 }
 
-span i {
-    margin-top: 1rem;
-    margin-left: 2rem;
-}
-
-.de{
-    margin-left: 1rem;
-}
-
-.images p {
-    font-size: 25px;
+section i {
+    margin-left: 45rem;
+    margin-top: 2rem;
 }
 
 .details {
+    margin-top: 6rem;
     display: flex;
-    margin-left:20rem;
-    margin-top: 1rem;
-    font-size: 25px;
-    width: 500px;
-    justify-content: space-evenly;
+    width: 400px;
+    margin-left: 10rem;
+    justify-content: space-between;
 }
 
-.deliver{
-    display: flex;
-    align-content: space-evenly;
-    margin-left: 17rem;
-}
-
-.detail{
-    background-color: white;
+img {
     border-radius: 5px;
-    height: 200px;
-    width: 350px;
-    font-size: 17px;
-    margin-top: 50px;
-    margin-left: -40px;
-    padding-top: 20px;
-    padding-left: 20px;
-} 
-
-.owner_details {
-    background-color: white;
-    border-radius: 5px;
-    height: 200px;
-    width: 350px;
-    font-size: 17px;
-    margin-top: 50px;
-    margin-left: -40px;
-    padding-top: 20px;
-    padding-left: 20px;
 }
 
-#name {
-    font-size: 25px;
-    color: maroon;
+.info{
+    margin-top: 3.5rem;
+    width: 100px;
 }
 
-.price {
-    display: flex;
+h5{
+    font-size: 20px;
 }
 
-#original_price {
-    color: darkgrey;
-    font-size: 22px;
-    margin-left: 1rem;
-}
-
-#discount_price{
-    font-size: 22px;
-}
-
-.percent {
-    font-size: 22px;
-    color: green;
-    margin-left: 1rem;
-}
-
-.sel{
-    margin-top: 10px;
+.price{
+    font-size: 20px;
 }
 
 footer{
     background-color: purple;
-    height: 310px;
+    height: 290px;
     margin-top: 150px;
 }
 
@@ -275,4 +220,8 @@ h4{
 .twiter{
     background-color: #00acee;
     color: white;
-} 
+}
+
+.menu{
+    display: none;
+}

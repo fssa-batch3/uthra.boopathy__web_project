@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Profile page </title>
-    <link rel="stylesheet" href="../../assets/css/profile.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />        <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Profile page </title>
+        <link rel="stylesheet" href="../../assets/css/profile.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kreon:wght@300;400;500;600;700&family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     </head>
@@ -21,22 +22,22 @@
 
         <section>
 
-            <form role="form" >
+            <form role="form">
             
                 <h1> PROFILE</h1>
 
                 <div class="avatar">
-                    <img src="../../assets/images/avatar.jpg" alt="photo" height="180px" width="180px"/>
+                    <img src="../../assets/images/avatar.jpg" alt="photo" height="180px" width="180px">
                 </div>
                
                 <div class="name">
-                <label> Name: </label>
-		        <input type="text"  id="uname" disabled="true" />
-		        </div>
+                    <label> Name: </label>
+                    <input type="text" id="uname" disabled="true">
+                </div>
 
                 <div class="age">
                     <label> Age:</label>
-                    <input type="number"  id="age" disabled="true" />
+                    <input type="number" id="age" disabled="true">
                 </div>
 
                 <div class="add">
@@ -46,170 +47,141 @@
                 
                 <div class="no">
                     <label> Contact number: </label>
-                    <input type="number"  id="phonenumber" disabled="true" />
+                    <input type="number" id="phonenumber" disabled="true">
                 </div>
 
                 <div class="mail">
                     <label> E-Mail Id: </label>
-                    <input type="email"  id="email"  disabled="true" />
+                    <input type="email" id="email" disabled="true">
                 </div>
 
                 <div class="des">
-                        <label> Your Designation:</label>
-                        <select id="des" disabled="true" >
-                            <option> Buyer </option>
-                            <option> Seller </option>
-                            <option> Both </option>
-                        </select>
+                    <label> Your Designation:</label>
+                    <select id="des" disabled="true">
+                        <option> Buyer </option>
+                        <option> Seller </option>
+                        <option> Both </option>
+                    </select>
                 </div>
                 
                 <div >
-                     <button class="btn-1" type="button" onclick="edit()">   Edit  </button>  
+                    <button class="btn-1" type="button" onclick="edit()">   Edit  </button>  
                 
-                        <!-- <button class="btn-2" type="button" onclick="deleteAcc()"> Delete </button> -->
+                    <!-- <button class="btn-2" type="button" onclick="deleteAcc()"> Delete </button> -->
 
-                        <button class="btn-3" type="button" onclick="back()">  Back </button>
+                    <button class="btn-3" type="button" onclick="back()">  Back </button>
 
                 </div>        
 
             </form>
        
-            </section>
+        </section>
 
-            <script src="../../assets/js/header.js"></script>
+        <script src="../../assets/js/header.js"></script>
 
-            <script>
-
-                header();
-
-
-  
-
-                
-            let uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
-            let user_cred = JSON.parse(localStorage.getItem("user_cred"));
-            function profile_data(e){
-                return e.phonenumber == uniqueID;
-            }
-            person_data = user_cred.find(profile_data);
-            document.getElementById("uname").value = person_data["uname"];
-            document.getElementById("email").value = person_data["email"];
-            document.getElementById("phonenumber").value = person_data["phonenumber"];
-            document.getElementById("age").value = person_data["age"];
-            document.getElementById("address").value = person_data["address"];
-            document.getElementById("des").value = person_data["des"];
-
-
-            function edit() {
-
-                window.location.href = "../homepage/profilepage.html";
-
-            }
-
-
-        function back () {
-
-
-            if (person_data["des"] == "Seller") {
-                window.location.href = "../homepage/sellerpage.html";
-            }
-            else{
-                window.location.href = "../homepage/frontpage.html";
-            }
-        }
-
-        // console.log(function back(){});
-
-
-
-        if (person_data["des"] == "Seller") {
-
-// <div class = "arrow" > </div>
-
-div_arrow = document.createElement("div");
-div_arrow.setAttribute("class", "arrow");
-// console.log(div_arrow);
-
-// <a> link </a>
-
-a_arrow = document.createElement("a");
-a_arrow.setAttribute("href", "../homepage/sellerpage.html");
-div_arrow.append(a_arrow);
-// console.log(a_arrow);
-
-
-// < i >  arrow </i>
-
-i_arrow = document.createElement("i");
-i_arrow.setAttribute("class", "fa-solid fa-arrow-left");
-a_arrow.append(i_arrow);
-
-
-document.querySelector("div.arrows").append(div_arrow);
-
+      <script>
+const uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
+const user_cred = JSON.parse(localStorage.getItem("user_cred"));
+function profile_data(e) {
+  return e.phonenumber === uniqueID;
 }
-else{
+const person_data = user_cred.find(profile_data);
+document.getElementById("uname").value = person_data.uname;
+document.getElementById("email").value = person_data.email;
+document.getElementById("phonenumber").value = person_data.phonenumber;
+document.getElementById("age").value = person_data.age;
+document.getElementById("address").value = person_data.address;
+document.getElementById("des").value = person_data.des;
 
-// <div class = "arrow" > </div>
-
-div_arrow = document.createElement("div");
-div_arrow.setAttribute("class", "arrow");
-// console.log(div_arrow);
-
-// <a> link </a>
-
-a_arrow = document.createElement("a");
-a_arrow.setAttribute("href", "../homepage/frontpage.html");
-div_arrow.append(a_arrow);
-// console.log(a_arrow);
-
-
-// < i >  arrow </i>
-
-i_arrow = document.createElement("i");
-i_arrow.setAttribute("class", "fa-solid fa-arrow-left");
-a_arrow.append(i_arrow);
-
-
-document.querySelector("div.arrows").append(div_arrow);
-
+function edit() {
+  window.location.href = "../homepage/profilepage.html";
 }
-            
 
+function back() {
+  if (person_data.des === "Seller") {
+    window.location.href = "../homepage/sellerpage.html";
+  } else {
+    window.location.href = "../homepage/frontpage.html";
+  }
+}
 
-            // delete account function
-        
-            // function deleteAcc(){
-           
-            //     if(confirm("Are you sure to delete this account ?")){
-            
-            //         //get value from local storage
-            
-            //         let uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
-           
-            //         let user_cred = JSON.parse(localStorage.getItem("user_cred"));
-           
-            //         function profile_data(e){
-               
-            //             return e.phonenumber == uniqueID;
-           
-            //         }
-           
-            //         person_data = user_cred.find(profile_data);
-                       
-            //         const indexOfUser = user_cred.indexOf(person_data);
+// console.log(function back(){});
 
-           
-            //         user_cred.splice(indexOfUser, 1);
-           
-            //         localStorage.setItem("user_cred", JSON.stringify(user_cred));
+if (person_data.des === "Seller") {
+  // <div class = "arrow" > </div>
 
-            //         window.location.href = "./frontpage.html";
+  const div_arrow = document.createElement("div");
+  div_arrow.setAttribute("class", "arrow");
+  // console.log(div_arrow);
 
-            //     }
+  // <a> link </a>
 
-            // }
+  const a_arrow = document.createElement("a");
+  a_arrow.setAttribute("href", "../homepage/sellerpage.html");
+  div_arrow.append(a_arrow);
+  // console.log(a_arrow);
 
+  // < i >  arrow </i>
+
+  const i_arrow = document.createElement("i");
+  i_arrow.setAttribute("class", "fa-solid fa-arrow-left");
+  a_arrow.append(i_arrow);
+
+  document.querySelector("div.arrows").append(div_arrow);
+} else {
+  // <div class = "arrow" > </div>
+
+  const div_arrow = document.createElement("div");
+  div_arrow.setAttribute("class", "arrow");
+  // console.log(div_arrow);
+
+  // <a> link </a>
+
+  const a_arrow = document.createElement("a");
+  a_arrow.setAttribute("href", "../homepage/frontpage.html");
+  div_arrow.append(a_arrow);
+  // console.log(a_arrow);
+
+  // < i >  arrow </i>
+
+  const i_arrow = document.createElement("i");
+  i_arrow.setAttribute("class", "fa-solid fa-arrow-left");
+  a_arrow.append(i_arrow);
+
+  document.querySelector("div.arrows").append(div_arrow);
+}
+
+// delete account function
+
+// function deleteAcc(){
+
+//     if(confirm("Are you sure to delete this account ?")){
+
+//         //get value from local storage
+
+//         let uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
+
+//         let user_cred = JSON.parse(localStorage.getItem("user_cred"));
+
+//         function profile_data(e){
+
+//             return e.phonenumber == uniqueID;
+
+//         }
+
+//         person_data = user_cred.find(profile_data);
+
+//         const indexOfUser = user_cred.indexOf(person_data);
+
+//         user_cred.splice(indexOfUser, 1);
+
+//         localStorage.setItem("user_cred", JSON.stringify(user_cred));
+
+//         window.location.href = "./frontpage.html";
+
+//     }
+
+// }
             </script>
 
     </body>

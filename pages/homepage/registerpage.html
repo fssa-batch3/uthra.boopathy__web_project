@@ -1,123 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Register Page </title>
-    <link rel="stylesheet" href="../../assets/css/style-register.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />        <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Register Page </title>
+        <link rel="stylesheet" href="../../assets/css/style-register.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kreon:wght@300;400;500;600;700&family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
-</head>
-<body>
-    <header id="userLogin">
+    </head>
+    <body>
+        <header id="userLogin">
 
-    </header>
+        </header>
     
-    <section>
-        <form role="form" onsubmit="signUp(event)" >
-        <div class="register">
+        <section>
+            <form role="form" onsubmit="signUp(event)">
+                <div class="register">
             
-            <h2> SIGN UP : </h2>
-                 <div>
-                     <label> Name: </label>
-                     <input type="name" id="uname" required="true" />
-                </div>
+                    <h2> SIGN UP : </h2>
+                    <div>
+                        <label> Name: </label>
+                        <input type="name" id="uname" required="true">
+                    </div>
 
-                <div>
-                    <label> Phone number: </label>
-                    <input type="tel" id="phonenumber" placeholder="+91" required="true" pattern="[6-9]{1}[0-9]{9}" title="Enter 10 numbers only" />
-                </div>
+                    <div>
+                        <label> Phone number: </label>
+                        <input type="tel" id="phonenumber" placeholder="+91" required="true" pattern="[6-9]{1}[0-9]{9}" title="Enter 10 numbers only">
+                    </div>
 
-                <div>
-                    <label> Create Password: </label>
-                    <input type="password" id="password" required="true" pattern="(?=.*\d)(?=.*[*!@#$%^&])(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Include uppercase, lowercase, number and special characters " />
-                    <p> (Pattern: Atleast 8 characters including uppercase, lowercase, number and special characters) </p>
-                </div>
+                    <div>
+                        <label> Create Password: </label>
+                        <input type="password" id="password" required="true" pattern="(?=.*\d)(?=.*[*!@#$%^&])(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Include uppercase, lowercase, number and special characters ">
+                        <p> (Pattern: Atleast 8 characters including uppercase, lowercase, number and special characters) </p>
+                    </div>
 
-                <div class="confirm">
-                    <label> Confirm Password: </label>
-                    <input type="password" id="confirm_password" required="true"/>
-                </div> 
+                    <div class="confirm">
+                        <label> Confirm Password: </label>
+                        <input type="password" id="confirm_password" required="true">
+                    </div> 
                 
-                <p> Already have an account? <a href="../homepage/loginpage.html"> LOG IN </a> </p>
+                    <p>
+                        Already have an account? <a href="../homepage/loginpage.html"> LOG IN </a> 
+                    </p>
                
-                <button type="submit"> SUBMIT </button> 
+                    <button type="submit"> SUBMIT </button> 
             
-        </div>
-    </form>
+                </div>
+            </form>
     
-    </section> 
+        </section> 
 
-    <script src="../../assets/js/header.js"> </script>
-
-    <script>
-        header();
-    </script>
-
-    <script> 
-
-
+        <script src="../../assets/js/header.js"> </script>
+       
+        <script>
         function signUp(e) {
+  e.preventDefault();
+  const phonenumber = document.getElementById("phonenumber").value;
+  const confirm_password = document.getElementById("confirm_password").value;
+  const password = document.getElementById("password").value;
+  const uname = document
+    .getElementById("uname")
+    .value.trim()
+    .split(/\s+/g)
+    .join(" ");
+  const age = "";
+  const address = "";
+  const email = "";
+  const user_uuid = uuidv4();
 
-            e.preventDefault();
-            let phonenumber = document.getElementById("phonenumber").value;
-              confirm_password = document.getElementById("confirm_password").value;
-              password = document.getElementById("password").value;
-             uname = document.getElementById("uname").value.trim().split(/\s+/g).join(' ');
-             age = "";
-             address = "";
-             email = "";
-             user_uuid = uuidv4();
-
-             function validate() {
-        // let val = document.getElementById('user_address').value;
-        // let name = document.getElementById('uname').value;
-
-        if (/^\s*$/g.test(uname)) {
-            alert('Please, write your name properly');
-            uname=reset();
-        }
+  // validate user input
+  function validate() {
+    if (/^\s*$/g.test(uname)) {
+              alert("Please write your name properly");
+              uname = "";
     }
+  }
+  // validate();
 
-    validate();
+  const user_cred = JSON.parse(localStorage.getItem("user_cred")) || [];
+  const exist =
+    user_cred.length &&
+    JSON.parse(localStorage.getItem("user_cred")).some(
+              (data) => data.phonenumber.toLowerCase() === phonenumber.toLowerCase()
+    );
 
-            let user_cred = JSON.parse(localStorage.getItem('user_cred')) || [];
-
-            let exist = user_cred.length &&
-                JSON.parse(localStorage.getItem('user_cred')).some(data =>
-                    data.phonenumber.toLowerCase() == phonenumber.toLowerCase()
-                );
-            if(!exist){
-
-              if(password == confirm_password){
-                user_cred.push({uname,phonenumber,confirm_password,password,user_uuid,address,email,age});
-                localStorage.setItem('user_cred',JSON.stringify(user_cred));
-                console.log(localStorage.getItem('user_cred'));
-                document.querySelector("form").reset();
-               document.getElementById('phonenumber').focus();
-                alert('Account created successfully');
-                location.href = "../homepage/loginpage.html";
-            }
-              else{
-                alert("Confirm password does not match")
-              }
-            }
-            else {
-                alert('Sorry the User already exists! \n Try with a new phonenumber.');
-                document.querySelector('form').reset();
-            }
-      
-          }
-
-
-
-    </script>
-
-   <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+  if (!exist) {
+    if (password === confirm_password) {
+              user_cred.push({
+                uname,
+                phonenumber,
+                confirm_password,
+                password,
+                user_uuid,
+                address,
+                email,
+                age,
+              });
+              localStorage.setItem("user_cred", JSON.stringify(user_cred));
+              console.log(localStorage.getItem("user_cred"));
+              document.querySelector("form").reset();
+              document.getElementById("phonenumber").focus();
+              alert("Account created successfully");
+              window.location.href = "../homepage/loginpage.html";
+    } else {
+              alert("Confirm password does not match");
+    }
+  } else {
+    alert("Sorry, the user already exists!\nTry with a new phone number.");
+    document.querySelector("form").reset();
+  }
+}
+</script>
+        <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
 
     </body>
 </html>

@@ -151,6 +151,7 @@ s{
     margin: 50px 20px 20px 30px;
     border: 1px solid #f8f8f8;
     background-color: #f8f8f8;
+    cursor: pointer;
 }
 
 footer{

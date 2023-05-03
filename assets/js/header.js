@@ -1,15 +1,14 @@
-let origin = window.location.origin;
-let logo_path = origin + "/pages/homepage/frontpage.html";
-let logo =  origin + "/assets/images/logo.png";
-let cart = origin + "/pages/orders/cartpage.html";
-let wishlist = origin + "/pages/orders/wishlistpage.html";
-let orders = origin + "/pages/orders/myorderspage.html";
-let profile = origin + "/pages/homepage/profile.html";
-let sign_up = origin + "/pages/homepage/registerpage.html";
-let login = origin + "/pages/homepage/loginpage.html";
+const { origin } = window.location;
+const logo_path = `${origin}/pages/homepage/frontpage.html`;
+const logo = `${origin}/assets/images/logo.png`;
+const cart = `${origin}/pages/orders/cartpage.html`;
+const wishlist = `${origin}/pages/orders/wishlistpage.html`;
+const orders = `${origin}/pages/orders/myorderspage.html`;
+const profile = `${origin}/pages/homepage/profile.html`;
+const sign_up = `${origin}/pages/homepage/registerpage.html`;
+const login = `${origin}/pages/homepage/loginpage.html`;
 
-let before_login = 
-`
+const before_login = `
 <a href= "${logo_path}"> <img class="logo" src= "${logo}" alt="logo" /> </a>
 <h1> Thara's World </h1>
   <div class="nav">
@@ -31,8 +30,7 @@ let before_login =
 
 `;
 
-let after_login = 
-`
+const after_login = `
 <a href= "${logo_path}"> <img class="logo" src="${logo}" alt="logo" /> </a>
 <h1> Thara's World </h1>
   <div class="nav">
@@ -63,47 +61,40 @@ let after_login =
 
 `;
 
+function header() {
+  const userId = JSON.parse(localStorage.getItem("uniqueID"));
+  const userlogin = document.getElementById("userLogin");
 
-      function header() {
+  if (!userId) {
+    userlogin.innerHTML = before_login;
+  } else {
+    userlogin.innerHTML = after_login;
+  }
+}
 
-            let userId = JSON.parse(localStorage.getItem("uniqueID"));
-            let userlogin = document.getElementById("userLogin");
+function logout() {
+  const confirm = window.confirm("Are you sure to log out?");
+  if (confirm("Are you sure to log out?")) {
+    // let wishlist = JSON.parse(localStorage.getItem("wish"));
 
-            if (!userId) {
-            userlogin.innerHTML = before_login;
-            }
-            else {
-            userlogin.innerHTML = after_login;
-            }
+    // let unique_id = JSON.parse(localStorage.getItem("uniqueID"));
+    // console.log(unique_id);
 
+    // let check = wishlist.find(e => e.buyer_id === unique_id);
+    // console.log(check);
 
-      }
+    // let index = wishlist.indexOf(check);
+    // console.log(index);
 
+    // let remove_pdts = wishlist.splice(index, 1);
+    // console.log(remove_pdts);
 
-      
-      function logout() {
+    // localStorage.setItem("wish", JSON.stringify(wishlist));
 
-        if(confirm("Are you sure to log out?")){
+    localStorage.removeItem("uniqueID");
 
-          // let wishlist = JSON.parse(localStorage.getItem("wish"));
+    window.location.href = `${origin}/pages/homepage/frontpage.html`;
+  }
+}
 
-          // let unique_id = JSON.parse(localStorage.getItem("uniqueID"));
-          // console.log(unique_id);
-
-          // let check = wishlist.find(e => e.buyer_id === unique_id);
-          // console.log(check);
-
-          // let index = wishlist.indexOf(check);
-          // console.log(index);
-
-          // let remove_pdts = wishlist.splice(index, 1);
-          // console.log(remove_pdts);
-
-          // localStorage.setItem("wish", JSON.stringify(wishlist));
-        
-          localStorage.removeItem("uniqueID");
-        
-          window.location.href = origin + "/pages/homepage/frontpage.html";
-
-      }
-    }
+header();
