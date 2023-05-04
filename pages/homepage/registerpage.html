@@ -25,7 +25,7 @@
                     <h2> SIGN UP : </h2>
                     <div>
                         <label> Name: </label>
-                        <input type="name" id="uname" required="true">
+                        <input type="text" id="uname" pattern="[A-Za-z]+" required="true">
                     </div>
 
                     <div>
@@ -56,41 +56,37 @@
         </section> 
 
         <script src="../../assets/js/header.js"> </script>
-       
-        <script>
-        function signUp(e) {
+    
+<script>
+    function signUp(e) {
   e.preventDefault();
   const phonenumber = document.getElementById("phonenumber").value;
   const confirm_password = document.getElementById("confirm_password").value;
   const password = document.getElementById("password").value;
-  const uname = document
-    .getElementById("uname")
-    .value.trim()
-    .split(/\s+/g)
-    .join(" ");
+  let uname = document
+        .getElementById("uname")
+        .value.trim()
+        .split(/\s+/g)
+        .join(" ");
   const age = "";
   const address = "";
   const email = "";
   const user_uuid = uuidv4();
-
   // validate user input
+
   function validate() {
-    if (/^\s*$/g.test(uname)) {
-              alert("Please write your name properly");
-              uname = "";
-    }
-  }
-  // validate();
-
-  const user_cred = JSON.parse(localStorage.getItem("user_cred")) || [];
-  const exist =
-    user_cred.length &&
-    JSON.parse(localStorage.getItem("user_cred")).some(
+        if (/^\s*$/g.test(uname)) {
+          uname = "";
+          alert("Please write your name properly");
+        } else{
+          const user_cred = JSON.parse(localStorage.getItem("user_cred")) || [];
+          const exist =
+            user_cred.length &&
+            JSON.parse(localStorage.getItem("user_cred")).some(
               (data) => data.phonenumber.toLowerCase() === phonenumber.toLowerCase()
-    );
-
-  if (!exist) {
-    if (password === confirm_password) {
+            );
+          if (!exist) {
+            if (password === confirm_password) {
               user_cred.push({
                 uname,
                 phonenumber,
@@ -107,15 +103,23 @@
               document.getElementById("phonenumber").focus();
               alert("Account created successfully");
               window.location.href = "../homepage/loginpage.html";
-    } else {
+            } else {
               alert("Confirm password does not match");
-    }
-  } else {
-    alert("Sorry, the user already exists!\nTry with a new phone number.");
-    document.querySelector("form").reset();
+            }
+          } else {
+            alert("Sorry, the user already exists!\nTry with a new phone number.");
+            document.querySelector("form").reset();
+          }
+        }
   }
+    
+  validate();
+
 }
 </script>
+
+<script src="../../assets/js/user_validation.js"></script>
+
         <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
 
     </body>

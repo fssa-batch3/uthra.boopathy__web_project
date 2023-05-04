@@ -73,8 +73,7 @@ function header() {
 }
 
 function logout() {
-  const confirm = window.confirm("Are you sure to log out?");
-  if (confirm("Are you sure to log out?")) {
+  if (window.confirm("Are you sure to log out?")) {
     // let wishlist = JSON.parse(localStorage.getItem("wish"));
 
     // let unique_id = JSON.parse(localStorage.getItem("uniqueID"));

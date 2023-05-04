@@ -54,27 +54,27 @@
   <script src="../../assets/js/header.js"> </script>
 
   <script>
-function loginHandler(e) {
-  e.preventDefault();
-  const phonenumber = document.getElementById("phonenumber").value;
-  const password = document.getElementById("password").value;
-  const user_cred = JSON.parse(localStorage.getItem("user_cred")) || [];
-  const exist =
-    user_cred.length &&
-    user_cred.some(
-      (data) => data.phonenumber === phonenumber && data.password === password
-    );
-  if (!exist) {
-    alert("Incorrect login credentials");
-  } else {
-    localStorage.setItem("uniqueID", JSON.stringify(phonenumber));
-    window.location.href = "../homepage/profile.html";
-  }
+    function loginHandler(e) {
+      e.preventDefault();
+      const phonenumber = document.getElementById("phonenumber").value;
+      const password = document.getElementById("password").value;
+      const user_cred = JSON.parse(localStorage.getItem("user_cred")) || [];
+      const exist =
+        user_cred.length &&
+        user_cred.some(
+          (data) => data.phonenumber === phonenumber && data.password === password
+        );
+      if (!exist) {
+        alert("Incorrect login credentials");
+      } else {
+        localStorage.setItem("uniqueID", JSON.stringify(phonenumber));
+        window.location.href = "../homepage/profile.html";
+      }
 }
 document.addEventListener("DOMContentLoaded", () => {
   const login = document.getElementById("signIn");
   if (login) {
-    login.addEventListener("submit", loginHandler);
+        login.addEventListener("submit", loginHandler);
   }
 });
   </script>

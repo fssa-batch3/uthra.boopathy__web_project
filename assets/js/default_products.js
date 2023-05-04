@@ -985,5 +985,5 @@ const users = [
 const user_data = localStorage.getItem("user_cred");
 
 if (!user_data) {
-  localStorage.setItem("user_cred", JSON.stringify(user_data));
+  localStorage.setItem("user_cred", JSON.stringify(users));
 }
