@@ -143,9 +143,7 @@ document.getElementById("add_info").innerHTML = product_data.add_info;
 
 const updates = document.querySelector("form#form");
 
-updates.addEventListener("submit", update_product);
-
-function update_product() {
+function update_product(event) {
   event.preventDefault();
   const uu_id = JSON.parse(localStorage.getItem("productDetail"));
 
@@ -192,7 +190,10 @@ function update_product() {
 
   window.location.href = "../products/myproduct.html";
 }
-       </script>
-    </body>
+
+updates.addEventListener("submit", update_product);
+</script>
+ 
+</body>
 
 </html>

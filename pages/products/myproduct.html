@@ -259,6 +259,7 @@ for (let k = 0; k < check_pdt.length; k++) {
   button_add.setAttribute("type", "submit");
   button_add.setAttribute("class", "adding");
   button_add.setAttribute("data-add", check_pdt[k].product_uuid);
+  // button_add.setAttribute("style", "display: none;");
   button_add.innerText = "Add";
   div_right.append(button_add);
 
@@ -281,15 +282,15 @@ product_details.forEach((find) => {
 
 const del_product = document.querySelectorAll("button.del");
 del_product.forEach((check) => {
-  check.addEventListener("click", () => {
-    const product_id = this.dataset.del;
+  check.addEventListener("click", (e) => {
+    const product_id = e.currentTarget.dataset.del;
     localStorage.setItem("products_id", JSON.stringify(product_id));
     console.log(product_id);
-    if (confirm("Are you sure to delete this product?")) {
+    if (window.confirm("Are you sure to delete this product?")) {
       const id = JSON.parse(localStorage.getItem("products_id"));
       const all_products = JSON.parse(localStorage.getItem("add_products"));
       console.log(all_products);
-      const pdts = all_products.find((e) => e.product_uuid === id);
+      const pdts = all_products.find((a) => a.product_uuid === id);
       console.log(pdts);
       const indexOfProduct = all_products.indexOf(pdts);
       all_products.splice(indexOfProduct, 1);
@@ -304,14 +305,14 @@ del_product.forEach((check) => {
 const remove_pdt = document.querySelectorAll("button.remove");
 
 remove_pdt.forEach((remove) => {
-  remove.addEventListener("click", () => {
-    const product_id = this.dataset.remove;
+  remove.addEventListener("click", (e) => {
+    const product_id = e.currentTarget.dataset.remove;
 
     localStorage.setItem("product_id", JSON.stringify(product_id));
 
     const all_products = JSON.parse(localStorage.getItem("add_products"));
 
-    const find_pdt = all_products.find((e) => e.product_uuid === product_id);
+    const find_pdt = all_products.find((g) => g.product_uuid === product_id);
 
     const indexOfProduct = all_products.indexOf(find_pdt);
     console.log(indexOfProduct);
@@ -326,8 +327,6 @@ remove_pdt.forEach((remove) => {
       localStorage.setItem("add_products", JSON.stringify(all_products));
     } else {
       alert("You have not added the product yet");
-
-      // document.getElementsByClassName(".remove").style.display = "none";
     }
   });
 });
@@ -336,29 +335,25 @@ remove_pdt.forEach((remove) => {
 const add_pdt = document.querySelectorAll("button.adding");
 
 add_pdt.forEach((add) => {
-  add.addEventListener("click", () => {
-    const product_id = this.dataset.add;
+  add.addEventListener("click", (e) => {
+    const product_id = e.currentTarget.dataset.add;
 
     localStorage.setItem("product_id", JSON.stringify(product_id));
 
     const all_products = JSON.parse(localStorage.getItem("add_products"));
 
-    const find_pdt = all_products.find((e) => e.product_uuid === product_id);
+    const find_pdt = all_products.find((f) => f.product_uuid === product_id);
 
     const indexOfProduct = all_products.indexOf(find_pdt);
     console.log(indexOfProduct);
 
     if (all_products[indexOfProduct].status === false) {
-      // document.getElementsByClassName("button.adding").style.display = "none";
-
       alert("This product is successfully added");
 
       all_products[indexOfProduct].status = true;
 
       localStorage.setItem("add_products", JSON.stringify(all_products));
     } else {
-      // document.getElementsByClassName("button.adding").style.display = "inline";
-
       alert("You have already added the product");
     }
   });

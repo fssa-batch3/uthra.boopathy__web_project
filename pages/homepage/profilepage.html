@@ -22,7 +22,7 @@
 
         <section>
 
-            <form role="form" onsubmit="update_details()">
+            <form role="form" onsubmit="update_details(event)">
             
                 <h1> PROFILE</h1>
 
@@ -113,8 +113,8 @@ document.getElementById("age").value = person_data.age;
 document.getElementById("address").value = person_data.address;
 document.getElementById("des").value = person_data.des;
 
-function update_details() {
-  event.preventDefault();
+function update_details(e) {
+  e.preventDefault();
   const uname = document
     .getElementById("uname")
     .value.trim()

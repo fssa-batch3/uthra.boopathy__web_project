@@ -135,10 +135,10 @@ function profile_data(e) {
   return e.phonenumber === uniqueID;
 }
 const person_data = user_cred.find(profile_data);
-const uname = (document.getElementById("uname").value = person_data.uname);
-const phonenumber = (document.getElementById("phonenumber").value =
+let uname = (document.getElementById("uname").value = person_data.uname);
+let phonenumber = (document.getElementById("phonenumber").value =
   person_data.phonenumber);
-const address = (document.getElementById("address").value =
+let address = (document.getElementById("address").value =
   person_data.address);
 
 const product = JSON.parse(localStorage.getItem("add_products"));
@@ -160,20 +160,20 @@ document.getElementById("discount_price").innerText =
 document.getElementById("discount_percent").innerText =
   product_datas.discount_percent;
 document.getElementById("product_quantity").innerText =
-  product_datas.product_quantity;
+  product_datas.product_quantity;       
 
-const palce_order = document.querySelector("button.place");
-palce_order.addEventListener("click", () => {
-  alert("Your order is booked");
+const place_order = document.querySelector("button.place");
 
-  const uname = document.getElementById("uname").value;
-  const phonenumber = document.getElementById("phonenumber").value;
-  const address = document.getElementById("address").value;
+place_order.addEventListener("click", () => {
+  uname = document.getElementById("uname").value;
+  phonenumber = document.getElementById("phonenumber").value;
+  address = document.getElementById("address").value;
   const payment = document.getElementById("payment").value;
   const quantity = document.getElementById("product_quantity").value;
   const pincode = document.getElementById("pincode").value;
   const state = document.getElementById("state").value;
-  const { product_id } = product_datas;
+  const product_ids = product_datas.product_uuid;
+  console.log(product_ids);
   const order_id = uuidv4();
   const date = new Date();
   const year = date.getFullYear();
@@ -181,32 +181,39 @@ palce_order.addEventListener("click", () => {
   const day = date.getDate();
   const order_on = `${day}.${month}.${year}`;
 
-  const my_orders = JSON.parse(localStorage.getItem("my_orders")) || [];
+  if (address.trim() === "" || state.trim() === "" || pincode.trim() === "" || payment.trim() === "") {
+    alert("Please fill in all the details");
+  } else {
+    alert("Your order is successfully booked");
 
-  my_orders.push({
-    name,
-    address,
-    pincode,
-    state,
-    phonenumber,
-    product_name: product_datas.name,
-    discount_price: product_datas.discount_price,
-    quantity,
-    payment_method: payment,
-    buyer_id: uniqueID,
-    seller_id: product_datas.user_id,
-    product_id: product_datas.product_id,
-    order_id,
-    order_date: order_on,
-  });
+    const my_orders = JSON.parse(localStorage.getItem("my_orders")) || [];
 
-  localStorage.setItem("my_orders", JSON.stringify(my_orders));
+    my_orders.push({
+      uname,
+      address,
+      pincode,
+      state,
+      phonenumber,
+      product_name: product_datas.name,
+      discount_price: product_datas.discount_price,
+      product_image: product_datas.image,
+      quantity,
+      payment_method: payment,
+      buyer_id: uniqueID, // define uniqueID before using it
+      seller_id: product_datas.user_id,
+      product_ids,
+      order_id,
+      order_date: order_on,
+    });
 
-  console.log(my_orders);
+    localStorage.setItem("my_orders", JSON.stringify(my_orders));
 
-  window.location.href = "../orders/myorderspage.html";
+    console.log(my_orders);
+
+    window.location.href = "../orders/myorderspage.html";
+  }
 });
-            </script>
+</script>
 
     <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
 

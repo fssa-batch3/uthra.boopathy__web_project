@@ -98,11 +98,24 @@ img {
 }
 
 h5{
-    font-size: 20px;
+    font-size: 30px;
 }
 
-.price{
-    font-size: 20px;
+.price {
+    display: flex;
+    width: 20%;
+    font-size: 22px;
+}
+
+s {
+    color: gray;
+    padding-left: 7px;
+}
+
+.percent{
+    display: flex;
+    color: green;
+    padding-left: 7px;
 }
 
 footer{

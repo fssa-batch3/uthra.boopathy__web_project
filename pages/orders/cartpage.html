@@ -279,6 +279,11 @@ const button_buy = document.createElement("button");
 button_buy.setAttribute("class", "buy");
 button_buy.innerText = "BUY NOW";
 div_btn.append(button_buy);
+console.log(button_buy);
+
+const link = document.createElement("a");
+link.setAttribute("href", "../orders/cart-buynowpage.html");
+button_buy.append(link);
 
 document.querySelector("section").append(div_total);
 
@@ -301,7 +306,7 @@ product_quantity.forEach((add) => {
     // console.log(all_products);
 
     const pdts = all_products.find(
-      (e) => e.product_id === productid && e.buyer_id === unique_id
+      (a) => a.product_id === productid && a.buyer_id === unique_id
     );
 
     // console.log(pdts);
@@ -353,7 +358,7 @@ products.forEach((check) => {
       console.log(all_products);
 
       const pdts = all_products.find(
-        (e) => e.product_id === id && e.buyer_id === unique_id
+        (f) => f.product_id === id && f.buyer_id === unique_id
       );
 
       console.log(pdts);
@@ -394,7 +399,7 @@ function move_to_wishlist() {
         console.log(all_products);
 
         const pdts = all_products.find(
-          (e) => e.product_id === id && e.buyer_id === user_id
+          (g) => g.product_id === id && g.buyer_id === user_id
         );
 
         console.log(pdts);

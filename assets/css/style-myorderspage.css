@@ -88,6 +88,10 @@ span i {
     margin-left: 1rem;
 }
 
+.pdt {
+    cursor: pointer;
+}
+
 .images p {
     font-size: 25px;
 }

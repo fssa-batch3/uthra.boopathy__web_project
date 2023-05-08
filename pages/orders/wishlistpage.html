@@ -198,7 +198,7 @@ function remove_pdt() {
         const all_products = JSON.parse(localStorage.getItem("wish"));
         console.log(all_products);
         const pdts = all_products.find(
-          (e) => e.product_id === id && e.buyer_id === user_id
+          (f) => f.product_id === id && f.buyer_id === user_id
         );
 
         console.log(pdts);
@@ -228,7 +228,7 @@ function move_to_cart() {
         const all_products = JSON.parse(localStorage.getItem("wish"));
         console.log(all_products);
         const pdts = all_products.find(
-          (e) => e.product_id === id && e.buyer_id === user_id
+          (g) => g.product_id === id && g.buyer_id === user_id
         );
 
         console.log(pdts);

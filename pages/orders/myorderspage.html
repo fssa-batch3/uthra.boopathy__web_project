@@ -160,7 +160,7 @@
         console.log(user_id);
 
         const ordered_prodducts = JSON.parse(localStorage.getItem("my_orders"));
-        console.log(ordered_prodducts);
+        // console.log(ordered_prodducts);
 
         const order = ordered_prodducts.filter((e) => e.buyer_id === user_id);
         console.log(order);
@@ -208,7 +208,7 @@
           const p_pdt = document.createElement("p");
           p_pdt.setAttribute("class", "pdt");
           p_pdt.setAttribute("data-id", order[j].order_id);
-          p_pdt.innerText = "Products : 1";
+          p_pdt.innerText = "Products ";
           div_details.append(p_pdt);
 
           //<div class = "deliver" >
@@ -233,14 +233,19 @@
 
           const p_1 = document.createElement("p");
           p_1.setAttribute("class", "sel");
-          p_1.innerText = `Delivered to : ${order[j].name}`;
+          p_1.innerText = `Delivered to : ${order[j].uname}`;
           div_detail.append(p_1);
 
           // p_2
 
           const p_2 = document.createElement("p");
-          p_2.innerText = `Ordered on : ${order[j].booked_date}`;
+          p_2.innerText = `Ordered on : ${order[j].order_date}`;
           p_1.append(p_2);
+
+          const p_7 = document.createElement("p");
+        //   p_7.setAttribute("class", "sel");
+          p_7.innerText = `Phone number : ${order[j].phonenumber}`;
+          p_2.append(p_7);
 
           // p_3
 
@@ -275,16 +280,25 @@
           p_4.innerText = `Seller phone number : ${order[j].seller_id}`;
           div_owner.append(p_4);
 
+          const user_list = JSON.parse(localStorage.getItem("user_cred"));
+
+          const check = user_list.find(g => g.phonenumber === order[j].seller_id)
+          console.log(check);
+
+          const p_8 = document.createElement("p");
+          p_8.innerText = `Address : ${check.address}`;
+          p_4.append(p_8);
+
           document.querySelector("section").append(div_container);
         }
 
-const order_id = document.querySelector("p.pdt");
-order_id.forEach((check) => {
-  check.addEventListener("click", () => {
-            const products = this.dataset.id;
+const ordered_items = document.querySelectorAll("p.pdt");
+ordered_items.forEach((check) => {
+  check.addEventListener("click", (e) => {
+            const products = e.currentTarget.dataset.id;
             localStorage.setItem("order_id", JSON.stringify(products));
             window.location.href = `../orders/buynow_products.html?order_id=${products}`;
-            console.log(order_id);
+            console.log(ordered_items);
   });
 });
 </script>

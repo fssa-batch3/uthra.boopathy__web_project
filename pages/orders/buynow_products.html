@@ -30,7 +30,13 @@
                     </div>
                     <div class="info">
                     <h5> Necklace </h5>
-                    <p class="price"> 586 </p>
+                   <p class="price">  
+                    586  
+                    <s> 1299 </s> 
+                    <span class="percent">
+                    <b> 56%  </b>  off
+                    </span>
+                    </p>
                     </div> -->
             </div>
 
@@ -90,59 +96,88 @@
    
     <script>
         const products = JSON.parse(localStorage.getItem("my_orders"));
-        const user_id = JSON.parse(localStorage.getItem("uniqueID"));
+        console.log(products);
+        // const user_id = JSON.parse(localStorage.getItem("uniqueID"));
         const order_id = JSON.parse(localStorage.getItem("order_id"));
+        console.log(order_id);
         const order_pdts = products.find(
-          (e) => e.buyer_id === user_id && e.order_id === order_id
+          (e) => e.order_id === order_id
         );
-        const container = document.getElementById("order-products");
+        console.log(order_pdts);
 
-        if (!order_pdts) {
-          const errorMsg = document.createElement("p");
-          errorMsg.innerHTML = "No products found.";
-          container.append(errorMsg);
-        } else {
-          for (let i = 0; i < order_pdts.length; i++) {
-            // <div_image>
-            const div_image = document.createElement("div");
+            const product = JSON.parse(localStorage.getItem("add_products"));
+
+            const check = product.find(k => k.product_uuid === order_pdts.product_ids)
+            console.log(check);
+
+        // const container = document.getElementById("order_pdts");
+
+        // if (!order_pdts) {
+        //   const errorMsg = document.createElement("p");
+        //   errorMsg.innerHTML = "No products found.";
+        //   container.append(errorMsg);
+        // } else {
+          for (let i = 0; i < check.length; i++) {
+
+            //<div>
+
+            const div = document.createElement("div");
+            console.log(div);
 
             // <img>
-            const img = document.createElement("img");
-            img.setAttribute("src", order_pdts[i].image);
-            img.setAttribute("alt", order_pdts[i].product_name);
-            img.setAttribute("height", "180px");
-            img.setAttribute("width", "180px");
-            div_image.append(img);
 
-            // div_info
+            const img = document.createElement("img");
+            img.setAttribute("src", check[i].image);
+            img.setAttribute("alt", check[i].name);
+            img.setAttribute("id", "image");
+            img.setAttribute("height","180px");
+            img.setAttribute("width","180px");
+            div.append(img);
+
+            // <div class="info">
+
             const div_info = document.createElement("div");
             div_info.setAttribute("class", "info");
-            div_image.append(div_info);
+            
+            // <h5>
 
-            // h5
             const h5 = document.createElement("h5");
-            h5.innerHTML = order_pdts[i].product_name;
+            h5.setAttribute("id", "name")
+            h5.innerText = check[i].name;
             div_info.append(h5);
 
-            // p
+            // <p>
+
             const p = document.createElement("p");
             p.setAttribute("class", "price");
-            p.innerHTML = order_pdts[i].discount_price;
+            p.setAttribute("id", "original_price");
+            p.innerText = check[i].discount_price;
             div_info.append(p);
 
             // <s>
+
             const s = document.createElement("s");
-            s.innerHTML = order_pdts[i].original_price;
-            div_info.append(s);
+            s.setAttribute("id", "discount_price");
+            s.innerText = check[i].original_price;
+            p.append(s);
+
+            // <span class="percent">
+
+            const span = document.createElement("span");
+            span.setAttribute("class", "percent");
+            p.append(span);
 
             // <b>
-            const b = document.createElement("b");
-            b.innerHTML = `${order_pdts[i].discount_percent} % off`;
-            div_info.append(b);
 
-            container.append(div_image);
+            const b = document.createElement("b");
+            b.setAttribute("id", "discount_percent");
+            b.innerText = check[i].discount_percent;
+            span.append(b);
+
+            document.querySelector(".details").append(div);
+            document.querySelector(".details").append(div_info);
+
           }
-        }
       </script>
 
     </body>
