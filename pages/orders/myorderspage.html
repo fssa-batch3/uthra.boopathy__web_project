@@ -160,10 +160,18 @@
         console.log(user_id);
 
         const ordered_prodducts = JSON.parse(localStorage.getItem("my_orders"));
-        // console.log(ordered_prodducts);
+        console.log(ordered_prodducts);
 
         const order = ordered_prodducts.filter((e) => e.buyer_id === user_id);
         console.log(order);
+
+        const order_count = JSON.parse(localStorage.getItem("order_products_count"));
+
+        // if (order.length === 0) {
+
+        //     alert("You are not yet ordered anything");
+        
+        // } else {
 
         for (let j = 0; j < order.length; j++) {
           // <div class = "container" > </div>
@@ -172,12 +180,35 @@
           div_container.setAttribute("class", "container");
           console.log(div_container);
 
+          if (order[j].status === false) {
+            
+            // <span class = "de" > </span>
+
+            const span_de = document.createElement("span");
+            span_de.setAttribute("class", "de");
+            span_de.innerText = "CANCELLED";
+            div_container.append(span_de);
+
+            // <i>
+
+            const i_sym = document.createElement("i");
+            i_sym.setAttribute("class", "fa-sharp fa-solid fa-circle-xmark");
+            i_sym.setAttribute("style", "font-size:28px;color: red;");
+            span_de.append(i_sym);
+            
+            }
+
+            else{
+                const date = new Date()
+          if(order[j].delivered_on > date) {
+
           // <span class = "de" > </span>
 
           const span_de = document.createElement("span");
           span_de.setAttribute("class", "de");
-          span_de.innerText = "DELIVERD";
+          span_de.innerText = "DELIVERED";
           div_container.append(span_de);
+          console.log(span_de);
 
           // <i>
 
@@ -185,6 +216,28 @@
           i_sym.setAttribute("class", "fa fa-check-circle");
           i_sym.setAttribute("style", "font-size:28px;color: green;");
           span_de.append(i_sym);
+
+          }
+
+          else{
+
+            // 2<span class = "de" > </span>
+
+            const span_de = document.createElement("span");
+            span_de.setAttribute("class", "de");
+            span_de.innerText = "ON THE WAY";
+            div_container.append(span_de);
+
+            // <i>
+
+            const i_sym = document.createElement("i");
+            i_sym.setAttribute("class", "fa-solid fa-spinner");
+            i_sym.setAttribute("style", "color: #1E3050;");
+            span_de.append(i_sym);
+
+            }
+
+            }
 
           // <div class = "details" > </div>
 
@@ -194,10 +247,10 @@
 
           // <p cls ="qty">
 
-          const p_qty = document.createElement("p");
-          p_qty.setAttribute("class", "qty");
-          p_qty.innerText = `Quantity : ${order[j].quantity}`;
-          div_details.append(p_qty);
+        //   const p_qty = document.createElement("p");
+        //   p_qty.setAttribute("class", "qty");
+        //   p_qty.innerText = `Quantity : ${order[j].quantity}`;
+        //   div_details.append(p_qty);
 
           //  link = document.createElement("a");
           //  link.setAttribute("href", "../orders/buynow_products.html");
@@ -208,7 +261,7 @@
           const p_pdt = document.createElement("p");
           p_pdt.setAttribute("class", "pdt");
           p_pdt.setAttribute("data-id", order[j].order_id);
-          p_pdt.innerText = "Products ";
+          p_pdt.innerText = ` No of Products : ${ order_count}`;
           div_details.append(p_pdt);
 
           //<div class = "deliver" >
@@ -233,14 +286,18 @@
 
           const p_1 = document.createElement("p");
           p_1.setAttribute("class", "sel");
-          p_1.innerText = `Delivered to : ${order[j].uname}`;
+          p_1.innerText = `Delivered to : ${ order[j].uname}`;
           div_detail.append(p_1);
 
           // p_2
 
           const p_2 = document.createElement("p");
-          p_2.innerText = `Ordered on : ${order[j].order_date}`;
+          p_2.innerText = `Ordered on : ${ order[j].order_date}`;
           p_1.append(p_2);
+
+          const p_9 = document.createElement("p");
+          p_9.innerText = `Delivered on : ${order[j].delivered_on}`;
+          p_1.append(p_9);
 
           const p_7 = document.createElement("p");
         //   p_7.setAttribute("class", "sel");
@@ -273,24 +330,31 @@
           strong_own.innerText = "ORDERED FROM :";
           div_owner.append(strong_own);
 
-          // p_4
-
-          const p_4 = document.createElement("p");
-          p_4.setAttribute("class", "sel");
-          p_4.innerText = `Seller phone number : ${order[j].seller_id}`;
-          div_owner.append(p_4);
-
           const user_list = JSON.parse(localStorage.getItem("user_cred"));
+          console.log(user_list);
 
           const check = user_list.find(g => g.phonenumber === order[j].seller_id)
           console.log(check);
 
+          // p_4
+
+          const p_4 = document.createElement("p");
+          p_4.setAttribute("class", "sel");
+          p_4.innerText = `Name : ${check.uname}`;
+          div_owner.append(p_4);
+
           const p_8 = document.createElement("p");
-          p_8.innerText = `Address : ${check.address}`;
+          p_8.innerText = `Seller phone number : ${order[j].seller_id}`;
           p_4.append(p_8);
+
+          const button = document.createElement("button");
+          button.innerText = "CANCEL ORDER";
+          button.setAttribute("data-cancel", order[j].order_id);
+          div_container.append(button);
 
           document.querySelector("section").append(div_container);
         }
+    // }
 
 const ordered_items = document.querySelectorAll("p.pdt");
 ordered_items.forEach((check) => {
@@ -301,6 +365,24 @@ ordered_items.forEach((check) => {
             console.log(ordered_items);
   });
 });
+
+document.querySelectorAll("button").forEach((find) => {
+    find.addEventListener("click", (e) => {
+    if(window.confirm("Are you sure to cancel your order?")) {
+        const cancel_id = e.currentTarget.dataset.cancel;
+        console.log(cancel_id);
+        const check = ordered_prodducts.find((cancel) => cancel.order_id === cancel_id);
+        console.log(check);
+        const indexOfOrder = ordered_prodducts.indexOf(check);
+        console.log(indexOfOrder);
+        if(ordered_prodducts[indexOfOrder].status === true) {
+            ordered_prodducts[indexOfOrder].status = false;
+        }
+        localStorage.setItem("my_orders", JSON.stringify(ordered_prodducts));
+        window.location.reload();
+    }
+})
+})
 </script>
 
     </body>

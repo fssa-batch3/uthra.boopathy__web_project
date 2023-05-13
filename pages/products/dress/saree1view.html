@@ -302,7 +302,7 @@ document.querySelector("div.detail").append(div_right);
 const cart_products = document.querySelector("button.add");
 
 cart_products.addEventListener("click", () => {
-  const unique_id = JSON.parse(localStorage.getItem("uniqueID"));
+  const uniqueid = JSON.parse(localStorage.getItem("uniqueID"));
   console.log(unique_id);
 
   const user_data = JSON.parse(localStorage.getItem("user_cred"));
@@ -311,7 +311,7 @@ cart_products.addEventListener("click", () => {
   const users =
     user_data.length &&
     JSON.parse(localStorage.getItem("user_cred")).some(
-      (data) => data.phonenumber === unique_id
+      (data) => data.phonenumber === uniqueid
     );
   // console.log(users);
 
@@ -335,7 +335,7 @@ cart_products.addEventListener("click", () => {
     const exist =
       add_to_cart.length &&
       JSON.parse(localStorage.getItem("cart")).some(
-        (data) => data.product_id === id && data.buyer_id === unique_id
+        (data) => data.product_id === id && data.buyer_id === uniqueid
       );
     // console.log(exist);
 
@@ -345,16 +345,16 @@ cart_products.addEventListener("click", () => {
       alert("This product is added to your cart.");
 
       add_to_cart.push({
-        name: products.name,
-        image: products.image,
-        discount_price: products.discount_price,
-        original_price: products.original_price,
-        discount_percent: products.discount_percent,
         product_quantity: 1,
         seller_id: products.user_id,
-        buyer_id: unique_id,
+        buyer_id: uniqueid,
         product_id: products.product_uuid,
       });
+
+      const cart_count = add_to_cart.filter((pdt) => pdt.buyer_id === uniqueid).length
+      console.log(cart_count);
+
+      localStorage.setItem("cart_count", JSON.stringify(cart_count));
 
       localStorage.setItem("cart", JSON.stringify(add_to_cart));
 
@@ -401,14 +401,10 @@ wish_products.addEventListener("click", () => {
       alert("This product is added to your wishlist.");
 
       wishlist.push({
-        name: products.name,
-        image: products.image,
-        discount_price: products.discount_price,
-        original_price: products.original_price,
-        discount_percent: products.discount_percent,
+        product_quantity : 1,
         seller_id: products.user_id,
         buyer_id: user_id,
-        product_id: products.product_uuid,
+        product_id: products.product_uuid
       });
 
       localStorage.setItem("wish", JSON.stringify(wishlist));
@@ -432,7 +428,7 @@ buy_now.addEventListener("click", () => {
   const checking = users.find((e) => e.phonenumber === user_id);
 
   if (checking) {
-    window.location.href = `../../orders/cart-buynowpage.html?product_id=${productDetail}`;
+    window.location.href = `../../orders/buynow.html?product_id=${productDetail}`;
   } else {
     alert("You are not logged in");
   }

@@ -19,7 +19,7 @@
         </header>
     
         <section>
-            <form role="form" onsubmit="signUp(event)">
+            <form role="form">
                 <div class="register">
             
                     <h2> SIGN UP : </h2>
@@ -30,7 +30,7 @@
 
                     <div>
                         <label> Phone number: </label>
-                        <input type="tel" id="phonenumber" placeholder="+91" required="true" pattern="[6-9]{1}[0-9]{9}" title="Enter 10 numbers only">
+                        <input type="tel" id="phonenumber" placeholder="+91" required="true" pattern="[6-9]{1}[0-9]{8}" maxlength="10" title="Enter 10 numbers only">
                     </div>
 
                     <div>
@@ -48,7 +48,7 @@
                         Already have an account? <a href="../homepage/loginpage.html"> LOG IN </a> 
                     </p>
                
-                    <button type="submit"> SUBMIT </button> 
+                    <button type="submit" class="submit"> SUBMIT </button> 
             
                 </div>
             </form>
@@ -116,6 +116,8 @@
   validate();
 
 }
+
+document.querySelector("button.submit").addEventListener("click", signUp);
 </script>
 
         <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>

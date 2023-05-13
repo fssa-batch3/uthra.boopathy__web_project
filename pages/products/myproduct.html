@@ -270,8 +270,8 @@ for (let k = 0; k < check_pdt.length; k++) {
 
 const product_details = document.querySelectorAll("button.edit");
 product_details.forEach((find) => {
-  find.addEventListener("click", () => {
-    const product_description = this.dataset.id;
+  find.addEventListener("click", (e) => {
+    const product_description = e.currentTarget.dataset.id;
     localStorage.setItem("productDetail", JSON.stringify(product_description));
     window.location.href = `../products/editproduct.html?product_id=${product_description}`;
     console.log(product_details);

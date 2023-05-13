@@ -163,26 +163,29 @@ function update_product(event) {
     .value.trim()
     .split(/\s+/g)
     .join(" ");
+
   const original_price = document.getElementById("original_price").value;
   let discount_price;
   const discount_percent = document.getElementById("discount_percent").value;
   const product_detail = document.getElementById("product_detail").value;
   const add_info = document.getElementById("add_info").value;
 
-  if (discount_percent === discount_percent) {
+  if (discount_percent) {
     discount_price = original_price - (original_price * discount_percent) / 100;
     discount_price = Math.round(discount_price);
   } else {
     discount_price = original_price - discount_percent;
   }
 
-  product_data.image = image;
-  product_data.name = name;
-  product_data.original_price = original_price;
-  product_data.discount_price = discount_price;
-  product_data.discount_percent = discount_percent;
-  product_data.product_detail = product_detail;
-  product_data.add_info = add_info;
+  products.image = image;
+  products.name = name;
+  products.original_price = original_price;
+  products.discount_price = discount_price;
+  products.discount_percent = discount_percent;
+  products.product_detail = product_detail;
+  products.add_info = add_info;
+
+  // console.log(products);
 
   localStorage.setItem("add_products", JSON.stringify(product));
 
@@ -193,7 +196,6 @@ function update_product(event) {
 
 updates.addEventListener("submit", update_product);
 </script>
- 
-</body>
+    </body>
 
 </html>

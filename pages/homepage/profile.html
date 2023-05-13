@@ -65,11 +65,11 @@
                 </div>
                 
                 <div >
-                    <button class="btn-1" type="button" onclick="edit()">   Edit  </button>  
+                    <button class="btn-1" type="button">   Edit  </button>  
                 
                     <!-- <button class="btn-2" type="button" onclick="deleteAcc()"> Delete </button> -->
 
-                    <button class="btn-3" type="button" onclick="back()">  Back </button>
+                    <button class="btn-3" type="button">  Back </button>
 
                 </div>        
 
@@ -97,6 +97,8 @@ function edit() {
   window.location.href = "../homepage/profilepage.html";
 }
 
+document.querySelector(".btn-1").addEventListener("click", edit);
+
 function back() {
   if (person_data.des === "Seller") {
     window.location.href = "../homepage/sellerpage.html";
@@ -104,6 +106,8 @@ function back() {
     window.location.href = "../homepage/frontpage.html";
   }
 }
+
+document.querySelector(".btn-3").addEventListener("click",back);
 
 // console.log(function back(){});
 

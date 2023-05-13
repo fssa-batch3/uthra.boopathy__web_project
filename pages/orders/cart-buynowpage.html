@@ -19,9 +19,9 @@
         </header>
 
         <div class="left">
-            <div class="image">
-                <img id="image" alt="photo" height="460px" width="400px"> 
-            </div>
+            <!-- <div class="image"> -->
+                <!-- <img id="image" alt="photo" height="460px" width="400px">  -->
+            <!-- </div> -->
             
             <!-- <div class="sub-images"> <img src="../../assets/images/silk12-1.jpg" id="image" alt="photo" height="80px" width="80px"/>  </div>
                 <div class="sub-images"> <img src="../../assets/images/silk12-2.jpg" id="image" alt="photo" height="80px" width="80px"/>  </div>
@@ -31,13 +31,14 @@
         </div>    
 
         <div class="right">
-            <h3 id="name"> Jacquard Material Self Designeed Saree </h3>
+            <!-- <h3 id="name"> Jacquard Material Self Designeed Saree </h3>
             <h4> Special price </h4>
             <p>
                 ₹ <strong id="discount_price">  629 </strong>
                 ₹<s id="original_price">₹2,999 </s>
-                <b id="discount_percent">79 </b> % off 
-            </p>
+                <b id="discount_percent">79 </b> 
+                <b>% off </b>
+            </p> -->
             
             <h2 class="per"> PERSONAL DETAILS </h2>
 
@@ -50,7 +51,7 @@
                 <label> Address: </label>
                 <textarea id="address" required = "true"> </textarea>
             </div>
-            <input type="number" id="pincode" placeholder="Pincode" pattern="[0-9].{6}" required>
+            <input type="text" id="pincode" placeholder="Pincode" pattern="[6]{1}[0-9]{4}" maxlength="6" size="6" required>
             <input type="text" id="state" placeholder="State" required>
 
             <div class="no">
@@ -59,8 +60,8 @@
             </div>
 
             <div class="quantity">
-                <label> Quantity: </label>
-                <input type="number" id="product_quantity" required = "true" placeholder="1" value="1" min="1">
+                <label> Products: </label>
+                <input type="number" id="pdt" required = "true" disabled>
             </div>
 
             <div class="cash">
@@ -128,58 +129,106 @@
     <script src="../../assets/js/header.js"> </script>
 
     <script>
+// getting the user details
+
 const uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
 const user_cred = JSON.parse(localStorage.getItem("user_cred"));
+
+const products = JSON.parse(localStorage.getItem("cart"));
+
+const check = products.filter((user) => user.buyer_id === uniqueID);
+console.log(check);
+
+const all_pdt = JSON.parse(localStorage.getItem("add_products"));
+
+const check_pdt = all_pdt.filter((find) => check.some((pdt) => pdt.product_id === find.product_uuid));
+console.log(check_pdt);
+
+// creating the image
+
+for (let i=0; i<check_pdt.length; i++) {
+
+    // <div>
+
+    const div = document.createElement("div");
+    div.setAttribute("class", "image");
+    console.log(div);
+
+    // <img>
+
+    const img = document.createElement("img");
+    img.setAttribute("src", check_pdt[i].image);
+    img.setAttribute("alt", check_pdt[i].name);
+    img.setAttribute("height", "150px");
+    img.setAttribute("width", "150px");
+    img.setAttribute("id", "image");
+    div.append(img);
+
+    const div_details = document.createElement("div");
+    div_details.setAttribute("class", "details");
+    div.append(div_details);
+
+    const h3 = document.createElement("h3");
+    h3.innerText = check_pdt[i].name;
+    div_details.append(h3);
+
+    const p = document.createElement("p");
+    p.innerText = `₹${ check_pdt[i].discount_price}`;
+    div_details.append(p);
+
+    const s = document.createElement("s");
+    s.innerText = `₹${ check_pdt[i].original_price}`;
+    p.append(s);
+
+    const b = document.createElement("b");
+    b.innerText = `   ${check_pdt[i].discount_percent}% off`;
+    p.append(b);
+
+    const qty = check.find((e) => e.product_id === check_pdt[i].product_uuid);
+    console.log(qty);
+
+    const p_qty = document.createElement("p");
+    p_qty.setAttribute("class", "qty");
+    p_qty.innerText = `Quantity : ${  qty.product_quantity}`;
+    p.append(p_qty);
+
+    document.querySelector(".left").append(div);
+
+}
+
+// getting details
 
 function profile_data(e) {
   return e.phonenumber === uniqueID;
 }
 const person_data = user_cred.find(profile_data);
-let uname = (document.getElementById("uname").value = person_data.uname);
-let phonenumber = (document.getElementById("phonenumber").value =
-  person_data.phonenumber);
-let address = (document.getElementById("address").value =
-  person_data.address);
+document.getElementById("uname").value = person_data.uname;
+document.getElementById("phonenumber").value = person_data.phonenumber;
+document.getElementById("address").value = person_data.address;
 
-const product = JSON.parse(localStorage.getItem("add_products"));
-const product_id = JSON.parse(localStorage.getItem("productDetail"));
-
-function product_data(e) {
-  return e.product_uuid === product_id;
-}
-
-const product_datas = product.find(product_data);
-console.log(product_datas);
-
-document.getElementById("image").setAttribute("src", product_datas.image);
-document.getElementById("name").innerText = product_datas.name;
-document.getElementById("original_price").innerText =
-  product_datas.original_price;
-document.getElementById("discount_price").innerText =
-  product_datas.discount_price;
-document.getElementById("discount_percent").innerText =
-  product_datas.discount_percent;
-document.getElementById("product_quantity").innerText =
-  product_datas.product_quantity;       
+document.getElementById("pdt").value =  check_pdt.length;;
 
 const place_order = document.querySelector("button.place");
 
 place_order.addEventListener("click", () => {
-  uname = document.getElementById("uname").value;
-  phonenumber = document.getElementById("phonenumber").value;
-  address = document.getElementById("address").value;
+ const uname = document.getElementById("uname").value;
+ const phonenumber = document.getElementById("phonenumber").value;
+ const address = document.getElementById("address").value;
   const payment = document.getElementById("payment").value;
-  const quantity = document.getElementById("product_quantity").value;
+//   const quantity = document.getElementById("product_quantity").value;
   const pincode = document.getElementById("pincode").value;
   const state = document.getElementById("state").value;
-  const product_ids = product_datas.product_uuid;
-  console.log(product_ids);
   const order_id = uuidv4();
+//   const pdt_id = check_pdt.product_ids;
   const date = new Date();
   const year = date.getFullYear();
   const month = date.getMonth() + 1;
   const day = date.getDate();
+  const set_date = new Date();
+  set_date.setDate(date.getDate() + 15);
   const order_on = `${day}.${month}.${year}`;
+  const delivered_on= `${set_date.getDate().toString().padStart(2, '0')}.${(set_date.getMonth() + 1).toString().padStart(2, '0')}.${set_date.getFullYear()}`;
+console.log(delivered_on);
 
   if (address.trim() === "" || state.trim() === "" || pincode.trim() === "" || payment.trim() === "") {
     alert("Please fill in all the details");
@@ -189,26 +238,30 @@ place_order.addEventListener("click", () => {
     const my_orders = JSON.parse(localStorage.getItem("my_orders")) || [];
 
     my_orders.push({
+    order_person_details : {
       uname,
       address,
       pincode,
       state,
       phonenumber,
-      product_name: product_datas.name,
-      discount_price: product_datas.discount_price,
-      product_image: product_datas.image,
-      quantity,
-      payment_method: payment,
-      buyer_id: uniqueID, // define uniqueID before using it
-      seller_id: product_datas.user_id,
-      product_ids,
+      payment_method : payment,
+      buyer_id : uniqueID,
       order_id,
-      order_date: order_on,
+      order_date : order_on,
+      delivered_on,
+      no_of_products : check_pdt.length
+    },
+      check_pdt
     });
 
     localStorage.setItem("my_orders", JSON.stringify(my_orders));
 
     console.log(my_orders);
+
+    const order_pdt_count = check_pdt.length;
+    console.log(order_pdt_count);
+
+    localStorage.setItem("order_products_count", JSON.stringify(order_pdt_count));
 
     window.location.href = "../orders/myorderspage.html";
   }
