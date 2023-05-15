@@ -238,30 +238,33 @@ console.log(delivered_on);
     const my_orders = JSON.parse(localStorage.getItem("my_orders")) || [];
 
     my_orders.push({
-    order_person_details : {
-      uname,
-      address,
-      pincode,
-      state,
-      phonenumber,
-      payment_method : payment,
-      buyer_id : uniqueID,
-      order_id,
-      order_date : order_on,
-      delivered_on,
-      no_of_products : check_pdt.length
-    },
-      check_pdt
+        uname, 
+        buyer_id : uniqueID, 
+        address, 
+        phonenumber, 
+        payment,
+        pincode, 
+        state, 
+        order_id, 
+        order_on, 
+        delivered_on,  
+        status : true,
+        no_of_products : check.length
     });
 
+    const ordered_items = JSON.parse(localStorage.getItem("ordered_items")) || [];
+
+    for ( let c = 0; c < check.length; c++) {
+        check[c].order_id = order_id
+    }
+
+    ordered_items.push(...check);
+    console.log(ordered_items);
+
     localStorage.setItem("my_orders", JSON.stringify(my_orders));
+    localStorage.setItem("ordered_items", JSON.stringify(ordered_items));
 
     console.log(my_orders);
-
-    const order_pdt_count = check_pdt.length;
-    console.log(order_pdt_count);
-
-    localStorage.setItem("order_products_count", JSON.stringify(order_pdt_count));
 
     window.location.href = "../orders/myorderspage.html";
   }

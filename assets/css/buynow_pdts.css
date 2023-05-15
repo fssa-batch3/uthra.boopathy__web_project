@@ -94,22 +94,28 @@ section i {
 }
 
 .details {
-    margin-top: 6rem;
     display: flex;
-    width: 400px;
-    margin-left: 7rem;
     justify-content: space-between;
+    margin-top: 5rem;
 }
 
 img {
     border-radius: 5px;
+    margin-left: 1.5rem;
 }
 
 .info{
-    margin-top: 2rem;
-    margin-left: 2.5rem;
-    /* width: 80%; */
+    margin-top: 1rem;
+    margin-left: 1rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none;
 }
+
+.info::-webkit-scrollbar {
+    display: none;
+}
+
 
 h5{
     font-size: 30px;
@@ -119,7 +125,6 @@ h5{
 
 .price {
     display: flex;
-    /* width: 20%; */
     font-size: 22px;
 }
 

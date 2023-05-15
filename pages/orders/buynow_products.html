@@ -101,20 +101,20 @@
     <script src="../../assets/js/header.js"> </script>
    
     <script>
-        const products = JSON.parse(localStorage.getItem("my_orders"));
+        const products = JSON.parse(localStorage.getItem("ordered_items"));
         console.log(products);
 
         const order_id = JSON.parse(localStorage.getItem("order_id"));
         console.log(order_id);
         
-        const order_pdts = products.find(
+        const order_pdts = products.filter(
           (e) => e.order_id === order_id
         );
         console.log(order_pdts);
 
             const product = JSON.parse(localStorage.getItem("add_products"));
 
-            const check = product.find(k => k.product_uuid === order_pdts.product_id)
+            const check = product.filter((m) => order_pdts.some((h) => h.product_id === m.product_uuid));
             console.log(check);
 
         // const container = document.getElementById("order_pdts");
@@ -124,7 +124,7 @@
         //   errorMsg.innerHTML = "No products found.";
         //   container.append(errorMsg);
         // } else {
-        //   for (let i = 0; i < check.length; i++) {
+          for (let i = 0; i < check.length; i++) {
 
             // <div class = "details">
 
@@ -140,8 +140,8 @@
             // <img>
 
             const img = document.createElement("img");
-            img.setAttribute("src", check.image);
-            img.setAttribute("alt", check.name);
+            img.setAttribute("src", check[i].image);
+            img.setAttribute("alt", check[i].name);
             img.setAttribute("id", "image");
             img.setAttribute("height","180px");
             img.setAttribute("width","180px");
@@ -151,12 +151,13 @@
 
             const div_info = document.createElement("div");
             div_info.setAttribute("class", "info");
+            div_details.append(div_info);
             
             // <h5>
 
             const h5 = document.createElement("h5");
             h5.setAttribute("id", "name")
-            h5.innerText = check.name;
+            h5.innerText = check[i].name;
             div_info.append(h5);
 
             // <p>
@@ -164,14 +165,14 @@
             const p = document.createElement("p");
             p.setAttribute("class", "price");
             p.setAttribute("id", "original_price");
-            p.innerText = `₹${check.discount_price}`;
+            p.innerText = `₹${check[i].discount_price}`;
             div_info.append(p);
 
             // <s>
 
             const s = document.createElement("s");
             s.setAttribute("id", "discount_price");
-            s.innerText = `₹${check.original_price}`;
+            s.innerText = `₹${check[i].original_price}`;
             p.append(s);
 
             // <span class="percent">
@@ -184,19 +185,19 @@
 
             const b = document.createElement("b");
             b.setAttribute("id", "discount_percent");
-            b.innerText = `${check.discount_percent}% off`;
+            b.innerText = `${check[i].discount_percent}% off`;
             span.append(b);
 
             const qty = document.createElement("p");
             qty.setAttribute("class", "qty");
             // qty.setAttribute("id", "original_price");
-            qty.innerText = `Quantity : ${ order_pdts.quantity}`;
+            qty.innerText = `Quantity : ${ order_pdts[i].product_quantity}`;
             div_info.append(qty);
 
             document.querySelector("div").append(div_details);
-            document.querySelector(".details").append(div_info);
+            // document.querySelector(".details").append(div_info);
 
-        //   }
+          }
       </script>
 
     </body>
