@@ -69,7 +69,7 @@
                                                 <div>
                                                     <p>Copy rights @ 2022</p>
                                                 </div>
-                                            </div>
+                                            </div> 
        </div>
 
        </footer>    
@@ -105,7 +105,40 @@ const unique_id = JSON.parse(localStorage.getItem("uniqueID"));
 const check_pdt = add_to_cart.filter((e) => e.buyer_id === unique_id);
 // console.log(check_pdt);
 
-for (let k = 0; k < check_pdt.length; k++) {
+const all = JSON.parse(localStorage.getItem("add_products"));
+
+const match_pdt = all.filter((product) => check_pdt.some((id) => id.product_id === product.product_uuid));
+console.log(match_pdt);
+
+if (match_pdt.length === 0) {
+
+  // <div class = products >
+
+  const div_container = document.createElement("div");
+  div_container.setAttribute("class", "contain");
+  console.log(div_container);
+
+  // <div class="details"></div>
+
+  const div_details = document.createElement("div");
+  div_details.setAttribute("class", "details");
+  div_container.append(div_details);
+
+  const h3_title = document.createElement("h3");
+  h3_title.setAttribute("id", "name");
+  h3_title.innerText = "You are not yet add any products";
+  div_details.append(h3_title);
+
+  const button = document.createElement("button");
+  button.setAttribute("class", "add");
+  button.innerText = "ADD PRODUCTS";
+  div_container.append(button);
+
+  document.querySelector("section").append(div_container);
+
+}  else {
+
+for (let k = 0; k < match_pdt.length; k++) {
   // <div class = products >
 
   const div_container = document.createElement("div");
@@ -115,7 +148,7 @@ for (let k = 0; k < check_pdt.length; k++) {
   // <img>
 
   const img = document.createElement("img");
-  img.setAttribute("src", check_pdt[k].image);
+  img.setAttribute("src", match_pdt[k].image);
   img.setAttribute("alt", "photo");
   img.setAttribute("height", "200px");
   img.setAttribute("width", "180px");
@@ -131,7 +164,7 @@ for (let k = 0; k < check_pdt.length; k++) {
 
   const h3_title = document.createElement("h3");
   h3_title.setAttribute("id", "name");
-  h3_title.innerText = check_pdt[k].name;
+  h3_title.innerText = match_pdt[k].name;
   div_details.append(h3_title);
 
   // <div> </div>
@@ -143,21 +176,21 @@ for (let k = 0; k < check_pdt.length; k++) {
 
   const p_org = document.createElement("p");
   p_org.setAttribute("id", "original_price");
-  p_org.innerText = `₹${check_pdt[k].discount_price}`;
+  p_org.innerText = `₹${match_pdt[k].discount_price}`;
   div.append(p_org);
 
   // <s> </s>
 
   const s = document.createElement("s");
   s.setAttribute("id", "discount_price");
-  s.innerText = `₹${check_pdt[k].original_price}`;
+  s.innerText = `₹${match_pdt[k].original_price}`;
   div.append(s);
 
   // <span> </span>
 
   const span = document.createElement("span");
   span.setAttribute("class", "percent");
-  span.innerText = `${check_pdt[k].discount_percent}%off`;
+  span.innerText = `${match_pdt[k].discount_percent}%off`;
   div.append(span);
 
   // < div class = "quantity" > </div>
@@ -187,28 +220,29 @@ for (let k = 0; k < check_pdt.length; k++) {
 
   const button_remove = document.createElement("button");
   button_remove.setAttribute("class", "remove");
-  button_remove.setAttribute("data-remove", check_pdt[k].product_id);
+  button_remove.setAttribute("data-remove", match_pdt[k].product_uuid);
   button_remove.setAttribute("type", "submit");
   button_remove.innerText = "REMOVE";
   div_container.append(button_remove);
 
   const button_wish = document.createElement("button");
   button_wish.setAttribute("class", "wish");
-  button_wish.setAttribute("data-remove", check_pdt[k].product_id);
+  button_wish.setAttribute("data-remove", match_pdt[k].product_uuid);
   button_wish.setAttribute("type", "submit");
-  button_wish.setAttribute("onclick", "move_to_wishlist()");
   button_wish.innerText = "WISHLIST";
   div_container.append(button_wish);
 
   document.querySelector("section").append(div_container);
 }
 
+}
+
 // let sum = check_pdt;
 
 let total = 0;
 
-for (let l = 0; l < check_pdt.length; l++) {
-  total += check_pdt[l].discount_price * check_pdt[l].product_quantity;
+for (let l = 0; l < match_pdt.length; l++) {
+  total += match_pdt[l].discount_price * check_pdt[l].product_quantity;
 }
 
 console.log(total);
@@ -281,10 +315,6 @@ button_buy.innerText = "BUY NOW";
 div_btn.append(button_buy);
 console.log(button_buy);
 
-const link = document.createElement("a");
-link.setAttribute("href", "../orders/cart-buynowpage.html");
-button_buy.append(link);
-
 document.querySelector("section").append(div_total);
 
 const product_quantity = document.querySelectorAll(".quantity");
@@ -345,6 +375,7 @@ const products = document.querySelectorAll("button.remove");
 products.forEach((check) => {
   check.addEventListener("click", (e) => {
     const product_id = e.currentTarget.dataset.remove;
+    console.log(product_id);
 
     localStorage.setItem("products_id", JSON.stringify(product_id));
 
@@ -369,6 +400,12 @@ products.forEach((check) => {
 
       console.log(indexOfProduct);
 
+      const cart_count = JSON.parse(localStorage.getItem("cart_count"));
+
+      const cart_length = cart_count-1;
+
+      localStorage.setItem("cart_count", JSON.stringify(cart_length));
+
       localStorage.setItem("cart", JSON.stringify(all_products));
     }
 
@@ -377,52 +414,62 @@ products.forEach((check) => {
 });
 
 // MOVE TO WISHLIST
+  
+const product = document.querySelectorAll("button.wish");
 
-function move_to_wishlist() {
-  const product = document.querySelectorAll("button.wish");
+product.forEach((check) => {
+  check.addEventListener("click", (e) => {
+    const product_id = e.currentTarget.dataset.remove;
 
-  product.forEach((check) => {
-    check.addEventListener("click", (e) => {
-      const product_id = e.currentTarget.dataset.remove;
+    localStorage.setItem("products_id", JSON.stringify(product_id));
 
-      localStorage.setItem("products_id", JSON.stringify(product_id));
+    console.log(product_id);
 
-      console.log(product_id);
+    if (window.confirm("Are you sure to move this product to wishlist?")) {
+      const id = JSON.parse(localStorage.getItem("products_id"));
 
-      if (window.confirm("Are you sure to move this product to wishlist?")) {
-        const id = JSON.parse(localStorage.getItem("products_id"));
+      const user_id = JSON.parse(localStorage.getItem("uniqueID"));
 
-        const user_id = JSON.parse(localStorage.getItem("uniqueID"));
+      const all_products = JSON.parse(localStorage.getItem("cart"));
 
-        const all_products = JSON.parse(localStorage.getItem("cart"));
+      console.log(all_products);
 
-        console.log(all_products);
+      const pdts = all_products.find(
+        (g) => g.product_id === id && g.buyer_id === user_id
+      );
 
-        const pdts = all_products.find(
-          (g) => g.product_id === id && g.buyer_id === user_id
-        );
+      console.log(pdts);
 
-        console.log(pdts);
+      const indexOfProduct = all_products.indexOf(pdts);
 
-        const indexOfProduct = all_products.indexOf(pdts);
+      all_products.splice(indexOfProduct, 1);
 
-        all_products.splice(indexOfProduct, 1);
+      console.log(indexOfProduct);
 
-        console.log(indexOfProduct);
+      const wish_products = JSON.parse(localStorage.getItem("wish")) || [];
 
-        const wish_products = JSON.parse(localStorage.getItem("wish")) || [];
+      wish_products.push(pdts);
 
-        wish_products.push(pdts);
+      localStorage.setItem("wish", JSON.stringify(wish_products));
 
-        localStorage.setItem("wish", JSON.stringify(wish_products));
+      localStorage.setItem("cart", JSON.stringify(all_products));
+    }
 
-        localStorage.setItem("cart", JSON.stringify(all_products));
-      }
-
-      window.location.reload();
-    });
+    window.location.reload();
   });
-}
+});
+
+// BUY NOW 
+
+document.querySelector("button.buy").addEventListener("click",() => {
+  window.location.href = "../orders/cart-buynowpage.html";
+} )
+
+// add products
+
+document.querySelector("button.add").addEventListener("click",() => {
+  window.location.href = "../products/tc.html";
+})
 </script>
 
     </body>

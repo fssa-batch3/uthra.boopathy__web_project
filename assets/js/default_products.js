@@ -971,7 +971,6 @@ const users = [
   {
     uname: "Uthra",
     phonenumber: "9876543210",
-    confirm_password: "Uthra@1212",
     password: "Uthra@1212",
     user_uuid: "cc62da4a-d231-46a9-86db-898081012039",
     address: "34, North car street,Tirunelveli",

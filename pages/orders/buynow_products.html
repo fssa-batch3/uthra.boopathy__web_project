@@ -20,11 +20,15 @@
 
         <section>
 
-            <i class="fa-solid fa-xmark" style="color: red; font-size: 22px;"></i>
+            <a href="../orders/myorderspage.html"> 
+                <i class="fa-solid fa-xmark" style="color: red; font-size: 22px;"></i> 
+            </a>
 
             <h2> PRODUCT LIST </h2>
 
-            <div class="details">
+        <div>
+
+            <!-- <div class="details"> -->
                 <!-- <div>
                     <img src="../../assets/images/choker6.jpg" alt="photo" height="180px" width="180px">
                     </div>
@@ -38,7 +42,9 @@
                     </span>
                     </p>
                     </div> -->
-            </div>
+            <!-- </div> -->
+
+        </div>
 
         </section>
         
@@ -95,19 +101,20 @@
     <script src="../../assets/js/header.js"> </script>
    
     <script>
-        const products = JSON.parse(localStorage.getItem("my_orders"));
+        const products = JSON.parse(localStorage.getItem("ordered_items"));
         console.log(products);
-        // const user_id = JSON.parse(localStorage.getItem("uniqueID"));
+
         const order_id = JSON.parse(localStorage.getItem("order_id"));
         console.log(order_id);
-        const order_pdts = products.find(
+        
+        const order_pdts = products.filter(
           (e) => e.order_id === order_id
         );
         console.log(order_pdts);
 
             const product = JSON.parse(localStorage.getItem("add_products"));
 
-            const check = product.find(k => k.product_uuid === order_pdts.product_ids)
+            const check = product.filter((m) => order_pdts.some((h) => h.product_id === m.product_uuid));
             console.log(check);
 
         // const container = document.getElementById("order_pdts");
@@ -119,9 +126,15 @@
         // } else {
           for (let i = 0; i < check.length; i++) {
 
+            // <div class = "details">
+
+            const div_details = document.createElement("div");
+            div_details.setAttribute("class", "details");
+
             //<div>
 
             const div = document.createElement("div");
+            div_details.append(div)
             console.log(div);
 
             // <img>
@@ -138,6 +151,7 @@
 
             const div_info = document.createElement("div");
             div_info.setAttribute("class", "info");
+            div_details.append(div_info);
             
             // <h5>
 
@@ -151,14 +165,14 @@
             const p = document.createElement("p");
             p.setAttribute("class", "price");
             p.setAttribute("id", "original_price");
-            p.innerText = check[i].discount_price;
+            p.innerText = `₹${check[i].discount_price}`;
             div_info.append(p);
 
             // <s>
 
             const s = document.createElement("s");
             s.setAttribute("id", "discount_price");
-            s.innerText = check[i].original_price;
+            s.innerText = `₹${check[i].original_price}`;
             p.append(s);
 
             // <span class="percent">
@@ -171,11 +185,17 @@
 
             const b = document.createElement("b");
             b.setAttribute("id", "discount_percent");
-            b.innerText = check[i].discount_percent;
+            b.innerText = `${check[i].discount_percent}% off`;
             span.append(b);
 
-            document.querySelector(".details").append(div);
-            document.querySelector(".details").append(div_info);
+            const qty = document.createElement("p");
+            qty.setAttribute("class", "qty");
+            // qty.setAttribute("id", "original_price");
+            qty.innerText = `Quantity : ${ order_pdts[i].product_quantity}`;
+            div_info.append(qty);
+
+            document.querySelector("div").append(div_details);
+            // document.querySelector(".details").append(div_info);
 
           }
       </script>

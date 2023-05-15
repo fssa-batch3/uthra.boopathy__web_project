@@ -30,6 +30,19 @@ header div ul li a{
      color: white;
 }
 
+#count {
+    background-color: white;
+    color: purple;
+    font-size: 20px;
+    border-radius: 50%;
+    height: 20px;
+    width: 22px;
+    margin-top: -44px;
+    margin-left: 17px;
+    text-align: center;
+    font-weight: bold;
+}
+
 h1{
     font-size: 50px;
     padding-left: 60px;
@@ -57,11 +70,40 @@ h1{
     width: 50%;
     position: relative;
     top: 170px;
-    left: 200px;
+    left: 150px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 460px;
+    scrollbar-width: none;
+    object-fit: contain;
+}
+
+.image {
+    display: flex;
+    flex-direction: row;
+}
+
+.left::-webkit-scrollbar {
+    display: none;
 }
 
 .image img{
     border-radius: 10px;
+    margin-top: 20px;
+}
+
+.images img{
+    border-radius: 10px;
+}
+
+.details {
+    margin-left: 2rem;
+    margin-top: 2rem;
+}
+
+p {
+    font-size: 20px;
+    margin-top: 1rem;
 }
 
 .sub-images{
@@ -85,9 +127,9 @@ h1{
     border: 2px solid white;
     height: 600px;
     width: 500px;
-    position: relative;
-    left: 800px;
-    bottom: 350px;
+    margin-left: 55rem;
+    margin-top: -22rem;
+    margin-bottom: 15rem;
 }
 
 h2{
@@ -102,7 +144,7 @@ h2{
 
 h3{
     font-size: 25px;
-    color: red;
+    color: rgb(134, 13, 13);
     position: relative;
     top: 10px;
 }
@@ -203,6 +245,7 @@ textarea{
     top: -25px;
     left: 183px;
     outline: none;
+    resize: none;
 }
 
 #pincode {
@@ -223,7 +266,7 @@ textarea{
     border: 1px solid gray;
     border-radius: 3px;
     margin-top: 0.5rem;
-    margin-left: 11.5rem; 
+    margin-left: 5.4rem; 
     outline: none;
 }
 
@@ -242,23 +285,35 @@ input[type="number"]{
     height: 25px;
     width: 50px;
     font-size: 15px;
-    border: 1px solid gray;
-    border-radius: 3px;
+    border: none;
+    /* border-radius: 3px; */
+    position: relative;
+    left: 96px;
+    outline: none;
+}
+
+input[type="text"]{
+    height: 25px;
+    width: 50px;
+    font-size: 15px;
+    border: none;
+    /* border-radius: 3px; */
     position: relative;
     left: 96px;
     outline: none;
 }
 
 .place{
-    height: 50px;
-    width: 200px;
+    height: 45px;
+    width: 180px;
     border: 2px solid purple;
     background-color: purple;
     border-radius: 5px;
     color: white;
     margin-top: 130px;
-    margin-left: 90px;
+    margin-left: 100px;
     cursor: pointer;
+    font-size: 18px;
 }
 
 footer{

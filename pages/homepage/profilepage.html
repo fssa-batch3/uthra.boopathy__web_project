@@ -22,7 +22,7 @@
 
         <section>
 
-            <form role="form" onsubmit="update_details(event)">
+            <form role="form">
             
                 <h1> PROFILE</h1>
 
@@ -113,9 +113,9 @@ document.getElementById("age").value = person_data.age;
 document.getElementById("address").value = person_data.address;
 document.getElementById("des").value = person_data.des;
 
-function update_details(e) {
-  e.preventDefault();
-  const uname = document
+document.querySelector("button.btn-1").addEventListener("click",(e) => {
+      e.preventDefault();
+const uname = document
     .getElementById("uname")
     .value.trim()
     .split(/\s+/g)
@@ -132,8 +132,30 @@ function update_details(e) {
   person_data.age = age;
   localStorage.setItem("user_cred", JSON.stringify(user_cred));
   window.location.href = "./profile.html";
-}
-        </script>
+});
+
+// function update_details(e) {
+//   e.preventDefault();
+//   const uname = document
+//     .getElementById("uname")
+//     .value.trim()
+//     .split(/\s+/g)
+//     .join(" ");
+//   const address = document.getElementById("address").value;
+//   const des = document.getElementById("des").value;
+//   const email = document.getElementById("email").value;
+//   const age = document.getElementById("age").value;
+
+//   person_data.uname = uname;
+//   person_data.address = address;
+//   person_data.des = des;
+//   person_data.email = email;
+//   person_data.age = age;
+//   localStorage.setItem("user_cred", JSON.stringify(user_cred));
+//   window.location.href = "./profile.html";
+
+// }
+       </script>
 
     </body>
 </html>

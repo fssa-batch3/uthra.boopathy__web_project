@@ -35,6 +35,19 @@ header div ul li{
      font-size: 24px;
 }
 
+#count {
+    background-color: white;
+    color: purple;
+    font-size: 20px;
+    border-radius: 50%;
+    height: 20px;
+    width: 22px;
+    margin-top: -44px;
+    margin-left: 17px;
+    text-align: center;
+    font-weight: bold;
+}
+
 h1{
     font-size: 50px;
     font-weight: normal;
@@ -52,6 +65,12 @@ h1{
 }
 
 .login{
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+}
+
+.logout{
     font-size: 25px;
     color: white;
     cursor: pointer;
@@ -89,7 +108,7 @@ input[type=text]{
     font-size: 20px;
 }
 
-input:hover{
+input:focus{
     transition: .70s ease-in-out;
     width: 700px;
     border: 1px solid gray;
@@ -139,7 +158,8 @@ section{
 }
 
 .collections img:hover{
-    transform: scale(1.1);
+    transform: scale(1.08);
+    transition: 2s;
 }
 
 .dis img:hover{

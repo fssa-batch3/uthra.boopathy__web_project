@@ -1,20 +1,25 @@
 *{
-    margin: 0px;
+    margin: 0;
     font-family: 'Kreon', serif;
+}
+
+body{
+    background-color: rgb(252, 252, 252);
 }
 
 header{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    background-color: purple;
+    background-color: 	purple;
     height: 100px;
+    position: sticky;
+    top: 0px;
+    z-index: 10;
 }
 
 header div ul{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
     list-style: none;
     margin-left: 550px;
 }
@@ -24,7 +29,7 @@ header div ul li{
     padding-left: 30px;
 }
 
-header div ul li a{
+.nav a{
      text-decoration: none;
      color: white;
      font-size: 24px;
@@ -52,106 +57,216 @@ h1{
     cursor: pointer;
 }
 
-.menu{
-    display: none;
+.logout{
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
 }
 
-.subheading{
+.sub-heading{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    height: 100px;
-    width: 1485px;
-    background-color: #F5F5F5;
+    border-bottom: 1px solid lightgray;
 }
 
-h2{
-    font-size: 30px;
-    margin: 30px 0px 0px 50px;
+.sub-heading a{
+     text-decoration: none;
+     padding-left: 60px;
+     padding-top: 35px;
+     color: black;
+     font-size: 28px;
+     height: 7vh;
 }
 
-.clr{
-    font-size: 22px;
-    margin: 35px 0px 0px 60px;
+.icon{
+    display: flex;
+    padding-top: 30px;
+    padding-left: 180px;
 }
 
-.mrp{
-    font-size: 22px;
-    margin: 35px 0px 0px 60px;
-}
-
-select{
-    height: 25px;
-    width: 100px;
-    border-radius: 3px;
+input[type=text]{
+    height: 30px;
+    width: 200px;
+    padding: 3px 15px;
+    border-radius: 8px;
+    border: 1px solid gray;
     outline: none;
-}    
-
-.arrow {
-    margin: 2rem;
-    font-size: 30px;
+    font-size: 20px;
 }
 
-.arrow a {
-    color: black;
+input:hover{
+    transition: .70s ease-in-out;
+    width: 700px;
+    border: 1px solid gray;
 }
 
-.thumbnail{
-    display: grid;
-    grid-template-columns: repeat(4, 290px);
-    grid-column-gap: 20px;
-    grid-row-gap: 50px;
-    justify-content: space-evenly;
-    margin: 60px 0px 30px 30px;
+.search{
+    color: gray;
+    position: relative;
+    top: 11px ;
+    left: -20px ;
 }
 
-img{
-    object-fit: contain;
-    border-radius: 5px;
-    margin-left: 25px;
-    margin-top: 15px;
-}
-
-.img{
+section{
+    margin-top: 50px;
     margin-left: 35px;
 }
 
-h3{
-    font-size: 22px;
-    font-weight: normal;
-    margin-top: 20px;
-    margin-left: 33px;
-    width: 250px;
+.icons img{
+    width: 200px;
+    height: 200px;
 }
 
-p{
+.icons div{
+    position: relative;
+}
+
+.div{
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 70px;
+    display: inline-flex;
+    bottom: 20px;
+}
+
+.divs{
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 90px;
+    bottom: 20px;
+}
+
+.divss{
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 100px;
+    bottom: 20px;
+}
+
+.icons{
+    display: flex;    
+}
+
+.icons a{
+    text-decoration: none;
     color: black;
-    font-size: 20px;
-    word-spacing: 5px;
-    margin-top: 10px;
-    margin-left: 30px; 
 }
 
-s{
-    color: gray;
+.offers {
+    margin: 100px 100px 0 100px;
+    height: 800px;
+    width: 1200px;
+    overflow: hidden;
 }
 
-.percent{
-    color: green;
+@keyframes slide_animation {
+    0% {left:0;}
+    10% {left: 0px;}
+    20% {left: 1200px;}
+    30% {left: 1200px;}
+    40% {left: 2400px;}
+    50% {left: 2400px;}
+    60% {left: 1200px;}
+    70% {left: 1200px;}
+    80% {left: 0;}
+    90% {left: 0;}
+    100% {left: 0;}
 }
 
-.products:hover{
+.slide {
+    width: 3600px;
+    height: 800px;
+    margin: 0 0 0 -2400px;
+    position: relative;
+    animation-name: slide_animation;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+}
+
+.image {
+    height: 800px;
+    width: 1200px;
+    position: relative;
+    float: left;
+}
+
+.collections img:hover{
     transform: scale(1.1);
 }
 
-.products{
-    border: 1px solid #f8f8f8;
-    background-color: #f8f8f8;
+.price {
+    margin: -200px 100px 0 100px;
+    display: flex;
+    background-color: floralwhite;
+    height: 600px;
+}
+
+.para {
+    width: 50%;
+    font-size: 40px;
+    align-items: center;
+    margin: 100px;
+    margin-top: 220px;
+}
+
+.pics {
+    display: grid;
+    width: 50%;
+    grid-template-columns: repeat(2, 150px);
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+    justify-content: space-evenly;
+    margin: 65px 100px 80px -20px;
+    border: 1px solid white;
+    background-color: white;
+    height: 450px;
+}
+
+.pics img {
+    height: 150px;
+    width: 150px;
+    padding: 15px;
+    margin-top: 10px;
+}
+
+.pics div img {
+    border: 3px solid floralwhite;
+
+}
+
+.border{
+    border-bottom: 1px solid pink;
+    width: 450px;
+    position: relative;
+    top: 90px;
+    left: 50px;
+}
+
+.bottom{
+    border-bottom: 1px solid pink;
+    width: 400px;
+    position: relative;
+    left: 950px;
+    top: 50px;
+}
+
+
+h2{
+    color: darkmagenta;
+    font-size: 35px;
+    position: relative;
+    top: 70px;
+    display: inline-block;
+    left: 540px;
+    word-spacing: 15px;
 }
 
 footer{
     background-color: purple;
-    height: 290px;
+    height: 310px;
     margin-top: 150px;
 }
 
@@ -172,12 +287,6 @@ footer{
 .us a{
     text-decoration: none;
     color: white;
-}
-
-.us p{
-   font-size: 20px;
-   font-weight: normal;
-   margin: 0;
 }
 
 h4{
@@ -206,13 +315,6 @@ h4{
     color: white;
 }
 
-.contact div p{
-    font-size: 20px;
-   font-weight: normal;
-   margin: 0;
-   color: white;
-}
-
 .con{
     font-size: 23px;
     position: relative;
@@ -223,7 +325,9 @@ h4{
 .line{
     border-right: 2px solid gray;
     height: 190px;
-    margin: 60px;
+    position: relative;
+    top: 45px;
+    right: 40px;
 }
 
 .socials{
@@ -271,28 +375,281 @@ h4{
     padding: 40px;
 }
 
-.icons div{
-    position: relative;
+.menu{
+    display: none;
 }
 
-.div{
-    font-size: 25px;
-    font-weight: bold;
-    margin-left: 70px;
-    display: inline-flex;
-    bottom: 20px;
-}
 
-.divs{
-    font-size: 25px;
-    font-weight: bold;
-    margin-left: 90px;
-    bottom: 20px;
-}
 
-.divss{
-    font-size: 25px;
-    font-weight: bold;
-    margin-left: 100px;
-    bottom: 20px;
+
+@media only screen and (max-width: 800px)
+{
+
+    header{
+        height: 10vh;
+        width: 100vw;
+    }
+
+    .logo{
+        width: 40px;
+        height: 40px;
+        margin-left: 10px;
+    }
+
+    h1{
+        font-size: 25px;
+        margin-left: -50px;
+    }
+
+    .nav{
+        display: none;
+    }
+
+    .menu{
+        display: block;
+        font-size: 26px;
+        color: white;
+        margin-top: 20px;
+        margin-left: 90px;
+        position: relative;
+    }
+
+    .menu-list a{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        color: white;
+        padding: 5px;
+        text-decoration: none;
+    }
+
+    .menu:hover .menu-list{
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: center;
+        margin-top: -38px;
+        margin-left: -250px;
+    }
+
+    .menu-list{
+        display: none;
+        color: white;
+        position: absolute;
+    }
+
+    .sub-heading{
+        height: 8vh;
+    }
+
+    strong{
+        font-size: 18px;
+    }
+
+    .new_release{
+        margin-top: -17px;
+        margin-left: -45px;
+    }
+
+    .icon{
+        display: flex;
+        margin-top: -84px;
+        padding-left: 150px;
+    }
+    
+    input[type=text]{
+        height: 19px;
+        width: 170px;
+        padding: 2px 10px;
+        border-radius: 5px;
+        border: 1px solid gray;
+        outline: none;
+        font-size: 16px;
+    }
+    
+    .search{
+        color: gray;
+        position: relative;
+        top: 5px;
+        left: -20px;
+    }
+
+    .icons{
+        display: flex;
+        margin: -30px -35px;
+    }
+
+    .icons img{
+        width: 53px;
+        height: 55px;
+    }
+
+    .collections img{
+        padding: 10px;
+    }
+    
+    .div{
+        display: none;
+    }
+    
+    .divs{
+        display: none;
+    }
+    
+    .divss{
+        display: none;
+    }
+
+    .discounts{
+        margin-top: 20px;
+        padding: 10px;
+    }
+
+    .discounts .imgs{
+        height: 230px;
+        width: 350px;
+        margin: 10px -50px;
+        padding: 0;
+    }
+
+    .discounts img{
+        margin-top: 20px;
+        height: 230px;
+        width: 250px;
+        padding: 0;
+    }
+
+    .under{
+        margin-top: 10px;
+        padding: 10px;
+    }
+
+    .under img{
+        margin-top: 20px;
+        height: 230px;
+        width: 250px;
+        padding: 0;
+    }
+
+    .border{
+        display: none;
+    }
+
+    .bottom{
+        display: none;
+    }
+
+    h2{
+        font-size: 25px;
+        font-weight: bold;
+        display: inline-block;
+        margin-left: -530px;
+    }
+
+    .dis img{
+        margin-top: 20px;
+        height: 230px;
+        width: 300px;
+        padding: 0;
+    }
+
+    .dis{
+        margin-top: 100px;
+    }
+
+    .counts{
+        margin-top: -30px;
+    }
+
+    .counts img{
+        height: 230px;
+        width: 300px;
+        padding: 0;
+    }
+
+    footer{
+        height: 25vh;
+        margin-top: 100px;
+    }
+    
+    .about{
+        margin: 10px 30px;
+        padding-top: 10px;
+        color: white;
+    }
+    
+    .us{
+        font-size: 16px;
+        width: 100px;
+    }
+    
+    .us a{
+        text-decoration: none;
+        color: white;
+    }
+    
+    h4{
+        font-size: 20px;
+        padding-top: 5px;
+        padding-bottom: 15px;
+    }
+    
+    .contact{
+        font-size: 20px;
+        margin: 70px 0px;
+        color: white;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .contact div{
+        margin: -30px 0;
+        font-size: 20px;
+        color: white;
+    }
+    
+    .con{
+        font-size: 20px;
+        position: relative;
+        left: 20px;
+        top: -10px;
+    }
+    
+    .line{
+        border-right: 2px solid gray;
+        height: 150px;
+        position: relative;
+        top: 22px;
+        left: 1px;
+    }
+    
+    .socials{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    
+    .socials div{
+        margin: 0px 10px;
+        height: 20px;
+        width: 20px;
+        display: flex;
+        align-items: center;
+        border-radius: 50%;
+        padding: 10px;
+        justify-content: center;
+        border: 0;
+    }
+    
+    .contact div p{
+        margin-top: 70px;
+        font-size: 18px;
+    }
+
+    .socials .insta{
+        margin-top: -12px;
+    }
+
+
 }
