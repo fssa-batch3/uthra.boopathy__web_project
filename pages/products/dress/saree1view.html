@@ -17,11 +17,14 @@
         <header id="userLogin">
 
         </header>
+        <section>
 
         <div class="arrows"> </div>
 
         <div class="detail">
         </div>
+
+        <div class="thumbnail"> </div>
 
     </section> 
 
@@ -93,7 +96,7 @@ const product_id = urlParams.get("product_id");
 
 const unique_id = add_product.find((e) => e.product_uuid === product_id);
 
-console.log(unique_id);
+// console.log(unique_id);
 
 // <div class = "arrow" > </div>
 
@@ -303,10 +306,10 @@ const cart_products = document.querySelector("button.add");
 
 cart_products.addEventListener("click", () => {
   const uniqueid = JSON.parse(localStorage.getItem("uniqueID"));
-  console.log(unique_id);
+  // console.log(unique_id);
 
   const user_data = JSON.parse(localStorage.getItem("user_cred"));
-  console.log(user_data);
+  // console.log(user_data);
 
   const users =
     user_data.length &&
@@ -320,17 +323,17 @@ cart_products.addEventListener("click", () => {
   } else {
     const id = JSON.parse(localStorage.getItem("productDetail"));
 
-    console.log(id);
+    // console.log(id);
 
     const all_products = JSON.parse(localStorage.getItem("add_products"));
 
-    console.log(all_products);
+    // console.log(all_products);
 
     const products = all_products.find((e) => e.product_uuid === id);
-    console.log(products);
+    // console.log(products);
 
     const add_to_cart = JSON.parse(localStorage.getItem("cart")) || [];
-    console.log(add_to_cart);
+    // console.log(add_to_cart);
 
     const exist =
       add_to_cart.length &&
@@ -379,21 +382,24 @@ wish_products.addEventListener("click", () => {
   } else {
     const id = JSON.parse(localStorage.getItem("productDetail"));
 
-    console.log(id);
+    // console.log(id);
 
     const all_products = JSON.parse(localStorage.getItem("add_products"));
 
-    console.log(all_products);
+    // console.log(all_products);
 
     const products = all_products.find((e) => e.product_uuid === id);
+    // console.log(products);
 
     const wishlist = JSON.parse(localStorage.getItem("wish")) || [];
+    // console.log(wishlist);
 
     const exist =
       wishlist.length &&
       JSON.parse(localStorage.getItem("wish")).some(
-        (data) => data.product_id === id && data.buyer_id === user_id
+        (o) => o.product_id === id && o.buyer_id === user_id
       );
+      // console.log(exist);
 
     if (exist) {
       alert("This product has already been added");
@@ -433,7 +439,62 @@ buy_now.addEventListener("click", () => {
     alert("You are not logged in");
   }
 });
-     </script>
+
+// SIMILAR PRODUCTS
+
+// for (let k=0; k<=add_product; k++ ) {
+    
+  const div_products = document.createElement("div");
+  div_products.setAttribute("class", "products");
+  div_products.setAttribute("data-id", add_product[0].product_uuid);
+  console.log(div_products);
+
+  // <img>
+
+  const image = document.createElement("img");
+  image.setAttribute("src", add_product[0].image);
+  image.setAttribute("alt", "photo");
+  image.setAttribute("height", "200px");
+  image.setAttribute("width", "180px");
+  div_products.append(image);
+
+  // <h3> </h3>
+
+  const h3_title = document.createElement("h3");
+  h3_title.setAttribute("id", "name");
+  h3_title.innerText = add_product[0].name;
+  div_products.append(h3_title);
+
+  // <p> </p>
+
+  const p_org_p = document.createElement("p");
+  p_org_p.setAttribute("id", "original_price");
+  p_org_p.innerText = `₹${add_product[0].discount_price} `;
+  div_products.append(p_org_p);
+
+  // <p> </p>
+
+  // p_dis = document.createElement("p");
+  // h3_title.append(p_dis);
+
+  // <s> </s>
+
+  const strike = document.createElement("s");
+  strike.setAttribute("id", "discount_price");
+  strike.innerText = `₹${add_product[0].original_price}  `;
+  p_org_p.append(strike);
+
+  // <span> </span>
+
+  const span_per = document.createElement("span");
+  span_per.setAttribute("class", "percent");
+  span_per.innerText = ` ${  add_product[0].discount_percent}% off`;
+  p_org_p.append(span_per);
+
+  document.querySelector("div.thumbnail").append(div_products);
+
+// }
+</script>
 
 </body>
 </html>

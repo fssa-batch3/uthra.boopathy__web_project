@@ -108,7 +108,7 @@ const check_pdt = add_to_cart.filter((e) => e.buyer_id === unique_id);
 const all = JSON.parse(localStorage.getItem("add_products"));
 
 const match_pdt = all.filter((product) => check_pdt.some((id) => id.product_id === product.product_uuid));
-console.log(match_pdt);
+// console.log(match_pdt);
 
 if (match_pdt.length === 0) {
 
@@ -116,7 +116,7 @@ if (match_pdt.length === 0) {
 
   const div_container = document.createElement("div");
   div_container.setAttribute("class", "contain");
-  console.log(div_container);
+  // console.log(div_container);
 
   // <div class="details"></div>
 
@@ -143,7 +143,7 @@ for (let k = 0; k < match_pdt.length; k++) {
 
   const div_container = document.createElement("div");
   div_container.setAttribute("class", "container");
-  console.log(div_container);
+  // console.log(div_container);
 
   // <img>
 
@@ -251,7 +251,7 @@ console.log(total);
 
 const div_total = document.createElement("div");
 div_total.setAttribute("class", "total");
-console.log(div_total);
+// console.log(div_total);
 
 // <div></div>
 
@@ -261,26 +261,26 @@ div_total.append(div_price);
 // <p>
 
 const p_sub = document.createElement("p");
-p_sub.innerText = "SUB TOTAL:";
+p_sub.innerText = "SUB TOTAL :";
 div_price.append(p_sub);
 
 // <p>
 
 const p_del = document.createElement("p");
-p_del.innerText = "DELIVERY CHARGE:";
+p_del.innerText = "DELIVERY CHARGE :";
 p_sub.append(p_del);
 
 // <p>
 
 const p_t_a = document.createElement("p");
-p_t_a.innerText = "TOTAL AMOUNT:";
+p_t_a.innerText = "TOTAL AMOUNT :";
 p_del.append(p_t_a);
 
 //  <div> <div>
 
 const div_amt = document.createElement("div");
 div_total.append(div_amt);
-console.log(div_amt);
+// console.log(div_amt);
 
 // <p>
 
@@ -313,9 +313,41 @@ const button_buy = document.createElement("button");
 button_buy.setAttribute("class", "buy");
 button_buy.innerText = "BUY NOW";
 div_btn.append(button_buy);
-console.log(button_buy);
+// console.log(button_buy);
 
 document.querySelector("section").append(div_total);
+
+const div_back = document.createElement("div");
+div_back.setAttribute("class", "back");
+
+const div_row = document.createElement("div");
+div_row.setAttribute("class", "row");
+div_back.append(div_row);
+
+const addresses = document.createElement("b");
+addresses.setAttribute("class", "address");
+addresses.innerText = "Delivery Address : "
+div_row.append(addresses);
+
+const user_list = JSON.parse(localStorage.getItem("user_cred"));
+const check_user = user_list.find((h) => h.phonenumber === unique_id); 
+// console.log(check_user);
+
+const addr = document.createElement("p");
+addr.setAttribute("class", "address");
+addr.innerText = check_user.address;
+div_row.append(addr);
+
+const change = document.createElement("button");
+change.setAttribute("class", "change")
+change.innerText = "Change";
+div_back.append(change);
+
+document.querySelector("section").append(div_back);
+
+document.querySelector("button.change").addEventListener("click", () => {
+  window.location.href = "../homepage/address.html";
+})
 
 const product_quantity = document.querySelectorAll(".quantity");
 
@@ -343,22 +375,21 @@ product_quantity.forEach((add) => {
 
     // let ogPrice = pdts[document.getElementById("original_price").value]
     let ogPrice = pdts.discount_price;
-    console.log(ogPrice);
+    // console.log(ogPrice);
 
     const parent = e.currentTarget.closest(".container");
 
-    console.log(parent);
+    // console.log(parent);
 
     const qauntity = parent.querySelector(".quantity").value;
 
-    // let qauntity= document.getElementById("product_quantity").value
-    console.log(qauntity);
+    // console.log(qauntity);
 
     const cartPrice = ogPrice * qauntity;
     // console.log(cartPrice)
 
     ogPrice = cartPrice;
-    console.log(ogPrice);
+    // console.log(ogPrice);
 
     pdts.product_quantity = qauntity;
 
@@ -375,18 +406,18 @@ const products = document.querySelectorAll("button.remove");
 products.forEach((check) => {
   check.addEventListener("click", (e) => {
     const product_id = e.currentTarget.dataset.remove;
-    console.log(product_id);
+    // console.log(product_id);
 
     localStorage.setItem("products_id", JSON.stringify(product_id));
 
-    console.log(product_id);
+    // console.log(product_id);
 
     if (window.confirm("Are you sure to remove this product?")) {
       const id = JSON.parse(localStorage.getItem("products_id"));
 
       const all_products = JSON.parse(localStorage.getItem("cart"));
 
-      console.log(all_products);
+      // console.log(all_products);
 
       const pdts = all_products.find(
         (f) => f.product_id === id && f.buyer_id === unique_id
