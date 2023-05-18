@@ -109,8 +109,6 @@ function back() {
 
 document.querySelector(".btn-3").addEventListener("click",back);
 
-// console.log(function back(){});
-
 if (person_data.des === "Seller") {
   // <div class = "arrow" > </div>
 
@@ -154,38 +152,6 @@ if (person_data.des === "Seller") {
 
   document.querySelector("div.arrows").append(div_arrow);
 }
-
-// delete account function
-
-// function deleteAcc(){
-
-//     if(confirm("Are you sure to delete this account ?")){
-
-//         //get value from local storage
-
-//         let uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
-
-//         let user_cred = JSON.parse(localStorage.getItem("user_cred"));
-
-//         function profile_data(e){
-
-//             return e.phonenumber == uniqueID;
-
-//         }
-
-//         person_data = user_cred.find(profile_data);
-
-//         const indexOfUser = user_cred.indexOf(person_data);
-
-//         user_cred.splice(indexOfUser, 1);
-
-//         localStorage.setItem("user_cred", JSON.stringify(user_cred));
-
-//         window.location.href = "./frontpage.html";
-
-//     }
-
-// }
       </script>
 
     </body>

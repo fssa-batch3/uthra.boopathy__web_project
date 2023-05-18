@@ -39,7 +39,7 @@ const after_login = `
         <li> <a href= "${wishlist}"><i class="fa-sharp fa-solid fa-heart"></i></a></li> 
         <li><a href= "${orders}"><i class="fa-solid fa-bag-shopping"></i></a></li>
         <li><a href="#"><i class="fa-solid fa-bell"></i></i></a></li>
-        <li><a href= "${profile}"><i class="fa-solid fa-circle-user"></i></a></li>
+        <li><a href= "${profile}"><i id="profile" class="fa-solid fa-circle-user"></i> </a></li>
         <li> <span class="login" id="logout"> Log out </span> </li>
       </ul>
   </div>
@@ -82,23 +82,23 @@ function header() {
 
 function logout() {
   if (window.confirm("Are you sure to log out?")) {
-    // let wishlist = JSON.parse(localStorage.getItem("wish"));
-
-    // let unique_id = JSON.parse(localStorage.getItem("uniqueID"));
-    // console.log(unique_id);
-
-    // let check = wishlist.find(e => e.buyer_id === unique_id);
-    // console.log(check);
-
-    // let index = wishlist.indexOf(check);
-    // console.log(index);
-
-    // let remove_pdts = wishlist.splice(index, 1);
-    // console.log(remove_pdts);
-
-    // localStorage.setItem("wish", JSON.stringify(wishlist));
-
     localStorage.removeItem("uniqueID");
+
+    const wish = JSON.parse(localStorage.getItem("wish"));
+
+    const unique_id = JSON.parse(localStorage.getItem("uniqueID"));
+    console.log(unique_id);
+
+    const check = wish.find((e) => e.buyer_id === unique_id);
+    console.log(check);
+
+    const index = wish.indexOf(check);
+    console.log(index);
+
+    const remove_pdts = wish.splice(index, 1);
+    console.log(remove_pdts);
+
+    localStorage.setItem("wish", JSON.stringify(wish));
 
     window.location.href = `${origin}/pages/homepage/frontpage.html`;
   }

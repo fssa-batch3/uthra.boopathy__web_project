@@ -200,8 +200,6 @@ button a {
     text-decoration: none;
 }
 
-
-
 h3{
     font-size: 28px;
     color: maroon;
@@ -216,14 +214,12 @@ p{
 
 s{
     color: darkgrey;
-    font-size: 22px;
-    
+    font-size: 22px; 
 }
 
 .percent{
     color: green;
     font-size: 22px;
-    
 }
 
 .total {
@@ -246,6 +242,39 @@ s{
 .total div p {
     padding-top: 2rem;
     align-content: flex-end;
+}
+
+.back {
+    width: 75%;
+    height: 20vh;
+    display: flex;
+    border-radius: 8px;
+    background-color: whitesmoke;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 100px;   
+    margin-left: 180px;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+}
+
+.address {
+    font-size: 24px;
+}
+
+.change {
+    height: 40px;
+    width: 140px;
+    background-color: purple;
+    border: 0px;
+    border-radius: 5px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
 }
 
 footer{

@@ -104,12 +104,21 @@ span i {
 .pdt {
     cursor: pointer;
     text-decoration: underline;
+    margin-left: 50rem;
+    margin-top: 5rem;
+    font-size: 25px;
+}
+
+.id {
+    margin-left: 41rem;
+    margin-top: 5rem;
+    font-size: 23px;
 }
 
 .images p {
     font-size: 25px;
 }
-
+/* 
 .details {
     display: flex;
     margin-left:20rem;
@@ -117,7 +126,7 @@ span i {
     font-size: 25px;
     width: 500px;
     justify-content: space-evenly;
-}
+} */
 
 .deliver{
     display: flex;
@@ -137,25 +146,13 @@ span i {
     height: 200px;
     width: 350px;
     font-size: 17px;
-    margin-top: 50px;
+    margin-top: -10rem;
     margin-left: -40px;
     padding-top: 20px;
     padding-left: 20px;
     scrollbar-width: none;
     overflow-y: scroll;
 } 
-
-.owner_details {
-    background-color: white;
-    border-radius: 5px;
-    height: 200px;
-    width: 350px;
-    font-size: 17px;
-    margin-top: 50px;
-    margin-left: -40px;
-    padding-top: 20px;
-    padding-left: 20px;
-}
 
 #name {
     font-size: 25px;
@@ -182,10 +179,6 @@ span i {
     margin-left: 1rem;
 }
 
-.sel{
-    margin-top: 10px;
-}
-
 button {
     height: 35px;
     width: 130px;
@@ -193,7 +186,8 @@ button {
     color: white;
     border: 0;
     border-radius: 5px;
-    margin-left: 1000px;
+    margin-left: 950px;
+    margin-top: -10px;
     font-size: 16px;
 }
 

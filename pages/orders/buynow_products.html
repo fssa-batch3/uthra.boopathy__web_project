@@ -26,23 +26,7 @@
 
             <h2> PRODUCT LIST </h2>
 
-        <div>
-
-            <!-- <div class="details"> -->
-                <!-- <div>
-                    <img src="../../assets/images/choker6.jpg" alt="photo" height="180px" width="180px">
-                    </div>
-                    <div class="info">
-                    <h5> Necklace </h5>
-                   <p class="price">  
-                    586  
-                    <s> 1299 </s> 
-                    <span class="percent">
-                    <b> 56%  </b>  off
-                    </span>
-                    </p>
-                    </div> -->
-            <!-- </div> -->
+        <div class = "div">
 
         </div>
 
@@ -117,13 +101,6 @@
             const check = product.filter((m) => order_pdts.some((h) => h.product_id === m.product_uuid));
             console.log(check);
 
-        // const container = document.getElementById("order_pdts");
-
-        // if (!order_pdts) {
-        //   const errorMsg = document.createElement("p");
-        //   errorMsg.innerHTML = "No products found.";
-        //   container.append(errorMsg);
-        // } else {
           for (let i = 0; i < check.length; i++) {
 
             // <div class = "details">
@@ -143,8 +120,8 @@
             img.setAttribute("src", check[i].image);
             img.setAttribute("alt", check[i].name);
             img.setAttribute("id", "image");
-            img.setAttribute("height","180px");
-            img.setAttribute("width","180px");
+            img.setAttribute("height","220px");
+            img.setAttribute("width","220px");
             div.append(img);
 
             // <div class="info">
@@ -193,6 +170,18 @@
             // qty.setAttribute("id", "original_price");
             qty.innerText = `Quantity : ${ order_pdts[i].product_quantity}`;
             div_info.append(qty);
+
+            const amt = document.createElement("p");
+            amt.setAttribute("class", "qty");
+            // qty.setAttribute("id", "original_price");
+            amt.innerText = `Total amount : ₹${ check[i].discount_price * order_pdts[i].product_quantity}`;
+            div_info.append(amt);
+            console.log(amt);
+
+            const seller_id = document.createElement("p");
+            seller_id.setAttribute("class", "qty");
+            seller_id.innerText = `Seller Phone number : ${  check[i].user_id}`;
+            div_info.append(seller_id);
 
             document.querySelector("div").append(div_details);
             // document.querySelector(".details").append(div_info);

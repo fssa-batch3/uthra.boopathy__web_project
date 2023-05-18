@@ -30,6 +30,19 @@ header div ul li a{
      font-size: 24px;
 }
 
+#count {
+    background-color: white;
+    color: purple;
+    font-size: 20px;
+    border-radius: 50%;
+    height: 20px;
+    width: 22px;
+    margin-top: -44px;
+    margin-left: 17px;
+    text-align: center;
+    font-weight: bold;
+}
+
 h1{
     font-size: 50px;
     font-weight: normal;
@@ -52,101 +65,92 @@ h1{
    cursor: pointer;
 }
 
-#count {
-    background-color: white;
-    color: purple;
-    font-size: 20px;
-    border-radius: 50%;
-    height: 20px;
-    width: 22px;
-    margin-top: -44px;
-    margin-left: 17px;
-    text-align: center;
-    font-weight: bold;
+.menu {
+    display: none;
 }
 
-section{
-    /* display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-content: center; */
-    margin-top: 100px;
-    margin-left: 350px;
-    margin-bottom: 200px;
-    border: 1px solid gray;
-    border-radius: 10px;
-    height: 750px;
-    width: 800px;
-    box-shadow: 2px 4px 8px 2px rgba(6, 6, 6, 0.2), 3px 6px 20px 3px rgba(0, 0, 0, 0.19);
-    overflow-x: hidden;
-    overflow-y: scroll;
-    scrollbar-width: none;
+.arrow {
+    margin: 2rem;
+    font-size: 30px;
 }
 
-section h2{
+.arrow a {
     color: black;
-    font-weight: bold;
-    font-size: 50px;
-    margin-top: 2rem;
-    margin-left: 15rem;
 }
 
-section i {
-    margin-left: 47rem;
-    margin-top: 2rem;
-}
-
-.details {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 5rem;
-}
-
-img {
+.add {
+    height: 40px;
+    width: 150px;
+    background-color: purple;
+    color: white;
+    font-size: 18px;
+    border: 0;
     border-radius: 5px;
-    margin-left: 8rem;
+    margin-left: 75rem;
 }
 
-.info{
-    /* margin-top: 1rem; */
-    margin-right: 20px;
+.container {
+    height: 20vh;
+    width: 70%;
+    margin-top: 30px;
+    margin-left: 200px;
+    background-color: whitesmoke;
+    border: 0;
+    border-radius: 8px;
 }
 
-section::-webkit-scrollbar {
-    width:min-content;
+h3 {
+    padding-top: 50px;
+    padding-left: 60px;
 }
 
-
-h5{
-    font-size: 25px;
-    color: maroon;
-    width: 330px;
-}
-
-.price {
-    display: flex;
-    font-size: 22px;
-}
-
-s {
-    color: gray;
-    padding-left: 7px;
-}
-
-.percent{
-    display: flex;
-    color: green;
-    padding-left: 7px;
-}
-
-.qty {
-    margin-top: 0.5rem;
+.address p {
+    padding-left: 10rem;
     font-size: 20px;
-} 
+    padding-top: 10px;
+}
+
+section {
+    display: grid;
+    grid-template-columns: repeat(3, 280px);
+    justify-content: space-evenly;
+    grid-column-gap: 20px;
+    grid-row-gap: 30px;
+    margin: 40px 0px 0px 0px;}
+
+.add_card {
+    height: 20rem;
+    width: 20rem;
+    background-color: whitesmoke;
+    margin: 5rem -1rem;
+    border-radius: 8px;
+}
+
+h6 {
+    padding: 2rem 6rem;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.add_card p {
+    padding: 1rem 1rem;
+    font-size: 18px;
+}
+
+.set {
+    height: 40px;
+    width: 150px;
+    background-color: purple;
+    color: white;
+    font-size: 18px;
+    border: 0;
+    border-radius: 4px;
+    margin: 6rem 5.8rem;
+}  
 
 footer{
     background-color: purple;
-    height: 290px;
+    height: 310px;
     margin-top: 150px;
 }
 
@@ -167,12 +171,6 @@ footer{
 .us a{
     text-decoration: none;
     color: white;
-}
-
-.us p{
-   font-size: 20px;
-   font-weight: normal;
-   margin: 0;
 }
 
 h4{
@@ -201,13 +199,6 @@ h4{
     color: white;
 }
 
-.contact div p{
-    font-size: 20px;
-   font-weight: normal;
-   margin: 0;
-   color: white;
-}
-
 .con{
     font-size: 23px;
     position: relative;
@@ -218,7 +209,9 @@ h4{
 .line{
     border-right: 2px solid gray;
     height: 190px;
-    margin: 60px;
+    position: relative;
+    top: 45px;
+    right: 40px;
 }
 
 .socials{
@@ -261,6 +254,7 @@ h4{
     color: white;
 }
 
-.menu{
-    display: none;
+.collections img{
+    border-radius: 150px;
+    padding: 40px;
 }

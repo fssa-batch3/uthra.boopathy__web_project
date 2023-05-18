@@ -131,14 +131,14 @@ for (let j = 0; j < check.length; j++) {
 
   const i_del = document.createElement("i");
   i_del.setAttribute("id", "del");
-  i_del.setAttribute("data-del", check[j].product_id);
+  i_del.setAttribute("data-del", check[j].product_uuid);
   i_del.setAttribute("class", "fa-solid fa-trash-can");
   i_del.setAttribute("style", "font-size:24px;color:red;");
   span_del.append(i_del);
 
   const i_cart = document.createElement("i");
   i_cart.setAttribute("id", "cart");
-  i_cart.setAttribute("data-del", check[j].product_id);
+  i_cart.setAttribute("data-del", check[j].product_uuid);
   i_cart.setAttribute("class", "fa-sharp fa-solid fa-cart-shopping");
   i_cart.setAttribute("style", "font-size:24px;color:purple;");
   span_del.append(i_cart);
@@ -150,7 +150,7 @@ for (let j = 0; j < check.length; j++) {
   img.setAttribute("alt", "photo");
   img.setAttribute("height", "200px");
   img.setAttribute("width", "180px");
-  img.setAttribute("data-id", check[j].product_id);
+  img.setAttribute("data-id", check[j].product_uuid);
   div_products.append(img);
 
   // <h3> </h3>

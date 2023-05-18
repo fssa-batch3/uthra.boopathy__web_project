@@ -193,17 +193,23 @@
 
             // <div class = "details" > </div>
 
-            const div_details = document.createElement("div");
-            div_details.setAttribute("class", "details");
-            div_container.append(div_details);
+            // const div_details = document.createElement("div");
+            // div_details.setAttribute("class", "details");
+            // div_container.append(div_details);
 
-            // <p class="pdt">
+            // // <p class="pdt">
 
               const p_pdt = document.createElement("p");
               p_pdt.setAttribute("class", "pdt");
               p_pdt.setAttribute("data-id", order[j].order_id);
               p_pdt.innerText = `No of Products : ${  items.length}`;
-              div_details.append(p_pdt);
+              div_container.append(p_pdt);
+
+              const id = document.createElement("p");
+              id.setAttribute("class", "id");
+            //   id.setAttribute("data-id", order[j].order_id);
+              id.innerText = `Order ID : ${  order[j].order_id}`;
+              div_container.append(id);
 
             //<div class = "deliver" >
 
@@ -220,7 +226,7 @@
             // <strong>
 
             const strong = document.createElement("strong");
-            strong.innerText = "DELIVERED DETAILS :";
+            strong.innerText = "DELIVERY DETAILS :";
             div_detail.append(strong);
 
             // <p1>
@@ -233,7 +239,7 @@
             // p_2
 
             const p_2 = document.createElement("p");
-            p_2.innerText = `Ordered on : ${order[j].order_date}`;
+            p_2.innerText = `Ordered on : ${order[j].order_on}`;
             p_1.append(p_2);
 
             const p_9 = document.createElement("p");
@@ -259,39 +265,10 @@
             p_5.innerText = `State : ${order[j].state}`;
             p_6.append(p_5);
 
-            // <div class = "owner_details">
-
-            const div_owner = document.createElement("div");
-            div_owner.setAttribute("class", "owner_details");
-            div_deliver.append(div_owner);
-
-            // strong
-
-            const strong_own = document.createElement("strong");
-            strong_own.innerText = "ORDERED FROM :";
-            div_owner.append(strong_own);
-
-            //   const user_list = JSON.parse(localStorage.getItem("user_cred"));
-            //   console.log(user_list);
-
-            //   const check = user_list.find(g => g.phonenumber === order[j].seller_id)
-            //   console.log(check);
-
-            //   // p_4
-
-            //   const p_4 = document.createElement("p");
-            //   p_4.setAttribute("class", "sel");
-            //   p_4.innerText = `Name : ${check.uname}`;
-            //   div_owner.append(p_4);
-
-            //   const p_8 = document.createElement("p");
-            //   p_8.innerText = `Seller phone number : ${order[j].seller_id}`;
-            //   p_4.append(p_8);
-
-            const button = document.createElement("button");
-            button.innerText = "CANCEL ORDER";
-            button.setAttribute("data-cancel", order[j].order_id);
-            div_container.append(button);
+            // const button = document.createElement("button");
+            // button.innerText = "CANCEL ORDER";
+            // button.setAttribute("data-cancel", order[j].order_id);
+            // div_container.append(button);
 
             document.querySelector("section").append(div_container);
         }

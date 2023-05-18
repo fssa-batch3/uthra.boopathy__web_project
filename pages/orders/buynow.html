@@ -134,7 +134,18 @@
 const uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
 const user_cred = JSON.parse(localStorage.getItem("user_cred"));
 
-// // getting details
+const product_id = JSON.parse(localStorage.getItem("productDetail"))
+const all_pdt = JSON.parse(localStorage.getItem("add_products"));
+
+const check_pdt = all_pdt.find((p) => p.product_uuid === product_id);
+
+document.getElementById("image").setAttribute("src", check_pdt.image);
+document.getElementById("name").innerText = check_pdt.name;
+document.getElementById("original_price").innerText = check_pdt.original_price;
+document.getElementById("discount_price").innerText = check_pdt.discount_price;
+document.getElementById("discount_percent").innerText = check_pdt.discount_percent;
+
+// getting details
 
 function profile_data(e) {
   return e.phonenumber === uniqueID;
@@ -143,90 +154,6 @@ const person_data = user_cred.find(profile_data);
 document.getElementById("uname").value = person_data.uname;
 document.getElementById("phonenumber").value = person_data.phonenumber;
 document.getElementById("address").value = person_data.address;
-
-// getting product information
-
-const pdt_id = JSON.parse(localStorage.getItem("productDetail"));
-const all_pdt = JSON.parse(localStorage.getItem("add_products"));
-
-const check_pdt = all_pdt.find((j) => j.product_uuid === pdt_id);
-console.log(check_pdt);
-
-document.getElementById("image").setAttribute("src", check_pdt.image);
-document.getElementById("name").innerText = check_pdt.name;
-console.log(document.getElementById("name").innerText);
-document.getElementById("original_price").innerText = check_pdt.original_price;
-document.getElementById("discount_price").innerText = check_pdt.discount_price;
-document.getElementById("discount_percent").innerText = check_pdt.discount_percent;
-// document.getElementById("product_quantity").innerText = check_pdt.product_quantity; 
-
-// const place_order = document.querySelector("button.place");
-
-// place_order.addEventListener("click", () => {
-//   const uname = document.getElementById("uname").value;
-//   const phonenumber = document.getElementById("phonenumber").value;
-//   const address = document.getElementById("address").value;
-//   const payment = document.getElementById("payment").value;
-//   const product_quantity = document.getElementById("product_quantity").value;
-//   const pincode = document.getElementById("pincode").value;
-//   const state = document.getElementById("state").value;
-//   const order_id = uuidv4();
-// //   const product_id = pdt_id;
-//   const date = new Date();
-//   const year = date.getFullYear();
-//   const month = date.getMonth() + 1;
-//   const day = date.getDate();
-//   const set_date = new Date();
-//   set_date.setDate(date.getDate() + 15);
-//   const order_on = `${day}.${month}.${year}`;
-//   const delivered_on= `${set_date.getDate().toString().padStart(2, '0')}.${(set_date.getMonth() + 1).toString().padStart(2, '0')}.${set_date.getFullYear()}`;
-// console.log(delivered_on);
-
-//   if (address.trim() === "" || state.trim() === "" || pincode.trim() === "" || payment.trim() === "") {
-//     alert("Please fill in all the details");
-//   } else {
-//     alert("Your order is successfully booked");
-
-//     const my_orders = JSON.parse(localStorage.getItem("my_orders")) || [];
-//     my_orders.push({
-//         uname, 
-//         buyer_id : uniqueID, 
-//         address, 
-//         phonenumber, 
-//         payment,
-//         pincode, 
-//         state, 
-//         order_id, 
-//         order_on, 
-//         delivered_on, 
-//         product_quantity, 
-//         status : true,
-//         no_of_products : check_pdt.length
-//     });
-
-//     const ordered_items = JSON.parse(localStorage.getItem("ordered_items")) || [];
-
-//     for ( let c = 0; c < check_pdt.length; c++) {
-//         check_pdt[c].order_id = order_id
-//     }
-
-//     ordered_items.push(...check_pdt);
-//     console.log(ordered_items);
-
-//     localStorage.setItem("my_orders", JSON.stringify(my_orders));
-//     localStorage.setItem("ordered_items", JSON.stringify(ordered_items));
-
-//     window.location.href = "../orders/myorderspage.html";
-//   }
-// });
-
-// function profile_data(e) {
-//   return e.phonenumber === uniqueID;
-// }
-// const person_data = user_cred.find(profile_data);
-// document.getElementById("uname").value = person_data.uname;
-// document.getElementById("phonenumber").value = person_data.phonenumber;
-// document.getElementById("address").value = person_data.address;
 
 // document.getElementById("pdt").value =  check_pdt.length;;
 
@@ -276,11 +203,13 @@ console.log(delivered_on);
 
     const ordered_items = JSON.parse(localStorage.getItem("ordered_items")) || [];
 
-    for ( let c = 0; c < check_pdt.length; c++) {
-        check_pdt[c].order_id = order_id
-    }
-
-    ordered_items.push(...check_pdt);
+    ordered_items.push({
+        product_id : check_pdt.product_uuid,
+        buyer_id : uniqueID,
+        seller_id : check_pdt.user_id,
+        order_id,
+        product_quantity : quantity
+    });
     console.log(ordered_items);
 
     localStorage.setItem("my_orders", JSON.stringify(my_orders));
@@ -290,8 +219,7 @@ console.log(delivered_on);
 
     window.location.href = "../orders/myorderspage.html";
   }
-})
-
+});
 </script>
 
     <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>

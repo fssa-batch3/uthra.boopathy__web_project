@@ -76,6 +76,23 @@ h1{
     cursor: pointer;
 }
 
+.dropdown {
+    display: block;
+}
+
+.dropdown a {
+    display: none;
+    z-index: 99;
+    position: absolute;
+    width: 100%;
+    color: white;
+}
+
+#profile:hover .dropdown {
+    display: block;
+    background-color: purple;
+}
+
 .sub-heading{
     display: flex;
     flex-wrap: wrap;
