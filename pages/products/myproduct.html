@@ -49,6 +49,7 @@ div_arrow.append(a_arrow);
 // < i >  arrow </i>
 
 const i_arrow = document.createElement("i");
+i_arrow.setAttribute("title", "Back");
 i_arrow.setAttribute("class", "fa-solid fa-arrow-left");
 a_arrow.append(i_arrow);
 
@@ -248,20 +249,45 @@ for (let k = 0; k < check_pdt.length; k++) {
   div_right.append(button_del);
   // console.log(button_del);
 
-  button_remove = document.createElement("button");
+  if (check_pdt[k].status === false) {
+    button_remove = document.createElement("button");
+  button_remove.setAttribute("style", "display: none;");
   button_remove.setAttribute("type", "submit");
   button_remove.setAttribute("class", "remove");
   button_remove.setAttribute("data-remove", check_pdt[k].product_uuid);
   button_remove.innerText = "Remove";
   div_right.append(button_remove);
+  }
+  else {
+  button_remove = document.createElement("button");
+  button_remove.setAttribute("style", "display: block;");
+  button_remove.setAttribute("type", "submit");
+  button_remove.setAttribute("class", "remove");
+  button_remove.setAttribute("data-remove", check_pdt[k].product_uuid);
+  button_remove.innerText = "Remove";
+  div_right.append(button_remove);
+  }
+
+  if (check_pdt[k].status === true) {
 
   button_add = document.createElement("button");
   button_add.setAttribute("type", "submit");
   button_add.setAttribute("class", "adding");
   button_add.setAttribute("data-add", check_pdt[k].product_uuid);
-  // button_add.setAttribute("style", "display: none;");
+  button_add.setAttribute("style", "display: none;");
   button_add.innerText = "Add";
   div_right.append(button_add);
+  }
+
+  else {
+    button_add = document.createElement("button");
+  button_add.setAttribute("type", "submit");
+  button_add.setAttribute("class", "adding");
+  button_add.setAttribute("data-add", check_pdt[k].product_uuid);
+  button_add.setAttribute("style", "display: block;");
+  button_add.innerText = "Add";
+  div_right.append(button_add);
+  }
 
   document.querySelector("section").append(div_box);
 }
@@ -325,6 +351,7 @@ remove_pdt.forEach((remove) => {
       all_products[indexOfProduct].status = false;
 
       localStorage.setItem("add_products", JSON.stringify(all_products));
+      window.location.reload();
     } else {
       alert("You have not added the product yet");
     }
@@ -353,6 +380,7 @@ add_pdt.forEach((add) => {
       all_products[indexOfProduct].status = true;
 
       localStorage.setItem("add_products", JSON.stringify(all_products));
+      window.location.reload();
     } else {
       alert("You have already added the product");
     }

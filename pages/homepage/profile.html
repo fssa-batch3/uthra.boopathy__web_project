@@ -44,6 +44,16 @@
                     <label> Residential address: </label>
                     <textarea id="address" disabled="true">  </textarea>
                 </div>
+
+                <div class="pin">
+                  <!-- <label> Pincode: </label> -->
+                  <input type="number" id="pincode" maxlength="6">  
+              </div>
+
+              <div class="state">
+                  <!-- <label> State: </label> -->
+                  <input type="text" id="state">  
+              </div>
                 
                 <div class="no">
                     <label> Contact number: </label>
@@ -91,13 +101,13 @@ document.getElementById("email").value = person_data.email;
 document.getElementById("phonenumber").value = person_data.phonenumber;
 document.getElementById("age").value = person_data.age;
 document.getElementById("address").value = person_data.address;
+document.getElementById("pincode").value = person_data.pincode;
+document.getElementById("state").value = person_data.state;
 document.getElementById("des").value = person_data.des;
 
-function edit() {
+document.querySelector(".btn-1").addEventListener("click", () => {
   window.location.href = "../homepage/profilepage.html";
-}
-
-document.querySelector(".btn-1").addEventListener("click", edit);
+});
 
 function back() {
   if (person_data.des === "Seller") {
@@ -126,6 +136,7 @@ if (person_data.des === "Seller") {
   // < i >  arrow </i>
 
   const i_arrow = document.createElement("i");
+  i_arrow.setAttribute("title", "Back");
   i_arrow.setAttribute("class", "fa-solid fa-arrow-left");
   a_arrow.append(i_arrow);
 

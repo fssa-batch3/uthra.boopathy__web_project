@@ -444,54 +444,54 @@ buy_now.addEventListener("click", () => {
 
 // for (let k=0; k<=add_product; k++ ) {
     
-  const div_products = document.createElement("div");
-  div_products.setAttribute("class", "products");
-  div_products.setAttribute("data-id", add_product[0].product_uuid);
-  console.log(div_products);
+  // const div_products = document.createElement("div");
+  // div_products.setAttribute("class", "products");
+  // div_products.setAttribute("data-id", add_product[0].product_uuid);
+  // console.log(div_products);
 
-  // <img>
+  // // <img>
 
-  const image = document.createElement("img");
-  image.setAttribute("src", add_product[0].image);
-  image.setAttribute("alt", "photo");
-  image.setAttribute("height", "200px");
-  image.setAttribute("width", "180px");
-  div_products.append(image);
+  // const image = document.createElement("img");
+  // image.setAttribute("src", add_product[0].image);
+  // image.setAttribute("alt", "photo");
+  // image.setAttribute("height", "200px");
+  // image.setAttribute("width", "180px");
+  // div_products.append(image);
 
-  // <h3> </h3>
+  // // <h3> </h3>
 
-  const h3_title = document.createElement("h3");
-  h3_title.setAttribute("id", "name");
-  h3_title.innerText = add_product[0].name;
-  div_products.append(h3_title);
+  // const h3_title = document.createElement("h3");
+  // h3_title.setAttribute("id", "name");
+  // h3_title.innerText = add_product[0].name;
+  // div_products.append(h3_title);
 
-  // <p> </p>
+  // // <p> </p>
 
-  const p_org_p = document.createElement("p");
-  p_org_p.setAttribute("id", "original_price");
-  p_org_p.innerText = `₹${add_product[0].discount_price} `;
-  div_products.append(p_org_p);
+  // const p_org_p = document.createElement("p");
+  // p_org_p.setAttribute("id", "original_price");
+  // p_org_p.innerText = `₹${add_product[0].discount_price} `;
+  // div_products.append(p_org_p);
 
-  // <p> </p>
+  // // <p> </p>
 
-  // p_dis = document.createElement("p");
-  // h3_title.append(p_dis);
+  // // p_dis = document.createElement("p");
+  // // h3_title.append(p_dis);
 
-  // <s> </s>
+  // // <s> </s>
 
-  const strike = document.createElement("s");
-  strike.setAttribute("id", "discount_price");
-  strike.innerText = `₹${add_product[0].original_price}  `;
-  p_org_p.append(strike);
+  // const strike = document.createElement("s");
+  // strike.setAttribute("id", "discount_price");
+  // strike.innerText = `₹${add_product[0].original_price}  `;
+  // p_org_p.append(strike);
 
-  // <span> </span>
+  // // <span> </span>
 
-  const span_per = document.createElement("span");
-  span_per.setAttribute("class", "percent");
-  span_per.innerText = ` ${  add_product[0].discount_percent}% off`;
-  p_org_p.append(span_per);
+  // const span_per = document.createElement("span");
+  // span_per.setAttribute("class", "percent");
+  // span_per.innerText = ` ${  add_product[0].discount_percent}% off`;
+  // p_org_p.append(span_per);
 
-  document.querySelector("div.thumbnail").append(div_products);
+  // document.querySelector("div.thumbnail").append(div_products);
 
 // }
 </script>

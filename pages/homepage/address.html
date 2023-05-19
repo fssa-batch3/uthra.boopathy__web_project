@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title> Address page </title>
-        <link rel="stylesheet" href="../../assets/css/addressForm.css">
+        <link rel="stylesheet" href="../../assets/css/address.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +20,9 @@
 
         <div class="arrows"></div> 
 
-        <button class="add"> ADD ADDRESS </button>
+        <a href="../homepage/addressForm.html">
+         <button class="add"> ADD ADDRESS </button>
+        </a>
 
         <div class="container">
             <!-- <div class ="address">
@@ -108,6 +110,7 @@ div_arrow.append(a_arrow);
 
 const i_arrow = document.createElement("i");
 i_arrow.setAttribute("class", "fa-solid fa-arrow-left");
+i_arrow.setAttribute("title", "Back");
 a_arrow.append(i_arrow);
 
 document.querySelector("div.arrows").append(div_arrow);
@@ -115,11 +118,17 @@ document.querySelector("div.arrows").append(div_arrow);
 const unique_id = JSON.parse(localStorage.getItem("uniqueID"))
 const user_list = JSON.parse(localStorage.getItem("user_cred"));
 
-const check = user_list.filter((t) => t.phonenumber === unique_id);
-console.log(check);
+const check = user_list.find((t) => t.phonenumber === unique_id);
+// console.log(check);
 
 const addres = document.createElement("div");
 addres.setAttribute("class", "address");
+
+const loc = document.createElement("i");
+loc.setAttribute("class", "fa-sharp fa-solid fa-location-dot");
+loc.setAttribute("style", "font-size:25px; margin-top:2rem; margin-left:3rem")
+loc.setAttribute("title", "Location");
+addres.append(loc);
 
 const h3 = document.createElement("h3");
 h3.innerText = "DEFAULT ADDRESS :";
@@ -128,35 +137,127 @@ addres.append(h3);
 const p_add = document.createElement("p");
 p_add.setAttribute("id", "address");
 p_add.innerText = check.address;
-h3.append(p_add);
-console.log(p_add.innerText);
+addres.append(p_add);
+// console.log(p_add.innerText);
+
+const p_code = document.createElement("p");
+p_code.setAttribute("id", "code");
+p_code.innerText = check.pincode;
+addres.append(p_code);
+
+const p_states = document.createElement("p");
+p_states.setAttribute("id", "states");
+p_states.innerText = check.state;
+addres.append(p_states);
 
 document.querySelector("div.container").append(addres);
 
-for (let i = 0; i <= 5; i++) {
+const add_list = JSON.parse(localStorage.getItem("address_list"));
+
+const addressess = add_list.filter((t) => t.buyer_id === unique_id)
+console.log(addressess);
+
+for (let i = 0; i < addressess.length; i++) {
 
 const div_card = document.createElement("div");
 div_card.setAttribute("class", "add_card");
 
+const edit = document.createElement("i");
+edit.setAttribute("id", "edit");
+edit.setAttribute("title", "Edit");
+edit.setAttribute("class", "fa-solid fa-pencil");
+edit.setAttribute("style", "color: black; font-size:18px; margin-top:1rem; margin-left:1rem; cursor:pointer");
+edit.setAttribute("data-id", addressess[i].address_id)
+div_card.append(edit);
+
+const remove = document.createElement("i");
+remove.setAttribute("id", "remove");
+remove.setAttribute("title", "Remove");
+remove.setAttribute("class", "fa-solid fa-xmark");
+remove.setAttribute("style", "color: red; font-size:18px; margin-top:1rem; margin-left:16rem; cursor:pointer");
+remove.setAttribute("data-id", addressess[i].address_id)
+div_card.append(remove);
+
 const h6 = document.createElement("h6");
+h6.setAttribute("class", "heading");
 h6.innerText = "ADDRESS : "
 div_card.append(h6);
 
+const detail = document.createElement("div");
+detail.setAttribute("class", "detail");
+div_card.append(detail);
+
+const names = document.createElement("p");
+names.innerText = addressess[i].uname;
+detail.append(names);
+
 const p_address = document.createElement("p");
-p_address.innerText = check.address;
-h6.append(p_address);
+p_address.innerText = addressess[i].address;
+detail.append(p_address);
+
+const p_pin = document.createElement("p");
+p_pin.innerText = `Pincode : ${ addressess[i].pincode}`;
+detail.append(p_pin);
+
+const p_state = document.createElement("p");
+p_state.innerText = `State : ${ addressess[i].state}`;
+detail.append(p_state);
 
 const set = document.createElement("button");
 set.setAttribute("class", "set");
+set.setAttribute("data-id", addressess[i].address_id)
 set.innerText = "SET AS DEFAULT";
 div_card.append(set);
 
 document.querySelector("section").append(div_card);
 }
 
-document.querySelector("button.add").addEventListener("click", () => {
-    window.location.href = "../homepage/addressForm.html";
-} )
+document.querySelectorAll("i#edit").forEach((editing) => {
+    editing.addEventListener("click", (e) => {
+        const add_id = e.currentTarget.dataset.id;
+        console.log(add_id);
+        localStorage.setItem("addressID", JSON.stringify(add_id));
+        window.location.href = `../homepage/addressForm.html?address_id=${add_id}`;
+    })
+})
+
+document.querySelectorAll("i#remove").forEach((remove) => {
+    remove.addEventListener("click", (e) => {
+        const add_id = e.currentTarget.dataset.id;
+        console.log(add_id);
+        localStorage.setItem("addressID", JSON.stringify(add_id));
+        if(window.confirm("Are you sure to delete this address?")) {
+            const card = add_list.find((r) => r.address_id === add_id && r.buyer_id === unique_id);
+            const index =  add_list.indexOf(card);
+            console.log(index);
+            add_list.splice(index, 1);
+            localStorage.setItem("address_list", JSON.stringify(add_list));
+            window.location.reload();
+        }
+    })
+})
+
+document.querySelectorAll("button.set").forEach((defalt) => {
+    defalt.addEventListener("click", (e) => {
+        const add_id = e.currentTarget.dataset.id;
+        console.log(add_id);
+        localStorage.setItem("addressID", JSON.stringify(add_id));
+        if(window.confirm("Are you sure to make this address as default?")) {
+            const card = add_list.find((r) => r.address_id === add_id && r.buyer_id === unique_id);
+
+                h3.innerText = "DEFAULT ADDRESS :";
+
+                p_add.innerText = card.address;
+
+                p_code.innerText = card.pincode;
+
+                p_states.innerText = card.state;
+
+                localStorage.setItem("default_address", JSON.stringify(card));
+                console.log(localStorage.getItem("default_address"));
+        }
+    })
+})
 </script>
 
 </body>

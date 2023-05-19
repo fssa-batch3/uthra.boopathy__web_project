@@ -132,17 +132,17 @@
 // getting the user details
 
 const uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
-const user_cred = JSON.parse(localStorage.getItem("user_cred"));
+// const user_cred = JSON.parse(localStorage.getItem("user_cred"));
 
 const products = JSON.parse(localStorage.getItem("cart"));
 
 const check = products.filter((user) => user.buyer_id === uniqueID);
-console.log(check);
+// console.log(check);
 
 const all_pdt = JSON.parse(localStorage.getItem("add_products"));
 
 const check_pdt = all_pdt.filter((find) => check.some((pdt) => pdt.product_id === find.product_uuid));
-console.log(check_pdt);
+// console.log(check_pdt);
 
 // creating the image
 
@@ -152,7 +152,7 @@ for (let i=0; i<check_pdt.length; i++) {
 
     const div = document.createElement("div");
     div.setAttribute("class", "image");
-    console.log(div);
+    // console.log(div);
 
     // <img>
 
@@ -185,12 +185,17 @@ for (let i=0; i<check_pdt.length; i++) {
     p.append(b);
 
     const qty = check.find((e) => e.product_id === check_pdt[i].product_uuid);
-    console.log(qty);
+    // console.log(qty);
 
     const p_qty = document.createElement("p");
     p_qty.setAttribute("class", "qty");
     p_qty.innerText = `Quantity : ${  qty.product_quantity}`;
     p.append(p_qty);
+
+    const total = document.createElement("p");
+    total.setAttribute("class", "tot");
+    total.innerText = `Total amount : ₹${ check_pdt[i].discount_price * qty.product_quantity}`;
+    p.append(total);
 
     document.querySelector(".left").append(div);
 
@@ -198,13 +203,12 @@ for (let i=0; i<check_pdt.length; i++) {
 
 // getting details
 
-function profile_data(e) {
-  return e.phonenumber === uniqueID;
-}
-const person_data = user_cred.find(profile_data);
-document.getElementById("uname").value = person_data.uname;
-document.getElementById("phonenumber").value = person_data.phonenumber;
-document.getElementById("address").value = person_data.address;
+const addressDetail = JSON.parse(localStorage.getItem("default_address"));
+document.getElementById("uname").value = addressDetail.uname;
+document.getElementById("phonenumber").value = addressDetail.buyer_id;
+document.getElementById("address").value = addressDetail.address;
+document.getElementById("pincode").value = addressDetail.pincode;
+document.getElementById("state").value = addressDetail.state;
 
 document.getElementById("pdt").value =  check_pdt.length;;
 

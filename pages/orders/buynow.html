@@ -132,7 +132,7 @@
 // getting the user details
 
 const uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
-const user_cred = JSON.parse(localStorage.getItem("user_cred"));
+// const user_cred = JSON.parse(localStorage.getItem("user_cred"));
 
 const product_id = JSON.parse(localStorage.getItem("productDetail"))
 const all_pdt = JSON.parse(localStorage.getItem("add_products"));
@@ -147,13 +147,12 @@ document.getElementById("discount_percent").innerText = check_pdt.discount_perce
 
 // getting details
 
-function profile_data(e) {
-  return e.phonenumber === uniqueID;
-}
-const person_data = user_cred.find(profile_data);
-document.getElementById("uname").value = person_data.uname;
-document.getElementById("phonenumber").value = person_data.phonenumber;
-document.getElementById("address").value = person_data.address;
+    const addressDetail = JSON.parse(localStorage.getItem("default_address"));
+document.getElementById("uname").value = addressDetail.uname;
+document.getElementById("phonenumber").value = addressDetail.buyer_id;
+document.getElementById("address").value = addressDetail.address;
+document.getElementById("pincode").value = addressDetail.pincode;
+document.getElementById("state").value = addressDetail.state;
 
 // document.getElementById("pdt").value =  check_pdt.length;;
 

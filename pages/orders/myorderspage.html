@@ -100,6 +100,7 @@
         // < i >  arrow </i>
 
         const i_arrow = document.createElement("i");
+        i_arrow.setAttribute("title", "Back");
         i_arrow.setAttribute("class", "fa-solid fa-arrow-left");
         a_arrow.append(i_arrow);
 
@@ -265,10 +266,21 @@
             p_5.innerText = `State : ${order[j].state}`;
             p_6.append(p_5);
 
-            // const button = document.createElement("button");
-            // button.innerText = "CANCEL ORDER";
-            // button.setAttribute("data-cancel", order[j].order_id);
-            // div_container.append(button);
+            if (order[j].status === true) {
+
+            const button = document.createElement("button");
+            button.setAttribute("style", "display: block")
+            button.innerText = "CANCEL ORDER";
+            button.setAttribute("data-cancel", order[j].order_id);
+            div_container.append(button);
+            }
+            else {
+                const button = document.createElement("button");
+            button.setAttribute("style", "display: none")
+            button.innerText = "CANCEL ORDER";
+            button.setAttribute("data-cancel", order[j].order_id);
+            div_container.append(button);
+            }
 
             document.querySelector("section").append(div_container);
         }
