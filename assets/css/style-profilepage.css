@@ -183,7 +183,6 @@ input[type="email"]{
     width: 219px;
     border: 1px solid gray;
     border-radius: 3px;
-    font-size: 15px;
     position: relative;
     left: 98px;
     outline: none;
@@ -195,7 +194,6 @@ input[type="number"]{
     width: 218px;
     border: 1px solid gray;
     border-radius: 3px;
-    font-size: 15px;
     position: relative;
     left: 46px;
     outline: none;
@@ -207,7 +205,6 @@ input[id="age"]{
     width: 218px;
     border: 1px solid gray;
     border-radius: 3px;
-    font-size: 15px;
     position: relative;
     left: 147px;
     outline: none;
@@ -219,7 +216,6 @@ input[id="pincode"]{
     width: 218px;
     border: 1px solid gray;
     border-radius: 3px;
-    font-size: 15px;
     position: relative;
     left: 112px;
     outline: none;
@@ -231,7 +227,6 @@ input[id="state"]{
     width: 218px;
     border: 1px solid gray;
     border-radius: 3px;
-    font-size: 15px;
     position: relative;
     left: 135px;
     outline: none;
@@ -243,7 +238,6 @@ textarea{
     width: 218px;
     border: 1px solid gray;
     border-radius: 3px;
-    font-size: 15px;
     position: relative;
     left: 20px;
     top: 15px;

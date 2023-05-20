@@ -132,7 +132,9 @@
 // getting the user details
 
 const uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
-// const user_cred = JSON.parse(localStorage.getItem("user_cred"));
+const user_cred = JSON.parse(localStorage.getItem("user_cred"));
+
+const check_user = user_cred.find((f) => f.phonenumber === uniqueID);
 
 const product_id = JSON.parse(localStorage.getItem("productDetail"))
 const all_pdt = JSON.parse(localStorage.getItem("add_products"));
@@ -148,11 +150,26 @@ document.getElementById("discount_percent").innerText = check_pdt.discount_perce
 // getting details
 
     const addressDetail = JSON.parse(localStorage.getItem("default_address"));
-document.getElementById("uname").value = addressDetail.uname;
-document.getElementById("phonenumber").value = addressDetail.buyer_id;
-document.getElementById("address").value = addressDetail.address;
-document.getElementById("pincode").value = addressDetail.pincode;
-document.getElementById("state").value = addressDetail.state;
+    const address_list = JSON.parse(localStorage.getItem("address_list"));
+    const check_add = address_list.find((j) => j.address === addressDetail.address)
+    console.log(check_add)
+
+    if(check_add) {
+
+document.getElementById("uname").value = check_add.uname;
+document.getElementById("phonenumber").value = check_add.buyer_id;
+document.getElementById("address").value = check_add.address;
+document.getElementById("pincode").value = check_add.pincode;
+document.getElementById("state").value = check_add.state;
+
+    }
+    else {
+        document.getElementById("uname").value = check_user.uname;
+        document.getElementById("phonenumber").value = check_user.phonenumber;
+        document.getElementById("address").value = check_user.address;
+        document.getElementById("pincode").value = check_user.pincode;
+        document.getElementById("state").value = check_user.state;
+    }
 
 // document.getElementById("pdt").value =  check_pdt.length;;
 
