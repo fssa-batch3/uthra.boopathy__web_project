@@ -86,8 +86,42 @@ h3 {
 
 section div {
     margin-top: 40px;
-    margin-left: 70px;
-    font-size: 23px;
+    margin-left: 10rem;
+    font-size: 25px;
+}
+
+input {
+    height: 25px;
+    width: 180px;
+    border: 1px solid gray;
+    outline: none;
+    border-radius: 3px;
+    font-size: 18px;
+}
+
+#uname {
+    margin-left: 42px;
+}
+
+#address {
+    margin-left:19px;
+    resize: none;
+    width: 180px;
+    outline: none;
+}
+
+.ads {
+    position: relative;
+    bottom: 14px;
+}
+
+#pincode {
+    margin-left: 20px;
+}
+
+
+#state {
+    margin-left: 46px;
 }
 
 button {
@@ -98,7 +132,8 @@ button {
     color: white;
     font-size: 18px;
     border-radius: 5px;
-    margin: 50px;
+    margin-top: 50px;
+    margin-left: 15rem;
 }
 
 footer{

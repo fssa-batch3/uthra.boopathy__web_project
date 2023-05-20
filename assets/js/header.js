@@ -83,6 +83,8 @@ function header() {
 function logout() {
   if (window.confirm("Are you sure to log out?")) {
     localStorage.removeItem("uniqueID");
+    localStorage.removeItem("addressID");
+    localStorage.removeItem("default_address");
 
     const wish = JSON.parse(localStorage.getItem("wish"));
 

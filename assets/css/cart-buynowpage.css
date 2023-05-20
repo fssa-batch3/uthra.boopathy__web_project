@@ -103,7 +103,7 @@ h1{
 
 p {
     font-size: 20px;
-    margin-top: 1rem;
+    margin-top: .5rem;
 }
 
 .sub-images{
@@ -146,7 +146,7 @@ h3{
     font-size: 25px;
     color: rgb(134, 13, 13);
     position: relative;
-    top: 10px;
+    top: -11px;
 }
 
 h4{

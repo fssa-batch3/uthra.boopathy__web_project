@@ -29,8 +29,8 @@
         </div>
 
         <div>
-            <label> Address : </label>
-            <input type="text" id="address">
+            <label class="ads"> Address : </label>
+            <textarea id="address"> </textarea>
         </div>
 
         <div>
@@ -91,7 +91,7 @@
                                                 </div>
                                                 <div>
                                                     <p>Copy rights @ 2022</p>
-                                                </div>
+                                                </div> 
                                             </div> 
        </div>
 
@@ -100,13 +100,81 @@
        <script src="../../assets/js/header.js"> </script>
        
        <script>
-        const unique_id = JSON.parse(localStorage.getItem("uniqueID"));
+const unique_id = JSON.parse(localStorage.getItem("uniqueID"));
         const user_list = JSON.parse(localStorage.getItem("user_cred"));
 
         const check = user_list.find((u) => u.phonenumber === unique_id);
 
         document.getElementById("uname").value = check.uname;
+        
+    document.querySelector("button").addEventListener("click", () => {
+  
+        const uname = document.getElementById("uname").value
+        const address = document.getElementById("address").value;
+        const pincode = document.getElementById("pincode").value;
+        const state = document.getElementById("state").value;
+        const address_id = uuidv4();
+
+        const add_list = JSON.parse(localStorage.getItem("address_list")) || [];
+
+add_list.push({
+  buyer_id: unique_id,
+  uname,
+  address,
+  pincode,
+  state,
+  address_id
+});
+
+localStorage.setItem("address_list", JSON.stringify(add_list));
+alert("Your address has been successfully added.");
+window.location.href = "../homepage/address.html";
+
+    });
+
+const add_list = JSON.parse(localStorage.getItem("address_list"));
+
+// to set the location to the variable queryString
+const queryString = window.location.search;
+
+// to get the location
+const urlParams = new URLSearchParams(queryString);
+
+// to show the name as what we have to show
+const address_id = urlParams.get("address_id");
+
+// checking from the array and getting the particular id
+const add_id = add_list.find((e) => e.address_id === address_id);
+
+document.getElementById("uname").value = add_id.uname;
+document.getElementById("address").value = add_id.address;
+document.getElementById("pincode").value = add_id.pincode;
+document.getElementById("state").value = add_id.state;
+
+document.querySelector("button").addEventListener("click", () => {
+  const uname = document.getElementById("uname").value;
+  const address = document.getElementById("address").value;
+  const pincode = document.getElementById("pincode").value;
+  const state = document.getElementById("state").value;
+
+  // Update the address details directly in the add_id object
+  if (add_id) {
+    add_id.uname = uname;
+    add_id.address = address;
+    add_id.pincode = pincode;
+    add_id.state = state;
+
+    // Store the updated address list back into localStorage
+    localStorage.setItem("address_list", JSON.stringify(add_list));
+
+    alert("Your address has been successfully updated.");
+  } else {
+    alert("Address not found. Unable to update.");
+  }
+});
 </script>
+
+<script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
 
     </body>
 </html>

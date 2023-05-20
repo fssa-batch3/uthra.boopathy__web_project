@@ -204,13 +204,13 @@ button{
 }
 
 .remove {
-    position: relative;
-    left: 400px;
+    margin-left: 5.2rem;
+    margin-top: -2.1rem;
 }
 
 .adding{
-    position: relative;
-    left: 450px;
+    margin-left: 5.2rem;
+    margin-top: -2.1rem;
 }
 
 .add{

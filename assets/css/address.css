@@ -87,6 +87,7 @@ h1{
     border: 0;
     border-radius: 5px;
     margin-left: 75rem;
+    cursor: pointer;
 }
 
 .container {
@@ -100,8 +101,8 @@ h1{
 }
 
 h3 {
-    padding-top: 50px;
-    padding-left: 60px;
+    margin-left: 5rem;
+    margin-top: -1.5rem;
 }
 
 .address p {
@@ -127,25 +128,39 @@ section {
 }
 
 h6 {
-    padding: 2rem 6rem;
+    padding: 1rem 6rem;
     font-size: 22px;
     font-weight: bold;
 }
 
-.add_card p {
-    padding: 1rem 1rem;
-    font-size: 18px;
+.detail p {
+    font-size: 20px;
+    padding-top: .3px;
+    padding-left: 35px;
+    padding-right: 10px;
+}
+
+.detail {
+    height: 30px;
+    width: 100%;
+    scrollbar-width: none;
+}
+
+.detail::-webkit-scrollbar {
+    display: block;
 }
 
 .set {
-    height: 40px;
+    height: 35px;
     width: 150px;
     background-color: purple;
     color: white;
     font-size: 18px;
     border: 0;
     border-radius: 4px;
-    margin: 6rem 5.8rem;
+    cursor: pointer;
+    margin-top: 7rem;
+    margin-left: 5.5rem;
 }  
 
 footer{

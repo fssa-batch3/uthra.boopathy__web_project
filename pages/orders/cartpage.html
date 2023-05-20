@@ -92,6 +92,7 @@ div_arrow.append(a_arrow);
 // < i >  arrow </i>
 
 const i_arrow = document.createElement("i");
+i_arrow.setAttribute("title", "Back");
 i_arrow.setAttribute("class", "fa-solid fa-arrow-left");
 a_arrow.append(i_arrow);
 
@@ -247,11 +248,83 @@ for (let l = 0; l < match_pdt.length; l++) {
 
 console.log(total);
 
-// <div class = "total" > </div>
+if (match_pdt.length === 0) {
+  const div_total = document.createElement("div");
+  div_total.setAttribute("class", "total");
+  div_total.setAttribute("style", "display: none");
 
-const div_total = document.createElement("div");
-div_total.setAttribute("class", "total");
-// console.log(div_total);
+// <div></div>
+
+const div_price = document.createElement("div");
+div_total.append(div_price);
+
+const sum = document.createElement("p");
+sum.innerText = "SUMMARY";
+div_price.append(sum);
+console.log(sum);
+
+// <p>
+
+const p_sub = document.createElement("p");
+p_sub.innerText = "SUB TOTAL :";
+div_price.append(p_sub);
+
+// <p>
+
+const p_del = document.createElement("p");
+p_del.innerText = "DELIVERY CHARGE :";
+p_sub.append(p_del);
+
+// <p>
+
+const p_t_a = document.createElement("p");
+p_t_a.innerText = "TOTAL AMOUNT :";
+p_del.append(p_t_a);
+
+//  <div> <div>
+
+const div_amt = document.createElement("div");
+div_total.append(div_amt);
+// console.log(div_amt);
+
+// <p>
+
+let p_amt = document.createElement("p");
+// p_amt.setAttribute("id", "discount_price");
+p_amt.innerText = `₹  ${total}`;
+div_amt.append(p_amt);
+
+// <p>
+
+const p_free = document.createElement("p");
+p_free.innerText = "FREE";
+p_amt.append(p_free);
+
+// <p>
+
+p_amt = document.createElement("p");
+p_amt.setAttribute("class", "total_amt");
+p_amt.innerText = `₹  ${total}`;
+p_free.append(p_amt);
+
+// <div>
+
+const div_btn = document.createElement("div");
+div_total.append(div_btn);
+
+// < button class = "buy" > </button>
+
+const button_buy = document.createElement("button");
+button_buy.setAttribute("class", "buy");
+button_buy.innerText = "BUY NOW";
+div_btn.append(button_buy);
+// console.log(button_buy);
+
+document.querySelector("section").append(div_total);
+}
+else {
+  const div_total = document.createElement("div");
+  div_total.setAttribute("class", "total");
 
 // <div></div>
 
@@ -316,6 +389,7 @@ div_btn.append(button_buy);
 // console.log(button_buy);
 
 document.querySelector("section").append(div_total);
+}
 
 const div_back = document.createElement("div");
 div_back.setAttribute("class", "back");
@@ -324,24 +398,52 @@ const div_row = document.createElement("div");
 div_row.setAttribute("class", "row");
 div_back.append(div_row);
 
+const loc = document.createElement("i");
+loc.setAttribute("class", "fa-sharp fa-solid fa-location-dot");
+loc.setAttribute("style", "font-size:25px; margin-top:2rem; margin-left:-2rem")
+loc.setAttribute("title", "Location");
+div_row.append(loc);
+
 const addresses = document.createElement("b");
 addresses.setAttribute("class", "address");
+addresses.setAttribute("style", "margin-top:-1.7rem")
 addresses.innerText = "Delivery Address : "
 div_row.append(addresses);
 
-const user_list = JSON.parse(localStorage.getItem("user_cred"));
-const check_user = user_list.find((h) => h.phonenumber === unique_id); 
+const user_list = JSON.parse(localStorage.getItem("default_address")); 
 // console.log(check_user);
 
 const addr = document.createElement("p");
 addr.setAttribute("class", "address");
-addr.innerText = check_user.address;
 div_row.append(addr);
+
+const pin = document.createElement("p");
+pin.setAttribute("class", "address");
+div_row.append(pin);
+
+const state = document.createElement("p");
+state.setAttribute("class", "address");
+div_row.append(state);
 
 const change = document.createElement("button");
 change.setAttribute("class", "change")
-change.innerText = "Change";
 div_back.append(change);
+
+if(user_list){
+addr.innerText = user_list.address;
+pin.innerText = user_list.pincode;
+state.innerText = user_list.state;
+change.innerText = "Change";
+}
+
+if(!user_list){
+  const user_cred = JSON.parse(localStorage.getItem("user_cred"));
+  const user = user_cred.find((e) => e.phonenumber === unique_id);
+addr.innerText = user.address;
+pin.innerText = user.pincode;
+state.innerText = user.state;
+change.innerText = "Change";
+}
 
 document.querySelector("section").append(div_back);
 

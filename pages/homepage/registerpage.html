@@ -71,6 +71,8 @@
   const age = "";
   const address = "";
   const email = "";
+  const pincode = "";
+  const state = "";
   const user_uuid = uuidv4();
   // validate user input
 
@@ -96,6 +98,8 @@
                 address,
                 email,
                 age,
+                pincode,
+                state
               });
               localStorage.setItem("user_cred", JSON.stringify(user_cred));
               console.log(localStorage.getItem("user_cred"));
