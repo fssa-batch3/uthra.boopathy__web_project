@@ -192,6 +192,7 @@ input {
     font-size: 18px;
     color: white;
     cursor: pointer;
+    margin-left: -10rem;
 }
 
 button a {
@@ -223,7 +224,7 @@ s{
 }
 
 .total {
-    width: 75%;
+    width: 65%;
     height: 30vh;
     display: flex;
     border-radius: 8px;
@@ -232,12 +233,22 @@ s{
     justify-content: space-around;
     align-items: center;
     margin-top: 100px;   
-    margin-left: 180px;
+    margin-left: 16rem;
 }
 
-.total div  {
-   padding-left: 2rem;
+.sum {
+    margin-bottom: 13rem;
+    margin-left: -3rem;
 }
+
+.sub {
+   margin-left: -22rem;
+}
+
+.amt {
+    margin-left: -13rem;
+ }
+ 
 
 .total div p {
     padding-top: 2rem;
@@ -245,7 +256,7 @@ s{
 }
 
 .back {
-    width: 75%;
+    width: 65%;
     height: 20vh;
     display: flex;
     border-radius: 8px;
@@ -254,7 +265,7 @@ s{
     justify-content: space-around;
     align-items: center;
     margin-top: 100px;   
-    margin-left: 120px;
+    margin-left: 16rem;
 }
 
 .row {

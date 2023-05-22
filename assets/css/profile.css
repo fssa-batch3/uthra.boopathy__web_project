@@ -214,7 +214,6 @@ input[id="pincode"]{
     width: 218px;
     border: none;
     border-radius: 3px;
-    font-size: 15px;
     position: relative;
     left: 185px;
     outline: none;
@@ -227,7 +226,6 @@ input[id="state"]{
     width: 218px;
     border: none;
     border-radius: 3px;
-    font-size: 15px;
     position: relative;
     left: 185px;
     outline: none;

@@ -86,20 +86,16 @@
    
     <script>
         const products = JSON.parse(localStorage.getItem("ordered_items"));
-        console.log(products);
 
         const order_id = JSON.parse(localStorage.getItem("order_id"));
-        console.log(order_id);
         
         const order_pdts = products.filter(
           (e) => e.order_id === order_id
         );
-        console.log(order_pdts);
 
             const product = JSON.parse(localStorage.getItem("add_products"));
 
             const check = product.filter((m) => order_pdts.some((h) => h.product_id === m.product_uuid));
-            console.log(check);
 
           for (let i = 0; i < check.length; i++) {
 
@@ -112,7 +108,6 @@
 
             const div = document.createElement("div");
             div_details.append(div)
-            console.log(div);
 
             // <img>
 
@@ -176,12 +171,19 @@
             // qty.setAttribute("id", "original_price");
             amt.innerText = `Total amount : ₹${ check[i].discount_price * order_pdts[i].product_quantity}`;
             div_info.append(amt);
-            console.log(amt);
 
             const seller_id = document.createElement("p");
             seller_id.setAttribute("class", "qty");
             seller_id.innerText = `Seller Phone number : ${  check[i].user_id}`;
             div_info.append(seller_id);
+
+            const user_list = JSON.parse(localStorage.getItem("user_cred"));
+            const checking = user_list.find((h) => h.user_id === products[i].user_id);
+
+            const seller_name = document.createElement("p");
+            seller_name.setAttribute("class", "qty");
+            seller_name.innerText = `Seller Name : ${  checking.uname}`;
+            div_info.append(seller_name);
 
             document.querySelector("div").append(div_details);
             // document.querySelector(".details").append(div_info);
