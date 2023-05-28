@@ -72,10 +72,9 @@ function header() {
     const add_to_cart = JSON.parse(localStorage.getItem("cart"));
     const uniqueid = JSON.parse(localStorage.getItem("uniqueID"));
     const cart_count = add_to_cart.filter(
-      (pdt) => pdt.buyer_id === uniqueid
-    ).length;
+      (pdt) => pdt.buyer_id === uniqueid).length;
     const count = document.getElementById("count");
-    // const count = JSON.parse(localStorage.getItem("cart_count"));
+    const counts = JSON.parse(localStorage.getItem("cart_count"));
     count.innerText = cart_count;
   }
 }
@@ -85,22 +84,6 @@ function logout() {
     localStorage.removeItem("uniqueID");
     localStorage.removeItem("addressID");
     localStorage.removeItem("default_address");
-
-    const wish = JSON.parse(localStorage.getItem("wish"));
-
-    const unique_id = JSON.parse(localStorage.getItem("uniqueID"));
-    console.log(unique_id);
-
-    const check = wish.find((e) => e.buyer_id === unique_id);
-    console.log(check);
-
-    const index = wish.indexOf(check);
-    console.log(index);
-
-    const remove_pdts = wish.splice(index, 1);
-    console.log(remove_pdts);
-
-    localStorage.setItem("wish", JSON.stringify(wish));
 
     window.location.href = `${origin}/pages/homepage/frontpage.html`;
   }

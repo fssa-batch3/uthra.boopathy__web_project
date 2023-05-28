@@ -109,7 +109,7 @@
         <script src="../../../assets/js/header.js"></script>
 
         <script>
-const add_product = JSON.parse(localStorage.getItem("add_products")).filter(
+const add_product = JSON.parse(localStorage.getItem("product_details")).filter(
   (e) => e.status === true && e.category === "Sandal" && e.type === "4"
 );
 
@@ -143,6 +143,9 @@ a_arrow.append(i_arrow);
 document.querySelector("div.arrows").append(div_arrow);
 
 for (let k = 0; k < add_product.length; k++) {
+
+    const size_list = JSON.parse(localStorage.getItem("product_size_details")).filter((o) => o.product_uuid === add_product[k].product_uuid)
+
   // <div class = products >
 
   div_products = document.createElement("div");

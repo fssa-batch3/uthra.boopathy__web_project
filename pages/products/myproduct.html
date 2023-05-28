@@ -54,7 +54,7 @@ i_arrow.setAttribute("class", "fa-solid fa-arrow-left");
 a_arrow.append(i_arrow);
 
 document.querySelector("div.arrows").append(div_arrow);
-const add_product = JSON.parse(localStorage.getItem("add_products"));
+const add_product = JSON.parse(localStorage.getItem("product_details"));
 // let uuid = JSON.parse(localStorage.getItem("product_uuid"));
 console.log(add_product);
 
@@ -77,7 +77,7 @@ let p_percent;
 let b;
 let div_star;
 let span;
-let i;
+let p_size;
 let strong_pdt;
 let div_pdt;
 let p_pdt;
@@ -90,6 +90,12 @@ let button_add;
 let button_del;
 
 for (let k = 0; k < check_pdt.length; k++) {
+
+  const size_list = JSON.parse(localStorage.getItem("product_size_details"));
+
+const fil_size = size_list.filter((o) => o.product_uuid === check_pdt[k].product_uuid)
+
+
   // <div class = "box" > </div>
 
   div_box = document.createElement("div");
@@ -142,7 +148,7 @@ for (let k = 0; k < check_pdt.length; k++) {
 
   p_org = document.createElement("p");
   p_org.setAttribute("id", "original_price");
-  p_org.innerText = `₹${check_pdt[k].discount_price}`;
+  p_org.innerText = `₹${fil_size[0].discount_price}`;
   div_price.append(p_org);
 
   // <p> </p>
@@ -154,7 +160,7 @@ for (let k = 0; k < check_pdt.length; k++) {
 
   s = document.createElement("s");
   s.setAttribute("id", "discount_price");
-  s.innerText = `₹${check_pdt[k].original_price}`;
+  s.innerText = `₹${fil_size[0].original_price}`;
   p_dis.append(s);
 
   // <p> </p>
@@ -166,7 +172,7 @@ for (let k = 0; k < check_pdt.length; k++) {
 
   b = document.createElement("b");
   b.setAttribute("id", "discount_percent");
-  b.innerText = `${check_pdt[k].discount_percent}% off`;
+  b.innerText = `${fil_size[0].discount_percent}% off`;
   p_percent.append(b);
 
   // <div class = "star"> </div>
@@ -175,21 +181,49 @@ for (let k = 0; k < check_pdt.length; k++) {
   div_star.setAttribute("class", "star");
   div_right.append(div_star);
 
+if (fil_size[0].size === "0" || fil_size[0].size === "1" || fil_size[0].size === "2" ||
+fil_size[0].size === "3" || fil_size[0].size === "4" || fil_size[0].size === "5" ||
+fil_size[0].size === "6" || fil_size[0].size === "7") {
+
+  div_star.setAttribute("style", "display: none;")
+
+}
+
+else {
+
+  div_star.setAttribute("style", "display: flex;")
+
+}
+
   // <span> </span>
 
   span = document.createElement("span");
   span.setAttribute("class", "stars");
-  span.innerText = "Reviews:";
+  span.innerText = "Sizes :";
   div_star.append(span);
 
-  for (let j = 0; j < 5; j++) {
-    // <i> </i>
 
-    i = document.createElement("i");
-    i.setAttribute("class", "fa fa-star");
-    i.setAttribute("style", "font-size: 24px;color: gold");
-    div_star.append(i);
+  for (let j = 0; j < fil_size.length; j++) {
+      // <p> 
+
+      p_size = document.createElement("p");
+      p_size.setAttribute("class", "size");
+      p_size.innerHTML = fil_size[j].size;
+      div_star.append(p_size);
+    
   }
+
+  const div_qty = document.createElement("div");
+  div_qty.setAttribute("class", "qty");
+  div_right.append(div_qty);
+  
+  p_qty = document.createElement("p");
+  p_qty.innerText = "Quantity :";
+  div_qty.append(p_qty);
+
+  p_q = document.createElement("p");
+  p_q.innerText = fil_size[0].quantity_seller;
+  div_qty.append(p_q);
 
   // < strong> </strong>
 
@@ -299,7 +333,7 @@ product_details.forEach((find) => {
   find.addEventListener("click", (e) => {
     const product_description = e.currentTarget.dataset.id;
     localStorage.setItem("productDetail", JSON.stringify(product_description));
-    window.location.href = `../products/editproduct.html?product_id=${product_description}`;
+    window.location.href = `../products/addproduct.html?product_id=${product_description}`;
     console.log(product_details);
   });
 });

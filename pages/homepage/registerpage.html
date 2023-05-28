@@ -101,7 +101,19 @@
                 pincode,
                 state
               });
+
+              const address_list = JSON.parse(localStorage.getItem("address_list")) || [];
+
+              address_list.push ({
+                user_uuid,
+                address,
+                pincode,
+                state, 
+                address_id: user_uuid
+              })
+
               localStorage.setItem("user_cred", JSON.stringify(user_cred));
+              localStorage.setItem("address_list", JSON.stringify(address_list));
               console.log(localStorage.getItem("user_cred"));
               document.querySelector("form").reset();
               document.getElementById("phonenumber").focus();

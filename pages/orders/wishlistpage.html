@@ -110,12 +110,45 @@ const unique_id = JSON.parse(localStorage.getItem("uniqueID"));
 const check_pdt = wishlist_products.filter((e) => e.buyer_id === unique_id);
 console.log(check_pdt);
 
-const all = JSON.parse(localStorage.getItem("add_products"));
+const all = JSON.parse(localStorage.getItem("product_details"));
 
 const check = all.filter((product) => check_pdt.some((id) => id.product_id === product.product_uuid));
 console.log(check);
 
+
+if (check.length === 0) {
+
+// <div class = products >
+
+const div_container = document.createElement("div");
+div_container.setAttribute("class", "container");
+
+const h3_title = document.createElement("h3");
+h3_title.setAttribute("class", "not");
+h3_title.innerText = "You have not added any products yet";
+div_container.append(h3_title);
+
+const button = document.createElement("button");
+button.setAttribute("class", "add");
+button.innerText = "ADD PRODUCTS";
+div_container.append(button);
+
+document.querySelector("section").append(div_container);
+
+
+  // order products
+
+  document.querySelector("button.add").addEventListener("click",() => {
+  window.location.href = "../products/tc.html";
+})
+    
+
+}  else {
+
 for (let j = 0; j < check.length; j++) {
+
+  const size_list = JSON.parse(localStorage.getItem("product_size_details")).filter((p) => p.product_uuid === check[j].product_uuid)
+
   // <div class = products >
 
   const div_products = document.createElement("div");
@@ -165,29 +198,30 @@ for (let j = 0; j < check.length; j++) {
 
   const p_org = document.createElement("p");
   p_org.setAttribute("id", "original_price");
-  p_org.innerText = `₹${check[j].discount_price}  `;
+  p_org.innerText = `₹${size_list[0].discount_price}  `;
   h3_title.append(p_org);
 
   // <p> </p>
 
-  // p_dis = document.createElement("p");
-  // h3_title.append(p_dis);
+  p_dis = document.createElement("p");
+  h3_title.append(p_dis);
 
-  // <s> </s>
+ // <s> </s>
 
   const s = document.createElement("s");
   s.setAttribute("id", "discount_price");
-  s.innerText = `₹${check[j].original_price}`;
+  s.innerText = `₹${size_list[0].original_price}`;
   p_org.append(s);
 
   // <span> </span>
 
   const span = document.createElement("span");
   span.setAttribute("class", "percent");
-  span.innerText = `   ${check[j].discount_percent}% off`;
+  span.innerText = `   ${size_list[0].discount_percent}% off`;
   p_org.append(span);
 
   document.querySelector("div.thumbnail").append(div_products);
+}
 }
 
   const products = document.querySelectorAll("#del");
@@ -224,7 +258,6 @@ for (let j = 0; j < check.length; j++) {
       const product_id = e.currentTarget.dataset.del;
       localStorage.setItem("products_id", JSON.stringify(product_id));
       console.log(product_id);
-      if (window.confirm("Are you sure to move this product to cart?")) {
         const id = JSON.parse(localStorage.getItem("products_id"));
         const user_id = JSON.parse(localStorage.getItem("uniqueID"));
         const all_products = JSON.parse(localStorage.getItem("wish"));
@@ -232,18 +265,25 @@ for (let j = 0; j < check.length; j++) {
         const pdts = all_products.find(
           (g) => g.product_id === id && g.buyer_id === user_id
         );
-
         console.log(pdts);
         const indexOfProduct = all_products.indexOf(pdts);
-        all_products.splice(indexOfProduct, 1);
-        console.log(indexOfProduct);
         const cart_products = JSON.parse(localStorage.getItem("cart")) || [];
-        cart_products.push(pdts);
-        localStorage.setItem("cart", JSON.stringify(cart_products));
-        localStorage.setItem("wish", JSON.stringify(all_products));
-      }
+        const check_cart = cart_products.find((o) => o.product_id === id);
+        if(check_cart) {
+          alert("You have already added this product to your cart.");
+        }
+        else {
+          if(window.confirm("Are you sure to move this product to your cart ?")) {
+            all_products.splice(indexOfProduct, 1);
+            console.log(indexOfProduct);
+            cart_products.push(pdts);
+            localStorage.setItem("cart", JSON.stringify(cart_products));
+            localStorage.setItem("wish", JSON.stringify(all_products));
 
-      window.location.reload();
+            window.location.reload();
+          }
+        }
+
     });
   });
 
@@ -258,7 +298,8 @@ product_details.forEach((find) => {
     console.log(product_details);
   });
 });
-       </script>
+
+</script>
 
     </body>
 </html>         

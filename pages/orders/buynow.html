@@ -49,10 +49,11 @@
 
             <div class="add">
                 <label> Address: </label>
-                <textarea id="address" required = "true"> </textarea>
+                <textarea id="address" disabled = "true"> </textarea>
             </div>
-            <input type="number" id="pincode" placeholder="Pincode" maxlength="6" size="6" required>
-            <input type="text" id="state" placeholder="State" required>
+            <input type="number" id="pincode" placeholder="Pincode" maxlength="6" size="6" disabled>
+            <input type="text" id="state" placeholder="State" disabled>
+            <a href="../homepage/address.html"> <button class="change"> Change address </button> </a>
 
             <div class="no">
                 <label> Phone number: </label>
@@ -61,12 +62,12 @@
 
             <div class="quantity">
                 <label> Quantity: </label>
-                <input type="number" id="product_quantity" required = "true" placeholder="1" value="1" min="1">
+                <input type="number" id="product_quantity" required = "true" placeholder="1" value="1" min="1" max="10">
             </div>
 
             <div class="cash">
                 <label> Payment: </label>
-                <select id="payment"> 
+                <select id="payment" required> 
                     <option value="select"> Select option </option>
                     <option value="online"> Online </option>
                     <option value="cash_on_delivery"> Cash on delivery </option>
@@ -137,19 +138,23 @@ const user_cred = JSON.parse(localStorage.getItem("user_cred"));
 const check_user = user_cred.find((f) => f.phonenumber === uniqueID);
 
 const product_id = JSON.parse(localStorage.getItem("productDetail"))
-const all_pdt = JSON.parse(localStorage.getItem("add_products"));
+const all_pdt = JSON.parse(localStorage.getItem("product_details"));
+const size_list = JSON.parse(localStorage.getItem("product_size_details"));
 
 const check_pdt = all_pdt.find((p) => p.product_uuid === product_id);
+console.log(check_pdt);
+
+const size_check = size_list.filter((p) => p.product_uuid === product_id);
 
 document.getElementById("image").setAttribute("src", check_pdt.image);
 document.getElementById("name").innerText = check_pdt.name;
-document.getElementById("original_price").innerText = check_pdt.original_price;
-document.getElementById("discount_price").innerText = check_pdt.discount_price;
-document.getElementById("discount_percent").innerText = check_pdt.discount_percent;
+document.getElementById("original_price").innerText = size_check[0].original_price;
+document.getElementById("discount_price").innerText = size_check[0].discount_price;
+document.getElementById("discount_percent").innerText = size_check[0].discount_percent;
 
 // getting details
 
-    const addressDetail = JSON.parse(localStorage.getItem("default_address"));
+    const addressDetail = JSON.parse(localStorage.getItem("default_address")) || {};
     const address_list = JSON.parse(localStorage.getItem("address_list"));
     const check_add = address_list.find((j) => j.address === addressDetail.address)
     console.log(check_add)
@@ -176,6 +181,12 @@ document.getElementById("state").value = check_add.state;
 const place_order = document.querySelector("button.place");
 
 place_order.addEventListener("click", () => {
+
+    if(uniqueID === check_pdt.user_id) {
+    alert("You can't buy this product! Because You only upload this product to sell.")
+} 
+else {
+
  const uname = document.getElementById("uname").value;
  const phonenumber = document.getElementById("phonenumber").value;
  const address = document.getElementById("address").value;
@@ -190,7 +201,7 @@ place_order.addEventListener("click", () => {
   const month = date.getMonth() + 1;
   const day = date.getDate();
   const set_date = new Date();
-  set_date.setDate(date.getDate() + 15);
+  set_date.setDate(date.getDate() + 5);
   const order_on = `${day}.${month}.${year}`;
   const delivered_on= `${set_date.getDate().toString().padStart(2, '0')}.${(set_date.getMonth() + 1).toString().padStart(2, '0')}.${set_date.getFullYear()}`;
 console.log(delivered_on);
@@ -223,6 +234,7 @@ console.log(delivered_on);
         product_id : check_pdt.product_uuid,
         buyer_id : uniqueID,
         seller_id : check_pdt.user_id,
+        discount_price : size_check[0].discount_price,
         order_id,
         product_quantity : quantity
     });
@@ -234,8 +246,11 @@ console.log(delivered_on);
     console.log(my_orders);
 
     window.location.href = "../orders/myorderspage.html";
-  }
+
+}
+}
 });
+
 </script>
 
     <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>

@@ -81,13 +81,9 @@
 const div_arrow = document.createElement("div");
 div_arrow.setAttribute("class", "arrow");
 
-// <a> link </a>
-
 const a_arrow = document.createElement("a");
 a_arrow.setAttribute("href", "../homepage/frontpage.html");
 div_arrow.append(a_arrow);
-
-// < i >  arrow </i>
 
 const i_arrow = document.createElement("i");
 i_arrow.setAttribute("title", "Back");
@@ -101,10 +97,14 @@ const add_to_cart = JSON.parse(localStorage.getItem("cart"));
 const unique_id = JSON.parse(localStorage.getItem("uniqueID"));
 
 const check_pdt = add_to_cart.filter((e) => e.buyer_id === unique_id);
+console.log(check_pdt)
 
-const all = JSON.parse(localStorage.getItem("add_products"));
+const all = JSON.parse(localStorage.getItem("product_details"));
 
 const match_pdt = all.filter((product) => check_pdt.some((id) => id.product_id === product.product_uuid));
+console.log(match_pdt);
+
+////   No products
 
 if (match_pdt.length === 0) {
 
@@ -120,8 +120,8 @@ if (match_pdt.length === 0) {
   div_container.append(div_details);
 
   const h3_title = document.createElement("h3");
-  h3_title.setAttribute("id", "name");
-  h3_title.innerText = "You are not yet add any products";
+  h3_title.setAttribute("class", "not");
+  h3_title.innerText = "You have not added any products yet";
   div_details.append(h3_title);
 
   const button = document.createElement("button");
@@ -131,9 +131,22 @@ if (match_pdt.length === 0) {
 
   document.querySelector("section").append(div_container);
 
-}  else {
+  // add products
+
+document.querySelector("button.add").addEventListener("click",() => {
+  window.location.href = "../products/tc.html";
+})
+
+} 
+
+////   showing  products   //// 
+
+else {
 
 for (let k = 0; k < match_pdt.length; k++) {
+
+  const size_list = JSON.parse(localStorage.getItem("product_size_details")).filter((p) => p.product_uuid === match_pdt[k].product_uuid)
+
   // <div class = products >
 
   const div_container = document.createElement("div");
@@ -170,22 +183,47 @@ for (let k = 0; k < match_pdt.length; k++) {
 
   const p_org = document.createElement("p");
   p_org.setAttribute("id", "original_price");
-  p_org.innerText = `₹${match_pdt[k].discount_price}`;
+  p_org.innerText = `₹${size_list[0].discount_price}`;
   div.append(p_org);
 
   // <s> </s>
 
   const s = document.createElement("s");
   s.setAttribute("id", "discount_price");
-  s.innerText = `₹${match_pdt[k].original_price}`;
+  s.innerText = `₹${size_list[0].original_price}`;
   div.append(s);
 
   // <span> </span>
 
   const span = document.createElement("span");
   span.setAttribute("class", "percent");
-  span.innerText = `${match_pdt[k].discount_percent}%off`;
+  span.innerText = `${size_list[0].discount_percent}%off`;
   div.append(span);
+
+
+  const div_size = document.createElement("div");
+  div.append(div_size);
+
+    // <p> </p>
+
+    const p_size = document.createElement("p");
+  // p_qty.setAttribute("class", "quantities");
+  p_size.innerText = "Size : " + size_list[0].size;
+  div.append(p_size);
+
+  if (size_list[0].size === "0" || size_list[0].size === "1" || size_list[0].size === "2" ||
+  size_list[0].size === "3" || size_list[0].size === "4" || size_list[0].size === "5" || 
+  size_list[0].size === "6" || size_list[0].size === "7") {
+
+    p_size.setAttribute("style", "display: none");
+
+  }
+
+  else {
+
+    p_size.setAttribute("style", "display: flex");
+
+  }
 
   // < div class = "quantity" > </div>
 
@@ -207,6 +245,7 @@ for (let k = 0; k < match_pdt.length; k++) {
   input.setAttribute("value", check_pdt[k].product_quantity);
   input.setAttribute("id", "product_quantity");
   input.setAttribute("min", "1");
+  input.setAttribute("max", "10")
   input.setAttribute("data-remove", check_pdt[k].product_id);
   p_qty.append(input);
 
@@ -236,7 +275,7 @@ for (let k = 0; k < match_pdt.length; k++) {
 let total = 0;
 
 for (let l = 0; l < match_pdt.length; l++) {
-  total += match_pdt[l].discount_price * check_pdt[l].product_quantity;
+  total += check_pdt[l].discount_price * check_pdt[l].product_quantity;
 }
 
 console.log(total);
@@ -406,8 +445,8 @@ addresses.setAttribute("style", "margin-top:-1.7rem")
 addresses.innerText = "Delivery Address : "
 div_row.append(addresses);
 
-const users = JSON.parse(localStorage.getItem("default_address")); 
-const user_list = JSON.parse(localStorage.getItem("address_list"));
+const users = JSON.parse(localStorage.getItem("default_address")) || {}; 
+const user_list = JSON.parse(localStorage.getItem("address_list")) || [];
 
 const check_add = user_list.find((f) => f.address === users.address);
 
@@ -526,11 +565,12 @@ const product = document.querySelectorAll("button.wish");
 product.forEach((check) => {
   check.addEventListener("click", (e) => {
     const product_id = e.currentTarget.dataset.remove;
+    console.log(product_id);
 
     localStorage.setItem("products_id", JSON.stringify(product_id));
 
-    if (window.confirm("Are you sure to move this product to wishlist?")) {
       const id = JSON.parse(localStorage.getItem("products_id"));
+      console.log(id);
 
       const user_id = JSON.parse(localStorage.getItem("uniqueID"));
 
@@ -542,19 +582,33 @@ product.forEach((check) => {
 
       const indexOfProduct = all_products.indexOf(pdts);
 
-      all_products.splice(indexOfProduct, 1);
-
       const wish_products = JSON.parse(localStorage.getItem("wish")) || [];
 
-      wish_products.push(pdts);
+      const check_wish = wish_products.find((o) => o.product_id === id);
 
-      localStorage.setItem("wish", JSON.stringify(wish_products));
+      if(check_wish) {
 
-      localStorage.setItem("cart", JSON.stringify(all_products));
-    }
+        alert("You already added this product to your wishlist.")
 
-    window.location.reload();
-  });
+      } else {
+
+        if (window.confirm ("Are you sure to move this product to wishlist ?")) {
+
+          all_products.splice(indexOfProduct, 1);
+
+          wish_products.push(pdts);
+
+          localStorage.setItem("wish", JSON.stringify(wish_products));
+
+          localStorage.setItem("cart", JSON.stringify(all_products));
+
+          window.location.reload();
+
+        }
+
+      }
+    
+    });
 });
 
 // BUY NOW 
@@ -562,12 +616,6 @@ product.forEach((check) => {
 document.querySelector("button.buy").addEventListener("click",() => {
   window.location.href = "../orders/cart-buynowpage.html";
 } )
-
-// add products
-
-document.querySelector("button.add").addEventListener("click",() => {
-  window.location.href = "../products/tc.html";
-})
 </script>
 
     </body>

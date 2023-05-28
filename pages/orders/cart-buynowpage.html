@@ -79,8 +79,8 @@
                 </select>
             </div>
 
-            <button class="place"> PLACE ORDER </button> 
-
+            <button class="place"> PLACE ORDER </button>
+            
         </div>
 
         <footer>
@@ -144,14 +144,17 @@ const products = JSON.parse(localStorage.getItem("cart"));
 const check = products.filter((user) => user.buyer_id === uniqueID);
 // console.log(check);
 
-const all_pdt = JSON.parse(localStorage.getItem("add_products"));
+const all_pdt = JSON.parse(localStorage.getItem("product_details"));
+const size_list = JSON.parse(localStorage.getItem("product_size_details"));
 
 const check_pdt = all_pdt.filter((find) => check.some((pdt) => pdt.product_id === find.product_uuid));
-// console.log(check_pdt);
 
 // creating the image
 
 for (let i=0; i<check_pdt.length; i++) {
+
+    const size_check = size_list.filter((p) => check.some((o) => o.product_id === p.product_uuid));
+    console.log(size_check);
 
     // <div>
 
@@ -178,15 +181,15 @@ for (let i=0; i<check_pdt.length; i++) {
     div_details.append(h3);
 
     const p = document.createElement("p");
-    p.innerText = `₹${ check_pdt[i].discount_price}`;
+    p.innerText = `₹${ size_check[i].discount_price}`;
     div_details.append(p);
 
     const s = document.createElement("s");
-    s.innerText = `₹${ check_pdt[i].original_price}`;
+    s.innerText = `₹${ size_check[i].original_price}`;
     p.append(s);
 
     const b = document.createElement("b");
-    b.innerText = `   ${check_pdt[i].discount_percent}% off`;
+    b.innerText = `   ${size_check[i].discount_percent}% off`;
     p.append(b);
 
     const qty = check.find((e) => e.product_id === check_pdt[i].product_uuid);
@@ -199,7 +202,7 @@ for (let i=0; i<check_pdt.length; i++) {
 
     const total = document.createElement("p");
     total.setAttribute("class", "tot");
-    total.innerText = `Total amount : ₹${ check_pdt[i].discount_price * qty.product_quantity}`;
+    total.innerText = `Total amount : ₹${ size_check[i].discount_price * qty.product_quantity}`;
     p.append(total);
 
     document.querySelector(".left").append(div);
@@ -208,7 +211,7 @@ for (let i=0; i<check_pdt.length; i++) {
 let total_amt = 0;
 
 for (let l = 0; l < check_pdt.length; l++) {
-  total_amt += check_pdt[l].discount_price * qty.product_quantity;
+  total_amt += size_check[l].discount_price * qty.product_quantity;
 }
 console.log(total_amt);
 
@@ -239,12 +242,21 @@ document.getElementById("state").value = check_add.state;
         document.getElementById("state").value = check_user.state;
     }
 
-
 document.getElementById("pdt").value =  check_pdt.length;;
 
 const place_order = document.querySelector("button.place");
 
 place_order.addEventListener("click", () => {
+
+    let cart_items = JSON.parse(localStorage.getItem("cart"));
+    console.log(cart_items);
+
+cart_items = "";
+
+localStorage.setItem("cart", JSON.stringify(cart_items));
+
+console.log(localStorage.setItem("cart", JSON.stringify(cart_items)));
+
  const uname = document.getElementById("uname").value;
  const phonenumber = document.getElementById("phonenumber").value;
  const address = document.getElementById("address").value;
@@ -259,7 +271,7 @@ place_order.addEventListener("click", () => {
   const month = date.getMonth() + 1;
   const day = date.getDate();
   const set_date = new Date();
-  set_date.setDate(date.getDate() + 15);
+  set_date.setDate(date.getDate() + 5);
   const order_on = `${day}.${month}.${year}`;
   const delivered_on= `${set_date.getDate().toString().padStart(2, '0')}.${(set_date.getMonth() + 1).toString().padStart(2, '0')}.${set_date.getFullYear()}`;
 console.log(delivered_on);
@@ -289,9 +301,9 @@ console.log(delivered_on);
     const ordered_items = JSON.parse(localStorage.getItem("ordered_items")) || [];
 
     for ( let c = 0; c < check.length; c++) {
-        check[c].order_id = order_id
+        check[c].order_id = order_id        
     }
-
+    
     ordered_items.push(...check);
     console.log(ordered_items);
 
@@ -301,6 +313,7 @@ console.log(delivered_on);
     console.log(my_orders);
 
     window.location.href = "../orders/myorderspage.html";
+
   }
 });
 </script>

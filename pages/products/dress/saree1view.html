@@ -24,9 +24,31 @@
         <div class="detail">
         </div>
 
-        <div class="thumbnail"> </div>
-
     </section> 
+
+    <h5 class="rev"> REVIEWS : </h5>
+
+    <button class="rev_b"> ADD REVIEWS </button>
+
+    <div class="rev_sec">
+      
+      <!-- <div class="reviews">
+        <div class="rname"> 
+          <img src="../../../assets/images/avatar.jpg" alt="pic" height="50px" width="50px">
+          <p id="uname"> Uthra B </p>
+        </div>
+        <p class="com"> Comments : </p>  
+        <p id="reviews"> Good dress.... Very comfortable </p>  
+      </div> -->
+
+    </div>
+
+    <div class="left-b"> </div>
+    <h6> SIMILAR PRODUCTS </h6>
+
+    <div class="right-b"> </div>
+
+    <div class="thumbnail"> </div>
 
         <footer>
             <div class="top">
@@ -78,7 +100,7 @@
     <script src="../../../../assets/js/header.js"></script>
 
     <script>
-const add_product = JSON.parse(localStorage.getItem("add_products"));
+const add_product = JSON.parse(localStorage.getItem("product_details"));
 
 // to set the location to the variable queryString
 
@@ -95,6 +117,9 @@ const product_id = urlParams.get("product_id");
 // checking from the array and getting the particular id
 
 const unique_id = add_product.find((e) => e.product_uuid === product_id);
+console.log(unique_id)
+
+const size_list = JSON.parse(localStorage.getItem("product_size_details")).filter((o) => o.product_uuid === unique_id.product_uuid)
 
 // console.log(unique_id);
 
@@ -165,7 +190,7 @@ div_right.append(div_price);
 
 const p_org = document.createElement("p");
 p_org.setAttribute("id", "original_price");
-p_org.innerText = `₹${unique_id.discount_price}  `;
+p_org.innerText = `₹${size_list[0].discount_price}  `;
 div_price.append(p_org);
 
 // <p> </p>
@@ -177,7 +202,7 @@ div_price.append(p_dis);
 
 const s = document.createElement("s");
 s.setAttribute("id", "discount_price");
-s.innerText = `₹${unique_id.original_price}`;
+s.innerText = `₹${size_list[0].original_price}`;
 p_dis.append(s);
 
 // <p> </p>
@@ -189,7 +214,7 @@ div_price.append(p_percent);
 
 const b = document.createElement("b");
 b.setAttribute("id", "discount_percent");
-b.innerText = `${unique_id.discount_percent}% off`;
+b.innerText = `${size_list[0].discount_percent}% off`;
 p_percent.append(b);
 
 // <div class = "star"> </div>
@@ -202,16 +227,33 @@ div_right.append(div_star);
 
 const span = document.createElement("span");
 span.setAttribute("class", "stars");
-span.innerText = "Reviews:";
+span.innerText = "Sizes :";
 div_star.append(span);
 
-for (let j = 0; j < 5; j++) {
-  // <i> </i>
 
-  const i = document.createElement("i");
-  i.setAttribute("class", "fa fa-star");
-  i.setAttribute("style", "font-size: 24px;color: gold");
-  div_star.append(i);
+if (size_list[0].size === "0" || size_list[0].size === "1" || size_list[0].size === "2" ||
+size_list[0].size === "3" || size_list[0].size === "4" || size_list[0].size === "5" ||
+size_list[0].size === "6" || size_list[0].size === "7") {
+
+div_star.setAttribute("style", "display: none;")
+
+}
+
+else {
+
+div_star.setAttribute("style", "display: flex;")
+
+}
+
+
+for (let j = 0; j < size_list.length; j++) {
+  // <p> </p>
+
+      const p_size = document.createElement("p");
+      p_size.setAttribute("class", "size");
+      p_size.innerHTML = size_list[j].size;
+      div_star.append(p_size);
+  
 }
 
 // < strong> </strong>
@@ -325,12 +367,12 @@ cart_products.addEventListener("click", () => {
 
     // console.log(id);
 
-    const all_products = JSON.parse(localStorage.getItem("add_products"));
+    const all_products = JSON.parse(localStorage.getItem("product_details"));
 
     // console.log(all_products);
 
     const products = all_products.find((e) => e.product_uuid === id);
-    // console.log(products);
+    console.log(products);
 
     const add_to_cart = JSON.parse(localStorage.getItem("cart")) || [];
     // console.log(add_to_cart);
@@ -352,6 +394,7 @@ cart_products.addEventListener("click", () => {
         seller_id: products.user_id,
         buyer_id: uniqueid,
         product_id: products.product_uuid,
+        discount_price: size_list[0].discount_price,
       });
 
       const cart_count = add_to_cart.filter((pdt) => pdt.buyer_id === uniqueid).length
@@ -361,7 +404,6 @@ cart_products.addEventListener("click", () => {
 
       localStorage.setItem("cart", JSON.stringify(add_to_cart));
 
-      window.location.href = "../../orders/cartpage.html";
     }
   }
 });
@@ -384,7 +426,7 @@ wish_products.addEventListener("click", () => {
 
     // console.log(id);
 
-    const all_products = JSON.parse(localStorage.getItem("add_products"));
+    const all_products = JSON.parse(localStorage.getItem("product_details"));
 
     // console.log(all_products);
 
@@ -410,12 +452,12 @@ wish_products.addEventListener("click", () => {
         product_quantity : 1,
         seller_id: products.user_id,
         buyer_id: user_id,
-        product_id: products.product_uuid
+        product_id: products.product_uuid,
+        discount_price: size_list[0].discount_price,
       });
 
       localStorage.setItem("wish", JSON.stringify(wishlist));
 
-      window.location.href = "../../orders/wishlistpage.html";
     }
   }
 });
@@ -440,60 +482,133 @@ buy_now.addEventListener("click", () => {
   }
 });
 
-// SIMILAR PRODUCTS
 
-// for (let k=0; k<=add_product; k++ ) {
+/////    ADD  REVIEWS     /////
+
+const review = document.querySelector("button.rev_b");
+
+review.addEventListener("click", () => {
+  const user_id = JSON.parse(localStorage.getItem("uniqueID"));
+
+  const users = JSON.parse(localStorage.getItem("user_cred"));
+
+  const productDetail = JSON.parse(localStorage.getItem("productDetail"));
+
+  const checking = users.find((e) => e.phonenumber === user_id);
+
+  if (checking) {
+    window.location.href = `../../homepage/reviewform.html?product_id=${productDetail}`;
+  } else {
+    alert("You are not logged in");
+  }
+});
+
+const reviews_list = JSON.parse(localStorage.getItem("reviews"));
+
+const reviews = reviews_list.filter((p) => p.product_id === product_id);
+
+  for (let r=0; r<reviews.length; r++) {
+
+    const div_reviews = document.createElement("div");
+    div_reviews.setAttribute("class", "reviews");
+    document.querySelector("div.rev_sec").append(div_reviews);
+
+    const div_name = document.createElement("div");
+    div_name.setAttribute("class", "rname");
+    div_reviews.append(div_name);
+
+    const p_img = document.createElement("img");
+    p_img.setAttribute("src", "../../../assets/images/avatar.jpg");
+    p_img.setAttribute("alt", "profile");
+    p_img.setAttribute("height", "50px");
+    p_img.setAttribute("width", "50px");
+    div_name.append(p_img);
+
+    const p_n = document.createElement("p");
+    p_n.setAttribute("id", "uname");
+    p_n.innerHTML = reviews[r].uname;
+    div_name.append(p_n);
+
+    const p_com = document.createElement("p");
+    p_com.setAttribute("class", "com");
+    p_com.innerHTML = "Comments :";
+    div_reviews.append(p_com);
+
+    const p_r = document.createElement("p");
+    p_r.innerHTML = reviews[r].review;
+    div_reviews.append(p_r);
+
+    div_rate = document.createElement("div");
+    div_rate.setAttribute("class", "stars");
+    div_reviews.append(div_rate);
+
+    for (let j = 1; j <= 5; j++) {
+    const star = document.createElement("span");
+    star.innerHTML = j <= reviews[r].rating ? "&#9733;" : "&#9734;";
+    star.style.color = j <= reviews[r].rating ? "#FFA500" : "";
+    div_rate.append(star);
+  }
+  // div_reviews.append(div_);
+}
+
+
+
+// SIMILAR PRODUCTS ////
+
+const pdt_len = 4;
+
+for (let k=0; k<pdt_len; k++ ) {
     
-  // const div_products = document.createElement("div");
-  // div_products.setAttribute("class", "products");
-  // div_products.setAttribute("data-id", add_product[0].product_uuid);
-  // console.log(div_products);
+  const div_products = document.createElement("div");
+  div_products.setAttribute("class", "products");
+  div_products.setAttribute("data-id", add_product[k].product_uuid);
+  console.log(div_products);
 
-  // // <img>
+  // <img>
 
-  // const image = document.createElement("img");
-  // image.setAttribute("src", add_product[0].image);
-  // image.setAttribute("alt", "photo");
-  // image.setAttribute("height", "200px");
-  // image.setAttribute("width", "180px");
-  // div_products.append(image);
+  const image = document.createElement("img");
+  image.setAttribute("src", add_product[k].image);
+  image.setAttribute("alt", "photo");
+  image.setAttribute("height", "200px");
+  image.setAttribute("width", "200px");
+  div_products.append(image);
 
-  // // <h3> </h3>
+  // <h3> </h3>
 
-  // const h3_title = document.createElement("h3");
-  // h3_title.setAttribute("id", "name");
-  // h3_title.innerText = add_product[0].name;
-  // div_products.append(h3_title);
+  const h3_title = document.createElement("h5");
+  // h3_title.setAttribute("class", "name");
+  h3_title.innerText = add_product[k].name;
+  div_products.append(h3_title);
 
-  // // <p> </p>
+  // <p> </p>
 
-  // const p_org_p = document.createElement("p");
-  // p_org_p.setAttribute("id", "original_price");
-  // p_org_p.innerText = `₹${add_product[0].discount_price} `;
-  // div_products.append(p_org_p);
+  const p_org_p = document.createElement("p");
+  p_org_p.setAttribute("class", "price");
+  p_org_p.innerText = `₹${size_list[k].discount_price} `;
+  div_products.append(p_org_p);
 
-  // // <p> </p>
+  // <p> </p>
 
-  // // p_dis = document.createElement("p");
-  // // h3_title.append(p_dis);
+  // p_dis = document.createElement("p");
+  // h3_title.append(p_dis);
 
-  // // <s> </s>
+  // <s> </s>
 
-  // const strike = document.createElement("s");
-  // strike.setAttribute("id", "discount_price");
-  // strike.innerText = `₹${add_product[0].original_price}  `;
-  // p_org_p.append(strike);
+  const strike = document.createElement("s");
+  strike.setAttribute("class", "dis_price");
+  strike.innerText = `₹${size_list[k].original_price}  `;
+  p_org_p.append(strike);
 
-  // // <span> </span>
+  // <span> </span>
 
-  // const span_per = document.createElement("span");
-  // span_per.setAttribute("class", "percent");
-  // span_per.innerText = ` ${  add_product[0].discount_percent}% off`;
-  // p_org_p.append(span_per);
+  const span_per = document.createElement("span");
+  span_per.setAttribute("class", "per");
+  span_per.innerText = ` ${  size_list[k].discount_percent}% off`;
+  p_org_p.append(span_per);
 
-  // document.querySelector("div.thumbnail").append(div_products);
+  document.querySelector("div.thumbnail").append(div_products);
 
-// }
+}
 </script>
 
 </body>

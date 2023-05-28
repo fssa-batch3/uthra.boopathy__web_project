@@ -122,6 +122,12 @@ h1{
     padding-right: 5rem;
 }
 
+.not {
+    font-size: 35px;
+    color: black;
+    text-align: center;
+}
+
 .details {
     display: flex;
     flex-wrap: wrap;
