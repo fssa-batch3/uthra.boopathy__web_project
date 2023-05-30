@@ -177,7 +177,13 @@ strong{
 
 .size {
     padding-left: 10px;
-    margin-top: -23px;
+    margin-left: 10px;
+    margin-top: 3px;
+    color: black;
+    font-size: 20px;
+    background-color: white;
+    border: 0;
+    cursor: pointer;
 }
 
 .star{
@@ -210,12 +216,6 @@ strong{
     cursor: pointer;
 }
 
-/* .add a{
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-} */
-
 .buy{
     height: 50px;
     width: 200px;
@@ -229,12 +229,6 @@ strong{
     cursor: pointer;
     font-size: 20px;
 }
-/* 
-.buy a{
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-} */
 
 .wish{
     height: 50px;
@@ -249,12 +243,6 @@ strong{
     cursor: pointer;
     font-size: 20px;
 }
-
-/* .wish a{
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-} */
 
 .comment{
     margin-top: 270px;
@@ -407,7 +395,7 @@ h5{
     margin-top: 20px;
 }
 
-.stars {
+.stars_r {
     font-size: 35px;
     margin-top: 20px;
     background-color: unset;

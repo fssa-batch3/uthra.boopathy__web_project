@@ -97,16 +97,18 @@ const add_to_cart = JSON.parse(localStorage.getItem("cart"));
 const unique_id = JSON.parse(localStorage.getItem("uniqueID"));
 
 const check_pdt = add_to_cart.filter((e) => e.buyer_id === unique_id);
-console.log(check_pdt)
+// console.log(check_pdt)
 
 const all = JSON.parse(localStorage.getItem("product_details"));
 
-const match_pdt = all.filter((product) => check_pdt.some((id) => id.product_id === product.product_uuid));
-console.log(match_pdt);
+// const match_pdt = check_pdt.forEach
+
+// const match_pdt = all.filter((product) => check_pdt.some((id) => id.product_id === product.product_uuid));
+// console.log(match_pdt);
 
 ////   No products
 
-if (match_pdt.length === 0) {
+if (check_pdt.length === 0) {
 
   // <div class = products >
 
@@ -143,9 +145,14 @@ document.querySelector("button.add").addEventListener("click",() => {
 
 else {
 
-for (let k = 0; k < match_pdt.length; k++) {
+for (let k = 0; k < check_pdt.length; k++) {
 
-  const size_list = JSON.parse(localStorage.getItem("product_size_details")).filter((p) => p.product_uuid === match_pdt[k].product_uuid)
+  const match_pdt = all.find((id) => id.product_uuid === check_pdt[k].product_id);
+console.log(match_pdt);
+
+  const size_list = JSON.parse(localStorage.getItem("product_size_details"));
+ 
+  const ck_size = size_list.find((o) => o.product_uuid === check_pdt[k].product_id && o.size === check_pdt[k].size)
 
   // <div class = products >
 
@@ -155,7 +162,7 @@ for (let k = 0; k < match_pdt.length; k++) {
   // <img>
 
   const img = document.createElement("img");
-  img.setAttribute("src", match_pdt[k].image);
+  img.setAttribute("src", match_pdt.image);
   img.setAttribute("alt", "photo");
   img.setAttribute("height", "200px");
   img.setAttribute("width", "180px");
@@ -171,7 +178,7 @@ for (let k = 0; k < match_pdt.length; k++) {
 
   const h3_title = document.createElement("h3");
   h3_title.setAttribute("id", "name");
-  h3_title.innerText = match_pdt[k].name;
+  h3_title.innerText = match_pdt.name;
   div_details.append(h3_title);
 
   // <div> </div>
@@ -183,21 +190,21 @@ for (let k = 0; k < match_pdt.length; k++) {
 
   const p_org = document.createElement("p");
   p_org.setAttribute("id", "original_price");
-  p_org.innerText = `₹${size_list[0].discount_price}`;
+  p_org.innerText = `₹${check_pdt[k].discount_price}`;
   div.append(p_org);
 
   // <s> </s>
 
   const s = document.createElement("s");
   s.setAttribute("id", "discount_price");
-  s.innerText = `₹${size_list[0].original_price}`;
+  s.innerText = `₹${ck_size.original_price}`;
   div.append(s);
 
   // <span> </span>
 
   const span = document.createElement("span");
   span.setAttribute("class", "percent");
-  span.innerText = `${size_list[0].discount_percent}%off`;
+  span.innerText = `${ck_size.discount_percent}%off`;
   div.append(span);
 
 
@@ -207,13 +214,13 @@ for (let k = 0; k < match_pdt.length; k++) {
     // <p> </p>
 
     const p_size = document.createElement("p");
-  // p_qty.setAttribute("class", "quantities");
-  p_size.innerText = "Size : " + size_list[0].size;
+  p_size.setAttribute("class", "size");
+  p_size.innerText = "Size : " + check_pdt[k].size;
   div.append(p_size);
 
-  if (size_list[0].size === "0" || size_list[0].size === "1" || size_list[0].size === "2" ||
-  size_list[0].size === "3" || size_list[0].size === "4" || size_list[0].size === "5" || 
-  size_list[0].size === "6" || size_list[0].size === "7") {
+  if (check_pdt[k].size === "0" || check_pdt[k].size === "1" || check_pdt[k].size === "2" ||
+  check_pdt[k].size === "3" || check_pdt[k].size === "4" || check_pdt[k].size === "5" || 
+  check_pdt[k].size === "6" || check_pdt[k].size === "7") {
 
     p_size.setAttribute("style", "display: none");
 
@@ -245,22 +252,23 @@ for (let k = 0; k < match_pdt.length; k++) {
   input.setAttribute("value", check_pdt[k].product_quantity);
   input.setAttribute("id", "product_quantity");
   input.setAttribute("min", "1");
-  input.setAttribute("max", "10")
+  input.setAttribute("max", "10");
   input.setAttribute("data-remove", check_pdt[k].product_id);
+  input.setAttribute("data-size", check_pdt[k].size)
   p_qty.append(input);
 
   // < button class = "remove" > </button>
 
   const button_remove = document.createElement("button");
   button_remove.setAttribute("class", "remove");
-  button_remove.setAttribute("data-remove", match_pdt[k].product_uuid);
+  button_remove.setAttribute("data-remove", check_pdt[k].product_id);
   button_remove.setAttribute("type", "submit");
   button_remove.innerText = "REMOVE";
   div_container.append(button_remove);
 
   const button_wish = document.createElement("button");
   button_wish.setAttribute("class", "wish");
-  button_wish.setAttribute("data-remove", match_pdt[k].product_uuid);
+  button_wish.setAttribute("data-remove", check_pdt[k].product_id);
   button_wish.setAttribute("type", "submit");
   button_wish.innerText = "WISHLIST";
   div_container.append(button_wish);
@@ -274,13 +282,13 @@ for (let k = 0; k < match_pdt.length; k++) {
 
 let total = 0;
 
-for (let l = 0; l < match_pdt.length; l++) {
+for (let l = 0; l < check_pdt.length; l++) {
   total += check_pdt[l].discount_price * check_pdt[l].product_quantity;
 }
 
 console.log(total);
 
-if (match_pdt.length === 0) {
+if (check_pdt.length === 0) {
   const div_total = document.createElement("div");
   div_total.setAttribute("class", "total");
   div_total.setAttribute("style", "display: none");
@@ -488,27 +496,49 @@ document.querySelector("button.change").addEventListener("click", () => {
   window.location.href = "../homepage/address.html";
 })
 
+
+/////    QUANTITY INCREASE OR DECREASE FUNCTION   //////
+
+
 const product_quantity = document.querySelectorAll(".quantity");
 
 product_quantity.forEach((add) => {
   add.addEventListener("change", (e) => {
     const productId = e.currentTarget.dataset.remove;
 
-    localStorage.setItem("products_id", JSON.stringify(productId));
+    localStorage.setItem("product_id", JSON.stringify(productId));
 
-    const productid = JSON.parse(localStorage.getItem("products_id"));
+    const productid = JSON.parse(localStorage.getItem("product_id"));
 
     const all_products = JSON.parse(localStorage.getItem("cart"));
-
-    const pdts = all_products.find(
-      (a) => a.product_id === productid && a.buyer_id === unique_id
-    );
-
-    let ogPrice = pdts.discount_price;
 
     const parent = e.currentTarget.closest(".container");
 
     const qauntity = parent.querySelector(".quantity").value;
+
+    if (qauntity > 11) {
+      
+      alert("Only 10 items can be ordered at a time.")
+    
+    }
+
+    else {
+
+      const size_0f_pdt = parent.querySelector(".size").innerText;
+    console.log(size_0f_pdt);
+
+    
+    const parts = size_0f_pdt.split(":");
+
+    const key = parts[0].trim();
+  const value = parts[1].trim();
+
+    const pdts = all_products.find(
+      (a) => a.product_id === productid && a.buyer_id === unique_id && a.size === value
+    );
+    console.log(pdts);
+
+    let ogPrice = pdts.discount_price;
 
     const cartPrice = ogPrice * qauntity;
 
@@ -519,6 +549,9 @@ product_quantity.forEach((add) => {
     localStorage.setItem("cart", JSON.stringify(all_products));
 
     window.location.reload();
+
+    }
+
   });
 });
 

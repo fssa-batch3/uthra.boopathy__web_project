@@ -1,41 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> Buy now page </title>
-        <link rel="stylesheet" href="../../assets/css/cart-buynowpage.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kreon:wght@300;400;500;600;700&family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    </head>
-    
-    <body>
-        <header id="userLogin">
 
-        </header>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Buy now page </title>
+    <link rel="stylesheet" href="../../assets/css/cart-buynowpage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kreon:wght@300;400;500;600;700&family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
 
-        <div class="left">
-            <!-- <div class="image"> -->
-                <!-- <img id="image" alt="photo" height="460px" width="400px">  -->
-            <!-- </div> -->
-            
-            <!-- <div class="sub-images"> <img src="../../assets/images/silk12-1.jpg" id="image" alt="photo" height="80px" width="80px"/>  </div>
+<body>
+    <header id="userLogin">
+
+    </header>
+
+    <div class="amt">
+        Total amount : <p id="amt"> </p>
+    </div>
+
+    <div class="left">
+        <!-- <div class="image"> -->
+        <!-- <img id="image" alt="photo" height="460px" width="400px">  -->
+        <!-- </div> -->
+
+        <!-- <div class="sub-images"> <img src="../../assets/images/silk12-1.jpg" id="image" alt="photo" height="80px" width="80px"/>  </div>
                 <div class="sub-images"> <img src="../../assets/images/silk12-2.jpg" id="image" alt="photo" height="80px" width="80px"/>  </div>
                 <div class="sub-images"> <img src="../../assets/images/silk12-3.jpg" id="image" alt="photo" height="80px" width="80px"/>  </div>
                 <div class="sub-images"> <img src="../../assets/images/silk12-4.jpg" id="image" alt="photo" height="80px" width="80px"/>  </div> -->
-           
-        </div>    
 
-        <div class="amt">
-             Total amount : <p id="amt"> </p>
-        </div>
+    </div>
 
-        <div class="right">
-            <!-- <h3 id="name"> Jacquard Material Self Designeed Saree </h3>
+    <div class="right">
+        <!-- <h3 id="name"> Jacquard Material Self Designeed Saree </h3>
             <h4> Special price </h4>
             <p>
                 ₹ <strong id="discount_price">  629 </strong>
@@ -43,283 +48,284 @@
                 <b id="discount_percent">79 </b> 
                 <b>% off </b>
             </p> -->
-            
-            <h2 class="per"> PERSONAL DETAILS </h2>
 
-            <div class="name">
-                <label> Name: </label>
-                <input type="name" id="uname" required="true">
-            </div>
+        <h2 class="per"> PERSONAL DETAILS </h2>
 
-            <div class="add">
-                <label> Address: </label>
-                <textarea id="address" required = "true"> </textarea>
-            </div>
-            <input type="text" id="pincode" placeholder="Pincode" pattern="[6]{1}[0-9]{4}" maxlength="6" size="6" required>
-            <input type="text" id="state" placeholder="State" required>
-
-            <div class="no">
-                <label> Phone number: </label>
-                <input type="tel" id="phonenumber" required = "true" placeholder="+91">
-            </div>
-
-            <div class="quantity">
-                <label> Products: </label>
-                <input type="number" id="pdt" required = "true" disabled>
-            </div>
-
-            <div class="cash">
-                <label> Payment: </label>
-                <select id="payment"> 
-                    <option value="select"> Select option </option>
-                    <option value="online"> Online </option>
-                    <option value="cash_on_delivery"> Cash on delivery </option>
-                    <option value="upi"> UPI </option>
-                    <option value="net_banking"> Net banking </option>
-                </select>
-            </div>
-
-            <button class="place"> PLACE ORDER </button>
-            
+        <div class="name">
+            <label> Name: </label>
+            <input type="name" id="uname" required="true">
         </div>
 
-        <footer>
-            <div class="top">
-                <div class="about">
-                    <h4> About: </h4>
-                    <div class="us">
-                        <p>
-                            <a href="../homepage/aboutus.html"> About us </a>
-                        </p>
-                        <p>
-                            <a href="../homepage/frontpage.html"> Available Products </a>
-                        </p> 
-                        <p>
-                            <a href="../homepage/termsofuse.html"> Terms of use </a> 
-                        </p> 
-                        <p>
-                            <a href="../homepage/return.html"> Return policy </a>
-                        </p>
-                 </div>
+        <div class="add">
+            <label> Address: </label>
+            <textarea id="address" disabled="true"> </textarea>
+        </div>
+        <input type="text" id="pincode" placeholder="Pincode" pattern="[6]{1}[0-9]{4}" maxlength="6" size="6" disabled>
+        <input type="text" id="state" placeholder="State" disabled>
+        <a href="../homepage/address.html"> <button class="change"> Change address </button> </a>
+
+
+        <div class="no">
+            <label> Phone number: </label>
+            <input type="tel" id="phonenumber" required="true" placeholder="+91">
+        </div>
+
+        <div class="quantity">
+            <label> Products: </label>
+            <input type="number" id="pdt" required="true" disabled>
+        </div>
+
+        <div class="cash">
+            <label> Payment: </label>
+            <select id="payment">
+                <option value="select"> Select option </option>
+                <option value="online"> Online </option>
+                <option value="cash_on_delivery"> Cash on delivery </option>
+                <option value="upi"> UPI </option>
+                <option value="net_banking"> Net banking </option>
+            </select>
+        </div>
+
+        <button class="place"> PLACE ORDER </button>
+
+    </div>
+
+    <footer>
+        <div class="top">
+            <div class="about">
+                <h4> About: </h4>
+                <div class="us">
+                    <p>
+                        <a href="../homepage/aboutus.html"> About us </a>
+                    </p>
+                    <p>
+                        <a href="../homepage/frontpage.html"> Available Products </a>
+                    </p>
+                    <p>
+                        <a href="../homepage/termsofuse.html"> Terms of use </a>
+                    </p>
+                    <p>
+                        <a href="../homepage/return.html"> Return policy </a>
+                    </p>
                 </div>
-     
-                                        <div class="line"></div>
-     
-                                        <div class="contact">  
-                       
-                                            <div class="socials">
-                                                <span class="con"> Contact us </span>
-                                                <div class="insta">
-                                                    <i class="fa-brands fa-instagram" style="font-size:23px"></i> 
-                                                </div>
-                                                <div class="fb">
-                                                    <i class="fa-brands fa-facebook-f" style="font-size:23px"></i> 
-                                                </div>
-                                                <div class="twiter">
-                                                    <i class="fa-brands fa-twitter" style="font-size:23px"></i> 
-                                                </div>
-                                                <div class="wa">
-                                                    <i class="fa-brands fa-whatsapp" style="font-size:23px"></i> 
-                                                </div>
-                                            </div>    
-                                            <div>
-                                                <p>Copy rights @ 2022</p>
-                                            </div>
-                                        </div>
-             </div>
-     
-             </footer>    
+            </div>
+
+            <div class="line"></div>
+
+            <div class="contact">
+
+                <div class="socials">
+                    <span class="con"> Contact us </span>
+                    <div class="insta">
+                        <i class="fa-brands fa-instagram" style="font-size:23px"></i>
+                    </div>
+                    <div class="fb">
+                        <i class="fa-brands fa-facebook-f" style="font-size:23px"></i>
+                    </div>
+                    <div class="twiter">
+                        <i class="fa-brands fa-twitter" style="font-size:23px"></i>
+                    </div>
+                    <div class="wa">
+                        <i class="fa-brands fa-whatsapp" style="font-size:23px"></i>
+                    </div>
+                </div>
+                <div>
+                    <p>Copy rights @ 2022</p>
+                </div>
+            </div>
+        </div>
+
+    </footer>
 
     <script src="../../assets/js/header.js"> </script>
 
     <script>
-// getting the user details
+        // getting the user details
 
-const uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
-const user_cred = JSON.parse(localStorage.getItem("user_cred"));
-const check_user = user_cred.find((o) => o.phonenumber === uniqueID)
+        const uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
+        const user_cred = JSON.parse(localStorage.getItem("user_cred"));
+        const check_user = user_cred.find((o) => o.phonenumber === uniqueID)
 
-const products = JSON.parse(localStorage.getItem("cart"));
+        const products = JSON.parse(localStorage.getItem("cart"));
 
-const check = products.filter((user) => user.buyer_id === uniqueID);
-// console.log(check);
+        const check = products.filter((user) => user.buyer_id === uniqueID);
+        console.log(check);
 
-const all_pdt = JSON.parse(localStorage.getItem("product_details"));
-const size_list = JSON.parse(localStorage.getItem("product_size_details"));
+        const all_pdt = JSON.parse(localStorage.getItem("product_details"));
+        const size_list = JSON.parse(localStorage.getItem("product_size_details"));
 
-const check_pdt = all_pdt.filter((find) => check.some((pdt) => pdt.product_id === find.product_uuid));
+        // creating the image
 
-// creating the image
+        for (let i = 0; i < check.length; i++) {
 
-for (let i=0; i<check_pdt.length; i++) {
+            const check_pdt = all_pdt.find((find) => find.product_uuid === check[i].product_id);
 
-    const size_check = size_list.filter((p) => check.some((o) => o.product_id === p.product_uuid));
-    console.log(size_check);
+            const ck_size = size_list.find((o) => o.product_uuid === check[i].product_id && o.size === check[i].size)
 
-    // <div>
+            // <div>
 
-    const div = document.createElement("div");
-    div.setAttribute("class", "image");
-    // console.log(div);
+            const div = document.createElement("div");
+            div.setAttribute("class", "image");
+            // console.log(div);
 
-    // <img>
+            // <img>
 
-    const img = document.createElement("img");
-    img.setAttribute("src", check_pdt[i].image);
-    img.setAttribute("alt", check_pdt[i].name);
-    img.setAttribute("height", "150px");
-    img.setAttribute("width", "150px");
-    img.setAttribute("id", "image");
-    div.append(img);
+            const img = document.createElement("img");
+            img.setAttribute("src", check_pdt.image);
+            img.setAttribute("alt", check.name);
+            img.setAttribute("height", "150px");
+            img.setAttribute("width", "150px");
+            img.setAttribute("id", "image");
+            div.append(img);
 
-    const div_details = document.createElement("div");
-    div_details.setAttribute("class", "details");
-    div.append(div_details);
+            const div_details = document.createElement("div");
+            div_details.setAttribute("class", "details");
+            div.append(div_details);
 
-    const h3 = document.createElement("h3");
-    h3.innerText = check_pdt[i].name;
-    div_details.append(h3);
+            const h3 = document.createElement("h3");
+            h3.innerText = check_pdt.name;
+            div_details.append(h3);
 
-    const p = document.createElement("p");
-    p.innerText = `₹${ size_check[i].discount_price}`;
-    div_details.append(p);
+            const p = document.createElement("p");
+            p.innerText = `₹${check[i].discount_price}`;
+            div_details.append(p);
 
-    const s = document.createElement("s");
-    s.innerText = `₹${ size_check[i].original_price}`;
-    p.append(s);
+            const s = document.createElement("s");
+            s.innerText = `₹${ck_size.original_price}`;
+            p.append(s);
 
-    const b = document.createElement("b");
-    b.innerText = `   ${size_check[i].discount_percent}% off`;
-    p.append(b);
+            const b = document.createElement("b");
+            b.innerText = `   ${ck_size.discount_percent}% off`;
+            p.append(b);
 
-    const qty = check.find((e) => e.product_id === check_pdt[i].product_uuid);
-    // console.log(qty);
+            const qty = check.find((e) => e.product_id === check[i].product_uuid && e.size === check[i].size);
+            console.log(qty);
 
-    const p_qty = document.createElement("p");
-    p_qty.setAttribute("class", "qty");
-    p_qty.innerText = `Quantity : ${  qty.product_quantity}`;
-    p.append(p_qty);
+            const p_qty = document.createElement("p");
+            p_qty.setAttribute("class", "qty");
+            p_qty.innerText = `Quantity : ${check[i].product_quantity}`;
+            p.append(p_qty);
 
-    const total = document.createElement("p");
-    total.setAttribute("class", "tot");
-    total.innerText = `Total amount : ₹${ size_check[i].discount_price * qty.product_quantity}`;
-    p.append(total);
+            const total = document.createElement("p");
+            total.setAttribute("class", "tot");
+            total.innerText = `Total amount : ₹${check[i].discount_price * check[i].product_quantity}`;
+            p.append(total);
 
-    document.querySelector(".left").append(div);
+            document.querySelector(".left").append(div);
 
-// total amount
-let total_amt = 0;
+            // total amount
+            let total_amt = 0;
 
-for (let l = 0; l < check_pdt.length; l++) {
-  total_amt += size_check[l].discount_price * qty.product_quantity;
-}
-console.log(total_amt);
+            for (let l = 0; l < check.length; l++) {
+                total_amt += check[l].discount_price * check[l].product_quantity;
+            }
+            console.log(total_amt);
 
-document.getElementById("amt").innerText = `₹${  total_amt}` ;
-}
+            document.getElementById("amt").innerText = `₹${total_amt}`;
+        }
 
-// getting details
+        // getting details
 
-const addressDetail = JSON.parse(localStorage.getItem("default_address"));
-    const address_list = JSON.parse(localStorage.getItem("address_list"));
-    const check_add = address_list.find((j) => j.address === addressDetail.address)
-    console.log(check_add)
+        const addressDetail = JSON.parse(localStorage.getItem("default_address")) || {};
+        const address_list = JSON.parse(localStorage.getItem("address_list"));
+        const check_add = address_list.find((j) => j.address === addressDetail.address)
+        // console.log(check_add)
 
-    if(check_add) {
+        if (check_add) {
 
-document.getElementById("uname").value = check_add.uname;
-document.getElementById("phonenumber").value = check_add.buyer_id;
-document.getElementById("address").value = check_add.address;
-document.getElementById("pincode").value = check_add.pincode;
-document.getElementById("state").value = check_add.state;
+            document.getElementById("uname").value = check_add.uname;
+            document.getElementById("phonenumber").value = check_add.buyer_id;
+            document.getElementById("address").value = check_add.address;
+            document.getElementById("pincode").value = check_add.pincode;
+            document.getElementById("state").value = check_add.state;
 
-    }
-    else {
-        document.getElementById("uname").value = check_user.uname;
-        document.getElementById("phonenumber").value = check_user.phonenumber;
-        document.getElementById("address").value = check_user.address;
-        document.getElementById("pincode").value = check_user.pincode;
-        document.getElementById("state").value = check_user.state;
-    }
+        }
+        else {
+            document.getElementById("uname").value = check_user.uname;
+            document.getElementById("phonenumber").value = check_user.phonenumber;
+            document.getElementById("address").value = check_user.address;
+            document.getElementById("pincode").value = check_user.pincode;
+            document.getElementById("state").value = check_user.state;
+        }
 
-document.getElementById("pdt").value =  check_pdt.length;;
+        document.getElementById("pdt").value = check.length;;
 
-const place_order = document.querySelector("button.place");
+        const place_order = document.querySelector("button.place");
 
-place_order.addEventListener("click", () => {
+        place_order.addEventListener("click", () => {
 
-    let cart_items = JSON.parse(localStorage.getItem("cart"));
-    console.log(cart_items);
+            let cart_items = JSON.parse(localStorage.getItem("cart"));
+            console.log(cart_items);
 
-cart_items = "";
+            cart_items = "";
 
-localStorage.setItem("cart", JSON.stringify(cart_items));
+            localStorage.setItem("cart", JSON.stringify(cart_items));
 
-console.log(localStorage.setItem("cart", JSON.stringify(cart_items)));
+            console.log(localStorage.setItem("cart", JSON.stringify(cart_items)));
 
- const uname = document.getElementById("uname").value;
- const phonenumber = document.getElementById("phonenumber").value;
- const address = document.getElementById("address").value;
-  const payment = document.getElementById("payment").value;
-//   const quantity = document.getElementById("product_quantity").value;
-  const pincode = document.getElementById("pincode").value;
-  const state = document.getElementById("state").value;
-  const order_id = uuidv4();
-//   const pdt_id = check_pdt.product_ids;
-  const date = new Date();
-  const year = date.getFullYear();
-  const month = date.getMonth() + 1;
-  const day = date.getDate();
-  const set_date = new Date();
-  set_date.setDate(date.getDate() + 5);
-  const order_on = `${day}.${month}.${year}`;
-  const delivered_on= `${set_date.getDate().toString().padStart(2, '0')}.${(set_date.getMonth() + 1).toString().padStart(2, '0')}.${set_date.getFullYear()}`;
-console.log(delivered_on);
+            const uname = document.getElementById("uname").value;
+            const phonenumber = document.getElementById("phonenumber").value;
+            const address = document.getElementById("address").value;
+            const payment = document.getElementById("payment").value;
+            //   const quantity = document.getElementById("product_quantity").value;
+            const pincode = document.getElementById("pincode").value;
+            const state = document.getElementById("state").value;
+            const order_id = uuidv4();
+            //   const pdt_id = check_pdt.product_ids;
+            const date = new Date();
+            const year = date.getFullYear();
+            const month = date.getMonth() + 1;
+            const day = date.getDate();
+            const set_date = new Date();
+            set_date.setDate(date.getDate() + 5);
+            const order_on = `${day}.${month}.${year}`;
+            const delivered_on = `${set_date.getDate().toString().padStart(2, '0')}.${(set_date.getMonth() + 1).toString().padStart(2, '0')}.${set_date.getFullYear()}`;
+            console.log(delivered_on);
 
-  if (address.trim() === "" || state.trim() === "" || pincode.trim() === "" || payment.trim() === "") {
-    alert("Please fill in all the details");
-  } else {
-    alert("Your order is successfully booked");
+            if (address.trim() === "" || state.trim() === "" || pincode.trim() === "" || payment.trim() === "") {
+                alert("Please fill in all the details");
+            } else {
+                alert("Your order is successfully booked");
 
-    const my_orders = JSON.parse(localStorage.getItem("my_orders")) || [];
+                const my_orders = JSON.parse(localStorage.getItem("my_orders")) || [];
 
-    my_orders.push({
-        uname, 
-        buyer_id : uniqueID, 
-        address, 
-        phonenumber, 
-        payment,
-        pincode, 
-        state, 
-        order_id, 
-        order_on, 
-        delivered_on,  
-        status : true,
-        no_of_products : check.length
-    });
+                my_orders.push({
+                    uname,
+                    buyer_id: uniqueID,
+                    address,
+                    phonenumber,
+                    payment,
+                    pincode,
+                    state,
+                    order_id,
+                    order_on,
+                    delivered_on,
+                    status: true,
+                    no_of_products: check.length
+                });
 
-    const ordered_items = JSON.parse(localStorage.getItem("ordered_items")) || [];
+                const ordered_items = JSON.parse(localStorage.getItem("ordered_items")) || [];
 
-    for ( let c = 0; c < check.length; c++) {
-        check[c].order_id = order_id        
-    }
-    
-    ordered_items.push(...check);
-    console.log(ordered_items);
+                for (let c = 0; c < check.length; c++) {
+                    check[c].order_id = order_id
+                }
 
-    localStorage.setItem("my_orders", JSON.stringify(my_orders));
-    localStorage.setItem("ordered_items", JSON.stringify(ordered_items));
+                ordered_items.push(...check);
+                console.log(ordered_items);
 
-    console.log(my_orders);
+                localStorage.setItem("my_orders", JSON.stringify(my_orders));
+                localStorage.setItem("ordered_items", JSON.stringify(ordered_items));
 
-    window.location.href = "../orders/myorderspage.html";
+                console.log(my_orders);
 
-  }
-});
-</script>
+                window.location.href = "../orders/myorderspage.html";
+
+            }
+        });
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
 
-    </body>
+</body>
 
 </html>

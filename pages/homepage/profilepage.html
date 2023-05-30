@@ -112,10 +112,17 @@ document.querySelector("div.arrows").append(div_arrow);
 
 const uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
 const user_cred = JSON.parse(localStorage.getItem("user_cred"));
+
+const add_list = JSON.parse(localStorage.getItem("address_list"));
+
 function profile_data(e) {
   return e.phonenumber === uniqueID;
 }
 const person_data = user_cred.find(profile_data);
+
+const ck_user = add_list.find((p) => p.address_id === person_data.user_uuid);
+console.log(ck_user);
+
 console.log(person_data);
 document.getElementById("uname").value = person_data.uname;
 document.getElementById("email").value = person_data.email;
@@ -147,6 +154,16 @@ const uname = document
   person_data.age = age;
   person_data.pincode = pincode;
   person_data.state = state;
+
+
+  ck_user.uname = uname;
+  ck_user.address = address;
+  ck_user.pincode = pincode;
+  ck_user.state = state;
+
+
+  localStorage.setItem("address_list", JSON.stringify(add_list));
+
   localStorage.setItem("user_cred", JSON.stringify(user_cred));
   window.location.href = "./profile.html";
 });

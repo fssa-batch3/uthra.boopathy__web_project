@@ -86,22 +86,25 @@
    
     <script>
         const products = JSON.parse(localStorage.getItem("ordered_items"));
+        console.log(products);
 
         const order_id = JSON.parse(localStorage.getItem("order_id"));
         
         const order_pdts = products.filter(
           (e) => e.order_id === order_id
         );
+        console.log(order_pdts);
 
             const product = JSON.parse(localStorage.getItem("product_details"));
-            const size_list = JSON.parse(localStorage.getItem("product_size_details"));
 
-            const check = product.filter((m) => order_pdts.some((h) => h.product_id === m.product_uuid));
+            // const check = product.filter((m) => order_pdts.some((h) => h.product_id === m.product_uuid));
+            // console.log(check);
+
+
+          for (let i = 0; i < order_pdts.length; i++) {
+
+            const check = product.find((p) => p.product_uuid === order_pdts[i].product_id);
             console.log(check);
-            const check_size = size_list.filter((k) => order_pdts.some((l) => l.product_id === k.product_uuid));
-            console.log(check_size);
-
-          for (let i = 0; i < check.length; i++) {
 
             // <div class = "details">
 
@@ -116,24 +119,24 @@
             // <img>
 
             const img = document.createElement("img");
-            img.setAttribute("src", check[i].image);
-            img.setAttribute("alt", check[i].name);
+            img.setAttribute("src", check.image);
+            img.setAttribute("alt", check.name);
             img.setAttribute("id", "image");
             img.setAttribute("height","220px");
             img.setAttribute("width","220px");
             div.append(img);
 
-            // <div class="info">
+            // // <div class="info">
 
             const div_info = document.createElement("div");
             div_info.setAttribute("class", "info");
             div_details.append(div_info);
             
-            // <h5>
+            // // <h5>
 
             const h5 = document.createElement("h5");
             h5.setAttribute("id", "name")
-            h5.innerText = check[i].name;
+            h5.innerText = check.name;
             div_info.append(h5);
 
             // <p>
@@ -141,9 +144,15 @@
             const p = document.createElement("p");
             p.setAttribute("class", "price");
             p.setAttribute("id", "original_price");
-            p.innerText = `₹${check_size[0].discount_price}`;
+            p.innerText = `₹${order_pdts[i].discount_price}`;
             div_info.append(p);
 
+            const size = document.createElement("p");
+            size.setAttribute("class", "qty");
+            // qty.setAttribute("id", "original_price");
+            size.innerText = `Size : ${ order_pdts[i].size}`;
+            div_info.append(size);
+            
             const qty = document.createElement("p");
             qty.setAttribute("class", "qty");
             // qty.setAttribute("id", "original_price");
@@ -153,13 +162,8 @@
             const amt = document.createElement("p");
             amt.setAttribute("class", "qty");
             // qty.setAttribute("id", "original_price");
-            amt.innerText = `Total amount : ₹${ check_size[0].discount_price * order_pdts[i].product_quantity}`;
+            amt.innerText = `Total amount : ₹${ order_pdts[i].discount_price * order_pdts[i].product_quantity}`;
             div_info.append(amt);
-
-            const seller_id = document.createElement("p");
-            seller_id.setAttribute("class", "qty");
-            seller_id.innerText = `Seller Phone number : ${  check[i].user_id}`;
-            div_info.append(seller_id);
 
             const user_list = JSON.parse(localStorage.getItem("user_cred"));
             const checking = user_list.find((h) => h.user_id === products[i].user_id);
@@ -168,6 +172,11 @@
             seller_name.setAttribute("class", "qty");
             seller_name.innerText = `Seller Name : ${  checking.uname}`;
             div_info.append(seller_name);
+
+            const seller_id = document.createElement("p");
+            seller_id.setAttribute("class", "qty");
+            seller_id.innerText = `Seller Phone number : ${  check.user_id}`;
+            div_info.append(seller_id);
 
             document.querySelector("div").append(div_details);
             // document.querySelector(".details").append(div_info);

@@ -126,8 +126,14 @@ p {
 .amt {
     font-size: 23px;
     position: relative;
-    top: 15rem;
+    top: 10rem;
     padding-left: 10rem;
+    display: flex;
+}
+
+#amt {
+    margin-top: 5px;
+    margin-left: 5px;
 }
 
 .right{

@@ -63,7 +63,7 @@
               <option selected="selected"> Select category </option>
             </select>
 
-            <label> Type: </label>
+            <label class="type"> Type: </label>
             <select id="type" required>
               <option selected="selected"> Select type </option>
             </select>
@@ -574,10 +574,10 @@
       // const size = sizeForLength;
       const product_uuid = uuidv4();
 
-      if (discount_percent) {
-        discount_price = original_price - (original_price * discount_percent) / 100;
-        discount_price = Math.round(discount_price);
-      }
+      // if (discount_percent) {
+      //   discount_price = original_price - (original_price * discount_percent) / 100;
+      //   discount_price = Math.round(discount_price);
+      // }
 
       function validate() {
         if (/^\s*$/g.test(name)) {
@@ -620,9 +620,14 @@
           obj.product_uuid = product_uuid;
           obj.size = type;
           obj.original_price = columns[0].querySelector("#original_price").value;
-          obj.discount_price = discount_price;
+          // obj.discount_price = discount_price;
           obj.discount_percent = columns[1].querySelector("#discount_percent").value;
           obj.quantity_seller = columns[2].querySelector("#quantity_seller").value;
+
+        discount_price = original_price - (original_price * discount_percent) / 100;
+        discount_price = Math.round(discount_price);
+
+        obj.discount_price = discount_price;
 
           product_size_details.push(obj);
         });
@@ -641,9 +646,16 @@
         obj.product_uuid = product_uuid;
         obj.size = type;
         obj.original_price = columns[0].querySelector("#original_price").value;
-        obj.discount_price = discount_price;
+        // obj.discount_price = discount_price;
         obj.discount_percent = columns[1].querySelector("#discount_percent").value;
         obj.quantity_seller = columns[2].querySelector("#quantity_seller").value;
+
+
+
+        discount_price = original_price - (original_price * discount_percent) / 100;
+        discount_price = Math.round(discount_price);
+
+        obj.discount_price = discount_price;
 
         product_size_details.push(obj);
         });
@@ -664,9 +676,17 @@
         obj.product_uuid = product_uuid;
         obj.size = columns[0].textContent.trim();
         obj.original_price = columns[1].querySelector("#original_price").value;
-        obj.discount_price = discount_price;
+        // obj.discount_price = discount_price;
         obj.discount_percent = columns[2].querySelector("#discount_percent").value;
         obj.quantity_seller = columns[3].querySelector("#quantity_seller").value;
+
+        const original_price = parseFloat(obj.original_price);
+  const discount_percent = parseFloat(obj.discount_percent);
+
+        discount_price = original_price - (original_price * discount_percent) / 100;
+        discount_price = Math.round(discount_price);
+
+        obj.discount_price = discount_price;
 
         product_size_details.push(obj);
         });
@@ -677,8 +697,6 @@ console.log(product_size_details);
 
       localStorage.setItem("product_details", JSON.stringify(add_products));
       localStorage.setItem("product_size_details", JSON.stringify(product_size_details));
-
-      console.log(localStorage.getItem("add_products"));
 
       localStorage.setItem("uuid", JSON.stringify(product_uuid));
 
@@ -694,37 +712,182 @@ console.log(product_size_details);
 
     ///////   EDIT PAGE READ VALUES    ///////
 
-    const uuid = JSON.parse(localStorage.getItem("productDetail"));
-console.log(uuid);
+//     const queryString = window.location.search;
 
-const add_products = JSON.parse(localStorage.getItem("product_details"));
+//     // to get the location
 
-const size_list = JSON.parse(localStorage.getItem("product_size_details"));
+//     const urlParams = new URLSearchParams(queryString);
 
-function find_data(e) {
-  return e.product_uuid === uuid;
-}
-const product_data = add_products.find(find_data);
+//     // to show the name as what we have to show
 
-const product_datas = size_list.filter((o) => o.product_uuid === uuid);
-console.log(product_datas);
-console.log(product_data);
+//     const product_id = urlParams.get("product_id");
 
-document.getElementById("image").value = product_data.image;
-document.getElementById("name").value = product_data.name;
-document.getElementById("category").value = product_data.category;
-document.getElementById("type").value = product_data.type;
+//     const uuid = JSON.parse(localStorage.getItem("productDetail"));
+// console.log(uuid);
 
-for (let l = 0; l < size_list.length; l++) {
-  document.getElementById("original_price").value = product_datas[l].original_price;
-  document.getElementById("discount_price").value = product_datas[l].discount_price;
-  document.getElementById("discount_percent").value = product_datas[l].discount_percent;
-  document.getElementById("quantity_seller").value = product_datas[l].quantity_seller;
-}
+// const add_products = JSON.parse(localStorage.getItem("product_details"));
 
-document.getElementById("product_detail").innerHTML = product_data.product_detail;
-document.getElementById("add_info").innerHTML = product_data.add_info;
+// const size_detail = JSON.parse(localStorage.getItem("product_size_details"));
 
+// const size_list = size_detail.filter((p) => p.product_uuid === product_id);
+// console.log(size_list);
+
+// function find_data(e) {
+//   return e.product_uuid === product_id;
+// }
+// const product_data = add_products.find(find_data);
+
+// const product_datas = size_list.filter((o) => o.product_uuid === product_id);
+// console.log(product_datas);
+// console.log(product_data);
+
+// document.getElementById("image").value = product_data.image;
+// document.getElementById("name").value = product_data.name;
+// document.getElementById("category").innerText = product_data.category;
+// document.getElementById("product_detail").innerHTML = product_data.product_detail;
+// document.getElementById("add_info").innerHTML = product_data.add_info;
+
+// const table = document.querySelector("#table");
+//           table.innerHTML = "";
+
+//           // Create a new row
+//           const newRow = document.createElement("tr");
+
+//           // Create table cells
+//           const sizeCell = document.createElement("td");
+//           sizeCell.innerText = "Size";
+
+//           const actualCell = document.createElement("td");
+//           actualCell.innerText = "Actual Price:";
+
+//           // const currentCell = document.createElement("td");
+//           // currentCell.innerText = "Current Price:";
+
+//           const discountCell = document.createElement("td");
+//           discountCell.innerText = "Discount (%):";
+
+//           const quantityCell = document.createElement("td");
+//           quantityCell.innerText = "Quantity:";
+
+//           // Append cells to the row
+//           newRow.appendChild(sizeCell);
+//           newRow.appendChild(actualCell);
+//           // newRow.appendChild(currentCell);
+//           newRow.appendChild(discountCell);
+//           newRow.appendChild(quantityCell);
+
+//           // Append the row to the table
+//           table.append(newRow);
+
+// for (let l = 0; l < size_list.length; l++) {
+
+//   const table = document.querySelector("#table");
+
+// // Create a new row
+// const value = document.createElement("tr");
+// value.setAttribute("class", "tr")
+
+// // Create table cells
+// const sizeCell = document.createElement("td");
+// sizeCell.setAttribute("class", "td");
+// sizeCell.innerText = size_list[l].size;
+
+// const actualCell = document.createElement("td");
+// actualCell.setAttribute("class", "td");
+// actualCell.innerText = "₹";
+
+// const a_input = document.createElement("input");
+// a_input.setAttribute("type", "number")
+// a_input.setAttribute("id", "original_price");
+// a_input.value = size_list[l].original_price; 
+// actualCell.append(a_input);
+
+// // const currentCell = document.createElement("td");
+// // currentCell.setAttribute("class", "td");
+// // currentCell.innerText = "₹";
+
+// // const c_input = document.createElement("input");
+// // c_input.setAttribute("id", "discount_price");
+// // c_input.setAttribute("type", "number")
+// // currentCell.append(c_input);
+
+// const discountCell = document.createElement("td");
+// discountCell.setAttribute("class", "td");
+
+// const p_input = document.createElement("input");
+// p_input.setAttribute("type", "number");
+// p_input.setAttribute("id", "discount_percent");
+// p_input.value = size_list[l].discount_percent;
+// discountCell.append(p_input);
+
+// const quantityCell = document.createElement("td");
+// quantityCell.setAttribute("class", "td");
+
+// const q_input = document.createElement("input");
+// q_input.setAttribute("id", "quantity_seller");
+// q_input.value = size_list[l].quantity_seller;
+// quantityCell.append(q_input);
+
+// // Append the row to the table
+// table.append(value);
+
+// // Append cells to the row
+// value.appendChild(sizeCell);
+// value.appendChild(actualCell);
+// // value.appendChild(currentCell);
+// value.appendChild(discountCell);
+// value.appendChild(quantityCell);
+
+// // Append the row to the table
+// table.appendChild(value);
+
+// }
+
+// document.querySelector(".submit").addEventListener("click", () => {
+
+//   const p_name = document.getElementById("name").value;
+//   const p_img = document.getElementById("image").value;
+//   const p_pdt_detail = document.getElementById("product_detail").value;
+//   const p_info = document.getElementById("add_info").value;
+//   const p_org_price = document.getElementById("original_price").value;
+//   const p_dis_per = document.getElementById("discount_percent").value;
+//   const p_dis_price = discount_price;
+
+//   const rows = document.querySelectorAll(".tr");
+
+// rows.forEach(row => {
+//   const columns = row.querySelectorAll(".td");
+//   const obj = {};
+
+//   obj.product_uuid = product_uuid;
+//   obj.size = type;
+//   obj.original_price = columns[0].querySelector("#original_price").value;
+//   // obj.discount_price = discount_price;
+//   obj.discount_percent = columns[1].querySelector("#discount_percent").value;
+//   obj.quantity_seller = columns[2].querySelector("#quantity_seller").value;
+
+// discount_price = original_price - (original_price * discount_percent) / 100;
+// discount_price = Math.round(discount_price);
+
+// obj.discount_price = discount_price;
+
+// const size_details = JSON.parse(localStorage.getItem("product_size_details"));
+
+// const check_size_obj = product_datas.find((x) => x.size === obj.size);
+// console.log(check_size_obj);
+
+//   // product_size_details.push(obj);
+
+// })
+
+// product_data.image = p_img;  
+//   product_data.name = p_name;  
+//   product_data.product_detail = p_pdt_detail;  
+//   product_data.add_info = p_info;  
+
+//   localStorage.setItem("product_details", JSON.stringify(add_products));
+
+// })
 
   </script>
 
@@ -792,8 +955,8 @@ document.getElementById("add_info").innerHTML = product_data.add_info;
       }
 
       category.onchange = (e) => {
-        type.length = 1; // remove all options bar first
-        if (e.currentTarget.selectedIndex < 1) return; // done
+        type.length = 1;   // remove all options bar first
+        if (e.target.selectedIndex < 1) return; // done
         const ft = categorySel[e.currentTarget.value];
         for (const fields in categorySel[e.currentTarget.value]) {
           type.options[type.options.length] = new Option(ft[fields], fields);
