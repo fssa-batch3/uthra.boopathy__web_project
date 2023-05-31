@@ -1,474 +1,456 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title> My products page </title>
-   <link rel="stylesheet" href="../../assets/css/myproduct.css" />
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />        <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kreon:wght@300;400;500;600;700&family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet">
-</head>
-
-<body>
-    <header>
-        <a href="../homepage/frontpage.html"> <img class="logo" src="../../assets/images/logo.png" alt="logo" /> </a>
-        <h1> Thara's World </h1>
-          <div class="nav">
-             <ul>
-                <li> <a href="../orders/cartpage.html"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a></li>
-                <li> <a href="../orders/wishlistpage.html"><i class="fa-sharp fa-solid fa-heart"></i></a></li> 
-                <li><a href="../orders/myorderspage.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
-                <li><a href="#"><i class="fa-solid fa-bell"></i></i></a></li>
-                <li><a href="profilepage.html"><i class="fa-solid fa-circle-user"></i></a></li>
-                <li> <a href="../homepage/loginpage.html"><span class="login"> Login </span> </a></li>
-              </ul>
-          </div>
-
-          <div class="menu">
-                
-            <i class="fa-solid fa-bars"></i>               
-             <div class="menu-list">
-                
-                    <a href="../orders/cartpage.html"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
-                    <a href="../orders/wishlistpage.html"><i class="fa-sharp fa-solid fa-heart"></i></a>
-                    <a href="../orders/myorderspage.html"><i class="fa-solid fa-bag-shopping"></i></a>
-                    <a href="#"><i class="fa-solid fa-bell"></i></i></a>
-                    <a href="profilepage.html"><i class="fa-solid fa-circle-user"></i></a>
-                    <a href="loginpage.html"><span class="login"> Login </span> </a>
-            
-             </div>
-         </div>
-
-    </header>
-
-    <section>
-
-        <button class="add"> <a href="../products/addproduct.html"> Add Products </a> </button> 
-
-               <!-- <div class="box"> 
-
-                 <div class="photo"> 
-                    <img src="../../assets/images/silk12.jpg" alt="photo" width="300px"/>
-                 </div>
-
-                 <div class="right">
-                    <h3 id="name"> Jacquard Material Self Designed Saree </h3>
-                    <h4> Special price </h4>
-                    <div class="price">
-                    <p id="original_price" > ₹629 </p>  <p> <s id="discount_price">₹2,999 </s> </p>  <p> <b id="discount_percent">79% off</b> </p>
-                    </div>
-            
-                    <div class="star">
-                        <span class="stars"> REVIEW: </span>
-                        <i class="fa fa-star" style="font-size: 24px;color: gold"></i>
-                        <i class="fa fa-star" style="font-size: 24px;color: gold"></i>
-                        <i class="fa fa-star" style="font-size: 24px;color: gold"></i>
-                        <i class="fa fa-star" style="font-size: 24px;color: gold"></i>
-                        <i class="fa fa-star" style="font-size: 24px;color: gold"></i>
-                    </div>
-        
-
-                        <strong>  Product details:  </strong>
-                         <div class="para" id="product_detail" >
-                        <p> *Material Details: <br>
-                         *Saree type: Silk cotton <br>
-                         *Saree length: 5 metres  <br>
-                         *Blouse length: 1 metres</p>
-                         <div> 
-
-                        <strong class="add_info"> Additional offers: </strong> 
-                         <div class="paras" id="add_info" >
-                            <p > *Special PriceGet extra 30% off (price inclusive of cashback/coupon)T&C <br>
-                
-                            *Bank Offer5% Cashback on Thara's World Axis Bank CardT&C <br>
-                   
-                            *Partner OfferSign up for Thara's World Pay Later and get Thara's World Gift Card worth up to ₹500 </p> 
-                        </div>  
-
-                   <button class="edit" type="submit"> <a href="../products/editproduct.html"> Edit </a> </button>
-                     <button type="submit" onclick="del_pdt()" > Delete </button>  
-
-                    
-             </div>  -->
-
-    </section>
-
-    <script>
-
-
-            
-            let add_product = JSON.parse(localStorage.getItem("add_products"));
-            // let uuid = JSON.parse(localStorage.getItem("product_uuid"));
-            console.log(add_product);
-
-            
-            let div_box;
-            let div_photo;
-            let img;
-            let div_right;
-            let h3_title;
-            let h4_sub;
-            let div_price;
-            let p_org;
-            let p_dis;
-            let s;
-            let p_percent;
-            let b;
-            let div_star;
-            let span;
-            let i;
-            let strong_pdt;
-            let div_pdt;
-            let p_pdt;
-            let strong_add;
-            let div_add;
-            let p_add;
-            let button_edit;
-            let a;
-            let button_del;
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> My products page </title>
+        <link rel="stylesheet" href="../../assets/css/myproduct.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kreon:wght@300;400;500;600;700&family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet">
+    </head>
+
+    <body>
+        <header id="userLogin"> 
+
+        </header>
+
+        <div class="arrows"></div>
+
+        <section>
+
+            <a href="../products/addproduct.html">
+                <button class="add" type="submit"> Add Products  </button> 
+            </a>
+
+        </section>
+
+        <script src="../../assets/js/header.js"></script>
+
+        <script>
+// <div class = "arrow" > </div>
+
+const div_arrow = document.createElement("div");
+div_arrow.setAttribute("class", "arrow");
+// console.log(div_arrow);
+
+// <a> link </a>
+
+const a_arrow = document.createElement("a");
+a_arrow.setAttribute("href", "../homepage/sellerpage.html");
+div_arrow.append(a_arrow);
+// console.log(a_arrow);
 
+// < i >  arrow </i>
 
-         for ( let k=0; k < add_product.length; k++){
+const i_arrow = document.createElement("i");
+i_arrow.setAttribute("title", "Back");
+i_arrow.setAttribute("class", "fa-solid fa-arrow-left");
+a_arrow.append(i_arrow);
 
-    // <div class = "box" > </div>
+document.querySelector("div.arrows").append(div_arrow);
+const add_product = JSON.parse(localStorage.getItem("product_details"));
+let uuid = JSON.parse(localStorage.getItem("product_uuid"));
+// console.log(add_product);
 
-            div_box = document.createElement("div");
-            div_box.setAttribute("class", "box");
-            // console.log(div_box);
+const user_id = JSON.parse(localStorage.getItem("uniqueID"));
 
+const check_pdt = add_product.filter((e) => e.user_id === user_id);
+// console.log(check_pdt);
 
-            // < div class = "photo" > </div>
+let div_box;
+let div_photo;
+let img;
+let div_right;
+let h3_title;
+let h4_sub;
+let div_price;
+let p_org;
+let p_dis;
+let s;
+let p_percent;
+let b;
+let div_star;
+let span;
+let p_size;
+let strong_pdt;
+let div_pdt;
+let p_pdt;
+let strong_add;
+let div_add;
+let p_add;
+let button_edit;
+let button_remove;
+let button_add;
+let button_del;
 
-            div_photo = document.createElement("div");
-            div_photo.setAttribute("class", "photo");
-            div_box.append(div_photo)
-            // console.log(div_photo);
+for (let k = 0; k < check_pdt.length; k++) {
 
-            // <img/>
-            
-            img = document.createElement("img");
-            img.setAttribute("src", add_product[k]["image"]);
-            img.setAttribute("alt", "photo");
-            img.setAttribute("height", "300px");
-            img.setAttribute("width", "280px");
-            div_photo.append(img);
+  const size_list = JSON.parse(localStorage.getItem("product_size_details"));
 
-            // < div class = "right" > </div>
+const fil_size = size_list.filter((o) => o.product_uuid === check_pdt[k].product_uuid)
+// console.log(fil_size);
 
-            div_right = document.createElement("div");
-            div_right.setAttribute("class", "right");
-            div_box.append(div_right);
-            console.log(div_right);
 
-            // < h3 id = "name"> </h3>
+  // <div class = "box" > </div>
 
-            h3_title = document.createElement("h3");
-            h3_title.setAttribute("id", "name");
-            h3_title.innerText = add_product[k]["name"];
-            div_right.append(h3_title);
+  div_box = document.createElement("div");
+  div_box.setAttribute("class", "box");
+  // console.log(div_box);
 
-            // h4> </h4>
+  // < div class = "photo" > </div>
 
-            h4_sub =  document.createElement("h4");
-            h4_sub.innerText = "Special price:";
-            div_right.append(h4_sub);
+  div_photo = document.createElement("div");
+  div_photo.setAttribute("class", "photo");
+  div_box.append(div_photo);
+  // console.log(div_photo);
 
-            // <div class = "price" > </div>
+  // <img/>
 
-            div_price = document.createElement("div");
-            div_price.setAttribute("class", "price");
-            div_right.append(div_price);
+  img = document.createElement("img");
+  img.setAttribute("src", check_pdt[k].image);
+  img.setAttribute("alt", "photo");
+  img.setAttribute("height", "300px");
+  img.setAttribute("width", "280px");
+  div_photo.append(img);
 
-           // < p id = "original_price" > </p>
+  // < div class = "right" > </div>
 
-           p_org = document.createElement("p");
-           p_org.setAttribute("id", "original_price");
-           p_org.innerText = "₹" + add_product[k]["discount_price"];
-           div_price.append(p_org);
+  div_right = document.createElement("div");
+  div_right.setAttribute("class", "right");
+  div_box.append(div_right);
+  // console.log(div_right);
 
-            // <p> </p>
+  // < h3 id = "name"> </h3>
 
-            p_dis = document.createElement("p");
-            div_price.append(p_dis);
+  h3_title = document.createElement("h3");
+  h3_title.setAttribute("id", "name");
+  h3_title.innerText = check_pdt[k].name;
+  div_right.append(h3_title);
 
-            // <s> </s>
+  // h4> </h4>
 
-            s = document.createElement("s");
-            s.setAttribute("id", "discount_price");
-            s.innerText = "₹" + add_product[k]["original_price"];
-            p_dis.append(s);
+  h4_sub = document.createElement("h4");
+  h4_sub.innerText = "Special price:";
+  div_right.append(h4_sub);
 
-            // <p> </p>
+  // <div class = "price" > </div>
 
-            p_percent = document.createElement("p");
-            div_price.append(p_percent);
+  div_price = document.createElement("div");
+  div_price.setAttribute("class", "price");
+  div_right.append(div_price);
 
-            // < b > </b>
+  // < p id = "original_price" > </p>
 
-            b = document.createElement("b");
-            b.setAttribute("id", "discount_percent");
-            b.innerText = add_product[k]["discount_percent"] + "%" + "off";
-            p_percent.append(b);
+  p_org = document.createElement("p");
+  p_org.setAttribute("id", "original_price");
+  p_org.innerText = `₹${fil_size[0].discount_price}`;
+  div_price.append(p_org);
 
-            // <div class = "star"> </div>
+  // <p> </p>
 
-            div_star = document.createElement("div");
-            div_star.setAttribute("class", "star");
-            div_right.append(div_star);
+  p_dis = document.createElement("p");
+  div_price.append(p_dis);
 
+  // <s> </s>
 
-            // <span> </span>
+  s = document.createElement("s");
+  s.setAttribute("id", "discount_price");
+  s.innerText = `₹${fil_size[0].original_price}`;
+  p_dis.append(s);
 
-            span = document.createElement("span");
-            span.setAttribute("class", "stars");
-            span.innerText = "Reviews:";
-            div_star.append(span);
+  // <p> </p>
 
+  p_percent = document.createElement("p");
+  div_price.append(p_percent);
 
-        for (j=0; j<5; j++) {
+  // < b > </b>
 
-            // <i> </i>
+  b = document.createElement("b");
+  b.setAttribute("id", "discount_percent");
+  b.innerText = `${fil_size[0].discount_percent}% off`;
+  p_percent.append(b);
 
-            i = document.createElement("i");
-            i.setAttribute("class", "fa fa-star");
-            i.setAttribute("style", "font-size: 24px;color: gold");
-            div_star.append(i)
+  // <div class = "star"> </div>
 
-        }            
+  div_star = document.createElement("div");
+  div_star.setAttribute("class", "star");
+  div_right.append(div_star);
 
-            // < strong> </strong>
+if (fil_size[0].size === "0" || fil_size[0].size === "1" || fil_size[0].size === "2" ||
+fil_size[0].size === "3" || fil_size[0].size === "4" || fil_size[0].size === "5" ||
+fil_size[0].size === "6" || fil_size[0].size === "7") {
 
-            strong_pdt = document.createElement("strong");
-            strong_pdt.innerText = "Product details:"
-            div_right.append(strong_pdt);
+  div_star.setAttribute("style", "display: none;")
 
-            // <div class = "para"> </div>
+}
 
-            div_pdt = document.createElement("div");
-            div_pdt.setAttribute("class", "para");
-            div_pdt.setAttribute("id", "product_detail");
-            div_right.append(div_pdt);
+else {
 
-            // <p> </p> 
+  div_star.setAttribute("style", "display: flex;")
 
-            p_pdt = document.createElement("p");
-            p_pdt.innerText = add_product[k]["product_detail"];
-            div_pdt.append(p_pdt);
+}
 
-            // < strong> </strong>
+  // <span> </span>
 
-            strong_add = document.createElement("strong");
-            strong_add.innerText = "Additional offers";
-            div_right.append(strong_add);
+  span = document.createElement("span");
+  span.setAttribute("class", "stars");
+  span.innerText = "Sizes :";
+  div_star.append(span);
 
-            // <div class = "para"> </div>
 
-            div_add = document.createElement("div");
-            div_add.setAttribute("class", "paras");
-            div_add.setAttribute("id", "add_info");
-            div_right.append(div_add);
+  for (let j = 0; j < fil_size.length; j++) {
+      // <p> 
 
-
-            // <p> </p> 
-
-            p_add = document.createElement("p");
-            p_add.innerText = add_product[k]["add_info"];
-            div_add.append(p_add);
-
-            // <button class = "edit"> </button>
-
-
-            button_edit  = document.createElement("button");
-            button_edit.setAttribute("class", "edit");
-            button_edit.setAttribute("data-id", add_product[k]["product_uuid"]);
-            button_edit.setAttribute("type", "submit");
-            button_edit.innerText = "Edit";
-            div_right.append(button_edit);
-
-           
-            // <button> </button>
-
-            button_del = document.createElement("button");
-            button_del.setAttribute("type", "submit");
-            button_del.setAttribute("class", "del");
-            button_del.setAttribute("onclick", "del_pdt()");
-            button_del.innerText = "Delete";
-            div_right.append(button_del);
-            console.log(button_del);
-
-           
-            button_remove = document.createElement("button");
-            button_remove.setAttribute("type", "submit");
-            button_remove.setAttribute("class", "remove");
-            // button_remove.setAttribute("data-del", add_product[k]["product_uuid"]);
-            button_remove.setAttribute("onclick", "remove_pdt()");
-            button_remove.innerText = "Remove";
-            div_right.append(button_remove);
-            
-
-
-            // add_remove = document.createElement("button");
-            // add_remove.setAttribute("type", "submit");
-            // add_remove.innerText="Add";
-            // add_remove.setAttribute("class", "adding");
-            // // add_remove.setAttribute("style", "display:none;"); 
-            // add_remove.setAttribute("onclick", "add_pdt()");   
-            // div_right.append(add_remove);
-
-
-            // button_remove = document.createElement("button");
-            // button_remove.setAttribute("type", "submit");
-            // // button_remove.setAttribute("id", "toggle");
-            // button_remove.setAttribute("onclick", "add_pdt()");
-            // button_remove.innerText = "Add";
-            // div_right.append(button_remove);
-
-
-            document.querySelector("section").append(div_box);            
-
-         }
-
-
-                        let product_details = document.querySelectorAll("button.edit")
-                            product_details.forEach(function(find){
-                                find.addEventListener("click", function(){
-                                    let product_description = this.dataset.id;
-                                    localStorage.setItem("productDetail",JSON.stringify(product_description))
-                                    window.location.href = `../products/editproduct.html?product_id=${product_description}`;
-                                    console.log(product_details)
-                                    }
-                                )
-                                }   
-                            )
-
-            
-            // document.getElementById("name").innerText = add_product[k]["name"];
-            // document.getElementById("original_price").innerText = add_product[k]["original_price"];
-            // document.getElementById("discount_price").innerText = add_product[k]["discount_price"];
-            // document.getElementById("discount_percent").innerText = add_product[k]["discount_percent"];
-            // document.getElementById("product_detail").innerText = add_product[k]["product_detail"];
-            // document.getElementById("add_info").innerHTML = add_product[k]["add_info"];
-            
-
-            // delete product function
-        
-            function del_pdt(){
-            
-                if(confirm("Are you sure to delete this product ?")){
-           
-                    let add_products = JSON.parse(localStorage.getItem("add_products"));
-                
-                    const indexOfUser = add_products.indexOf(add_products);
-
-                    add_products.removeI(indexOfUser, 1);
-                    
-                    localStorage.setItem("add_products", JSON.stringify(add_products));
-
-                    window.location.href = "../homepage/frontpage.html";
-                }
+      p_size = document.createElement("p");
+      p_size.setAttribute("class", "size");
+      p_size.setAttribute("data-size", fil_size[j].size);
+      p_size.setAttribute("data-sizes", fil_size[j].product_uuid);
+      p_size.innerHTML = fil_size[j].size;
+      div_star.append(p_size);
     
-            }
+  }
+
+  const div_qty = document.createElement("div");
+  div_qty.setAttribute("class", "qty");
+  div_right.append(div_qty);
+  
+  p_qty = document.createElement("p");
+  p_qty.innerText = "Quantity :  ";
+  div_qty.append(p_qty);
+
+  p_q = document.createElement("p");
+  p_q.innerText = fil_size[0].quantity_seller;
+  div_qty.append(p_q);
+
+  // < strong> </strong>
+
+  strong_pdt = document.createElement("strong");
+  strong_pdt.innerText = "Product details:";
+  div_right.append(strong_pdt);
+
+  // <div class = "para"> </div>
+
+  div_pdt = document.createElement("div");
+  div_pdt.setAttribute("class", "para");
+  div_pdt.setAttribute("id", "product_detail");
+  div_right.append(div_pdt);
+
+  // <p> </p>
+
+  p_pdt = document.createElement("p");
+  p_pdt.innerText = check_pdt[k].product_detail;
+  div_pdt.append(p_pdt);
+
+  // < strong> </strong>
+
+  strong_add = document.createElement("strong");
+  strong_add.innerText = "Additional offers";
+  div_right.append(strong_add);
+
+  // <div class = "para"> </div>
+
+  div_add = document.createElement("div");
+  div_add.setAttribute("class", "paras");
+  div_add.setAttribute("id", "add_info");
+  div_right.append(div_add);
+
+  // <p> </p>
+
+  p_add = document.createElement("p");
+  p_add.innerText = check_pdt[k].add_info;
+  div_add.append(p_add);
+
+  // <button class = "edit"> </button>
+
+  button_edit = document.createElement("button");
+  button_edit.setAttribute("class", "edit");
+  button_edit.setAttribute("data-id", check_pdt[k].product_uuid);
+  button_edit.setAttribute("type", "submit");
+  button_edit.innerText = "Edit";
+  div_right.append(button_edit);
+
+  // <button> </button>
+
+  button_del = document.createElement("button");
+  button_del.setAttribute("type", "submit");
+  button_del.setAttribute("class", "del");
+  button_del.setAttribute("data-del", check_pdt[k].product_uuid);
+  // button_del.setAttribute("onclick", "del_pdt()");
+  button_del.innerText = "Delete";
+  div_right.append(button_del);
+  // console.log(button_del);
+
+  if (check_pdt[k].status === false) {
+    button_remove = document.createElement("button");
+  button_remove.setAttribute("style", "display: none;");
+  button_remove.setAttribute("type", "submit");
+  button_remove.setAttribute("class", "remove");
+  button_remove.setAttribute("data-remove", check_pdt[k].product_uuid);
+  button_remove.innerText = "Remove";
+  div_right.append(button_remove);
+  }
+  else {
+  button_remove = document.createElement("button");
+  button_remove.setAttribute("style", "display: block;");
+  button_remove.setAttribute("type", "submit");
+  button_remove.setAttribute("class", "remove");
+  button_remove.setAttribute("data-remove", check_pdt[k].product_uuid);
+  button_remove.innerText = "Remove";
+  div_right.append(button_remove);
+  }
+
+  if (check_pdt[k].status === true) {
+
+  button_add = document.createElement("button");
+  button_add.setAttribute("type", "submit");
+  button_add.setAttribute("class", "adding");
+  button_add.setAttribute("data-add", check_pdt[k].product_uuid);
+  button_add.setAttribute("style", "display: none;");
+  button_add.innerText = "Add";
+  div_right.append(button_add);
+  }
+
+  else {
+    button_add = document.createElement("button");
+  button_add.setAttribute("type", "submit");
+  button_add.setAttribute("class", "adding");
+  button_add.setAttribute("data-add", check_pdt[k].product_uuid);
+  button_add.setAttribute("style", "display: block;");
+  button_add.innerText = "Add";
+  div_right.append(button_add);
+  }
+
+  document.querySelector("section").append(div_box);
 
 
-        function remove_pdt () {
+}
 
-            
-            if (confirm("Are you sure to remove this ?")) {
+// Edit function
 
-                let product_id = JSON.parse(localStorage.getItem("uuid"));
-                console.log(product_id);
+const product_details = document.querySelectorAll("button.edit");
+product_details.forEach((find) => {
+  find.addEventListener("click", (e) => {
+    const product_description = e.currentTarget.dataset.id;
+    localStorage.setItem("productDetail", JSON.stringify(product_description));
+    window.location.href = `../products/addproduct.html?product_id=${product_description}`;
+    // console.log(product_details);
+  });
+});
 
-                // let all_products = JSON.parse(localStorage.getItem("add_products"));
+// delete product function
 
-                // let add_product = all_products.find(e => e.product_uuid = product_id);
+const del_product = document.querySelectorAll("button.del");
+del_product.forEach((check) => {
+  check.addEventListener("click", (e) => {
+    const product_id = e.currentTarget.dataset.del;
+    localStorage.setItem("product_id", JSON.stringify(product_id));
+    console.log(product_id);
+    if (window.confirm("Are you sure to delete this product?")) {
+      const id = JSON.parse(localStorage.getItem("product_id"));
+      const all_products = JSON.parse(localStorage.getItem("product_details"));
+      console.log(all_products);
+      const pdts = all_products.find((a) => a.product_uuid === id);
+      console.log(pdts);
+      const indexOfProduct = all_products.indexOf(pdts);
+      all_products.splice(indexOfProduct, 1);
+      localStorage.setItem("product_details", JSON.stringify(all_products));
+      window.location.reload();
+    }
+  });
+});
 
-                // console.log(add_product);
+// Removing products from the user side //
 
-                // let indexOf = all_products.indexOf(add_product, 1);
+const remove_pdt = document.querySelectorAll("button.remove");
 
-                // console.log(indexOf);
+remove_pdt.forEach((remove) => {
+  remove.addEventListener("click", (e) => {
+    const product_id = e.currentTarget.dataset.remove;
 
-                // add_product["status"] = false;
+    localStorage.setItem("product_id", JSON.stringify(product_id));
 
-                // console.log(add_product);
+    const all_products = JSON.parse(localStorage.getItem("product_details"));
 
+    const find_pdt = all_products.find((g) => g.product_uuid === product_id);
 
-            } 
+    const indexOfProduct = all_products.indexOf(find_pdt);
+    console.log(indexOfProduct);
 
-        }
+    if (all_products[indexOfProduct].status === true) {
 
+      alert("This product is successfully removed");
 
-        // function remove_pdt () {
+      all_products[indexOfProduct].status = false;
 
+      localStorage.setItem("product_details", JSON.stringify(all_products));
+      window.location.reload();
+    } else {
+      alert("You have not added the product yet");
+    }
+  });
+});
 
-            
+//   ADDING PRODUCTS TO THE USER SIDE    //
+const add_pdt = document.querySelectorAll("button.adding");
 
-        //     if ( confirm ( "Are you sure to remove this product ?" ) ) {
+add_pdt.forEach((add) => {
+  add.addEventListener("click", (e) => {
+    const product_id = e.currentTarget.dataset.add;
 
-        //         // gor getting the particular id
+    localStorage.setItem("product_id", JSON.stringify(product_id));
 
-        //         let product_id = JSON.parse(localStorage.getItem("product_id"));
-        //         // console.log(product_id);
+    const all_products = JSON.parse(localStorage.getItem("product_details"));
 
-        //         // getting the product datas from the local storage
+    const find_pdt = all_products.find((f) => f.product_uuid === product_id);
 
-        //         let all_products = JSON.parse(localStorage.getItem("add_products"));
+    const indexOfProduct = all_products.indexOf(find_pdt);
+    console.log(indexOfProduct);
 
-        //         // finding the particular data
+    if (all_products[indexOfProduct].status === false) {
+      alert("This product is successfully added");
 
-        //         let add_product = all_products.find(e => e.product_uuid == product_id);
+      all_products[indexOfProduct].status = true;
 
-        //         // console.log(add_product);
-
-        //         let  indexOf=all_products.indexOf(add_product)
-
-        //         console.log(indexOf)
-
-        //         // set the status as false
-                
-        //         indexOf["status"] = "false";
-
-        //         // stringify the datas which are all get
-
-                
-
-        //     }
-
-        //     // let removeBtn = document.querySelector("button.remove");
-            
-        //     // removeBtn.setAttribute("style","display:none");
-            
-        //     // document.querySelector("button.adding").setAttribute("style", "display:inline")
-
-        // }
-
-
-        // function add_pdt () {
-            
-        //     if ( confirm ( "Are you sure to add this product?" ) ) {
-
-        //         let product_id = JSON.parse(localStorage.getItem("productDetail"))
-
-        //         let all_products = JSON.parse(localStorage.getItem("add_products"));
-
-        //         let add_product = all_products.find(e => e.product_uuid == product_id);
-
-        //         add_product["status"] = true;
-
-        //         localStorage.setItem("add_products", JSON.stringify(all_products));
-
-
-        //     }
-        
-        // }
+      localStorage.setItem("add_products", JSON.stringify(all_products));
+      window.location.reload();
+    } else {
+      alert("You have already added the product");
+    }
+  });
+});
 
 
+    /////     PRICE CHANGING ACCORDING TO SIZE   //////
 
+
+    document.querySelectorAll('.size').forEach((element) => {
+      element.addEventListener('click', (event) => {
+        const size_id = event.currentTarget.getAttribute('data-size');
+      console.log(size_id);
+
+      const size_uuid = event.currentTarget.getAttribute('data-sizes');
+      console.log(size_uuid);
+
+      const size_detail = JSON.parse(localStorage.getItem("product_size_details"));
+
+      const check_size = size_detail.filter((p) => p.product_uuid === size_uuid);
+      console.log(check_size);
+
+      let sizePrice = check_size.find((s) => s.size === size_id);
+      console.log(sizePrice);
+      p_org.innerText = `₹${sizePrice.discount_price}`;
+      s.innerText = `₹${sizePrice.original_price}`;
+      b.innerText = `${sizePrice.discount_percent}% off`;    
+      p_q.innerText = sizePrice.quantity_seller;
+
+     });
+    });
 
 
         </script>

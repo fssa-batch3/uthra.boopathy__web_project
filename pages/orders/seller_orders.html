@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Seller Orders page </title>
+        <link rel="stylesheet" href="../../assets/css/style-myorderspage.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kreon:wght@300;400;500;600;700&family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    </head>  
+    
+    <body>
+        <header id="userLogin">
+
+        </header>
+
+        <div class="arrows"></div>
+
+        <section>
+    
+        </section>
+
+        <footer>
+            <div class="top">
+                <div class="about">
+                    <h4> About: </h4>
+                        <div class="us">
+                            <p>
+                                <a href="../homepage/aboutus.html"> About us </a>
+                            </p>
+                            <p>
+                                <a href="../homepage/frontpage.html"> Available Products </a>
+                            </p>
+                            <p>
+                                <a href="../homepage/termsofuse.html"> Terms of use </a>
+                            </p>
+                            <p>
+                                <a href="../homepage/return.html"> Return policy </a>
+                            </p> 
+                        </div>
+                </div>
+    
+                <div class="line"></div>
+    
+                    <div class="contact">
+    
+                        <div class="socials">
+                            <span class="con"> Contact us </span>
+                                <div class="insta">
+                                    <i class="fa-brands fa-instagram"></i> 
+                                </div>
+                                <div class="fb">
+                                    <i class="fa-brands fa-facebook-f"></i> 
+                                </div>
+                                <div class="twiter">
+                                    <i class="fa-brands fa-twitter"></i> 
+                                </div>
+                                <div class="wa">
+                                    <i class="fa-brands fa-whatsapp"></i> 
+                                </div>
+                        </div>
+                        <div>
+                            <p>Copy rights @ 2022</p>
+                        </div>
+                </div>
+            </div>
+    
+        </footer>
+    
+         <script src="../../assets/js/header.js"></script>
+
+         <script>
+            // <div class = "arrow" > </div>
+    
+            const div_arrow = document.createElement("div");
+            div_arrow.setAttribute("class", "arrow");
+            console.log(div_arrow);
+    
+            // <a> link </a>
+    
+            const a_arrow = document.createElement("a");
+            a_arrow.setAttribute("href", "../homepage/frontpage.html");
+            div_arrow.append(a_arrow);
+            // console.log(a_arrow);
+    
+            // < i >  arrow </i>
+    
+            const i_arrow = document.createElement("i");
+            i_arrow.setAttribute("title", "Back");
+            i_arrow.setAttribute("class", "fa-solid fa-arrow-left");
+            a_arrow.append(i_arrow);
+    
+            document.querySelector("div.arrows").append(div_arrow);
+    
+            const user_id = JSON.parse(localStorage.getItem("uniqueID"));
+            console.log(user_id);
+
+            const ordered_products = JSON.parse(localStorage.getItem("my_orders"));
+            console.log(ordered_products);
+
+            const order = ordered_products.filter((e) => e.seller_id === user_id);
+            console.log(order);
+
+            const order_pdts = JSON.parse(localStorage.getItem("ordered_items"));
+            console.log(order_pdts);
+
+            if (order.length === 0) {
+
+                const div_container = document.createElement("div");
+                div_container.setAttribute("class", "container");
+                console.log(div_container);
+
+                const p_pdt = document.createElement("p");
+                p_pdt.setAttribute("class", "not");
+                p_pdt.innerText = "You have not received any orders yet"
+                div_container.append(p_pdt);
+
+                document.querySelector("section").append(div_container);
+
+
+            } else {
+
+                for (let j = 0; j < order.length; j++) {
+            const items = order_pdts.filter((p) => order[j].order_id === p.order_id);
+            console.log(items);
+            // <div class = "container" > </div>
+
+            const div_container = document.createElement("div");
+            div_container.setAttribute("class", "container");
+            console.log(div_container);
+
+            const p_pdt = document.createElement("p");
+              p_pdt.setAttribute("class", "pdt");
+              p_pdt.setAttribute("data-id", order[j].order_id);
+              p_pdt.innerText = `No of Products : ${  items.length}`;
+              div_container.append(p_pdt);
+
+              const id = document.createElement("p");
+              id.setAttribute("class", "id");
+            //   id.setAttribute("data-id", order[j].order_id);
+              id.innerText = `Order ID : ${  order[j].order_id}`;
+              div_container.append(id);
+
+            //<div class = "deliver" >
+
+            const div_deliver = document.createElement("div");
+            div_deliver.setAttribute("class", "deliver");
+            div_container.append(div_deliver);
+
+            // <div class ="detail">
+
+            const div_detail = document.createElement("div");
+            div_detail.setAttribute("class", "detail");
+            div_deliver.append(div_detail);
+
+            // <strong>
+
+            const strong = document.createElement("strong");
+            strong.innerText = "DELIVERY DETAILS :";
+            div_detail.append(strong);
+
+            // <p1>
+
+            const p_1 = document.createElement("p");
+            p_1.setAttribute("class", "sel");
+            p_1.innerText = `Delivered to : ${order[j].uname}`;
+            div_detail.append(p_1);
+
+            // p_2
+
+            const p_2 = document.createElement("p");
+            p_2.innerText = `Ordered on : ${order[j].order_on}`;
+            p_1.append(p_2);
+
+            const p_9 = document.createElement("p");
+            p_9.innerText = `Delivered on : ${order[j].delivered_on}`;
+            p_1.append(p_9);
+
+            const p_7 = document.createElement("p");
+            //   p_7.setAttribute("class", "sel");
+            p_7.innerText = `Phone number : ${order[j].phonenumber}`;
+            p_2.append(p_7);
+
+            // p_3
+
+            const p_3 = document.createElement("p");
+            p_3.innerText = `Address : ${order[j].address}`;
+            p_2.append(p_3);
+
+            const p_6 = document.createElement("p");
+            p_6.innerText = `Pincode : ${order[j].pincode}`;
+            p_3.append(p_6);
+
+            const p_5 = document.createElement("p");
+            p_5.innerText = `State : ${order[j].state}`;
+            p_6.append(p_5);
+
+            const view = document.createElement("button");
+            view.setAttribute("class", "view")
+            view.innerText = "VIEW PRODUCTS";
+            view.setAttribute("data-cancel", order[j].order_id);
+            div_container.append(view);
+
+            if (order[j].status === true) {
+
+            const button = document.createElement("button");
+            button.setAttribute("class", "cancel")
+            button.setAttribute("style", "display: block")
+            button.innerText = "CANCEL ORDER";
+            button.setAttribute("data-cancel", order[j].order_id);
+            div_container.append(button);
+            }
+            else {
+                const button = document.createElement("button");
+            button.setAttribute("style", "display: none")
+            button.setAttribute("class", "cancel")
+            button.innerText = "CANCEL ORDER";
+            button.setAttribute("data-cancel", order[j].order_id);
+            div_container.append(button);
+            }
+
+            document.querySelector("section").append(div_container);
+        }
+
+            }
+
+
+            </script>
+    
+        </body>
+    
+    </html>

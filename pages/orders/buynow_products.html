@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> My orders page </title>
+        <link rel="stylesheet" href="../../assets/css/buynow_pdts.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kreon:wght@300;400;500;600;700&family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    </head>
+    
+    <body>
+        <header id="userLogin">
+
+        </header>
+
+        <section>
+
+            <a href="../orders/myorderspage.html"> 
+                <i class="fa-solid fa-xmark" style="color: red; font-size: 22px;" title="close"></i> 
+            </a>
+
+            <h2> PRODUCT LIST </h2>
+
+        <div class = "div">
+
+        </div>
+
+        </section>
+        
+        <footer>
+            <div class="top">
+                <div class="about">
+                    <h4> About: </h4>
+                    <div class="us">
+                        <p>
+                            <a href="../homepage/aboutus.html"> About us  </a>
+                        </p>
+                        <p>
+                            <a href="#"> Available Products </a>
+                        </p>
+                        <p>
+                            <a href="#"> Security </a>
+                        </p>
+                        <p>
+                            <a href="../homepage/termsofuse.html"> Terms of use </a> 
+                        </p> 
+                        <p>
+                            <a href="../homepage/return.html"> Return policy </a>
+                        </p>
+             </div>
+            </div>
+   
+                                            <div class="line"></div>
+   
+                                            <div class="contact">  
+                   
+                                                <div class="socials">
+                                                    <span class="con"> Contact us </span>
+                                                    <div class="insta">
+                                                        <i class="fa-brands fa-instagram" style="font-size:23px"></i> 
+                                                    </div>
+                                                    <div class="fb">
+                                                        <i class="fa-brands fa-facebook-f" style="font-size:23px"></i> 
+                                                    </div>
+                                                    <div class="twiter">
+                                                        <i class="fa-brands fa-twitter" style="font-size:23px"></i> 
+                                                    </div>
+                                                    <div class="wa">
+                                                        <i class="fa-brands fa-whatsapp" style="font-size:23px"></i> 
+                                                    </div>
+                                                </div>    
+                                                <div>
+                                                    <p>Copy rights @ 2022</p>
+                                                </div>
+                                            </div>
+         </div>
+   
+         </footer>    
+   
+    <script src="../../assets/js/header.js"> </script>
+   
+    <script>
+        const products = JSON.parse(localStorage.getItem("ordered_items"));
+        console.log(products);
+
+        const order_id = JSON.parse(localStorage.getItem("order_id"));
+        
+        const order_pdts = products.filter(
+          (e) => e.order_id === order_id
+        );
+        console.log(order_pdts);
+
+            const product = JSON.parse(localStorage.getItem("product_details"));
+
+            // const check = product.filter((m) => order_pdts.some((h) => h.product_id === m.product_uuid));
+            // console.log(check);
+
+
+          for (let i = 0; i < order_pdts.length; i++) {
+
+            const check = product.find((p) => p.product_uuid === order_pdts[i].product_id);
+            console.log(check);
+
+            // <div class = "details">
+
+            const div_details = document.createElement("div");
+            div_details.setAttribute("class", "details");
+
+            //<div>
+
+            const div = document.createElement("div");
+            div_details.append(div)
+
+            // <img>
+
+            const img = document.createElement("img");
+            img.setAttribute("src", check.image);
+            img.setAttribute("alt", check.name);
+            img.setAttribute("id", "image");
+            img.setAttribute("height","220px");
+            img.setAttribute("width","220px");
+            div.append(img);
+
+            // // <div class="info">
+
+            const div_info = document.createElement("div");
+            div_info.setAttribute("class", "info");
+            div_details.append(div_info);
+            
+            // // <h5>
+
+            const h5 = document.createElement("h5");
+            h5.setAttribute("id", "name")
+            h5.innerText = check.name;
+            div_info.append(h5);
+
+            // <p>
+
+            const p = document.createElement("p");
+            p.setAttribute("class", "price");
+            p.setAttribute("id", "original_price");
+            p.innerText = `₹${order_pdts[i].discount_price}`;
+            div_info.append(p);
+
+            const size = document.createElement("p");
+            size.setAttribute("class", "qty");
+            // qty.setAttribute("id", "original_price");
+            size.innerText = `Size : ${ order_pdts[i].size}`;
+            div_info.append(size);
+            
+            if (order_pdts[i].size === "0" || order_pdts[i].size === "1" || order_pdts[i].size === "2" ||
+            order_pdts[i].size === "3" || order_pdts[i].size === "4" || order_pdts[i].size === "5" || 
+            order_pdts[i].size === "6" || order_pdts[i].size === "7" ) {
+
+                size.setAttribute("style", "display:none");
+
+            }
+
+            else {
+
+                size.setAttribute("style", "display:block");
+
+            }
+            
+            const qty = document.createElement("p");
+            qty.setAttribute("class", "qty");
+            // qty.setAttribute("id", "original_price");
+            qty.innerText = `Quantity : ${ order_pdts[i].product_quantity}`;
+            div_info.append(qty);
+
+            const amt = document.createElement("p");
+            amt.setAttribute("class", "qty");
+            // qty.setAttribute("id", "original_price");
+            amt.innerText = `Total amount : ₹${ order_pdts[i].discount_price * order_pdts[i].product_quantity}`;
+            div_info.append(amt);
+
+            const user_list = JSON.parse(localStorage.getItem("user_cred"));
+            const checking = user_list.find((h) => h.user_id === products[i].user_id);
+
+            const seller_name = document.createElement("p");
+            seller_name.setAttribute("class", "qty");
+            seller_name.innerText = `Seller Name : ${  checking.uname}`;
+            div_info.append(seller_name);
+
+            const seller_id = document.createElement("p");
+            seller_id.setAttribute("class", "qty");
+            seller_id.innerText = `Seller Phone number : ${  check.user_id}`;
+            div_info.append(seller_id);
+
+            document.querySelector("div").append(div_details);
+            // document.querySelector(".details").append(div_info);
+
+          }
+      </script>
+
+    </body>
+
+</html>

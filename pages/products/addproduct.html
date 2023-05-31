@@ -1,304 +1,965 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Add product page </title>
-        <link rel="stylesheet" href="../../assets/css/addproduct.css"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kreon:wght@300;400;500;600;700&family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-</head>  
-    
-    <body>
-        <header>
-            <a href="../homepage/frontpage.html"> <img class="logo" src="../../assets/images/logo.png" alt="logo" />  </a>
-            <h1> Thara's World </h1>
-              <div class="nav">
-                 <ul>
-                    <li> <a href="../orders/cartpage.html"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a></li>
-                    <li> <a href="../orders/wishlistpage.html"><i class="fa-sharp fa-solid fa-heart"></i></a></li> 
-                    <li><a href="../orders/myorderspage.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
-                    <li><a href="#"><i class="fa-solid fa-bell"></i></i></a></li>
-                    <li><a href="profilepage.html"><i class="fa-solid fa-circle-user"></i></a></li>
-                    <li> <a href="loginpage.html"><span class="login"> Login </span> </a></li>
-                  </ul>
-              </div>
-   
-              <div class="menu">
-                
-                <i class="fa-solid fa-bars"></i>               
-                 <div class="menu-list">
-                    
-                        <a href="../orders/cartpage.html"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
-                        <a href="../orders/wishlistpage.html"><i class="fa-sharp fa-solid fa-heart"></i></a>
-                        <a href="../orders/myorderspage.html"><i class="fa-solid fa-bag-shopping"></i></a>
-                        <a href="#"><i class="fa-solid fa-bell"></i></i></a>
-                        <a href="../homepage/profilepage.html"><i class="fa-solid fa-circle-user"></i></a>
-                        <a href="../homepage/loginpage.html"><span class="login"> Login </span> </a>
-                
-                 </div>
-             </div>
-   
-        </header>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Add product page </title>
+  <link rel="stylesheet" href="../../assets/css/addproduct.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kreon:wght@300;400;500;600;700&family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+</head>
 
-        <section>
+<body>
+  <header id="userLogin">
 
-            <form role="form" onsubmit="add_product(event)" >
+  </header>
 
-            <h2> ADD PRODUCTS </h2>
+  <section>
 
-            <div class="box"> 
-                
-                <div class="photo" id="imgBox"> 
-                    <div class="camera">                    
-                       <!-- <input type="file" accept="image/*" name="image" id="image" style = "display: none" /> -->
-                       <label for="image" class="camera"><i class="fa fa-camera" style="color: #000;"></i></label>
-                    </div>
-  
-                    <!-- <input type="file" id="image"/> -->
+    <div class="arrows"> </div>
 
-                </div>
+    <form role="form">
 
-                <div class="details">
+      <h2> ADD PRODUCTS </h2>
 
-                    <div>
-                        <label> Image url: </label>  <br>
-                        <input type="url" id="image" required />
-                    </div>
+      <div class="box">
 
-                    <div>  
-                        <label> Name of the product: </label> <br>
-                        <input type="text" id="name" required />
-                    </div>
+        <div class="photo" id="imgBox">
+          <div class="camera">
+            <!-- <input type="file" accept="image/*" name="image" id="image" style = "display: none" /> -->
+            <label for="image" class="camera">
+              <i class="fa fa-camera" style="color: #000;"></i>
+            </label>
+          </div>
 
-                    <div>  
-                        <label> Actual price: </label> <br>
-                        <label>₹</label>
-                        <input type="number" id="original_price" pattern="[0-9]{0,}" required />
-                    </div>
+        </div>
 
-                     <div>
-                        <label> Current price: </label> <br>
-                        <label>₹</label>
-                        <input type="number" id="discount_price" pattern="[0-9]{0,}" /> 
-                    </div>
+        <div class="details">
 
-                    <div>
-                        <label> Discount percentage:</label> <br>
-                        <input type="number" id="discount_percent" />
-                        <label> % </label>
-                    </div> 
+          <div>
+            <label> Image url: </label>
+            <br>
+            <input type="url" id="image" required>
+          </div>
 
-                    <div>
-                        <label> Category: </label>
-                        <select id="category" required  >
-                            <option selected="selected"  > Select category </option>
-                            <!-- <option value="dress"> Dress </option>
-                            <option value="jewell"> Jewell </option>
-                            <option value="cosmetics"> Cosmetics </option>
-                            <option value="sandal"> Sandals </option> -->
-                        </select>
+          <div>
+            <label> Name of the product: </label>
+            <br>
+            <input type="text" id="name" required>
+          </div>
 
-                        <label> Type: </label>
-                        <select id="type" required  >
-                            <option selected="selected"> Select category </option>
-                            <!-- <option value="1"> Saree </option>
-                            <option value="1"> Chudi </option>
-                            <option value="1"> Frock </option>
-                            <option value="1"> Jeans </option>
-                            <option value="1"> Party wear </option>
-                            <option value="1"> Traditional wear </option>
-                            <option value="1"> Crop top </option>
-                            <option value="1"> Leganga </option>
-                            <option value="2"> Earring </option>
-                            <option value="2"> Chain </option>
-                            <option value="2"> Bracelet </option>
-                            <option value="2"> Jewell set </option>
-                            <option value="2"> Ring </option>
-                            <option value="2"> Nosepins </option>
-                            <option value="2"> Choker </option>
-                            <option value="2"> Necklace </option>
-                            <option value="3"> Eye products </option>
-                            <option value="3"> Shades </option>
-                            <option value="3"> Nailpolish </option>
-                            <option value="3"> Face creams </option>
-                            <option value="3"> Facialkit </option>
-                            <option value="3"> Lipstick </option>
-                            <option value="3"> Brush </option>
-                            <option value="3"> Makeupkit </option>
-                            <option value="4"> Flats </option>
-                            <option value="4"> Heels </option>
-                            <option value="4"> Office wear </option>
-                            <option value="4"> Party wear </option>
-                            <option value="4"> Cut shoe </option>
-                            <option value="4"> Sports shoe </option> -->
-                        </select>
+          <div>
+            <label> Category: </label>
+            <select id="category" required>
+              <option selected="selected"> Select category </option>
+            </select>
 
-                    </div> 
+            <label class="type"> Type: </label>
+            <select id="type" required>
+              <option selected="selected"> Select type </option>
+            </select>
+          </div>
 
+          <div class="size :">
+          </div>
 
-                    <div class="add">  
-                        <label> Product details: </label> <br>
-                        <textarea id="product_detail" required ></textarea>
-                    </div>
+          <div class="actual">
+          </div>
 
-                    <div class="add_info">  
-                        <label> Additional information: </label> <br>
-                        <textarea id="add_info" ></textarea>
-                    </div>
+          <div class="current">
+          </div>
 
-                    <div class="type">
-                        <label> Type </label>
-                        <select id="unique_type">
-                            <option> Select category </option>
-                        </select>
-<!-- 
-                        <label> Available quantity: </label>
-                        <input type="number" id="qty" min="1" required> -->
-                    </div>
+          <div class="discount">
+          </div>
 
-                    <button type="submit"> Upload </button> 
+          <div class="qty">
+          </div>
 
-                     <!-- <button> <a href="../products/myproduct.html"> Upload </a> </button> -->
+          <table id="table">
+          </table>
 
-                </div>
+          <div class="add">
+            <label> Product details: </label>
+            <br>
+            <textarea id="product_detail" required> </textarea>
+          </div>
 
-            </div>
+          <div class="add_info">
+            <label> Additional information: </label>
+            <br>
+            <textarea
+              id="add_info">*Special PriceGet extra 30% off (price inclusive of cashback/coupon)T&C 
+                                *Bank Offer5% Cashback on Thara's World Axis Bank CardT&C                  
+                                *Partner OfferSign up for Thara's World Pay Later and get Thara's World Gift Card worth up to ₹500 </textarea>
+          </div>
 
-        </form>
+          <button type="submit" class="submit"> Upload </button>
 
-        </section>
+        </div>
 
-        <script>
-       
-       
-        // let imgBox = document.getElementById("imgBox");
-        // let loadFile = function(event){
-        //     imgBox.style.backgroundImage = "url(" + URL.createObjectURL(event.target.files[0])+")";
-        // }
+      </div>
+
+    </form>
+
+  </section>
+
+  <script src="../../assets/js/header.js"></script>
+
+  <script>
+    // <div class = "arrow" > </div>
+
+    const sizeForLength = [];
+
+    const div_arrow = document.createElement("div");
+    div_arrow.setAttribute("class", "arrow");
+
+    // <a> link </a>
+
+    const a_arrow = document.createElement("a");
+    a_arrow.setAttribute("href", "../products/myproduct.html");
+    div_arrow.append(a_arrow);
+
+    // < i >  arrow </i>
+
+    const i_arrow = document.createElement("i");
+    i_arrow.setAttribute("title", "Back");
+    i_arrow.setAttribute("class", "fa-solid fa-arrow-left");
+    a_arrow.append(i_arrow);
+
+    document.querySelector("div.arrows").append(div_arrow);
+
+    document.querySelector("#type").addEventListener("change", () => {
+
+      if (document.getElementById("category").value === "Dress") {
+
+        if (document.getElementById("type").value === "0" || document.getElementById("type").value === "3" ||
+          document.getElementById("type").value === "5") {
+
+          const table = document.querySelector("#table");
+          table.innerHTML = "";
+
+          // Create a new row
+          const newRow = document.createElement("tr");
+
+          const actualCell = document.createElement("td");
+          actualCell.innerText = "Actual Price:";
+
+          const discountCell = document.createElement("td");
+          discountCell.innerText = "Discount (%):";
+
+          const quantityCell = document.createElement("td");
+          quantityCell.innerText = "Quantity:";
+
+          // Append cells to the row
+          newRow.appendChild(actualCell);
+          newRow.appendChild(discountCell);
+          newRow.appendChild(quantityCell);
+
+          // Append the row to the table
+          table.append(newRow);
 
 
+            // Create a new row
+            const value = document.createElement("tr");
+            value.setAttribute("class", "tr")
 
-        function add_product(e) {
+            const actualCell_i = document.createElement("td");
+            actualCell_i.setAttribute("class", "td");
+            actualCell_i.innerText = "₹";
 
-            e.preventDefault();
+            const a_input = document.createElement("input");
+            a_input.setAttribute("type", "number")
+            a_input.setAttribute("id", "original_price");
+            actualCell_i.append(a_input);
 
-            let image = document.getElementById("image").value;
-            let name = document.getElementById("name").value;
-            let original_price = document.getElementById("original_price").value;
-            let discount_price = document.getElementById("discount_price").value;
-            let discount_percent = document.getElementById("discount_percent").value;
-            let category = document.getElementById("category").value;
-            let type = document.getElementById("type").value;
-            let product_detail = document.getElementById("product_detail").value;
-            let add_info = document.getElementById("add_info").value;
-            let product_uuid = uuidv4();
+            const discountCell_i = document.createElement("td");
+            discountCell_i.setAttribute("class", "td")
 
-            let add_products = JSON.parse(localStorage.getItem('add_products')) || [];
+            const p_input = document.createElement("input");
+            p_input.setAttribute("type", "number");
+            p_input.setAttribute("id", "discount_percent");
+            discountCell_i.append(p_input);
 
+            const quantityCell_i = document.createElement("td");
+            quantityCell_i.setAttribute("class", "td");
 
+            const q_input = document.createElement("input");
+            q_input.setAttribute("id", "quantity_seller");
+            quantityCell_i.append(q_input);
 
+            // Append the row to the table
+            table.append(value);
 
-                
-                add_products.push({
-                image: image,
-                name: name, 
-                original_price:  original_price,
-                discount_price: discount_price,
-                discount_percent: discount_percent,
-                category: category,
-                type: type,
-                product_detail: product_detail,
-                add_info: add_info,
-                product_uuid: product_uuid,
-                status : true
+            // Append cells to the row
+            value.appendChild(actualCell_i);
+            value.appendChild(discountCell_i);
+            value.appendChild(quantityCell_i);
 
-            });
-           
-            localStorage.setItem('add_products', JSON.stringify(add_products));
-                console.log(localStorage.getItem('add_products'));
-               
-                localStorage.setItem('uuid', JSON.stringify(product_uuid));
-               
-                alert('Product uploaded successfully');
-               
-                location.href = "../products/myproduct.html";
-                
-
-            }
-
-            
+            // Append the row to the table
+            table.appendChild(value);
 
 
-            // localStorage.setItem('unique_id', JSON.stringify(product_id));
+        }
 
-            // alert("Product uploaded successfully");
+        if (document.getElementById("type").value === "1" || document.getElementById("type").value === "2" ||
+          document.getElementById("type").value === "4" || document.getElementById("type").value === "6" ||
+          document.getElementById("type").value === "7") {
+
+          const size = document.querySelector(".size");
+          size.innerHTML = "";
+
+          const p = document.createElement("p");
+          p.innerHTML = "SIZE :";
+          size.append(p);
+
+          const size_list = JSON.parse(localStorage.getItem("size_list"));
+          console.log(size_list);
+
+          for (let i = 0; i < size_list.length - 6; i++) {
+            // console.log("uthra");
+            const input_1 = document.createElement("input");
+            input_1.setAttribute("type", "checkbox");
+            input_1.setAttribute("value", size_list[i].value);
+            input_1.setAttribute("class", "checkbox");
+            size.append(input_1);
+
+            const label_xs = document.createElement("label");
+            label_xs.setAttribute("for", "xs");
+            label_xs.innerHTML = size_list[i].value;
+            size.append(label_xs);
+
+          }
 
 
-            // window.location.href = "../products/myproduct.html";
-            
-            
+          // let size_table = ;
 
-        </script>
+          let val = "";
 
+          const table = document.querySelector("#table");
+          table.innerHTML = "";
 
-        <script>
+          // Create a new row
+          const newRow = document.createElement("tr");
 
+          // Create table cells
+          const sizeCell = document.createElement("td");
+          sizeCell.innerText = "Size";
 
+          const actualCell = document.createElement("td");
+          actualCell.innerText = "Actual Price:";
 
-            let categorySel = {
-                   
-                Dress: ["Saree", "Chudi", "Frock", "Leganga", "Party wear", "Traditional wear", "Crop top", "Jeans"],
-                
-                Jewell: ["Earring", "Choker", "Jewell set", "Nosepins", "Necklace", "Ring", "Chain", "Bracelet"],
-                
-                Cosmetics: ["Eye products", "Shades", "Lipstick", "Nailpolish", "Face cream", "Facialkit", "Makeupkit", "Brush"],
-                
-                Sandal: ["Flats", "Heels", "Cutshoe", "Sports shoe", "Office wear", "Party wear"]
-                
-            }
-                
-                window.onload = function () {
-                
-                    let category = document.getElementById("category");
-                
-                    let type = document.getElementById("type");
-                
-                    for (let types  in categorySel) {
-                        
-                        category.options[category.options.length] = new Option(types, types);
-                   
-                    }
-                    
-                    category.onchange = function () {
-                    
-                        type.length = 1; // remove all options bar first
-                    
-                        if (this.selectedIndex < 1) return; // done  
-                    
-                        let ft = categorySel[this.value];
-                    
-                        for (let fields in categorySel[this.value]) {
-                    
-                            type.options[type.options.length] = new Option(ft[fields], fields);
-                    
-                        }
-                    
-                    }
-                    
-                    category.onchange();
-                
+          const discountCell = document.createElement("td");
+          discountCell.innerText = "Discount (%):";
+
+          const quantityCell = document.createElement("td");
+          quantityCell.innerText = "Quantity:";
+
+          // Append cells to the row
+          newRow.appendChild(sizeCell);
+          newRow.appendChild(actualCell);
+          newRow.appendChild(discountCell);
+          newRow.appendChild(quantityCell);
+
+          // Append the row to the table
+          table.append(newRow);
+          document.querySelectorAll(".checkbox").forEach((check) => {
+            check.addEventListener("click", () => {
+              if (check.checked) {
+                const val = check.value;
+                sizeForLength.push(val);
+                console.log(sizeForLength);
+
+                if (sizeForLength.length > 0) {
+                  const table = document.querySelector("#table");
+
+                  // Create a new row
+                  const value = document.createElement("tr");
+                  value.setAttribute("class", "tr")
+
+                  // Create table cells
+                  const sizeCell = document.createElement("td");
+                  sizeCell.setAttribute("class", "td");
+                  sizeCell.innerText = val;
+
+                  const actualCell = document.createElement("td");
+                  actualCell.setAttribute("class", "td");
+                  actualCell.innerText = "₹";
+
+                  const a_input = document.createElement("input");
+                  a_input.setAttribute("type", "number")
+                  a_input.setAttribute("id", "original_price");
+                  actualCell.append(a_input);
+
+                  const discountCell = document.createElement("td");
+                  discountCell.setAttribute("class", "td");
+
+                  const p_input = document.createElement("input");
+                  p_input.setAttribute("type", "number");
+                  p_input.setAttribute("id", "discount_percent");
+                  discountCell.append(p_input);
+
+                  const quantityCell = document.createElement("td");
+                  quantityCell.setAttribute("class", "td");
+
+                  const q_input = document.createElement("input");
+                  q_input.setAttribute("id", "quantity_seller");
+                  quantityCell.append(q_input);
+
+                  // Append the row to the table
+                  table.append(value);
+
+                  // Append cells to the row
+                  value.appendChild(sizeCell);
+                  value.appendChild(actualCell);
+                  value.appendChild(discountCell);
+                  value.appendChild(quantityCell);
+
+                  // Append the row to the table
+                  table.appendChild(value);
+                }
+              } else {
+                const val = check.value;
+                const index = sizeForLength.indexOf(val);
+                if (index > -1) {
+                  sizeForLength.splice(index, 1);
+                  console.log(sizeForLength);
                 }
 
-        </script>
+                // Remove the corresponding table row from the DOM (assuming the table has an ID of "table")
+                const table = document.querySelector("#table");
+                const rows = table.querySelectorAll("tr");
+                for (let i = 1; i < rows.length; i++) {
+                  const row = rows[i];
+                  const sizeCell = row.querySelector("td");
+                  if (sizeCell.innerText === val) {
+                    table.removeChild(row);
+                    break;
+                  }
+                }
+              }
+            });
+          });
+
+
+        }
+
+      }
+
+
+      if (document.getElementById("category").value === "Jewell" || document.getElementById("category").value === "Cosmetics") {
+
+
+        const table = document.querySelector("#table");
+          table.innerHTML = "";
+
+          // Create a new row
+          const newRow = document.createElement("tr");
+
+          const actualCell = document.createElement("td");
+          actualCell.innerText = "Actual Price:";
+
+          const discountCell = document.createElement("td");
+          discountCell.innerText = "Discount (%):";
+
+          const quantityCell = document.createElement("td");
+          quantityCell.innerText = "Quantity:";
+
+          // Append cells to the row
+          newRow.appendChild(actualCell);
+          newRow.appendChild(discountCell);
+          newRow.appendChild(quantityCell);
+
+          // Append the row to the table
+          table.append(newRow);
+
+
+
+            // Create a new row
+            const value = document.createElement("tr");
+            value.setAttribute("class", "tr")
+
+            const actualCell_i = document.createElement("td");
+            actualCell_i.setAttribute("class", "td");
+            actualCell_i.innerText = "₹";
+
+            const a_input = document.createElement("input");
+            a_input.setAttribute("type", "number")
+            a_input.setAttribute("id", "original_price");
+            actualCell_i.append(a_input);
+
+            const discountCell_i = document.createElement("td");
+            discountCell_i.setAttribute("class", "td")
+
+            const p_input = document.createElement("input");
+            p_input.setAttribute("type", "number");
+            p_input.setAttribute("id", "discount_percent");
+            discountCell_i.append(p_input);
+
+            const quantityCell_i = document.createElement("td");
+            quantityCell_i.setAttribute("class", "td");
+
+            const q_input = document.createElement("input");
+            q_input.setAttribute("id", "quantity_seller");
+            quantityCell_i.append(q_input);
+
+            // Append the row to the table
+            table.append(value);
+
+            // Append cells to the row
+            value.appendChild(actualCell_i);
+            value.appendChild(discountCell_i);
+            value.appendChild(quantityCell_i);
+
+            // Append the row to the table
+            table.appendChild(value);
+
+
+      }
+
+      if (document.getElementById("category").value === "Sandal") {
+
+        const size = document.querySelector(".size");
+          size.innerHTML = "";
+
+          const p = document.createElement("p");
+          p.innerHTML = "SIZE :";
+          size.append(p);
+
+          const size_list = JSON.parse(localStorage.getItem("size_list"));
+          console.log(size_list);
+
+          for (let i = 16; i < size_list.length; i++) {
+            const input_1 = document.createElement("input");
+            input_1.setAttribute("type", "checkbox");
+            input_1.setAttribute("value", size_list[i].value);
+            input_1.setAttribute("class", "checkbox");
+            size.append(input_1);
+
+            const label_xs = document.createElement("label");
+            label_xs.setAttribute("for", "xs");
+            label_xs.innerHTML = size_list[i].value;
+            size.append(label_xs);
+
+          }
+
+
+          // let size_table = ;
+
+          let val = "";
+
+          const table = document.querySelector("#table");
+          table.innerHTML = "";
+
+          // Create a new row
+          const newRow = document.createElement("tr");
+
+          // Create table cells
+          const sizeCell = document.createElement("td");
+          sizeCell.innerText = "Size";
+
+          const actualCell = document.createElement("td");
+          actualCell.innerText = "Actual Price:";
+
+          const discountCell = document.createElement("td");
+          discountCell.innerText = "Discount (%):";
+
+          const quantityCell = document.createElement("td");
+          quantityCell.innerText = "Quantity:";
+
+          // Append cells to the row
+          newRow.appendChild(sizeCell);
+          newRow.appendChild(actualCell);
+          newRow.appendChild(discountCell);
+          newRow.appendChild(quantityCell);
+
+          // Append the row to the table
+          table.append(newRow);
+          document.querySelectorAll(".checkbox").forEach((check) => {
+            check.addEventListener("click", () => {
+              if (check.checked) {
+                const val = check.value;
+                sizeForLength.push(val);
+                console.log(sizeForLength);
+
+                if (sizeForLength.length > 0) {
+                  const table = document.querySelector("#table");
+
+                  // Create a new row
+                  const value = document.createElement("tr");
+                  value.setAttribute("class", "tr")
+
+                  // Create table cells
+                  const sizeCell = document.createElement("td");
+                  sizeCell.setAttribute("class", "td");
+                  sizeCell.innerText = val;
+
+                  const actualCell = document.createElement("td");
+                  actualCell.setAttribute("class", "td");
+                  actualCell.innerText = "₹";
+
+                  const a_input = document.createElement("input");
+                  a_input.setAttribute("type", "number")
+                  a_input.setAttribute("id", "original_price");
+                  actualCell.append(a_input);
+
+                  const discountCell = document.createElement("td");
+                  discountCell.setAttribute("class", "td");
+
+                  const p_input = document.createElement("input");
+                  p_input.setAttribute("type", "number");
+                  p_input.setAttribute("id", "discount_percent");
+                  discountCell.append(p_input);
+
+                  const quantityCell = document.createElement("td");
+                  quantityCell.setAttribute("class", "td");
+
+                  const q_input = document.createElement("input");
+                  q_input.setAttribute("id", "quantity_seller");
+                  quantityCell.append(q_input);
+
+                  // Append the row to the table
+                  table.append(value);
+
+                  // Append cells to the row
+                  value.appendChild(sizeCell);
+                  value.appendChild(actualCell);
+                  value.appendChild(discountCell);
+                  value.appendChild(quantityCell);
+
+                  // Append the row to the table
+                  table.appendChild(value);
+                }
+              } else {
+                const val = check.value;
+                const index = sizeForLength.indexOf(val);
+                if (index > -1) {
+                  sizeForLength.splice(index, 1);
+                  console.log(sizeForLength);
+                }
+
+                // Remove the corresponding table row from the DOM (assuming the table has an ID of "table")
+                const table = document.querySelector("#table");
+                const rows = table.querySelectorAll("tr");
+                for (let i = 1; i < rows.length; i++) {
+                  const row = rows[i];
+                  const sizeCell = row.querySelector("td");
+                  if (sizeCell.innerText === val) {
+                    table.removeChild(row);
+                    break;
+                  }
+                }
+              }
+            });
+          });
+
+      }
+
+
+    })
+
+
+    function add_product(e) {
+      e.preventDefault();
+
+      const image = document.getElementById("image").value;
+      let name = document
+        .getElementById("name")
+        .value.trim()
+        .split(/\s+/g)
+        .join(" ");
+
+      const original_price = document.getElementById("original_price").value;
+      let discount_price;
+      const discount_percent = document.getElementById("discount_percent").value;
+      const category = document.getElementById("category").value;
+      const type = document.getElementById("type").value;
+      const product_detail = document.getElementById("product_detail").value;
+      const add_info = document.getElementById("add_info").value;
+      const pdt_qty = document.getElementById("quantity_seller").value;
+    
+      const product_uuid = uuidv4();
+
+
+      function validate() {
+        if (/^\s*$/g.test(name)) {
+          alert("Write the product name properly");
+          name = reset();
+        }
+      }
+
+      validate();
+
+      const add_products = JSON.parse(localStorage.getItem("product_details")) || [];
+
+      const user_id = JSON.parse(localStorage.getItem("uniqueID"));
+
+      add_products.push({
+        image,
+        name,
+        category,
+        type,
+        product_detail,
+        add_info,
+        product_uuid,
+        status: true,
+        user_id,
+      });
+
+      const product_size_details = JSON.parse(localStorage.getItem("product_size_details")) || [];
+
+
+      if (document.getElementById("category").value === "Dress" && document.getElementById("type").value === "0" ||
+      document.getElementById("type").value === "3" || document.getElementById("type").value === "5") {
+
+
+      const rows = document.querySelectorAll(".tr");
+
+        rows.forEach(row => {
+          const columns = row.querySelectorAll(".td");
+          const obj = {};
+
+          obj.product_uuid = product_uuid;
+          obj.size = type;
+          obj.original_price = columns[0].querySelector("#original_price").value;
+          obj.discount_percent = columns[1].querySelector("#discount_percent").value;
+          obj.quantity_seller = columns[2].querySelector("#quantity_seller").value;
+
+        discount_price = original_price - (original_price * discount_percent) / 100;
+        discount_price = Math.round(discount_price);
+
+        obj.discount_price = discount_price;
+
+          product_size_details.push(obj);
+        });
+
+              }
+
+              if (document.getElementById("category").value === "Jewell" && document.getElementById("category").value === "Cosmetics") {
+
+
+        const rows = document.querySelectorAll(".tr");
+
+        rows.forEach(row => {
+        const columns = row.querySelectorAll(".td");
+        const obj = {};
+
+        obj.product_uuid = product_uuid;
+        obj.size = type;
+        obj.original_price = columns[0].querySelector("#original_price").value;
+        obj.discount_percent = columns[1].querySelector("#discount_percent").value;
+        obj.quantity_seller = columns[2].querySelector("#quantity_seller").value;
+
+
+
+        discount_price = original_price - (original_price * discount_percent) / 100;
+        discount_price = Math.round(discount_price);
+
+        obj.discount_price = discount_price;
+
+        product_size_details.push(obj);
+        });
+
+        }
+
+        if (document.getElementById("category").value === "Dress" && document.getElementById("type").value === "1" ||  
+        document.getElementById("type").value === "2" ||  document.getElementById("type").value === "4" ||
+        document.getElementById("type").value === "6" ||  document.getElementById("type").value === "7") {
+
+
+        const rows = document.querySelectorAll(".tr");
+
+        rows.forEach((row) => {
+        const columns = row.querySelectorAll(".td");
+        const obj = {};
+
+        obj.product_uuid = product_uuid;
+        obj.size = columns[0].textContent.trim();
+        obj.original_price = columns[1].querySelector("#original_price").value;
+        obj.discount_percent = columns[2].querySelector("#discount_percent").value;
+        obj.quantity_seller = columns[3].querySelector("#quantity_seller").value;
+
+        const original_price = parseFloat(obj.original_price);
+  const discount_percent = parseFloat(obj.discount_percent);
+
+        discount_price = original_price - (original_price * discount_percent) / 100;
+        discount_price = Math.round(discount_price);
+
+        obj.discount_price = discount_price;
+
+        product_size_details.push(obj);
+        });
+
+        }
+
+console.log(product_size_details);
+
+      localStorage.setItem("product_details", JSON.stringify(add_products));
+      localStorage.setItem("product_size_details", JSON.stringify(product_size_details));
+
+      localStorage.setItem("uuid", JSON.stringify(product_uuid));
+
+      alert("Product uploaded successfully");
+
+      window.location.href = "../products/myproduct.html";
+    }
+
+    document.querySelector("button.submit").addEventListener("click", add_product);
 
 
 
 
-        <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+    ///////   EDIT PAGE READ VALUES    ///////
 
-    </body>
+    const queryString = window.location.search;
+
+    // to get the location
+
+    const urlParams = new URLSearchParams(queryString);
+
+    // to show the name as what we have to show
+
+    const product_id = urlParams.get("product_id");
+
+    const uuid = JSON.parse(localStorage.getItem("productDetail"));
+console.log(uuid);
+
+const add_products = JSON.parse(localStorage.getItem("product_details"));
+
+const size_detail = JSON.parse(localStorage.getItem("product_size_details"));
+
+const size_list = size_detail.filter((p) => p.product_uuid === product_id);
+console.log(size_list);
+
+function find_data(e) {
+  return e.product_uuid === product_id;
+}
+const product_data = add_products.find(find_data);
+
+const product_datas = size_list.filter((o) => o.product_uuid === product_id);
+console.log(product_datas);
+console.log(product_data);
+
+document.getElementById("image").value = product_data.image;
+document.getElementById("name").value = product_data.name;
+document.getElementById("category").innerText = product_data.category;
+document.getElementById("product_detail").innerHTML = product_data.product_detail;
+document.getElementById("add_info").innerHTML = product_data.add_info;
+
+const table = document.querySelector("#table");
+          table.innerHTML = "";
+
+          // Create a new row
+          const newRow = document.createElement("tr");
+
+          // Create table cells
+          const sizeCell = document.createElement("td");
+          sizeCell.innerText = "Size";
+
+          const actualCell = document.createElement("td");
+          actualCell.innerText = "Actual Price:";
+
+          const discountCell = document.createElement("td");
+          discountCell.innerText = "Discount (%):";
+
+          const quantityCell = document.createElement("td");
+          quantityCell.innerText = "Quantity:";
+
+          // Append cells to the row
+          newRow.appendChild(sizeCell);
+          newRow.appendChild(actualCell);
+          newRow.appendChild(discountCell);
+          newRow.appendChild(quantityCell);
+
+          // Append the row to the table
+          table.append(newRow);
+
+for (let l = 0; l < size_list.length; l++) {
+
+  const table = document.querySelector("#table");
+
+// Create a new row
+const value = document.createElement("tr");
+value.setAttribute("class", "tr")
+
+// Create table cells
+const sizeCell = document.createElement("td");
+sizeCell.setAttribute("class", "td");
+sizeCell.innerText = size_list[l].size;
+
+const actualCell = document.createElement("td");
+actualCell.setAttribute("class", "td");
+actualCell.innerText = "₹";
+
+const a_input = document.createElement("input");
+a_input.setAttribute("type", "number")
+a_input.setAttribute("id", "original_price");
+a_input.value = size_list[l].original_price; 
+actualCell.append(a_input);
+
+const discountCell = document.createElement("td");
+discountCell.setAttribute("class", "td");
+
+const p_input = document.createElement("input");
+p_input.setAttribute("type", "number");
+p_input.setAttribute("id", "discount_percent");
+p_input.value = size_list[l].discount_percent;
+discountCell.append(p_input);
+
+const quantityCell = document.createElement("td");
+quantityCell.setAttribute("class", "td");
+
+const q_input = document.createElement("input");
+q_input.setAttribute("id", "quantity_seller");
+q_input.value = size_list[l].quantity_seller;
+quantityCell.append(q_input);
+
+// Append the row to the table
+table.append(value);
+
+// Append cells to the row
+value.appendChild(sizeCell);
+value.appendChild(actualCell);
+value.appendChild(discountCell);
+value.appendChild(quantityCell);
+
+// Append the row to the table
+table.appendChild(value);
+
+}
+
+document.querySelector(".submit").addEventListener("click", () => {
+
+  const p_name = document.getElementById("name").value;
+  const p_img = document.getElementById("image").value;
+  const p_pdt_detail = document.getElementById("product_detail").value;
+  const p_info = document.getElementById("add_info").value;
+  const p_org_price = document.getElementById("original_price").value;
+  const p_dis_per = document.getElementById("discount_percent").value;
+  const p_dis_price = discount_price;
+
+  const rows = document.querySelectorAll(".tr");
+
+rows.forEach(row => {
+  const columns = row.querySelectorAll(".td");
+  const obj = {};
+
+  obj.product_uuid = product_uuid;
+  obj.size = type;
+  obj.original_price = columns[0].querySelector("#original_price").value;
+  obj.discount_percent = columns[1].querySelector("#discount_percent").value;
+  obj.quantity_seller = columns[2].querySelector("#quantity_seller").value;
+
+discount_price = original_price - (original_price * discount_percent) / 100;
+discount_price = Math.round(discount_price);
+
+obj.discount_price = discount_price;
+
+const size_details = JSON.parse(localStorage.getItem("product_size_details"));
+
+const check_size_obj = product_datas.find((x) => x.size === obj.size);
+console.log(check_size_obj);
+
+  // product_size_details.push(obj);
+
+})
+
+  product_data.image = p_img;  
+  product_data.name = p_name;  
+  product_data.product_detail = p_pdt_detail;  
+  product_data.add_info = p_info;  
+
+  localStorage.setItem("product_details", JSON.stringify(add_products));
+
+})
+
+  </script>
+
+  <script>
+    const categorySel = {
+      Dress: [
+        "Saree",
+        "Chudi",
+        "Frock",
+        "Leganga",
+        "PartyWear",
+        "TraditionalWear",
+        "CropTop",
+        "Jeans",
+      ],
+
+      Jewell: [
+        "Earring",
+        "Choker",
+        "Jewell set",
+        "Nosepins",
+        "Necklace",
+        "Ring",
+        "Chain",
+        "Bracelet",
+      ],
+
+      Cosmetics: [
+        "Eye products",
+        "Shades",
+        "Lipstick",
+        "Nailpolish",
+        "Face cream",
+        "Facialkit",
+        "Makeupkit",
+        "Brush",
+      ],
+
+      Sandal: [
+        "Flats",
+        "Heels",
+        "Cutshoe",
+        "Sports shoe",
+        "Office wear",
+        "Party wear slipper",
+      ],
+    };
+
+    // to get the values only (for eg : saree, frock, leganga)
+    // Object.values(categorySel)
+
+    // to get the key value only (for eg : dress, cosmetics, sandal)
+    // Object.keys(categorySelectors) //   [  key1, key2, key3 ]
+
+    // to get both keys and values (for eg : )
+
+    window.onload = function categories() {
+      const category = document.getElementById("category");
+
+      const type = document.getElementById("type");
+
+      for (const types in categorySel) {
+        console.log(types);
+        category.options[category.options.length] = new Option(types, types);
+      }
+
+      category.onchange = (e) => {
+        type.length = 1;   // remove all options bar first
+        if (e.currentTarget.selectedIndex < 1) return; // done
+        const ft = categorySel[e.currentTarget.value];
+        for (const fields in categorySel[e.currentTarget.value]) {
+          type.options[type.options.length] = new Option(ft[fields], fields);
+        }
+      };
+      category.onchange();
+    };
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+
+</body>
+
 </html>

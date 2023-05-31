@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Address page </title>
+        <link rel="stylesheet" href="../../assets/css/addressForm.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kreon:wght@300;400;500;600;700&family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    </head>
+    
+    <body>
+        <header id="userLogin">
+
+        </header>
+
+        <div class="arrows"></div>
+<section>
+
+    <h3> ADD ADDRESS </h3>
+
+        <div>
+            <label> Name :  </label>
+            <input type="text" id="uname">
+        </div>
+
+        <div>
+            <label class="ads"> Address : </label>
+            <textarea id="address"> </textarea>
+        </div>
+
+        <div>
+            <label> Pincode : </label>
+            <input type="number" id="pincode">
+        </div>
+
+        <div>
+            <label> State : </label>
+            <input type="text" id="state">
+        </div>
+
+        <button type="submit"> SAVE ADDRESS </button>
+
+</section>
+
+        <footer>
+            <div class="top">
+                <div class="about">
+                    <h4> About: </h4>
+                    <div class="us">
+                        <p>
+                          <a href="../homepage/aboutus.html"> About us </a>
+                        </p> 
+                        <p>
+                          <a href="#"> Available Products </a>
+                        </p>
+                        <p>
+                          <a href="#"> Security </a>
+                        </p> 
+                        <p>
+                          <a href="../homepage/termsofuse.html"> Terms of use </a> 
+                        </p> 
+                        <p>
+                          <a href="../homepage/return.html"> Return policy </a>
+                        </p> 
+           </div>
+          </div>
+
+                                            <div class="line"></div>
+
+                                            <div class="contact">  
+                 
+                                                <div class="socials">
+                                                    <span class="con"> Contact us: </span>
+                                                    <div class="insta">
+                                                        <i class="fa-brands fa-instagram"></i> 
+                                                    </div>
+                                                    <div class="fb">
+                                                        <i class="fa-brands fa-facebook-f"></i> 
+                                                    </div>
+                                                    <div class="twiter">
+                                                        <i class="fa-brands fa-twitter"></i> 
+                                                    </div>
+                                                    <div class="wa">
+                                                        <i class="fa-brands fa-whatsapp"></i> 
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <p>Copy rights @ 2022</p>
+                                                </div> 
+                                            </div> 
+       </div>
+
+       </footer>  
+
+       <script src="../../assets/js/header.js"> </script>
+       
+       <script>
+const unique_id = JSON.parse(localStorage.getItem("uniqueID"));
+        const user_list = JSON.parse(localStorage.getItem("user_cred"));
+
+        const check = user_list.find((u) => u.phonenumber === unique_id);
+
+        document.getElementById("uname").value = check.uname;
+        
+    document.querySelector("button").addEventListener("click", () => {
+  
+        const uname = document.getElementById("uname").value
+        const address = document.getElementById("address").value;
+        const pincode = document.getElementById("pincode").value;
+        const state = document.getElementById("state").value;
+        const address_id = uuidv4();
+
+        const add_list = JSON.parse(localStorage.getItem("address_list")) || [];
+
+add_list.push({
+  buyer_id: unique_id,
+  uname,
+  address,
+  pincode,
+  state,
+  address_id
+});
+
+localStorage.setItem("address_list", JSON.stringify(add_list));
+alert("Your address has been successfully added.");
+window.location.href = "../homepage/address.html";
+
+    });
+
+const add_list = JSON.parse(localStorage.getItem("address_list"));
+
+// to set the location to the variable queryString
+const queryString = window.location.search;
+
+// to get the location
+const urlParams = new URLSearchParams(queryString);
+
+// to show the name as what we have to show
+const address_id = urlParams.get("address_id");
+
+// checking from the array and getting the particular id
+const add_id = add_list.find((e) => e.address_id === address_id);
+
+document.getElementById("uname").value = add_id.uname;
+document.getElementById("address").value = add_id.address;
+document.getElementById("pincode").value = add_id.pincode;
+document.getElementById("state").value = add_id.state;
+
+document.querySelector("button").addEventListener("click", () => {
+  const uname = document.getElementById("uname").value;
+  const address = document.getElementById("address").value;
+  const pincode = document.getElementById("pincode").value;
+  const state = document.getElementById("state").value;
+
+  // Update the address details directly in the add_id object
+  if (add_id) {
+    add_id.uname = uname;
+    add_id.address = address;
+    add_id.pincode = pincode;
+    add_id.state = state;
+
+    // Store the updated address list back into localStorage
+    localStorage.setItem("address_list", JSON.stringify(add_list));
+
+    alert("Your address has been successfully updated.");
+  } else {
+    alert("Address not found. Unable to update.");
+  }
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+
+    </body>
+</html>

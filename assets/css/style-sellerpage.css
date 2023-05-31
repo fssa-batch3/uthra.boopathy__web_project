@@ -3,11 +3,15 @@
     font-family: 'Kreon', serif;
 }
 
+
+body{
+    background-color: rgb(252, 252, 252);
+}
+
 header{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    background-color: purple;
+    background-color: 	purple;
     height: 100px;
     position: sticky;
     top: 0px;
@@ -17,7 +21,6 @@ header{
 header div ul{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
     list-style: none;
     margin-left: 550px;
 }
@@ -27,47 +30,71 @@ header div ul li{
     padding-left: 30px;
 }
 
-header div ul li a{
+.nav a{
      text-decoration: none;
-     color: black;
+     color: white;
+     font-size: 24px;
+}
+
+#count {
+    background-color: white;
+    color: purple;
+    font-size: 20px;
+    border-radius: 50%;
+    height: 20px;
+    width: 22px;
+    margin-top: -44px;
+    margin-left: 17px;
+    text-align: center;
+    font-weight: bold;
 }
 
 h1{
     font-size: 50px;
     font-weight: normal;
     padding-left: 60px;
-    position: relative;
-    top: 20px;
+    padding-top: 20px;
     color: white;
 }
 
 .logo{
+    height: 70px;
+    width: 70px;
     margin-top: 15px;
     margin-left: 50px;
     border-radius: 50px;
 }
 
 .login{
-   font-size: 20px;
-   color: white;
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+}
+
+.menu {
+    display: none;
 }
 
 .sub-heading{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    background-color: #F5F5F5;
-    position: sticky;
-    top: 100px;
-    z-index: 10;
+    border-bottom: 1px solid lightgray;
 }
 
 .sub-heading a{
      text-decoration: none;
-     padding-left: 23px;
-     padding-top: 40px;
+     padding-left: 60px;
+     padding-top: 35px;
      color: black;
-     font-size: 19px;
+     font-size: 28px;
+     height: 7vh;
+}
+
+.icon{
+    display: flex;
+    padding-top: 30px;
+    padding-left: 180px;
 }
 
 .dis img:hover{
@@ -94,23 +121,26 @@ h1{
     box-shadow: 5px 10px 18px #888888;
 }
 
-.icon{
+/* .icon{
     display: flex;
     position: relative;
     bottom: 20px;
     padding-top: 50px;
     padding-left: 150px;
-}
+} */
 
 .icons{
-    display: flex;
-    padding-left: 30px;    
+    display: flex;    
+}
+
+.icons a{
+    text-decoration: none;
+    color: black;
 }
 
 input[type=text]{
-    height: 30px;
+    height: 35px;
     width: 300px;
-    padding: 5px 35px;
     border-radius: 5px;
     border: 1px solid gray;
     outline: none;
@@ -119,7 +149,7 @@ input[type=text]{
     color: gray;
     position: relative;
     top:10px ;
-    left:22px ;
+    right:22px ;
 }
 .sub{
     display: flex;
@@ -128,41 +158,112 @@ input[type=text]{
     font-weight: bold;
 }    
 
-.discounts img{
-    margin-top: 30px;
-     padding: 70px;
-} 
 
-.under{
-    padding-left: 60px;
-    position: relative;
-    top: 40px;
+.offers {
+    margin: 100px 100px 0 100px;
+    height: 800px;
+    width: 1200px;
+    overflow: hidden;
 }
 
-.under img{
-    margin-top: -70px;
-    padding: 70px;
+@keyframes slide_animation {
+    0% {left:0;}
+    10% {left: 0px;}
+    20% {left: 1200px;}
+    30% {left: 1200px;}
+    40% {left: 2400px;}
+    50% {left: 2400px;}
+    60% {left: 1200px;}
+    70% {left: 1200px;}
+    80% {left: 0;}
+    90% {left: 0;}
+    100% {left: 0;}
 }
 
-.dress{
+.slide {
+    width: 3600px;
+    height: 800px;
+    margin: 0 0 0 -2400px;
     position: relative;
-    top: 5px;
+    animation-name: slide_animation;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+}
+
+.image {
+    height: 800px;
+    width: 1200px;
+    position: relative;
+    float: left;
+}
+
+.collections img:hover{
+    transform: scale(1.1);
+}
+
+.price {
+    margin: -200px 100px 0 100px;
+    display: flex;
+    background-color: floralwhite;
+    height: 600px;
+}
+
+.para {
+    width: 50%;
+    font-size: 40px;
+    align-items: center;
+    margin: 100px;
+    margin-top: 80px;
+}
+
+.dis_img {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    margin-top: 5rem;
+}
+
+.pics {
+    display: grid;
+    width: 50%;
+    grid-template-columns: repeat(2, 150px);
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+    justify-content: space-evenly;
+    margin: 65px 100px 80px -20px;
+    border: 1px solid white;
+    background-color: white;
+    height: 450px;
+}
+
+.pics img {
+    height: 150px;
+    width: 150px;
+    padding: 15px;
+    margin-top: 10px;
+}
+
+.pics div img {
+    border: 3px solid floralwhite;
+
 }
 
 .border{
     border-bottom: 1px solid pink;
     width: 450px;
     position: relative;
-    top: 50px;
+    top: 90px;
     left: 50px;
 }
 
 .bottom{
     border-bottom: 1px solid pink;
-    width: 450px;
+    width: 400px;
     position: relative;
-    left: 1000px;
-    top: 10px;
+    left: 950px;
+    top: 50px;
 }
 
 
@@ -170,22 +271,65 @@ h2{
     color: darkmagenta;
     font-size: 35px;
     position: relative;
-    top: 30px;
+    top: 70px;
     display: inline-block;
     left: 540px;
     word-spacing: 15px;
 }
 
-.counts img{
-    margin-top: 30px;
-     padding: 45px;
-} 
+.counts {
+    margin-top: 10rem;
+    margin-left: 1rem;
+    display: flex;
+    justify-content: space-around;
+}
 
-.dis img{
-    margin-top: 100px;
-     padding: 20px;
-} 
+.category-item {
+      display: flex;
+      justify-content: space-evenly;
+      padding: 10px 20px;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 100px;
+  }
 
+.category-card {
+    width: 300px;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px 10px 10px 10px;
+    transition: transform(1.1);
+}
+
+.category-card img {
+    width: 100%;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.category-card:hover {
+    box-shadow: 0 1rem 2rem hsl(0 0% 0% / 20%);
+    transform: scale(1.06);
+}
+
+.title {
+    width: 100%;
+    height: 30%;
+    backdrop-filter: blur(9px);
+    background: rgba(0, 0, 0, .5);
+    position: absolute;
+    font-weight: bold;
+    font-size: 35px;
+    margin-top: 290px;
+    text-align: center;
+    border-radius: 0px 0px 10px 10px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
 footer{
     background-color: purple;
     height: 310px;

@@ -1,232 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Login page </title>
-    <link rel="stylesheet" href="../../assets/css/style-loginpage.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />        <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kreon:wght@300;400;500;600;700&family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    </head>
-    
-    <body>
-        <header>
-             <a href="../homepage/frontpage.html"><img class="logo" src="../../assets/images/logo.png" alt="logo" height="70px" width="70px"/> </a>
-            <h1> Thara's World </h1>
-            <div class="nav">
-                <ul>
-                   <li> <a href="../orders/cartpage.html"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a></li>
-                   <li> <a href="../orders/wishlistpage.html"><i class="fa-sharp fa-solid fa-heart"></i></a></li> 
-                   <li><a href="../orders/myorderspage.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
-                   <li><a href="#"><i class="fa-solid fa-bell"></i></i></a></li>
-                   <li><a href="profilepage.html"><i class="fa-solid fa-circle-user"></i></a></li>
-                   <li> <a href="../homepage/loginpage.html"><span class="login"> Login </span> </a></li>
-                 </ul>
-             </div>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Login page </title>
+  <link rel="stylesheet" href="../../assets/css/style-loginpage.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kreon:wght@300;400;500;600;700&family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+</head>
 
-             <div class="menu">
-               
-               <i class="fa-solid fa-bars"></i>               
-                <div class="menu-list">
-                   
-                       <a href="../orders/cartpage.html"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
-                       <a href="../orders/wishlistpage.html"><i class="fa-sharp fa-solid fa-heart"></i></a>
-                       <a href="../orders/myorderspage.html"><i class="fa-solid fa-bag-shopping"></i></a>
-                       <a href="#"><i class="fa-solid fa-bell"></i></i></a>
-                       <a href="profilepage.html"><i class="fa-solid fa-circle-user"></i></a>
-                       <a href="loginpage.html"><span class="login"> Login </span> </a>
-               
-                </div>
-            </div>
-        </header>
+<body>
+  <header id="userLogin">
 
-        <section>
-        <form role="form"  onsubmit="signIn(event)">
-                <h2> Login</h2>
-               
-                <div class="name">
-                    <label> Name: </label>
-		            <input type="name" required="true" id="uname" required="true" />
-		        </div>
+  </header>
 
-                <div class="password">
-                    <label> Password: </label>
-                    <input type="password" placeholder="*******" id="password" required="true" />
-                </div>
-                    
-                <div class="no">
-                    <label> Contact number: </label>
-                    <input type="number" required="true" placeholder="+91" id="phonenumber" required="true"  /> <br>
-                </div>
+  <section>
+    <form role="form" id="signIn">
+      <h2> Login</h2>
 
-                <p> Create new account <a href="../homepage/registerpage.html"> Sign up </a> </p>
-                
-                <div>
-                        <button class="btn" type="submit">  Submit  </button>
-                        <!-- <button class="btn1" type="submit" onclick="submit()">  Cancel </button> -->
-                </div>      
-                
-            </form>
-                
-        </section>
+      <div class="no">
+        <label> Contact number: </label>
+        <input type="number" required="true" placeholder="+91" id="phonenumber" pattern="[6-9]{1}[0-9]{9}">
+        <br>
+      </div>
 
-            <script>
+      <div class="password">
+        <label> Password: </label>
+        <input type="password" placeholder="*******" id="password" required="true">
+      </div>
 
+      <p>
+        Create new account <a href="../homepage/registerpage.html"> Sign up </a>
+      </p>
 
-     
+      <div>
+        <button class="btn" type="submit"> Submit </button>
+        <!-- <button class="btn1" type="submit" onclick="submit()">  Cancel </button> -->
+      </div>
 
-            //    function submit(){
-              
-            //      const name = document.getElementById("name").value 
-            //      const phonenumber = document.getElementById("phonenumber").value 
-            //      const password = document.getElementById("password").value 
+    </form>
 
-            //      console.log(name)
-            //      console.log(password)
-            //      console.log(phonenumber)
+  </section>
 
-            //      window.location.href = "../homepage/frontpage.html"
-            //    } 
+  <script src="../../assets/js/header.js"> </script>
 
+  <script>
+    function loginHandler(e) {
+      e.preventDefault();
+      const phonenumber = document.getElementById("phonenumber").value;
+      const password = document.getElementById("password").value;
+      const user_cred = JSON.parse(localStorage.getItem("user_cred")) || [];
+      const exist =
+        user_cred.length &&
+        user_cred.some(
+          (data) => data.phonenumber === phonenumber && data.password === password
+        );
+      if (!exist) {
+        alert("Incorrect login credentials");
+      } else {
+        localStorage.setItem("uniqueID", JSON.stringify(phonenumber));
+        window.location.href = "../homepage/profile.html";
+      }
+}
+document.addEventListener("DOMContentLoaded", () => {
+  const login = document.getElementById("signIn");
+  if (login) {
+        login.addEventListener("submit", loginHandler);
+  }
+});
+  </script>
 
-
-          //  storing data in loginpage:
-
-
-        //     function check() {
-        //         let usrName = document.getElementById('userName').value;
-        //         let usrPw = document.getElementById('userPassword').value;
-        //         let usrPhno = document.getElementById('userPhonenumber').value;
-
-
-        //     // stored data from the register-form
-
-        //         let storedName = localStorage.getItem('uname');
-        //         let storedPassword = localStorage.getItem('uPassword');
-        //         let storedPhno = localStorage.getItem('uPhonenumber');
-
-
-        //         // let stored_users = JSON.parse(localStorage.getItem('stored_users'));
-
-
-        //         // let exist = stored_users.length &&
-                  
-        //         // JSON.parse(localStorage.getItem('stored_users')).some(data =>
-        //         //         data.usrPassword.toLowerCase() == usrPassword);
-        //         //     if(!exist){
-        //         //         alert("Incorrect login credentials");
-        //         //     }
-        //         //     else{
-        //         //         alert("Your login in successful");
-        //         //         location.href = "../homepage/frontpage.html";
-        //         //     }
-
-
-        //         let stored_users = JSON.parse(localStorage.getItem('stored_users'));
-
-             
-        //        if(stored_users) {
-        //            for (let i = 0; i < stored_users.length; i++){
-        //                if (usrName == stored_users[i].name && usrPw == stored_users[i].password && usrPhno == stored_users[i].phonenumber) {
-        //                    alert('You are logged in ' + usrName);
-        //                    window.location.href = "../homepage/profilepage.html";
-
-        //                }
-        //            }
-        //        } 
-        //            else {
-        //            localStorage.setItem('users', '[]');
-        //            JSON.parse(localStorage.getItem('useers', '[]'));
-
-        //        }
-
-        //     //    return alert('Access denied. Valid username and password is required.');
-
-        //     //    window.location.href = "../homepage/frontpage.html";
-
-
-        //    }
-
-
-
-
-        // const signIn = e =>{
-        //     let phonenumber = document.getElementById('phonenumber').value,
-        //         password = document.getElementById('password').value;
-        //         name = document.getElementById('name').value;
-        //     let user_cred = JSON.parse(localStorage.getItem('user_cred')) || [];
-        //     let exist = user_cred.length &&
-        //     JSON.parse(localStorage.getItem('user_cred')).some(data => data.phonenumber.toLowerCase() == phonenumber);
-        //     if(!exist){
-        //         alert("Incorrect User Credentials");
-        //     }
-        //     else{
-        //         localStorage.setItem('uniqueID',JSON.stringify(phonenumber));
-        //         alert("Your Login is Successful");
-        //         location.href = "../homepage/profilepage.html";
-        //     }
-        //     e.preventDefault();
-        // }
-
-
-
-        // function check(e){
-        //     e.preventDefault();
-
-        //     let usrName = document.getElementById("uname").value;
-        //     let usrPassword = document.getElementById("password").value;
-        //     let usrPhonenumber = document.getElementById("phonenumber").value;
-
-
-        //     let user_list = JSON.parse(localStorage.getItem('user_object')) ;
-
-            
-
-
-
-        //     for(let i=0; i<user_list.length; i++){
-        //         if(usrPhonenumber === user_list[i].userPhonenumber && usrPassword === user_list[i].userPassword){
-        //         alert('Successfully logged in.');
-        //         localStorage.setItem('user_object', JSON.stringify(user_list));
-        //         localStorage.setItem('unique_id', JSON.stringify(usrPhonenumber));
-        //         // localStorage.setItem('unique_id', JSON.stringify(usrName));
-        //         location.href= "./profile.html";
-        //         return;
-        //         }
-        //     }
-
-        //     alert('Invalid credentials.');
-        //     document.querySelector('form').reset;
-        //     return;
-        //     }
-
-        function signIn(e) {
-            e.preventDefault();
-            let phonenumber = document.getElementById('phonenumber').value,
-            password = document.getElementById('password').value;
-            uname = document.getElementById('uname').value;
-            let user_cred = JSON.parse(localStorage.getItem('user_cred'));
-            let exist = user_cred.length &&
-            JSON.parse(localStorage.getItem('user_cred')).some(data => data.phonenumber.toLowerCase() == phonenumber.toLowerCase()
-            && data.password == password);
-            if(!exist){
-                alert("Incorrect User Credentials");
-                document.querySelector('form').reset();
-            }
-            else{
-                localStorage.setItem('uniqueID',JSON.stringify(phonenumber));
-                alert("Your Login is Successful");
-                location.href = "../homepage/profile.html";
-            }
-        }
-
-
-
-        </script>
-
-    </body>
+</body>
 
 </html>

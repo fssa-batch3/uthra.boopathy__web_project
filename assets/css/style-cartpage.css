@@ -6,15 +6,16 @@
 header{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    background-color: purple;
+    background-color: 	purple;
     height: 100px;
+    position: sticky;
+    top: 0px;
+    z-index: 10;
 }
 
 header div ul{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
     list-style: none;
     margin-left: 550px;
 }
@@ -24,9 +25,23 @@ header div ul li{
     padding-left: 30px;
 }
 
-header div ul li a{
+.nav a{
      text-decoration: none;
-     color: black;
+     color: white;
+     font-size: 24px;
+}
+
+#count {
+    background-color: white;
+    color: purple;
+    font-size: 20px;
+    border-radius: 50%;
+    height: 20px;
+    width: 22px;
+    margin-top: -44px;
+    margin-left: 17px;
+    text-align: center;
+    font-weight: bold;
 }
 
 h1{
@@ -38,14 +53,57 @@ h1{
 }
 
 .logo{
+    height: 70px;
+    width: 70px;
     margin-top: 15px;
     margin-left: 50px;
     border-radius: 50px;
 }
 
 .login{
-    font-size: 20px;
+    font-size: 25px;
     color: white;
+    cursor: pointer;
+}
+
+.arrow {
+    margin: 2rem;
+    font-size: 30px;
+}
+
+.arrow a {
+    color: black;
+}
+
+.contain {
+    border: 1px;
+    border-radius: 8px;
+    background-color: whitesmoke;
+    width: 60%;
+    height: 30vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 100px;   
+    margin-left: 200px;
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+.contain h3 {
+    color: black;
+}
+
+.contain .add {
+    width: 160px;
+    height: 45px;
+    background-color: purple;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    border: 0;
+    border-radius: 5px;
 }
 
 .container{
@@ -56,28 +114,42 @@ h1{
     height: 30vh;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     margin-top: 100px;   
-    margin-left: 180px;
+    margin-left: 100px;
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+.not {
+    font-size: 35px;
+    color: black;
+    text-align: center;
 }
 
 .details {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
     height: 15vh;
-
-    
+    width: 25rem;
 }
 
 .details div {
     width: 200px;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+}
+
+input {
+    height: 15px;
+    width: 40px;
 }
 
 .star {
@@ -95,13 +167,39 @@ h1{
     padding: 10px;
 }
 
-button{
-    height: 50px;
-    width: 200px;
+.remove{
+    height: 35px;
+    width: 120px;
     background-color: purple;
     border: 0px;
     border-radius: 5px;
-}    
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+}   
+
+.wish {
+    height: 35px;
+    width: 120px;
+    background-color: purple;
+    border: 0px;
+    border-radius: 5px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+}
+
+.buy {
+    height: 40px;
+    width: 140px;
+    background-color: purple;
+    border: 0px;
+    border-radius: 5px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    margin-left: -10rem;
+}
 
 button a {
     color: white;
@@ -118,73 +216,82 @@ h3{
 p{
     font-size: 23px;
     font-weight: bold;
-    
+    color: black;
 }
 
 s{
     color: darkgrey;
-    font-size: 22px;
-    
+    font-size: 22px; 
 }
 
 .percent{
     color: green;
     font-size: 22px;
-    
 }
 
-.container1{
-    border: 1px;
-    border-radius: 8px;
-    background-color: whitesmoke;
-    width: 75%;
+.total {
+    width: 65%;
     height: 30vh;
     display: flex;
+    border-radius: 8px;
+    background-color: whitesmoke;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     margin-top: 100px;   
-    margin-left: 180px;
+    margin-left: 16rem;
 }
 
-.container1 img{
-    border-radius: 4px; 
+.sum {
+    margin-bottom: 13rem;
+    margin-left: -3rem;
 }
 
-.container2{
-    border: 1px;
+.sub {
+   margin-left: -22rem;
+}
+
+.amt {
+    margin-left: -13rem;
+ }
+ 
+
+.total div p {
+    padding-top: 2rem;
+    align-content: flex-end;
+}
+
+.back {
+    width: 65%;
+    height: 20vh;
+    display: flex;
     border-radius: 8px;
     background-color: whitesmoke;
-    width: 75%;
-    height: 30vh;
-    display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     margin-top: 100px;   
-    margin-left: 180px;
+    margin-left: 16rem;
 }
 
-.container2 img{
-    border-radius: 4px; 
-}
-
-.container3{
-    border: 1px;
-    border-radius: 8px;
-    background-color: whitesmoke;
-    width: 75%;
-    height: 30vh;
+.row {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 100px;   
-    margin-left: 180px;
+    flex-direction: column;
 }
 
-.container3 img{
-    border-radius: 4px; 
+.address {
+    font-size: 24px;
+}
+
+.change {
+    height: 40px;
+    width: 140px;
+    background-color: purple;
+    border: 0px;
+    border-radius: 5px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
 }
 
 footer{
@@ -302,37 +409,6 @@ h4{
 .twiter{
     background-color: #00acee;
     color: white;
-}
-
-.collections img{
-    border-radius: 150px;
-    padding: 40px;
-}
-
-.icons div{
-    position: relative;
-}
-
-.div{
-    font-size: 25px;
-    font-weight: bold;
-    margin-left: 70px;
-    display: inline-flex;
-    bottom: 20px;
-}
-
-.divs{
-    font-size: 25px;
-    font-weight: bold;
-    margin-left: 90px;
-    bottom: 20px;
-}
-
-.divss{
-    font-size: 25px;
-    font-weight: bold;
-    margin-left: 100px;
-    bottom: 20px;
 }
 
 .menu{

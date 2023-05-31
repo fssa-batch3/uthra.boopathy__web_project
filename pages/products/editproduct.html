@@ -4,9 +4,10 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-               <title> Product Edit page </title>
-        <link rel="stylesheet" href="../../assets/css/editproduct.css"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <title> Product Edit page </title>
+        <link rel="stylesheet" href="../../assets/css/editproduct.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kreon:wght@300;400;500;600;700&family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -14,169 +15,189 @@
 
     <body>
 
-        <header>
-            <a href="../homepage/frontpage.html"> <img class="logo" src="../../assets/images/logo.png" alt="logo" />  </a>
-            <h1> Thara's World </h1>
-              <div class="nav">
-                 <ul>
-                    <li> <a href="../orders/cartpage.html"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a></li>
-                    <li> <a href="../orders/wishlistpage.html"><i class="fa-sharp fa-solid fa-heart"></i></a></li> 
-                    <li><a href="../orders/myorderspage.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
-                    <li><a href="#"><i class="fa-solid fa-bell"></i></i></a></li>
-                    <li><a href="profilepage.html"><i class="fa-solid fa-circle-user"></i></a></li>
-                    <li> <a href="loginpage.html"><span class="login"> Login </span> </a></li>
-                  </ul>
-              </div>
-   
-              <div class="menu">
-                
-                <i class="fa-solid fa-bars"></i>               
-                 <div class="menu-list">
-                    
-                        <a href="../orders/cartpage.html"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
-                        <a href="../orders/wishlistpage.html"><i class="fa-sharp fa-solid fa-heart"></i></a>
-                        <a href="../orders/myorderspage.html"><i class="fa-solid fa-bag-shopping"></i></a>
-                        <a href="#"><i class="fa-solid fa-bell"></i></i></a>
-                        <a href="../homepage/profilepage.html"><i class="fa-solid fa-circle-user"></i></a>
-                        <a href="../homepage/loginpage.html"><span class="login"> Login </span> </a>
-                
-                 </div>
-             </div>
-   
+        <header id="userLogin">
+
         </header>
+
+        <div class="arrows"></div>
     
         <section>
 
             <h2> EDIT </h2>
 
-            <form role="form" >
+            <form role="form" id="form">
 
-            <div class="box">
+                <div class="box">
 
-                <div class="photo">
-                    <!-- <img src="../../assets/images/silk12.jpg" alt="photo" width="300px"> -->
-                    <label for="image" class="camera"><i class="fa fa-camera" style="color: #000;"></i></label>
+                    <div class="photo">
+                        <!-- <img src="../../assets/images/silk12.jpg" id="images" alt="photo" width="300px"> -->
+                        <!-- <label for="image" class="camera"><i class="fa fa-camera" style="color: #000;"></i></label> -->
+
+                    </div>
+
+                    <div class="detail">
+
+                        <div>
+                            <label> Image url: </label>
+                            <br>
+                            <input type="url" id="image" required>
+                        </div>
+
+                        <div>  
+                            <label> Name of the product: </label>
+                            <br>
+                            <input type="text" id="name" required>
+                        </div>
+
+                        <div>  
+                            <label> Actual price: </label>
+                            <br>
+                            <label>  </label>
+                            <input type="number" id="original_price" required min="1">
+                        </div>
+
+                        <div>
+                            <label> Current price: </label>
+                            <br>
+                            <label>  </label>
+                            <input type="number" id="discount_price" min="1" disabled> 
+                        </div>
+
+                        <div>
+                            <label> Discount percentage:</label>
+                            <br>
+                            <input type="number" id="discount_percent" min="1" required>
+                            <label> % </label>
+                        </div> 
+
+                        <div class="add">  
+                            <label> Product details: </label>
+                            <br>
+                            <textarea id="product_detail" required></textarea>
+                        </div>
+
+                        <div class="add">  
+                            <label> Additional information: </label>
+                            <br>
+                            <textarea id="add_info">  *Special PriceGet extra 30% off (price inclusive of cashback/coupon)T&C
+                                *Bank Offer5% Cashback on Thara's World Axis Bank CardT&C
+                                *Partner OfferSign up for Thara's World Pay Later and get Flipkart Gift Card worth up to ₹500*
+                            </textarea>
+                        </div>
+
+                        <button type="submit" class="save">  Save  </button>
+
+                    </div>
 
                 </div>
 
-                <div class="detail">
-
-                    <div>
-                        <label> Image url: </label>  <br>
-                        <input type="url" id="image" required />
-                    </div>
-
-                    <div>  
-                        <label> Name of the product: </label> <br>
-                        <input type="text" id="name" required  />
-                    </div>
-
-                    <div>  
-                        <label> Actual price: </label> <br>
-                        <label>  </label> <input type="number" id="original_price" required  min="1" />
-                    </div>
-
-                     <div>
-                        <label> Current price: </label> <br>
-                        <label>  </label>  <input type="number" id="discount_price"  min="1" /> 
-                    </div>
-
-                    <div>
-                        <label> Discount percentage:</label> <br>
-                        <input type="number" id="discount_percent"  min="1" /> <label> % </label>
-                    </div> 
-
-                    <div class="add">  
-                        <label> Product details: </label> <br>
-                        <textarea id="product_detail" required ></textarea>
-                    </div>
-
-                    <div class="add">  
-                        <label> Additional information: </label> <br>
-                        <textarea id="add_info" >  *Special PriceGet extra 30% off (price inclusive of cashback/coupon)T&C
-                        *Bank Offer5% Cashback on Thara's World Axis Bank CardT&C
-                        *Partner OfferSign up for Thara's World Pay Later and get Flipkart Gift Card worth up to ₹500*
-                        </textarea>
-                    </div>
-
-                     <button type="button" class="save">  Save  </button>
-
-
-                </div>
-
-            </div>
-
-        </form>
+            </form>
 
         </section>
 
+        <script src="../../assets/js/header.js"></script>
+
         <script>
+// <div class = "arrow" > </div>
 
-            let uuid = JSON.parse(localStorage.getItem("productDetail"));
-            console.log(uuid);
+const div_arrow = document.createElement("div");
+div_arrow.setAttribute("class", "arrow");
+// console.log(div_arrow);
 
-            let add_product = JSON.parse(localStorage.getItem("add_products"));
+// <a> link </a>
 
-            function find_data(e) {
-            return e.product_uuid == uuid;
-            }
-            product_data = add_product.find(find_data);
+const a_arrow = document.createElement("a");
+a_arrow.setAttribute("href", "../products/myproduct.html");
+div_arrow.append(a_arrow);
+// console.log(a_arrow);
 
-            console.log(product_data);
-            
-            document.getElementById("image").value = product_data["image"];
-            document.getElementById("name").value = product_data["name"];
-            document.getElementById("original_price").value = product_data["original_price"];
-            document.getElementById("discount_price").value = product_data["discount_price"];
-            document.getElementById("discount_percent").value = product_data["discount_percent"];
-            document.getElementById("product_detail").innerHTML = product_data["product_detail"];
-            document.getElementById("add_info").innerHTML = product_data["add_info"];
-           
-           
-            let updates = document.querySelector("button.save");
-           
-            updates.addEventListener("click", update_product);
-           
-            function update_product() {
-                
-                let uuid = JSON.parse(localStorage.getItem("productDetail"));
-                
-                let add_product = JSON.parse(localStorage.getItem("add_products"));
-                
-                function find_data(e) {
-                    return e.product_uuid == uuid;
-                }
-           
-                product_data = add_product.find(find_data);
-            
-                console.log(product_data)
-           
-                let image = document.getElementById("image").value
-                let name = document.getElementById("name").value
-                let original_price = document.getElementById("original_price").value
-                let discount_price = document.getElementById("discount_price").value
-                let discount_percent = document.getElementById("discount_percent").value
-                let product_detail = document.getElementById("product_detail").value
-                let add_info = document.getElementById("add_info").value
-               
-                product_data["image"] = image;
-                product_data["name"] = name;
-                product_data["original_price"] = original_price;
-                product_data["discount_price"] = discount_price;
-                product_data["discount_percent"] = discount_percent;
-                product_data["product_detail"] = product_detail;
-                product_data["add_info"] = add_info;
-                
-                localStorage.setItem('add_products', JSON.stringify(add_product));
-                
-                alert("Product updated successfully");
-               
-                window.location.href = "../products/myproduct.html";
-                
-            }
-       
-       </script>
+// < i >  arrow </i>
 
+const i_arrow = document.createElement("i");
+i_arrow.setAttribute("title", "Back");
+i_arrow.setAttribute("class", "fa-solid fa-arrow-left");
+a_arrow.append(i_arrow);
+
+document.querySelector("div.arrows").append(div_arrow);
+
+const uuid = JSON.parse(localStorage.getItem("productDetail"));
+console.log(uuid);
+
+const add_product = JSON.parse(localStorage.getItem("product_details"));
+
+const size_list = JSON.parse(localStorage.getItem("product_size_details"));
+
+function find_data(e) {
+  return e.product_uuid === uuid;
+}
+const product_data = add_product.find(find_data);
+
+console.log(product_data);
+
+document.getElementById("image").value = product_data.image;
+document.getElementById("name").value = product_data.name;
+document.getElementById("original_price").value = product_data.original_price;
+document.getElementById("discount_price").value = product_data.discount_price;
+document.getElementById("discount_percent").value =
+  product_data.discount_percent;
+document.getElementById("product_detail").innerHTML =
+  product_data.product_detail;
+document.getElementById("add_info").innerHTML = product_data.add_info;
+
+const updates = document.querySelector("form#form");
+
+function update_product(event) {
+  event.preventDefault();
+
+  const product = JSON.parse(localStorage.getItem("product_details"));
+
+  function find_datas(e) {
+    return e.product_uuid === uuid;
+  }
+
+  const products = product.find(find_datas);
+
+  console.log(products);
+
+  const image = document.getElementById("image").value;
+  const name = document
+    .getElementById("name")
+    .value.trim()
+    .split(/\s+/g)
+    .join(" ");
+
+  const original_price = document.getElementById("original_price").value;
+  let discount_price;
+  const discount_percent = document.getElementById("discount_percent").value;
+  const product_detail = document.getElementById("product_detail").value;
+  const add_info = document.getElementById("add_info").value;
+
+  if (discount_percent) {
+    discount_price = original_price - (original_price * discount_percent) / 100;
+    discount_price = Math.round(discount_price);
+  } else {
+    discount_price = original_price - discount_percent;
+  }
+
+  products.image = image;
+  products.name = name;
+  products.original_price = original_price;
+  products.discount_price = discount_price;
+  products.discount_percent = discount_percent;
+  products.product_detail = product_detail;
+  products.add_info = add_info;
+
+  // console.log(products);
+
+  localStorage.setItem("product_details", JSON.stringify(product));
+
+  alert("Product updated successfully");
+
+  window.location.href = "../products/myproduct.html";
+}
+
+updates.addEventListener("submit", update_product);
+</script>
     </body>
 
 </html>

@@ -1,334 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Register Page </title>
-    <link rel="stylesheet" href="../../assets/css/style-register.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />        <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Register Page </title>
+        <link rel="stylesheet" href="../../assets/css/style-register.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kreon:wght@300;400;500;600;700&family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
-</head>
-<body>
-    <header>
-        <img class="logo" src="../../assets/images/logo.png" alt="logo" height="70px" width="70px"/>
-        <h1> Thara's World </h1>
-        <div class="nav">
-            <ul>
-               <li> <a href="../orders/cartpage.html"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a></li>
-               <li> <a href="../orders/wishlistpage.html"><i class="fa-sharp fa-solid fa-heart"></i></a></li> 
-               <li><a href="../orders/myorderspage.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
-               <li><a href="#"><i class="fa-solid fa-bell"></i></i></a></li>
-               <li><a href="profilepage.html"><i class="fa-solid fa-circle-user"></i></a></li>
-               <li> <a href="../homepage/loginpage.html"><span class="login"> Login </span> </a></li>
-             </ul>
-         </div>
+    </head>
+    <body>
+        <header id="userLogin">
 
-         <div class="menu">
-           
-           <i class="fa-solid fa-bars"></i>               
-            <div class="menu-list">
-               
-                   <a href="../orders/cartpage.html"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
-                   <a href="../orders/wishlistpage.html"><i class="fa-sharp fa-solid fa-heart"></i></a>
-                   <a href="../orders/myorderspage.html"><i class="fa-solid fa-bag-shopping"></i></a>
-                   <a href="#"><i class="fa-solid fa-bell"></i></i></a>
-                   <a href="profilepage.html"><i class="fa-solid fa-circle-user"></i></a>
-                   <a href="loginpage.html"><span class="login"> Login </span> </a>
-           
-            </div>
-        </div>
-    </header>
+        </header>
     
-    <section>
-        <form role="form" onsubmit="signUp(event)" >
-        <div class="register">
+        <section>
+            <form role="form">
+                <div class="register">
             
-            <h2> SIGN UP : </h2>
-                 <div>
-                     <label> Name: </label>
-                     <input type="name" id="uname" required="true" pattern="[A-Za-z]+" />
-                </div>
+                    <h2> SIGN UP : </h2>
+                    <div>
+                        <label> Name: </label>
+                        <input type="text" id="uname" pattern="[A-Za-z]+" required="true">
+                    </div>
 
-                <div>
-                    <label> Phone number: </label>
-                    <input type="tel" id="phonenumber" placeholder="+91" required="true" pattern="[0-9]+" />
-                </div>
+                    <div>
+                        <label> Phone number: </label>
+                        <input type="tel" id="phonenumber" placeholder="+91" required="true" pattern="[6-9]{1}[0-9]{8}" maxlength="10" title="Enter 10 numbers only">
+                    </div>
 
-                <div>
-                    <label> Create Password: </label>
-                    <input type="password" id="password" required="true" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
-                </div>
+                    <div>
+                        <label> Create Password: </label>
+                        <input type="password" id="password" required="true" pattern="(?=.*\d)(?=.*[*!@#$%^&])(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Include uppercase, lowercase, number and special characters ">
+                        <p> (Pattern: Atleast 8 characters including uppercase, lowercase, number and special characters) </p>
+                    </div>
 
-                <div class="confirm">
-                    <label> Confirm Password: </label>
-                    <input type="password" id="confirm_password" required="true"/>
-                </div> 
+                    <div class="confirm">
+                        <label> Confirm Password: </label>
+                        <input type="password" id="confirm_password" required="true">
+                    </div> 
+                
+                    <p>
+                        Already have an account? <a href="../homepage/loginpage.html"> LOG IN </a> 
+                    </p>
                
-                <button type="submit"> SUBMIT </button> 
+                    <button type="submit" class="submit"> SUBMIT </button> 
             
-        </div>
-    </form>
+                </div>
+            </form>
     
-    </section> 
+        </section> 
 
-    <script> 
-        
-    //   function submit(){  
-        
-    //     const name = document.getElementById("name").value  
-    //     const phonenumber = document.getElementById("phonenumber").value  
-    //     const password = document.getElementById("password").value  
-    //     const confirm_password = document.getElementById("confirm_password").value  
+        <script src="../../assets/js/header.js"> </script>
+    
+<script>
+    function signUp(e) {
+  e.preventDefault();
+  const phonenumber = document.getElementById("phonenumber").value;
+  const confirm_password = document.getElementById("confirm_password").value;
+  const password = document.getElementById("password").value;
+  let uname = document
+        .getElementById("uname")
+        .value.trim()
+        .split(/\s+/g)
+        .join(" ");
+  const age = "";
+  const address = "";
+  const email = "";
+  const pincode = "";
+  const state = "";
+  const user_uuid = uuidv4();
+  // validate user input
 
-    //     console.log(name)
-    //     console.log(phonenumber)
-    //     console.log(password)
-    //     console.log(confirm_password) 
+  function validate() {
+        if (/^\s*$/g.test(uname)) {
+          uname = "";
+          alert("Please write your name properly");
+        } else{
+          const user_cred = JSON.parse(localStorage.getItem("user_cred")) || [];
+          const exist =
+            user_cred.length &&
+            JSON.parse(localStorage.getItem("user_cred")).some(
+              (data) => data.phonenumber.toLowerCase() === phonenumber.toLowerCase()
+            );
+          if (!exist) {
+            if (password === confirm_password) {
+              user_cred.push({
+                uname,
+                phonenumber,
+                confirm_password,
+                password,
+                user_uuid,
+                address,
+                email,
+                age,
+                pincode,
+                state
+              });
 
-    //     localStorage.setItem("user_name",name)
-    //     localStorage.setItem("user_number",phonenumber)
-    //     localStorage.setItem("user_password",password)
-    //     localStorage.setItem("user_confirm",confirm_password)
+              const address_list = JSON.parse(localStorage.getItem("address_list")) || [];
 
-    //     window.location.href = "../homepage/loginpage.html"
+              address_list.push ({
+                uname,
+                user_uuid,
+                address,
+                pincode,
+                state, 
+                address_id: user_uuid
+              })
 
-    //   }  
-
-
-
-
-
-        // storing input from register-form
-
-
-            // function store() {
-            //     let usrName = document.getElementById('uname').value;
-            //     let usrPw = document.getElementById('uPassword').value;
-            //     let usrPhoneNumber = document.getElementById('uPhonenumber').value;
-
-
-            //     localStorage.setItem('usrName', uname.value);
-            //     localStorage.setItem('usrPw', uPassword.value);
-            //     localStorage.setItem('usrPhoneNumber' , uPhonenumber.value);
-
-
-            //     let stored_users = JSON.parse(localStorage.getItem('users'));
-
-
-            //         if(stored_users) {
-
-            //              stored_users.push({name: usrName, password: usrPw, phonenumber: usrPhoneNumber});
-
-            //              localStorage.setItem('users', JSON.stringify(stored_users));
-            //          }
-            //        else {
-            //              localStorage.setItem('users', JSON.stringify([{name: usrName, password: usrPw, phonenumber: usrPhoneNumber}]));
-            //        }
-
-            //        window.location.href = "../homepage/loginpage.html";
-
-
-            // }
-
-
-            // Storing data in registerpage
-
-        //     function store() {
-
-        //     let usrname = document.getElementById('uname').value;
-        //     let usrphone = document.getElementById('uPhonenumber').value;
-        //     let usrpw = document.getElementById('uPassword').value;
-        //     let usrcpw = document.getElementById('cpwd').value; 
-
-        //     console.log(uname);
-        //     console.log(uPassword);
-        //     console.log(cpwd);
-        //     console.log(uPhonenumber);
-
-
-        //     localStorage.setItem('usrname', uname.value);
-        //     localStorage.setItem('usrpw', uPassword.value);
-        //     localStorage.setItem('usrcpw', cpwd.value);
-        //     localStorage.setItem('usrphone', uPhonenumber.value);
-
-
-        //     let pwd_expression = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-{6,10}])/;
-		//     let letters = /^[A-Za-z]+$/;
-        //     let number = /^[0-9{1,13}]/;
-		//     // let email = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-
-
-        //     let stored_users = JSON.parse(localStorage.getItem('stored_users'));
-
-
-        //     if (stored_users) {
-        //         for (let u = 0; u < stored_users.length; u++){
-        //                if (uPhonenumber == stored_users.uPhonenumber) {
-        //                    alert('Invalid Phonenumber');
-
-        //                }
-        //            } 
-        //         stored_users.push ( { name: usrname, phonenumber: usrphone, password: usrpw } );
-        //         localStorage.setItem('stored_users', JSON.stringify(stored_users));
-        //     }
-
-        //     else {
-        //         localStorage.setItem('stored_users', JSON.stringify([{name: usrname, phonenumber: usrphone, password: usrpw}]));
-
-        //         if (usrname==''){
-        //         alert('Please enter your name');
-        //     }
-        //     else if(!letters.test(usrname)){
-        //         alert('Name starts with an alphabet letter');
-        //     }
-        //     else if(!number.test(usrphone)){
-        //         alert('Invalid Phonenumber');
-        //     }
-        //     else if(usrpw=='')
-        //     {
-        //         alert('Please enter Password');
-        //     }
-        //     else if(usrcpw=='')
-        //     {
-        //         alert('Enter Confirm Password');
-        //     }
-        //     else if(!pwd_expression.test(usrpw))
-        //     {
-        //         alert ('Upper case, Lower case, Special character and Numeric letter are required in Password filed');
-        //     }
-        //     else if(usrpw != usrcpw)
-        //     {
-        //         alert ('Password not Matched');
-        //     }
-        //     else{
-        //         alert('Your account has been created');
-        //         window.location.href = "../homepage/loginpage.html";
-
-        //     }
-
-        //     }
-
-           
-
-            
-
-        // }
-
-
-
-        // const signUp = e => {
-        //     let phonenumber = document.getElementById("phonenumber").value;
-        //         cpwd = document.getElementById("cpwd").value;
-        //       password = document.getElementById("password").value;
-        //      name = document.getElementById("name").value;
-        //     let user_cred = JSON.parse(localStorage.getItem('user_cred')) || [];
-        //     let exist = user_cred.length &&
-        //         JSON.parse(localStorage.getItem('user_cred')).some(data =>
-        //             data.phonenumber == phonenumberx
-        //         );
-        //     if(!exist){
-        //       if(password == cpwd){
-        //         user_cred.push({name,phonenumber,cpwd,password});
-        //         localStorage.setItem('user_cred',JSON.stringify(user_cred));
-        //         console.log(localStorage.getItem('user_cred'));
-        //         document.querySelector('form').reset();
-        //         document.getElementById('phonenumber').focus();
-        //         alert('Account created successfully');
-        //         location.href = "../homepage/loginpage.html";
-        //     }
-        //       else{
-        //         alert("Confirm password does not match")
-        //       }
-        //     }
-        //     else {
-        //         alert('Sorry the User already exists! \n Try with a new Email.');
-        //         document.querySelector('form').reset();
-        //     }
-        //     e.preventDefault();
-        //   }
-
-
-        // function signIn(e){
-
-        //         let userName = document.getElementById("uname").value;
-        //         let userPhonenumber = document.getElementById("phonenumber").value;
-        //         let userPassword = document.getElementById("password").value;
-        //         let userConfirm_password = document.getElementById("confirm_password").value;
-
-        //         let user_object = ({userName: userName, userPhonenumber: userPhonenumber, userPassword: userPassword});
-
-        //         let user_list = JSON.parse(localStorage.getItem('user_object')) || [];
-
-        //         if (userName, userPassword, userConfirm_password, userPhonenumber === 0){
-        //         alert('Please fill the details');
-        //         return;
-        //         } else if (userPassword !== userConfirm_password){
-        //         alert('Please check the password');
-        //         }
-
-        //         let exist = user_list.length && JSON.parse(localStorage.getItem('user_object')).some(data => data.userPhonenumber.toLowerCase() == userPhonenumber.toLowerCase());
-
-        //         if (!exist){
-        //         user_list.push(user_object);
-        //         localStorage.setItem('user_object', JSON.stringify(user_list));
-        //         localStorage.setItem('unique_id', JSON.stringify(user_object["userPhonenumber"]));
-        //         // localStorage.setItem('unique_id', JSON.stringify(user_object["userName"]));
-        //         document.querySelector('form').reset();
-        //         alert('Your account has been created.');
-        //         location.replace("../homepage/loginpage.html");
-        //         } else {
-        //         alert('This user already exists. Try with a new phone number.');
-        //         }
-
-        //     e.preventDefault();
-
-        // }
-
-
-
-        function signUp(e) {
-
-            e.preventDefault();
-            let phonenumber = document.getElementById("phonenumber").value;
-              confirm_password = document.getElementById("confirm_password").value;
-              password = document.getElementById("password").value;
-             uname = document.getElementById("uname").value;
-             user_uuid = uuidv4();
-            let user_cred = JSON.parse(localStorage.getItem('user_cred')) || [];
-
-            let exist = user_cred.length &&
-                JSON.parse(localStorage.getItem('user_cred')).some(data =>
-                    data.phonenumber.toLowerCase() == phonenumber.toLowerCase()
-                );
-            if(!exist){
-
-              if(password == confirm_password){
-                user_cred.push({uname,phonenumber,confirm_password,password,user_uuid});
-                localStorage.setItem('user_cred',JSON.stringify(user_cred));
-                console.log(localStorage.getItem('user_cred'));
-                document.querySelector("form").reset();
-               document.getElementById('phonenumber').focus();
-                alert('Account created successfully');
-                location.href = "../homepage/loginpage.html";
+              localStorage.setItem("user_cred", JSON.stringify(user_cred));
+              localStorage.setItem("address_list", JSON.stringify(address_list));
+              console.log(localStorage.getItem("user_cred"));
+              document.querySelector("form").reset();
+              document.getElementById("phonenumber").focus();
+              alert("Account created successfully");
+              window.location.href = "../homepage/loginpage.html";
+            } else {
+              alert("Confirm password does not match");
             }
-              else{
-                alert("Confirm password does not match")
-              }
-            }
-            else {
-                alert('Sorry the User already exists! \n Try with a new phonenumber.');
-                document.querySelector('form').reset();
-            }
-      
+          } else {
+            alert("Sorry, the user already exists!\nTry with a new phone number.");
+            document.querySelector("form").reset();
           }
+        }
+  }
+    
+  validate();
 
-    </script>
+}
 
-   <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+document.querySelector("button.submit").addEventListener("click", signUp);
+</script>
+
+        <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
 
     </body>
 </html>

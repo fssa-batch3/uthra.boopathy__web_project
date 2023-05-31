@@ -27,7 +27,20 @@ header div ul li{
 header div ul li a{
      text-decoration: none;
      color: white;
-     font-size: 20px;
+     font-size: 24px;
+}
+
+#count {
+    background-color: white;
+    color: purple;
+    font-size: 20px;
+    border-radius: 50%;
+    height: 20px;
+    width: 22px;
+    margin-top: -44px;
+    margin-left: 17px;
+    text-align: center;
+    font-weight: bold;
 }
 
 h1{
@@ -48,8 +61,19 @@ h1{
 
 .login{
     color: white;
-    font-size: 20px;
+    font-size: 25px;
+    cursor: pointer;
 }
+
+.arrow {
+    font-size: 30px;
+    margin: 2rem;
+}
+
+.arrow a {
+    color: black;
+}
+
 
 h2{
     font-size: 30px;
@@ -63,8 +87,9 @@ h2{
     margin: 100px 100px 20px 100px;
     border: 1px solid gray;
     border-radius: 5px;
-    height: 1100px;
+    /* height: 1100px; */
     box-shadow: 2px 4px 8px 2px rgba(6, 6, 6, 0.2), 3px 6px 20px 3px rgba(0, 0, 0, 0.19);
+    padding-bottom: 20px;
 }
 
 div.photo{
@@ -86,6 +111,38 @@ label.camera {
     border-radius: 8rem;
 }
 
+.size {
+    margin-top: 1.5rem;
+    display: flex;
+}
+
+.size input {
+    margin-left: 10px;
+}
+
+.size label {
+    margin-top: 5px;
+    margin-left: 4px;
+    font-size: 18px;
+}
+
+table, tr, th, td {
+    border: 1px solid gray;
+    border-collapse:collapse;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+td {
+    text-align: center;
+}
+
+table input {
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    outline: none;
+}
 
 .details{
     font-size: 25px;
@@ -125,13 +182,6 @@ input[type="url"]{
     outline: none;
 }
 
-/* input[type="file"]{
-    border: none;
-    margin-left: 60px;
-    opacity: 0;
-    object-fit: contain;
-} */
-
 textarea{
     height: 100px;
     width: 500px;
@@ -141,6 +191,10 @@ textarea{
 }
 
 .add{
+    margin-top: 25px;
+}
+
+.add_info {
     margin-top: 20px;
 }
 
@@ -164,6 +218,7 @@ button{
     font-size: 20px;
     margin-left: 500px;
     margin-top: 30px;
+    cursor: pointer;
 }
 
 button a{

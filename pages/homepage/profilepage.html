@@ -1,216 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Profile page </title>
-    <link rel="stylesheet" href="../../assets/css/style-profilepage.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />        <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Profile page </title>
+        <link rel="stylesheet" href="../../assets/css/style-profilepage.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kreon:wght@300;400;500;600;700&family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     </head>
     
     <body>
-        <header>
-            <a href="../homepage/frontpage.html"> <img class="logo" src="../../assets/images/logo.png" alt="logo" height="70px" width="70px"/> </a>
-            <h1> Thara's World </h1>
-            <div class="nav">
-                <ul>
-                   <li> <a href="../orders/cartpage.html"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a></li>
-                   <li> <a href="../orders/wishlistpage.html"><i class="fa-sharp fa-solid fa-heart"></i></a></li> 
-                   <li><a href="../orders/myorderspage.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
-                   <li><a href="#"><i class="fa-solid fa-bell"></i></i></a></li>
-                   <li><a href="profilepage.html"><i class="fa-solid fa-circle-user"></i></a></li>
-                   <li> <a href="../homepage/loginpage.html"><span class="login"> Login </span> </a></li>
-                 </ul>
-             </div>
-
-             <div class="menu">
-               
-               <i class="fa-solid fa-bars"></i>               
-                <div class="menu-list">
-                   
-                       <a href="../orders/cartpage.html"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
-                       <a href="../orders/wishlistpage.html"><i class="fa-sharp fa-solid fa-heart"></i></a>
-                       <a href="../orders/myorderspage.html"><i class="fa-solid fa-bag-shopping"></i></a>
-                       <a href="#"><i class="fa-solid fa-bell"></i></i></a>
-                       <a href="profilepage.html"><i class="fa-solid fa-circle-user"></i></a>
-                       <a href="loginpage.html"><span class="login"> Login </span> </a>
-               
-                </div>
-            </div>
+        <header id="userLogin">
+            
         </header>
+
+        <div class="arrows"></div>
 
         <section>
 
-            <form role="form" onsubmit="update_details(event)" >
+            <form role="form">
             
                 <h1> PROFILE</h1>
 
                 <div class="avatar">
-                    <img src="../../assets/images/avatar.jpg" alt="photo" height="180px" width="180px"/>
+                    <img src="../../assets/images/avatar.jpg" alt="photo" height="180px" width="180px">
                 </div>
                
                 <div class="name">
-                <label> Name: </label>
-		        <input type="text"  id="uname"  />
-		        </div>
+                    <label> Name: </label>
+                    <input type="text" id="uname">
+                </div>
 
                 <div class="age">
                     <label> Age:</label>
-                    <input type="number" id="age" min="1"/>
-                </div>
-
-                <div class="gender">
-                    <label> Gender:</label>
-                    <select id="gender">
-                        <option> Male </option>
-                        <option> Female </option>
-                        <option> Others </option>
-                    </select>
+                    <input type="tel" id="age" min="1" minlength="2" maxlength="3">
                 </div>
 
                 <div class="add">
                     <label> Residential address: </label>
                     <textarea id="address">  </textarea>
                 </div>
+
+                <div class="pin">
+                    <label> Pincode: </label>
+                    <input type="number" id="pincode" maxlength="6">  
+                </div>
+
+                <div class="state">
+                    <label> State: </label>
+                    <input type="text" id="state">  
+                </div>
                 
                 <div class="no">
                     <label> Contact number: </label>
-                    <input type="number"  placeholder="+91" id="phonenumber"  />
+                    <input type="number" placeholder="+91" id="phonenumber" disabled>
                 </div>
 
                 <div class="mail">
                     <label> E-Mail Id: </label>
-                    <input type="email"  id="email" placeholder="ghds4729@gmail.com" />
+                    <input type="email" id="email" placeholder="ghds4729@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{3,}$">
                 </div>
 
                 <div class="des">
-                        <label> Your Designation:</label>
-                        <select id="des">
-                            <option> Buyer </option>
-                            <option> Seller </option>
-                            <option> Both </option>
-                        </select>
+                    <label> Your Designation:</label>
+                    <select id="des">
+                        <option> Buyer </option>
+                        <option> Seller </option>
+                    </select>
                 </div>
                 
                 <div >
-                        <button class="btn-1" type="submit" onclick="(event)">  Save  </button>
-                        <button class="btn-2" type="submit">  Cancel     </button>
+                    <button class="btn-1" type="submit">  Save  </button>
                 </div>        
 
             </form>
+
+            <a href="../homepage/profile.html">
+                <button class="btn-2" type="submit">  Cancel </button>  
+            </a>
        
-            </section>
+        </section>
 
-            <script>
+        <script src="../../assets/js/header.js"> </script>
 
+        <script>
+// <div class = "arrow" > </div>
 
-   
+const div_arrow = document.createElement("div");
+div_arrow.setAttribute("class", "arrow");
+// console.log(div_arrow);
 
-                // function submit(){
+// <a> link </a>
 
-                //   const name = document.getElementById("name").value
-                //   const age = document.getElementById("age").value
-                //   const address = document.getElementById("address").value
-                //   const phonenumber = document.getElementById("phonenumber").value
-                //   const email = document.getElementById("email").value
+const a_arrow = document.createElement("a");
+a_arrow.setAttribute("href", "../homepage/profile.html");
+div_arrow.append(a_arrow);
+// console.log(a_arrow);
 
-                //   console.log(name)
-                //   console.log(age)
-                //   console.log(address)
-                //   console.log(phonenumber)
-                //   console.log(email) 
+// < i >  arrow </i>
 
-                //   localStorage.setItem("user_name",name)
-                //   localStorage.setItem("user_age",age)
-                //   localStorage.setItem("user_address",address)
-                //   localStorage.setItem("user_phonenumber",phonenumber)
-                //   localStorage.setItem("user_email",email)
+const i_arrow = document.createElement("i");
+i_arrow.setAttribute("title", "Back");
+i_arrow.setAttribute("class", "fa-solid fa-arrow-left");
+a_arrow.append(i_arrow);
 
-                
-                //   window.location.href = "../homepage/profile.html"
+document.querySelector("div.arrows").append(div_arrow);
 
+const uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
+const user_cred = JSON.parse(localStorage.getItem("user_cred"));
 
-                 
-                // }  
+const add_list = JSON.parse(localStorage.getItem("address_list"));
 
+function profile_data(e) {
+  return e.phonenumber === uniqueID;
+}
+const person_data = user_cred.find(profile_data);
 
+const ck_user = add_list.find((p) => p.address_id === person_data.user_uuid);
+console.log(ck_user);
 
-                // let uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
-                // let user_cred = JSON.parse(localStorage.getItem("user_cred"));
-                // function profile_data(e){
-                //     return e.phonenumber == uniqueID;
-                // }
-                // person_data = user_cred.find(profile_data);
-                // document.getElementById("name").value= person_data["name"];
-                // document.getElementById("phonenumber").value = person_data["phonenumber"];
+console.log(person_data);
+document.getElementById("uname").value = person_data.uname;
+document.getElementById("email").value = person_data.email;
+document.getElementById("phonenumber").value = person_data.phonenumber;
+document.getElementById("age").value = person_data.age;
+document.getElementById("address").value = person_data.address;
+document.getElementById("pincode").value = person_data.pincode;
+document.getElementById("state").value = person_data.state;
+document.getElementById("des").value = person_data.des;
 
+document.querySelector("button.btn-1").addEventListener("click",(e) => {
+      e.preventDefault();
+const uname = document
+    .getElementById("uname")
+    .value.trim()
+    .split(/\s+/g)
+    .join(" ");
+  const address = document.getElementById("address").value;
+  const des = document.getElementById("des").value;
+  const email = document.getElementById("email").value;
+  const age = document.getElementById("age").value;
+  const pincode = document.getElementById("pincode").value;
+  const state = document.getElementById("state").value;
 
-
-                
-            //     let user_object = JSON.parse(localStorage.getItem("user_object"));
-
-            //     let unique_id = JSON.parse(localStorage.getItem("unique_id"));
-
-
-                
-            //     function findUser(e) {
-
-            //     return e.phonenumber  == unique_id ;
-                    
-
-            //     }
-
-            //    let person_data = user_object.find (findUser);
-
-               
-            //     document.getElementById("name").value = person_data["userName"];
-            //     document.getElementById("phonenumber").value = person_data["userPhonenumber"];
-            //     // document.getElementById("address").innerText = person_data["address"];
-            //     // document.getElementById("age").innerHTML = person_data["age"];
-            //     // document.getElementById("email").innerText = person_data["email"];
-            //     // document.getElementById("gender").innerHTML = person_data["gender"];
-            //     // document.getElementById("des").innerHTML = person_data["des"];
-
-                
+  person_data.uname = uname;
+  person_data.address = address;
+  person_data.des = des;
+  person_data.email = email;
+  person_data.age = age;
+  person_data.pincode = pincode;
+  person_data.state = state;
 
 
-            let uniqueID = JSON.parse(localStorage.getItem("uniqueID"));
-                let user_cred = JSON.parse(localStorage.getItem("user_cred"));
-            function profile_data(e){
-                return e.phonenumber == uniqueID;
-            }
-            person_data = user_cred.find(profile_data);
-            document.getElementById("uname").value= person_data["uname"];
-            document.getElementById("email").value = person_data["email"];
-            document.getElementById("phonenumber").value = person_data["phonenumber"];
-            document.getElementById("age").value = person_data["age"];
-            document.getElementById("address").value =person_data["address"];
-            document.getElementById("des").value = person_data["des"];
-            document.getElementById("gender").value = person_data["gender"];
+  ck_user.uname = uname;
+  ck_user.address = address;
+  ck_user.pincode = pincode;
+  ck_user.state = state;
 
 
-            function update_details(e) {
-            e.preventDefault();
-            let address = document.getElementById("address").value
-            let des = document.getElementById("des").value
-            let email = document.getElementById("email").value
-            let gender = document.getElementById("gender").value
-            let age = document.getElementById("age").value
-            person_data["address"] = address;
-            person_data["des"] = des;
-            person_data["email"] = email;
-            person_data["gender"] = gender;
-            person_data["age"] = age;
-            localStorage.setItem('user_cred', JSON.stringify(user_cred));
-            //console.log(user_list);
-            window.location.href = "./profile.html";
-        }
+  localStorage.setItem("address_list", JSON.stringify(add_list));
 
-            </script>
+  localStorage.setItem("user_cred", JSON.stringify(user_cred));
+  window.location.href = "./profile.html";
+});
+</script>
 
     </body>
 </html>

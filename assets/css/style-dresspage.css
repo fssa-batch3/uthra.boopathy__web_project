@@ -6,16 +6,15 @@
 header{
     display: flex;
     flex-wrap: wrap;
-    background-color: 	purple;
+    flex-direction: row;
+    background-color: purple;
     height: 100px;
-    position: sticky;
-    top: 0px;
-    z-index: 10;
 }
 
 header div ul{
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
     list-style: none;
     margin-left: 550px;
 }
@@ -28,7 +27,24 @@ header div ul li{
 header div ul li a{
      text-decoration: none;
      color: white;
-     font-size: 20px;
+     font-size: 24px;
+}
+
+.menu{
+    display: none;
+}
+
+#count {
+    background-color: white;
+    color: purple;
+    font-size: 20px;
+    border-radius: 50%;
+    height: 20px;
+    width: 22px;
+    margin-top: -44px;
+    margin-left: 17px;
+    text-align: center;
+    font-weight: bold;
 }
 
 h1{
@@ -44,13 +60,16 @@ h1{
     width: 70px;
     margin-top: 15px;
     margin-left: 50px;
-    border-radius: 50%;
+    border-radius: 50px;
 }
 
 .login{
-    font-size: 20px;
-    color: white;
+   font-size: 25px;
+   color: white;
+   cursor: pointer;
 }
+
+
 .menu{
     display: none;
 }
@@ -106,6 +125,15 @@ input[type=text]{
     color: black;
 }
 
+.arrow {
+    font-size: 30px;
+    margin: 2rem;
+}
+
+.arrow a {
+    color: black;
+}
+
  .thumbnail{
     display: grid;
     grid-template-columns: repeat(4, 280px);
@@ -119,7 +147,7 @@ p{
     font-weight: bold;
     margin: 40px 0px 30px 90px;
 }
-img{
+.thumbnail img{
     object-fit: contain;
     border-radius: 15px;
 }

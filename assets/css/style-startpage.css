@@ -113,6 +113,11 @@ button{
     padding: 5px;
 }
 
+a button{
+    color: white;
+    font-size: 19px;
+}
+
 .menu{
     display: none;
 }
