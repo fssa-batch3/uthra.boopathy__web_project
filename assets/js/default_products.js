@@ -1682,7 +1682,7 @@ const sizes = [
   { value: "7", id: 16 },
   { value: "8", id: 17 },
   { value: "9", id: 18 },
-  { value: "0", id: 19 },
+  { value: "10", id: 19 },
   { value: "11", id: 20 },
 ];
 

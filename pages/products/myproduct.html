@@ -339,7 +339,7 @@ product_details.forEach((find) => {
     const product_description = e.currentTarget.dataset.id;
     localStorage.setItem("productDetail", JSON.stringify(product_description));
     window.location.href = `../products/addproduct.html?product_id=${product_description}`;
-    console.log(product_details);
+    // console.log(product_details);
   });
 });
 

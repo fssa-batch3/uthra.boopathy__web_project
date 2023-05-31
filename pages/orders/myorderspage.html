@@ -107,16 +107,12 @@
         document.querySelector("div.arrows").append(div_arrow);
 
         const user_id = JSON.parse(localStorage.getItem("uniqueID"));
-        console.log(user_id);
 
         const ordered_products = JSON.parse(localStorage.getItem("my_orders"));
-        console.log(ordered_products);
 
         const order = ordered_products.filter((e) => e.buyer_id === user_id);
-        console.log(order);
 
         const order_pdts = JSON.parse(localStorage.getItem("ordered_items"));
-        console.log(order_pdts);
 
         if (order.length === 0) {
 

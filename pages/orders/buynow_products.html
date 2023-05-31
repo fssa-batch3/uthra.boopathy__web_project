@@ -153,6 +153,20 @@
             size.innerText = `Size : ${ order_pdts[i].size}`;
             div_info.append(size);
             
+            if (order_pdts[i].size === "0" || order_pdts[i].size === "1" || order_pdts[i].size === "2" ||
+            order_pdts[i].size === "3" || order_pdts[i].size === "4" || order_pdts[i].size === "5" || 
+            order_pdts[i].size === "6" || order_pdts[i].size === "7" ) {
+
+                size.setAttribute("style", "display:none");
+
+            }
+
+            else {
+
+                size.setAttribute("style", "display:block");
+
+            }
+            
             const qty = document.createElement("p");
             qty.setAttribute("class", "qty");
             // qty.setAttribute("id", "original_price");
