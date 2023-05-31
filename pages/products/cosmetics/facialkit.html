@@ -130,7 +130,7 @@ a_arrow.append(i_arrow);
 
 document.querySelector("div.arrows").append(div_arrow);
 
-const add_product = JSON.parse(localStorage.getItem("add_products")).filter(
+const add_product = JSON.parse(localStorage.getItem("product_details")).filter(
   (e) => e.status === true && e.category === "Cosmetics" && e.type === "5"
 );
 
@@ -142,6 +142,9 @@ let s;
 let span;
 
 for (let k = 0; k < add_product.length; k++) {
+
+const size_list = JSON.parse(localStorage.getItem("product_size_details")).filter((p) => p.product_uuid === add_product[k].product_uuid)
+
   // <div class = products >
 
   div_products = document.createElement("div");
@@ -169,7 +172,7 @@ for (let k = 0; k < add_product.length; k++) {
 
   p_org = document.createElement("p");
   p_org.setAttribute("id", "original_price");
-  p_org.innerText = `₹${add_product[k].discount_price} `;
+  p_org.innerText = `₹${size_list[0].discount_price} `;
   h3_title.append(p_org);
 
   // <p> </p>
@@ -181,14 +184,14 @@ for (let k = 0; k < add_product.length; k++) {
 
   s = document.createElement("s");
   s.setAttribute("id", "discount_price");
-  s.innerText = `₹${add_product[k].original_price}`;
+  s.innerText = `₹${size_list[0].original_price}`;
   p_org.append(s);
 
   // <span> </span>
 
   span = document.createElement("span");
   span.setAttribute("class", "percent");
-  span.innerText = `   ${add_product[k].discount_percent}% off`;
+  span.innerText = `   ${size_list[0].discount_percent}% off`;
   p_org.append(span);
 
   document.querySelector("div.thumbnail").append(div_products);

@@ -107,22 +107,38 @@
         document.querySelector("div.arrows").append(div_arrow);
 
         const user_id = JSON.parse(localStorage.getItem("uniqueID"));
-        console.log(user_id);
 
         const ordered_products = JSON.parse(localStorage.getItem("my_orders"));
-        console.log(ordered_products);
 
         const order = ordered_products.filter((e) => e.buyer_id === user_id);
-        console.log(order);
 
         const order_pdts = JSON.parse(localStorage.getItem("ordered_items"));
-        console.log(order_pdts);
 
-        // if (order.length === 0) {
+        if (order.length === 0) {
 
-        //     alert("You are not yet ordered anything");
+            const div_container = document.createElement("div");
+            div_container.setAttribute("class", "container");
+            console.log(div_container);
 
-        // } else {
+            const p_pdt = document.createElement("p");
+            p_pdt.setAttribute("class", "not");
+            p_pdt.innerText = "You have not ordered any products yet"
+            div_container.append(p_pdt);
+
+            const button = document.createElement("button");
+            button.setAttribute("class", "add");
+            button.innerText = "ORDER NOW";
+            div_container.append(button);
+
+            document.querySelector("section").append(div_container);
+
+                    // order products
+
+document.querySelector("button.add").addEventListener("click",() => {
+  window.location.href = "../products/tc.html";
+})
+
+        } else {
 
         for (let j = 0; j < order.length; j++) {
             const items = order_pdts.filter((p) => order[j].order_id === p.order_id);
@@ -192,14 +208,6 @@
 
             }
 
-            // <div class = "details" > </div>
-
-            // const div_details = document.createElement("div");
-            // div_details.setAttribute("class", "details");
-            // div_container.append(div_details);
-
-            // // <p class="pdt">
-
               const p_pdt = document.createElement("p");
               p_pdt.setAttribute("class", "pdt");
               p_pdt.setAttribute("data-id", order[j].order_id);
@@ -266,9 +274,16 @@
             p_5.innerText = `State : ${order[j].state}`;
             p_6.append(p_5);
 
+            const view = document.createElement("button");
+            view.setAttribute("class", "view")
+            view.innerText = "VIEW PRODUCTS";
+            view.setAttribute("data-cancel", order[j].order_id);
+            div_container.append(view);
+
             if (order[j].status === true) {
 
             const button = document.createElement("button");
+            button.setAttribute("class", "cancel")
             button.setAttribute("style", "display: block")
             button.innerText = "CANCEL ORDER";
             button.setAttribute("data-cancel", order[j].order_id);
@@ -277,6 +292,7 @@
             else {
                 const button = document.createElement("button");
             button.setAttribute("style", "display: none")
+            button.setAttribute("class", "cancel")
             button.innerText = "CANCEL ORDER";
             button.setAttribute("data-cancel", order[j].order_id);
             div_container.append(button);
@@ -284,19 +300,19 @@
 
             document.querySelector("section").append(div_container);
         }
-        // }
+        }
 
-        const ordered_items = document.querySelectorAll("p.pdt");
+        const ordered_items = document.querySelectorAll(".view");
         ordered_items.forEach((check) => {
             check.addEventListener("click", (e) => {
-                const products = e.currentTarget.dataset.id;
+                const products = e.currentTarget.dataset.cancel;
                 localStorage.setItem("order_id", JSON.stringify(products));
                 window.location.href = `../orders/buynow_products.html?order_id=${products}`;
-                console.log(ordered_items);
+                console.log(ordered_items); 
             });
         });
 
-        document.querySelectorAll("button").forEach((find) => {
+        document.querySelectorAll(".cancel").forEach((find) => {
             find.addEventListener("click", (e) => {
                 if (window.confirm("Are you sure to cancel your order?")) {
                     const cancel_id = e.currentTarget.dataset.cancel;

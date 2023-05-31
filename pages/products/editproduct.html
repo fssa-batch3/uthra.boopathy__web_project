@@ -123,7 +123,9 @@ document.querySelector("div.arrows").append(div_arrow);
 const uuid = JSON.parse(localStorage.getItem("productDetail"));
 console.log(uuid);
 
-const add_product = JSON.parse(localStorage.getItem("add_products"));
+const add_product = JSON.parse(localStorage.getItem("product_details"));
+
+const size_list = JSON.parse(localStorage.getItem("product_size_details"));
 
 function find_data(e) {
   return e.product_uuid === uuid;
@@ -146,12 +148,11 @@ const updates = document.querySelector("form#form");
 
 function update_product(event) {
   event.preventDefault();
-  const uu_id = JSON.parse(localStorage.getItem("productDetail"));
 
-  const product = JSON.parse(localStorage.getItem("add_products"));
+  const product = JSON.parse(localStorage.getItem("product_details"));
 
   function find_datas(e) {
-    return e.product_uuid === uu_id;
+    return e.product_uuid === uuid;
   }
 
   const products = product.find(find_datas);
@@ -188,7 +189,7 @@ function update_product(event) {
 
   // console.log(products);
 
-  localStorage.setItem("add_products", JSON.stringify(product));
+  localStorage.setItem("product_details", JSON.stringify(product));
 
   alert("Product updated successfully");
 

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Review form page </title>
+        <link rel="stylesheet" href="../../assets/css/addressForm.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kreon:wght@300;400;500;600;700&family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    </head>
+    
+    <body>
+        <header id="userLogin">
+
+        </header>
+
+        <div class="arrows"></div>
+<section>
+
+    <h3> ADD REVIEWS </h3>
+
+        <div>
+            <label> Name :  </label>
+            <input type="text" id="uname">
+        </div>
+
+        <div>
+            <label class="rev"> Review : </label>
+            <textarea id="review"> </textarea>
+        </div>
+
+        <div class="rating">
+            <label class="rate"> Ratings : </label>
+
+            <span class="star" data-value="1">&#9734;</span>
+            <span class="star" data-value="2">&#9734;</span>
+            <span class="star" data-value="3">&#9734;</span>
+            <span class="star" data-value="4">&#9734;</span>
+            <span class="star" data-value="5">&#9734;</span>
+        </div>
+
+        <button type="submit"> SAVE REVIEW </button>
+
+</section>
+
+        <footer>
+            <div class="top">
+                <div class="about">
+                    <h4> About: </h4>
+                    <div class="us">
+                        <p>
+                          <a href="../homepage/aboutus.html"> About us </a>
+                        </p> 
+                        <p>
+                          <a href="#"> Available Products </a>
+                        </p>
+                        <p>
+                          <a href="#"> Security </a>
+                        </p> 
+                        <p>
+                          <a href="../homepage/termsofuse.html"> Terms of use </a> 
+                        </p> 
+                        <p>
+                          <a href="../homepage/return.html"> Return policy </a>
+                        </p> 
+           </div>
+          </div>
+
+                                            <div class="line"></div>
+
+                                            <div class="contact">  
+                 
+                                                <div class="socials">
+                                                    <span class="con"> Contact us: </span>
+                                                    <div class="insta">
+                                                        <i class="fa-brands fa-instagram"></i> 
+                                                    </div>
+                                                    <div class="fb">
+                                                        <i class="fa-brands fa-facebook-f"></i> 
+                                                    </div>
+                                                    <div class="twiter">
+                                                        <i class="fa-brands fa-twitter"></i> 
+                                                    </div>
+                                                    <div class="wa">
+                                                        <i class="fa-brands fa-whatsapp"></i> 
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <p>Copy rights @ 2022</p>
+                                                </div> 
+                                            </div> 
+       </div>
+
+       </footer>  
+
+       <script src="../../assets/js/header.js"> </script>
+       
+       <script>
+
+// to set the location to the variable queryString
+
+const queryString = window.location.search;
+
+// to get the location
+
+const urlParams = new URLSearchParams(queryString);
+
+// to show the name as what we have to show
+
+const product_id = urlParams.get("product_id");
+
+const ratingStars = document.querySelectorAll(".star");
+let selectedRating = 0;
+ratingStars.forEach((star) => {
+  star.addEventListener("click", () => {
+    selectedRating = parseInt(star.getAttribute("data-value"));
+    // Reset all stars to default (unselected) state
+    ratingStars.forEach((star) => {
+      star.innerHTML = "&#9734;";
+    });
+    // Set the selected star and all preceding stars to a filled state
+    for (let i = 0; i < selectedRating; i++) {
+      ratingStars[i].innerHTML = "&#9733;";
+    }
+  });
+
+});
+
+
+const unique_id = JSON.parse(localStorage.getItem("uniqueID"));
+        const user_list = JSON.parse(localStorage.getItem("user_cred"));
+
+        const check = user_list.find((u) => u.phonenumber === unique_id);
+
+        document.getElementById("uname").value = check.uname;
+        
+    document.querySelector("button").addEventListener("click", () => {
+  
+        const uname = document.getElementById("uname").value
+        const review = document.getElementById("review").value;
+        // const rating = 
+        const review_id = uuidv4();
+
+        const review_list = JSON.parse(localStorage.getItem("reviews")) || [];
+
+        review_list.push({
+  buyer_id: unique_id,
+  uname,
+  review,
+  rating : selectedRating,
+  review_id,
+  product_id: product_id
+});
+
+localStorage.setItem("reviews", JSON.stringify(review_list));
+alert("Your review has been successfully added.");
+window.location.reload();
+// window.location.href = "../products/dress/saree1view.html";
+
+    });
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+
+    </body>
+</html>

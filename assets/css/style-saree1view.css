@@ -172,12 +172,25 @@ strong{
 }
 
 .stars{
+    font-size: 25px;
+}
+
+.size {
+    padding-left: 10px;
+    margin-left: 10px;
+    margin-top: 3px;
+    color: black;
     font-size: 20px;
+    background-color: white;
+    border: 0;
+    cursor: pointer;
 }
 
 .star{
     position: relative;
     top: 35px;
+    display: flex;
+    flex-direction:row;
 }
 
 .details{
@@ -203,12 +216,6 @@ strong{
     cursor: pointer;
 }
 
-/* .add a{
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-} */
-
 .buy{
     height: 50px;
     width: 200px;
@@ -222,12 +229,6 @@ strong{
     cursor: pointer;
     font-size: 20px;
 }
-/* 
-.buy a{
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-} */
 
 .wish{
     height: 50px;
@@ -242,12 +243,6 @@ strong{
     cursor: pointer;
     font-size: 20px;
 }
-
-/* .wish a{
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-} */
 
 .comment{
     margin-top: 270px;
@@ -276,46 +271,76 @@ input{
     outline: none;
 }
 
-.thumbnail{
+h6 {
+    font-size: 30px;
+    margin-top: 7rem;
+    text-align: center;
+}
+
+.left-b{
+    border-bottom: 1px solid pink;
+    width: 450px;
     position: relative;
-    top: 10px;
+    top: 8rem;
+    left: 50px;
+}
+
+.right-b{
+    border-bottom: 1px solid pink;
+    width: 400px;
+    position: relative;
+    left: 950px;
+    top: -20px;
+}
+
+
+.thumbnail{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-content: space-evenly;
     padding: 20px;
-    margin-top: 20px;
+    margin-top: 2rem;
 }
 
 .products{
     border: 1px solid #f8f8f8;
     border-radius: 5px;   
-    height: 380px;
+    height: 350px;
     width: 300px;
     background-color: #f8f8f8;
 }
 
 .products img{   
-    border-radius: 10px;
-    margin: 20px 0px 0px 35px;
+    border-radius: 7px;
+    margin: 30px 0px 0px 50px;
 }
 
 .similar{
     margin-top: 100px;
 }
 
-.similar h2{
-    margin-left: 50px;
+h5{
+    margin-left: 20px;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.price {
+    margin-left: 30px;
+}
+
+.dis_price {
+    margin-left: 10px;
+}
+
+.per {
+    color: green;
+    margin-left: 20px;
 }
 
 .products p{
     margin-left: 50px;
     margin-top: -20px;
-}
-
-h5{
-    font-size: 20px;
-    margin-left: 50px;
-    margin-top: 20px;
 }
 
 .title{
@@ -327,10 +352,73 @@ h5{
     color: green;
 }
 
+.rev {
+    margin: 18rem 0 0 30rem;
+    font-size: 25px;
+}
+
+.rev_sec {
+    height: 500px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 460px;
+    scrollbar-width: none;
+}
+
+.rev_sec::-webkit-scrollbar {
+    display: none;
+}
+
+
+.reviews {
+    width: 40rem;
+    height: 10rem;
+    margin: 1rem 0 0 40rem;
+    border-bottom: 1px solid gray;
+}
+
+.rname {
+    display: flex;
+}
+
+#uname {
+    margin-top: -15px;
+    margin-left: 10px;
+}
+
+.com {
+    margin-top: -10px;
+    font-size: 19px;
+}
+
+#reviews {
+    margin-top: 20px;
+}
+
+.stars_r {
+    font-size: 35px;
+    margin-top: 20px;
+    background-color: unset;
+    color: #FFA500;
+}
+
+.rev_b {
+    background-color: purple;
+    color: white;
+    height: 35px;
+    width: 150px;
+    font-size: 17px;
+    border-radius: 5px;
+    border: none;
+    margin-left: 75rem;
+    margin-top: -10rem;
+    cursor: pointer;
+}
+
 footer{
     background-color: purple;
     height: 310px;
-    margin-top: 300px;
+    margin-top: 150px;
 }
 
 .about{

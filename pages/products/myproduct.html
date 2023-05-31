@@ -54,14 +54,14 @@ i_arrow.setAttribute("class", "fa-solid fa-arrow-left");
 a_arrow.append(i_arrow);
 
 document.querySelector("div.arrows").append(div_arrow);
-const add_product = JSON.parse(localStorage.getItem("add_products"));
-// let uuid = JSON.parse(localStorage.getItem("product_uuid"));
-console.log(add_product);
+const add_product = JSON.parse(localStorage.getItem("product_details"));
+let uuid = JSON.parse(localStorage.getItem("product_uuid"));
+// console.log(add_product);
 
 const user_id = JSON.parse(localStorage.getItem("uniqueID"));
 
 const check_pdt = add_product.filter((e) => e.user_id === user_id);
-console.log(check_pdt);
+// console.log(check_pdt);
 
 let div_box;
 let div_photo;
@@ -77,7 +77,7 @@ let p_percent;
 let b;
 let div_star;
 let span;
-let i;
+let p_size;
 let strong_pdt;
 let div_pdt;
 let p_pdt;
@@ -90,6 +90,13 @@ let button_add;
 let button_del;
 
 for (let k = 0; k < check_pdt.length; k++) {
+
+  const size_list = JSON.parse(localStorage.getItem("product_size_details"));
+
+const fil_size = size_list.filter((o) => o.product_uuid === check_pdt[k].product_uuid)
+// console.log(fil_size);
+
+
   // <div class = "box" > </div>
 
   div_box = document.createElement("div");
@@ -142,7 +149,7 @@ for (let k = 0; k < check_pdt.length; k++) {
 
   p_org = document.createElement("p");
   p_org.setAttribute("id", "original_price");
-  p_org.innerText = `₹${check_pdt[k].discount_price}`;
+  p_org.innerText = `₹${fil_size[0].discount_price}`;
   div_price.append(p_org);
 
   // <p> </p>
@@ -154,7 +161,7 @@ for (let k = 0; k < check_pdt.length; k++) {
 
   s = document.createElement("s");
   s.setAttribute("id", "discount_price");
-  s.innerText = `₹${check_pdt[k].original_price}`;
+  s.innerText = `₹${fil_size[0].original_price}`;
   p_dis.append(s);
 
   // <p> </p>
@@ -166,7 +173,7 @@ for (let k = 0; k < check_pdt.length; k++) {
 
   b = document.createElement("b");
   b.setAttribute("id", "discount_percent");
-  b.innerText = `${check_pdt[k].discount_percent}% off`;
+  b.innerText = `${fil_size[0].discount_percent}% off`;
   p_percent.append(b);
 
   // <div class = "star"> </div>
@@ -175,21 +182,51 @@ for (let k = 0; k < check_pdt.length; k++) {
   div_star.setAttribute("class", "star");
   div_right.append(div_star);
 
+if (fil_size[0].size === "0" || fil_size[0].size === "1" || fil_size[0].size === "2" ||
+fil_size[0].size === "3" || fil_size[0].size === "4" || fil_size[0].size === "5" ||
+fil_size[0].size === "6" || fil_size[0].size === "7") {
+
+  div_star.setAttribute("style", "display: none;")
+
+}
+
+else {
+
+  div_star.setAttribute("style", "display: flex;")
+
+}
+
   // <span> </span>
 
   span = document.createElement("span");
   span.setAttribute("class", "stars");
-  span.innerText = "Reviews:";
+  span.innerText = "Sizes :";
   div_star.append(span);
 
-  for (let j = 0; j < 5; j++) {
-    // <i> </i>
 
-    i = document.createElement("i");
-    i.setAttribute("class", "fa fa-star");
-    i.setAttribute("style", "font-size: 24px;color: gold");
-    div_star.append(i);
+  for (let j = 0; j < fil_size.length; j++) {
+      // <p> 
+
+      p_size = document.createElement("p");
+      p_size.setAttribute("class", "size");
+      p_size.setAttribute("data-size", fil_size[j].size);
+      p_size.setAttribute("data-sizes", fil_size[j].product_uuid);
+      p_size.innerHTML = fil_size[j].size;
+      div_star.append(p_size);
+    
   }
+
+  const div_qty = document.createElement("div");
+  div_qty.setAttribute("class", "qty");
+  div_right.append(div_qty);
+  
+  p_qty = document.createElement("p");
+  p_qty.innerText = "Quantity :  ";
+  div_qty.append(p_qty);
+
+  p_q = document.createElement("p");
+  p_q.innerText = fil_size[0].quantity_seller;
+  div_qty.append(p_q);
 
   // < strong> </strong>
 
@@ -290,6 +327,8 @@ for (let k = 0; k < check_pdt.length; k++) {
   }
 
   document.querySelector("section").append(div_box);
+
+
 }
 
 // Edit function
@@ -299,8 +338,8 @@ product_details.forEach((find) => {
   find.addEventListener("click", (e) => {
     const product_description = e.currentTarget.dataset.id;
     localStorage.setItem("productDetail", JSON.stringify(product_description));
-    window.location.href = `../products/editproduct.html?product_id=${product_description}`;
-    console.log(product_details);
+    window.location.href = `../products/addproduct.html?product_id=${product_description}`;
+    // console.log(product_details);
   });
 });
 
@@ -310,17 +349,17 @@ const del_product = document.querySelectorAll("button.del");
 del_product.forEach((check) => {
   check.addEventListener("click", (e) => {
     const product_id = e.currentTarget.dataset.del;
-    localStorage.setItem("products_id", JSON.stringify(product_id));
+    localStorage.setItem("product_id", JSON.stringify(product_id));
     console.log(product_id);
     if (window.confirm("Are you sure to delete this product?")) {
-      const id = JSON.parse(localStorage.getItem("products_id"));
-      const all_products = JSON.parse(localStorage.getItem("add_products"));
+      const id = JSON.parse(localStorage.getItem("product_id"));
+      const all_products = JSON.parse(localStorage.getItem("product_details"));
       console.log(all_products);
       const pdts = all_products.find((a) => a.product_uuid === id);
       console.log(pdts);
       const indexOfProduct = all_products.indexOf(pdts);
       all_products.splice(indexOfProduct, 1);
-      localStorage.setItem("add_products", JSON.stringify(all_products));
+      localStorage.setItem("product_details", JSON.stringify(all_products));
       window.location.reload();
     }
   });
@@ -336,7 +375,7 @@ remove_pdt.forEach((remove) => {
 
     localStorage.setItem("product_id", JSON.stringify(product_id));
 
-    const all_products = JSON.parse(localStorage.getItem("add_products"));
+    const all_products = JSON.parse(localStorage.getItem("product_details"));
 
     const find_pdt = all_products.find((g) => g.product_uuid === product_id);
 
@@ -344,13 +383,12 @@ remove_pdt.forEach((remove) => {
     console.log(indexOfProduct);
 
     if (all_products[indexOfProduct].status === true) {
-      // document.getElementsByClassName(".remove").style.display = "inline";
 
       alert("This product is successfully removed");
 
       all_products[indexOfProduct].status = false;
 
-      localStorage.setItem("add_products", JSON.stringify(all_products));
+      localStorage.setItem("product_details", JSON.stringify(all_products));
       window.location.reload();
     } else {
       alert("You have not added the product yet");
@@ -367,7 +405,7 @@ add_pdt.forEach((add) => {
 
     localStorage.setItem("product_id", JSON.stringify(product_id));
 
-    const all_products = JSON.parse(localStorage.getItem("add_products"));
+    const all_products = JSON.parse(localStorage.getItem("product_details"));
 
     const find_pdt = all_products.find((f) => f.product_uuid === product_id);
 
@@ -386,6 +424,35 @@ add_pdt.forEach((add) => {
     }
   });
 });
+
+
+    /////     PRICE CHANGING ACCORDING TO SIZE   //////
+
+
+    document.querySelectorAll('.size').forEach((element) => {
+      element.addEventListener('click', (event) => {
+        const size_id = event.currentTarget.getAttribute('data-size');
+      console.log(size_id);
+
+      const size_uuid = event.currentTarget.getAttribute('data-sizes');
+      console.log(size_uuid);
+
+      const size_detail = JSON.parse(localStorage.getItem("product_size_details"));
+
+      const check_size = size_detail.filter((p) => p.product_uuid === size_uuid);
+      console.log(check_size);
+
+      let sizePrice = check_size.find((s) => s.size === size_id);
+      console.log(sizePrice);
+      p_org.innerText = `₹${sizePrice.discount_price}`;
+      s.innerText = `₹${sizePrice.original_price}`;
+      b.innerText = `${sizePrice.discount_percent}% off`;    
+      p_q.innerText = sizePrice.quantity_seller;
+
+     });
+    });
+
+
         </script>
 
     </body>

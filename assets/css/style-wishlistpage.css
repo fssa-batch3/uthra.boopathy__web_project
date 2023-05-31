@@ -82,6 +82,36 @@ h1{
     color: black;
 }
 
+.container{
+    border: 1px;
+    border-radius: 8px;
+    background-color: whitesmoke;
+    width: 60%;
+    height: 30vh;
+    margin-left: 17rem;
+}
+
+.not {
+    font-size: 35px;
+    color: black;
+    text-align: center;
+    width: 40rem;
+    padding-left: 5rem;
+    padding-top: 5rem;
+}
+
+.add {
+    height: 35px;
+    width: 150px;
+    background-color: purple;
+    border: 0;
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+    margin-left: 22rem;
+    margin-top: 2rem;
+}
+
 .thumbnail{
     display: grid;
     grid-template-columns: repeat(4, 280px);
